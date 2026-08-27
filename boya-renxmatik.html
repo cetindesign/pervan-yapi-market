@@ -158,18 +158,81 @@
 </div>
 
 <main>
-<section style="background: var(--bg-offwhite); padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
+<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
   <div class="rf-wrapper">
-    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
-      <div style="height: 36px; display: flex; align-items: center;">
-        <img src="assets/filliboya.svg" alt="Filli Boya Logo" style="height: 100%; width: auto; object-fit: contain;" />
-      </div>
+    
+    <!-- Breadcrumb -->
+    <div class="rf-breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="sep">/</span>
+      <a href="malzemeler.html">Malzemeler / Filli Boya Ana Bayi</a>
     </div>
-    <span style="font-family: var(--font-display); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-terracotta);">Filli Boya Ana Bayi</span>
-    <h1 style="font-size: clamp(32px, 4vw, 52px); margin: 16px 0;">Boya & RenXMatik Laboratuvarı</h1>
-    <p style="font-size: 16px; color: var(--text-muted); max-width: 720px; line-height: 1.7;">
-      Filli Boya Ana Bayisi olarak; bilgisayarlı RenXMatik renk hazırlama makinemizle karteladaki binlerce tonu dakikalar içinde sıfır hata ile üretiyoruz.
-    </p>
+
+    <!-- Responsive Split -->
+    <div class="rf-subpage-split">
+      
+      <!-- Media Box (ordered first on mobile) -->
+      <div class="rf-subpage-media">
+        <img src="assets/rf-brand-filliboya.jpg" alt="Filli Boya Momento Max ve RenXMatik Renk Merkezi" />
+      </div>
+
+      <!-- Content Box -->
+      <div class="rf-subpage-content">
+        <div>
+          <div class="rf-card-tag" style="margin-bottom: 8px;">Filli Boya Ana Bayi & Renk Merkezi</div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Filli Boya & Bilgisayarlı RenXMatik Renk Laboratuvarı</h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">İzmir Balçova ana bayiliğimiz bünyesinde, Filli Boya Momento Max, Aqualyx ve Caparol serilerini tam donanımlı bilgisayarlı RenXMatik ünitemizle binlerce renge anında dönüştürüyoruz.</p>
+        </div>
+
+        <!-- Commercial Specs Table -->
+        <div class="rf-spec-grid">
+          <div class="rf-spec-item">
+            <span class="rf-spec-label">Ambalaj Seçenekleri</span>
+            <span class="rf-spec-val">2.5 L · 7.5 L · 15 L Orijinal Kova</span>
+          </div>
+          <div class="rf-spec-item">
+            <span class="rf-spec-label">Sarfiyat & Örtücülük</span>
+            <span class="rf-spec-val">1 Litre ile tek katta 13-16 m²</span>
+          </div>
+          <div class="rf-spec-item">
+            <span class="rf-spec-label">Renk Teknolojisi</span>
+            <span class="rf-spec-val">RenXMatik ile 10.000+ Renk Kodu</span>
+          </div>
+          <div class="rf-spec-item">
+            <span class="rf-spec-label">Sevkiyat & İndirme</span>
+            <span class="rf-spec-val">Balçova, Narlıdere, Urla Aynı Gün</span>
+          </div>
+        </div>
+
+        <!-- Bullet Highlights -->
+        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
+          <li style="margin-bottom: 12px;">
+            <strong style="color: var(--text-main); font-weight: 700;">Momento Max Silikonlu İç Cephe:</strong> Tam silinebilir, leke tutmayan ve nefes alan üstün silikon teknolojisi.
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="color: var(--text-main); font-weight: 700;">Aqualyx Su Bazlı Parlak/Yarı Mat Panel:</strong> Kapı ve ahşap yüzeyler için kokusuz, sararmayan su bazlı panel boyası.
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="color: var(--text-main); font-weight: 700;">Caparol Dış Cephe & Isı Yalıtım Boyaları:</strong> Ege iklimine ve UV ışınlarına dayanıklı elastik dış cephe kaplamaları.
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="color: var(--text-main); font-weight: 700;">Özel Renk Eşleme & Arşiv:</strong> Eski boya numunenizi spektrometre ile okuyup aynı tonu bilgisayarla hazırlıyoruz.
+          </li>
+        </ul>
+
+        <!-- Direct WhatsApp CTA Action -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20Filli%20Boya%20ve%20RenXMatik%20renk%20kartelası%20ve%20fiyat%20bilgisi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
+            WhatsApp ile Stok & Fiyat Sor →
+          </a>
+          <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
+            Hemen Ara
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 

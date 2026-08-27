@@ -1186,3 +1186,148 @@ img, svg {
     border-right: none;
   }
 }
+/* ==========================================================================
+   12. REFORM SUBPAGE ARCHITECTURE & MOBILE ORDERING
+   ========================================================================== */
+.rf-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.rf-breadcrumb a {
+  color: var(--text-muted);
+}
+
+.rf-breadcrumb a:hover {
+  color: var(--accent-terracotta);
+}
+
+.rf-breadcrumb .sep {
+  opacity: 0.4;
+}
+
+.rf-subpage-split {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.rf-subpage-media {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--bg-offwhite);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.rf-subpage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rf-subpage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Commercial Specs Grid */
+.rf-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: var(--bg-subtle);
+  padding: 18px 16px;
+  border: 1px solid var(--border-light);
+  margin: 12px 0 20px;
+}
+
+.rf-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rf-spec-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-terracotta);
+}
+
+.rf-spec-val {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+/* Desktop layout enhancement */
+@media (min-width: 861px) {
+  .rf-subpage-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .rf-subpage-media {
+    aspect-ratio: 3/4;
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* ==========================================================================
+   13. PROCESS TIMELINE (.rf-process-grid)
+   ========================================================================== */
+.rf-process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.rf-process-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rf-process-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent-terracotta);
+  line-height: 1;
+}
+
+@media (min-width: 861px) {
+  .rf-process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+  }
+  .rf-process-card {
+    border: none;
+    border-right: 1px solid var(--border-light);
+    padding: 44px 32px;
+  }
+  .rf-process-card:last-child {
+    border-right: none;
+  }
+}
