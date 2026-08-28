@@ -1726,3 +1726,234 @@ img, svg {
 .rf-site-btn:hover {
   transform: translateY(-2px);
 }
+
+
+/* ==========================================================================
+   17. REFORM CPH 1:1 PRODUCT DETAIL SYSTEM (CONFIGURATOR & ACCORDIONS)
+   ========================================================================== */
+.rf-config-group {
+  margin-bottom: 24px;
+}
+
+.rf-config-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rf-config-selected {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Size Pills */
+.rf-size-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rf-size-pill {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rf-size-pill span {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.rf-size-pill.active {
+  border-color: var(--text-main);
+  background: var(--bg-black);
+  color: var(--text-white);
+}
+
+.rf-size-pill.active span {
+  color: #AAA;
+}
+
+/* Color Swatches */
+.rf-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.rf-swatch-btn {
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.rf-swatch-btn:hover {
+  transform: scale(1.12);
+}
+
+.rf-swatch-btn.active {
+  border: 2px solid var(--text-main);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px var(--text-main);
+}
+
+/* Live Stock Status */
+.rf-stock-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding: 12px 14px;
+  background: #F4F8F5;
+  border: 1px solid rgba(46, 158, 91, 0.2);
+}
+
+.rf-stock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2E9E5B;
+  display: inline-block;
+  animation: rfPulse 2s infinite;
+}
+
+@keyframes rfPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 158, 91, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(46, 158, 91, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 158, 91, 0); }
+}
+
+/* Minimalist Accordions */
+.rf-acc-group {
+  border-top: 1px solid var(--border-light);
+  margin-top: 32px;
+}
+
+.rf-acc-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-acc-header {
+  width: 100%;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+}
+
+.rf-acc-icon {
+  font-size: 16px;
+  font-weight: 400;
+  transition: transform 0.25s var(--ease);
+}
+
+.rf-acc-item.active .rf-acc-icon {
+  transform: rotate(45deg);
+}
+
+.rf-acc-body {
+  padding: 0 0 20px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  display: none;
+}
+
+.rf-acc-item.active .rf-acc-body {
+  display: block;
+}
+
+/* Complementary Essentials Section */
+.rf-essentials-section {
+  padding: 64px 0 80px;
+  background: var(--bg-offwhite);
+  border-top: 1px solid var(--border-light);
+}
+
+.rf-essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rf-essential-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.rf-essential-media {
+  aspect-ratio: 4/3;
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf-essential-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.rf-essential-card:hover .rf-essential-media img {
+  transform: scale(1.04);
+}
+
+.rf-essential-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.rf-essential-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 860px) {
+  .rf-swatch-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .rf-essentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}

@@ -126,5 +126,52 @@
         window.closeConsultation();
       });
     }
+
+    // 5. Product Detail Configurator & Accordion System
+    // Accordion Toggle
+    document.querySelectorAll(".rf-acc-header").forEach(function(hdr) {
+      hdr.addEventListener("click", function() {
+        var item = hdr.closest(".rf-acc-item");
+        if (item) {
+          item.classList.toggle("active");
+        }
+      });
+    });
+
+    // Size Pill Selection
+    var activeSize = "15 Litre (160 - 200 m²)";
+    var activeColor = "Andezit 25 (Filli Boya Renk Kodu: 7240)";
+    var waBtn = document.getElementById("rfDetailWaBtn");
+
+    function updateWaMessage() {
+      if (!waBtn) return;
+      var msg = "Merhaba Filli Boya Momento Max siparişi vermek istiyorum.\nSeçilen Boyut: " + activeSize + "\nSeçilen Renk: " + activeColor + "\nBalçova depodan stok ve güncel fiyat bilgisi alabilir miyim?";
+      waBtn.href = "https://wa.me/902322784340?text=" + encodeURIComponent(msg);
+    }
+
+    document.querySelectorAll(".rf-size-pill").forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        document.querySelectorAll(".rf-size-pill").forEach(function(p) { p.classList.remove("active"); });
+        pill.classList.add("active");
+        activeSize = pill.getAttribute("data-size") || pill.innerText.trim();
+        var labelTarget = document.getElementById("rfSelectedSizeLabel");
+        if (labelTarget) labelTarget.innerText = activeSize;
+        updateWaMessage();
+      });
+    });
+
+    // Color Swatch Selection
+    document.querySelectorAll(".rf-swatch-btn").forEach(function(swatch) {
+      swatch.addEventListener("click", function() {
+        document.querySelectorAll(".rf-swatch-btn").forEach(function(s) { s.classList.remove("active"); });
+        swatch.classList.add("active");
+        var cName = swatch.getAttribute("data-color-name");
+        var cCode = swatch.getAttribute("data-color-code");
+        activeColor = cName + " (" + cCode + ")";
+        var labelTarget = document.getElementById("rfSelectedColorLabel");
+        if (labelTarget) labelTarget.innerText = activeColor;
+        updateWaMessage();
+      });
+    });
   });
 })();

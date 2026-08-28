@@ -158,109 +158,230 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Filli Boya Ana Bayi</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Filli Boya Ana Bayi & RenXMatik</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
-        <img src="assets/rf-brand-filliboya.jpg" alt="Filli Boya Momento Max ve RenXMatik Renk Merkezi" />
+        <img src="assets/rf-brand-filliboya.jpg" alt="Filli Boya Momento Max ve RenXMatik Renk Merkezi" id="rfDetailMainImg" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Filli Boya Ana Bayi & Renk Merkezi</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Filli Boya & Bilgisayarlı RenXMatik Renk Laboratuvarı</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">İzmir Balçova ana bayiliğimiz bünyesinde, Filli Boya Momento Max, Aqualyx ve Caparol serilerini tam donanımlı bilgisayarlı RenXMatik ünitemizle binlerce renge anında dönüştürüyoruz.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/filliboya.svg" alt="Filli Boya Logo" style="height: 32px; width: auto;" />
+            <span class="rf-card-tag" style="margin: 0;">Resmi Ana Bayi & Laboratuvar</span>
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Filli Boya Momento Max & Bilgisayarlı RenXMatik Renk Laboratuvarı
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Tam silinebilir, leke tutmayan silikonlu iç cephe boyası Momento Max ve bilgisayarlı RenXMatik makinemiz ile 10.000'den fazla renk kodunu dakikalar içinde hazırlıyoruz.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · Saat 16:00'ya Kadar Aynı Gün Sevkiyat</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Kova Boyutu Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">15 Litre (160 - 200 m²)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill" data-size="2.5 Litre (25 - 35 m²)">
+              2.5 Litre
+              <span>Tek Oda (30 m²)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="7.5 Litre (80 - 100 m²)">
+              7.5 Litre
+              <span>Salon & Oda (90 m²)</span>
+            </button>
+            <button type="button" class="rf-size-pill active" data-size="15 Litre (160 - 200 m²)">
+              15 Litre
+              <span>Komple Daire (180 m²)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Popüler Renk Seçimi:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Andezit 25 (Filli Boya Kodu: 7240)</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #D2D0C8;" data-color-name="Andezit 25" data-color-code="7240" title="Andezit 25 (7240)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #E0D9CD;" data-color-name="Kumtaşı" data-color-code="7140" title="Kumtaşı (7140)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #EBE6DD;" data-color-name="Lületaşı" data-color-code="7500" title="Lületaşı (7500)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #DDD5C7;" data-color-name="Keten" data-color-code="7630" title="Keten (7630)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #E8ECEB;" data-color-name="Dağ Kristali" data-color-code="7180" title="Dağ Kristali (7180)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #EADCD9;" data-color-name="Masal Pembesi" data-color-code="7320" title="Masal Pembesi (7320)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #F1EEE3;" data-color-name="Açık Fildişi" data-color-code="7010" title="Açık Fildişi (7010)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Seçenekleri</span>
-            <span class="rf-spec-val">2.5 L · 7.5 L · 15 L Orijinal Kova</span>
+            <span class="rf-spec-label">Sarfiyat</span>
+            <span class="rf-spec-val">1 L = 13 - 16 m² (Tek Kat)</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Sarfiyat & Örtücülük</span>
-            <span class="rf-spec-val">1 Litre ile tek katta 13-16 m²</span>
+            <span class="rf-spec-label">İnceltme</span>
+            <span class="rf-spec-val">Temiz Su ile %10 - %15</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Renk Teknolojisi</span>
-            <span class="rf-spec-val">RenXMatik ile 10.000+ Renk Kodu</span>
+            <span class="rf-spec-label">Kuruma Süresi</span>
+            <span class="rf-spec-val">Kat Arası: 4 - 6 Saat</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Sevkiyat & İndirme</span>
-            <span class="rf-spec-val">Balçova, Narlıdere, Urla Aynı Gün</span>
+            <span class="rf-spec-label">Bölge Sevkiyatı</span>
+            <span class="rf-spec-val">Balçova & Narlıdere Aynı Gün</span>
           </div>
         </div>
-
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Momento Max Silikonlu İç Cephe:</strong> Tam silinebilir, leke tutmayan ve nefes alan üstün silikon teknolojisi.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Aqualyx Su Bazlı Parlak/Yarı Mat Panel:</strong> Kapı ve ahşap yüzeyler için kokusuz, sararmayan su bazlı panel boyası.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Caparol Dış Cephe & Isı Yalıtım Boyaları:</strong> Ege iklimine ve UV ışınlarına dayanıklı elastik dış cephe kaplamaları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Özel Renk Eşleme & Arşiv:</strong> Eski boya numunenizi spektrometre ile okuyup aynı tonu bilgisayarla hazırlıyoruz.
-          </li>
-        </ul>
 
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20Filli%20Boya%20ve%20RenXMatik%20renk%20kartelası%20ve%20fiyat%20bilgisi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
-            WhatsApp ile Stok & Fiyat Sor →
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20Filli%20Boya%20Momento%20Max%20siparişi%20vermek%20istiyorum.%0ASeçilen%20Boyut:%2015%20Litre%20(160%20-%20200%20m²)%0ASeçilen%20Renk:%20Andezit%2025%20(Filli%20Boya%20Renk%20Kodu:%207240)%0ABalçova%20depodan%20stok%20ve%20güncel%20fiyat%20bilgisi%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+            WhatsApp ile Renk & Fiyat Sipariş Et →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
+        </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <!-- Acc 01 -->
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. Teknik Özellikler & Leke Tutmama</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Momento Max, silikon teknolojisi sayesinde duvarda mikro-gözenekli nefes alan bir kalkan oluşturur. Ketçap, kahve, çay ve parmak izleri gibi günlük lekeler nemli bir bezle silindiğinde yüzeyde iz veya parlama bırakmaz. İpek mat dokusuyla ışığı homojen dağıtır, duvardaki sıva dalgalanmalarını gizler.
+            </div>
+          </div>
+
+          <!-- Acc 02 -->
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Uygulama Adımları & Kat Arası Kuruma</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              1. <strong>Zemin Hazırlığı:</strong> Tozlu ve kabarmış eski boyalar kazınır, Filli Boya Şeffaf Astar veya Silikonlu Astar ile 1 kat doyurulur.<br/>
+              2. <strong>İnceltme:</strong> Boya temiz su ile hacimce %10-15 oranında homojen şekilde karıştırılır.<br/>
+              3. <strong>Uygulama:</strong> Mikrofiber saten rulo ile 2 kat uygulanır. Katlar arasında en az 4-6 saat kuruma süresi beklenmelidir.
+            </div>
+          </div>
+
+          <!-- Acc 03 -->
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi & Püf Noktaları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Kestirme fırçası ile tavan birleşim çizgilerini çekerken boyayı kurutmadan rulo ile tarama yapın ("ıslak üstüne ıslak" kuralı). Bu sayede fırça izi ve ton farkı tamamen sıfırlanır. Maskeleme bandını boya henüz kurumadan, son kat atıldıktan 30 dakika sonra sökün.
+            </div>
+          </div>
+
+          <!-- Acc 04 -->
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. RenXMatik Bilgisayarlı Özel Renk Protokolü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Balçova merkez mağazamızda bulunan RenXMatik cihazımız; Filli Boya, RAL, NCS ve özel mimari renk arşivlerinin tamamını mikron hassasiyetinde tüp enjeksiyonuyla orijinal baz boyaya karıştırır. Yıllar sonra tekrar geldiğinizde aynı renk kodunu 1 gram dahi ton farkı olmadan arşivimizden yeniden bastırabilirsiniz.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REFORM COMPLEMENTARY ESSENTIALS (BU ÜRÜNLE BİRLİKTE KULLANILANLAR) -->
+<section class="rf-essentials-section">
+  <div class="rf-wrapper">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
+      <div>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Sarf Malzemeler</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Boya Sırasında Gereken Ekipmanlar</h2>
+      </div>
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <!-- 01: Astar -->
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-brand-filliboya.jpg" alt="Filli Boya Silikonlu Astar" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Filli Boya Silikonlu Astar (10 L)</div>
+          <div class="rf-essential-desc">Boya sarfiyatını %30 azaltan ve güçlü yapışma sağlayan iç cephe astarı.</div>
         </div>
       </div>
 
+      <!-- 02: Rulo -->
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Saten Rulo 20 cm" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Profesyonel Saten Rulo (20 cm)</div>
+          <div class="rf-essential-desc">İpek mat silikonlu boyalarda iz bırakmayan yüksek emici mikrofiber rulo.</div>
+        </div>
+      </div>
+
+      <!-- 03: Maskeleme Bandı -->
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Maskeleme Bandı 50m" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Pro Maskeleme Bandı (38 mm x 50 m)</div>
+          <div class="rf-essential-desc">Süpürgelik, kapı kasası ve prizleri boya sızmalarına karşı milimetrik korur.</div>
+        </div>
+      </div>
+
+      <!-- 04: Koruma Örtüsü -->
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Hışır Zemin Örtüsü" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Hışır Zemin Koruma Örtüsü (20 m²)</div>
+          <div class="rf-essential-desc">Parke, seramik ve mobilyaları toz ve boya damlalarından koruyan dayanıklı naylon.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
-  <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
-      <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Bilgisayarlı RenXMatik Renk Üretimi</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Mağazamıza getirdiğiniz renk kodunu veya karteladan seçtiğiniz tonu RenXMatik cihazımızda özel baz boyaya karıştırıp kullanıma hazır teslim ediyoruz.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Filli Boya Momento Max & Silikonlu Mat İç Cephe Boyaları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Filli Boya Aqualyx & Yağlı Boya Serileri</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Betek Silikonlu Dış Cephe ve Grenli Kaplamalar</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Profesyonel Rulo, Kestirme Fırçası, Maskeleme Bandı ve Koruma Naylonları</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=Filli%20Boya%20ve%20RenXMatik%20hakkında%20fiyat%20ve%20renk%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          Filli Boya Renk & Fiyat Danış
-        </a>
-      </div>
-      <div style="aspect-ratio: 3/4; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-brand-filliboya.jpg" alt="Filli Boya RenXMatik Balçova" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">
