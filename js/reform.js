@@ -202,5 +202,41 @@
       });
     });
 
+
+    // 6. Interactive Before & After Transformation Slider
+    document.querySelectorAll(".rf-compare-box").forEach(function(box) {
+      var range = box.querySelector(".rf-compare-range");
+      var beforeDiv = box.querySelector(".rf-compare-before");
+      var handle = box.querySelector(".rf-compare-handle");
+      var beforeImg = beforeDiv ? beforeDiv.querySelector("img") : null;
+
+      function updateSlider(val) {
+        if (!beforeDiv || !handle) return;
+        beforeDiv.style.width = val + "%";
+        handle.style.left = val + "%";
+        if (beforeImg) {
+          // Keep inner image full width so it reveals correctly
+          beforeImg.style.width = box.offsetWidth + "px";
+        }
+      }
+
+      if (range) {
+        range.addEventListener("input", function(e) {
+          updateSlider(e.target.value);
+        });
+        range.addEventListener("change", function(e) {
+          updateSlider(e.target.value);
+        });
+      }
+
+      window.addEventListener("resize", function() {
+        if (range) updateSlider(range.value);
+      });
+
+      // Initial alignment
+      setTimeout(function() {
+        if (range) updateSlider(range.value);
+      }, 100);
+    });
   });
 })();
