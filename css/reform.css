@@ -260,7 +260,7 @@ img, svg {
 }
 
 /* ==========================================================================
-   2. REFORM FULLSCREEN MOBILE MENU (100% Robust & Native Touch)
+   2. REFORM FULLSCREEN MOBILE MENU (100% Native Touch & Robust Accordion)
    ========================================================================== */
 .rf-mobile-menu {
   position: fixed;
@@ -269,14 +269,14 @@ img, svg {
   width: 100vw;
   height: 100dvh;
   background: #FFFFFF;
-  z-index: 99999;
+  z-index: 999999;
   display: flex;
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-8px);
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1), transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), visibility 0.3s !important;
 }
 
 .rf-mobile-menu.active {
@@ -294,6 +294,7 @@ img, svg {
   padding: 0 20px;
   border-bottom: 1px solid var(--border-light);
   flex-shrink: 0;
+  background: #FFFFFF;
 }
 
 .rf-mobile-close {
@@ -304,6 +305,9 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-main);
   cursor: pointer;
 }
 
@@ -311,129 +315,124 @@ img, svg {
   flex-grow: 1;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 24px 20px 48px;
+  padding: 20px 20px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 32px;
 }
 
-.rf-mobile-nav {
+.rf-mob-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-/* Accordion Item */
 .rf-mob-item {
   border-bottom: 1px solid var(--border-light);
 }
 
-.rf-mob-accordion-btn {
-  width: 100%;
+.rf-mob-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
-  background: transparent;
-  border: none;
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-main);
-  cursor: pointer;
-  text-align: left;
+  width: 100%;
 }
 
-.rf-mob-arrow {
-  font-size: 14px;
+.rf-mob-link {
+  flex-grow: 1;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 16px 0;
+  display: block;
+}
+
+.rf-mob-accordion-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: 400;
   color: var(--text-muted);
+  cursor: pointer;
   transition: transform 0.25s var(--ease);
 }
 
-.rf-mob-item.open .rf-mob-arrow {
-  transform: rotate(180deg);
+.rf-mob-item.open .rf-mob-accordion-btn {
+  transform: rotate(45deg);
+  color: var(--accent-terracotta);
 }
 
-.rf-mob-accordion-panel {
+.rf-mob-sublist, .rf-mob-accordion-panel {
   display: none;
   flex-direction: column;
   gap: 12px;
-  padding: 0 0 16px 12px;
-  border-left: 2px solid var(--text-main);
+  padding: 4px 0 20px 14px;
+  border-left: 2px solid var(--accent-terracotta);
   margin-bottom: 12px;
 }
 
+.rf-mob-item.open .rf-mob-sublist,
 .rf-mob-item.open .rf-mob-accordion-panel {
   display: flex;
 }
 
 .rf-mob-sublink {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 500;
-  color: #555555;
-  padding: 4px 0;
-}
-
-.rf-mob-sublink.highlight {
-  color: var(--accent-terracotta);
+  font-size: 14.5px;
   font-weight: 600;
+  color: #444444;
+  text-decoration: none;
+  line-height: 1.4;
+  padding: 2px 0;
 }
 
-.rf-mob-sublink:active {
-  color: #000000;
-}
-
-/* Main Direct Links */
-.rf-mob-mainlink {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-main);
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.rf-mob-mainlink.accent {
+.rf-mob-sublink:hover, .rf-mob-sublink:active {
   color: var(--accent-terracotta);
-  font-weight: 700;
 }
 
-/* Menu Footer Contact & Actions */
 .rf-mobile-menu-footer {
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-top: 12px;
+  gap: 16px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 24px;
 }
 
 .rf-mob-contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   background: var(--bg-subtle);
-  padding: 18px 16px;
+  padding: 16px;
   border: 1px solid var(--border-light);
 }
 
 .rf-mob-contact-title {
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-main);
-  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .rf-mob-contact-sub {
   font-size: 12.5px;
   color: var(--text-muted);
-  line-height: 1.4;
-  margin-bottom: 4px;
 }
 
 .rf-mob-contact-hours {
-  font-family: var(--font-display);
   font-size: 11.5px;
   font-weight: 600;
   color: var(--accent-green);
@@ -444,6 +443,7 @@ img, svg {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
 
 /* ==========================================================================
    3. REFORM DUAL SPLIT MEDIA HERO (.wide-two-media)

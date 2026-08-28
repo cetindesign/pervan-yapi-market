@@ -1,6 +1,6 @@
 /* ==========================================================================
    REFORM CPH (reformcph.com) 1:1 CLONE — MASTER JAVASCRIPT
-   Mobile-First Drawer · Accordions · Modal · WhatsApp Routing
+   Mobile-First Drawer · Accordions · Modal · WhatsApp Routing · Configurator
    ========================================================================== */
 
 (function() {
@@ -34,25 +34,31 @@
       rfMobileClose.addEventListener("click", closeMobileMenu);
     }
 
-    // Close when clicking any direct link inside mobile menu
-    if (rfMobileMenu) {
-      rfMobileMenu.querySelectorAll("a").forEach(function(link) {
-        link.addEventListener("click", function() {
-          closeMobileMenu();
-        });
-      });
-    }
-
-    // 2. Mobile Accordion Toggles
-    var accordionBtns = document.querySelectorAll(".rf-mob-accordion-btn");
-    accordionBtns.forEach(function(btn) {
+    // 2. Mobile Accordion Toggle Logic
+    document.querySelectorAll(".rf-mob-accordion-btn").forEach(function(btn) {
       btn.addEventListener("click", function(e) {
         e.preventDefault();
+        e.stopPropagation();
         var item = btn.closest(".rf-mob-item");
         if (item) {
           item.classList.toggle("open");
         }
       });
+    });
+
+    // Also toggle when clicking accordion parent row link if it contains an accordion
+    document.querySelectorAll(".rf-mob-item").forEach(function(item) {
+      var btn = item.querySelector(".rf-mob-accordion-btn");
+      var mainLink = item.querySelector(".rf-mob-link");
+      if (btn && mainLink) {
+        mainLink.addEventListener("click", function(e) {
+          // If on mobile, expand accordion first
+          if (window.innerWidth <= 1024) {
+            e.preventDefault();
+            item.classList.toggle("open");
+          }
+        });
+      }
     });
 
     // 3. Consultation Slide-Over Modal Logic
@@ -130,7 +136,8 @@
     // 5. Product Detail Configurator & Accordion System
     // Accordion Toggle
     document.querySelectorAll(".rf-acc-header").forEach(function(hdr) {
-      hdr.addEventListener("click", function() {
+      hdr.addEventListener("click", function(e) {
+        e.preventDefault();
         var item = hdr.closest(".rf-acc-item");
         if (item) {
           item.classList.toggle("active");
@@ -138,20 +145,37 @@
       });
     });
 
-    // Size Pill Selection
-    var activeSize = "15 Litre (160 - 200 m²)";
-    var activeColor = "Andezit 25 (Filli Boya Renk Kodu: 7240)";
+    // Size Pill Selection & Dynamic WhatsApp Message
+    var activeSize = "";
+    var activeColor = "";
     var waBtn = document.getElementById("rfDetailWaBtn");
+
+    var initialSizeBtn = document.querySelector(".rf-size-pill.active");
+    if (initialSizeBtn) {
+      activeSize = initialSizeBtn.getAttribute("data-size") || initialSizeBtn.innerText.trim();
+    }
+    var initialColorBtn = document.querySelector(".rf-swatch-btn.active");
+    if (initialColorBtn) {
+      activeColor = initialColorBtn.getAttribute("data-color-name") || "";
+    }
 
     function updateWaMessage() {
       if (!waBtn) return;
-      var msg = "Merhaba Filli Boya Momento Max siparişi vermek istiyorum.\nSeçilen Boyut: " + activeSize + "\nSeçilen Renk: " + activeColor + "\nBalçova depodan stok ve güncel fiyat bilgisi alabilir miyim?";
+      var pageTitle = document.querySelector("h1") ? document.querySelector("h1").innerText.trim() : "Malzeme / Hizmet";
+      var msg = "Merhaba " + pageTitle + " siparişi / keşfi hakkında bilgi almak istiyorum.\n";
+      if (activeSize) msg += "Seçilen Boyut / Kapsam: " + activeSize + "\n";
+      if (activeColor) msg += "Seçilen Renk / Standart: " + activeColor + "\n";
+      msg += "Balçova depodan stok, keşif ve güncel fiyat bilgisi alabilir miyim?";
       waBtn.href = "https://wa.me/902322784340?text=" + encodeURIComponent(msg);
     }
 
     document.querySelectorAll(".rf-size-pill").forEach(function(pill) {
-      pill.addEventListener("click", function() {
-        document.querySelectorAll(".rf-size-pill").forEach(function(p) { p.classList.remove("active"); });
+      pill.addEventListener("click", function(e) {
+        e.preventDefault();
+        var parentGroup = pill.closest(".rf-config-group");
+        if (parentGroup) {
+          parentGroup.querySelectorAll(".rf-size-pill").forEach(function(p) { p.classList.remove("active"); });
+        }
         pill.classList.add("active");
         activeSize = pill.getAttribute("data-size") || pill.innerText.trim();
         var labelTarget = document.getElementById("rfSelectedSizeLabel");
@@ -162,16 +186,21 @@
 
     // Color Swatch Selection
     document.querySelectorAll(".rf-swatch-btn").forEach(function(swatch) {
-      swatch.addEventListener("click", function() {
-        document.querySelectorAll(".rf-swatch-btn").forEach(function(s) { s.classList.remove("active"); });
+      swatch.addEventListener("click", function(e) {
+        e.preventDefault();
+        var parentGroup = swatch.closest(".rf-config-group");
+        if (parentGroup) {
+          parentGroup.querySelectorAll(".rf-swatch-btn").forEach(function(s) { s.classList.remove("active"); });
+        }
         swatch.classList.add("active");
-        var cName = swatch.getAttribute("data-color-name");
-        var cCode = swatch.getAttribute("data-color-code");
-        activeColor = cName + " (" + cCode + ")";
+        var cName = swatch.getAttribute("data-color-name") || "";
+        var cCode = swatch.getAttribute("data-color-code") || "";
+        activeColor = cCode ? cName + " (" + cCode + ")" : cName;
         var labelTarget = document.getElementById("rfSelectedColorLabel");
         if (labelTarget) labelTarget.innerText = activeColor;
         updateWaMessage();
       });
     });
+
   });
 })();
