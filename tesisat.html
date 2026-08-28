@@ -163,31 +163,83 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Sıhhi Tesisat</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Sıhhi Tesisat</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
         <img src="assets/rf-card-plumbing.jpg" alt="Sıhhi Tesisat ve Boru Ekipmanları" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Altyapı & Tesisat</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Sıhhi Tesisat, PPRC Boru & Vitrifiye Ekipmanları</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Fıratboru, Kalde ve Dizayn marka PPRC temiz su boruları, PVC atık su boruları, pirinç vana, batarya ve banyo vitrifiye altyapı malzemeleri.</p>
+          <span class="rf-card-tag" style="margin-bottom: 8px;">Altyapı & Tesisat</span>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Sıhhi Tesisat, PPRC Boru & Vitrifiye Altyapı
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Fıratboru, Kalde ve Dizayn marka PPRC temiz su boruları, PVC atık su boruları, pirinç vana, batarya ve banyo vitrifiye altyapı malzemeleri.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · Tüm Çaplar & Bağlantı Parçaları</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Boru & Sistem Tipi Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">PPRC PN20 Temiz Su Borusu (Ø20 - Ø32 mm)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill active" data-size="PPRC PN20 Temiz Su Borusu (Ø20 - Ø32 mm)">
+              PPRC PN20 Temiz Su Borusu
+              <span>İç Tesisat</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="PVC Sessiz Atık Su Borusu (Ø50 - Ø110 mm)">
+              PVC Sessiz Atık Su Borusu
+              <span>Pis Su Gideri</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Pirinç Küresel Vana & Rekor Grubu">
+              Pirinç Küresel Vana & Rekor Grubu
+              <span>Basınç Emniyeti</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Gömme Rezervuar İç Takım & Şamandıra">
+              Gömme Rezervuar İç Takım & Şamandıra
+              <span>VitrA/Geberit Uyumlu</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Tesisat Standartı:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Yeşil PPRC (Standart Sıcak/Soğuk)</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #2E7D32;" data-color-name="Yeşil PPRC (Standart Sıcak/Soğuk)" data-color-code="Green" title="Yeşil PPRC (Standart Sıcak/Soğuk) (Green)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #FAFAFA;" data-color-name="Beyaz PPRC (Dış Mekan & Kombi)" data-color-code="White" title="Beyaz PPRC (Dış Mekan & Kombi) (White)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #757575;" data-color-name="Gri PVC (Standart Atık Su)" data-color-code="Grey" title="Gri PVC (Standart Atık Su) (Grey)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #D4AF37;" data-color-name="Pirinç Krom (Vana & Batarya)" data-color-code="Brass" title="Pirinç Krom (Vana & Batarya) (Brass)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
@@ -201,71 +253,122 @@
             <span class="rf-spec-val">PN16 / PN20 / PN25 Basınç Dayanımı</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Malzeme Standardı</span>
+            <span class="rf-spec-label">Malzeme</span>
             <span class="rf-spec-val">PPRC Tip-3 & PVC Sessiz Boru</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ekipman & Bağlantı</span>
+            <span class="rf-spec-label">Ekipman</span>
             <span class="rf-spec-val">Pirinç Rekor, Vana, Filtre, Fleksler</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">PPRC Temiz Su Boru & Ekleme Parçaları:</strong> Korozyona dayanıklı, kireç tutmayan yeşil ve beyaz kaynaklı boru sistemleri.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">PVC Sessiz Atık Su & Pis Su Boruları:</strong> Conta sistemli sızdırmaz bina içi ve şantiye atık su boruları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">ECA & Artema Uyumlu Batarya & Musluklar:</strong> Krom kaplama aç-kapa açılı lavabo, banyo ve evye bataryaları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Gömme Rezervuar & İç Takım Sistemleri:</strong> Geberit, VitrA ve Japar uyumlu yedek parça ve şamandıra takımları.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20sıhhi%20tesisat%20boruları%20ve%20bağlantı%20parçaları%20hakkında%20bilgi%20ve%20fiyat%20listesi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20sıhhi%20tesisat%20boruları%20ve%20bağlantı%20parçaları%20siparişi%20vermek%20istiyorum.%0AÜrün:%20PPRC%20PN20%20Temiz%20Su%20Boru%20&%20Ekleme%20Parçaları%0ABalçova%20depodan%20stok%20ve%20liste%20fiyatı%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
             WhatsApp ile Stok & Fiyat Sor →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. PPRC Tip-3 Temiz Su Boru Standartları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Korozyona ve kireç bağlamaya tam dirençli PPRC Tip-3 borular, 20 bar işletme basıncında 50 yıl ömür garantisine sahiptir. Suyun tadını, kokusunu ve rengini bozmaz.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. PVC Sessiz Atık Su & Conta Sızdırmazlığı</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Özel conta kanallı PVC sessiz borular, bina içi atık su inişlerinde akıntı sesini minimuma indirir. Asit ve evsel deterjanlara tam dirençlidir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: PPRC Boru Kaynak Süreleri</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Kaynak makinesi 260°C sıcaklığa ulaşmadan boru kaynatılmamalıdır. Ø20 boruda 5 saniye, Ø25 boruda 7 saniye ısıtma süresi uygulanmalı, kaynak sonrası boru döndürülmemelidir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Basınç Testi & Şebeke Manometre Kontrolü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Tesisat gömülmeden önce tesisata 10 bar test basıncı uygulanarak manometre ile 24 saat kaçak kontrolü yapılmalıdır.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Eksiksiz Tesisat & Armatür Stoğu</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Banyo, mutfak ve şantiye su tesisatında sızıntı yapmayan, yüksek kaliteli pirinç ve polimer tesisat parçaları stoklarımızda hazırdır.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ PPRC Boru, Dirsek, Te ve Manşon Çeşitleri</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ PVC Sessiz Atık Su Boruları ve Çekvalfler</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Aç-Kapa Lavabo ve Banyo Bataryaları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Gömme Rezervuar İç Takımları, Ara Musluklar ve Fleksler</li>
-        </ul>
-        <a href="tel:+902322784340" class="rf-site-btn primary">
-          Tesisat Malzemesi Sor: 0232 278 43 40
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Tesisat Sırasında Gereken Ekipmanlar</h2>
       </div>
-      <div style="aspect-ratio: 4/3; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-card-plumbing.jpg" alt="Sıhhi Tesisat Malzemeleri" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Dijital PPRC Boru Kaynak Makinesi Seti" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Dijital PPRC Boru Kaynak Makinesi Seti</div>
+          <div class="rf-essential-desc">Termostatlı çanta tipi profesyonel boru kaynak seti.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Otomatik Boru Kesme Makası (Ø42 mm)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Otomatik Boru Kesme Makası (Ø42 mm)</div>
+          <div class="rf-essential-desc">Boru ağzını ezmeden düzgün 90 derece kesen çelik makas.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Teflon Bant & Sıvı Conta (Gaz/Su)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Teflon Bant & Sıvı Conta (Gaz/Su)</div>
+          <div class="rf-essential-desc">Dişli bağlantılarda %100 sızdırmazlık kilit macunu.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Paslanmaz Çelik Örgülü Fleks Hortum" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Paslanmaz Çelik Örgülü Fleks Hortum</div>
+          <div class="rf-essential-desc">Batarya ve klozet bağlantıları için basınca dayanıklı fleks.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

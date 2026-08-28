@@ -158,109 +158,218 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Bianca Stella</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Bianca Stella</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
         <img src="assets/rf-brand-bianca.jpg" alt="Bianca Stella Dönüşüm Boyası Uygulaması" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Kırmadan Dönüşüm Merkezi</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Bianca Stella Dönüşüm Boyası & Maximo Sıvı Cam</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Fayans, seramik, mutfak dolabı, tezgah ve parkeleri kırmadan, moloz çıkarmadan yepyeni görünüme kavuşturan saf akrilik su bazlı dönüşüm teknolojisi.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/bianca.svg" alt="Bianca Stella Logo" style="height: 32px; width: auto;" />
+            <span class="rf-card-tag" style="margin: 0;">Kırmadan Dönüşüm Merkezi</span>
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Bianca Stella Dönüşüm Boyası & Maximo Sıvı Cam
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Eski banyo fayanslarını, mutfak dolaplarını, tezgahları ve parkeleri kırmadan, moloz çıkarmadan yepyeni görünüme kavuşturan saf akrilik su bazlı boya.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · Tüm Renkler & Maximo Sıvı Cam Seti</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Kutu Boyutu Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">0.5 Litre (5 - 6 m²)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill" data-size="0.5 Litre (5 - 6 m²)">
+              0.5 Litre
+              <span>Küçük Alan / Dolap</span>
+            </button>
+            <button type="button" class="rf-size-pill active" data-size="1.0 Litre (10 - 12 m²)">
+              1.0 Litre
+              <span>Standart Mutfak (10 m²)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="2.5 Litre (25 - 30 m²)">
+              2.5 Litre
+              <span>Komple Banyo (25 m²)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Maximo Sıvı Cam Seti">
+              Maximo Sıvı Cam Seti
+              <span>Çizilmezlik Zırhı</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Popüler Dönüşüm Renkleri:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Mat Adaçayı Yeşili</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #8B9E8B;" data-color-name="Mat Adaçayı Yeşili" data-color-code="Sage Green" title="Mat Adaçayı Yeşili (Sage Green)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #3D4246;" data-color-name="Saten Antrasit" data-color-code="Anthracite" title="Saten Antrasit (Anthracite)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #F6F6F4;" data-color-name="İpek Mat Beyaz" data-color-code="Pure White" title="İpek Mat Beyaz (Pure White)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #8C887B;" data-color-name="Taş Gri" data-color-code="Stone Grey" title="Taş Gri (Stone Grey)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #F0E6D2;" data-color-name="Krem Bej" data-color-code="Warm Cream" title="Krem Bej (Warm Cream)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #2A3A4D;" data-color-name="Gece Mavisi" data-color-code="Midnight Blue" title="Gece Mavisi (Midnight Blue)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #9E8F82;" data-color-name="Sıcak Vizon" data-color-code="Warm Mink" title="Sıcak Vizon (Warm Mink)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Seçenekleri</span>
-            <span class="rf-spec-val">0.5 L · 1.0 L · 2.5 L + Maximo Set</span>
+            <span class="rf-spec-label">Teknoloji</span>
+            <span class="rf-spec-val">Saf Akrilik Su Bazlı Formül</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ortalama Sarfiyat</span>
-            <span class="rf-spec-val">1 L ile 2 katta 10-12 m² Alan</span>
+            <span class="rf-spec-label">Sarfiyat</span>
+            <span class="rf-spec-val">1 L = 10 - 12 m² (2 Kat)</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Uygulama Yüzeyi</span>
-            <span class="rf-spec-val">Fayans, Dolap, Tezgah, Küvet, PVC</span>
+            <span class="rf-spec-label">Kuruma Süresi</span>
+            <span class="rf-spec-val">Kat Arası: 2 - 3 Saat</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Dayanım & Koruma</span>
-            <span class="rf-spec-val">Maximo Sıvı Cam ile Çizilmez Katman</span>
+            <span class="rf-spec-label">Zırh Koruması</span>
+            <span class="rf-spec-val">Maximo Sıvı Cam ile Çizilmez</span>
           </div>
         </div>
-
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Kırmadan Fayans & Banyo Yenileme:</strong> Astar veya zımpara gerektirmeden eski seramik yüzeylere doğrudan güçlü tutunma.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Mutfak Dolabı & Tezgah Boyama:</strong> Suya, ısıya ve temizlik kimyasallarına dayanıklı mat, yarı mat ve ipek mat tonlar.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Maximo Çift Komponentli Sıvı Cam:</strong> Islak hacim zeminleri ve mutfak tezgahları için darbe ve çizilme zırhı.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Tam Set & Kadife Rulo Desteği:</strong> Uygulama için gereken ipek fırça, rulo ve temizlik solüsyonları stokta.
-          </li>
-        </ul>
 
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20Bianca%20Stella%20dönüşüm%20boyası%20ve%20Maximo%20sıvı%20cam%20renkleri%20hakkında%20bilgi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
-            WhatsApp ile Stok & Fiyat Sor →
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20Bianca%20Stella%20dönüşüm%20boyası%20ve%20Maximo%20sıvı%20cam%20siparişi%20vermek%20istiyorum.%0AKutu:%201.0%20Litre%20(10%20-%2012%20m²)%0ARenk:%20Mat%20Adaçayı%20Yeşili%0ABalçova%20depodan%20teslim%20veya%20adrese%20kargo%20için%20bilgi%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+            WhatsApp ile Stok & Fiyat Sipariş Et →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. Kırmadan Dönüşüm Teknolojisi & Tutunma Gücü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Bianca Stella, formülündeki nano-tutunma polimerleri sayesinde astar ve zımpara gerektirmeden sırlı fayans, mermer, cam, lake ve ahşap yüzeylere kimyasal olarak kilitlenir. Kabarma, soyulma veya sararma yapmaz.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Mutfak Dolabı & Tezgah Boyama Protokolü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Mutfak dolaplarında kadife rulo ile 2 kat uygulanır. Katlar arası 2-3 saat beklenir. Mutfak tezgahı ve ıslak zeminlerde boyadan 24 saat sonra Maximo çift komponentli sıvı cam sürülerek ısı ve kimyasal dayanımı kilitlenir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Maximo Çift Komponentli Sıvı Cam Nedir?</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Özellikle suyun biriktiği banyo zeminleri ve bıçak/deterjan temas eden mutfak tezgahları için geliştirilmiş cam şeffaflığında darbe emici zırh kaplamadır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Temizlik & Zemin Hazırlığı Püf Noktaları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Boya öncesinde yüzeydeki kireç, yağ ve silikon kalıntıları Bianca Özel Temizleyici ile tamamen arındırılmalı, yüzey kuru ve tozsuz olmalıdır.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Tüm Yüzeyler İçin Su Bazlı Dönüşüm</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Yüksek yapışma mukavemetiyle seramik, ahşap, cam, plastik ve metal yüzeylere doğrudan tutunur. Kokusuzdur, ev içinde kolayca uygulanır ve üzerine çekilen Maximo Sıvı Cam ile çizilmez, su geçirmez zırh kazanır.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Bianca Stella Su Bazlı Saf Akrilik Dönüşüm Boyası (Tüm Renkler)</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Bianca Maximo Çift Komponentli Parlak / Mat Sıvı Cam Koruyucu</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Özel Kadife Rulo, İpek Fırça ve Yüzey Temizleme Setleri</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Mutfak Tezgahı, Banyo Fayansı ve Zemin Uygulama Danışmanlığı</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=Bianca%20Stella%20renk%20kartelası%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          Bianca Stella Kartela & Fiyat Sor
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Dönüşüm Sırasında Gereken Yardımcı Ekipmanlar</h2>
       </div>
-      <div style="aspect-ratio: 3/4; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-brand-bianca.jpg" alt="Bianca Stella Dönüşüm Boyası Balçova" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Bianca Yüzey Temizleyici" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Bianca Yüzey Temizleyici</div>
+          <div class="rf-essential-desc">Fayans ve tezgahtaki yağ ve kireci sıfırlayan güçlü solüsyon.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Kadife Dönüşüm Rulosu (10 cm)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Kadife Dönüşüm Rulosu (10 cm)</div>
+          <div class="rf-essential-desc">Dolap ve fayans yüzeyinde pürüzsüz ipeksi doku bırakan rulo.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="İpek Kestirme Fırçası (No: 2)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">İpek Kestirme Fırçası (No: 2)</div>
+          <div class="rf-essential-desc">Derz çizgileri ve dolap kenarları için iz bırakmayan fırça.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Hassas Yüzey Maskeleme Bandı" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Hassas Yüzey Maskeleme Bandı</div>
+          <div class="rf-essential-desc">Menteşe ve tezgah birleşimlerini koruyan kalkmayan bant.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

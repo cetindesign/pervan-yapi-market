@@ -163,109 +163,212 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / El Aletleri</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>El Aletleri & Hırdavat</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
         <img src="assets/rf-card-tools.jpg" alt="Profesyonel El Aletleri ve Makineler" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Hırdavat & Donanım</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Profesyonel El Aletleri, Elektrikli Makineler & Hırdavat</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Bosch, Makita, Stanley ve İzeltaş kalitesinde vidalama makineleri, kırıcı deliciler, lokma takımları, lazer hizalama terazileri ve sarf malzemeleri.</p>
+          <span class="rf-card-tag" style="margin-bottom: 8px;">Hırdavat & Donanım</span>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Profesyonel El Aletleri, Elektrikli Makineler & Hırdavat
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Bosch, Makita, Stanley ve İzeltaş kalitesinde vidalama makineleri, kırıcı deliciler, lokma takımları, lazer hizalama terazileri ve sarf malzemeleri.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Showroom & Depomuzda Stokta Hazır · Orijinal Distribütör Garantisi</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Alet Kategorisi Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">Akülü Vidalama & Kırıcı Deliciler (18V)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill active" data-size="Akülü Vidalama & Kırıcı Deliciler (18V)">
+              Akülü Vidalama & Kırıcı Deliciler
+              <span>Ağır Hizmet</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="İzeltaş Mekanik El Aletleri & Lokma Seti">
+              İzeltaş Mekanik El Aletleri & Lokma Seti
+              <span>Ömür Boyu Garanti</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Yeşil Işın 360° Lazer Hizalama Terazisi">
+              Yeşil Işın 360° Lazer Hizalama Terazisi
+              <span>Milimetrik Ölçüm</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Poliüretan Köpük, Silikon & Mastik Grubu">
+              Poliüretan Köpük, Silikon & Mastik Grubu
+              <span>Kimyasal Sarf</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Akü & Güç Sınıfı:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">18V Kömürsüz Brushless Motor</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #0D47A1;" data-color-name="18V Kömürsüz Brushless Motor" data-color-code="18V" title="18V Kömürsüz Brushless Motor (18V)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #1976D2;" data-color-name="12V Kompakt Montaj Tipi" data-color-code="12V" title="12V Kompakt Montaj Tipi (12V)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #D32F2F;" data-color-name="220V Kablolu Ağır Kırıcı" data-color-code="220V" title="220V Kablolu Ağır Kırıcı (220V)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #616161;" data-color-name="Krom Vanadyum El Aleti" data-color-code="CrV" title="Krom Vanadyum El Aleti (CrV)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Güç & Akü Sistemi</span>
-            <span class="rf-spec-val">12V · 18V Li-Ion Kömürsüz</span>
+            <span class="rf-spec-label">Güç Sistemi</span>
+            <span class="rf-spec-val">18V Li-Ion Çift Akülü Kömürsüz</span>
           </div>
           <div class="rf-spec-item">
             <span class="rf-spec-label">Mekanik Aletler</span>
-            <span class="rf-spec-val">İzeltaş Krom Vanadyum Takımlar</span>
+            <span class="rf-spec-val">İzeltaş Dövme Krom Vanadyum</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ölçüm Cihazları</span>
-            <span class="rf-spec-val">Yeşil Işın 360° Lazer Terazi</span>
+            <span class="rf-spec-label">Lazer Hassasiyeti</span>
+            <span class="rf-spec-val">±0.2 mm / m (Yeşil Işın 360°)</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Sarf & Bağlantı</span>
-            <span class="rf-spec-val">Vida, Dübel, Silikon, Akrilik Mastik</span>
+            <span class="rf-spec-label">Garanti</span>
+            <span class="rf-spec-val">2 Yıl Resmi Türkiye Distribütör Garantisi</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Kırıcı, Delici & Akülü Vidalama Makineleri:</strong> Beton ve metal delme işlemlerinde ağır hizmet tipi profesyonel makineler.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">İzeltaş Anahtar & Pense Setleri:</strong> Ömür boyu garanti standartlarında el aletleri ve lokma takımları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Tadilat Sarf Malzemeleri:</strong> Sista, Akfix ve Soudal poliüretan köpükler, mastikler ve yapıştırıcılar.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">İş Güvenliği & Koruyucu Ekipmanlar:</strong> İş eldivenleri, koruyucu gözlükler, toz maskeleri ve baretler.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20elektrikli%20makineler%20ve%20el%20aletleri%20stok%20durumu%20hakkında%20bilgi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20elektrikli%20makineler%20ve%20el%20aletleri%20stok%20durumu%20hakkında%20bilgi%20almak%20istiyorum.%0AÜrün:%2018V%20Akülü%20Vidalama%20&%20Kırıcı%20Delici%20Seti%0ABalçova%20mağazanızdan%20güncel%20fiyat%20öğrenebilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
             WhatsApp ile Stok & Fiyat Sor →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. Kömürsüz (Brushless) Motor Teknolojisi</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Kömürsüz motorlar sürtünmeyi sıfırlayarak tek akü şarjıyla %50 daha uzun çalışma süresi ve %20 daha yüksek tork üretir. Isınma yapmaz, şantiye tozu geçirmez.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. İzeltaş Krom Vanadyum Kalitesi & Ömür Boyu Garanti</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              İzeltaş açık ağız, yıldız ve lokma anahtarlar yüksek alaşımlı sıcak dövme çelikten üretilmiştir. Paslanmaya, eğilmeye ve sıyırmaya karşı ömür boyu garanti kapsamındadır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: Dübel & Vida Seçimi Kuralı</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Boşluklu tuğlada mutlaka burgulu tuğla dübeli, gazbetonda Ytong dübeli, betonda ise çelik gömlekli dübel kullanılmalıdır. Yanlış dübel ağır dolap ve televizyon montajında taşıma riskine yol açar.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Tadilat Sarf Malzemeleri & Kimyasal Stokları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Sista, Akfix ve Soudal çok amaçlı poliüretan montaj köpükleri, nötr silikonlar, yangın dayanımlı mastikler ve akrilik derz dolguları Balçova depomuzda sürekli taze stoktadır.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Nalbur & Usta Donanımları</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Tadilat ve montaj işlerinizde ihtiyacınız olan tüm kesici, delici, vidalama ve bağlantı elemanları dükkanımızda hazır.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Darbeli Matkaplar, Vidalama ve Taşlama Makineleri</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Çelik Dübel, Ahşap ve Alçıpan Vidaları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Silikon, Poliüretan Köpük ve Yapıştırıcı Mastikler</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Pense, Tornavida, Şerit Metre ve Su Terazileri</li>
-        </ul>
-        <a href="showroom.html" class="rf-site-btn primary">
-          Mağazamızda İnceleyin
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Şantiyede Zorunlu Sarf Malzemeleri</h2>
       </div>
-      <div style="aspect-ratio: 4/3; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-card-tools.jpg" alt="El Aletleri ve Hırdavat Reyonu" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Akfix Çok Amaçlı Montaj Köpüğü (750 ml)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Akfix Çok Amaçlı Montaj Köpüğü (750 ml)</div>
+          <div class="rf-essential-desc">Kapı kasası ve boşluk doldurma için yüksek genleşmeli köpük.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Sista Antibakteriyel Nötr Silikon" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Sista Antibakteriyel Nötr Silikon</div>
+          <div class="rf-essential-desc">Lavabo ve duşakabin kenarlarında küflenmeyen beyaz/şeffaf silikon.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Profesyonel Bits Uç & Adaptör Seti" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Profesyonel Bits Uç & Adaptör Seti</div>
+          <div class="rf-essential-desc">Darbeli vidalamada kırılmayan manyetik titan uçlar.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Ağır Şantiye İş Güvenliği Eldiveni (Nitril)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Ağır Şantiye İş Güvenliği Eldiveni (Nitril)</div>
+          <div class="rf-essential-desc">Kesilme ve aşınmaya dayanıklı kavrayıcı montaj eldiveni.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

@@ -158,109 +158,217 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Saint-Gobain Weber</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Saint-Gobain Weber</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
         <img src="assets/rf-brand-weber.jpg" alt="Saint-Gobain Weberkol Seramik Yapıştırıcısı" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Yetkili Ürün Merkezi</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Saint-Gobain Weber Yapı Kimyasalları & Harçlar</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Porselen seramik, büyük ebat granit yapıştırıcıları, suya dayanıklı flex derz dolguları ve yapısal beton tamir harçlarında dünya lideri Saint-Gobain Weber çözümleri depomuzda hazır.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/weber.svg" alt="Saint-Gobain Weber Logo" style="height: 32px; width: auto;" />
+            <span class="rf-card-tag" style="margin: 0;">Yetkili Ürün Merkezi</span>
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Saint-Gobain Weber Seramik Yapıştırıcıları & Harçlar
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Büyük ebatlı granit karolar, porselen seramikler, suya dayanıklı flex derz dolguları ve yapısal tamir harçlarında dünya lideri Saint-Gobain Weber çözümleri.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · Torbalı & Paletli Şantiye Sevkiyatı</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Harç & Ürün Tipi Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">Weberkol Flex Konfor (C2TE S1)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill active" data-size="Weberkol Flex Konfor (C2TE S1)">
+              Weberkol Flex Konfor
+              <span>60x120 Granit (25 kg)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Weberkol Standart">
+              Weberkol Standart
+              <span>İç Seramik (25 kg)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Weber.joint Flex Derz">
+              Weber.joint Flex Derz
+              <span>1-6 mm Su İtici (20 kg)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Weber.rep R4 Tamir Harcı">
+              Weber.rep R4 Tamir Harcı
+              <span>Yapısal Beton (25 kg)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Weber Derz Dolgu Renkleri:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Beyaz (0100)</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #FFFFFF;" data-color-name="Beyaz (0100)" data-color-code="0100" title="Beyaz (0100) (0100)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #D8D8D8;" data-color-name="Açık Gri (0110)" data-color-code="0110" title="Açık Gri (0110) (0110)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #8E8E93;" data-color-name="Koyu Gri (0120)" data-color-code="0120" title="Koyu Gri (0120) (0120)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #3A3A3C;" data-color-name="Antrasit (0130)" data-color-code="0130" title="Antrasit (0130) (0130)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #E5D8C5;" data-color-name="Bej (0200)" data-color-code="0200" title="Bej (0200) (0200)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #D2BBA0;" data-color-name="Bahama Bej (0210)" data-color-code="0210" title="Bahama Bej (0210) (0210)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Formatı</span>
-            <span class="rf-spec-val">25 kg Kraft Torba / 5 kg Poşet</span>
+            <span class="rf-spec-label">Ambalaj</span>
+            <span class="rf-spec-val">25 kg Kraft Torba / Palet</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Standart & Sınıf</span>
-            <span class="rf-spec-val">C2TE S1 / CG2 WA Yüksek Performans</span>
+            <span class="rf-spec-label">Sınıf</span>
+            <span class="rf-spec-val">C2TE S1 Yüksek Esneklik</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Kullanım Alanı</span>
-            <span class="rf-spec-val">İç & Dış Mekan, Islak Hacim, Cephe</span>
+            <span class="rf-spec-label">Sarfiyat</span>
+            <span class="rf-spec-val">4.5 - 5.5 kg / m² (10mm Tarak)</span>
           </div>
           <div class="rf-spec-item">
             <span class="rf-spec-label">Şantiye Sevkiyatı</span>
-            <span class="rf-spec-val">Paletli / Kamyonlu Adrese Teslim</span>
+            <span class="rf-spec-val">Balçova, Çeşme, Urla Aynı Gün</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Weberkol Flex & Seramik Yapıştırıcıları:</strong> Büyük ebatlı granit ve porselen karolar için kayma dirençli yüksek yapışma.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Weber Derz Dolguları (1-6 mm & Flex):</strong> Su itici, küf oluşumuna dirençli 24 farklı renk kartelası.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Weber.rep Yapısal Tamir Harçları:</strong> Tij delikleri, kolon/kiriş tamiri ve korozyon önleyici R3/R4 sınıfları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Weber.floor Kendiliğinden Yayılan Şap:</strong> Zemin kot farklarını sıfırlayan hızlı kuruyan tesviye şapları.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20Saint-Gobain%20Weber%20ürünleri%20ve%20toptan/perakende%20torba%20fiyatları%20hakkında%20bilgi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
-            WhatsApp ile Stok & Fiyat Sor →
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20Saint-Gobain%20Weber%20harç%20ve%20derz%20dolgusu%20siparişi%20vermek%20istiyorum.%0AÜrün:%20Weberkol%20Flex%20Konfor%20(25%20kg)%0ABalçova%20depodan%20güncel%20torba%20ve%20palet%20fiyatı%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+            WhatsApp ile Stok & Fiyat Sipariş Et →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. C2TE S1 Standartı & Büyük Ebat Granit Güvenliği</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Weberkol Flex Konfor, TS EN 12004 C2TE S1 sınıfında polimer katkılı harçtır. 60x120 ve 120x240 cm porselen granitlerin ısı değişimlerinden genleşip kırılmasını veya dikeyde kaymasını kesin olarak engeller.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Taraklı Mala Seçimi & Sarfiyat Hesabı</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              60x120 granitlerde mutlaka 10 mm veya 12 mm dişli taraklı çelik mala kullanılmalıdır. 1 torba (25 kg) Weberkol Flex Konfor ile ortalama 5 - 6 m² alan kaplanır. Çift taraflı yapıştırmada tüketim 6 kg/m² seviyesindedir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: Çift Taraflı Kelebek Tarama</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Geniş formatlı seramik uygulamasında harç hem şap zeminine düz çekilip taranmalı, hem de seramiğin arkasına ince bir kat sürülmelidir. Seviye tespit klipsi kullanılarak diş farkları sıfırlanmalıdır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. İzmir İçi Şantiye Lojistiği & Paletli İndirme</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Balçova depomuzdan tek torbadan tam kamyon palete kadar tüm sevkiyatlar damperli veya açık kasa araçlarımızla doğrudan şantiye adresinize indirilir.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Weberkol & Teknik Harç Grupları</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Büyük ebatlı porselen seramikler, granit, havuz içi kaplamalar ve dış cephe mekanik yapıştırmalarında sıfır hata sağlayan Weber ürünleri sürekli hazır stoktadır.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Weberkol Pro / Flex / Max S2 Esnek Seramik ve Granit Yapıştırıcıları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Weberjoint Silikonlu & Antibakteriyel İnce/Kalın Derz Dolguları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Weber Rep R4 / R3 Yapısal Beton Tamir Harçları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Weber Niv Akrilik Esaslı Kendiliğinden Yayılan Tesviye Şapları</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=Saint-Gobain%20Weber%20ürünleri%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          Weber Stok & Fiyat Sor (WhatsApp)
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Seramik & Harç Uygulama Ekipmanları</h2>
       </div>
-      <div style="aspect-ratio: 3/4; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-brand-weber.jpg" alt="Saint-Gobain Weber Ürünleri Balçova" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="10 mm Paslanmaz Taraklı Mala" />
+        </div>
+        <div>
+          <div class="rf-essential-title">10 mm Paslanmaz Taraklı Mala</div>
+          <div class="rf-essential-desc">Büyük ebat granitlerde standart diş derinliği sağlayan çelik mala.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="3D Seramik Seviye Takoz & Klipsi" />
+        </div>
+        <div>
+          <div class="rf-essential-title">3D Seramik Seviye Takoz & Klipsi</div>
+          <div class="rf-essential-desc">Karolar arasında tırnak ve kot farkını sıfırlayan montaj seti.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="M14 Harç Karıştırıcı Mikser Ucu" />
+        </div>
+        <div>
+          <div class="rf-essential-title">M14 Harç Karıştırıcı Mikser Ucu</div>
+          <div class="rf-essential-desc">Topaklanma yapmadan homojen harç karışımı hazırlayan çelik uç.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Kauçuk Tabanlı Derz Malası & Sünger" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Kauçuk Tabanlı Derz Malası & Sünger</div>
+          <div class="rf-essential-desc">Derz aralarını pürüzsüz doldurup seramiği çizmeyen sünger seti.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

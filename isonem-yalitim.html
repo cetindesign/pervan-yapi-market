@@ -158,109 +158,216 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / İsonem Yalıtım</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>İsonem Yalıtım</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
-        <img src="assets/rf-brand-isonem.jpg" alt="İsonem SB Super ve Teras Su Yalıtımı" />
+        <img src="assets/rf-brand-isonem.jpg" alt="İsonem SB Super Teras Yalıtımı" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Yetkili Yalıtım Bayisi</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">İsonem Yalıtım Teknolojileri & Sıvı Membran</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Açık teraslar, betonarme çatılar, temel perdeleri ve havuzlar için son teknoloji elastomerik sıvı yalıtım membranları ve şeffaf su izolasyon kaplamaları.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/isonem.svg" alt="İsonem Yalıtım Logo" style="height: 32px; width: auto;" />
+            <span class="rf-card-tag" style="margin: 0;">Yetkili Yalıtım Bayisi</span>
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            İsonem Su Yalıtım Teknolojileri & Sıvı Membran
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Açık teraslar, betonarme çatılar, temel perdeleri ve havuzlar için son teknoloji elastomerik sıvı yalıtım membranları ve şeffaf su izolasyon kaplamaları.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · SB Super & Liquid Glass Serileri</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Ürün & Kova Formatı Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">İsonem SB Super (20 kg Kova)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill active" data-size="İsonem SB Super (20 kg Kova)">
+              İsonem SB Super
+              <span>Standart Teras (20 m²)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="İsonem Liquid Glass (4 kg Set)">
+              İsonem Liquid Glass
+              <span>Fayans Üstü Şeffaf</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="İsonem M 53 (20 kg Torba)">
+              İsonem M 53
+              <span>Kristalize Harç</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="İsonem Thermal Paint (18 L)">
+              İsonem Thermal Paint
+              <span>Isı Yalıtım Boyası</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>SB Super Renk Seçenekleri:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Gri (Standart Teras)</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #9E9E9E;" data-color-name="Gri (Standart Teras)" data-color-code="Grey" title="Gri (Standart Teras) (Grey)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #F8F8F8;" data-color-name="Beyaz (UV Yansıtıcı)" data-color-code="White" title="Beyaz (UV Yansıtıcı) (White)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #B24C3D;" data-color-name="Kiremit Kırmızısı" data-color-code="Tile Red" title="Kiremit Kırmızısı (Tile Red)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #3D7048;" data-color-name="Yeşil (Çatı Kaplama)" data-color-code="Green" title="Yeşil (Çatı Kaplama) (Green)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #E0F2F1;" data-color-name="Şeffaf (Liquid Glass)" data-color-code="Clear" title="Şeffaf (Liquid Glass) (Clear)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Çeşitleri</span>
-            <span class="rf-spec-val">5 kg · 10 kg · 20 kg Plastik Kova</span>
+            <span class="rf-spec-label">Elastikiyet</span>
+            <span class="rf-spec-val">%300 - %600 Süper Esnek</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Sarfiyat & Kat Sayısı</span>
+            <span class="rf-spec-label">Sarfiyat</span>
             <span class="rf-spec-val">1.0 - 1.5 kg / m² (2-3 Kat)</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Elastikiyet Değeri</span>
-            <span class="rf-spec-val">%300 - %600 Süper Elastik</span>
+            <span class="rf-spec-label">Kürlenme</span>
+            <span class="rf-spec-val">48 Saat Sonra Tam Su Dayanımı</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Kürlenme & Su Testi</span>
-            <span class="rf-spec-val">48 Saat Sonra Tam Dayanım</span>
+            <span class="rf-spec-label">UV Direnci</span>
+            <span class="rf-spec-val">Güneş Işınlarına ve Dona %100 Dayanıklı</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">İsonem SB Super Hibrit Membran:</strong> Güneş UV ışınlarına açık teras ve çatılarda tek parça eksiz su geçirimsiz zırh.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Liquid Glass (Şeffaf Sıvı Cam):</strong> Fayansları kırmadan mevcut seramik üzerine uygulanan %100 su yalıtımı.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">M 53 Kristalize Su Geçirimsizlik Harcı:</strong> Negatif ve pozitif su basıncına karşı beton gözeneklerini tıkayan sistem.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Thermal Paint Isı Yalıtım Kaplaması:</strong> İç ve dış cephede ısı köprülerini ve yoğuşma küfünü engelleyen seramik kürecikli boya.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20İsonem%20su%20yalıtımı%20ürünleri%20ve%20teras%20izolasyon%20çözümleri%20hakkında%20bilgi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
-            WhatsApp ile Stok & Fiyat Sor →
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20İsonem%20su%20yalıtımı%20ürünleri%20siparişi%20vermek%20istiyorum.%0AÜrün:%20İsonem%20SB%20Super%20(20%20kg%20Kova)%0ABalçova%20depodan%20stok%20ve%20güncel%20kova%20fiyatı%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+            WhatsApp ile Stok & Fiyat Sipariş Et →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. İsonem SB Super Hibrit Membran Teknolojisi</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              SB Super, hibrit polimer bazlı olup uygulandığı açık teras ve çatılarda eksiz, birleşme noktası olmayan monolitik su geçirimsiz bir kauçuk tabaka oluşturur. Havuz, temel ve teraslarda en ağır su göllenmelerine dayanır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Fayans Kırmadan Liquid Glass Şeffaf Yalıtım</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Mevcut teras seramiklerini kırmadan, derz aralarından sızan suyu önlemek için Liquid Glass sürülür. Cam gibi şeffaftır, seramiklerin görüntüsünü bozmaz ve üzerinde yürünebilir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: Pah Bandı & Süzgeç Birleşimleri</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Teras su izolasyonunun en kritik noktası zemin-duvar birleşimleridir. Bu köşelere mutlaka İsonem Pah Bandı gömülmeli, ardından 3 kat çapraz sıvı membran sürülmelidir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Şantiye Su Sızdırmazlık Testi Protokolü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Uygulama tamamlandıktan 48 saat sonra giderler kapatılarak teras 24 saat su altında test edilir. Pervan Yapı işçilikli taahhütlerinde 5 yıl yazılı sızdırmazlık garantisi verilir.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Garantili İzolasyon Malzemeleri</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Su sızıntısı ve neme karşı kalıcı çözüm üreten İsonem polimerik membranlar, şeffaf teras yalıtımları ve elastik harçlar geniş stoklarımızda.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ İsonem SB Super Elastik Hibrit Membran</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ İsonem Liquid Glass Şeffaf Teras ve Fayans Yalıtımı</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Çift Komponentli Kristalize Sürme Su Yalıtım Harçları</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Poliüretan Mastik, Dilatasyon Bantları ve Fileler</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=İsonem%20yalıtım%20ürünleri%20için%20teknik%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          İsonem Teknik Danışmanına Sor
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Yalıtım Sırasında Gereken Ekipmanlar</h2>
       </div>
-      <div style="aspect-ratio: 3/4; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-brand-isonem.jpg" alt="İsonem Su Yalıtımı Balçova" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="İsonem Pah Bandı (10 m)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">İsonem Pah Bandı (10 m)</div>
+          <div class="rf-essential-desc">Duvar diplerinde su çatlaklarını önleyen elastik fileli bant.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Ağır Hizmet Yalıtım Rulosu" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Ağır Hizmet Yalıtım Rulosu</div>
+          <div class="rf-essential-desc">Likit membranları kalın ve eşit yayan solvente dayanıklı rulo.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="İsonem Anti-Slip Kaydırmaz Katkı" />
+        </div>
+        <div>
+          <div class="rf-essential-title">İsonem Anti-Slip Kaydırmaz Katkı</div>
+          <div class="rf-essential-desc">Islak teras zeminlerinde kaymayı engelleyen mikro kürecikler.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Köşe ve Gider Süzgeç Fitili" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Köşe ve Gider Süzgeç Fitili</div>
+          <div class="rf-essential-desc">Teras tahliye borularına tam oturan sızdırmazlık bileziği.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

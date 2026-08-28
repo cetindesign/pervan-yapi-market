@@ -158,109 +158,216 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Bayer K-Othrine</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Bayer K-Othrine</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
         <img src="assets/rf-brand-kothrine.jpg" alt="Bayer K-Othrine SC 50 Haşere İlacı" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Orijinal Çevre Sağlığı</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Bayer K-Othrine Haşere & Böcek Mücadele İlaçları</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Ev, villa, bahçe, şantiye ve siteler için Sağlık Bakanlığı onaylı orijinal Bayer K-Othrine SC 50, WG 250 ve Maxforce profesyonel mücadele ilaçları.</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/bayer.svg" alt="Bayer K-Othrine Logo" style="height: 32px; width: auto;" />
+            <span class="rf-card-tag" style="margin: 0;">Orijinal Çevre Sağlığı</span>
+          </div>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Bayer K-Othrine Haşere & Böcek Mücadele İlaçları
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Ev, villa, bahçe, şantiye ve siteler için Sağlık Bakanlığı onaylı orijinal Bayer K-Othrine SC 50, WG 250 ve Maxforce profesyonel mücadele ilaçları.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Merkez Depomuzda Stokta Hazır · %100 Orijinal Bayer Garantisi</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Ambalaj & Format Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">K-Othrine SC 50 (50 ml Şişe)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill" data-size="K-Othrine SC 50 (50 ml Şişe)">
+              K-Othrine SC 50
+              <span>Daire İçi (5 L Su)</span>
+            </button>
+            <button type="button" class="rf-size-pill active" data-size="K-Othrine SC 50 (500 ml Şişe)">
+              K-Othrine SC 50
+              <span>Site & Bahçe (50 L Su)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="K-Othrine SC 50 (1000 ml Şişe)">
+              K-Othrine SC 50
+              <span>Profesyonel (100 L Su)</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Bayer Maxforce Jel (20 gr)">
+              Bayer Maxforce Jel
+              <span>Hamamböceği Jeli</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Hedef Zararlı Türü:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Hamamböceği & Kalorifer Böceği</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #4E342E;" data-color-name="Hamamböceği & Kalorifer Böceği" data-color-code="Roach" title="Hamamböceği & Kalorifer Böceği (Roach)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #37474F;" data-color-name="Sivrisinek & Karasinek" data-color-code="Fly" title="Sivrisinek & Karasinek (Fly)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #D84315;" data-color-name="Akrep & Çıyan (Ege Bölgesi)" data-color-code="Scorpion" title="Akrep & Çıyan (Ege Bölgesi) (Scorpion)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #616161;" data-color-name="Karınca & Gümüşböceği" data-color-code="Ant" title="Karınca & Gümüşböceği (Ant)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #8D6E63;" data-color-name="Kene & Pire (Bahçe İlaçlama)" data-color-code="Tick" title="Kene & Pire (Bahçe İlaçlama) (Tick)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Boyutları</span>
-            <span class="rf-spec-val">50 ml · 500 ml · 1000 ml Şişe</span>
-          </div>
-          <div class="rf-spec-item">
             <span class="rf-spec-label">Etken Madde</span>
             <span class="rf-spec-val">Deltamethrin (Orijinal Bayer Formülü)</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Etki Süresi</span>
-            <span class="rf-spec-val">Kapalı Alanda 90 Güne Kadar Kalıcı</span>
+            <span class="rf-spec-label">Kalıcılık</span>
+            <span class="rf-spec-val">Kapalı Alanda 90 Güne Kadar Etkili</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Kullanım</span>
-            <span class="rf-spec-val">Karasinek, Sivrisinek, Hamamböceği, Akrep</span>
+            <span class="rf-spec-label">Formülasyon</span>
+            <span class="rf-spec-val">Süspansiyon Konsantre (Leke & Koku Yapmaz)</span>
+          </div>
+          <div class="rf-spec-item">
+            <span class="rf-spec-label">Ruhsat</span>
+            <span class="rf-spec-val">T.C. Sağlık Bakanlığı Onaylı</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">K-Othrine SC 50 Süspansiyon Konsantre:</strong> Leke ve koku yapmayan, su ile seyreltilerek uygulanan geniş spektrumlu konsantre.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">K-Othrine WG 250 Suda Çözünen Granül:</strong> Gözenekli beton ve tuğla yüzeylerde maksimum kalıcılık sağlayan granül formül.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Bayer Maxforce Hamamböceği & Karınca Jeli:</strong> Yuva içine taşınarak koloniyi tamamen yok eden domino etkili profesyonel jel.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Basınçlı İlaçlama Pompaları & Ekipman:</strong> 1.5L - 5L - 8L manuel ve şarjlı ilaçlama pompaları stoktan teslim.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20Bayer%20K-Othrine%20haşere%20ilaçları%20ve%20uygulama%20dozu%20hakkında%20bilgi%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
-            WhatsApp ile Stok & Fiyat Sor →
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20Bayer%20K-Othrine%20haşere%20ilacı%20siparişi%20vermek%20istiyorum.%0AAmbalaj:%20K-Othrine%20SC%2050%20(500%20ml%20Şişe)%0ABalçova%20mağazanızdan%20teslim%20veya%20aynı%20gün%20kargo%20için%20bilgi%20alabilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+            WhatsApp ile Stok & Fiyat Sipariş Et →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. Orijinal Bayer Formülü & Geniş Spektrum</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              K-Othrine SC 50, temas ve sindirim yoluyla haşerelerin sinir sistemini bloke eden Deltamethrin etken maddesi içerir. Su ile seyreltildiğinde duvarda leke bırakmaz, insan ve evcil hayvan sağlığına uygun güvenlik standartlarındadır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Doğru Dozajlama & Seyreltme Tablosu</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Yürüyen haşereler (hamamböceği, akrep) için 50 ml K-Othrine 5 litre temiz su ile seyreltilir. Uçan haşereler (sivrisinek, karasinek) için 50 ml ilaç 10 litre su ile seyreltilerek basınçlı pompayla süpürgeliklere sıkılır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: İlaçlama Püf Noktaları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              İlaçlama sonrasında alan 30 dakika kapalı tutulup 1 saat havalandırılmalıdır. İlacın sıkıldığı süpürgelik dipleri 2 hafta boyunca ıslak paspasla silinmemelidir; ilaç yüzeyde kristalleşerek 90 gün boyunca gelen her böceği yok eder.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Maxforce Hamamböceği Jeli Domino Etkisi</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Mutfak dolapları, priz arkaları ve beyaz eşya motorlarına mercimek büyüklüğünde damlatılan Maxforce jel, yuvaya taşınarak tüm koloniyi yok eden domino etkisine sahiptir.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Orijinal Bayer Güvencesi & Uzun Süreli Koruma</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          İzmir'in yaz aylarında ve bahçeli konutlarda sık yaşanan hamamböceği, sivrisinek, kene ve pire problemlerine karşı kokusuz, leke bırakmayan profesyonel formülasyonlar.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ K-Othrine SC 50 Süspansiyon Konsantre (50ml / 500ml / 1L)</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ K-Othrine WG 250 Suda Eriyen Granül Formülasyon</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Maxforce IC Hamamböceği & Karınca Jel Yemleri</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Basınçlı İlaçlama Pompaları ve Koruyucu Ekipmanlar</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=Bayer%20K-Othrine%20haşere%20ilacı%20hakkında%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          Bayer İlaç Stoğu & Fiyat Sor
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">İlaçlama Sırasında Gereken Ekipmanlar</h2>
       </div>
-      <div style="aspect-ratio: 3/4; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-brand-kothrine.jpg" alt="Bayer K-Othrine Balçova İlaç Stoğu" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Basınçlı İlaçlama Pompası (5 L)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Basınçlı İlaçlama Pompası (5 L)</div>
+          <div class="rf-essential-desc">Pirinç nozullu, ayarlanabilir püskürtme özellikli ilaçlama pompası.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Nitril İlaçlama Eldiveni (Kimyasal)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Nitril İlaçlama Eldiveni (Kimyasal)</div>
+          <div class="rf-essential-desc">İlaç hazırlama sırasında cildi tam koruyan dayanıklı eldiven.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="FFP2 Karbon Filtreli Toz/Buhar Maskesi" />
+        </div>
+        <div>
+          <div class="rf-essential-title">FFP2 Karbon Filtreli Toz/Buhar Maskesi</div>
+          <div class="rf-essential-desc">Püskürtme anında solunum yollarını koruyan profesyonel maske.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Hassas Dereceli Ölçek Kabı (100 ml)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Hassas Dereceli Ölçek Kabı (100 ml)</div>
+          <div class="rf-essential-desc">Mililitre hesabıyla doğru su-ilaç karışımı sağlayan ölçek.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">

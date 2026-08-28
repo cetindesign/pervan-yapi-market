@@ -163,109 +163,212 @@
 </div>
 
 <main>
-<!-- REFORM SUBPAGE HERO WITH BREADCRUMB & ORDERING -->
-<section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
+<!-- REFORM PRODUCT DETAIL HERO & CONFIGURATOR -->
+<section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
   <div class="rf-wrapper">
     
     <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <a href="malzemeler.html">Malzemeler / Kaba Yapı & Harç</a>
+      <a href="malzemeler.html">Malzemeler</a>
+      <span class="sep">/</span>
+      <span>Kaba Yapı & Çimento</span>
     </div>
 
-    <!-- Responsive Split -->
+    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
     <div class="rf-subpage-split">
       
-      <!-- Media Box (ordered first on mobile) -->
+      <!-- Media Box -->
       <div class="rf-subpage-media">
-        <img src="assets/rf-card-cement.jpg" alt="Çimento, Alçı ve Kaba Yapı Malzemeleri" />
+        <img src="assets/rf-card-cement.jpg" alt="Torbalı Çimento ve Kaba Yapı Malzemeleri" />
       </div>
 
-      <!-- Content Box -->
+      <!-- Content & Configurator Box -->
       <div class="rf-subpage-content">
         <div>
-          <div class="rf-card-tag" style="margin-bottom: 8px;">Temel İnşaat Malzemeleri</div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">Kaba Yapı, Çimento, Alçı & Şantiye Malzemeleri</h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">Balçova ve İzmir genelindeki şantiyelerinize torbalı çimento, kireç, sıva ve kartonpiyer alçıları, gazbeton ve örgü harçlarını araçlı kapıya teslim ediyoruz.</p>
+          <span class="rf-card-tag" style="margin-bottom: 8px;">Temel İnşaat Malzemeleri</span>
+          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+            Kaba Yapı, Torbalı Çimento, Alçı & Harçlar
+          </h1>
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            İzmir Balçova ve çevre ilçelerdeki şantiyelerinize torbalı Portland çimento, kireç, sıva/saten alçıları ve gazbeton yapıştırıcılarını araçlı kapıya teslim ediyoruz.
+          </p>
+        </div>
+
+        <!-- Live Stock Bar -->
+        <div class="rf-stock-bar">
+          <span class="rf-stock-dot"></span>
+          <span>Balçova Depomuzda Stokta Hazır · Açık Kasa Damperli Araçla Şantiye Teslim</span>
+        </div>
+
+        <!-- Size Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Malzeme & Torba Tipi Seçin:</span>
+            <span class="rf-config-selected" id="rfSelectedSizeLabel">Portland Gri Çimento (CEM I / CEM II)</span>
+          </div>
+          <div class="rf-size-pills">
+            <button type="button" class="rf-size-pill active" data-size="Portland Gri Çimento (CEM I / CEM II)">
+              Portland Gri Çimento
+              <span>25 kg / 50 kg Torba</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Sıva & Saten Alçısı (Rigips/Knauf)">
+              Sıva & Saten Alçısı
+              <span>30 kg Torba</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Elenmiş Torbalı Şap Kumu">
+              Elenmiş Torbalı Şap Kumu
+              <span>40 kg Çuval</span>
+            </button>
+            <button type="button" class="rf-size-pill" data-size="Gazbeton & Ytong Yapıştırıcısı">
+              Gazbeton & Ytong Yapıştırıcısı
+              <span>25 kg Torba</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Color / Target Swatch Configurator -->
+        <div class="rf-config-group">
+          <div class="rf-config-label">
+            <span>Şantiye Teslimat Bölgesi:</span>
+            <span class="rf-config-selected" id="rfSelectedColorLabel">Balçova & Narlıdere (Aynı Gün)</span>
+          </div>
+          <div class="rf-swatch-grid">
+            <button type="button" class="rf-swatch-btn active" style="background-color: #333333;" data-color-name="Balçova & Narlıdere (Aynı Gün)" data-color-code="Balcova" title="Balçova & Narlıdere (Aynı Gün) (Balcova)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #555555;" data-color-name="Güzelbahçe & Urla" data-color-code="Urla" title="Güzelbahçe & Urla (Urla)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #777777;" data-color-name="Çeşme & Alaçatı Şantiyeleri" data-color-code="Cesme" title="Çeşme & Alaçatı Şantiyeleri (Cesme)"></button>
+            <button type="button" class="rf-swatch-btn" style="background-color: #999999;" data-color-name="Konak & Karabağlar" data-color-code="Konak" title="Konak & Karabağlar (Konak)"></button>
+          </div>
         </div>
 
         <!-- Commercial Specs Table -->
         <div class="rf-spec-grid">
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Ambalaj Çeşitleri</span>
-            <span class="rf-spec-val">25 kg · 40 kg · 50 kg Torbalı</span>
+            <span class="rf-spec-label">Ambalaj</span>
+            <span class="rf-spec-val">25 kg · 40 kg · 50 kg Torbalı / Palet</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Sevkiyat Türü</span>
-            <span class="rf-spec-val">Kamyonet / Açık Kasa Damperli</span>
+            <span class="rf-spec-label">Standart</span>
+            <span class="rf-spec-val">TS EN 197-1 Yüksek Dayanım</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Hizmet Bölgesi</span>
-            <span class="rf-spec-val">Balçova, Narlıdere, Güzelbahçe, Konak</span>
+            <span class="rf-spec-label">Sevkiyat</span>
+            <span class="rf-spec-val">Kamyonet & Damperli Araç</span>
           </div>
           <div class="rf-spec-item">
-            <span class="rf-spec-label">Şantiye İndirme</span>
+            <span class="rf-spec-label">Şantiye Hizmeti</span>
             <span class="rf-spec-val">Kat İndirme & Vinçli Şantiye Teslim</span>
           </div>
         </div>
 
-        <!-- Bullet Highlights -->
-        <ul style="list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--text-muted); line-height: 1.55;">
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Gri & Beyaz Portland Çimento:</strong> Yüksek erken dayanımlı CEM I / CEM II standart torbalı çimentolar.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Alçı Grubu (Sıva, Saten, Derz Dolgu):</strong> Knauf, Rigips ve ABS marka yüksek örtücülü birinci sınıf alçılar.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Kum, Çakıl & Torbalı Hazır Harçlar:</strong> Şantiye içi temiz, elenmiş kum, perlitli sıvalar ve şap harçları.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="color: var(--text-main); font-weight: 700;">Gazbeton, Tuğla & Ytong Yapıştırıcıları:</strong> Standart ebatlarda gazbeton bloklar ve yüksek yapışma harçları.
-          </li>
-        </ul>
-
         <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://wa.me/902322784340?text=Merhaba%20kaba%20yapı%20malzemeleri%20ve%20şantiyeye%20torbalı%20çimento/alçı%20sevkiyatı%20için%20fiyat%20almak%20istiyorum." class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 220px; text-align: center;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="https://wa.me/902322784340?text=Merhaba%20kaba%20yapı%20malzemeleri%20ve%20torbalı%20çimento/alçı%20siparişi%20vermek%20istiyorum.%0AÜrün:%20Portland%20Gri%20Çimento%20(CEM%20I)%0AŞantiye%20teslimatı%20için%20fiyat%20ve%20araç%20müsaitliği%20öğrenebilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
             WhatsApp ile Stok & Fiyat Sor →
           </a>
           <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Hemen Ara
+            0232 278 43 40
           </a>
         </div>
+
+        <!-- Reform Minimalist Accordions -->
+        <div class="rf-acc-group">
+          <div class="rf-acc-item active">
+            <button type="button" class="rf-acc-header">
+              <span>01. Portland Çimento & Erken Dayanım Özellikleri</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Depomuzda bulunan taze CEM I 42.5 R ve CEM II 32.5 R standart torbalı çimentolar, şantiyelerinizde kalıp söküm süresini kısaltan yüksek erken mukavemet sağlar. Rutubetsiz kuru kapalı depoda muhafaza edilir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>02. Alçı Grubu (Sıva, Saten, Derz Dolgu & Kartonpiyer)</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Rigips, Knauf ve ABS marka torbalı alçılar; pürüzsüz yüzey oluşturma, çatlama yapmama ve kolay perdahlanma özellikleriyle iç mekan duvar imalatlarında ustaların 1 numaralı tercihidir.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>03. Usta Tavsiyesi: Harç Karışım Oranları</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Şap ve sıva harçlarında kum-çimento oranı 3:1 veya 4:1 kuralına göre ayarlanmalıdır. Karışım suyu temiz olmalı, harç 5 dakika dinlendirildikten sonra mastarlanmalıdır.
+            </div>
+          </div>
+          <div class="rf-acc-item">
+            <button type="button" class="rf-acc-header">
+              <span>04. Araçlı Şantiye Sevkiyatı & Vinçli İndirme Protokolü</span>
+              <span class="rf-acc-icon">+</span>
+            </button>
+            <div class="rf-acc-body">
+              Şantiyenizin dar sokak veya eğimli arazi durumuna göre uygun ebatta kamyonet sevk edilir. Talep doğrultusunda kata indirme veya vinçli palet boşaltma hizmeti sağlanır.
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
 </section>
 
-<section style="padding: 80px 0; border-bottom: 1px solid var(--border-light);">
+<!-- REFORM COMPLEMENTARY ESSENTIALS -->
+<section class="rf-essentials-section">
   <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;">
+    <div class="rf-simple-header" style="margin-bottom: 32px;">
       <div>
-        <h2 style="font-size: 28px; margin-bottom: 20px;">Sürekli Hazır Ağır Malzeme Stoğu</h2>
-        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
-          Balçova depomuzda daima taze ve standartlara uygun çimento, kum ve alçı ürünleri bulunduruyoruz. İster dükkandan birkaç torba alın, ister şantiyenize kamyonetle araçlı indirme talep edin.
-        </p>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Torbalı Gri Çimento (CEM I / CEM II) & Beyaz Çimento</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Yıkanmış Sıva Kumu, Şap Kumu & Mozaik Taşı</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Saten Perdah Alçısı, Sıva Alçısı & Kartonpiyer Alçısı</li>
-          <li style="display: flex; gap: 10px; font-weight: 500;">✓ Gazbeton Yapıştırıcıları & Sönmüş Toz Kireç</li>
-        </ul>
-        <a href="https://wa.me/902322784340?text=Kaba%20inşaat%20ve%20çimento%20fiyatları%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="rf-site-btn primary">
-          WhatsApp ile Hızlı Fiyat / Sevkiyat Sor
-        </a>
+        <span class="rf-card-tag" style="margin-bottom: 6px;">Tamamlayıcı Ekipmanlar</span>
+        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin: 0;">Kaba Yapı Sırasında Gereken El Aletleri</h2>
       </div>
-      <div style="aspect-ratio: 4/3; background: #EEE; overflow: hidden; border: 1px solid var(--border-light);">
-        <img src="assets/rf-card-cement.jpg" alt="Kaba Yapı Çimento ve Kum" style="width: 100%; height: 100%; object-fit: cover;" />
+      <a href="el-aletleri.html" class="rf-header-link">Tüm Hırdavatı Gör →</a>
+    </div>
+
+    <div class="rf-essentials-grid">
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Alüminyum Sıva Mastarı (2.5 m)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Alüminyum Sıva Mastarı (2.5 m)</div>
+          <div class="rf-essential-desc">Zemin şapı ve duvar sıvasında pürüzsüz düzlem sağlayan mastar.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Paslanmaz Çelik Sıva Malası" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Paslanmaz Çelik Sıva Malası</div>
+          <div class="rf-essential-desc">Harç çekme ve perdah işlemlerinde esnek yay çeliği mala.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Ağır Hizmet İnşaat Küreği & Kazma" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Ağır Hizmet İnşaat Küreği & Kazma</div>
+          <div class="rf-essential-desc">Harç karma ve hafriyat işlemlerinde dayanıklı dövme çelik.</div>
+        </div>
+      </div>
+      <div class="rf-essential-card">
+        <div class="rf-essential-media">
+          <img src="assets/rf-card-tools.jpg" alt="Kalın Plastik Harç Teknesi (60 L)" />
+        </div>
+        <div>
+          <div class="rf-essential-title">Kalın Plastik Harç Teknesi (60 L)</div>
+          <div class="rf-essential-desc">Harç ve kireç karma için kırılmaz polietilen şantiye teknesi.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 <!-- REFORM FOOTER -->
 <footer class="rf-footer">
