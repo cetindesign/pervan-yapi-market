@@ -238,5 +238,74 @@
         if (range) updateSlider(range.value);
       }, 100);
     });
+
+    // 7. Interactive Filli Boya Paint Estimator
+    var calcBtns = document.querySelectorAll(".rf-calc-btn");
+    var resWall = document.getElementById("rfResWall");
+    var resCeil = document.getElementById("rfResCeil");
+    var resPrimer = document.getElementById("rfResPrimer");
+    var resTools = document.getElementById("rfResTools");
+    var calcWaBtn = document.getElementById("rfCalcWaBtn");
+
+    var calcData = {
+      "1plus1": {
+        name: "1+1 Daire (50 - 70 m²)",
+        wall: "7.5 Litre (1 Kova)",
+        ceil: "3.5 Litre Tavan Boyası",
+        primer: "5 Litre Silikonlu Astar",
+        tools: "1 Saten Rulo + 2 Maskeleme Bandı + 1 Koruma Örtüsü"
+      },
+      "2plus1": {
+        name: "2+1 Daire (80 - 100 m²)",
+        wall: "15 Litre (1 Büyük Kova)",
+        ceil: "7.5 Litre Tavan Boyası",
+        primer: "10 Litre Silikonlu Astar",
+        tools: "2 Saten Rulo + 3 Maskeleme Bandı + 2 Koruma Örtüsü"
+      },
+      "3plus1": {
+        name: "3+1 Daire (110 - 140 m²)",
+        wall: "15 L + 2.5 L (2 Kova)",
+        ceil: "10 Litre Tavan Boyası",
+        primer: "15 Litre Silikonlu Astar",
+        tools: "2 Saten Rulo + 1 Kestirme + 4 Bant + 3 Örtü"
+      },
+      "villa": {
+        name: "Villa / Geniş Alan (180+ m²)",
+        wall: "15 L x 2 Kova (30 Litre)",
+        ceil: "15 Litre Tavan Boyası",
+        primer: "20 Litre Silikonlu Astar",
+        tools: "3 Saten Rulo + 2 Kestirme + 6 Bant + 4 Örtü"
+      }
+    };
+
+    var currentCalcKey = "2plus1";
+
+    function updateCalcOutput(key) {
+      var d = calcData[key];
+      if (!d) return;
+      if (resWall) resWall.innerText = d.wall;
+      if (resCeil) resCeil.innerText = d.ceil;
+      if (resPrimer) resPrimer.innerText = d.primer;
+      if (resTools) resTools.innerText = d.tools;
+      if (calcWaBtn) {
+        var msg = "Merhaba Pervan Yapı Filli Boya hesaplama reçetesi siparişi vermek istiyorum:\n" +
+                  "Alan Tipi: " + d.name + "\n" +
+                  "İç Cephe Boyası: " + d.wall + "\n" +
+                  "Tavan Boyası: " + d.ceil + "\n" +
+                  "Astar İhtiyacı: " + d.primer + "\n" +
+                  "Sarf Malzemeler: " + d.tools + "\n" +
+                  "Balçova mağazanızdan güncel paket fiyatı ve stok öğrenebilir miyim?";
+        calcWaBtn.href = "https://wa.me/902322784340?text=" + encodeURIComponent(msg);
+      }
+    }
+
+    calcBtns.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        calcBtns.forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var key = btn.getAttribute("data-calc-key");
+        updateCalcOutput(key);
+      });
+    });
   });
 })();

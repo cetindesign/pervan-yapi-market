@@ -2072,3 +2072,126 @@ img, svg {
     aspect-ratio: 4/3;
   }
 }
+
+
+/* ==========================================================================
+   19. REFORM CPH FILLI BOYA SUB-WORLDS & INTERACTIVE PAINT CALCULATOR
+   ========================================================================== */
+/* Segment Sub-Navigation Bar */
+.rf-subnav-bar {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 40px;
+}
+
+.rf-subnav-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  white-space: nowrap;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-subnav-link:hover, .rf-subnav-link.active {
+  background: var(--bg-black);
+  color: #FFFFFF;
+  border-color: var(--bg-black);
+}
+
+/* Paint Estimator Card */
+.rf-calculator-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  padding: 40px;
+  margin: 64px 0;
+}
+
+.rf-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rf-calc-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.rf-calc-btn {
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-calc-btn.active {
+  border-color: var(--text-main);
+  background: var(--bg-black);
+  color: #FFFFFF;
+}
+
+.rf-calc-btn-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.rf-calc-btn-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.rf-calc-btn.active .rf-calc-btn-sub {
+  color: #AAA;
+}
+
+.rf-calc-output-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rf-calc-res-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+}
+
+.rf-calc-res-val {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 860px) {
+  .rf-calc-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .rf-calc-options {
+    grid-template-columns: 1fr;
+  }
+  .rf-calculator-card {
+    padding: 24px 16px;
+  }
+}
