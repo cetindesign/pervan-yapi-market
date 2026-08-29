@@ -2329,3 +2329,176 @@ img, svg {
     flex-shrink: 0;
   }
 }
+
+
+/* ==========================================================================
+   21. REFORM PRESTIGE MATRIX (HOME PAGE PARTNERSHIP & TRUST SPLIT)
+   ========================================================================== */
+.rf-prestige-section {
+  padding: 80px 0 96px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-prestige-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.rf-prestige-manifesto {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-prestige-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.rf-prestige-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.rf-prestige-desc {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.rf-prestige-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 20px;
+}
+
+.rf-prestige-feat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.rf-prestige-feat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  flex-shrink: 0;
+}
+
+.rf-prestige-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.rf-prestige-tile {
+  background: #FAFAFA;
+  border: 1px solid var(--border-light);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 132px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+
+.rf-prestige-tile:hover {
+  background: #FFFFFF;
+  border-color: var(--text-main);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+}
+
+.rf-prestige-tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rf-prestige-logo {
+  height: 30px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.rf-prestige-badge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  background: #EFEFEF;
+  padding: 3px 6px;
+}
+
+.rf-prestige-tile:hover .rf-prestige-badge {
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+.rf-prestige-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.rf-prestige-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.rf-prestige-link {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--accent-terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 1024px) {
+  .rf-prestige-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rf-prestige-section {
+    padding: 56px 0 64px;
+  }
+  .rf-prestige-mosaic {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
