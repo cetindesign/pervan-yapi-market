@@ -2872,3 +2872,84 @@ img, svg {
     gap: 32px;
   }
 }
+
+
+/* ==========================================================================
+   24. REFORM CPH 1:1 YETKİLİ BAYİLİKLER BRAND CARDS WITH OFFICIAL LOGOS
+   ========================================================================== */
+.rf-brand-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-brand-media-wrap {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.rf-brand-media-wrap img.rf-brand-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-brand-card:hover .rf-brand-media-wrap img.rf-brand-photo {
+  transform: scale(1.04);
+}
+
+.rf-brand-logo-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.rf-brand-logo-badge img {
+  height: 22px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.rf-brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-brand-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-brand-card:hover .rf-brand-title {
+  color: var(--accent-terracotta);
+}
+
+.rf-brand-role {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
