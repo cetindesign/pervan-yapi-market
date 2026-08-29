@@ -2598,3 +2598,277 @@ img, svg {
     gap: 40px;
   }
 }
+
+
+/* ==========================================================================
+   23. REFORM CPH 1:1 EXACT HOMEPAGE EXPERIENCE & COMPONENTS
+   ========================================================================== */
+
+/* Reform Action Banner (Let's bring your vision to life) */
+.rf-action-banner {
+  padding: 48px 0 56px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-action-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.rf-action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 36px;
+}
+
+.rf-action-link-item {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--text-main);
+  padding-bottom: 3px;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-action-link-item:hover {
+  color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* Reform Collections Rail (View all + 4-Column Fluid Grid) */
+.rf-collections-section {
+  padding: 64px 0 80px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.rf-collections-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.rf-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rf-collection-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-collection-img-wrap {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.rf-collection-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-collection-item:hover .rf-collection-img-wrap img {
+  transform: scale(1.04);
+}
+
+.rf-collection-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-collection-item:hover .rf-collection-name {
+  color: var(--accent-terracotta);
+}
+
+.rf-collection-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Reform Interactive Tool Strip (Outline / Estimator Strip) */
+.rf-tool-strip {
+  padding: 48px 0;
+  background: #F5F4F0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-tool-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rf-tool-text {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.rf-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: var(--bg-black);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s var(--ease);
+}
+
+.rf-tool-btn:hover {
+  background: var(--accent-terracotta);
+}
+
+/* Reform Showrooms 2-Col Track */
+.rf-showrooms-track-section {
+  padding: 64px 0 80px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-showrooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.rf-showroom-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-showroom-img-wrap {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.rf-showroom-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-showroom-item:hover .rf-showroom-img-wrap img {
+  transform: scale(1.035);
+}
+
+.rf-showroom-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-showroom-item:hover .rf-showroom-name {
+  color: var(--accent-terracotta);
+}
+
+.rf-showroom-action {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+/* Reform Process Teaser Strip (How it works, from idea to installation) */
+.rf-process-strip {
+  padding: 56px 0;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.rf-process-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.rf-process-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .rf-collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rf-collections-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin: 0 -20px;
+    padding: 0 20px 12px;
+  }
+  .rf-collection-item {
+    min-width: 240px;
+    max-width: 240px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .rf-showrooms-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
