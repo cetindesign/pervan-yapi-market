@@ -204,77 +204,115 @@
 </div>
 
 <main>
-<!-- REFORM DUAL-LOCATION OVERVIEW HUB -->
-<section class="rf-subpage-section" style="padding: 48px 0 32px; background: var(--bg-white); border-bottom: 1px solid var(--border-light);">
+<!-- REFORM CPH 1:1 BORDERLESS LOCATIONS OVERVIEW -->
+<section class="rf-subpage-section" style="padding: 40px 0 80px; background: var(--bg-white);">
   <div class="rf-wrapper">
+    
+    <!-- Breadcrumb -->
     <div class="rf-breadcrumb">
       <a href="index.html">Ana Sayfa</a>
       <span class="sep">/</span>
-      <span>Merkezlerimiz & Lojistik Ağımız</span>
+      <span>Merkezlerimiz</span>
     </div>
-    <span class="rf-card-tag" style="margin-bottom: 8px;">2 Stratejik Merkez · 28 Yıllık Bölge Güvencesi</span>
-    <h1 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">
-      Merkezlerimiz & Lojistik Ağımız
-    </h1>
-    <p style="font-size: 16px; color: var(--text-muted); max-width: 760px; line-height: 1.6;">
-      İzmir metropolü ve Çeşme-Urla yarımadasındaki tüm malzeme tedariki ve mimari taahhüt projelerinizi Balçova Showroomumuz ve Urla Ana Lojistik Depomuz ile kesintisiz yönetiyoruz.
-    </p>
-  </div>
-</section>
 
-<!-- 2 DEDICATED LOCATION BLOCKS -->
-<section style="padding: 64px 0 80px; background: var(--bg-offwhite);">
-  <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;">
+    <!-- Header -->
+    <div style="margin-bottom: 48px;">
+      <span class="rf-card-tag" style="margin-bottom: 8px;">2 Stratejik Merkez</span>
+      <h1 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; color: var(--text-main);">
+        Merkezlerimiz & Lojistik Ağımız
+      </h1>
+      <p style="font-size: 15.5px; color: var(--text-muted); max-width: 720px; line-height: 1.6;">
+        Balçova perakende showroomumuz ve Urla ana lojistik depomuzla tüm İzmir ve yarımadaya malzeme tedariki ve şantiye sevkiyatı sağlıyoruz.
+      </p>
+    </div>
+
+    <!-- 2 Pure Editorial Columns (Zero Container Boxes, Zero Drop Shadows) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px;">
       
-      <!-- Card 01: Balçova -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-showroom-desk.jpg" alt="Balçova Showroom" style="width: 100%; height: 100%; object-fit: cover;" />
+      <!-- Location 01: Balçova -->
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 12px;">
+          01 / BALÇOVA SHOWROOM
         </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span class="rf-card-tag" style="margin: 0; background: var(--bg-black); color: #FFF;">Merkez 01</span>
-              <span class="rf-card-tag" style="margin: 0;">Perakende & Renk Laboratuvarı</span>
-            </div>
-            <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">Balçova Showroom & Renk Merkezi</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Filli Boya Ana Bayi, bilgisayarlı RenXMatik ünitesi, Bianca Stella dönüşüm boyaları ve banyo vitrifiyeleri perakende merkezimiz.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 600; line-height: 1.6;">
-              📍 Eğitim Mah. Dalya 1 Sk. No:5/A Balçova<br/>
-              ⏰ Haftanın 7 Günü Açık (08:30 – 19:30)
-            </div>
+        
+        <div style="aspect-ratio: 16/10; overflow: hidden; background: #F8F8F7; border: 1px solid var(--border-light); margin-bottom: 20px;">
+          <img src="assets/rf-showroom-desk.jpg" alt="Balçova Showroom ve Renk Laboratuvarı" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease);" />
+        </div>
+
+        <h2 style="font-size: 22px; font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 8px;">
+          Balçova Showroom & Renk Laboratuvarı
+        </h2>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 20px;">
+          Perakende satış, Filli Boya RenXMatik bilgisayarlı renk laboratuvarı, Bianca Stella dönüşüm boyaları ve banyo vitrifiye teşhir alanı.
+        </p>
+
+        <!-- Hairline Specs -->
+        <div style="border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 14px 0; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Adres:</span>
+            <span style="font-weight: 600; color: var(--text-main);">Eğitim Mah. Dalya 1 Sk. No:5/A Balçova</span>
           </div>
-          <a href="balcova-showroom.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Balçova Showroom Detayları →
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Çalışma Saatleri:</span>
+            <span style="font-weight: 600; color: var(--accent-green);">Pzt – Paz (08:30 – 19:30)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Telefon:</span>
+            <span style="font-weight: 600; color: var(--text-main);">0232 278 43 40</span>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <a href="balcova-showroom.html" style="font-family: var(--font-display); font-size: 13px; font-weight: 800; color: var(--text-main); text-decoration: none;">
+            Showroom Detayları →
+          </a>
+          <a href="https://maps.app.goo.gl/kzQmwcW6uG4f1mGN6" target="_blank" rel="noopener" style="font-size: 13px; color: var(--text-muted); text-decoration: none;">
+            Google Haritalar'da Aç ↗
           </a>
         </div>
       </div>
 
-      <!-- Card 02: Urla -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-urla-depot.jpg" alt="Urla Ana Lojistik Deposu" style="width: 100%; height: 100%; object-fit: cover;" />
+      <!-- Location 02: Urla -->
+      <div style="display: flex; flex-direction: column;">
+        <div style="font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 12px;">
+          02 / URLA ANA DEPO
         </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span class="rf-card-tag" style="margin: 0; background: var(--accent-terracotta); color: #FFF;">Merkez 02</span>
-              <span class="rf-card-tag" style="margin: 0;">Ana Lojistik & Kaba Yapı</span>
-            </div>
-            <h2 style="font-size: 24px; font-weight: 800; color: var(--text-main); margin-bottom: 10px;">Urla Ana Lojistik & Kaba Yapı Deposu</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Büyük çaplı kaba yapı malzemeleri, torbalı çimento, alçı, kum, paletli Weber harçları ve Çeşme-Urla şantiye araç filosu dağıtım merkezimiz.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 600; line-height: 1.6;">
-              📍 Urla, Çeşme, Alaçatı, Güzelbahçe Dağıtım Aksı<br/>
-              🚚 Damperli Kamyonet & Paletli Şantiye Sevkiyatı
-            </div>
+        
+        <div style="aspect-ratio: 16/10; overflow: hidden; background: #F8F8F7; border: 1px solid var(--border-light); margin-bottom: 20px;">
+          <img src="assets/rf-urla-depot.jpg" alt="Urla Ana Lojistik ve Kaba Yapı Deposu" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease);" />
+        </div>
+
+        <h2 style="font-size: 22px; font-weight: 800; color: var(--text-main); line-height: 1.25; margin-bottom: 8px;">
+          Urla Ana Lojistik & Kaba Yapı Deposu
+        </h2>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 20px;">
+          Torbalı çimento, alçı, kum, paletli Saint-Gobain Weber harçları, toptan İsonem yalıtımı ve Çeşme-Urla damperli şantiye araç filosu.
+        </p>
+
+        <!-- Hairline Specs -->
+        <div style="border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 14px 0; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Dağıtım Aksı:</span>
+            <span style="font-weight: 600; color: var(--text-main);">Urla, Çeşme, Alaçatı, Seferihisar</span>
           </div>
-          <a href="urla-lojistik-depo.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Urla Lojistik Depo Detayları →
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Sevkiyat:</span>
+            <span style="font-weight: 600; color: var(--accent-terracotta);">Saat 16:00'ya Kadar Aynı Gün Araç</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Telefon:</span>
+            <span style="font-weight: 600; color: var(--text-main);">0232 278 43 40</span>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <a href="urla-lojistik-depo.html" style="font-family: var(--font-display); font-size: 13px; font-weight: 800; color: var(--text-main); text-decoration: none;">
+            Lojistik Depo Detayları →
+          </a>
+          <a href="https://wa.me/902322784340?text=Merhaba%20Urla%20ana%20deponuzdan%20şantiyeme%20kaba%20yapı%20sevkiyatı%20fiyatı%20almak%20istiyorum." target="_blank" rel="noopener" style="font-size: 13px; color: var(--accent-green); font-weight: 600; text-decoration: none;">
+            WhatsApp Sevkiyat İste ↗
           </a>
         </div>
       </div>
