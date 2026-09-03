@@ -3734,6 +3734,8 @@ header {
     text-decoration: none !important;
     background: transparent !important;
     margin: 0 !important;
+    border: none !important;
+    border-bottom: none !important;
     box-sizing: border-box !important;
   }
 
@@ -3755,6 +3757,8 @@ header {
     line-height: 34px !important;
     height: 34px !important;
     margin: 0 !important;
+    border: none !important;
+    border-bottom: none !important;
   }
 }
 
