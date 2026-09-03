@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" width="100%" height="100%">
+  <!-- Centered Lockup -->
+  <g transform="translate(210, 52)">
+    <!-- Sparkle star above Stella -->
+    <path d="M 85,-40 L 89,-26 L 103,-22 L 89,-18 L 85,-4 L 81,-18 L 67,-22 L 81,-26 Z" fill="#2D81B1"/>
+
+    <!-- Wordmark Line -->
+    <text x="-105" y="8" font-family="Georgia, 'Times New Roman', serif" font-size="50" font-weight="700" letter-spacing="-0.02em" fill="#152F54" text-anchor="middle">Bianca</text>
+    <text x="50" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="-0.03em" fill="#2D81B1" text-anchor="middle">Stella</text>
+
+    <!-- Sub-tag DÖNÜŞÜM BOYASI -->
+    <rect x="-140" y="22" width="280" height="24" fill="none" stroke="#2D81B1" stroke-width="1.2"/>
+    <text x="0" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="0.22em" fill="#152F54" text-anchor="middle">DÖNÜŞÜM BOYASI</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" width="100%" height="100%">
+  <g transform="translate(210, 50)">
+    <!-- iSONEM Wordmark with orange dot -->
+    <text x="0" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="900" letter-spacing="-0.03em" fill="#132B4F" text-anchor="middle">
+      <tspan fill="#E24B00">i</tspan>SONEM
+    </text>
+    <!-- Tagline -->
+    <text x="0" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="800" letter-spacing="0.22em" fill="#555555" text-anchor="middle">PAINT &amp; INSULATION TECHNOLOGIES</text>
+  </g>
+</svg>
