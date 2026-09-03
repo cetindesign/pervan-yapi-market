@@ -1,19 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="100%" height="100%">
-  <!-- Pure white minimal canvas with hairline border -->
+  <!-- Pure White Canvas with subtle hairline border -->
   <rect width="900" height="1200" fill="#FFFFFF"/>
   <rect x="0.5" y="0.5" width="899" height="1199" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
 
-  <!-- Centered Dominant Bianca Stella Official Logo -->
-  <g transform="translate(450, 600)">
-    <!-- Sparkle Star Icon -->
-    <path d="M 230,-155 L 241,-115 L 281,-104 L 241,-93 L 230,-53 L 219,-93 L 179,-104 L 219,-115 Z" fill="#2D81B1"/>
+  <!-- MASSIVE BIANCA STELLA TRANSFORMATION STAR (560px wide, centered) -->
+  <g transform="translate(450, 480)">
+    <!-- Outer Radiant Halo -->
+    <circle cx="0" cy="0" r="280" fill="none" stroke="#EBF4F9" stroke-width="4"/>
+    <circle cx="0" cy="0" r="220" fill="none" stroke="#D3E8F3" stroke-width="2" stroke-dasharray="8 8"/>
 
-    <!-- Dominant Wordmark -->
-    <text x="-300" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="142" font-weight="700" letter-spacing="-0.02em" fill="#152F54">Bianca</text>
-    <text x="145" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="140" font-weight="800" letter-spacing="-0.03em" fill="#2D81B1">Stella</text>
+    <!-- 8-Point Faceted Brilliant Diamond Star -->
+    <!-- North Point -->
+    <polygon points="0,0 0,-240 38,-65" fill="#1E477A"/>
+    <polygon points="0,0 0,-240 -38,-65" fill="#2E69A3"/>
+    <!-- South Point -->
+    <polygon points="0,0 0,240 38,65" fill="#2E69A3"/>
+    <polygon points="0,0 0,240 -38,65" fill="#1E477A"/>
+    <!-- East Point -->
+    <polygon points="0,0 240,0 65,38" fill="#1E477A"/>
+    <polygon points="0,0 240,0 65,-38" fill="#2E69A3"/>
+    <!-- West Point -->
+    <polygon points="0,0 -240,0 -65,38" fill="#2E69A3"/>
+    <polygon points="0,0 -240,0 -65,-38" fill="#1E477A"/>
 
-    <!-- Prominent DÖNÜŞÜM BOYASI Badge -->
-    <rect x="-310" y="60" width="620" height="58" fill="none" stroke="#2D81B1" stroke-width="2"/>
-    <text x="0" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="0.25em" fill="#152F54" text-anchor="middle">DÖNÜŞÜM BOYASI</text>
+    <!-- Diagonal Shorter Points (Cyan Azure) -->
+    <polygon points="0,0 125,-125 24,-58" fill="#2678AA"/>
+    <polygon points="0,0 125,-125 58,-24" fill="#3894CB"/>
+    <polygon points="0,0 -125,-125 -24,-58" fill="#3894CB"/>
+    <polygon points="0,0 -125,-125 -58,-24" fill="#2678AA"/>
+    <polygon points="0,0 125,125 24,58" fill="#3894CB"/>
+    <polygon points="0,0 125,125 58,24" fill="#2678AA"/>
+    <polygon points="0,0 -125,125 -24,58" fill="#2678AA"/>
+    <polygon points="0,0 -125,125 -58,24" fill="#3894CB"/>
+
+    <!-- Central Diamond Core -->
+    <polygon points="0,-35 35,0 0,35 -35,0" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="12" fill="#1E477A"/>
+  </g>
+
+  <!-- Dominant Bianca Stella Wordmark -->
+  <g transform="translate(450, 930)">
+    <text x="-160" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700" letter-spacing="-0.02em" fill="#17345B" text-anchor="middle">Bianca</text>
+    <text x="135" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-0.03em" fill="#2D81B1" text-anchor="middle">Stella</text>
+    
+    <rect x="-240" y="45" width="480" height="42" fill="none" stroke="#2D81B1" stroke-width="2"/>
+    <text x="0" y="73" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="0.25em" fill="#17345B" text-anchor="middle">DÖNÜŞÜM BOYASI</text>
   </g>
 </svg>
