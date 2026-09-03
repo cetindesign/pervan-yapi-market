@@ -3546,12 +3546,27 @@ header {
     background-color: #FFFFFF;
   }
 
-  /* REFORM 1:1 CLEAN UNIFIED DRAWER */
+  /* REFORM 1:1 MATHEMATICAL VERTICAL RHYTHM (EXACT 17PX LINE-TO-TEXT SPACING) */
+  .navbar-contents.opened .navbar-menu .menu-item {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+  }
+
+  /* TITLE ROW: 48px height, 14px font => exact 17px top & bottom half-leading */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-title {
     width: 100%;
-    height: 44px;
-    line-height: 44px;
+    height: 48px;
+    line-height: 48px;
     padding: 0 20px !important;
+    margin: 0 !important;
     font-family: var(--font-display);
     font-size: 14px;
     font-weight: 400;
@@ -3570,11 +3585,11 @@ header {
     color: #999999;
   }
 
-  /* REFORM 1:1 ARCHITECTURAL RAZOR ARROW */
+  /* REFORM 1:1 ARCHITECTURAL RAZOR ARROW: centered at 24px in 48px title row */
   .navbar-contents.opened .navbar-menu .menu-item .arrow {
     position: absolute;
     background: #000000;
-    top: 22px;
+    top: 24px;
     right: 20px;
     margin: 0;
     width: 7px;
@@ -3610,7 +3625,7 @@ header {
     transform: rotate(90deg);
   }
 
-  /* REFORM 1:1 ACCORDION DROPDOWN (100% PURE WHITE, ZERO INDENT OFFSET) */
+  /* ACCORDION DROPDOWN: 6px vertical padding + 34px rows => exact 17px line-to-text spacing */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown {
     position: relative;
     top: 0;
@@ -3618,26 +3633,27 @@ header {
     width: 100%;
     display: none;
     flex-direction: column;
-    padding: 8px 0 16px 0;
+    padding: 6px 0 !important;
     background-color: #FFFFFF;
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
+    margin: 0 !important;
   }
 
   .navbar-contents.opened .navbar-menu .menu-item.is-open .navbar-dropdown {
     display: block !important;
   }
 
-  /* SUB-LINKS: STRICT 20px LEFT ALIGNMENT, BLOCK, TEXT-ALIGN LEFT */
+  /* SUB-LINKS: 34px line-height, 13px font => exact 10.5px half-leading (+ 6px pad = 16.5px to border) */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown .navbar-item,
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown a.navbar-item {
     position: relative;
     padding: 0 20px !important;
     display: block !important;
     text-align: left !important;
-    line-height: 32px !important;
-    height: 32px !important;
+    line-height: 34px !important;
+    height: 34px !important;
     font-family: var(--font-display);
     font-size: 13px !important;
     font-weight: 400 !important;
@@ -3660,7 +3676,7 @@ header {
     color: #999999 !important;
   }
 
-  /* "TÜMÜNÜ GÖR": STRICT 20px LEFT ALIGNMENT, NO CENTERING, NO FLEX OFFSET */
+  /* "TÜMÜNÜ GÖR": exact 34px height, identical spacing, zero margin offset */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown .navbar-item.mobile-only,
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown a.navbar-item.mobile-only {
     display: block !important;
@@ -3670,9 +3686,9 @@ header {
     text-underline-offset: 3px !important;
     color: #000000 !important;
     padding: 0 20px !important;
-    line-height: 32px !important;
-    height: 32px !important;
-    margin-bottom: 2px !important;
+    line-height: 34px !important;
+    height: 34px !important;
+    margin: 0 !important;
   }
 }
 
