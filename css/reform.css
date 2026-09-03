@@ -3595,6 +3595,50 @@ header {
 }
 
 /* 3. WIDE TWO MEDIA (HERO, SHOWROOMS, EDITORIAL SPLIT) */
+
+/* REFORM ARCHITECTURAL SCRIM GRADIENT (CONTRAST & READABILITY) */
+.media-container {
+  position: relative;
+}
+
+.media-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.50) 0%,
+    rgba(0, 0, 0, 0.20) 35%,
+    rgba(0, 0, 0, 0.05) 60%,
+    rgba(0, 0, 0, 0.30) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.media-container:hover::after {
+  opacity: 0.85;
+}
+
+.media-contents {
+  z-index: 2 !important;
+}
+
+.media-contents .media-title {
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45) !important;
+}
+
+.media-contents .media-button {
+  background: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
 .block.wide-two-media,
 .wide-two-media {
   display: flex;
