@@ -3,7 +3,7 @@
    Mobile-First Scandinavian Architectural Standard
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 :root {
   --bg-white: #FFFFFF;
@@ -24,7 +24,7 @@
   --border-light: rgba(0, 0, 0, 0.08);
   --border-dark: rgba(255, 255, 255, 0.12);
   
-  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   --max-width: 1440px;
@@ -48,19 +48,28 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
   background-color: var(--bg-white);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); /* Safe padding for bottom dock */
 }
 
 @media (min-width: 769px) {
   body {
-    padding-bottom: 0;
-  }
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -118,7 +127,7 @@ img, svg {
 .rf-logo {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.04em;
   color: var(--text-main);
   line-height: 1;
@@ -210,7 +219,7 @@ img, svg {
   gap: 6px;
   font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 9px 18px;
@@ -312,14 +321,15 @@ img, svg {
 }
 
 .rf-mobile-menu-body {
-  flex-grow: 1;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px 20px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .rf-mob-list {
@@ -345,7 +355,7 @@ img, svg {
   flex-grow: 1;
   font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text-main);
   text-decoration: none;
@@ -389,7 +399,7 @@ img, svg {
 
 .rf-mob-sublink {
   font-size: 14.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   text-decoration: none;
   line-height: 1.4;
@@ -421,7 +431,7 @@ img, svg {
 .rf-mob-contact-title {
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -434,7 +444,7 @@ img, svg {
 
 .rf-mob-contact-hours {
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--accent-green);
 }
 
@@ -506,7 +516,7 @@ img, svg {
 .media-button {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 12px 22px;
@@ -586,7 +596,7 @@ img, svg {
 .rf-site-btn {
   font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 14px 24px;
@@ -654,7 +664,7 @@ img, svg {
 .rf-header-link {
   font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-main);
@@ -726,17 +736,21 @@ img, svg {
 }
 
 .rf-card-body {
-  padding: 20px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .rf-card-tag {
   font-family: var(--font-display);
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-terracotta);
@@ -760,7 +774,7 @@ img, svg {
 .rf-card-action {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-main);
@@ -890,7 +904,7 @@ img, svg {
 
 .rf-footer-col h4 {
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-white);
@@ -953,7 +967,7 @@ img, svg {
   padding: 11px 6px;
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   border: none;
@@ -1049,7 +1063,7 @@ img, svg {
   display: block;
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 8px;
@@ -1093,7 +1107,7 @@ img, svg {
 .rf-brands-title {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -1157,7 +1171,7 @@ img, svg {
 .rf-brand-name {
   font-family: var(--font-display);
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.01em;
 }
@@ -1195,7 +1209,7 @@ img, svg {
   gap: 8px;
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
@@ -1261,7 +1275,7 @@ img, svg {
 .rf-spec-label {
   font-family: var(--font-display);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-terracotta);
@@ -1269,7 +1283,7 @@ img, svg {
 
 .rf-spec-val {
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-main);
   line-height: 1.35;
 }
@@ -1310,7 +1324,7 @@ img, svg {
 .rf-process-num {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--accent-terracotta);
   line-height: 1;
 }
@@ -1402,10 +1416,16 @@ img, svg {
     gap: 12px;
   }
   .rf-card-body {
-    padding: 14px 12px;
-    min-height: auto;
-    gap: 8px;
-  }
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
   .rf-card-tag {
     font-size: 9px;
     margin-bottom: 4px;
@@ -1463,7 +1483,7 @@ img, svg {
 .rf-fluid-tag {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent-terracotta);
@@ -1473,7 +1493,7 @@ img, svg {
 .rf-fluid-title {
   font-family: var(--font-display);
   font-size: clamp(24px, 3.2vw, 38px);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.035em;
   color: var(--text-main);
   line-height: 1.15;
@@ -1518,7 +1538,7 @@ img, svg {
 .rf-fluid-num {
   font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.08em;
   margin-bottom: 20px;
@@ -1541,7 +1561,7 @@ img, svg {
 .rf-fluid-role {
   font-family: var(--font-display);
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent-terracotta);
@@ -1551,7 +1571,7 @@ img, svg {
 .rf-fluid-name {
   font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
   margin: 0 0 6px;
@@ -1567,7 +1587,7 @@ img, svg {
 .rf-fluid-arrow {
   font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
   display: inline-flex;
   align-items: center;
@@ -1738,7 +1758,7 @@ img, svg {
 .rf-config-label {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -1750,7 +1770,7 @@ img, svg {
 
 .rf-config-selected {
   color: var(--text-main);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Size Pills */
@@ -1766,7 +1786,7 @@ img, svg {
   padding: 10px 16px;
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-main);
   cursor: pointer;
   transition: all 0.2s var(--ease);
@@ -1823,7 +1843,7 @@ img, svg {
   align-items: center;
   gap: 8px;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-main);
   margin-bottom: 24px;
   padding: 12px 14px;
@@ -1866,7 +1886,7 @@ img, svg {
   align-items: center;
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
   text-align: left;
   cursor: pointer;
@@ -1883,15 +1903,27 @@ img, svg {
 }
 
 .rf-acc-body {
-  padding: 0 0 20px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  display: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .rf-acc-item.active .rf-acc-body {
-  display: block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Complementary Essentials Section */
@@ -1938,7 +1970,7 @@ img, svg {
 .rf-essential-title {
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
 }
 
@@ -2014,7 +2046,7 @@ img, svg {
   padding: 6px 14px;
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: rgba(0, 0, 0, 0.75);
@@ -2051,7 +2083,7 @@ img, svg {
   border: 1px solid var(--border-light);
   color: #111111;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .rf-compare-range {
@@ -2091,7 +2123,7 @@ img, svg {
 .rf-subnav-link {
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-muted);
   text-decoration: none;
   padding: 8px 16px;
@@ -2146,7 +2178,7 @@ img, svg {
 .rf-calc-btn-title {
   font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   margin-bottom: 4px;
 }
 
@@ -2179,7 +2211,7 @@ img, svg {
 
 .rf-calc-res-val {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--accent-terracotta);
 }
 
@@ -2224,7 +2256,7 @@ img, svg {
 .rf-product-num {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--accent-terracotta);
   margin-bottom: 12px;
@@ -2254,7 +2286,7 @@ img, svg {
 .rf-product-title {
   font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -2278,7 +2310,7 @@ img, svg {
   border-bottom: 1px solid var(--border-light);
   margin-bottom: 14px;
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-main);
 }
 
@@ -2296,7 +2328,7 @@ img, svg {
   color: #FFFFFF;
   font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   transition: background 0.2s var(--ease);
 }
@@ -2355,7 +2387,7 @@ img, svg {
 .rf-prestige-tag {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.12em;
   color: var(--accent-terracotta);
   text-transform: uppercase;
@@ -2365,7 +2397,7 @@ img, svg {
 .rf-prestige-title {
   font-family: var(--font-display);
   font-size: clamp(26px, 3.2vw, 42px);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-main);
@@ -2393,7 +2425,7 @@ img, svg {
   align-items: center;
   gap: 10px;
   font-size: 13.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-main);
 }
 
@@ -2447,7 +2479,7 @@ img, svg {
 .rf-prestige-badge {
   font-family: var(--font-display);
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -2463,7 +2495,7 @@ img, svg {
 .rf-prestige-name {
   font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   line-height: 1.25;
   margin-bottom: 4px;
@@ -2479,7 +2511,7 @@ img, svg {
 .rf-prestige-link {
   font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--accent-terracotta);
   display: inline-flex;
   align-items: center;
@@ -2529,7 +2561,7 @@ img, svg {
 .rf-gallery-tag {
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--accent-terracotta);
   text-transform: uppercase;
@@ -2558,7 +2590,7 @@ img, svg {
 .rf-gallery-title {
   font-family: var(--font-display);
   font-size: 21px;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--text-main);
@@ -2580,7 +2612,7 @@ img, svg {
 .rf-gallery-link {
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   display: inline-flex;
   align-items: center;
@@ -2614,7 +2646,7 @@ img, svg {
 .rf-action-title {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
   margin-bottom: 24px;
@@ -2629,7 +2661,7 @@ img, svg {
 .rf-action-link-item {
   font-family: var(--font-display);
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   text-decoration: none;
   display: inline-flex;
@@ -2662,7 +2694,7 @@ img, svg {
 .rf-collections-title {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
   margin: 0;
@@ -2703,7 +2735,7 @@ img, svg {
 .rf-collection-name {
   font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.01em;
   margin-bottom: 4px;
@@ -2738,7 +2770,7 @@ img, svg {
 .rf-tool-text {
   font-family: var(--font-display);
   font-size: clamp(16px, 2vw, 22px);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
 }
@@ -2752,7 +2784,7 @@ img, svg {
   color: #FFFFFF;
   font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
   text-decoration: none;
   transition: background 0.2s var(--ease);
 }
@@ -2803,7 +2835,7 @@ img, svg {
 .rf-showroom-name {
   font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   margin-bottom: 4px;
   transition: color 0.2s var(--ease);
@@ -2816,7 +2848,7 @@ img, svg {
 .rf-showroom-action {
   font-family: var(--font-display);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-muted);
 }
 
@@ -2831,7 +2863,7 @@ img, svg {
 .rf-process-title {
   font-family: var(--font-display);
   font-size: clamp(20px, 2.6vw, 30px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
   margin-bottom: 12px;
@@ -2907,7 +2939,7 @@ img, svg {
 .rf-brand-title {
   font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.01em;
   transition: color 0.2s var(--ease);
@@ -2938,7 +2970,7 @@ img, svg {
 .rf-collections-title {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.02em;
   margin: 0;
@@ -2979,7 +3011,7 @@ img, svg {
 .rf-brand-title {
   font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
   letter-spacing: -0.01em;
   transition: color 0.2s var(--ease);
