@@ -2918,11 +2918,12 @@ img, svg {
 }
 
 
+
 /* ==========================================================================
-   25. REFORM CPH 1:1 EXPANSIVE 2-COLUMN ARCHITECTURAL COLLECTIONS
+   26. REFORM CPH 1:1 PURE KITCHEN COLLECTIONS BENCHMARK
    ========================================================================== */
 .rf-collections-section {
-  padding: 80px 0 100px;
+  padding: 64px 0 88px;
   background: var(--bg-white);
   border-bottom: 1px solid var(--border-light);
 }
@@ -2931,12 +2932,12 @@ img, svg {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .rf-collections-title {
   font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(22px, 2.8vw, 32px);
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.02em;
@@ -2946,7 +2947,7 @@ img, svg {
 .rf-collections-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 56px 40px;
+  gap: 48px 32px;
 }
 
 .rf-brand-card {
@@ -2961,7 +2962,7 @@ img, svg {
   overflow: hidden;
   background: #F8F8F7;
   border: 1px solid var(--border-light);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .rf-brand-media-wrap img.rf-brand-photo {
@@ -2972,32 +2973,15 @@ img, svg {
 }
 
 .rf-brand-card:hover .rf-brand-media-wrap img.rf-brand-photo {
-  transform: scale(1.03);
-}
-
-.rf-brand-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 6px;
-}
-
-.rf-brand-tag {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--accent-terracotta);
-  text-transform: uppercase;
+  transform: scale(1.025);
 }
 
 .rf-brand-title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--text-main);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  letter-spacing: -0.01em;
   transition: color 0.2s var(--ease);
 }
 
@@ -3005,30 +2989,12 @@ img, svg {
   color: var(--accent-terracotta);
 }
 
-.rf-brand-link {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--text-main);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: color 0.2s var(--ease);
-}
-
-.rf-brand-card:hover .rf-brand-link {
-  color: var(--accent-terracotta);
-}
-
 @media (max-width: 768px) {
   .rf-collections-section {
-    padding: 56px 0 64px;
+    padding: 48px 0 64px;
   }
   .rf-collections-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .rf-brand-media-wrap {
-    aspect-ratio: 4/3;
+    gap: 36px;
   }
 }
