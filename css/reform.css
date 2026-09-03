@@ -4315,7 +4315,7 @@ header {
 }
 
 .brand-logo {
-  max-width: 88%;
+  max-width: 92%;
   max-height: 76px;
   width: auto;
   height: auto;
@@ -4326,7 +4326,7 @@ header {
 
 @media (max-width: 768px) {
   .brand-logo {
-    max-width: 90%;
+    max-width: 94%;
     max-height: 62px;
   }
 }
