@@ -1,13 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="100%" height="100%">
-  <!-- Background -->
+  <!-- Clean minimal architectural canvas -->
   <rect width="900" height="1200" fill="#F8F8F7"/>
   <rect x="0.5" y="0.5" width="899" height="1199" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
 
-  <!-- Top Category Tag -->
-  <text x="450" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="0.22em" fill="#888888" text-anchor="middle">YETKİLİ ANA BAYİ</text>
-
-  <!-- Official Filli Boya Vector Logo -->
-  <g transform="translate(270, 380) scale(1.86)">
+  <!-- Dominant Filli Boya Emblem -->
+  <g transform="translate(195, 260) scale(2.65)">
     
 <path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0 0.242188 L 192.757813 0.242188 L 192.757813 193 L 0 193 L 0 0.242188 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,68.199158%,93.699646%);fill-opacity:1;" d="M 54.199219 118.117188 L 96.398438 118.117188 L 96.398438 156.878906 L 54.199219 156.878906 L 54.199219 118.117188 "/>
@@ -28,11 +25,7 @@
 
   </g>
 
-  <!-- Clean Wordmark Lockup -->
-  <text x="450" y="800" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="-0.02em" fill="#111111" text-anchor="middle">Filli Boya</text>
-  <text x="450" y="835" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="0.14em" fill="#666666" text-anchor="middle">RENXMATİK RENK MERKEZİ</text>
-
-  <!-- Bottom Accent -->
-  <line x1="410" y1="900" x2="490" y2="900" stroke="#111111" stroke-width="1"/>
-  <text x="450" y="1040" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="0.18em" fill="#999999" text-anchor="middle">BETEK BOYA VE KİMYA SANAYİ</text>
+  <!-- Dominant Bold Brand Typography -->
+  <text x="450" y="870" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-0.03em" fill="#111111" text-anchor="middle">Filli Boya</text>
+  <text x="450" y="925" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="0.22em" fill="#666666" text-anchor="middle">YETKİLİ ANA BAYİ</text>
 </svg>
