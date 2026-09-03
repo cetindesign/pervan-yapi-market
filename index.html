@@ -20,7 +20,123 @@
 <meta property="og:url" content="https://www.pervanyapimarket.com/index.html" />
 <meta property="og:image" content="assets/rf-hero-materials.jpg" />
 
-<link rel="stylesheet" href="css/reform.css" />
+<link rel="stylesheet" href="css/reform.css?v=2.2.0" />
+<style>
+/* CRITICAL 1:1 REFORM CPH 2-ROW HEADER OVERRIDES */
+@media (max-width: 991px) {
+  header, .navbar {
+    height: 120px !important;
+  }
+  .navbar-top {
+    height: 120px !important;
+    padding: 0 20px !important;
+    padding-top: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+  }
+  /* ROW 1: 50/50 SPLIT STICKY ACTIONS BAR */
+  .navbar-sticky {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background-color: #FFFFFF !important;
+    z-index: 101 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .navbar-sticky .navbar-item {
+    width: 50% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+  }
+  .navbar-sticky .navbar-item:first-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+  /* ROW 2: HAMBURGER ON LEFT, LOGO ON RIGHT */
+  #mobile-menu {
+    display: block !important;
+    position: absolute !important;
+    left: 20px !important;
+    top: 74px !important;
+    width: 36px !important;
+    height: 32px !important;
+    cursor: pointer !important;
+    z-index: 105 !important;
+    margin: 0 !important;
+  }
+  #mobile-menu .bar {
+    left: 0 !important;
+    width: 24px !important;
+    height: 1px !important;
+    background-color: #000000 !important;
+  }
+  .navbar-logo {
+    position: absolute !important;
+    right: 20px !important;
+    top: 60px !important;
+    height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    color: #000000 !important;
+    z-index: 105 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* HERO OVERLAY: TOP-LEFT TITLE, TOP-RIGHT BUTTON */
+  .media-contents {
+    top: 24px !important;
+    left: 20px !important;
+    right: 20px !important;
+    bottom: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    pointer-events: none !important;
+  }
+  .media-contents .media-title {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    color: #FFFFFF !important;
+    max-width: 55% !important;
+  }
+  .media-contents .media-button {
+    font-size: 12.5px !important;
+    padding: 10px 18px !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    color: #FFFFFF !important;
+    white-space: nowrap !important;
+    border-radius: 0 !important;
+    pointer-events: auto !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -94,11 +210,11 @@
       <div class="navbar-sticky">
         <a href="https://wa.me/902322784340?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
           <span class="navbar-title">Fiyat & Stok Sor</span>
-          <div class="arrow"></div>
+          <span style="margin-left: 6px; font-size: 14px; font-weight: 400;">&rarr;</span>
         </a>
         <a href="kesif-randevusu.html" class="navbar-item menu-item">
           <span class="navbar-title">Keşif Randevusu Al</span>
-          <div class="arrow"></div>
+          <span style="margin-left: 6px; font-size: 14px; font-weight: 400;">&rarr;</span>
         </a>
       </div>
 
