@@ -29,6 +29,10 @@
     if (rfToggle) {
       rfToggle.addEventListener("click", openMobileMenu);
     }
+    var mobileMenuBtn = document.getElementById("mobile-menu");
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener("click", openMobileMenu);
+    }
 
     if (rfMobileClose) {
       rfMobileClose.addEventListener("click", closeMobileMenu);

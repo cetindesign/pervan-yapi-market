@@ -1,9 +1,36 @@
 /* ==========================================================================
-   REFORM CPH (reformcph.com) 1:1 EXACT DESIGN SYSTEM & STYLESHEET
-   100% Light Canvas · Zero Black Voids · Pure Danish Architectural Grid
+   REFORM CPH (reformcph.com) 1:1 REPLICA STYLESHEET
+   Mobile-First Scandinavian Architectural Standard
    ========================================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg-white: #FFFFFF;
+  --bg-offwhite: #F8F8F7;
+  --bg-subtle: #F3F2EE;
+  --bg-black: #111111;
+  --bg-dark: #16171A;
+  
+  --text-main: #111111;
+  --text-body: #333333;
+  --text-muted: #777777;
+  --text-light: #999999;
+  --text-white: #FFFFFF;
+  
+  --accent-terracotta: #C8461E;
+  --accent-green: #2E9E5B;
+  
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.12);
+  
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --max-width: 1440px;
+  --header-height: 64px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -12,157 +39,424 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-:root {
-  --font-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --bg-white: #FFFFFF;
-  --bg-subtle: #F7F7F7;
-  --bg-warm: #F4F3EF;
-  --text-main: #000000;
-  --text-muted: #777777;
-  --border-hairline: rgba(0, 0, 0, 0.08);
-  --accent-terracotta: #C8461E;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-white);
 }
 
-html, body {
-  font-family: var(--font-base);
+body {
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--text-main);
-  background: var(--bg-white);
+  background-color: var(--bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
+@media (min-width: 769px) {
+  body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.2s var(--ease);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+img, svg {
   display: block;
+  max-width: 100%;
 }
 
-/* ==========================================================================
-   1. NAVBAR (REFORM CPH 1:1 STICKY ARCHITECTURAL HEADER)
-   ========================================================================== */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #FFFFFF;
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.navbar {
+.rf-wrapper {
   width: 100%;
-  background: #FFFFFF;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 20px;
 }
 
-.navbar-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-  padding: 0 40px;
-}
-
-@media (max-width: 768px) {
-  .navbar-top {
-    padding: 0 20px;
-    height: 56px;
+@media (min-width: 769px) {
+  .rf-wrapper {
+    padding-inline: 48px;
   }
 }
 
-.navbar-logo {
-  font-family: var(--font-base);
-  font-size: 26px;
-  font-weight: 500;
-  color: #000000;
-  letter-spacing: -0.03em;
-  text-decoration: none;
+/* ==========================================================================
+   1. REFORM CLEAN NAVBAR (Mobile-First)
+   ========================================================================== */
+.rf-navbar {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.navbar-contents {
+.rf-nav-inner {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  height: var(--header-height);
 }
 
-@media (max-width: 991px) {
-  .navbar-contents, .navbar-sticky {
+.rf-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rf-menu {
+  display: none;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.rf-menu-item {
+  position: relative;
+}
+
+.rf-menu-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #333333;
+  padding: 24px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rf-menu-link:hover, .rf-menu-link.active {
+  color: #000000;
+}
+
+.rf-menu-link .caret {
+  font-size: 9px;
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.rf-menu-item:hover .rf-menu-link .caret {
+  transform: rotate(180deg);
+}
+
+/* Desktop Dropdowns */
+.rf-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  min-width: 240px;
+  display: none;
+  flex-direction: column;
+  padding: 8px 0;
+  z-index: 1001;
+}
+
+.rf-menu-item:hover .rf-dropdown {
+  display: flex;
+}
+
+.rf-dropdown-link {
+  padding: 10px 20px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #444444;
+}
+
+.rf-dropdown-link:hover {
+  background: var(--bg-offwhite);
+  color: #000000;
+  padding-left: 24px;
+}
+
+/* Desktop Nav Action Buttons */
+.rf-nav-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.rf-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 9px 18px;
+  border: 1px solid var(--text-main);
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-nav-pill:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.rf-nav-pill.primary {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+.rf-nav-pill.primary:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* Hamburger Button */
+.rf-hamburger {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+@media (min-width: 1025px) {
+  .rf-menu, .rf-nav-actions {
+    display: flex;
+  }
+  .rf-hamburger {
     display: none;
   }
 }
 
-.navbar-menu {
+/* ==========================================================================
+   2. REFORM FULLSCREEN MOBILE MENU (100% Native Touch & Robust Accordion)
+   ========================================================================== */
+.rf-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: #FFFFFF;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1), transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), visibility 0.3s !important;
+}
+
+.rf-mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.rf-mobile-menu-header {
   display: flex;
   align-items: center;
-  gap: 28px;
-}
-
-.navbar-item {
-  position: relative;
-  font-size: 14px;
-  font-weight: 400;
-  color: #000000;
-  cursor: pointer;
-  padding: 20px 0;
-}
-
-.navbar-item.has-dropdown:hover .navbar-dropdown {
-  display: flex;
-}
-
-.navbar-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-light);
+  flex-shrink: 0;
   background: #FFFFFF;
-  border: 1px solid var(--border-hairline);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-  flex-direction: column;
-  min-width: 260px;
-  padding: 12px 0;
-  z-index: 100;
 }
 
-.navbar-dropdown a.navbar-item {
-  padding: 10px 20px;
-  font-size: 13.5px;
-  color: #333333;
+.rf-mobile-close {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.rf-mobile-menu-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.rf-mob-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-mob-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-mob-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rf-mob-link {
+  flex-grow: 1;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 16px 0;
   display: block;
 }
 
-.navbar-dropdown a.navbar-item:hover {
-  background: #F7F7F7;
-  color: #000000;
-}
-
-.navbar-sticky {
+.rf-mob-accordion-btn {
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease);
+}
+
+.rf-mob-item.open .rf-mob-accordion-btn {
+  transform: rotate(45deg);
+  color: var(--accent-terracotta);
+}
+
+.rf-mob-sublist, .rf-mob-accordion-panel {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 0 20px 14px;
+  border-left: 2px solid var(--accent-terracotta);
+  margin-bottom: 12px;
+}
+
+.rf-mob-item.open .rf-mob-sublist,
+.rf-mob-item.open .rf-mob-accordion-panel {
+  display: flex;
+}
+
+.rf-mob-sublink {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #444444;
+  text-decoration: none;
+  line-height: 1.4;
+  padding: 2px 0;
+}
+
+.rf-mob-sublink:hover, .rf-mob-sublink:active {
+  color: var(--accent-terracotta);
+}
+
+.rf-mobile-menu-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 24px;
 }
 
-.navbar-sticky a.navbar-item {
-  font-size: 13.5px;
-  color: #000000;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  padding: 0;
+.rf-mob-contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-subtle);
+  padding: 16px;
+  border: 1px solid var(--border-light);
 }
 
-.navbar-sticky a.navbar-item:hover {
-  color: #777777;
+.rf-mob-contact-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
+.rf-mob-contact-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.rf-mob-contact-hours {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--accent-green);
+}
+
+.rf-mob-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 
 /* ==========================================================================
-   2. REFORM CPH 1:1 BLOCK SYSTEM
+   3. REFORM DUAL SPLIT MEDIA HERO (.wide-two-media)
    ========================================================================== */
 .block-container {
   width: 100%;
@@ -170,11 +464,7 @@ header {
   background: #FFFFFF;
 }
 
-.block-sizer {
-  width: 100%;
-}
-
-/* WIDE TWO MEDIA (HERO & SHOWROOMS) */
+.wide-two-media,
 .block.wide-two-media {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -182,6 +472,7 @@ header {
 }
 
 @media (max-width: 768px) {
+  .wide-two-media,
   .block.wide-two-media {
     grid-template-columns: 1fr;
   }
@@ -192,17 +483,2636 @@ header {
   display: block;
   overflow: hidden;
   background: #F8F8F7;
+  width: 100%;
 }
 
 .media-container .responsive-image-container {
+  position: relative;
   width: 100%;
   aspect-ratio: 16/10;
   overflow: hidden;
-  position: relative;
   background: #F8F8F7;
 }
 
 @media (max-width: 768px) {
+  .media-container .responsive-image-container {
+    aspect-ratio: 4/3;
+  }
+}
+
+.media-container .responsive-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease);
+}
+
+.media-container:hover .responsive-image-container img {
+  transform: scale(1.035);
+}
+
+.media-contents {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 2;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .media-contents {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.media-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.media-button {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1;
+  color: #FFFFFF;
+  padding: 11px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: auto;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.media-container:hover .media-button {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. REFORM SITE-LINKS & ACTION ROW (.site-links)
+   ========================================================================== */
+.rf-site-links-section {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 56px 0;
+}
+
+@media (min-width: 769px) {
+  .rf-site-links-section {
+    padding: 80px 0;
+  }
+}
+
+.rf-site-links-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.rf-site-text {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 4.5vw, 34px);
+  font-weight: 400;
+  max-width: 920px;
+  line-height: 1.3;
+  color: var(--text-main);
+}
+
+.rf-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.rf-site-btn {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 24px;
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+  background: transparent;
+  transition: all 0.2s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .rf-button-group .rf-site-btn {
+    width: 100%;
+  }
+}
+
+.rf-site-btn:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.rf-site-btn.primary {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+.rf-site-btn.primary:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* ==========================================================================
+   5. REFORM COLLECTION OVERVIEW WITH HOVER IMAGE-SWAP (.overview.collection)
+   ========================================================================== */
+.rf-collection-section {
+  background: var(--bg-offwhite);
+  padding: 64px 0 80px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+@media (min-width: 769px) {
+  .rf-collection-section {
+    padding: 96px 0 120px;
+  }
+}
+
+.rf-simple-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-simple-header h2 {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 400;
+}
+
+.rf-header-link {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--text-main);
+  padding-bottom: 2px;
+}
+
+.rf-collection-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .rf-collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rf-collection-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.rf-card-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
+}
+
+.rf-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #EEE;
+  overflow: hidden;
+}
+
+.rf-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s var(--ease), transform 0.8s var(--ease);
+}
+
+.rf-card-media img.image-over {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .rf-card-item:hover .rf-card-media img.image-over {
+    opacity: 1;
+  }
+  .rf-card-item:hover .rf-card-media img {
+    transform: scale(1.03);
+  }
+  .rf-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+}
+
+.rf-card-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.rf-card-tag {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-terracotta);
+  margin-bottom: 6px;
+}
+
+.rf-card-title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.rf-card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.rf-card-action {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   6. REFORM ACTIVATION BANNER (.activation)
+   ========================================================================== */
+.rf-activation-section {
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-light);
+  padding: 64px 0;
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .rf-activation-section {
+    padding: 96px 0;
+  }
+}
+
+.rf-activation-inner {
+  max-width: 880px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.rf-activation-title {
+  font-size: clamp(22px, 4.5vw, 36px);
+  font-weight: 400;
+}
+
+.rf-activation-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   7. REFORM SHOWROOM SPLIT (.wide-two-media)
+   ========================================================================== */
+.rf-showroom-section {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-showroom-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 861px) {
+  .rf-showroom-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.rf-showroom-text-col {
+  padding: 44px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .rf-showroom-text-col {
+    padding: 80px 64px;
+    border-right: 1px solid var(--border-light);
+  }
+}
+
+.rf-showroom-map-col {
+  position: relative;
+  min-height: 340px;
+}
+
+@media (min-width: 769px) {
+  .rf-showroom-map-col {
+    min-height: 480px;
+  }
+}
+
+.rf-showroom-map-col iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   8. REFORM MASTER FOOTER
+   ========================================================================== */
+.rf-footer {
+  background: #FFFFFF;
+  color: #555555;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 60px 0 80px;
+  font-size: 13.5px;
+}
+
+.rf-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+  .rf-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rf-footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.rf-footer-col h4 { font-family: var(--font-display); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #000000; margin-bottom: 20px; }
+
+.rf-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rf-footer-links a:hover {
+  color: #000000;
+}
+
+.rf-footer-bottom { border-top: 1px solid rgba(0, 0, 0, 0.06); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #888888; flex-wrap: wrap; gap: 12px; }
+
+@media (min-width: 769px) {
+  .rf-footer-bottom { border-top: 1px solid rgba(0, 0, 0, 0.06); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #888888; flex-wrap: wrap; gap: 12px; }
+}
+
+/* ==========================================================================
+   9. MOBILE STICKY BOTTOM DOCK (Mobile Priority Fast-Actions)
+   ========================================================================== */
+.rf-mobile-dock {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+}
+
+.rf-dock-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.rf-dock-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #000000;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.rf-dock-call {
+  background: #222222;
+  color: #000000;
+  border: 1px solid var(--border-dark);
+}
+
+.rf-dock-wa {
+  background: var(--accent-green);
+  color: #000000;
+}
+
+.rf-dock-map {
+  background: var(--accent-terracotta);
+  color: #000000;
+}
+
+@media (min-width: 769px) {
+  .rf-mobile-dock {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+}
+}
+
+/* ==========================================================================
+   10. REFORM CONSULTATION MODAL / DRAWER
+   ========================================================================== */
+.rf-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.rf-modal-overlay.active {
+  display: flex;
+}
+
+.rf-modal-drawer {
+  width: 100%;
+  max-width: 520px;
+  height: 100%;
+  background: var(--bg-white);
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+  animation: slideDrawer 0.35s var(--ease);
+}
+
+@media (min-width: 769px) {
+  .rf-modal-drawer {
+    padding: 48px 40px;
+  }
+}
+
+@keyframes slideDrawer {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.rf-modal-close {
+  align-self: flex-end;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.rf-form-group {
+  margin-bottom: 18px;
+}
+
+.rf-form-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.rf-form-input, .rf-form-select, .rf-form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-offwhite);
+  border: 1px solid var(--border-light);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.rf-form-input:focus, .rf-form-select:focus, .rf-form-textarea:focus {
+  border-color: var(--text-main);
+  background: var(--bg-white);
+}
+
+/* ==========================================================================
+   11. AUTHORIZED BRANDS MONOCHROME STRIP (High-Res Vector Architecture)
+   ========================================================================== */
+.rf-brands-strip {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 36px 0;
+}
+
+.rf-brands-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.rf-brands-title {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.rf-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+}
+
+.rf-brand-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 20px;
+  border-right: 1px solid var(--border-light);
+  transition: all 0.25s var(--ease);
+  min-height: 140px;
+}
+
+.rf-brand-cell:last-child {
+  border-right: none;
+}
+
+.rf-brand-cell:hover {
+  background: var(--bg-offwhite);
+  transform: translateY(-2px);
+}
+
+.rf-brand-logo-wrap {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rf-brand-logo-wrap img, .rf-brand-logo-wrap svg {
+  max-height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: all 0.25s var(--ease);
+}
+
+.rf-brand-cell:hover .rf-brand-logo-wrap img,
+.rf-brand-cell:hover .rf-brand-logo-wrap svg {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.rf-brand-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rf-brand-name {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.rf-brand-role {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .rf-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rf-brand-cell {
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+}
+
+@media (max-width: 600px) {
+  .rf-brands-grid {
+    grid-template-columns: 1fr;
+  }
+  .rf-brand-cell {
+    border-right: none;
+  }
+}
+/* ==========================================================================
+   12. REFORM SUBPAGE ARCHITECTURE & MOBILE ORDERING
+   ========================================================================== */
+.rf-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.rf-breadcrumb a {
+  color: var(--text-muted);
+}
+
+.rf-breadcrumb a:hover {
+  color: var(--accent-terracotta);
+}
+
+.rf-breadcrumb .sep {
+  opacity: 0.4;
+}
+
+.rf-subpage-split {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.rf-subpage-media {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--bg-offwhite);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.rf-subpage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rf-subpage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Commercial Specs Grid */
+.rf-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: var(--bg-subtle);
+  padding: 18px 16px;
+  border: 1px solid var(--border-light);
+  margin: 12px 0 20px;
+}
+
+.rf-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rf-spec-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-terracotta);
+}
+
+.rf-spec-val {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+/* Desktop layout enhancement */
+@media (min-width: 861px) {
+  .rf-subpage-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .rf-subpage-media {
+    aspect-ratio: 3/4;
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* ==========================================================================
+   13. PROCESS TIMELINE (.rf-process-grid)
+   ========================================================================== */
+.rf-process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.rf-process-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rf-process-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent-terracotta);
+  line-height: 1;
+}
+
+@media (min-width: 861px) {
+  .rf-process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border-light);
+    background: var(--bg-white);
+  }
+  .rf-process-card {
+    border: none;
+    border-right: 1px solid var(--border-light);
+    padding: 44px 32px;
+  }
+  .rf-process-card:last-child {
+    border-right: none;
+  }
+}
+
+/* ==========================================================================
+   14. MOBILE-FIRST COMPACT HOMEPAGE OVERHAUL (< 860px)
+   ========================================================================== */
+@media (max-width: 860px) {
+  /* 1. Compact Hero */
+  .wide-two-media {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .wide-media-item {
+    height: 250px;
+    min-height: 250px;
+  }
+  .wide-two-media-content {
+    padding: 24px 20px;
+  }
+  .wide-two-media-content h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .wide-two-media-content p {
+    font-size: 12.5px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 2. Compact 2-Column Brand Strip */
+  .rf-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--border-light);
+  }
+  .rf-brand-cell {
+    padding: 16px 14px;
+    min-height: 100px;
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .rf-brand-cell:nth-child(2n) {
+    border-right: none;
+  }
+  .rf-brand-cell:nth-child(5) {
+    grid-column: span 2;
+    border-bottom: none;
+    border-right: none;
+  }
+  .rf-brand-logo-wrap {
+    height: 32px;
+    margin-bottom: 10px;
+  }
+  .rf-brand-logo-wrap img, .rf-brand-logo-wrap svg {
+    max-height: 26px;
+  }
+  .rf-brand-name {
+    font-size: 12.5px;
+  }
+  .rf-brand-role {
+    font-size: 10.5px;
+  }
+
+  /* 3. Compact 2-Column Collection Showcase Grid */
+  .rf-collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .rf-card-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+  .rf-card-tag {
+    font-size: 9px;
+    margin-bottom: 4px;
+  }
+  .rf-card-title {
+    font-size: 13.5px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .rf-card-desc {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .rf-card-action {
+    font-size: 10.5px;
+    padding-top: 6px;
+  }
+
+  /* 4. Showroom & Activation Banner Compact */
+  .rf-showroom-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .rf-showroom-img {
+    aspect-ratio: 16/9;
+  }
+  .rf-activation-banner {
+    padding: 32px 0;
+  }
+}
+
+/* ==========================================================================
+   15. FLUID ARCHITECTURAL BRAND PAVILION (REFORM CPH 1:1 BORDERLESS)
+   ========================================================================== */
+.rf-fluid-brands-section {
+  background: var(--bg-white);
+  padding: 64px 0 80px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-fluid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 24px;
+}
+
+.rf-fluid-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-terracotta);
+  margin-bottom: 10px;
+}
+
+.rf-fluid-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin: 0 0 8px;
+}
+
+.rf-fluid-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Fluid track - Desktop 5 columns */
+.rf-fluid-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 32px;
+}
+
+.rf-fluid-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  min-height: 240px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+.rf-fluid-col:hover {
+  opacity: 0.75;
+}
+
+.rf-fluid-num {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.rf-fluid-logo-wrap {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.rf-fluid-logo-wrap img, .rf-fluid-logo-wrap svg {
+  max-height: 38px;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+.rf-fluid-role {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-terracotta);
+  margin-bottom: 6px;
+}
+
+.rf-fluid-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+
+.rf-fluid-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.rf-fluid-arrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: auto;
+  transition: gap 0.25s var(--ease);
+}
+
+.rf-fluid-col:hover .rf-fluid-arrow {
+  gap: 8px;
+  color: var(--accent-terracotta);
+}
+
+/* Mobile Edge-to-Edge Fluid Rail */
+@media (max-width: 991px) {
+  .rf-fluid-brands-section {
+    padding: 44px 0 56px;
+  }
+  .rf-fluid-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .rf-fluid-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 24px 20px 12px;
+    margin: 0;
+    border-top: 1px solid var(--border-light);
+  }
+  .rf-fluid-track::-webkit-scrollbar {
+    display: none;
+  }
+  .rf-fluid-col {
+    flex: 0 0 74vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+    min-height: 220px;
+    padding-right: 12px;
+    border-right: 1px solid var(--border-light);
+  }
+  .rf-fluid-col:last-child {
+    border-right: none;
+  }
+}
+
+/* Zero out any card container box borders across collections */
+.rf-card-item {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.rf-card-media {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+
+/* ==========================================================================
+   16. SILKY SMOOTH REFORM CPH 60FPS MICRO-INTERACTIONS & EASING
+   ========================================================================== */
+/* Smooth Hero Hover */
+.wide-media-item {
+  overflow: hidden;
+}
+
+.wide-media-item img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+.wide-media-item:hover img {
+  transform: scale(1.035);
+}
+
+/* Card Image Swap & Zoom */
+.rf-card-media {
+  overflow: hidden;
+  position: relative;
+}
+
+.rf-card-media img {
+  will-change: transform, opacity;
+  transition: transform 0.9s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+.rf-card-media .image-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+.rf-card-item:hover .rf-card-media img {
+  transform: scale(1.04);
+}
+
+.rf-card-item:hover .rf-card-media .image-over {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Brand Fluid Columns Hover */
+.rf-fluid-col {
+  transition: all 0.35s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+.rf-fluid-col .rf-fluid-logo-wrap img,
+.rf-fluid-col .rf-fluid-logo-wrap svg {
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), filter 0.3s ease !important;
+}
+
+.rf-fluid-col:hover .rf-fluid-logo-wrap img,
+.rf-fluid-col:hover .rf-fluid-logo-wrap svg {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.rf-fluid-arrow {
+  transition: transform 0.35s cubic-bezier(0.2, 1, 0.3, 1), color 0.25s ease !important;
+}
+
+.rf-fluid-col:hover .rf-fluid-arrow {
+  transform: translateX(6px);
+  color: var(--accent-terracotta);
+}
+
+/* Mobile Drawer Smooth Slide */
+.rf-mobile-menu {
+  transition: opacity 0.35s cubic-bezier(0.2, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s !important;
+  transform: translateY(-12px);
+}
+
+.rf-mobile-menu.active {
+  transform: translateY(0);
+}
+
+/* Site links hover underline */
+.rf-site-btn {
+  will-change: transform;
+  transition: all 0.25s cubic-bezier(0.2, 1, 0.3, 1) !important;
+}
+
+.rf-site-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   17. REFORM CPH 1:1 PRODUCT DETAIL SYSTEM (CONFIGURATOR & ACCORDIONS)
+   ========================================================================== */
+.rf-config-group {
+  margin-bottom: 24px;
+}
+
+.rf-config-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rf-config-selected {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Size Pills */
+.rf-size-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rf-size-pill {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  padding: 10px 16px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rf-size-pill span {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.rf-size-pill.active {
+  border-color: var(--text-main);
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.rf-size-pill.active span {
+  color: #AAA;
+}
+
+/* Color Swatches */
+.rf-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.rf-swatch-btn {
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.rf-swatch-btn:hover {
+  transform: scale(1.12);
+}
+
+.rf-swatch-btn.active {
+  border: 2px solid var(--text-main);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px var(--text-main);
+}
+
+/* Live Stock Status */
+.rf-stock-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding: 12px 14px;
+  background: #F4F8F5;
+  border: 1px solid rgba(46, 158, 91, 0.2);
+}
+
+.rf-stock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2E9E5B;
+  display: inline-block;
+  animation: rfPulse 2s infinite;
+}
+
+@keyframes rfPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 158, 91, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(46, 158, 91, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 158, 91, 0); }
+}
+
+/* Minimalist Accordions */
+.rf-acc-group {
+  border-top: 1px solid var(--border-light);
+  margin-top: 32px;
+}
+
+.rf-acc-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-acc-header {
+  width: 100%;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+}
+
+.rf-acc-icon {
+  font-size: 16px;
+  font-weight: 400;
+  transition: transform 0.25s var(--ease);
+}
+
+.rf-acc-item.active .rf-acc-icon {
+  transform: rotate(45deg);
+}
+
+.rf-acc-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.rf-acc-item.active .rf-acc-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Complementary Essentials Section */
+.rf-essentials-section {
+  padding: 64px 0 80px;
+  background: var(--bg-offwhite);
+  border-top: 1px solid var(--border-light);
+}
+
+.rf-essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rf-essential-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.rf-essential-media {
+  aspect-ratio: 4/3;
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf-essential-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.rf-essential-card:hover .rf-essential-media img {
+  transform: scale(1.04);
+}
+
+.rf-essential-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.rf-essential-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 860px) {
+  .rf-swatch-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .rf-essentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+
+/* ==========================================================================
+   18. REFORM CPH 1:1 INTERACTIVE BEFORE & AFTER TRANSFORMATION SLIDER
+   ========================================================================== */
+.rf-compare-section {
+  padding: 64px 0 80px;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.rf-compare-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-height: 600px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  user-select: none;
+  background: #000;
+}
+
+.rf-compare-after,
+.rf-compare-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rf-compare-after img,
+.rf-compare-before img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rf-compare-before {
+  width: 50%;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 2px solid #FFFFFF;
+}
+
+.rf-compare-before img {
+  width: 100%;
+  max-width: none;
+}
+
+.rf-compare-badge {
+  position: absolute;
+  top: 16px;
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.rf-compare-badge.before {
+  left: 16px;
+}
+
+.rf-compare-badge.after {
+  right: 16px;
+  background: var(--accent-terracotta);
+}
+
+.rf-compare-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  border: 1px solid var(--border-light);
+  color: #111111;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rf-compare-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 860px) {
+  .rf-compare-box {
+    aspect-ratio: 4/3;
+  }
+}
+
+
+/* ==========================================================================
+   19. REFORM CPH FILLI BOYA SUB-WORLDS & INTERACTIVE PAINT CALCULATOR
+   ========================================================================== */
+/* Segment Sub-Navigation Bar */
+.rf-subnav-bar {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 40px;
+}
+
+.rf-subnav-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  white-space: nowrap;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-subnav-link:hover, .rf-subnav-link.active {
+  background: #FFFFFF;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* Paint Estimator Card */
+.rf-calculator-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  padding: 40px;
+  margin: 64px 0;
+}
+
+.rf-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rf-calc-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.rf-calc-btn {
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-calc-btn.active {
+  border-color: var(--text-main);
+  background: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.rf-calc-btn-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.rf-calc-btn-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.rf-calc-btn.active .rf-calc-btn-sub {
+  color: #AAA;
+}
+
+.rf-calc-output-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rf-calc-res-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+}
+
+.rf-calc-res-val {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 860px) {
+  .rf-calc-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .rf-calc-options {
+    grid-template-columns: 1fr;
+  }
+  .rf-calculator-card {
+    padding: 24px 16px;
+  }
+}
+
+
+/* ==========================================================================
+   20. REFORM CPH 1:1 EDITORIAL PRODUCT RAIL (TRUE-TO-LIFE BUCKETS)
+   ========================================================================== */
+.rf-editorial-rail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 32px 0 64px;
+}
+
+.rf-product-col {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  padding: 24px 20px;
+  transition: all 0.3s var(--ease);
+}
+
+.rf-product-col:hover {
+  border-color: var(--text-main);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+.rf-product-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent-terracotta);
+  margin-bottom: 12px;
+}
+
+.rf-product-media {
+  aspect-ratio: 4/3;
+  background: #F8F8F7;
+  overflow: hidden;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf-product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.rf-product-col:hover .rf-product-media img {
+  transform: scale(1.04);
+}
+
+.rf-product-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.rf-product-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.rf-product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 14px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.rf-product-meta span:last-child {
+  color: var(--accent-green);
+}
+
+.rf-product-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s var(--ease);
+}
+
+.rf-product-cta:hover {
+  background: var(--accent-terracotta);
+}
+
+@media (max-width: 1024px) {
+  .rf-editorial-rail {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rf-editorial-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin: 20px 0 48px;
+    padding: 0 20px 12px;
+  }
+  .rf-product-col {
+    min-width: 280px;
+    max-width: 280px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+
+/* ==========================================================================
+   21. REFORM PRESTIGE MATRIX (HOME PAGE PARTNERSHIP & TRUST SPLIT)
+   ========================================================================== */
+.rf-prestige-section {
+  padding: 80px 0 96px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-prestige-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.rf-prestige-manifesto {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-prestige-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.rf-prestige-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.rf-prestige-desc {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.rf-prestige-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 20px;
+}
+
+.rf-prestige-feat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.rf-prestige-feat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  flex-shrink: 0;
+}
+
+.rf-prestige-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.rf-prestige-tile {
+  background: #FAFAFA;
+  border: 1px solid var(--border-light);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 132px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+
+.rf-prestige-tile:hover {
+  background: #FFFFFF;
+  border-color: var(--text-main);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+}
+
+.rf-prestige-tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rf-prestige-logo {
+  height: 30px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.rf-prestige-badge {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  background: #EFEFEF;
+  padding: 3px 6px;
+}
+
+.rf-prestige-tile:hover .rf-prestige-badge {
+  background: var(--accent-terracotta);
+  color: #FFFFFF;
+}
+
+.rf-prestige-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.rf-prestige-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.rf-prestige-link {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--accent-terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 1024px) {
+  .rf-prestige-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rf-prestige-section {
+    padding: 56px 0 64px;
+  }
+  .rf-prestige-mosaic {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+
+/* ==========================================================================
+   22. REFORM CPH 1:1 EDITORIAL HOME COLLECTIONS GALLERY
+   ========================================================================== */
+.rf-home-gallery-section {
+  padding: 64px 0 88px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 40px;
+}
+
+.rf-gallery-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-gallery-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.rf-gallery-media {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 16px;
+}
+
+.rf-gallery-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-gallery-card:hover .rf-gallery-media img {
+  transform: scale(1.035);
+}
+
+.rf-gallery-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-gallery-card:hover .rf-gallery-title {
+  color: var(--accent-terracotta);
+}
+
+.rf-gallery-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.rf-gallery-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-gallery-card:hover .rf-gallery-link {
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 768px) {
+  .rf-home-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* ==========================================================================
+   23. REFORM CPH 1:1 EXACT HOMEPAGE EXPERIENCE & COMPONENTS
+   ========================================================================== */
+
+/* Reform Action Banner (Let's bring your vision to life) */
+.rf-action-banner {
+  padding: 48px 0 56px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-action-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.rf-action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 36px;
+}
+
+.rf-action-link-item {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-main);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--text-main);
+  padding-bottom: 3px;
+  transition: all 0.2s var(--ease);
+}
+
+.rf-action-link-item:hover {
+  color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* Reform Collections Rail (View all + 4-Column Fluid Grid) */
+.rf-collections-section {
+  padding: 64px 0 80px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.rf-collections-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.rf-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.rf-collection-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-collection-img-wrap {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.rf-collection-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-collection-item:hover .rf-collection-img-wrap img {
+  transform: scale(1.04);
+}
+
+.rf-collection-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-collection-item:hover .rf-collection-name {
+  color: var(--accent-terracotta);
+}
+
+.rf-collection-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Reform Interactive Tool Strip (Outline / Estimator Strip) */
+.rf-tool-strip {
+  padding: 48px 0;
+  background: #F5F4F0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-tool-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rf-tool-text {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.rf-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: #FFFFFF;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s var(--ease);
+}
+
+.rf-tool-btn:hover {
+  background: var(--accent-terracotta);
+}
+
+/* Reform Showrooms 2-Col Track */
+.rf-showrooms-track-section {
+  padding: 64px 0 80px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-showrooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.rf-showroom-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-showroom-img-wrap {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.rf-showroom-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-showroom-item:hover .rf-showroom-img-wrap img {
+  transform: scale(1.035);
+}
+
+.rf-showroom-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-showroom-item:hover .rf-showroom-name {
+  color: var(--accent-terracotta);
+}
+
+.rf-showroom-action {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Reform Process Teaser Strip (How it works, from idea to installation) */
+.rf-process-strip {
+  padding: 56px 0;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.rf-process-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.6vw, 30px);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.rf-process-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .rf-collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rf-collections-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin: 0;
+    padding: 0 20px 12px;
+  }
+  .rf-collection-item {
+    min-width: 240px;
+    max-width: 240px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .rf-showrooms-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+
+
+/* ==========================================================================
+   24. REFORM CPH 1:1 PURE EDITORIAL BRAND CARDS
+   ========================================================================== */
+.rf-brand-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-brand-media-wrap {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.rf-brand-media-wrap img.rf-brand-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-brand-card:hover .rf-brand-media-wrap img.rf-brand-photo {
+  transform: scale(1.035);
+}
+
+.rf-brand-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-brand-card:hover .rf-brand-title {
+  color: var(--accent-terracotta);
+}
+
+
+
+/* ==========================================================================
+   26. REFORM CPH 1:1 PURE KITCHEN COLLECTIONS BENCHMARK
+   ========================================================================== */
+.rf-collections-section {
+  padding: 64px 0 88px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.rf-collections-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.rf-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 32px;
+}
+
+.rf-brand-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-brand-media-wrap {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 12px;
+}
+
+.rf-brand-media-wrap img.rf-brand-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-brand-card:hover .rf-brand-media-wrap img.rf-brand-photo {
+  transform: scale(1.025);
+}
+
+.rf-brand-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-brand-card:hover .rf-brand-title {
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 768px) {
+  .rf-collections-section {
+    padding: 48px 0 64px;
+  }
+  .rf-collections-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+
+/* ==========================================================================
+   EXACT 1:1 REFORM CPH CORE BLOCK SYSTEM & STYLES
+   ========================================================================== */
+html, body {
+  font-family: Calibre, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #000000;
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.block-container {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.block-container.padding-top-small { padding-top: 30px; }
+.block-container.padding-bottom-small { padding-bottom: 30px; }
+
+@media (min-width: 768px) {
+  .block-container.padding-top-small { padding-top: 50px; }
+  .block-container.padding-bottom-small { padding-bottom: 50px; }
+}
+
+.block-sizer {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.block-sizer.wide_two_media {
+  max-width: none;
+}
+
+/* WIDE TWO MEDIA */
+.block.wide-two-media {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .block.wide-two-media {
+    flex-direction: row;
+  }
+}
+
+.block.wide-two-media .media-container {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.media-container .responsive-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+}
+
+@media (max-width: 767px) {
   .media-container .responsive-image-container {
     aspect-ratio: 4/3;
   }
@@ -222,10 +3132,10 @@ header {
 
 .media-container .media-contents {
   position: absolute;
-  top: 32px;
-  left: 32px;
-  right: 32px;
-  bottom: 32px;
+  top: 30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -233,39 +3143,43 @@ header {
   z-index: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .media-container .media-contents {
     top: 20px;
     left: 20px;
-    right: 20px;
-    bottom: 20px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
   }
 }
 
 .media-contents .media-title {
-  font-size: clamp(20px, 2.4vw, 30px);
-  font-weight: 400;
+  font-size: 26px;
   line-height: 1.15;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: #FFFFFF;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 12px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 767px) {
+  .media-contents .media-title {
+    font-size: 20px;
+  }
 }
 
 .media-contents .media-button {
   display: inline-block;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1;
   color: #FFFFFF;
-  padding: 12px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  pointer-events: auto;
+  padding: 11px 22px;
+  border: 1px solid rgba(255,255,255,0.85);
+  font-weight: 400;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   white-space: nowrap;
+  pointer-events: auto;
   transition: all 0.2s ease;
 }
 
@@ -275,72 +3189,68 @@ header {
   border-color: #FFFFFF;
 }
 
-/* ==========================================================================
-   3. SITE LINKS (VIZYONUNUZU HAYATA GEÇİRELİM & SÜREÇ)
-   ========================================================================== */
+/* SITE LINKS BAR */
 .block.site-links {
-  padding: 48px 60px;
+  padding: 20px 30px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  background: #FFFFFF;
-  border-bottom: 1px solid var(--border-hairline);
+  align-items: flex-start;
+  gap: 20px;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 1024px) {
   .block.site-links {
-    padding: 32px 20px;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 30px 60px;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
 .site-text.text-color-black p {
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: 24px;
+  line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.02em;
   color: #000000;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .site-text.text-color-black p {
+    font-size: 20px;
+  }
 }
 
 .block.site-links .button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 32px;
-}
-
-@media (max-width: 768px) {
-  .block.site-links .button-group {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-  }
+  gap: 20px 32px;
 }
 
 .site-button.interactive.text-color-black {
   font-size: 14px;
+  line-height: 1.4;
   color: #000000;
   text-decoration: underline;
   text-underline-offset: 4px;
+  font-weight: 400;
   transition: color 0.2s ease;
 }
 
 .site-button.interactive.text-color-black:hover {
-  color: var(--text-muted);
+  color: #777777;
+  text-decoration: none;
 }
 
-/* ==========================================================================
-   4. SIMPLE HEADER & OVERVIEW (YETKİLİ BAYİLİKLER)
-   ========================================================================== */
+/* SIMPLE HEADER */
 .block.simple-header {
-  padding: 56px 60px 16px;
-  background: #F7F7F7;
+  padding: 40px 30px 10px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .block.simple-header {
-    padding: 36px 20px 12px;
+    padding: 60px 60px 20px;
   }
 }
 
@@ -351,41 +3261,43 @@ header {
 }
 
 .block-text.text-header h2 {
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: -0.02em;
+  margin: 0;
   color: #000000;
 }
 
 .header-link a {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #000000;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .header-link a:hover {
-  color: var(--text-muted);
+  color: #777777;
+  text-decoration: none;
 }
 
+/* OVERVIEW (COLLECTIONS) */
 .block.overview {
-  padding: 16px 60px 72px;
-  background: #F7F7F7;
+  padding: 10px 30px 60px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .block.overview {
-    padding: 12px 20px 48px;
+    padding: 10px 60px 80px;
   }
 }
 
 .block.overview .list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px 32px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .block.overview .list {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -406,7 +3318,7 @@ header {
   margin-bottom: 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .list-item .responsive-image-container {
     aspect-ratio: 4/3;
   }
@@ -416,11 +3328,12 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .list-item:hover .responsive-image-container img {
-  transform: scale(1.025);
+  transform: scale(1.03);
 }
 
 .list-item-contents .list-item-title {
@@ -428,50 +3341,52 @@ header {
   font-weight: 400;
   color: #000000;
   letter-spacing: -0.01em;
-  line-height: 1.35;
-  transition: color 0.2s ease;
+  line-height: 1.3;
 }
 
-.list-item:hover .list-item-contents .list-item-title {
-  color: var(--accent-terracotta);
-}
-
-/* ==========================================================================
-   5. ACTIVATION (PERVAN ESTIMATOR STRIP)
-   ========================================================================== */
+/* ACTIVATION STRIP */
 .block.activation {
-  padding: 56px 60px;
-  background: #F7F7F7;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid var(--border-hairline);
+  padding: 60px 30px;
+  background: #F4F3EF;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .block.activation {
-    padding: 36px 20px;
+    padding: 70px 60px;
   }
 }
 
 .activation-text {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
+  align-items: flex-start;
+  max-width: 800px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .activation-text {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: none;
   }
 }
 
 .activation-text p {
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: -0.02em;
+  margin: 0;
   color: #000000;
+}
+
+@media (max-width: 767px) {
+  .activation-text p {
+    font-size: 18px;
+  }
 }
 
 .activation-button {
@@ -479,7 +3394,7 @@ header {
   padding: 12px 28px;
   background: #000000;
   color: #FFFFFF !important;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 400;
   text-decoration: none !important;
   white-space: nowrap;
@@ -490,13 +3405,253 @@ header {
   background: #333333;
 }
 
+
 /* ==========================================================================
-   6. FOOTER (REFORM CPH 1:1 CLEAN WHITE FOOTER)
+   MOBILE & RESPONSIVE REFINEMENTS (BUG FIXES)
    ========================================================================== */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 60px; /* Prevent bottom dock collision */
+  }
+
+  .media-container .media-contents {
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .media-contents .media-title {
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .media-contents .media-button {
+    font-size: 12.5px;
+    padding: 8px 16px;
+    margin-left: 0;
+  }
+
+  .block.site-links {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .block.site-links .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .site-button.interactive.text-color-black {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .block.simple-header {
+    padding: 32px 20px 12px;
+  }
+
+  .block.overview {
+    padding: 12px 20px 48px;
+  }
+
+  .block.overview .list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .block.activation {
+    padding: 40px 20px;
+  }
+
+  .activation-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .activation-text p {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .activation-button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
+
+
+/* ==========================================================================
+   REFORM CPH (reformcph.com) 1:1 EXACT DESIGN SYSTEM COMPONENTS
+   ========================================================================== */
+
+/* 1. NAVBAR & HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-top {
+    padding: 0 20px;
+    height: 56px;
+  }
+}
+
+.navbar-logo {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  color: #000000 !important;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.navbar-contents {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .navbar-contents,
+  .navbar-sticky {
+    display: none !important;
+  }
+}
+
+.navbar-contents-overflow {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.navbar-item {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  cursor: pointer;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-item.has-dropdown:hover .navbar-dropdown {
+  display: flex;
+}
+
+.navbar-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  flex-direction: column;
+  min-width: 260px;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.navbar-dropdown a.navbar-item {
+  padding: 10px 20px;
+  font-size: 13.5px;
+  color: #444444;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar-dropdown a.navbar-item:hover {
+  background: #F7F7F7;
+  color: #000000;
+}
+
+.navbar-sticky {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-sticky a.navbar-item {
+  font-size: 13.5px;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 0;
+}
+
+.navbar-sticky a.navbar-item:hover {
+  color: #777777;
+}
+
+/* HAMBURGER */
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  #mobile-menu {
+    display: flex;
+  }
+}
+
+#mobile-menu .bar {
+  width: 100%;
+  height: 1.5px;
+  background-color: #000000;
+  transition: all 0.25s ease;
+}
+
+/* 2. FOOTER (REFORM CPH 1:1) */
 .footer {
   background: #FFFFFF;
-  border-top: 1px solid var(--border-hairline);
-  padding: 64px 60px 80px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 64px 40px 80px;
 }
 
 @media (max-width: 768px) {
@@ -507,6 +3662,8 @@ header {
 
 .footer-container {
   width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .footer-sizer {
@@ -523,7 +3680,7 @@ header {
 }
 
 .footer-logo {
-  font-family: var(--font-base);
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 500;
   color: #000000;
@@ -535,7 +3692,7 @@ header {
 
 .copyright {
   font-size: 13px;
-  color: var(--text-muted);
+  color: #777777;
   line-height: 1.6;
 }
 
@@ -565,6 +3722,7 @@ header {
 }
 
 .footer .navbar-title {
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
@@ -587,7 +3745,7 @@ header {
 .footer .navbar-dropdown a.navbar-item {
   padding: 0;
   font-size: 13.5px;
-  color: var(--text-muted);
+  color: #777777;
   text-decoration: none;
 }
 
