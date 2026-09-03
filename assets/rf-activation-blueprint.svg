@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" fill="none">
+  <defs>
+    <pattern id="iso-dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="0.8" fill="rgba(0,0,0,0.06)" />
+    </pattern>
+  </defs>
+
+  <!-- Faint drafting dot grid -->
+  <rect width="100%" height="100%" fill="url(#iso-dots)" />
+
+  <!-- LEFT ARCHITECTURAL ISOMETRIC STRUCTURES (Renovation / Casework / Partitions) -->
+  <g stroke="rgba(0,0,0,0.13)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Tall Architectural Tower Unit (Left) -->
+    <path d="M 120,440 L 260,360 L 260,120 L 120,200 Z" fill="rgba(255,255,255,0.7)" />
+    <path d="M 260,120 L 400,200 L 400,440 L 260,360 Z" fill="rgba(255,255,255,0.5)" />
+    <path d="M 120,200 L 260,120 L 400,200 L 260,280 Z" fill="rgba(255,255,255,0.85)" />
+
+    <!-- Cabinet Compartments & Recesses -->
+    <path d="M 120,280 L 260,200 L 400,280" />
+    <path d="M 120,360 L 260,280 L 400,360" />
+    <path d="M 190,240 L 190,400" stroke-dasharray="2,2" stroke="rgba(0,0,0,0.10)" />
+    <path d="M 330,240 L 330,400" stroke-dasharray="2,2" stroke="rgba(0,0,0,0.10)" />
+
+    <!-- Isometric Countertop / Low Workstation (Extended left-center) -->
+    <path d="M 340,410 L 480,330 L 600,400 L 460,480 Z" fill="rgba(255,255,255,0.75)" />
+    <path d="M 340,410 L 340,490 L 460,560 L 460,480 Z" fill="rgba(255,255,255,0.6)" />
+    <path d="M 460,560 L 600,480 L 600,400" />
+    <!-- Sink / Cutout detail on countertop -->
+    <path d="M 410,390 L 460,360 L 510,390 L 460,420 Z" stroke="rgba(0,0,0,0.18)" />
+    <circle cx="485" cy="380" r="2.5" stroke="rgba(0,0,0,0.22)" stroke-width="1" />
+
+    <!-- Upper Wall Module (Floating top left) -->
+    <path d="M 180,90 L 280,32 L 380,90 L 280,148 Z" fill="rgba(255,255,255,0.8)" />
+    <path d="M 180,90 L 180,150 L 280,208 L 280,148 Z" />
+    <path d="M 280,208 L 380,150 L 380,90" />
+
+    <!-- Architectural Dimension Lines & Extension Ticks -->
+    <g stroke="rgba(0,0,0,0.18)" stroke-width="0.8" stroke-dasharray="3,3">
+      <line x1="120" y1="465" x2="260" y2="545" />
+      <line x1="260" y1="545" x2="400" y2="465" />
+      <line x1="115" y1="460" x2="125" y2="470" stroke-dasharray="none" stroke-width="1.2" />
+      <line x1="255" y1="540" x2="265" y2="550" stroke-dasharray="none" stroke-width="1.2" />
+      <line x1="395" y1="460" x2="405" y2="470" stroke-dasharray="none" stroke-width="1.2" />
+    </g>
+    <!-- Dimension Text -->
+    <text x="175" y="520" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="rgba(0,0,0,0.35)" font-weight="500" letter-spacing="0.5">3.40 m</text>
+    <text x="315" y="520" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="rgba(0,0,0,0.35)" font-weight="500" letter-spacing="0.5">2.80 m</text>
+  </g>
+
+  <!-- RIGHT ARCHITECTURAL ISOMETRIC STRUCTURES (Kitchen island / Wall units / Technical details) -->
+  <g stroke="rgba(0,0,0,0.13)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main Island / Base Unit (Right center) -->
+    <path d="M 1040,430 L 1180,350 L 1360,454 L 1220,534 Z" fill="rgba(255,255,255,0.75)" />
+    <path d="M 1040,430 L 1040,510 L 1220,614 L 1220,534 Z" fill="rgba(255,255,255,0.6)" />
+    <path d="M 1220,614 L 1360,534 L 1360,454" fill="rgba(255,255,255,0.5)" />
+    <!-- Drawer / Door Division Lines -->
+    <path d="M 1100,465 L 1100,545" />
+    <path d="M 1160,500 L 1160,580" />
+    <path d="M 1040,470 L 1220,574" stroke-dasharray="2,2" stroke="rgba(0,0,0,0.10)" />
+
+    <!-- Cooktop detail -->
+    <path d="M 1120,410 L 1170,380 L 1220,410 L 1170,440 Z" stroke="rgba(0,0,0,0.2)" />
+    <circle cx="1150" cy="405" r="5" stroke="rgba(0,0,0,0.18)" />
+    <circle cx="1190" cy="405" r="5" stroke="rgba(0,0,0,0.18)" />
+    <circle cx="1170" cy="420" r="4" stroke="rgba(0,0,0,0.18)" />
+    <circle cx="1170" cy="395" r="4" stroke="rgba(0,0,0,0.18)" />
+
+    <!-- High Wall Cabinets / Structural Columns (Right) -->
+    <path d="M 1280,380 L 1380,322 L 1520,402 L 1420,460 Z" fill="rgba(255,255,255,0.7)" />
+    <path d="M 1380,322 L 1380,100 L 1520,180 L 1520,402 Z" fill="rgba(255,255,255,0.5)" />
+    <path d="M 1280,380 L 1280,160 L 1380,100" />
+    <path d="M 1280,160 L 1420,240 L 1520,180" fill="rgba(255,255,255,0.85)" />
+
+    <!-- Oven / Built-in Appliances Lines -->
+    <path d="M 1410,290 L 1490,244 L 1490,320 L 1410,366 Z" stroke="rgba(0,0,0,0.22)" fill="rgba(255,255,255,0.4)" />
+    <line x1="1430" y1="300" x2="1470" y2="277" stroke="rgba(0,0,0,0.25)" stroke-width="1.5" />
+
+    <!-- Right Dimension Lines -->
+    <g stroke="rgba(0,0,0,0.18)" stroke-width="0.8" stroke-dasharray="3,3">
+      <line x1="1040" y1="535" x2="1220" y2="639" />
+      <line x1="1035" y1="530" x2="1045" y2="540" stroke-dasharray="none" stroke-width="1.2" />
+      <line x1="1215" y1="634" x2="1225" y2="644" stroke-dasharray="none" stroke-width="1.2" />
+    </g>
+    <text x="1115" y="605" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" fill="rgba(0,0,0,0.35)" font-weight="500" letter-spacing="0.5">2.60 m</text>
+  </g>
+
+  <!-- CENTER PERSPECTIVE GRID LINES (Very faint, leading to the center) -->
+  <g stroke="rgba(0,0,0,0.06)" stroke-width="0.75" stroke-dasharray="4,4">
+    <line x1="500" y1="470" x2="1100" y2="470" />
+    <line x1="550" y1="510" x2="1050" y2="510" />
+    <line x1="600" y1="550" x2="1000" y2="550" />
+    <!-- Subtle drafting angle crosshair -->
+    <line x1="800" y1="440" x2="800" y2="460" stroke-dasharray="none" stroke="rgba(0,0,0,0.12)" />
+    <line x1="790" y1="450" x2="810" y2="450" stroke-dasharray="none" stroke-width="1" stroke="rgba(0,0,0,0.12)" />
+  </g>
+</svg>
