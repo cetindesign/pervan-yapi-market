@@ -3439,13 +3439,16 @@ header {
     align-items: stretch;
   }
 
-  /* ROW 1: SPLIT 50/50 ACTION BAR */
+  /* ROW 1: SPLIT 50/50 ACTION BAR (REFORM 1:1) */
   .navbar-sticky {
     display: flex;
     width: 100%;
     height: 50px;
+    margin: 0;
+    padding: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    gap: 0;
+    background: #FFFFFF;
+    box-sizing: border-box;
   }
 
   .navbar-sticky a.navbar-item {
@@ -3455,45 +3458,111 @@ header {
     border-radius: 0 !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 12px;
+    justify-content: space-between;
+    padding: 0 24px;
+    font-family: var(--font-display);
     font-size: 13.5px;
     font-weight: 400;
+    letter-spacing: 0.15px;
     color: #000000;
     background: transparent;
+    text-decoration: none;
+    box-sizing: border-box;
   }
 
   .navbar-sticky a.navbar-item:first-child {
     border-right: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  .navbar-sticky a.navbar-item:hover {
-    background: transparent;
-    color: #777777;
+  .navbar-sticky a.navbar-item .arrow {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 0;
+    display: inline-block;
   }
 
-  /* ROW 2: BAR WITH HAMBURGER ON LEFT, LOGO ON RIGHT (REFORM 1:1) */
+  /* ROW 2: HEADER ROW WITH HAMBURGER ON LEFT, LOGO ON RIGHT (REFORM 1:1) */
   .navbar-top-row2 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: relative;
     height: 60px;
-    padding: 0 20px;
+    padding: 0 24px;
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: #FFFFFF;
   }
 
   #mobile-menu {
     display: block;
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  #mobile-menu .bar {
+    width: 20px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 6px;
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #mobile-menu.closed .bar1 {
+    top: 10px;
+    opacity: 1;
+    transform: none;
+  }
+
+  #mobile-menu.closed .bar2 {
+    top: 16px;
+    transform: none;
+  }
+
+  #mobile-menu.closed .bar3 {
+    top: 22px;
+    transform: none;
+  }
+
+  #mobile-menu:not(.closed) .bar1,
+  #mobile-menu.opened .bar1 {
+    opacity: 0;
+    top: 16px;
+  }
+
+  #mobile-menu:not(.closed) .bar2,
+  #mobile-menu.opened .bar2 {
+    transform: rotate(45deg);
+    top: 16px;
+  }
+
+  #mobile-menu:not(.closed) .bar3,
+  #mobile-menu.opened .bar3 {
+    transform: rotate(-45deg);
+    top: 16px;
   }
 
   .navbar-logo {
     display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #000000 !important;
   }
 
-  /* REFORM 1:1 MOBILE DRAWER (OPENS EXACTLY UNDER 110PX HEADER) */
+  /* REFORM 1:1 ARCHITECTURAL DRAWER (CETVELLE ÇİZİLMİŞ GİBİ) */
   .navbar-contents {
     display: none;
   }
@@ -3507,7 +3576,7 @@ header {
     height: calc(100vh - 110px);
     height: calc(100dvh - 110px);
     background-color: #FFFFFF;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: none;
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 1001;
@@ -3542,30 +3611,17 @@ header {
     flex-direction: column;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 0;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-  }
-
-  /* REFORM 1:1 MATHEMATICAL VERTICAL RHYTHM (EXACT 17PX LINE-TO-TEXT SPACING) */
-  .navbar-contents.opened .navbar-menu .menu-item {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-color: #FFFFFF;
   }
 
-  /* TITLE ROW: 48px height, 14px font => exact 17px top & bottom half-leading */
+  /* CATEGORY TITLE: EXACT 48PX ROW, 24PX PADDING, 14PX REGULAR FONT */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-title {
     width: 100%;
     height: 48px;
     line-height: 48px;
-    padding: 0 20px !important;
+    padding: 0 24px !important;
     margin: 0 !important;
     font-family: var(--font-display);
     font-size: 14px;
@@ -3585,12 +3641,12 @@ header {
     color: #999999;
   }
 
-  /* REFORM 1:1 ARCHITECTURAL RAZOR ARROW: centered at 24px in 48px title row */
+  /* REFORM 1:1 RAZOR ARROW (EXACT 24PX FROM RIGHT, 24PX FROM TOP) */
   .navbar-contents.opened .navbar-menu .menu-item .arrow {
     position: absolute;
     background: #000000;
     top: 24px;
-    right: 20px;
+    right: 24px;
     margin: 0;
     width: 7px;
     height: 1px;
@@ -3625,7 +3681,7 @@ header {
     transform: rotate(90deg);
   }
 
-  /* ACCORDION DROPDOWN: 6px vertical padding + 34px rows => exact 17px line-to-text spacing */
+  /* ACCORDION DROPDOWN: 10PX PADDING TOP/BOTTOM, DIVIDER LINE UNDER TITLE */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown {
     position: relative;
     top: 0;
@@ -3633,7 +3689,7 @@ header {
     width: 100%;
     display: none;
     flex-direction: column;
-    padding: 6px 0 !important;
+    padding: 10px 0 16px 0 !important;
     background-color: #FFFFFF;
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -3645,17 +3701,17 @@ header {
     display: block !important;
   }
 
-  /* SUB-LINKS: 34px line-height, 13px font => exact 10.5px half-leading (+ 6px pad = 16.5px to border) */
+  /* SUB-LINKS & SEE ALL: EXACT 24PX LEFT PADDING, 34PX LINE-HEIGHT, 14PX FONT */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown .navbar-item,
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown a.navbar-item {
     position: relative;
-    padding: 0 20px !important;
+    padding: 0 24px !important;
     display: block !important;
     text-align: left !important;
     line-height: 34px !important;
     height: 34px !important;
     font-family: var(--font-display);
-    font-size: 13px !important;
+    font-size: 14px !important;
     font-weight: 400 !important;
     letter-spacing: 0.15px !important;
     color: #000000 !important;
@@ -3676,22 +3732,19 @@ header {
     color: #999999 !important;
   }
 
-  /* "TÜMÜNÜ GÖR": exact 34px height, identical spacing, zero margin offset */
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown .navbar-item.mobile-only,
   .navbar-contents.opened .navbar-menu .menu-item .navbar-dropdown a.navbar-item.mobile-only {
     display: block !important;
     text-align: left !important;
-    font-weight: 500 !important;
-    text-decoration: underline !important;
-    text-underline-offset: 3px !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
     color: #000000 !important;
-    padding: 0 20px !important;
+    padding: 0 24px !important;
     line-height: 34px !important;
     height: 34px !important;
     margin: 0 !important;
   }
 }
-
 
 /* 2. BLOCK CONTAINERS */
 .block-container {
