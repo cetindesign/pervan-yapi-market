@@ -3310,55 +3310,55 @@ header {
   top: 0;
   bottom: 0;
   margin: auto;
-  width: 45px;
-  height: 34px;
+  width: 40px;
+  height: 30px;
   cursor: pointer;
   z-index: 1002;
 }
 
 #mobile-menu .bar {
-  width: 25px;
+  width: 22px;
   height: 1px;
   background-color: #000000;
   position: absolute;
-  left: 10px;
+  left: 9px;
   transform-origin: center;
   -webkit-transform-origin: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #mobile-menu.closed .bar1 {
-  top: 10px;
+  top: 9px;
   opacity: 1;
   transform: none;
 }
 
 #mobile-menu.closed .bar2 {
-  top: 17px;
+  top: 15px;
   transform: none;
 }
 
 #mobile-menu.closed .bar3 {
-  top: 24px;
+  top: 21px;
   transform: none;
 }
 
 #mobile-menu:not(.closed) .bar1,
 #mobile-menu.opened .bar1 {
   opacity: 0;
-  top: 10px;
+  top: 9px;
 }
 
 #mobile-menu:not(.closed) .bar2,
 #mobile-menu.opened .bar2 {
   transform: rotate(45deg);
-  top: 17px;
+  top: 15px;
 }
 
 #mobile-menu:not(.closed) .bar3,
 #mobile-menu.opened .bar3 {
   transform: rotate(-45deg);
-  top: 17px;
+  top: 15px;
 }
 
 /* ==========================================================================
@@ -3548,11 +3548,11 @@ header {
 
   .navbar-contents.opened .navbar-menu .menu-item .navbar-title {
     width: 100%;
-    height: auto;
-    line-height: 60px;
+    height: 46px;
+    line-height: 46px;
     padding: 0 20px;
     font-family: var(--font-display);
-    font-size: 16px;
+    font-size: 13.5px;
     font-weight: 400;
     letter-spacing: 0.15px;
     color: #000000;
@@ -3573,9 +3573,9 @@ header {
   .navbar-contents.opened .navbar-menu .menu-item .arrow {
     position: absolute;
     background: #000000;
-    top: 30px;
-    right: 25px;
-    margin: auto;
+    top: 22px;
+    right: 20px;
+    margin: 0;
     width: 7px;
     height: 1px;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3616,7 +3616,7 @@ header {
     min-width: 100%;
     display: none;
     flex-direction: column;
-    padding: 10px 0 20px;
+    padding: 6px 0 14px;
     background-color: #FFFFFF;
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -3632,10 +3632,10 @@ header {
     position: relative;
     padding: 0 20px !important;
     display: block !important;
-    line-height: 36px !important;
+    line-height: 28px !important;
     height: auto !important;
     font-family: var(--font-display);
-    font-size: 14px !important;
+    font-size: 12.5px !important;
     font-weight: 400 !important;
     letter-spacing: 0.15px !important;
     color: #000000 !important;
@@ -3661,7 +3661,8 @@ header {
     font-weight: 500 !important;
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
-    padding-bottom: 4px !important;
+    padding-bottom: 2px !important;
+    line-height: 28px !important;
     color: #000000 !important;
   }
 }
