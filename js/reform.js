@@ -176,7 +176,7 @@
                       "Telefon: " + phone + "\n" +
                       (notes ? "Notlar: " + notes : "");
 
-        var waUrl = "https://wa.me/902322784340?text=" + encodeURIComponent(message);
+        var waUrl = "https://wa.me/905323844497?text=" + encodeURIComponent(message);
         window.open(waUrl, "_blank");
         window.closeConsultation();
       });
@@ -215,7 +215,7 @@
       if (activeSize) msg += "Seçilen Boyut / Kapsam: " + activeSize + "\n";
       if (activeColor) msg += "Seçilen Renk / Standart: " + activeColor + "\n";
       msg += "Balçova depodan stok, keşif ve güncel fiyat bilgisi alabilir miyim?";
-      waBtn.href = "https://wa.me/902322784340?text=" + encodeURIComponent(msg);
+      waBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
     }
 
     document.querySelectorAll(".rf-size-pill").forEach(function(pill) {
@@ -344,7 +344,7 @@
                   "Astar İhtiyacı: " + d.primer + "\n" +
                   "Sarf Malzemeler: " + d.tools + "\n" +
                   "Balçova mağazanızdan güncel paket fiyatı ve stok öğrenebilir miyim?";
-        calcWaBtn.href = "https://wa.me/902322784340?text=" + encodeURIComponent(msg);
+        calcWaBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
       }
     }
 
