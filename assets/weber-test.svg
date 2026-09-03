@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 80" width="620" height="160">
+  <!-- Yellow-Black Weber Hexagon Emblem (56x56 at y=12) -->
+  <g transform="translate(10, 12)">
+    <polygon points="0,28 14,0 42,0 56,28 42,56 14,56" fill="#FEE000"/>
+    <polygon points="28,0 42,0 56,28 42,56 28,56 42,28" fill="#111111"/>
+    <polygon points="14,28 21,14 35,14 28,28 35,42 21,42" fill="#FFFFFF"/>
+  </g>
+
+  <!-- weber Wordmark (Aligned with Hexagon) -->
+  <text x="78" y="52" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="-0.045em" fill="#111111">weber</text>
+
+  <!-- SAINT-GOBAIN Endorsement -->
+  <text x="80" y="69" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.22em" fill="#444444">SAINT-GOBAIN</text>
+</svg>
