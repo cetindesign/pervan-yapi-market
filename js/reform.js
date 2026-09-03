@@ -7,6 +7,33 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function() {
+
+    // REFORM 1:1 MOBILE NAVBAR TOGGLE
+    var mobileBtn = document.getElementById("mobile-menu");
+    var navbarContents = document.querySelector(".navbar-contents");
+    if (mobileBtn && navbarContents) {
+      mobileBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        mobileBtn.classList.toggle("closed");
+        navbarContents.classList.toggle("opened");
+        document.body.style.overflow = navbarContents.classList.contains("opened") ? "hidden" : "";
+      });
+    }
+
+    // REFORM 1:1 ACCORDION TOGGLE ON MOBILE
+    document.querySelectorAll(".navbar-menu .menu-item").forEach(function(item) {
+      var title = item.querySelector(".navbar-title");
+      if (title) {
+        title.addEventListener("click", function(e) {
+          if (window.innerWidth <= 991) {
+            e.preventDefault();
+            e.stopPropagation();
+            item.classList.toggle("is-open");
+          }
+        });
+      }
+    });
+
     // 1. Mobile Menu Open / Close
     var rfToggle = document.getElementById("rfToggle");
     var rfMobileMenu = document.getElementById("rfMobileMenu");
