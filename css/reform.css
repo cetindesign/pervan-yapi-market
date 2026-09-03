@@ -3871,16 +3871,16 @@ header {
   color: #FFFFFF !important;
 }
 
-/* 5. SIMPLE HEADER & OVERVIEW (YETKİLİ BAYİLİKLER) */
+/* 5. SIMPLE HEADER & OVERVIEW (REFORM CPH 1:1 2-COL 3:4 COLLECTIONS) */
 .block.simple-header {
   padding: 56px var(--gutter-desktop) 16px;
-  background: #F7F7F7;
+  background: #FFFFFF;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .block.simple-header {
-    padding: 36px var(--gutter-mobile) 12px;
+    padding: 36px var(--gutter-mobile) 16px;
   }
 }
 
@@ -3912,8 +3912,8 @@ header {
 }
 
 .block.overview {
-  padding: 16px var(--gutter-desktop) 72px;
-  background: #F7F7F7;
+  padding: 16px var(--gutter-desktop) 80px;
+  background: #FFFFFF;
   box-sizing: border-box;
 }
 
@@ -3931,8 +3931,8 @@ header {
 
 @media (max-width: 768px) {
   .block.overview .list {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px 14px !important;
   }
 }
 
