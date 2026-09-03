@@ -1,29 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 130" width="100%" height="100%">
-  <!-- Centered Lockup -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 105" width="100%" height="100%">
+  <!-- Centered Authentic Weber Lockup -->
   <g transform="translate(18, 12)">
-    <!-- Yellow-Black Weber Hexagon Emblem (Large, crisp, authentic geometry) -->
-    <g transform="translate(0, 8) scale(1.72)">
-      <!-- Yellow background facet -->
+    <!-- Yellow-Black Weber Hexagon Emblem (Large, bold, authentic) -->
+    <g transform="translate(0, 4) scale(1.45)">
+      <!-- Yellow background polygon -->
       <polygon points="0,28 14,0 42,0 56,28 42,56 14,56" fill="#FEE000"/>
-      <!-- Jet black shadow facet -->
+      <!-- Jet black shadow wing -->
       <polygon points="28,0 42,0 56,28 42,56 28,56 42,28" fill="#111111"/>
-      <!-- White crisp inner highlight -->
+      <!-- Crisp white inner accent -->
       <polygon points="14,28 21,14 35,14 28,28 35,42 21,42" fill="#FFFFFF"/>
     </g>
 
-    <!-- Saint-Gobain Colorful Arc Bridge (Subtle, elegant, authentic top accent) -->
-    <g transform="translate(256, 12) scale(0.68)">
-      <path d="M -90,-4 C -45,-38 45,-38 90,-4 C 75,3 -75,3 -90,-4 Z" fill="#0072CE"/>
-      <path d="M -75,-4 C -36,-31 36,-31 75,-4 C 62,2 -62,2 -75,-4 Z" fill="#00A3E0"/>
-      <path d="M -60,-4 C -28,-25 28,-25 60,-4 C 50,1 -50,1 -60,-4 Z" fill="#43B02A"/>
-      <path d="M -45,-4 C -20,-19 20,-19 45,-4 C 38,1 -38,1 -45,-4 Z" fill="#FFB81C"/>
-      <path d="M -30,-4 C -12,-14 12,-14 30,-4 C 25,0 -25,0 -30,-4 Z" fill="#E05A47"/>
-    </g>
+    <!-- weber Heavy Geometric Wordmark -->
+    <text x="104" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-0.045em" fill="#111111">weber</text>
 
-    <!-- Bold, Heavy weber Wordmark -->
-    <text x="118" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="74" font-weight="900" letter-spacing="-0.05em" fill="#111111">weber</text>
-
-    <!-- SAINT-GOBAIN Endorsement Lockup -->
-    <text x="120" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.28em" fill="#444444">SAINT-GOBAIN</text>
+    <!-- SAINT-GOBAIN Official Endorsement -->
+    <text x="106" y="81" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="0.28em" fill="#444444">SAINT-GOBAIN</text>
   </g>
 </svg>
