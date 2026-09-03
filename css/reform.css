@@ -3753,3 +3753,200 @@ header {
   color: #000000;
   background: transparent;
 }
+
+
+/* ==========================================================================
+   REFORM CPH 1:1 PRECISION SPECIFICATION OVERRIDES
+   ========================================================================== */
+
+/* 1. Sharp 90-degree corners across the design system */
+*, *::before, *::after,
+button, input, select, textarea,
+.media-button, .site-button, .activation-button, .rf-nav-pill, .rf-btn {
+  border-radius: 0 !important;
+}
+
+/* 2. Hero Viewport Doygunluğu (Desktop Full Viewport Split) */
+@media (min-width: 861px) {
+  #block-container-hero {
+    height: calc(100vh - 64px);
+    min-height: 600px;
+    max-height: 960px;
+  }
+
+  #block-container-hero .block-sizer,
+  #block-container-hero .block.wide-two-media,
+  #block-container-hero .media-container {
+    height: 100%;
+  }
+
+  #block-container-hero .responsive-image-container {
+    height: 100%;
+    aspect-ratio: auto !important;
+  }
+
+  #block-container-hero .responsive-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* 3. Collections Portrait 3:4 Aspect Ratio & Hover Image Swap */
+.block.overview .list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 36px;
+}
+
+@media (max-width: 768px) {
+  .block.overview .list {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.list-item .responsive-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4 !important;
+  overflow: hidden;
+  background: #EDECE8;
+  margin-bottom: 14px;
+}
+
+.list-item .responsive-image-container img.primary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.list-item .responsive-image-container img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.list-item:hover .responsive-image-container img.primary-img {
+  transform: scale(1.025);
+}
+
+.list-item:hover .responsive-image-container img.hover-img {
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+/* 4. Elimination of mobile dock spacing on body */
+body {
+  padding-bottom: 0 !important;
+}
+
+/* 5. Reform Newsletter & Markets Strip */
+.signup-newsletter {
+  padding: 48px 40px;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .signup-newsletter {
+    padding: 36px 20px;
+  }
+}
+
+.newsletter-sizer {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-sizer h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  color: #000000;
+}
+
+.signup-group {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.signup-group input {
+  flex: 1;
+  height: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: none;
+  padding: 0 16px;
+  font-size: 14px;
+  font-family: var(--font-display);
+  background: #FFFFFF;
+  color: #000000;
+  outline: none;
+}
+
+.signup-group input:focus {
+  border-color: #000000;
+}
+
+.signup-group button {
+  height: 48px;
+  padding: 0 28px;
+  background: #000000;
+  color: #FFFFFF;
+  border: 1px solid #000000;
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.signup-group button:hover {
+  background: #333333;
+}
+
+.markets {
+  padding: 24px 40px;
+  background: #F7F7F7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .markets {
+    padding: 18px 20px;
+  }
+}
+
+.markets-sizer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.market-item {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: #777777;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.market-item:hover, .market-item.is-selected {
+  color: #000000;
+  font-weight: 500;
+}
