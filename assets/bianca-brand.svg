@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 96" width="100%" height="100%">
+  <g transform="translate(190, 48)">
+    <!-- Sparkle Star Accent -->
+    <path d="M 85,-38 L 89,-24 L 103,-20 L 89,-16 L 85,-2 L 81,-16 L 67,-20 L 81,-24 Z" fill="#2D81B1"/>
+
+    <!-- Dominant Wordmark -->
+    <text x="-95" y="8" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" letter-spacing="-0.02em" fill="#152F54" text-anchor="middle">Bianca</text>
+    <text x="55" y="8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="-0.03em" fill="#2D81B1" text-anchor="middle">Stella</text>
+
+    <!-- Sub-tag DÖNÜŞÜM BOYASI -->
+    <rect x="-135" y="22" width="270" height="22" fill="none" stroke="#2D81B1" stroke-width="1.2"/>
+    <text x="0" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="800" letter-spacing="0.22em" fill="#152F54" text-anchor="middle">DÖNÜŞÜM BOYASI</text>
+  </g>
+</svg>

@@ -4260,21 +4260,21 @@ header {
 }
 
 /* ==========================================================================
-   SWISS ARCHITECTURAL BORDER-MATRIX: YETKİLİ BAYİLİKLER
+   PURE BRAND LOGO MATRIX (ZERO TEXT, 100% OFFICIAL LOGOS)
    ========================================================================== */
-.block.dealer-matrix {
-  padding: 16px var(--gutter-desktop) 80px;
+.block.brand-matrix {
+  padding: 20px var(--gutter-desktop) 80px;
   background: #FFFFFF;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
-  .block.dealer-matrix {
+  .block.brand-matrix {
     padding: 12px var(--gutter-mobile) 56px;
   }
 }
 
-.dealer-grid {
+.brand-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
@@ -4282,116 +4282,55 @@ header {
 }
 
 @media (max-width: 1024px) {
-  .dealer-grid {
+  .brand-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 }
 
-.dealer-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  padding: 24px 22px 20px;
-  min-height: 204px;
-  text-decoration: none;
-  color: inherit;
-  box-sizing: border-box;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .dealer-card {
-    min-height: 164px;
-    padding: 16px 14px 14px;
-  }
-}
-
-.dealer-card:hover {
-  border-color: #000000;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
-}
-
-.dealer-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dealer-index {
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 600;
-  color: #999999;
-  letter-spacing: 0.08em;
-}
-
-.dealer-tier {
-  font-family: var(--font-display);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #777777;
-  text-transform: uppercase;
-}
-
-.dealer-logo-wrap {
+.brand-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  padding: 20px 0;
-}
-
-.dealer-logo-wrap img {
-  max-width: 100%;
-  max-height: 52px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 32px 28px;
+  height: 140px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 768px) {
-  .dealer-logo-wrap {
-    padding: 12px 0;
-  }
-  .dealer-logo-wrap img {
-    max-height: 42px;
+  .brand-card {
+    height: 110px;
+    padding: 18px 16px;
   }
 }
 
-.dealer-card:hover .dealer-logo-wrap img {
-  transform: scale(1.04);
+.brand-card:hover {
+  border-color: #000000;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
-.dealer-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding-top: 12px;
-  margin-top: 8px;
+.brand-logo {
+  max-width: 82%;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dealer-category {
-  font-family: var(--font-display);
-  font-size: 12px;
-  color: #555555;
-  letter-spacing: -0.01em;
+@media (max-width: 768px) {
+  .brand-logo {
+    max-width: 86%;
+    max-height: 44px;
+  }
 }
 
-.dealer-arrow {
-  font-family: var(--font-display);
-  font-size: 15px;
-  color: #000000;
-  transition: transform 0.2s ease;
-}
-
-.dealer-card:hover .dealer-arrow {
-  transform: translateX(4px);
+.brand-card:hover .brand-logo {
+  transform: scale(1.05);
 }
