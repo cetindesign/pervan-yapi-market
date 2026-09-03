@@ -2916,3 +2916,119 @@ img, svg {
 .rf-brand-card:hover .rf-brand-title {
   color: var(--accent-terracotta);
 }
+
+
+/* ==========================================================================
+   25. REFORM CPH 1:1 EXPANSIVE 2-COLUMN ARCHITECTURAL COLLECTIONS
+   ========================================================================== */
+.rf-collections-section {
+  padding: 80px 0 100px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.rf-collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+
+.rf-collections-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.rf-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 40px;
+}
+
+.rf-brand-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rf-brand-media-wrap {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #F8F8F7;
+  border: 1px solid var(--border-light);
+  margin-bottom: 18px;
+}
+
+.rf-brand-media-wrap img.rf-brand-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-brand-card:hover .rf-brand-media-wrap img.rf-brand-photo {
+  transform: scale(1.03);
+}
+
+.rf-brand-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.rf-brand-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent-terracotta);
+  text-transform: uppercase;
+}
+
+.rf-brand-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-brand-card:hover .rf-brand-title {
+  color: var(--accent-terracotta);
+}
+
+.rf-brand-link {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s var(--ease);
+}
+
+.rf-brand-card:hover .rf-brand-link {
+  color: var(--accent-terracotta);
+}
+
+@media (max-width: 768px) {
+  .rf-collections-section {
+    padding: 56px 0 64px;
+  }
+  .rf-collections-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .rf-brand-media-wrap {
+    aspect-ratio: 4/3;
+  }
+}
