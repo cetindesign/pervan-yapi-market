@@ -3323,6 +3323,34 @@ header {
    MOBILE 2-ROW HEADER (EXACT 1:1 REFORM CPH SCREENSHOT)
    ========================================================================== */
 @media (max-width: 991px) {
+  /* FULL-VIEWPORT MOBILE HERO (IPHONE 16 PRO MAX 1:1 REFORM MATCH) */
+  #block-container-hero .block.wide-two-media {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #block-container-hero .media-container {
+    height: calc(100vh - 110px) !important;
+    height: calc(100dvh - 110px) !important;
+    min-height: 580px !important;
+    width: 100% !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #block-container-hero .responsive-image-container {
+    height: 100% !important;
+    width: 100% !important;
+    aspect-ratio: auto !important;
+  }
+
+  #block-container-hero .responsive-image-container img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
   .navbar-top {
     height: 110px;
     padding: 0;
@@ -3589,8 +3617,7 @@ header {
 }
 
 @media (max-width: 768px) {
-  .media-container .responsive-image-container,
-  #block-container-hero .responsive-image-container {
+  .media-container .responsive-image-container {
     aspect-ratio: 4/3 !important;
   }
 }
