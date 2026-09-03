@@ -14,18 +14,26 @@
     if (mobileBtn && navbarContents) {
       mobileBtn.addEventListener("click", function(e) {
         e.preventDefault();
-        mobileBtn.classList.toggle("closed");
-        navbarContents.classList.toggle("opened");
-        document.body.style.overflow = navbarContents.classList.contains("opened") ? "hidden" : "";
+        e.stopPropagation();
+        var isClosed = mobileBtn.classList.contains("closed");
+        if (isClosed) {
+          mobileBtn.classList.remove("closed");
+          navbarContents.classList.add("opened");
+          document.body.style.overflow = "hidden";
+        } else {
+          mobileBtn.classList.add("closed");
+          navbarContents.classList.remove("opened");
+          document.body.style.overflow = "";
+        }
       });
     }
 
     // REFORM 1:1 ACCORDION TOGGLE ON MOBILE
     document.querySelectorAll(".navbar-menu .menu-item").forEach(function(item) {
       item.addEventListener("click", function(e) {
-        if (window.innerWidth <= 991) {
+        if (window.innerWidth <= 1259) {
           // Allow clicks on links inside dropdown to navigate
-          if (e.target.closest(".navbar-dropdown")) {
+          if (e.target.closest(".navbar-dropdown a") || e.target.tagName === "A") {
             return;
           }
           e.preventDefault();
@@ -35,7 +43,20 @@
       });
     });
 
-    // 1. Mobile Menu Open / Close
+    // Close mobile drawer when clicking any link
+    if (navbarContents) {
+      navbarContents.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+          if (mobileBtn) {
+            mobileBtn.classList.add("closed");
+          }
+          navbarContents.classList.remove("opened");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+
+    // 1. Mobile Consultation / Overlay Menu (Legacy compat)
     var rfToggle = document.getElementById("rfToggle");
     var rfMobileMenu = document.getElementById("rfMobileMenu");
     var rfMobileClose = document.getElementById("rfMobileClose");
@@ -56,10 +77,6 @@
 
     if (rfToggle) {
       rfToggle.addEventListener("click", openMobileMenu);
-    }
-    var mobileMenuBtn = document.getElementById("mobile-menu");
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener("click", openMobileMenu);
     }
 
     if (rfMobileClose) {
