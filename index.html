@@ -20,123 +20,7 @@
 <meta property="og:url" content="https://www.pervanyapimarket.com/index.html" />
 <meta property="og:image" content="assets/rf-hero-materials.jpg" />
 
-<link rel="stylesheet" href="css/reform.css?v=2.2.0" />
-<style>
-/* CRITICAL 1:1 REFORM CPH 2-ROW HEADER OVERRIDES */
-@media (max-width: 991px) {
-  header, .navbar {
-    height: 120px !important;
-  }
-  .navbar-top {
-    height: 120px !important;
-    padding: 0 20px !important;
-    padding-top: 60px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-  }
-  /* ROW 1: 50/50 SPLIT STICKY ACTIONS BAR */
-  .navbar-sticky {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 60px !important;
-    display: flex !important;
-    align-items: center !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-    background-color: #FFFFFF !important;
-    z-index: 101 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .navbar-sticky .navbar-item {
-    width: 50% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 12px !important;
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    font-size: 13.5px !important;
-    font-weight: 400 !important;
-    color: #000000 !important;
-    text-decoration: none !important;
-    background: transparent !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
-  }
-  .navbar-sticky .navbar-item:first-child {
-    border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
-  }
-  /* ROW 2: HAMBURGER ON LEFT, LOGO ON RIGHT */
-  #mobile-menu {
-    display: block !important;
-    position: absolute !important;
-    left: 20px !important;
-    top: 74px !important;
-    width: 36px !important;
-    height: 32px !important;
-    cursor: pointer !important;
-    z-index: 105 !important;
-    margin: 0 !important;
-  }
-  #mobile-menu .bar {
-    left: 0 !important;
-    width: 24px !important;
-    height: 1px !important;
-    background-color: #000000 !important;
-  }
-  .navbar-logo {
-    position: absolute !important;
-    right: 20px !important;
-    top: 60px !important;
-    height: 60px !important;
-    display: flex !important;
-    align-items: center !important;
-    font-size: 24px !important;
-    font-weight: 500 !important;
-    color: #000000 !important;
-    z-index: 105 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  /* HERO OVERLAY: TOP-LEFT TITLE, TOP-RIGHT BUTTON */
-  .media-contents {
-    top: 24px !important;
-    left: 20px !important;
-    right: 20px !important;
-    bottom: auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
-    pointer-events: none !important;
-  }
-  .media-contents .media-title {
-    font-size: 20px !important;
-    line-height: 1.25 !important;
-    color: #FFFFFF !important;
-    max-width: 55% !important;
-  }
-  .media-contents .media-button {
-    font-size: 12.5px !important;
-    padding: 10px 18px !important;
-    border: 1px solid rgba(255, 255, 255, 0.9) !important;
-    background: rgba(0, 0, 0, 0.2) !important;
-    color: #FFFFFF !important;
-    white-space: nowrap !important;
-    border-radius: 0 !important;
-    pointer-events: auto !important;
-  }
-}
-</style>
-
+<link rel="stylesheet" href="css/reform.css?v=3.0.0" />
 </head>
 <body>
 
@@ -144,8 +28,29 @@
 <header>
   <nav class="navbar">
     <div class="navbar-top">
-      <a class="navbar-logo" href="index.html">Pervan</a>
+      <!-- ROW 1 ON MOBILE (SPLIT 50/50 ACTION BAR) / RIGHT SIDE ON DESKTOP -->
+      <div class="navbar-sticky">
+        <a href="https://wa.me/902322784340?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+          <span class="navbar-title">Fiyat & Stok Sor</span>
+          <div class="arrow"></div>
+        </a>
+        <a href="kesif-randevusu.html" class="navbar-item menu-item">
+          <span class="navbar-title">Keşif Randevusu Al</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
 
+      <!-- ROW 2 ON MOBILE (LEFT HAMBURGER, RIGHT LOGO) / LEFT SIDE ON DESKTOP -->
+      <div class="navbar-top-row2">
+        <div id="mobile-menu" class="closed">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+        </div>
+        <a class="navbar-logo" href="index.html">Pervan</a>
+      </div>
+
+      <!-- DESKTOP MENU & MOBILE DRAWER -->
       <div class="navbar-contents">
         <div class="navbar-contents-overflow">
           <div class="navbar-menu">
@@ -154,7 +59,7 @@
               <div class="navbar-title">Yetkili Bayilikler</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item">Tümünü gör</a>
+                <a href="yetkili-bayilikler.html" class="navbar-item menu-item mobile-only">Tümünü gör</a>
                 <a href="boya-renxmatik.html" class="navbar-item">Filli Boya (Ana Bayi) & RenXMatik</a>
                 <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
                 <a href="bianca-stella.html" class="navbar-item">Bianca Stella Dönüşüm</a>
@@ -168,7 +73,7 @@
               <div class="navbar-title">Temel Malzemeler</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item">Tümünü gör</a>
+                <a href="malzemeler.html" class="navbar-item menu-item mobile-only">Tümünü gör</a>
                 <a href="kaba-yapi.html" class="navbar-item">01. Kaba Yapı & Çimento</a>
                 <a href="tesisat.html" class="navbar-item">02. Sıhhi Tesisat & Altyapı</a>
                 <a href="elektrik-aydinlatma.html" class="navbar-item">03. Elektrik & Aydınlatma</a>
@@ -183,7 +88,7 @@
               <div class="navbar-title">Mimari Taahhüt</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item">Tümünü gör</a>
+                <a href="taahhut.html" class="navbar-item menu-item mobile-only">Tümünü gör</a>
                 <a href="nasil-calisiriz.html" class="navbar-item">Nasıl Çalışırız? (4 Adım)</a>
                 <a href="komple-tadilat.html" class="navbar-item">Komple Daire Renovasyonu</a>
                 <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
@@ -197,7 +102,7 @@
               <div class="navbar-title">Merkezlerimiz</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item">Tümünü gör</a>
+                <a href="showroom.html" class="navbar-item menu-item mobile-only">Tümünü gör</a>
                 <a href="balcova-showroom.html" class="navbar-item">01. Balçova Showroom & Renk Lab</a>
                 <a href="urla-lojistik-depo.html" class="navbar-item">02. Urla Ana Lojistik Deposu</a>
                 <a href="hakkimizda.html" class="navbar-item">Hakkımızda (28 Yıl)</a>
@@ -205,23 +110,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="navbar-sticky">
-        <a href="https://wa.me/902322784340?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat & Stok Sor</span>
-          <span style="margin-left: 6px; font-size: 14px; font-weight: 400;">&rarr;</span>
-        </a>
-        <a href="kesif-randevusu.html" class="navbar-item menu-item">
-          <span class="navbar-title">Keşif Randevusu Al</span>
-          <span style="margin-left: 6px; font-size: 14px; font-weight: 400;">&rarr;</span>
-        </a>
-      </div>
-
-      <div id="mobile-menu" class="closed">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
       </div>
     </div>
   </nav>
