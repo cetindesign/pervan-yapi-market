@@ -3908,6 +3908,27 @@ header {
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.media-container .responsive-image-container video,
+.media-container .responsive-image-container .responsive-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.media-container .responsive-image-container .video-fallback-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .media-container:hover .responsive-image-container img,
 .media-container:hover .responsive-image-container video {
   transform: scale(1.035);

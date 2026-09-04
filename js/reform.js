@@ -56,6 +56,20 @@
       });
     }
 
+    // REFORM 1:1 BACKGROUND AUTOPLAY VIDEO HELPER
+    document.querySelectorAll("video.responsive-video").forEach(function(vid) {
+      vid.muted = true;
+      vid.setAttribute("muted", "");
+      vid.setAttribute("playsinline", "");
+      vid.setAttribute("webkit-playsinline", "");
+      var promise = vid.play();
+      if (promise !== undefined) {
+        promise.catch(function() {
+          // Low Power Mode or autoplay restriction: fallback poster stays visible
+        });
+      }
+    });
+
     // 1. Mobile Consultation / Overlay Menu (Legacy compat)
     var rfToggle = document.getElementById("rfToggle");
     var rfMobileMenu = document.getElementById("rfMobileMenu");
