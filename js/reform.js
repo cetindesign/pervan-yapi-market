@@ -6,7 +6,7 @@
 (function() {
   "use strict";
 
-  document.addEventListener("DOMContentLoaded", function() {
+  function initReform() {
 
     // REFORM 1:1 MOBILE NAVBAR TOGGLE
     var headerEl = document.querySelector("header");
@@ -69,44 +69,58 @@
 
     // REFORM 1:1 SMART SCROLL-DIRECTION HEADER (HEADROOM PATTERN)
     if (headerEl) {
-      var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      var lastScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+      var accumulatedDelta = 0;
       var isTicking = false;
-      var scrollDeltaThreshold = 10; // Hysteresis to prevent micro-jitter
-      var topOffsetThreshold = 90;   // Always fully visible near top of page
+      var minDownThreshold = 15; // Requires 15px accumulated downward scroll to hide
+      var minUpThreshold = -3;    // Requires just 3px upward scroll to IMMEDIATELY reveal!
+      var topSafeZone = 80;      // Always visible when within top 80px of page
 
       function onScrollUpdate() {
-        var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-        var maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+        var currentScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
+        var maxScrollY = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+        var delta = currentScrollY - lastScrollY;
 
-        // Clamp negative or beyond-bottom scroll (iOS Safari rubber-band elastic bounce)
-        if (currentScrollY < 0) {
-          currentScrollY = 0;
-        }
-        if (maxScrollY > 0 && currentScrollY > maxScrollY) {
-          currentScrollY = maxScrollY;
-        }
-
-        // Do not alter or hide header while mobile drawer is open
+        // Never hide while mobile menu drawer is open
         var isDrawerOpened = navbarContents && navbarContents.classList.contains("opened");
         if (isDrawerOpened) {
           headerEl.classList.remove("header--hidden");
           lastScrollY = currentScrollY;
+          accumulatedDelta = 0;
           isTicking = false;
           return;
         }
 
-        // Always show header when at or near top
-        if (currentScrollY <= topOffsetThreshold) {
+        // Always show near the very top of the page
+        if (currentScrollY <= topSafeZone) {
           headerEl.classList.remove("header--hidden");
-        } else {
-          var diff = currentScrollY - lastScrollY;
-          // Scrolling DOWN past hysteresis threshold
-          if (diff > scrollDeltaThreshold) {
-            headerEl.classList.add("header--hidden");
-          }
-          // Scrolling UP past hysteresis threshold
-          else if (diff < -scrollDeltaThreshold) {
-            headerEl.classList.remove("header--hidden");
+          accumulatedDelta = 0;
+        }
+        // Guard iOS rubber-band elastic bounce at the very bottom
+        else if (maxScrollY > 0 && currentScrollY >= maxScrollY - 10) {
+          // Bottom bounce: keep current state, do not trigger sudden changes
+        }
+        else {
+          if (delta > 0) {
+            // Scrolling DOWN
+            if (accumulatedDelta < 0) {
+              accumulatedDelta = 0;
+            }
+            accumulatedDelta += delta;
+
+            if (accumulatedDelta >= minDownThreshold) {
+              headerEl.classList.add("header--hidden");
+            }
+          } else if (delta < 0) {
+            // Scrolling UP: single tick / gentle flick immediately reveals
+            if (accumulatedDelta > 0) {
+              accumulatedDelta = 0;
+            }
+            accumulatedDelta += delta;
+
+            if (accumulatedDelta <= minUpThreshold) {
+              headerEl.classList.remove("header--hidden");
+            }
           }
         }
 
@@ -436,5 +450,11 @@
         updateCalcOutput(key);
       });
     });
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initReform);
+  } else {
+    initReform();
+  }
 })();

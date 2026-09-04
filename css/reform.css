@@ -3088,11 +3088,10 @@ header {
 }
 
 header.header--hidden {
-  transform: translateY(-100%);
+  transform: translateY(-100%) !important;
 }
 
-header.header--menu-open,
-header:has(.navbar-contents.opened) {
+header.header--menu-open {
   transform: translateY(0) !important;
 }
 
