@@ -3083,6 +3083,17 @@ header {
   z-index: 1000;
   background: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+header.header--hidden {
+  transform: translateY(-100%);
+}
+
+header.header--menu-open,
+header:has(.navbar-contents.opened) {
+  transform: translateY(0) !important;
 }
 
 .navbar {

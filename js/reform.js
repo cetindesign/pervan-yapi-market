@@ -9,6 +9,7 @@
   document.addEventListener("DOMContentLoaded", function() {
 
     // REFORM 1:1 MOBILE NAVBAR TOGGLE
+    var headerEl = document.querySelector("header");
     var mobileBtn = document.getElementById("mobile-menu");
     var navbarContents = document.querySelector(".navbar-contents");
     if (mobileBtn && navbarContents) {
@@ -19,10 +20,17 @@
         if (isClosed) {
           mobileBtn.classList.remove("closed");
           navbarContents.classList.add("opened");
+          if (headerEl) {
+            headerEl.classList.remove("header--hidden");
+            headerEl.classList.add("header--menu-open");
+          }
           document.body.style.overflow = "hidden";
         } else {
           mobileBtn.classList.add("closed");
           navbarContents.classList.remove("opened");
+          if (headerEl) {
+            headerEl.classList.remove("header--menu-open");
+          }
           document.body.style.overflow = "";
         }
       });
@@ -51,9 +59,67 @@
             mobileBtn.classList.add("closed");
           }
           navbarContents.classList.remove("opened");
+          if (headerEl) {
+            headerEl.classList.remove("header--menu-open");
+          }
           document.body.style.overflow = "";
         });
       });
+    }
+
+    // REFORM 1:1 SMART SCROLL-DIRECTION HEADER (HEADROOM PATTERN)
+    if (headerEl) {
+      var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      var isTicking = false;
+      var scrollDeltaThreshold = 10; // Hysteresis to prevent micro-jitter
+      var topOffsetThreshold = 90;   // Always fully visible near top of page
+
+      function onScrollUpdate() {
+        var currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Clamp negative or beyond-bottom scroll (iOS Safari rubber-band elastic bounce)
+        if (currentScrollY < 0) {
+          currentScrollY = 0;
+        }
+        if (maxScrollY > 0 && currentScrollY > maxScrollY) {
+          currentScrollY = maxScrollY;
+        }
+
+        // Do not alter or hide header while mobile drawer is open
+        var isDrawerOpened = navbarContents && navbarContents.classList.contains("opened");
+        if (isDrawerOpened) {
+          headerEl.classList.remove("header--hidden");
+          lastScrollY = currentScrollY;
+          isTicking = false;
+          return;
+        }
+
+        // Always show header when at or near top
+        if (currentScrollY <= topOffsetThreshold) {
+          headerEl.classList.remove("header--hidden");
+        } else {
+          var diff = currentScrollY - lastScrollY;
+          // Scrolling DOWN past hysteresis threshold
+          if (diff > scrollDeltaThreshold) {
+            headerEl.classList.add("header--hidden");
+          }
+          // Scrolling UP past hysteresis threshold
+          else if (diff < -scrollDeltaThreshold) {
+            headerEl.classList.remove("header--hidden");
+          }
+        }
+
+        lastScrollY = currentScrollY;
+        isTicking = false;
+      }
+
+      window.addEventListener("scroll", function() {
+        if (!isTicking) {
+          window.requestAnimationFrame(onScrollUpdate);
+          isTicking = true;
+        }
+      }, { passive: true });
     }
 
     // REFORM 1:1 BACKGROUND AUTOPLAY VIDEO HELPER
