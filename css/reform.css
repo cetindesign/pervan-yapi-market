@@ -3899,7 +3899,8 @@ header {
   }
 }
 
-.media-container .responsive-image-container img {
+.media-container .responsive-image-container img,
+.media-container .responsive-image-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3907,7 +3908,8 @@ header {
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.media-container:hover .responsive-image-container img {
+.media-container:hover .responsive-image-container img,
+.media-container:hover .responsive-image-container video {
   transform: scale(1.035);
 }
 
