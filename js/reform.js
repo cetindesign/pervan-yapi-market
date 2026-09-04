@@ -73,8 +73,8 @@
       var accumulatedDelta = 0;
       var isTicking = false;
       var minDownThreshold = 15; // Requires 15px accumulated downward scroll to hide
-      var minUpThreshold = -3;    // Requires just 3px upward scroll to IMMEDIATELY reveal!
-      var topSafeZone = 80;      // Always visible when within top 80px of page
+      var minUpThreshold = -2;    // Requires just 2px upward scroll to IMMEDIATELY reveal!
+      var topSafeZone = 60;      // Always visible when within top 60px of page
 
       function onScrollUpdate() {
         var currentScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
@@ -95,21 +95,20 @@
         if (currentScrollY <= topSafeZone) {
           headerEl.classList.remove("header--hidden");
           accumulatedDelta = 0;
-        }
-        // Guard iOS rubber-band elastic bounce at the very bottom
-        else if (maxScrollY > 0 && currentScrollY >= maxScrollY - 10) {
-          // Bottom bounce: keep current state, do not trigger sudden changes
-        }
-        else {
+        } else {
           if (delta > 0) {
-            // Scrolling DOWN
-            if (accumulatedDelta < 0) {
-              accumulatedDelta = 0;
-            }
-            accumulatedDelta += delta;
+            // Scrolling DOWN (ignore if rubber-banding past bottom)
+            if (maxScrollY > 0 && currentScrollY >= maxScrollY - 5) {
+              // Ignore bounce past bottom
+            } else {
+              if (accumulatedDelta < 0) {
+                accumulatedDelta = 0;
+              }
+              accumulatedDelta += delta;
 
-            if (accumulatedDelta >= minDownThreshold) {
-              headerEl.classList.add("header--hidden");
+              if (accumulatedDelta >= minDownThreshold) {
+                headerEl.classList.add("header--hidden");
+              }
             }
           } else if (delta < 0) {
             // Scrolling UP: single tick / gentle flick immediately reveals
