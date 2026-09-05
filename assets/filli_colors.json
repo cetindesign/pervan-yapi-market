@@ -1,0 +1,770 @@
+[
+  {
+    "slug": "andezit-40",
+    "name": "ANDEZİT 40",
+    "rgb": "221,224,223",
+    "hex": "#DDE0DF"
+  },
+  {
+    "slug": "ruzgar-35",
+    "name": "RÜZGAR 35",
+    "rgb": "60,79,103",
+    "hex": "#3C4F67"
+  },
+  {
+    "slug": "bazalt-35",
+    "name": "BAZALT 35",
+    "rgb": "76,81,85",
+    "hex": "#4C5155"
+  },
+  {
+    "slug": "pudra-kahve",
+    "name": "PUDRA KAHVE",
+    "rgb": "227,197,180",
+    "hex": "#E3C5B4"
+  },
+  {
+    "slug": "bademi",
+    "name": "BADEMİ",
+    "rgb": "233,219,199",
+    "hex": "#E9DBC7"
+  },
+  {
+    "slug": "aydan",
+    "name": "AYDAN",
+    "rgb": "248,247,246",
+    "hex": "#F8F7F6"
+  },
+  {
+    "slug": "andezit-10",
+    "name": "ANDEZİT 10",
+    "rgb": "238,242,243",
+    "hex": "#EEF2F3"
+  },
+  {
+    "slug": "kum-beyazi",
+    "name": "KUM BEYAZI",
+    "rgb": "238,237,235",
+    "hex": "#EEEDEB"
+  },
+  {
+    "slug": "kirik-beyaz",
+    "name": "KIRIK BEYAZ",
+    "rgb": "251,250,245",
+    "hex": "#FBFAF5"
+  },
+  {
+    "slug": "sis-bulutu",
+    "name": "SİS BULUTU",
+    "rgb": "236,230,219",
+    "hex": "#ECE6DB"
+  },
+  {
+    "slug": "hasir-345",
+    "name": "HASIR 345",
+    "rgb": "218,208,195",
+    "hex": "#DAD0C3"
+  },
+  {
+    "slug": "aki",
+    "name": "AKİ",
+    "rgb": "239,238,230",
+    "hex": "#EFEEE6"
+  },
+  {
+    "slug": "cakilli-kum",
+    "name": "ÇAKILLI KUM",
+    "rgb": "221,219,210",
+    "hex": "#DDDBD2"
+  },
+  {
+    "slug": "vanilya",
+    "name": "VANİLYA",
+    "rgb": "250,237,229",
+    "hex": "#FAEDE5"
+  },
+  {
+    "slug": "luletasi",
+    "name": "LÜLETAŞI",
+    "rgb": "240,236,231",
+    "hex": "#F0ECE7"
+  },
+  {
+    "slug": "fildisi",
+    "name": "FİLDİŞİ",
+    "rgb": "248,234,205",
+    "hex": "#F8EACD"
+  },
+  {
+    "slug": "koral-285",
+    "name": "KORAL 285",
+    "rgb": "244,194,189",
+    "hex": "#F4C2BD"
+  },
+  {
+    "slug": "beji-pembe",
+    "name": "BEJİ PEMBE",
+    "rgb": "230,219,216",
+    "hex": "#E6DBD8"
+  },
+  {
+    "slug": "masal-100",
+    "name": "MASAL 100",
+    "rgb": "247,223,232",
+    "hex": "#F7DFE8"
+  },
+  {
+    "slug": "hibiskus-20",
+    "name": "HİBİSKUS 20",
+    "rgb": "220,200,219",
+    "hex": "#DCC8DB"
+  },
+  {
+    "slug": "masal-pembesi",
+    "name": "MASAL PEMBESİ",
+    "rgb": "254,165,190",
+    "hex": "#FEA5BE"
+  },
+  {
+    "slug": "ipeksi-35",
+    "name": "İPEKSİ 35",
+    "rgb": "236,240,241",
+    "hex": "#ECF0F1"
+  },
+  {
+    "slug": "lila",
+    "name": "LİLA",
+    "rgb": "216,206,237",
+    "hex": "#D8CEED"
+  },
+  {
+    "slug": "yudum-220",
+    "name": "YUDUM 220",
+    "rgb": "209,240,246",
+    "hex": "#D1F0F6"
+  },
+  {
+    "slug": "andezit-50",
+    "name": "ANDEZİT 50",
+    "rgb": "186,192,192",
+    "hex": "#BAC0C0"
+  },
+  {
+    "slug": "hasir-110",
+    "name": "HASIR 110",
+    "rgb": "234,200,169",
+    "hex": "#EAC8A9"
+  },
+  {
+    "slug": "koral-290",
+    "name": "KORAL 290",
+    "rgb": "241,169,160",
+    "hex": "#F1A9A0"
+  },
+  {
+    "slug": "andezit-30",
+    "name": "ANDEZİT 30",
+    "rgb": "171,174,175",
+    "hex": "#ABAEAF"
+  },
+  {
+    "slug": "andezit-55",
+    "name": "ANDEZİT 55",
+    "rgb": "169,173,174",
+    "hex": "#A9ADAE"
+  },
+  {
+    "slug": "brom",
+    "name": "BROM",
+    "rgb": "184,177,166",
+    "hex": "#B8B1A6"
+  },
+  {
+    "slug": "sampanya",
+    "name": "ŞAMPANYA",
+    "rgb": "255,233,203",
+    "hex": "#FFE9CB"
+  },
+  {
+    "slug": "eylul-25",
+    "name": "EYLÜL 25",
+    "rgb": "229,174,145",
+    "hex": "#E5AE91"
+  },
+  {
+    "slug": "kozmik-25",
+    "name": "KOZMİK 25",
+    "rgb": "135,165,182",
+    "hex": "#87A5B6"
+  },
+  {
+    "slug": "irmak-25",
+    "name": "IRMAK 25",
+    "rgb": "142,184,182",
+    "hex": "#8EB8B6"
+  },
+  {
+    "slug": "tan-270",
+    "name": "TAN 270",
+    "rgb": "159,138,125",
+    "hex": "#9F8A7D"
+  },
+  {
+    "slug": "andezit-60",
+    "name": "ANDEZİT 60",
+    "rgb": "119,123,124",
+    "hex": "#777B7C"
+  },
+  {
+    "slug": "andezit-65",
+    "name": "ANDEZİT 65",
+    "rgb": "109,113,119",
+    "hex": "#6D7177"
+  },
+  {
+    "slug": "rezene-300",
+    "name": "REZENE 300",
+    "rgb": "155,148,125",
+    "hex": "#9B947D"
+  },
+  {
+    "slug": "hasir-360",
+    "name": "HASIR 360",
+    "rgb": "126,120,117",
+    "hex": "#7E7875"
+  },
+  {
+    "slug": "tan-145",
+    "name": "TAN 145",
+    "rgb": "193,144,113",
+    "hex": "#C19071"
+  },
+  {
+    "slug": "kehribar-120",
+    "name": "KEHRİBAR 120",
+    "rgb": "227,187,114",
+    "hex": "#E3BB72"
+  },
+  {
+    "slug": "mango-90",
+    "name": "MANGO 90",
+    "rgb": "230,170,109",
+    "hex": "#E6AA6D"
+  },
+  {
+    "slug": "koral-295",
+    "name": "KORAL 295",
+    "rgb": "216,122,111",
+    "hex": "#D87A6F"
+  },
+  {
+    "slug": "koral-120",
+    "name": "KORAL 120",
+    "rgb": "181,105,102",
+    "hex": "#B56966"
+  },
+  {
+    "slug": "hibiskus-85",
+    "name": "HİBİSKUS 85",
+    "rgb": "158,107,122",
+    "hex": "#9E6B7A"
+  },
+  {
+    "slug": "menekse-175",
+    "name": "MENEKŞE 175",
+    "rgb": "126,129,193",
+    "hex": "#7E81C1"
+  },
+  {
+    "slug": "yudum-60",
+    "name": "YUDUM 60",
+    "rgb": "89,156,179",
+    "hex": "#599CB3"
+  },
+  {
+    "slug": "kozmik-90",
+    "name": "KOZMİK 90",
+    "rgb": "82,127,156",
+    "hex": "#527F9C"
+  },
+  {
+    "slug": "kaktus-55",
+    "name": "KAKTÜS 55",
+    "rgb": "155,188,161",
+    "hex": "#9BBCA1"
+  },
+  {
+    "slug": "irmak-60",
+    "name": "IRMAK 60",
+    "rgb": "88,128,128",
+    "hex": "#588080"
+  },
+  {
+    "slug": "yudum-30",
+    "name": "YUDUM 30",
+    "rgb": "94,124,138",
+    "hex": "#5E7C8A"
+  },
+  {
+    "slug": "andezit-35",
+    "name": "ANDEZİT 35",
+    "rgb": "146,151,156",
+    "hex": "#92979C"
+  },
+  {
+    "slug": "isilti-150",
+    "name": "IŞILTI 150",
+    "rgb": "245,215,91",
+    "hex": "#F5D75B"
+  },
+  {
+    "slug": "karnaval-125",
+    "name": "KARNAVAL 125",
+    "rgb": "187,51,56",
+    "hex": "#BB3338"
+  },
+  {
+    "slug": "ruzgar-85",
+    "name": "RÜZGAR 85",
+    "rgb": "126,148,179",
+    "hex": "#7E94B3"
+  },
+  {
+    "slug": "kozmik-120",
+    "name": "KOZMİK 120",
+    "rgb": "65,99,123",
+    "hex": "#41637B"
+  },
+  {
+    "slug": "kozmik-190",
+    "name": "KOZMİK 190",
+    "rgb": "199,231,248",
+    "hex": "#C7E7F8"
+  },
+  {
+    "slug": "atlas",
+    "name": "ATLAS",
+    "rgb": "145,212,239",
+    "hex": "#91D4EF"
+  },
+  {
+    "slug": "hasir-295",
+    "name": "HASIR 295",
+    "rgb": "191,166,136",
+    "hex": "#BFA688"
+  },
+  {
+    "slug": "kehribar-60",
+    "name": "KEHRİBAR 60",
+    "rgb": "197,152,91",
+    "hex": "#C5985B"
+  },
+  {
+    "slug": "haki",
+    "name": "HAKİ",
+    "rgb": "210,206,183",
+    "hex": "#D2CEB7"
+  },
+  {
+    "slug": "koral-95",
+    "name": "KORAL 95",
+    "rgb": "154,74,68",
+    "hex": "#9A4A44"
+  },
+  {
+    "slug": "kozmik-155",
+    "name": "KOZMİK 155",
+    "rgb": "60,89,114",
+    "hex": "#3C5972"
+  },
+  {
+    "slug": "kaktus-20",
+    "name": "KAKTÜS 20",
+    "rgb": "185,203,182",
+    "hex": "#B9CBB6"
+  },
+  {
+    "slug": "andezit-25",
+    "name": "ANDEZİT 25",
+    "rgb": "185,191,194",
+    "hex": "#B9BFC2"
+  },
+  {
+    "slug": "kivilcim-230",
+    "name": "KIVILCIM 230",
+    "rgb": "255,213,189",
+    "hex": "#FFD5BD"
+  },
+  {
+    "slug": "bej-35",
+    "name": "BEJ 35",
+    "rgb": "237,232,226",
+    "hex": "#EDE8E2"
+  },
+  {
+    "slug": "irmak-130",
+    "name": "IRMAK 130",
+    "rgb": "185,234,239",
+    "hex": "#B9EAEF"
+  },
+  {
+    "slug": "bazalt-20",
+    "name": "BAZALT 20",
+    "rgb": "200,198,194",
+    "hex": "#C8C6C2"
+  },
+  {
+    "slug": "kumtasi",
+    "name": "KUMTAŞI",
+    "rgb": "223,207,185",
+    "hex": "#DFCFB9"
+  },
+  {
+    "slug": "taflan-30",
+    "name": "TAFLAN 30",
+    "rgb": "123,115,124",
+    "hex": "#7B737C"
+  },
+  {
+    "slug": "beyaz",
+    "name": "BEYAZ",
+    "rgb": "249,249,249",
+    "hex": "#F9F9F9"
+  },
+  {
+    "slug": "bal-bugu",
+    "name": "BAL BUĞU",
+    "rgb": "246,231,210",
+    "hex": "#F6E7D2"
+  },
+  {
+    "slug": "gocek-turkuazi",
+    "name": "GÖCEK TURKUAZI",
+    "rgb": "103,200,174",
+    "hex": "#67C8AE"
+  },
+  {
+    "slug": "gulpembe",
+    "name": "GÜLPEMBE",
+    "rgb": "239,173,182",
+    "hex": "#EFADB6"
+  },
+  {
+    "slug": "ruzgar-140",
+    "name": "RÜZGAR 140",
+    "rgb": "104,151,198",
+    "hex": "#6897C6"
+  },
+  {
+    "slug": "kanyon",
+    "name": "KANYON",
+    "rgb": "193,173,153",
+    "hex": "#C1AD99"
+  },
+  {
+    "slug": "lavanta",
+    "name": "LAVANTA",
+    "rgb": "193,201,227",
+    "hex": "#C1C9E3"
+  },
+  {
+    "slug": "nil-yesili",
+    "name": "NİL YEŞİLİ",
+    "rgb": "215,237,229",
+    "hex": "#D7EDE5"
+  },
+  {
+    "slug": "karbeyaz",
+    "name": "KARBEYAZ",
+    "rgb": "235,234,229",
+    "hex": "#EBEAE5"
+  },
+  {
+    "slug": "andezit-15",
+    "name": "ANDEZİT 15",
+    "rgb": "230,232,233",
+    "hex": "#E6E8E9"
+  },
+  {
+    "slug": "andezit-20",
+    "name": "ANDEZİT 20",
+    "rgb": "225,231,234",
+    "hex": "#E1E7EA"
+  },
+  {
+    "slug": "andezit-45",
+    "name": "ANDEZİT 45",
+    "rgb": "205,210,212",
+    "hex": "#CDD2D4"
+  },
+  {
+    "slug": "behramkale",
+    "name": "BEHRAMKALE",
+    "rgb": "244,231,215",
+    "hex": "#F4E7D7"
+  },
+  {
+    "slug": "bozkir",
+    "name": "BOZKIR",
+    "rgb": "202,182,170",
+    "hex": "#CAB6AA"
+  },
+  {
+    "slug": "cisil",
+    "name": "ÇİSİL",
+    "rgb": "244,239,239",
+    "hex": "#F4EFEF"
+  },
+  {
+    "slug": "feslegen",
+    "name": "FESLEĞEN",
+    "rgb": "188,216,194",
+    "hex": "#BCD8C2"
+  },
+  {
+    "slug": "guz",
+    "name": "GÜZ",
+    "rgb": "226,173,144",
+    "hex": "#E2AD90"
+  },
+  {
+    "slug": "hasir-260",
+    "name": "HASIR 260",
+    "rgb": "228,215,196",
+    "hex": "#E4D7C4"
+  },
+  {
+    "slug": "hasir-310",
+    "name": "HASIR 310",
+    "rgb": "226,219,212",
+    "hex": "#E2DBD4"
+  },
+  {
+    "slug": "hasir-40",
+    "name": "HASIR 40",
+    "rgb": "240,232,225",
+    "hex": "#F0E8E1"
+  },
+  {
+    "slug": "itir-60",
+    "name": "ITIR 60",
+    "rgb": "244,242,244",
+    "hex": "#F4F2F4"
+  },
+  {
+    "slug": "ipeksi-10",
+    "name": "İPEKSİ 10",
+    "rgb": "238,238,236",
+    "hex": "#EEEEEC"
+  },
+  {
+    "slug": "ipeksi-15",
+    "name": "İPEKSİ 15",
+    "rgb": "240,241,234",
+    "hex": "#F0F1EA"
+  },
+  {
+    "slug": "ipeksi-40",
+    "name": "İPEKSİ 40",
+    "rgb": "241,245,244",
+    "hex": "#F1F5F4"
+  },
+  {
+    "slug": "ipeksi-60",
+    "name": "İPEKSİ 60",
+    "rgb": "247,248,243",
+    "hex": "#F7F8F3"
+  },
+  {
+    "slug": "ipeksi-75",
+    "name": "İPEKSİ 75",
+    "rgb": "242,242,238",
+    "hex": "#F2F2EE"
+  },
+  {
+    "slug": "kaktus-25",
+    "name": "KAKTÜS 25",
+    "rgb": "140,153,122",
+    "hex": "#8C997A"
+  },
+  {
+    "slug": "kaktus-95",
+    "name": "KAKTÜS 95",
+    "rgb": "90,121,96",
+    "hex": "#5A7960"
+  },
+  {
+    "slug": "kalker",
+    "name": "KALKER",
+    "rgb": "198,168,151",
+    "hex": "#C6A897"
+  },
+  {
+    "slug": "kehribar-90",
+    "name": "KEHRİBAR 90",
+    "rgb": "228,178,107",
+    "hex": "#E4B26B"
+  },
+  {
+    "slug": "kiltasi",
+    "name": "KİLTAŞI",
+    "rgb": "211,198,185",
+    "hex": "#D3C6B9"
+  },
+  {
+    "slug": "kozmik-40",
+    "name": "KOZMİK 40",
+    "rgb": "221,231,238",
+    "hex": "#DDE7EE"
+  },
+  {
+    "slug": "kozmik-45",
+    "name": "KOZMİK 45",
+    "rgb": "209,221,228",
+    "hex": "#D1DDE4"
+  },
+  {
+    "slug": "kozmik-50",
+    "name": "KOZMİK 50",
+    "rgb": "190,205,214",
+    "hex": "#BECDD6"
+  },
+  {
+    "slug": "kozmik-55",
+    "name": "KOZMİK 55",
+    "rgb": "137,156,168",
+    "hex": "#899CA8"
+  },
+  {
+    "slug": "krokan",
+    "name": "KROKAN",
+    "rgb": "218,201,181",
+    "hex": "#DAC9B5"
+  },
+  {
+    "slug": "kumru",
+    "name": "KUMRU",
+    "rgb": "234,226,209",
+    "hex": "#EAE2D1"
+  },
+  {
+    "slug": "maya",
+    "name": "MAYA",
+    "rgb": "230,221,211",
+    "hex": "#E6DDD3"
+  },
+  {
+    "slug": "mercan",
+    "name": "MERCAN",
+    "rgb": "240,167,159",
+    "hex": "#F0A79F"
+  },
+  {
+    "slug": "nuga",
+    "name": "NUGA",
+    "rgb": "237,235,227",
+    "hex": "#EDEBE3"
+  },
+  {
+    "slug": "pastel-pembe",
+    "name": "PASTEL PEMBE",
+    "rgb": "242,225,224",
+    "hex": "#F2E1E0"
+  },
+  {
+    "slug": "peri-bacasi",
+    "name": "PERİ BACASI",
+    "rgb": "220,213,208",
+    "hex": "#DCD5D0"
+  },
+  {
+    "slug": "rezene-160",
+    "name": "REZENE 160",
+    "rgb": "219,214,201",
+    "hex": "#DBD6C9"
+  },
+  {
+    "slug": "rezene-170",
+    "name": "REZENE 170",
+    "rgb": "179,169,151",
+    "hex": "#B3A997"
+  },
+  {
+    "slug": "yag-yesili",
+    "name": "YAĞ YEŞİLİ",
+    "rgb": "218,221,209",
+    "hex": "#DADDD1"
+  },
+  {
+    "slug": "siyah",
+    "name": "SİYAH",
+    "rgb": "0,0,0",
+    "hex": "#000000"
+  },
+  {
+    "slug": "kehribar-150",
+    "name": "KEHRİBAR 150",
+    "rgb": "246,189,93",
+    "hex": "#F6BD5D"
+  },
+  {
+    "slug": "kaktus-120",
+    "name": "KAKTÜS 120",
+    "rgb": "124,171,100",
+    "hex": "#7CAB64"
+  },
+  {
+    "slug": "hibiskus-95",
+    "name": "HİBİSKUS 95",
+    "rgb": "117,66,65",
+    "hex": "#754241"
+  },
+  {
+    "slug": "koral-55",
+    "name": "KORAL 55",
+    "rgb": "216,153,159",
+    "hex": "#D8999F"
+  },
+  {
+    "slug": "bazalt-15",
+    "name": "BAZALT 15",
+    "rgb": "213,211,207",
+    "hex": "#D5D3CF"
+  },
+  {
+    "slug": "kesekagidi",
+    "name": "KESEKAĞIDI",
+    "rgb": "203,188,160",
+    "hex": "#CBBCA0"
+  },
+  {
+    "slug": "irmak-55",
+    "name": "IRMAK 55",
+    "rgb": "103,157,163",
+    "hex": "#679DA3"
+  },
+  {
+    "slug": "kaktus-30",
+    "name": "KAKTÜS 30",
+    "rgb": "112,118,93",
+    "hex": "#70765D"
+  },
+  {
+    "slug": "kaktus-15",
+    "name": "KAKTÜS 15",
+    "rgb": "221,235,223",
+    "hex": "#DDEBDF"
+  },
+  {
+    "slug": "ruzgar-155",
+    "name": "RÜZGAR 155",
+    "rgb": "49,64,93",
+    "hex": "#31405D"
+  },
+  {
+    "slug": "kozmik-30",
+    "name": "KOZMİK 30",
+    "rgb": "113,139,156",
+    "hex": "#718B9C"
+  }
+]
