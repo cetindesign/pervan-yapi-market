@@ -1852,3 +1852,494 @@ header.header--hidden ~ main .bm-deck-nav-wrapper {
 .bm-spec-strip-text strong {
   color: var(--bm-black);
 }
+
+/* ==========================================================================
+   13. RENXMATIK MOBILE-FIRST 3-STEP PAINT & COLOR STUDIO
+   ========================================================================== */
+.bm-studio-section {
+  padding: 36px 0 120px;
+  background: #FFFFFF;
+}
+
+.bm-studio-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.bm-studio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666666;
+  background: #F0F0F0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.bm-studio-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--bm-black);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.bm-studio-sub {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Steps Wrapper */
+.bm-step-block {
+  margin-bottom: 48px;
+  scroll-margin-top: 80px;
+}
+
+.bm-step-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bm-step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bm-black);
+  color: var(--bm-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.bm-step-heading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--bm-black);
+  margin: 0;
+}
+
+.bm-step-subtext {
+  font-size: 13px;
+  color: #888888;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Step 1: Surface Cards Grid */
+.bm-surface-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .bm-surface-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bm-surface-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+.bm-surface-card {
+  background: #FAFAFA;
+  border: 2px solid #EAEAEA;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  user-select: none;
+}
+
+.bm-surface-card:hover {
+  background: #FFFFFF;
+  border-color: #CCCCCC;
+  transform: translateY(-2px);
+}
+
+.bm-surface-card.active {
+  background: #FFFFFF;
+  border-color: var(--bm-black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bm-surface-media {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.bm-surface-media img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.bm-surface-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333333;
+  background: #EAEAEA;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.bm-surface-card.active .bm-surface-badge {
+  background: var(--bm-black);
+  color: var(--bm-white);
+}
+
+.bm-surface-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--bm-black);
+  margin-bottom: 4px;
+}
+
+.bm-surface-desc {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* Step 2: Color Selection & Live Preview Box */
+.bm-color-stage {
+  background: #F9F9F9;
+  border: 1px solid #EBEBEB;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.bm-active-color-banner {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.bm-active-color-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bm-active-color-swatch {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.bm-active-color-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--bm-black);
+  line-height: 1.2;
+}
+
+.bm-active-color-sub {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 2px;
+}
+
+/* Fast Trend Chips */
+.bm-trend-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.bm-trend-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.bm-trend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bm-black);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.bm-trend-chip:hover {
+  border-color: #888888;
+}
+
+.bm-trend-chip.active {
+  border-color: var(--bm-black);
+  background: var(--bm-black);
+  color: var(--bm-white);
+}
+
+.bm-chip-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Swatches Grid in Step 2 */
+.bm-swatch-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+@media (min-width: 600px) {
+  .bm-swatch-picker-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  .bm-swatch-picker-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.bm-swatch-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.bm-swatch-card:hover {
+  transform: translateY(-2px);
+  border-color: #999999;
+}
+
+.bm-swatch-card.active {
+  border: 2px solid var(--bm-black);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.bm-swatch-card-color {
+  height: 54px;
+  width: 100%;
+}
+
+.bm-swatch-card-meta {
+  padding: 8px;
+}
+
+.bm-swatch-card-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bm-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bm-swatch-card-hex {
+  font-size: 10px;
+  color: #888888;
+  font-family: monospace;
+}
+
+/* Step 3: Volume Cards */
+.bm-volume-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .bm-volume-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+.bm-volume-card {
+  background: #FAFAFA;
+  border: 2px solid #EAEAEA;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  user-select: none;
+}
+
+.bm-volume-card:hover {
+  background: #FFFFFF;
+  border-color: #CCCCCC;
+}
+
+.bm-volume-card.active {
+  background: #FFFFFF;
+  border-color: var(--bm-black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bm-volume-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #777777;
+  margin-bottom: 6px;
+}
+
+.bm-volume-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--bm-black);
+  margin-bottom: 4px;
+}
+
+.bm-volume-desc {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* Floating Bottom Tray (Sticky Mobile First) */
+.bm-floating-tray {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(17, 17, 17, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px var(--gutter-desktop, 7.2vw);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.bm-tray-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bm-tray-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.bm-tray-swatch {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.bm-tray-spec {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bm-tray-detail {
+  font-size: 12px;
+  color: #999999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bm-tray-btn {
+  background: #25D366;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.bm-tray-btn:hover {
+  background: #20BA5A;
+  transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+  .bm-floating-tray {
+    padding: 10px 16px;
+  }
+  .bm-tray-detail {
+    display: none;
+  }
+  .bm-tray-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
