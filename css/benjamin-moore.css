@@ -1,0 +1,1051 @@
+/* ==========================================================================
+   BENJAMIN MOORE (benjaminmoore.com/en-us) 1:1 REPLICA SYSTEM
+   Authentic Moderat Typography, Fan-Deck Swatch Stage & Architectural Modules
+   Pervan Yapı Market — Filli Boya & RenXMatik™ Yetkili Renk Merkezi
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bm-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --bm-black: #111111;
+  --bm-white: #FFFFFF;
+  --bm-dark-bg: #161616;
+  --bm-stage-gray: #F5F5F5;
+  --bm-stone-warm: #D5CCC1;
+  --bm-stone-quote: #EFE7DB;
+  --bm-notice-gold: #C4984F;
+  --bm-border: rgba(0, 0, 0, 0.12);
+  --bm-border-subtle: rgba(0, 0, 0, 0.08);
+  --bm-accent-green: #007930;
+}
+
+/* Base resets & typography */
+.bm-scope {
+  font-family: var(--bm-font);
+  color: var(--bm-black);
+  background: var(--bm-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bm-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 768px) {
+  .bm-container {
+    padding: 0 20px;
+  }
+}
+
+/* Moderat / Inter Typography */
+.bm-h1 {
+  font-family: var(--bm-font);
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--bm-black);
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+}
+
+.bm-h2 {
+  font-family: var(--bm-font);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--bm-black);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.bm-h3 {
+  font-family: var(--bm-font);
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--bm-black);
+  margin: 0 0 8px;
+}
+
+.bm-eyebrow {
+  font-family: var(--bm-font);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666666;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Status / Fulfillment Bar */
+.bm-status-bar {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--bm-border);
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.bm-status-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bm-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bm-black);
+}
+
+.bm-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bm-accent-green);
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(0, 121, 48, 0.2);
+}
+
+/* ==========================================================================
+   1. HERO COLOR FAN-DECK CAROUSEL (HomeAnimatedCarousel)
+   Exact match to Page 01 & 02
+   ========================================================================== */
+.bm-hero-wrapper {
+  background-color: #C1D1C9; /* Dynamic active color */
+  position: relative;
+  overflow: hidden;
+  padding: 44px 0 54px;
+  transition: background-color 0.4s ease;
+}
+
+.bm-hero-header {
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+.bm-hero-subtitle {
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.45;
+  color: #222222;
+  margin: 0;
+}
+
+/* Fan-Deck Swatch Rail (Touch Scroll-Snap with Peeking Next Card) */
+.bm-fandeck-rail {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 0 24px;
+}
+
+.bm-fandeck-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.bm-fandeck-card {
+  flex: 0 0 310px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+@media (min-width: 768px) {
+  .bm-fandeck-card {
+    flex: 0 0 380px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bm-fandeck-card {
+    flex: 0 0 420px;
+  }
+}
+
+.bm-fandeck-media {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #EAEAEA;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bm-fandeck-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating Action Pill on the photo (Bottom-Left) */
+.bm-fandeck-overlay-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--bm-black);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bm-fandeck-overlay-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.bm-fandeck-overlay-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--bm-black);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Physical Swatch Card Labels (Below Photo) */
+.bm-fandeck-info {
+  margin-top: 14px;
+  padding-left: 2px;
+}
+
+.bm-fandeck-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bm-black);
+  line-height: 1.25;
+}
+
+.bm-fandeck-code {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #333333;
+  margin-top: 3px;
+}
+
+/* Dual Dark Action Buttons Below Hero (Matches Page 02) */
+.bm-hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .bm-hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.bm-hero-btn {
+  flex: 1;
+  max-width: 260px;
+  height: 52px;
+  background-color: var(--bm-black);
+  color: #FFFFFF;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+@media (max-width: 640px) {
+  .bm-hero-btn {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.bm-hero-btn:hover {
+  background-color: #2a2a2a;
+}
+
+/* ==========================================================================
+   2. EXCELLENCE FOR THE EVERYDAY BANNER (GuidedExperience)
+   Matches Page 02 bottom & Page 03
+   ========================================================================== */
+.bm-promo-banner {
+  background-color: var(--bm-stone-warm);
+  padding: 64px 0;
+  color: var(--bm-black);
+}
+
+.bm-promo-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.bm-promo-media {
+  aspect-ratio: 16/11;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bm-promo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bm-promo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bm-promo-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+.bm-promo-title {
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px;
+  color: var(--bm-black);
+}
+
+.bm-promo-subhead {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bm-black);
+  margin-bottom: 8px;
+}
+
+.bm-promo-desc {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #2a2a2a;
+  margin-bottom: 18px;
+}
+
+.bm-promo-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bm-black);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.bm-promo-link:hover {
+  opacity: 0.75;
+}
+
+.bm-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 32px;
+  background-color: var(--bm-black);
+  color: var(--bm-white);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+.bm-btn-solid:hover {
+  background-color: #333333;
+}
+
+/* ==========================================================================
+   3. SHOP BY PRODUCT (productCatalog)
+   Matches Page 04 & 05
+   ========================================================================== */
+.bm-catalog-section {
+  padding: 68px 0 80px;
+  background-color: var(--bm-white);
+}
+
+.bm-catalog-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Dropdown selector on mobile (Matches Page 04) */
+.bm-category-dropdown-wrap {
+  max-width: 440px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+
+.bm-category-select {
+  width: 100%;
+  height: 52px;
+  padding: 0 44px 0 20px;
+  font-family: var(--bm-font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bm-black);
+  background-color: #F4F4F4;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.bm-category-select:focus {
+  border-color: var(--bm-black);
+}
+
+.bm-category-select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 13px;
+  color: #444444;
+}
+
+/* Product Grid */
+.bm-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.bm-card {
+  background: var(--bm-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-card-media {
+  background: #FFFFFF;
+  border-radius: 6px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bm-card-media img {
+  max-width: 82%;
+  max-height: 230px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.bm-card:hover .bm-card-media img {
+  transform: scale(1.04);
+}
+
+.bm-card-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #777777;
+  margin-bottom: 4px;
+}
+
+.bm-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bm-black);
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+  cursor: pointer;
+}
+
+.bm-card-title:hover {
+  text-decoration: underline;
+}
+
+.bm-card-sheen {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 12px;
+}
+
+.bm-card-packs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.bm-pack-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  background: #F0F0F0;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.bm-pack-tag.active {
+  background: var(--bm-black);
+  color: var(--bm-white);
+}
+
+.bm-card-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bm-black);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.bm-card-cta:hover {
+  opacity: 0.75;
+}
+
+/* "See All Products" Centered Button */
+.bm-catalog-action {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ==========================================================================
+   4. BLACK ARCHITECTURAL BAR: "Access the professional experience"
+   Matches Page 05 bottom & Page 06 top
+   ========================================================================== */
+.bm-pro-section {
+  background-color: var(--bm-dark-bg);
+  color: #FFFFFF;
+  padding: 68px 0;
+}
+
+.bm-pro-title {
+  text-align: center;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
+  margin: 0 0 48px;
+}
+
+.bm-pro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .bm-pro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.bm-pro-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: opacity 0.2s ease;
+}
+
+.bm-pro-item:hover {
+  opacity: 0.8;
+}
+
+.bm-pro-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-pro-icon svg {
+  width: 38px;
+  height: 38px;
+  stroke: #FFFFFF;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bm-pro-label {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   5. COLOR TRENDS 2026 - SIGNATURE STACKED COLOR BANDS
+   Exact match to Page 06, 07, 08
+   ========================================================================== */
+.bm-trends-section {
+  padding: 68px 0 80px;
+  background-color: #F8F8F8;
+}
+
+.bm-trends-header {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Stacked Full-Width Color Swatch Bands (Page 07 & 08) */
+.bm-swatch-stack {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bm-swatch-band {
+  min-height: 130px;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.bm-swatch-band:hover {
+  filter: brightness(0.97);
+}
+
+.bm-swatch-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-swatch-name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.bm-swatch-code {
+  font-size: 13.5px;
+  font-weight: 500;
+  margin-top: 3px;
+  opacity: 0.85;
+}
+
+.bm-swatch-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.bm-swatch-actions svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dark vs Light Text in Swatch Bands */
+.bm-swatch-band.light-text {
+  color: #FFFFFF;
+}
+.bm-swatch-band.light-text svg {
+  stroke: #FFFFFF;
+  fill: none;
+}
+
+.bm-swatch-band.dark-text {
+  color: var(--bm-black);
+}
+.bm-swatch-band.dark-text svg {
+  stroke: var(--bm-black);
+  fill: none;
+}
+
+/* ==========================================================================
+   6. THE LATEST - EDITORIAL PHOTO + COLOR BAR CARDS
+   Exact match to Pages 09 through 20
+   ========================================================================== */
+.bm-latest-section {
+  padding: 72px 0 80px;
+  background-color: #FFFFFF;
+}
+
+.bm-latest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .bm-latest-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.bm-editorial-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
+}
+
+.bm-editorial-card:hover {
+  transform: translateY(-2px);
+}
+
+.bm-editorial-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #E8E8E8;
+}
+
+.bm-editorial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bm-editorial-bar {
+  padding: 24px 28px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.bm-editorial-bar p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. WHY BENJAMIN MOORE / FILLI BOYA & CUSTOMER QUOTE
+   Exact match to Page 22 & 23
+   ========================================================================== */
+.bm-why-section {
+  padding: 72px 0 80px;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--bm-border);
+}
+
+.bm-why-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--bm-border);
+  margin-top: 36px;
+  margin-bottom: 48px;
+}
+
+.bm-why-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--bm-border);
+  text-decoration: none;
+  color: var(--bm-black);
+  transition: background-color 0.15s ease;
+}
+
+.bm-why-row:hover {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.bm-why-row-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bm-why-row-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bm-why-row-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--bm-black);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bm-why-row-text {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.bm-why-row-arrow {
+  font-size: 18px;
+  color: #777777;
+}
+
+/* Quote Card (Page 23) */
+.bm-quote-card {
+  background-color: var(--bm-stone-quote);
+  border-radius: 8px;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bm-quote-text {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--bm-black);
+  margin: 0 0 24px;
+}
+
+.bm-quote-author {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bm-black);
+}
+
+.bm-quote-role {
+  font-size: 13.5px;
+  color: #555555;
+  margin-top: 2px;
+}
+
+.bm-quote-swatch-box {
+  margin-top: 36px;
+  border: 1.5px solid var(--bm-black);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  text-decoration: none;
+  color: var(--bm-black);
+}
+
+.bm-quote-swatch-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bm-quote-swatch-code {
+  font-size: 13px;
+  color: #444444;
+}
+
+/* ==========================================================================
+   8. PLAY WITH COLOR & RENXMATIK SUITE
+   Matches Page 24 through 30
+   ========================================================================== */
+.bm-play-section {
+  padding: 72px 0 80px;
+  background: #FFFFFF;
+}
+
+.bm-play-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .bm-play-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bm-play-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bm-play-media {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #EAEAEA;
+}
+
+.bm-play-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bm-play-bar {
+  padding: 20px 24px;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 5-Strip Color Palette under photo (Page 29 & 30) */
+.bm-palette-strip {
+  display: flex;
+  width: 100%;
+  height: 38px;
+}
+
+.bm-palette-chip {
+  flex: 1;
+}
+
+/* Room Paint Coverage Calculator Box */
+.bm-calculator-wrap {
+  margin-top: 48px;
+  background: #F5F4EF;
+  border-radius: 8px;
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .bm-calculator-wrap {
+    grid-template-columns: 1fr;
+    padding: 32px 20px;
+  }
+}
+
+.bm-calc-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--bm-border);
+  border-radius: 4px;
+  background: #FFFFFF;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.bm-calc-result {
+  background: #FFFFFF;
+  border: 1px solid var(--bm-border);
+  border-radius: 6px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.bm-calc-number {
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--bm-black);
+  margin: 6px 0;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .bm-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bm-promo-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bm-hero-wrapper {
+    padding: 36px 0 44px;
+  }
+  .bm-fandeck-card {
+    flex: 0 0 280px;
+  }
+  .bm-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
