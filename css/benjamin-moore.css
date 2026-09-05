@@ -496,13 +496,6 @@
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  text-decoration: none;
-  cursor: pointer;
-  transition: filter 0.15s ease;
-}
-
-.bm-swatch-band:hover {
-  filter: brightness(0.96);
 }
 
 .bm-swatch-band-info {
@@ -557,15 +550,9 @@
   border-radius: var(--bm-radius-card);
   overflow: hidden;
   margin-bottom: 32px;
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
-}
-
-.bm-editorial-card:hover {
-  transform: translateY(-2px);
 }
 
 .bm-editorial-photo {
