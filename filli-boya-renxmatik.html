@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=6.0.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=7.0.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -292,28 +292,31 @@
 </section>
 
 <!-- ==========================================================================
-     3. "Shop By Product" / ÜRÜN AİLESİ (1:1 Pages 3 & 4)
+     3. PRODUCT DECISION MATRIX (Segmented Decision Engine)
      ========================================================================== -->
 <section class="bm-catalog-section" id="bmProductCatalog">
   <div class="bm-container">
     
     <h2 class="bm-catalog-title">Ürün Ailesi &amp; Mimari Çözümler</h2>
 
-    <!-- Category Selector Bar (Page 3) -->
-    <div class="bm-category-bar">
-      <span>İç Cephe, Dış Cephe, Dönüşüm &amp; Yalıtım</span>
-      <span style="font-size: 13px;">▼</span>
+    <!-- Segmented Navigation Tabs -->
+    <div class="bm-segment-bar" role="tablist">
+      <button type="button" class="bm-segment-btn active" role="tab" aria-selected="true" data-segment="ic-cephe">İç Cephe &amp; Tavan</button>
+      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="dis-cephe">Dış Cephe &amp; Koruma</button>
+      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="donusum">Kendin Yap &amp; Dönüşüm</button>
+      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="yalitim">Capatect Yalıtım</button>
     </div>
 
-    <!-- Horizontal Product Carousel Rail (Page 3) -->
-    <div class="bm-product-rail">
-      
+    <!-- Segment 1: İç Cephe & Tavan -->
+    <div class="bm-product-rail active" id="rail-ic-cephe">
       <!-- 01: Momento Silan -->
       <div class="bm-product-item">
         <div class="bm-product-media">
           <img src="assets/rf-card-paint.jpg" alt="Momento Silan İpeksi Mat Boya" loading="lazy" decoding="async" />
         </div>
+        <div class="bm-product-tag">Aktif Silikon Teknolojisi</div>
         <div class="bm-product-name">Momento Silan · İpeksi Mat®</div>
+        <div class="bm-product-desc">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı.</div>
       </div>
 
       <!-- 02: Momento Max -->
@@ -321,47 +324,165 @@
         <div class="bm-product-media">
           <img src="assets/rf-bucket-momentomax.jpg" alt="Momento Max Tam Mat Boya" loading="lazy" decoding="async" />
         </div>
+        <div class="bm-product-tag">Ultra Mat Doku</div>
         <div class="bm-product-name">Momento Max · Tam Mat</div>
+        <div class="bm-product-desc">Işığı yansıtmayan, yüzey hatalarını gizleyen pürüzsüz bitiş.</div>
       </div>
 
-      <!-- 03: Aqua Reno -->
+      <!-- 03: Momento Life -->
       <div class="bm-product-item">
         <div class="bm-product-media">
-          <img src="assets/rf-bucket-primer.jpg" alt="Aqua Reno Mutfak ve Banyo Dönüşüm Boyası" loading="lazy" decoding="async" />
+          <img src="assets/rf-filli-doors.jpg" alt="Momento Life Düşük VOC Boya" loading="lazy" decoding="async" />
         </div>
-        <div class="bm-product-name">Aqua Reno® · Kendine Göre Yap</div>
+        <div class="bm-product-tag">Hava Temizleyen İç Cephe</div>
+        <div class="bm-product-name">Momento Life &amp; Kids</div>
+        <div class="bm-product-desc">Formaldehit bağlayıcı, kokusuz bebek ve çocuk odası standardı.</div>
       </div>
 
-      <!-- 04: Betek AmphiSilan -->
+      <!-- 04: Süper Tavan -->
       <div class="bm-product-item">
         <div class="bm-product-media">
-          <img src="assets/rf-bucket-amphisilan.jpg" alt="Betek AmphiSilan Dış Cephe Boyası" loading="lazy" decoding="async" />
+          <img src="assets/rf-bucket-primer.jpg" alt="Süper Tavan Boyası" loading="lazy" decoding="async" />
         </div>
-        <div class="bm-product-name">AmphiSilan · Fotokatalitik Dış Cephe</div>
+        <div class="bm-product-tag">Damlatmayan Formül</div>
+        <div class="bm-product-name">Süper Tavan Boyası</div>
+        <div class="bm-product-desc">Yüksek örtücülük, nefes alan ekstra beyaz tam mat tavan standardı.</div>
       </div>
+    </div>
 
-      <!-- 05: Capatect Dalmaçyalı -->
+    <!-- Segment 2: Dış Cephe & Koruma -->
+    <div class="bm-product-rail" id="rail-dis-cephe">
+      <!-- 01: Aqusto Silan -->
       <div class="bm-product-item">
         <div class="bm-product-media">
-          <img src="assets/rf-filli-primer.jpg" alt="Capatect Dalmaçyalı Karbonlu EPS Mantolama" loading="lazy" decoding="async" />
+          <img src="assets/rf-bucket-amphisilan.jpg" alt="Aqusto Silan Duomax Dış Cephe" loading="lazy" decoding="async" />
         </div>
-        <div class="bm-product-name">Capatect Dalmaçyalı · Karbonlu EPS</div>
+        <div class="bm-product-tag">Duomax® Teknolojisi</div>
+        <div class="bm-product-name">Aqusto Silan</div>
+        <div class="bm-product-desc">Ege nemi ve tuzuna karşı maksimum nefes alma ve su iticilik.</div>
       </div>
 
-      <!-- 06: Aqualux -->
+      <!-- 02: Nucleus -->
       <div class="bm-product-item">
         <div class="bm-product-media">
-          <img src="assets/rf-bucket-aqualyx.jpg" alt="Aqualux Su Bazlı Ahşap Metal Boyası" loading="lazy" decoding="async" />
+          <img src="assets/rf-filli-exterior.jpg" alt="Nucleus Frontier Polymer Dış Cephe" loading="lazy" decoding="async" />
         </div>
-        <div class="bm-product-name">Aqualux · Kokusuz Saf Akrilik</div>
+        <div class="bm-product-tag">Ultra UV Direnci</div>
+        <div class="bm-product-name">Nucleus Dış Cephe</div>
+        <div class="bm-product-desc">Frontier Polymer teknolojisi ile solmayan tescilli renk dayanımı.</div>
       </div>
 
+      <!-- 03: Aqusto Sil -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-brand-filliboya.jpg" alt="Aqusto Sil Fotokatalitik Boya" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Kendi Kendini Temizleyen</div>
+        <div class="bm-product-name">Aqusto Sil</div>
+        <div class="bm-product-desc">Güneş ışığı ve yağmurla kir tutmayan fotokatalitik yüzey.</div>
+      </div>
+
+      <!-- 04: Betakril -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-bucket-aqualyx.jpg" alt="Betakril Akrilik Dış Cephe Boyası" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Akrilik Kalkan</div>
+        <div class="bm-product-name">Betakril Dış Cephe</div>
+        <div class="bm-product-desc">Geniş yüzeylerde yüksek tutunma ve ekonomik dış cephe koruması.</div>
+      </div>
+    </div>
+
+    <!-- Segment 3: Kendin Yap & Dönüşüm -->
+    <div class="bm-product-rail" id="rail-donusum">
+      <!-- 01: Aqua Reno -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-bucket-primer.jpg" alt="Aqua Reno Dönüşüm Boyası" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Kendine Göre Yap</div>
+        <div class="bm-product-name">Aqua Reno® Dönüşüm</div>
+        <div class="bm-product-desc">Mutfak dolabı, fayans ve tezgahları kırmadan dökmeden yenileyin.</div>
+      </div>
+
+      <!-- 02: Aqua Reno Sıvı Cam -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-card-waterproof.jpg" alt="Aqua Reno Sıvı Cam Koruyucu Vernik" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Çift Bileşenli Koruma</div>
+        <div class="bm-product-name">Aqua Reno® Sıvı Cam</div>
+        <div class="bm-product-desc">Tezgah ve ıslak hacimler için çizilmez, şeffaf koruyucu sır vernik.</div>
+      </div>
+
+      <!-- 03: Aqualux -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-bucket-aqualyx.jpg" alt="Aqualux Su Bazlı Kokusuz Emaye" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Kokusuz Saf Akrilik</div>
+        <div class="bm-product-name">Aqualux Parlak / Yarımat</div>
+        <div class="bm-product-desc">Ahşap ve metal yüzeyler için sararmayan, su bazlı emaye boya.</div>
+      </div>
+
+      <!-- 04: Panel Kapı Boyası -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-filli-doors.jpg" alt="Filli Boya Panel Kapı Boyası" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">İpeksi Mat Doku</div>
+        <div class="bm-product-name">Panel Kapı Boyası</div>
+        <div class="bm-product-desc">Amerikan panel ve ahşap kapılarda darbe ve çizilmeye dayanıklı doku.</div>
+      </div>
+    </div>
+
+    <!-- Segment 4: Capatect Yalıtım -->
+    <div class="bm-product-rail" id="rail-yalitim">
+      <!-- 01: Capatect Dalmaçyalı EPS -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-filli-primer.jpg" alt="Capatect Dalmaçyalı Karbonlu EPS Levha" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Isı Yalıtım Levhası</div>
+        <div class="bm-product-name">Dalmaçyalı Karbonlu EPS</div>
+        <div class="bm-product-desc">İdeal karbon dağılımı ile binalarda %50'ye varan enerji tasarrufu.</div>
+      </div>
+
+      <!-- 02: Capatect Sıva & Harç -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-card-cement.jpg" alt="Capatect Yapıştırma ve Sıva Harcı" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Polimer Harç</div>
+        <div class="bm-product-name">Capatect Sıva &amp; Yapıştırıcı</div>
+        <div class="bm-product-desc">Yüksek elastikiyet ve tutunma gücü ile çatlamaya son veren formül.</div>
+      </div>
+
+      <!-- 03: Donatı Filesi & Dübel -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-card-fasteners.jpg" alt="Capatect Donatı Filesi ve Dübel" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Mekanik Güvenlik</div>
+        <div class="bm-product-name">Donatı Filesi &amp; Çelik Dübel</div>
+        <div class="bm-product-desc">160 gr alkali dayanımlı file ve rüzgar yüküne karşı test edilmiş dübeller.</div>
+      </div>
+
+      <!-- 04: Capatect Mineral Sıva -->
+      <div class="bm-product-item">
+        <div class="bm-product-media">
+          <img src="assets/rf-filli-exterior.jpg" alt="Capatect Mineral Kaplama Sıvası" loading="lazy" decoding="async" />
+        </div>
+        <div class="bm-product-tag">Dekoratif Son Kat</div>
+        <div class="bm-product-name">Capatect Mineral Sıva</div>
+        <div class="bm-product-desc">Nefes alan, doğal desenli ve hava şartlarına tam dayanımlı koruyucu kaplama.</div>
+      </div>
     </div>
 
     <!-- Centered Action Button (Matches Page 4) -->
     <div class="bm-catalog-btn-wrap">
-      <a href="https://wa.me/905323844497?text=Merhaba%2C%20Filli%20Boya%20t%C3%BCm%20mimari%20katalog%20ve%20fiyat%20listesini%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-btn-black">
-        Tüm Ürün Kataloğunu İncele
+      <a href="https://wa.me/905323844497?text=Merhaba%2C%20Filli%20Boya%20%C3%BCr%C3%BCnleri%20ve%20RenXMatik%20hakk%C4%B1nda%20teknik%20f%C3%B6y%20ve%20fiyat%20listesi%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-btn-black">
+        Teknik Föy &amp; Fiyat Listesi İste
       </a>
     </div>
 
@@ -755,6 +876,35 @@
       }, 60);
     }, { passive: true });
   }
+})();
+
+/* SEGMENTED PRODUCT DECISION ENGINE SWITCHER */
+(function() {
+  var segmentBtns = document.querySelectorAll(".bm-segment-btn");
+  var productRails = document.querySelectorAll(".bm-product-rail");
+
+  segmentBtns.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      var segment = btn.getAttribute("data-segment");
+      var targetId = "rail-" + segment;
+
+      segmentBtns.forEach(function(b) {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+
+      productRails.forEach(function(rail) {
+        if (rail.id === targetId) {
+          rail.classList.add("active");
+          rail.scrollLeft = 0;
+        } else {
+          rail.classList.remove("active");
+        }
+      });
+    });
+  });
 })();
 </script>
 
