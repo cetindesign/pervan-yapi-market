@@ -241,6 +241,32 @@
   flex: 1;
 }
 
+/* Dynamic Contrast Theme for Hero */
+.bm-hero-wrapper.theme-dark .bm-h1 {
+  color: #FFFFFF;
+}
+
+.bm-hero-wrapper.theme-dark .bm-hero-sub {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bm-hero-wrapper.theme-dark .bm-fandeck-name {
+  color: #FFFFFF;
+}
+
+.bm-hero-wrapper.theme-dark .bm-fandeck-code {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bm-hero-wrapper.theme-dark .bm-hero-actions .bm-btn-black {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.bm-hero-wrapper.theme-dark .bm-hero-actions .bm-btn-black:hover {
+  background-color: #EAEAEA;
+}
+
 /* ==========================================================================
    2. PROMO BANNER ("Excellence for the Everyday") (Pages 1 bottom & 2)
    ========================================================================== */
@@ -252,6 +278,27 @@
 .bm-promo-container {
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .bm-promo-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .bm-promo-photo {
+    width: 50%;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+  .bm-promo-photo img {
+    height: 100%;
+  }
+  .bm-promo-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .bm-promo-photo {
