@@ -984,4 +984,295 @@
   flex: 1;
 }
 
+/* ==========================================================================
+   9. CAPATECT TECHNICAL & ESTIMATOR COMPONENTS
+   ========================================================================== */
+.bm-capatect-bridge {
+  margin-top: 36px;
+  background: #F4F4F4;
+  border-left: 4px solid var(--bm-black);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--bm-black);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bm-capatect-bridge:hover {
+  background: #ECECEC;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .bm-capatect-bridge {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.bm-capatect-bridge-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bm-black);
+  margin-bottom: 4px;
+}
+
+.bm-capatect-bridge-sub {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+.bm-capatect-bridge-link {
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bm-black);
+  white-space: nowrap;
+}
+
+/* Stats Row */
+.bm-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 36px 0;
+}
+
+@media (min-width: 992px) {
+  .bm-stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.bm-stat-card {
+  background: var(--bm-white);
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.bm-stat-value {
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--bm-black);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.bm-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Metraj Estimator */
+.bm-calc-box {
+  background: #F9F9F9;
+  border: 1px solid #E5E5E5;
+  border-radius: var(--bm-radius-card);
+  padding: 36px 24px;
+  margin: 48px 0;
+}
+
+@media (min-width: 768px) {
+  .bm-calc-box {
+    padding: 48px 40px;
+  }
+}
+
+.bm-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+@media (min-width: 992px) {
+  .bm-calc-grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+  }
+}
+
+.bm-calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bm-form-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bm-black);
+}
+
+.bm-form-input, .bm-form-select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--bm-black);
+  background: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.bm-form-input:focus, .bm-form-select:focus {
+  border-color: var(--bm-black);
+}
+
+.bm-calc-results {
+  background: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bm-calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 14px;
+}
+
+.bm-calc-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.bm-calc-val {
+  font-weight: 700;
+  color: var(--bm-black);
+  font-family: monospace;
+  font-size: 15px;
+}
+
+/* Technical Specification Table */
+.bm-spec-wrap {
+  overflow-x: auto;
+  margin: 36px 0;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+}
+
+.bm-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.bm-spec-table th {
+  background: #F4F4F4;
+  padding: 14px 18px;
+  font-weight: 700;
+  color: var(--bm-black);
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.bm-spec-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #EEEEEE;
+  color: #444444;
+}
+
+.bm-spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 6-Stage System Grid */
+.bm-system-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 36px 0;
+}
+
+@media (min-width: 640px) {
+  .bm-system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bm-system-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bm-system-card {
+  background: var(--bm-white);
+  border: 1px solid #EAEAEA;
+  border-radius: var(--bm-radius-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bm-system-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.bm-system-step {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.bm-system-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bm-black);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.bm-system-desc {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.bm-system-meta {
+  font-size: 12px;
+  background: #F8F8F8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #666666;
+  font-weight: 500;
+}
+
+
 

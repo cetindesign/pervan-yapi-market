@@ -476,6 +476,18 @@
       </div>
     </div>
 
+    <!-- Capatect Dedicated Subpage Bridge (Appears on Capatect segment) -->
+    <a href="capatect-dalmacyali-mantolama.html" class="bm-capatect-bridge" id="capatectBridge" style="display: none;">
+      <div>
+        <div class="bm-capatect-bridge-title">Capatect Dalmaçyalı® Dış Cephe Mantolama Sistemini İnceleyin</div>
+        <div class="bm-capatect-bridge-sub">Metraj ve sarfiyat hesaplama aracı, teknik şartname değerleri ve Urla ana depo şantiye sevkiyatı.</div>
+      </div>
+      <span class="bm-capatect-bridge-link">
+        Mantolama Sayfasına Git
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
     <!-- Centered Action Button (Matches Page 4) -->
     <div class="bm-catalog-btn-wrap">
       <a href="https://wa.me/905323844497?text=Merhaba%2C%20Filli%20Boya%20%C3%BCr%C3%BCnleri%20ve%20RenXMatik%20hakk%C4%B1nda%20teknik%20f%C3%B6y%20ve%20fiyat%20listesi%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-btn-black">
@@ -511,7 +523,7 @@
       </a>
 
       <!-- Ruler Icon: Architects -->
-      <a href="kesif-randevusu.html" class="bm-pro-item">
+      <a href="capatect-dalmacyali-mantolama.html" class="bm-pro-item">
         <div class="bm-pro-icon">
           <svg viewBox="0 0 24 24"><path d="M2 22L22 2"></path><path d="M2 22h20"></path><path d="M2 22V2"></path><path d="M7 17l2-2"></path><path d="M11 13l2-2"></path><path d="M15 9l2-2"></path></svg>
         </div>
@@ -1081,6 +1093,11 @@
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+
+      var capatectBridge = document.getElementById("capatectBridge");
+      if (capatectBridge) {
+        capatectBridge.style.display = (segment === "yalitim") ? "flex" : "none";
+      }
 
       productRails.forEach(function(rail) {
         if (rail.id === targetId) {
