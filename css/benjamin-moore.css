@@ -200,29 +200,6 @@
   display: block;
 }
 
-/* Frosted pill badge inside bottom-left of photo */
-.bm-fandeck-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 6px;
-  padding: 6px 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.bm-fandeck-badge svg {
-  width: 17px;
-  height: 17px;
-  stroke: var(--bm-black);
-  fill: none;
-  stroke-width: 1.8;
-}
-
 .bm-fandeck-info {
   margin-top: 12px;
   padding-left: 2px;
@@ -502,11 +479,11 @@
 }
 
 .bm-swatch-band {
-  height: 140px;
-  padding: 20px 24px;
+  height: 120px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: relative;
   text-decoration: none;
   cursor: pointer;
@@ -515,20 +492,6 @@
 
 .bm-swatch-band:hover {
   filter: brightness(0.96);
-}
-
-.bm-swatch-band-top {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.bm-swatch-band-top svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .bm-swatch-band-info {
@@ -715,19 +678,6 @@
   color: #444444;
 }
 
-.bm-quote-swatch-icons {
-  display: flex;
-  gap: 12px;
-}
-
-.bm-quote-swatch-icons svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--bm-black);
-  fill: none;
-  stroke-width: 1.8;
-}
-
 /* ==========================================================================
    8. "Play with Color" (Pages 23 through 30)
    ========================================================================== */
@@ -795,28 +745,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.bm-palette-btn-float {
-  position: absolute;
-  bottom: 50px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  background: rgba(20, 20, 20, 0.88);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-}
-
-.bm-palette-btn-float svg {
-  width: 22px;
-  height: 22px;
-  stroke: #FFFFFF;
-  fill: none;
-  stroke-width: 1.8;
 }
 
 .bm-palette-strip {
