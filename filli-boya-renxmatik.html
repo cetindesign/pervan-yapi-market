@@ -177,194 +177,367 @@
 </div>
 
 <!-- ==========================================================================
-     REIMAGINED 3-STEP RENXMATIK STUDIO (Mobile-First Paint & Color Configurator)
+     BACKDROP HOME 1:1 RENXMATIK STUDIO (Single-Viewport Configurator)
      ========================================================================== -->
 <section class="bm-studio-section">
   <div class="bm-container">
 
-    <!-- Studio Header -->
+    <!-- Studio Top Badge -->
     <div class="bm-studio-header">
       <div class="bm-studio-badge">Filli Boya Yetkili RenXMatik™ Merkezi · Balçova &amp; Urla</div>
-      <h1 class="bm-studio-title">Boya &amp; Renk Stüdyosu</h1>
-      <p class="bm-studio-sub">
-        3 basit adımda yüzeyinizi seçin, 128 mimari renkten birini eşleyin; Balçova ve Urla bilgisayarlı renklendirme merkezlerimizde 1 dakikada ürettirip şantiyenize sevk ettirin.
-      </p>
     </div>
 
     <!-- ======================================================================
-         BACKDROP 50/50 SPLIT STUDIO (Sticky Left Stage + 3-Step Stream)
+         BACKDROP 50/50 SPLIT STUDIO (Multi-View Visualizer + Buy Box Configurator)
          ====================================================================== -->
     <div class="bm-studio-split">
 
-      <!-- ====================================================================
-           LEFT COLUMN: Sticky Architectural Stage (Backdrop 1:1)
-           ==================================================================== -->
+      <!-- LEFT COLUMN: Multi-View Visualizer Stage (Backdrop 1:1) -->
       <aside class="bm-stage-column">
         <div class="bm-stage-card">
-          <!-- Live Architectural Room Vignette Stage -->
-          <div class="bm-stage-vignette-wrap">
-            <div class="bm-stage-badge">Canlı Mimari Simülasyon</div>
-            
-            <svg viewBox="0 0 480 320" width="100%" height="100%" class="bm-vignette-svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="wallLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
-                  <stop offset="60%" stop-color="#ffffff" stop-opacity="0.04"/>
-                  <stop offset="100%" stop-color="#000000" stop-opacity="0.14"/>
-                </linearGradient>
-                <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#D8C8BA"/>
-                  <stop offset="100%" stop-color="#BAA99A"/>
-                </linearGradient>
-                <linearGradient id="cornerShadow" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#000000" stop-opacity="0.22"/>
-                  <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <!-- Main Back Wall -->
-              <polygon id="vignetteMainWall" points="110,0 480,0 480,240 110,240" fill="#405E66" />
-              <!-- Side Perspective Wall -->
-              <polygon id="vignetteSideWall" points="0,0 110,0 110,240 0,270" fill="#324950" />
-              <!-- Corner Shadow Overlay -->
-              <polygon points="110,0 155,0 155,240 110,240" fill="url(#cornerShadow)" />
-              <!-- Natural Light Reflection Gradient -->
-              <polygon points="110,0 480,0 480,240 110,240" fill="url(#wallLight)" />
-              <!-- Ceiling Trim -->
-              <line x1="0" y1="0" x2="480" y2="0" stroke="rgba(0,0,0,0.08)" stroke-width="2" />
-              <!-- Baseboard (Süpürgelik) -->
-              <polygon points="0,270 110,240 110,247 0,276" fill="#F1F5F9" />
-              <polygon points="110,240 480,240 480,247 110,247" fill="#FFFFFF" />
-              <!-- Natural Flooring (Parke) -->
-              <polygon points="0,276 110,247 480,247 480,320 0,320" fill="url(#floorGrad)" />
-              <!-- Wood Seams -->
-              <line x1="160" y1="247" x2="130" y2="320" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
-              <line x1="280" y1="247" x2="260" y2="320" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
-              <line x1="390" y1="247" x2="380" y2="320" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
-            </svg>
+          <div class="bm-stage-display">
+            <div class="bm-stage-badge">Canlı RenXMatik™ Simülasyon</div>
 
-            <!-- Dynamic Official Transparent Bucket Render -->
-            <img id="stageBucketImg" class="bm-stage-bucket-img" src="assets/filli-official/momento-silan.png" alt="Seçili Boya Kovası" loading="eager" />
+            <!-- View 1: Architectural Room Vignette (Active) -->
+            <div class="bm-stage-view active" id="stageViewRoom">
+              <svg viewBox="0 0 480 340" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="wallLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+                    <stop offset="60%" stop-color="#ffffff" stop-opacity="0.04"/>
+                    <stop offset="100%" stop-color="#000000" stop-opacity="0.16"/>
+                  </linearGradient>
+                  <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#D8C8BA"/>
+                    <stop offset="100%" stop-color="#B5A495"/>
+                  </linearGradient>
+                  <linearGradient id="cornerShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#000000" stop-opacity="0.24"/>
+                    <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- Main Back Wall -->
+                <polygon id="vignetteMainWall" points="110,0 480,0 480,250 110,250" fill="#405E66" />
+                <!-- Perspective Side Wall -->
+                <polygon id="vignetteSideWall" points="0,0 110,0 110,250 0,282" fill="#324950" />
+                <!-- Corner Shadow Overlay -->
+                <polygon points="110,0 155,0 155,250 110,250" fill="url(#cornerShadow)" />
+                <!-- Daylight Reflection -->
+                <polygon points="110,0 480,0 480,250 110,250" fill="url(#wallLight)" />
+                <!-- Architectural Baseboards (Süpürgelik) -->
+                <polygon points="0,282 110,250 110,257 0,288" fill="#F1F5F9" />
+                <polygon points="110,250 480,250 480,257 110,257" fill="#FFFFFF" />
+                <!-- Natural Wood Parquet Floor -->
+                <polygon points="0,288 110,257 480,257 480,340 0,340" fill="url(#floorGrad)" />
+                <!-- Wood Seams -->
+                <line x1="160" y1="257" x2="130" y2="340" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
+                <line x1="280" y1="257" x2="260" y2="340" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
+                <line x1="390" y1="257" x2="380" y2="340" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
+              </svg>
+              <!-- Dynamic Transparent Official Bucket Render -->
+              <img id="stageBucketImg" class="bm-stage-bucket-img" src="assets/filli-official/momento-silan.png" alt="Filli Boya Kovası" loading="eager" />
+            </div>
+
+            <!-- View 2: High-Res Bucket Spotlight -->
+            <div class="bm-stage-view" id="stageViewBucket">
+              <div class="bm-stage-bucket-spotlight">
+                <img id="stageBucketLarge" class="bm-stage-bucket-large" src="assets/filli-official/momento-silan.png" alt="Filli Boya Ürün Kovası" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- View 3: Macro Color Swatch Texture -->
+            <div class="bm-stage-view" id="stageViewTexture">
+              <div class="bm-stage-texture-view" id="stageTextureBg" style="background-color: #405E66;">
+                <div class="bm-stage-texture-card">
+                  <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #64748B; margin-bottom: 4px;">RenXMatik™ Spektrofotometre</div>
+                  <div style="font-size: 20px; font-weight: 900; color: #0F172A;" id="stageTextureName">IRMAK 65</div>
+                  <div style="font-size: 12px; font-family: ui-monospace, SFMono-Regular, monospace; color: #64748B; margin-top: 2px;" id="stageTextureHex">#405E66</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Dynamic Specimen & Lab Recipe Card -->
-          <div class="bm-stage-details">
-            <div class="bm-stage-color-meta">
-              <div class="bm-stage-swatch" id="stageColorSwatch" style="background-color: #405E66;"></div>
+          <!-- Multi-View Switcher Tabs (Backdrop 1:1) -->
+          <div class="bm-stage-nav" id="stageGalleryNav">
+            <button type="button" class="bm-stage-tab-btn active" data-view="room">Oda Görünümü</button>
+            <button type="button" class="bm-stage-tab-btn" data-view="bucket">Kova Detayı</button>
+            <button type="button" class="bm-stage-tab-btn" data-view="texture">Renk Dokusu</button>
+          </div>
+
+          <!-- Stage Meta Strip Below Visualizer -->
+          <div class="bm-stage-meta">
+            <div class="bm-stage-meta-left">
+              <div class="bm-stage-meta-dot" id="stageMetaDot" style="background-color: #405E66;"></div>
               <div>
-                <div class="bm-stage-color-name" id="stageColorName">IRMAK 65</div>
-                <div class="bm-stage-color-sub" id="stageColorSub">2026 Yılın Rengi · #405E66</div>
+                <div class="bm-stage-meta-title" id="stageMetaTitle">IRMAK 65</div>
+                <div class="bm-stage-meta-sub" id="stageMetaSub">Momento Silan · 15 L Kova</div>
               </div>
             </div>
-
-            <div class="bm-stage-spec-table">
-              <div class="bm-stage-spec-row">
-                <span class="bm-stage-spec-label">Boya Formülü:</span>
-                <span class="bm-stage-spec-val" id="stageProduct">Momento Silan · İpeksi Mat®</span>
-              </div>
-              <div class="bm-stage-spec-row">
-                <span class="bm-stage-spec-label">Ambalaj &amp; Hacim:</span>
-                <span class="bm-stage-spec-val" id="stageSize">15 L Kova (~110 m²)</span>
-              </div>
-              <div class="bm-stage-spec-row">
-                <span class="bm-stage-spec-label">Renklendirme:</span>
-                <span class="bm-stage-spec-val">RenXMatik™ Spektrofotometre</span>
-              </div>
-              <div class="bm-stage-spec-row">
-                <span class="bm-stage-spec-label">Sevkiyat:</span>
-                <span class="bm-stage-spec-val">Balçova &amp; Urla Aynı Gün</span>
-              </div>
+            <div class="bm-stage-meta-tech">
+              RenXMatik™ 1 Dk. Dolum
             </div>
-
-            <a href="#" id="stageWhatsappBtn" target="_blank" rel="noopener" class="bm-stage-cta-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.186 1.564 5.946l-1.664 6.082 6.223-1.632c1.709.932 3.663 1.468 5.741 1.468 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
-              Laboratuvar Reçetesi Al ›
-            </a>
-            <div class="bm-stage-cta-sub">Spektrofotometre reçetesi WhatsApp üzerinden doğrudan şantiye ekibinize iletilir.</div>
           </div>
         </div>
       </aside>
 
-      <!-- ====================================================================
-           RIGHT COLUMN: Progressive Configuration Stream (Backdrop 1:1)
-           ==================================================================== -->
-      <div class="bm-stream-column">
+      <!-- RIGHT COLUMN: Compact Product Configurator / Buy Box (Backdrop 1:1) -->
+      <div class="bm-buybox-column">
+        <div class="bm-buybox-card">
 
-        <!-- ==================================================================
-             ADIM 01: RENK SEÇİMİ (Color First)
-             ================================================================== -->
-        <div class="bm-step-block" id="step1">
-          <div class="bm-step-title-wrap">
-            <span class="bm-step-circle">01</span>
-            <h2 class="bm-step-heading">Hangi Renk Üretilsin? (RenXMatik™ Kartelası)</h2>
-            <span class="bm-step-subtext">128 Tescilli Mimari Renk</span>
-          </div>
+          <!-- Category & Title -->
+          <div class="bm-buybox-brand">Filli Boya · RenXMatik™ Stüdyo</div>
+          <h1 class="bm-buybox-title" id="buyboxColorTitle">IRMAK 65</h1>
+          <p class="bm-buybox-sub" id="buyboxColorSub">
+            Dingin mavi-yeşil alt tonlu tescilli mimari ton · 2026 Koleksiyonu · #405E66
+          </p>
 
-          <div class="bm-color-stage">
-            <!-- Active Selected Color Banner -->
-            <div class="bm-active-color-banner">
-              <div class="bm-active-color-left">
-                <div class="bm-active-color-swatch" id="activeColorSwatch" style="background-color: #405E66;"></div>
-                <div>
-                  <div class="bm-active-color-name" id="activeColorName">IRMAK 65</div>
-                  <div class="bm-active-color-sub" id="activeColorSub">2026 Yılın Rengi · #405E66</div>
+          <div class="bm-buybox-divider"></div>
+
+          <!-- STEP 1: Color Capsule Bar (Compact Swatch + Companion Dots + Drawer Trigger) -->
+          <div class="bm-option-group">
+            <div class="bm-option-header">
+              <span class="bm-option-label">01 · Renk Seçimi</span>
+              <span class="bm-option-selected-val" id="selectedColorLabel">Irmak 65 (#405E66)</span>
+            </div>
+
+            <div class="bm-color-capsule-row">
+              <!-- Active Swatch Capsule -->
+              <div class="bm-color-active-capsule" id="activeColorCapsule" title="Renk Paletini Aç">
+                <span class="bm-color-active-dot" id="buyboxSwatch" style="background-color: #405E66;"></span>
+                <div class="bm-color-active-meta">
+                  <span class="bm-color-active-name" id="capsuleColorName">IRMAK 65</span>
+                  <span class="bm-color-active-hex" id="capsuleColorHex">#405E66</span>
                 </div>
               </div>
-              <div class="bm-active-status-badge">
-                Spektrofotometre Eşlendi
+
+              <!-- Quick Companion Trend Dots -->
+              <div class="bm-companion-dots" id="companionDots">
+                <button type="button" class="bm-companion-dot active" data-name="IRMAK 65" data-hex="#405E66" data-sub="2026 Yılın Rengi" style="background-color: #405E66;" title="Irmak 65"></button>
+                <button type="button" class="bm-companion-dot" data-name="RÜZGAR 15" data-hex="#BCD7EA" data-sub="2026 Koleksiyonu" style="background-color: #BCD7EA;" title="Rüzgar 15"></button>
+                <button type="button" class="bm-companion-dot" data-name="REZENE 190" data-hex="#ECE5D4" data-sub="2026 Koleksiyonu" style="background-color: #ECE5D4;" title="Rezene 190"></button>
+                <button type="button" class="bm-companion-dot" data-name="KUM BEYAZI" data-hex="#EEEDEB" data-sub="İkonik Nötr" style="background-color: #EEEDEB;" title="Kum Beyazı"></button>
+                <button type="button" class="bm-companion-dot" data-name="GÜNBATIMI" data-hex="#834456" data-sub="2026 Koleksiyonu" style="background-color: #834456;" title="Günbatımı"></button>
+                <button type="button" class="bm-companion-dot" data-name="ANDEZİT 65" data-hex="#6C6E71" data-sub="Mimari Gri" style="background-color: #6C6E71;" title="Andezit 65"></button>
+              </div>
+
+              <!-- Slide-over Drawer Trigger -->
+              <button type="button" class="bm-drawer-trigger-btn" id="openDrawerBtn">
+                Tüm Renkler
+                <span class="bm-drawer-trigger-badge">128</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Finish Selector (Boya Türü / Yüzey) -->
+          <div class="bm-option-group">
+            <div class="bm-option-header">
+              <span class="bm-option-label">02 · Boya Türü / Yüzey</span>
+              <span class="bm-option-selected-val" id="selectedFinishLabel">İpeksi Mat® · Salon &amp; Duvar</span>
+            </div>
+
+            <div class="bm-finish-grid" id="buyboxFinishGrid">
+              <!-- Finish 1: Momento Silan -->
+              <div class="bm-finish-card active" data-product="Momento Silan" data-finish="İpeksi Mat® · Tam Silinebilir" data-img="assets/filli-official/momento-silan.png">
+                <div class="bm-finish-card-top">
+                  <span class="bm-finish-card-title">Momento Silan</span>
+                  <div class="bm-finish-card-radio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+                <span class="bm-finish-pill">İpeksi Mat®</span>
+                <div class="bm-finish-desc">Aktif Silikon ile leke tutmayan, tam silinebilir salon ve oda duvarı koruma kalkanı.</div>
+              </div>
+
+              <!-- Finish 2: Momento Max -->
+              <div class="bm-finish-card" data-product="Momento Max" data-finish="Tam Mat · Kusur Kapatıcı" data-img="assets/filli-official/momento-max.png">
+                <div class="bm-finish-card-top">
+                  <span class="bm-finish-card-title">Momento Max</span>
+                  <div class="bm-finish-card-radio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+                <span class="bm-finish-pill">Tam Mat</span>
+                <div class="bm-finish-desc">Işığı yansıtmayan pürüzsüz doku, kusur kapatıcı mat yüzey ve tavan beyazı.</div>
+              </div>
+
+              <!-- Finish 3: Aqua Reno -->
+              <div class="bm-finish-card" data-product="Aqua Reno® Serisi" data-finish="Astarsız Dönüşüm Boyası" data-img="assets/filli-official/aqua-reno-mutfak.png">
+                <div class="bm-finish-card-top">
+                  <span class="bm-finish-card-title">Aqua Reno®</span>
+                  <div class="bm-finish-card-radio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+                <span class="bm-finish-pill">Dönüşüm</span>
+                <div class="bm-finish-desc">Kırmadan, dökmeden; astarsız ve zımparasız doğrudan seramik, banyo ve mutfak dolabı.</div>
+              </div>
+
+              <!-- Finish 4: Aqusto Silan -->
+              <div class="bm-finish-card" data-product="Aqusto Silan &amp; Capatect" data-finish="Duomax® Su İtici Dış Cephe" data-img="assets/filli-official/aqusto-silan.png">
+                <div class="bm-finish-card-top">
+                  <span class="bm-finish-card-title">Aqusto Silan</span>
+                  <div class="bm-finish-card-radio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                </div>
+                <span class="bm-finish-pill">Dış Cephe</span>
+                <div class="bm-finish-desc">Ege güneşi ve deniz tuzuna dayanıklı Duomax® su itici kalkan ve mantolama.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Size Selector (Ambalaj / Hacim) -->
+          <div class="bm-option-group">
+            <div class="bm-option-header">
+              <span class="bm-option-label">03 · Ambalaj &amp; Hacim</span>
+              <span class="bm-option-selected-val" id="selectedSizeLabel">15 L Kova (~110 m²)</span>
+            </div>
+
+            <div class="bm-size-row" id="buyboxSizeRow">
+              <button type="button" class="bm-size-pill-btn" data-size="100 ml Numune" data-coverage="1 duvarda gün ışığı testi için ideal ilham paketi.">
+                <span class="bm-size-pill-title">100 ml Numune</span>
+                <span class="bm-size-pill-sub">Işık Testi</span>
+              </button>
+              <button type="button" class="bm-size-pill-btn" data-size="2.5 L Galon" data-coverage="2.5 L Galon ile 2 katta yaklaşık 18 m² alan boyanır.">
+                <span class="bm-size-pill-title">2.5 L Galon</span>
+                <span class="bm-size-pill-sub">~18 m² Tek Oda</span>
+              </button>
+              <button type="button" class="bm-size-pill-btn active" data-size="15 L Kova" data-coverage="15 L Kova ile 2 katta yaklaşık 110 m² alan boyanır.">
+                <span class="bm-size-pill-title">15 L Kova</span>
+                <span class="bm-size-pill-sub">~110 m² Ev Geneli</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Coverage Callout Strip -->
+          <div class="bm-coverage-callout" id="coverageCallout">
+            <svg class="bm-coverage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span id="coverageText">15 L Kova ile 2 kat uygulamada yaklaşık 110 m² alan boyanır.</span>
+          </div>
+
+          <!-- Primary Action CTA Button (Backdrop "Add to Cart") -->
+          <div class="bm-buybox-cta-block">
+            <a href="#" id="mainWhatsappBtn" target="_blank" rel="noopener" class="bm-buybox-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.186 1.564 5.946l-1.664 6.082 6.223-1.632c1.709.932 3.663 1.468 5.741 1.468 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+              WhatsApp ile Laboratuvar Reçetesi Al ›
+            </a>
+            <div class="bm-buybox-cta-sub">
+              Balçova &amp; Urla bilgisayarlı RenXMatik™ ünitelerimizde 1 dakikada üretim &amp; aynı gün şantiyeye sevk.
+            </div>
+          </div>
+
+          <!-- Backdrop Product Accordions (Below CTA) -->
+          <div class="bm-accordions" id="buyboxAccordions">
+            <!-- Accordion 1 -->
+            <div class="bm-accordion-item active">
+              <button type="button" class="bm-accordion-trigger">
+                <span>Teknik Özellikler &amp; Aktif Silikon Dayanımı</span>
+                <svg class="bm-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="bm-accordion-content">
+                <div class="bm-accordion-inner">
+                  <ul>
+                    <li><strong>Aktif Silikon Teknolojisi:</strong> Yüzeyde hidrofobik bariyer oluşturarak leke tutmaz, kahve, yağ ve parmak izlerini nemli bezle zahmetsizce temizler.</li>
+                    <li><strong>TS EN 13300 Sınıf 1:</strong> En yüksek ıslak sürtünme ve ovalama dayanım sınıfı. Silinirken parlamaz ve rengi solmaz.</li>
+                    <li><strong>Düşük VOC &amp; Kokusuz:</strong> VOC &lt; 1 g/L standardı ile uygulama sırasında ve sonrasında yaşam alanınızı hemen kullanıma açar.</li>
+                    <li><strong>Nefes Alma Kabiliyeti:</strong> Yüksek su buharı geçirgenliği sayesinde duvarda kabarma ve dökülmeyi önler.</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-        <!-- Fast Trend Chips (Quick Picks) -->
-        <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #888888; margin-bottom: 8px;">
-          2026 Öne Çıkan Mimari Renkler:
-        </div>
-        <div class="bm-trend-chips" id="trendChips">
-          <button type="button" class="bm-trend-chip active" data-name="IRMAK 65" data-hex="#405E66" data-sub="2026 Yılın Rengi">
-            <span class="bm-chip-dot" style="background: #405E66;"></span> Irmak 65
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="RÜZGAR 15" data-hex="#BCD7EA" data-sub="2026 Koleksiyonu">
-            <span class="bm-chip-dot" style="background: #BCD7EA;"></span> Rüzgar 15
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="REZENE 190" data-hex="#ECE5D4" data-sub="2026 Koleksiyonu">
-            <span class="bm-chip-dot" style="background: #ECE5D4;"></span> Rezene 190
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="KUM BEYAZI" data-hex="#EEEDEB" data-sub="İkonik Zamansız Nötr">
-            <span class="bm-chip-dot" style="background: #EEEDEB;"></span> Kum Beyazı
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="GÜNBATIMI" data-hex="#834456" data-sub="2026 Koleksiyonu">
-            <span class="bm-chip-dot" style="background: #834456;"></span> Günbatımı
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="ANDEZİT 65" data-hex="#6C6E71" data-sub="Tescilli Mimari Gri">
-            <span class="bm-chip-dot" style="background: #6C6E71;"></span> Andezit 65
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="KOZMİK 25" data-hex="#85A0AA" data-sub="Tescilli Dingin Mavi">
-            <span class="bm-chip-dot" style="background: #85A0AA;"></span> Kozmik 25
-          </button>
-          <button type="button" class="bm-trend-chip" data-name="LÜLETAŞI" data-hex="#F0ECE7" data-sub="Mimari Sıcak Bej">
-            <span class="bm-chip-dot" style="background: #F0ECE7;"></span> Lületaşı
-          </button>
-        </div>
+            <!-- Accordion 2 -->
+            <div class="bm-accordion-item">
+              <button type="button" class="bm-accordion-trigger">
+                <span>Metraj &amp; Sarfiyat Rehberi (m² Hesaplama)</span>
+                <svg class="bm-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="bm-accordion-content">
+                <div class="bm-accordion-inner">
+                  <ul>
+                    <li><strong>100 ml Numune:</strong> 1 duvarda ~1 m² alanda 2 kat sürümle ışık testi yapmak içindir.</li>
+                    <li><strong>2.5 L Galon:</strong> 2 kat uygulamada ~18-22 m² net yüzey kaplar (1 yatak odası veya koridor).</li>
+                    <li><strong>15 L Kova:</strong> 2 kat uygulamada ~105-120 m² net duvar alanı kaplar (ortalama 3+1 daire geneli).</li>
+                    <li><strong>Katlar Arası Kuruma:</strong> İdeal sıcaklıkta (20°C) 4-6 saat sonra ikinci kat uygulanmalıdır.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-        <!-- Search and Category Filters -->
-        <div class="bm-atlas-toolbar" style="margin-top: 16px;">
-          <div class="bm-color-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="search" id="studioColorSearch" placeholder="Renk adı veya kod ara (Örn: Andezit, Kum, Masal, Aydan)..." autocomplete="off" />
+            <!-- Accordion 3 -->
+            <div class="bm-accordion-item">
+              <button type="button" class="bm-accordion-trigger">
+                <span>Urla &amp; Balçova Aynı Gün Şantiye Teslimatı</span>
+                <svg class="bm-accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="bm-accordion-content">
+                <div class="bm-accordion-inner">
+                  <ul>
+                    <li><strong>Bilgisayarlı Anında Üretim:</strong> RenXMatik™ spektrofotometre ünitemizde reçeteniz 60 saniyede hazırlanır. Sıfır ton farkı garantilidir.</li>
+                    <li><strong>Yarımada Şantiye Servisi:</strong> Urla, Çeşme, Alaçatı, Seferihisar ve Güzelbahçe şantiyelerine kendi araçlarımızla aynı gün teslimat.</li>
+                    <li><strong>Teknik Destek &amp; Usta Yönlendirmesi:</strong> Filli Ustam 2 yıl garantili uygulama ekibi ve şantiye yerinde metraj keşif hizmeti.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="bm-filter-pills" id="studioFilterPills">
-            <button type="button" class="bm-pill-btn active" data-filter="all">Tümü (128)</button>
-            <button type="button" class="bm-pill-btn" data-filter="beyaz-notr">Beyaz &amp; Nötr (17)</button>
-            <button type="button" class="bm-pill-btn" data-filter="gri">Mimari Gri (26)</button>
-            <button type="button" class="bm-pill-btn" data-filter="bej-toprak">Bej &amp; Toprak (27)</button>
-            <button type="button" class="bm-pill-btn" data-filter="mavi-yesil">Mavi &amp; Yeşil (36)</button>
-            <button type="button" class="bm-pill-btn" data-filter="sicak-canli">Sıcak &amp; Aksan (22)</button>
-          </div>
-        </div>
+        </div><!-- /.bm-buybox-card -->
+      </div><!-- /.bm-buybox-column -->
 
-        <!-- 128-Swatch Grid -->
-        <div class="bm-swatch-picker-grid" id="studioSwatchGrid">
-          <div class="bm-swatch-card active" data-category="gri" data-name="ANDEZİT 40" data-hex="#DDE0DF" data-catname="Mimari Gri">
+    </div><!-- /.bm-studio-split -->
+
+    <!-- Capatect Mantolama Bridge -->
+    <div style="margin-top: 36px;">
+      <a href="capatect-dalmacyali-mantolama.html" class="bm-capatect-bridge">
+        <div>
+          <div class="bm-capatect-bridge-title">Capatect Dalmaçyalı® Dış Cephe Mantolama Sayfası &amp; Metraj Hesaplayıcı</div>
+          <div class="bm-capatect-bridge-sub">Büyük ölçekli şantiyeniz için net cephe alanını girerek paket EPS, yapıştırıcı, sıva, file ve dübel adetlerini canlı hesaplayın; Urla depodan şantiye teslim fiyatı alın.</div>
+        </div>
+        <span class="bm-capatect-bridge-link">
+          Mantolama Hesaplayıcısını Aç
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     OFF-CANVAS SLIDE-OVER COLOR DRAWER (128 RenXMatik™ Mimari Renk Paleti)
+     ========================================================================== -->
+<div class="bm-drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="bm-drawer" id="colorDrawer" aria-hidden="true" role="dialog" aria-label="128 Renk Kartelası">
+  <div class="bm-drawer-header">
+    <div class="bm-drawer-title-wrap">
+      <h2 class="bm-drawer-title">RenXMatik™ Renk Kartelası</h2>
+      <span class="bm-drawer-counter">128 Mimari Renk</span>
+    </div>
+    <button type="button" class="bm-drawer-close-btn" id="closeDrawerBtn" aria-label="Kapat">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="bm-drawer-toolbar">
+    <div class="bm-drawer-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="drawerColorSearch" placeholder="Renk adı veya kod ara (Örn: Andezit, Kum, Masal, Aydan)..." autocomplete="off" />
+    </div>
+
+    <div class="bm-drawer-pills" id="drawerFilterPills">
+      <button type="button" class="bm-drawer-pill active" data-filter="all">Tümü (128)</button>
+      <button type="button" class="bm-drawer-pill" data-filter="beyaz-notr">Beyaz &amp; Nötr (17)</button>
+      <button type="button" class="bm-drawer-pill" data-filter="gri">Mimari Gri (26)</button>
+      <button type="button" class="bm-drawer-pill" data-filter="bej-toprak">Bej &amp; Toprak (27)</button>
+      <button type="button" class="bm-drawer-pill" data-filter="mavi-yesil">Mavi &amp; Yeşil (36)</button>
+      <button type="button" class="bm-drawer-pill" data-filter="sicak-canli">Sıcak &amp; Aksan (22)</button>
+    </div>
+  </div>
+
+  <div class="bm-drawer-body">
+    <div class="bm-drawer-grid" id="drawerSwatchGrid">
+<div class="bm-swatch-card active" data-category="gri" data-name="ANDEZİT 40" data-hex="#DDE0DF" data-catname="Mimari Gri">
             <div class="bm-swatch-card-color" style="background-color: #DDE0DF;"></div>
             <div class="bm-swatch-card-meta">
               <div class="bm-swatch-card-name">ANDEZİT 40</div>
@@ -1260,126 +1433,9 @@
               <div class="bm-swatch-card-hex">#718B9C</div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
-
-    <!-- ======================================================================
-         ADIM 02: UYGULAMA YÜZEYİ & BOYA TÜRÜ (Baza Kimyası)
-         ====================================================================== -->
-    <div class="bm-step-block" id="step2">
-      <div class="bm-step-title-wrap">
-        <span class="bm-step-circle">02</span>
-        <h2 class="bm-step-heading">Nereyi Boyuyorsunuz? (Yüzey &amp; Boya Türü)</h2>
-        <span class="bm-step-subtext">Boya tipini belirleyin</span>
-      </div>
-
-      <div class="bm-surface-grid" id="studioSurfaceGrid">
-        <!-- Surface Card 1: İç Cephe Salon / Duvar -->
-        <div class="bm-surface-card active" data-key="momento-silan" data-product="Momento Silan" data-finish="İpeksi Mat · Tam Silinebilir" data-img="assets/filli-official/momento-silan.png">
-          <div class="bm-surface-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-surface-media">
-            <img src="assets/filli-official/momento-silan.png" alt="Momento Silan İpeksi Mat" loading="lazy" decoding="async" />
-          </div>
-          <div class="bm-surface-badge">Salon &amp; Oda Duvarı</div>
-          <div class="bm-surface-title">Momento Silan · İpeksi Mat®</div>
-          <div class="bm-surface-desc">Aktif Silikon teknolojisi ile silinebilir, leke tutmayan koruma kalkanı.</div>
-        </div>
-
-        <!-- Surface Card 2: Yatak Odası & Tavan -->
-        <div class="bm-surface-card" data-key="momento-max" data-product="Momento Max" data-finish="Tam Mat · Kusur Kapatıcı" data-img="assets/filli-official/momento-max.png">
-          <div class="bm-surface-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-surface-media">
-            <img src="assets/filli-official/momento-max.png" alt="Momento Max Tam Mat" loading="lazy" decoding="async" />
-          </div>
-          <div class="bm-surface-badge">Yatak Odası &amp; Tavan</div>
-          <div class="bm-surface-title">Momento Max &amp; Betakril</div>
-          <div class="bm-surface-desc">Işığı yansıtmayan pürüzsüz mat doku ve damlamayan tavan beyazı.</div>
-        </div>
-
-        <!-- Surface Card 3: Fayans & Mutfak Dolabı -->
-        <div class="bm-surface-card" data-key="aqua-reno" data-product="Aqua Reno® Serisi" data-finish="Astarsız Dönüşüm Boyası" data-img="assets/filli-official/aqua-reno-mutfak.png">
-          <div class="bm-surface-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-surface-media">
-            <img src="assets/filli-official/aqua-reno-mutfak.png" alt="Aqua Reno Mutfak ve Banyo" loading="lazy" decoding="async" />
-          </div>
-          <div class="bm-surface-badge">Fayans &amp; Mutfak Dolabı</div>
-          <div class="bm-surface-title">Aqua Reno® Dönüşüm</div>
-          <div class="bm-surface-desc">Kırmadan, dökmeden; astarsız ve zımparasız doğrudan seramik ve dolap boyama.</div>
-        </div>
-
-        <!-- Surface Card 4: Villa Dış Cephe & Mantolama -->
-        <div class="bm-surface-card" data-key="aqusto-silan" data-product="Aqusto Silan &amp; Capatect" data-finish="Duomax® Su İtici &amp; Mantolama" data-img="assets/filli-official/aqusto-silan.png">
-          <div class="bm-surface-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-surface-media">
-            <img src="assets/filli-official/aqusto-silan.png" alt="Aqusto Silan Dış Cephe" loading="lazy" decoding="async" />
-          </div>
-          <div class="bm-surface-badge">Villa Dış Cephe &amp; Yalıtım</div>
-          <div class="bm-surface-title">Aqusto Silan &amp; Capatect</div>
-          <div class="bm-surface-desc">Ege güneşi ve deniz tuzuna dayanıklı Duomax® kalkan ve karbonlu mantolama.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         ADIM 03: AMBALAJ & HACİM (Numune veya Tam Boy)
-         ====================================================================== -->
-    <div class="bm-step-block" id="step3">
-      <div class="bm-step-title-wrap">
-        <span class="bm-step-circle">03</span>
-        <h2 class="bm-step-heading">İhtiyacınız Ne Kadar? (Ambalaj &amp; Hacim)</h2>
-        <span class="bm-step-subtext">Hacim belirleyin</span>
-      </div>
-
-      <div class="bm-volume-grid" id="studioVolumeGrid">
-        <!-- Option 1: 100 ml Numune -->
-        <div class="bm-volume-card" data-size="100 ml Numune" data-label="100 ml Deneme Boyu İlham Paketi">
-          <div class="bm-volume-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-volume-badge">IŞIKTA TEST ET</div>
-          <div class="bm-volume-title">100 ml İlham Paketi</div>
-          <div class="bm-volume-desc">Rengi evinizin ışığında ve duvarında birebir test etmek için ideal deneme boyu.</div>
-        </div>
-
-        <!-- Option 2: 2.5 L Tek Oda -->
-        <div class="bm-volume-card" data-size="2.5 L Galon" data-label="2.5 L Tek Oda Boyu (~18 m²)">
-          <div class="bm-volume-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-volume-badge">TEK ODA / DETAY</div>
-          <div class="bm-volume-title">2.5 L Galon Boyu</div>
-          <div class="bm-volume-desc">Tek bir oda veya vurgu duvarı için 2 kat uygulama (~18 m² yüzey) boyama kapasitesi.</div>
-        </div>
-
-        <!-- Option 3: 15 L Kova (Default) -->
-        <div class="bm-volume-card active" data-size="15 L Kova" data-label="15 L Büyük Daire Boyu (~110 m²)">
-          <div class="bm-volume-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="bm-volume-badge">EV GENELİ / EN ÇOK TERCİH EDİLEN</div>
-          <div class="bm-volume-title">15 L Büyük Kova</div>
-          <div class="bm-volume-desc">3+1 daire genelinde 2 kat uygulama (~110 m² yüzey) için en ekonomik büyük boy.</div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /.bm-stream-column -->
-</div><!-- /.bm-studio-split -->
-
-    <!-- ======================================================================
-         MANTOLAMA & MİMARİ KÖPRÜLER
-         ====================================================================== -->
-    <div style="margin-top: 36px;">
-      <!-- Capatect Bridge -->
-      <a href="capatect-dalmacyali-mantolama.html" class="bm-capatect-bridge">
-        <div>
-          <div class="bm-capatect-bridge-title">Capatect Dalmaçyalı® Dış Cephe Mantolama Sayfası &amp; Metraj Hesaplayıcı</div>
-          <div class="bm-capatect-bridge-sub">Büyük ölçekli şantiyeniz için net cephe alanını girerek paket EPS, yapıştırıcı, sıva, file ve dübel adetlerini canlı hesaplayın; Urla depodan şantiye teslim fiyatı alın.</div>
-        </div>
-        <span class="bm-capatect-bridge-link">
-          Mantolama Hesaplayıcısını Aç
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-      </a>
-    </div>
-
   </div>
-</section>
+</aside>
 
 <!-- ==========================================================================
      STICKY MOBILE-FIRST FLOATING TRAY (Gerçek Zamanlı Reçete Barı)
@@ -1404,6 +1460,7 @@
     </a>
   </div>
 </div>
+
 
 <!-- ==========================================================================
      PERVAN TRUST & LOGISTICS STRIP
@@ -1513,39 +1570,58 @@
   // Current Configuration State
   var config = {
     product: 'Momento Silan',
-    finish: 'İpeksi Mat · Tam Silinebilir',
+    finish: 'İpeksi Mat® · Tam Silinebilir',
     productImg: 'assets/filli-official/momento-silan.png',
     colorName: 'IRMAK 65',
     colorHex: '#405E66',
-    colorSub: '2026 Yılın Rengi',
-    size: '15 L Kova'
+    colorSub: '2026 Koleksiyonu',
+    size: '15 L Kova',
+    coverage: '15 L Kova ile 2 kat uygulamada yaklaşık 110 m² alan boyanır.'
   };
 
-  // Elements
-  var surfaceCards = document.querySelectorAll('#studioSurfaceGrid .bm-surface-card');
-  var volumeCards = document.querySelectorAll('#studioVolumeGrid .bm-volume-card');
-  var swatchCards = document.querySelectorAll('#studioSwatchGrid .bm-swatch-card');
-  var trendChips = document.querySelectorAll('#trendChips .bm-trend-chip');
-  var filterPills = document.querySelectorAll('#studioFilterPills .bm-pill-btn');
-  var searchInput = document.getElementById('studioColorSearch');
-
-  // Sticky Left Stage Elements (Backdrop 1:1)
+  // 1. Stage Elements
   var vignetteMainWall = document.getElementById('vignetteMainWall');
   var vignetteSideWall = document.getElementById('vignetteSideWall');
   var stageBucketImg = document.getElementById('stageBucketImg');
-  var stageColorSwatch = document.getElementById('stageColorSwatch');
-  var stageColorName = document.getElementById('stageColorName');
-  var stageColorSub = document.getElementById('stageColorSub');
-  var stageProduct = document.getElementById('stageProduct');
-  var stageSize = document.getElementById('stageSize');
-  var stageWhatsappBtn = document.getElementById('stageWhatsappBtn');
+  var stageBucketLarge = document.getElementById('stageBucketLarge');
+  var stageTextureBg = document.getElementById('stageTextureBg');
+  var stageTextureName = document.getElementById('stageTextureName');
+  var stageTextureHex = document.getElementById('stageTextureHex');
+  var stageMetaDot = document.getElementById('stageMetaDot');
+  var stageMetaTitle = document.getElementById('stageMetaTitle');
+  var stageMetaSub = document.getElementById('stageMetaSub');
+  var stageTabBtns = document.querySelectorAll('#stageGalleryNav .bm-stage-tab-btn');
+  var stageViews = document.querySelectorAll('.bm-stage-display .bm-stage-view');
 
-  // Active Display in Stream
-  var activeColorSwatch = document.getElementById('activeColorSwatch');
-  var activeColorName = document.getElementById('activeColorName');
-  var activeColorSub = document.getElementById('activeColorSub');
+  // 2. Buy Box Elements
+  var buyboxColorTitle = document.getElementById('buyboxColorTitle');
+  var buyboxColorSub = document.getElementById('buyboxColorSub');
+  var selectedColorLabel = document.getElementById('selectedColorLabel');
+  var buyboxSwatch = document.getElementById('buyboxSwatch');
+  var capsuleColorName = document.getElementById('capsuleColorName');
+  var capsuleColorHex = document.getElementById('capsuleColorHex');
+  var companionDots = document.querySelectorAll('#companionDots .bm-companion-dot');
+  var openDrawerBtn = document.getElementById('openDrawerBtn');
+  var activeColorCapsule = document.getElementById('activeColorCapsule');
+  var selectedFinishLabel = document.getElementById('selectedFinishLabel');
+  var finishCards = document.querySelectorAll('#buyboxFinishGrid .bm-finish-card');
+  var selectedSizeLabel = document.getElementById('selectedSizeLabel');
+  var sizeBtns = document.querySelectorAll('#buyboxSizeRow .bm-size-pill-btn');
+  var coverageText = document.getElementById('coverageText');
+  var mainWhatsappBtn = document.getElementById('mainWhatsappBtn');
 
-  // Floating Tray (Mobile-First)
+  // 3. Accordion Elements
+  var accordionItems = document.querySelectorAll('#buyboxAccordions .bm-accordion-item');
+
+  // 4. Slide-over Drawer Elements
+  var drawerBackdrop = document.getElementById('drawerBackdrop');
+  var colorDrawer = document.getElementById('colorDrawer');
+  var closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  var drawerColorSearch = document.getElementById('drawerColorSearch');
+  var drawerFilterPills = document.querySelectorAll('#drawerFilterPills .bm-drawer-pill');
+  var drawerSwatchCards = document.querySelectorAll('#drawerSwatchGrid .bm-swatch-card');
+
+  // 5. Floating Mobile Tray Elements
   var traySwatch = document.getElementById('traySwatch');
   var trayProduct = document.getElementById('trayProduct');
   var trayColor = document.getElementById('trayColor');
@@ -1553,40 +1629,87 @@
   var trayWhatsappBtn = document.getElementById('trayWhatsappBtn');
 
   function updateUI() {
-    // 1. Synchronize Left Stage Architectural Vignette
+    // Stage View 1 (Room)
     if (vignetteMainWall) vignetteMainWall.style.fill = config.colorHex;
     if (vignetteSideWall) vignetteSideWall.style.fill = config.colorHex;
     if (stageBucketImg && config.productImg) stageBucketImg.src = config.productImg;
 
-    // 2. Synchronize Left Stage Specimen & Recipe Card
-    if (stageColorSwatch) stageColorSwatch.style.backgroundColor = config.colorHex;
-    if (stageColorName) stageColorName.textContent = config.colorName;
-    if (stageColorSub) stageColorSub.textContent = config.colorSub + ' · ' + config.colorHex;
-    if (stageProduct) stageProduct.textContent = config.product + ' · ' + config.finish;
-    if (stageSize) stageSize.textContent = config.size;
+    // Stage View 2 (Bucket Spotlight)
+    if (stageBucketLarge && config.productImg) stageBucketLarge.src = config.productImg;
 
-    // 3. Synchronize Stream Active Color Banner
-    if (activeColorSwatch) activeColorSwatch.style.backgroundColor = config.colorHex;
-    if (activeColorName) activeColorName.textContent = config.colorName;
-    if (activeColorSub) activeColorSub.textContent = config.colorSub + ' · ' + config.colorHex;
+    // Stage View 3 (Texture)
+    if (stageTextureBg) stageTextureBg.style.backgroundColor = config.colorHex;
+    if (stageTextureName) stageTextureName.textContent = config.colorName;
+    if (stageTextureHex) stageTextureHex.textContent = config.colorHex;
 
-    // 4. Synchronize Mobile Floating Tray
+    // Stage Meta
+    if (stageMetaDot) stageMetaDot.style.backgroundColor = config.colorHex;
+    if (stageMetaTitle) stageMetaTitle.textContent = config.colorName;
+    if (stageMetaSub) stageMetaSub.textContent = config.product + ' · ' + config.size;
+
+    // Buy Box
+    if (buyboxColorTitle) buyboxColorTitle.textContent = config.colorName;
+    if (buyboxColorSub) buyboxColorSub.textContent = config.colorSub + ' · ' + config.colorHex;
+    if (selectedColorLabel) selectedColorLabel.textContent = config.colorName + ' (' + config.colorHex + ')';
+    if (buyboxSwatch) buyboxSwatch.style.backgroundColor = config.colorHex;
+    if (capsuleColorName) capsuleColorName.textContent = config.colorName;
+    if (capsuleColorHex) capsuleColorHex.textContent = config.colorHex;
+    if (selectedFinishLabel) selectedFinishLabel.textContent = config.finish;
+    if (selectedSizeLabel) selectedSizeLabel.textContent = config.size;
+    if (coverageText) coverageText.textContent = config.coverage;
+
+    // Floating Mobile Tray
     if (traySwatch) traySwatch.style.backgroundColor = config.colorHex;
     if (trayProduct) trayProduct.textContent = config.product;
     if (trayColor) trayColor.textContent = config.colorName;
     if (traySize) traySize.textContent = config.size;
 
-    // 5. Generate Pre-filled WhatsApp Formulation Message
+    // Companion Dots active state
+    companionDots.forEach(function(dot) {
+      if (dot.getAttribute('data-name') === config.colorName) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Drawer Swatches active state
+    drawerSwatchCards.forEach(function(sc) {
+      if (sc.getAttribute('data-name') === config.colorName) {
+        sc.classList.add('active');
+      } else {
+        sc.classList.remove('active');
+      }
+    });
+
+    // WhatsApp URL
     var msg = 'Merhaba, RenXMatik ünitesinde ' + config.product + ' (' + config.size + ') bazında ' + config.colorName + ' (' + config.colorHex + ') rengi hazırlatmak ve fiyat/stok bilgisi almak istiyorum.';
     var waUrl = 'https://wa.me/905323844497?text=' + encodeURIComponent(msg);
-    if (stageWhatsappBtn) stageWhatsappBtn.href = waUrl;
+    if (mainWhatsappBtn) mainWhatsappBtn.href = waUrl;
     if (trayWhatsappBtn) trayWhatsappBtn.href = waUrl;
   }
 
-  // 1. Step 2 (Finish / Surface) Card Selection
-  surfaceCards.forEach(function(card) {
+  // Multi-View Tabs
+  stageTabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var targetView = btn.getAttribute('data-view');
+      stageTabBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      stageViews.forEach(function(view) {
+        if (view.id === 'stageView' + targetView.charAt(0).toUpperCase() + targetView.slice(1)) {
+          view.classList.add('active');
+        } else {
+          view.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // Finish Selection
+  finishCards.forEach(function(card) {
     card.addEventListener('click', function() {
-      surfaceCards.forEach(function(c) { c.classList.remove('active'); });
+      finishCards.forEach(function(c) { c.classList.remove('active'); });
       card.classList.add('active');
       config.product = card.getAttribute('data-product');
       config.finish = card.getAttribute('data-finish');
@@ -1595,58 +1718,77 @@
     });
   });
 
-  // 2. Step 1 (Color) Swatch Selection
-  swatchCards.forEach(function(card) {
-    card.addEventListener('click', function() {
-      swatchCards.forEach(function(c) { c.classList.remove('active'); });
-      trendChips.forEach(function(ch) { ch.classList.remove('active'); });
-      card.classList.add('active');
+  // Size Selection
+  sizeBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      sizeBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      config.size = btn.getAttribute('data-size');
+      config.coverage = btn.getAttribute('data-coverage') || config.coverage;
+      updateUI();
+    });
+  });
 
+  // Companion Dots
+  companionDots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      config.colorName = dot.getAttribute('data-name');
+      config.colorHex = dot.getAttribute('data-hex');
+      config.colorSub = dot.getAttribute('data-sub') || '2026 Koleksiyonu';
+      updateUI();
+    });
+  });
+
+  // Drawer Open / Close
+  function openDrawer() {
+    if (drawerBackdrop) drawerBackdrop.classList.add('active');
+    if (colorDrawer) {
+      colorDrawer.classList.add('active');
+      colorDrawer.setAttribute('aria-hidden', 'false');
+    }
+    document.body.style.overflow = 'hidden';
+    if (drawerColorSearch) {
+      setTimeout(function() { drawerColorSearch.focus(); }, 150);
+    }
+  }
+
+  function closeDrawer() {
+    if (drawerBackdrop) drawerBackdrop.classList.remove('active');
+    if (colorDrawer) {
+      colorDrawer.classList.remove('active');
+      colorDrawer.setAttribute('aria-hidden', 'true');
+    }
+    document.body.style.overflow = '';
+  }
+
+  if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+  if (activeColorCapsule) activeColorCapsule.addEventListener('click', openDrawer);
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && colorDrawer && colorDrawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  // Drawer Swatch Selection
+  drawerSwatchCards.forEach(function(card) {
+    card.addEventListener('click', function() {
       config.colorName = card.getAttribute('data-name');
       config.colorHex = card.getAttribute('data-hex');
-      config.colorSub = card.getAttribute('data-catname') || 'Filli Boya';
-
-      // If matches a trend chip, mark it active
-      trendChips.forEach(function(ch) {
-        if (ch.getAttribute('data-name') === config.colorName) {
-          ch.classList.add('active');
-        }
-      });
-
+      config.colorSub = card.getAttribute('data-catname') || 'RenXMatik™';
       updateUI();
+      closeDrawer();
     });
   });
 
-  // Quick Trend Chips
-  trendChips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
-      trendChips.forEach(function(ch) { ch.classList.remove('active'); });
-      chip.classList.add('active');
-
-      config.colorName = chip.getAttribute('data-name');
-      config.colorHex = chip.getAttribute('data-hex');
-      config.colorSub = chip.getAttribute('data-sub');
-
-      // Highlight in grid if present
-      swatchCards.forEach(function(sc) {
-        if (sc.getAttribute('data-name') === config.colorName) {
-          sc.classList.add('active');
-          sc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } else {
-          sc.classList.remove('active');
-        }
-      });
-
-      updateUI();
-    });
-  });
-
-  // Search in 128 Swatches
+  // Drawer Search and Filter
   var currentFilter = 'all';
   var currentQuery = '';
 
-  function filterSwatches() {
-    swatchCards.forEach(function(card) {
+  function filterDrawerSwatches() {
+    drawerSwatchCards.forEach(function(card) {
       var cat = card.getAttribute('data-category');
       var name = (card.getAttribute('data-name') || '').toLowerCase();
       var hex = (card.getAttribute('data-hex') || '').toLowerCase();
@@ -1654,38 +1796,35 @@
       var matchesCat = (currentFilter === 'all') || (cat === currentFilter);
       var matchesQuery = !currentQuery || (name.indexOf(currentQuery) !== -1) || (hex.indexOf(currentQuery) !== -1);
 
-      if (matchesCat && matchesQuery) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (matchesCat && matchesQuery) ? '' : 'none';
     });
   }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', function(e) {
+  if (drawerColorSearch) {
+    drawerColorSearch.addEventListener('input', function(e) {
       currentQuery = e.target.value.trim().toLowerCase();
-      filterSwatches();
+      filterDrawerSwatches();
     });
   }
 
-  filterPills.forEach(function(pill) {
+  drawerFilterPills.forEach(function(pill) {
     pill.addEventListener('click', function() {
-      filterPills.forEach(function(p) { p.classList.remove('active'); });
+      drawerFilterPills.forEach(function(p) { p.classList.remove('active'); });
       pill.classList.add('active');
       currentFilter = pill.getAttribute('data-filter');
-      filterSwatches();
+      filterDrawerSwatches();
     });
   });
 
-  // 3. Step 3 (Volume) Card Selection
-  volumeCards.forEach(function(card) {
-    card.addEventListener('click', function() {
-      volumeCards.forEach(function(c) { c.classList.remove('active'); });
-      card.classList.add('active');
-      config.size = card.getAttribute('data-size');
-      updateUI();
-    });
+  // Accordions
+  accordionItems.forEach(function(item) {
+    var trigger = item.querySelector('.bm-accordion-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', function() {
+        var isOpen = item.classList.contains('active');
+        item.classList.toggle('active', !isOpen);
+      });
+    }
   });
 
   // Initialize
