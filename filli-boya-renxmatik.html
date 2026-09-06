@@ -324,6 +324,7 @@
     </div>
   </div>
 </nav>
+<div class="bm-subnav-spacer" id="bmSubnavSpacer"></div>
 
 <!-- ==========================================================================
      3. ARCHITECTURAL PAINT MENU (Jon Coffee 1:1 Reference Architecture)
@@ -2986,9 +2987,10 @@
   });
 })();
 
-/* STICKY ARCHITECTURAL SUB-NAV HUB CONTROLLER (ScrollSpy & Header Sync) */
+/* STICKY ARCHITECTURAL SUB-NAV HUB CONTROLLER (Apple & Jon Coffee Pinned Standard) */
 (function() {
   var subnav = document.getElementById("bmSubnav");
+  var spacer = document.getElementById("bmSubnavSpacer");
   var header = document.querySelector("header");
   var subnavLinks = document.querySelectorAll("#bmSubnavLinks .bm-subnav-link");
   if (!subnav || !subnavLinks.length) return;
@@ -3001,27 +3003,52 @@
     { id: "bmInsulation", el: document.getElementById("bmInsulation") }
   ];
 
-  function syncSubnav() {
-    if (!header) return;
-    if (header.classList.contains("header--hidden")) {
-      subnav.style.top = "0px";
-    } else {
-      var h = header.offsetHeight || 60;
-      subnav.style.top = h + "px";
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
     }
+    return subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
   }
 
-  function onScroll() {
-    syncSubnav();
+  // Calculate once DOM is stable
+  setTimeout(function() {
+    initialSubnavTop = getSubnavOrigin();
+  }, 300);
 
+  function syncSubnavState() {
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    var currentId = "";
+    if (!initialSubnavTop) initialSubnavTop = getSubnavOrigin();
 
+    var headerHeight = (header && !header.classList.contains("header--hidden")) ? (header.offsetHeight || 60) : 0;
+    var pinThreshold = initialSubnavTop - headerHeight;
+
+    // Pinning state
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) spacer.classList.add("is-active");
+      }
+      if (header && header.classList.contains("header--hidden")) {
+        subnav.classList.add("header-hidden");
+      } else {
+        subnav.classList.remove("header-hidden");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+
+    // ScrollSpy active link detection
+    var currentId = "";
     for (var i = 0; i < targets.length; i++) {
       var t = targets[i];
       if (t.el) {
-        var top = t.el.getBoundingClientRect().top + scrollPos - 120;
-        if (scrollPos >= top) {
+        var elTop = t.el.getBoundingClientRect().top + scrollPos - 140;
+        if (scrollPos >= elTop) {
           currentId = t.id;
         }
       }
@@ -3046,21 +3073,37 @@
     }
   }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  syncSubnav();
+  window.addEventListener("scroll", syncSubnavState, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavState();
+  }, { passive: true });
 
+  syncSubnavState();
+
+  // Pixel-perfect click scrolling with full clearance
   subnavLinks.forEach(function(link) {
     link.addEventListener("click", function(e) {
+      e.preventDefault();
       var targetId = link.getAttribute("data-target");
       var targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        if (targetId === "bmInsulation") {
-          var capatectPill = document.querySelector('#paintMenuPills [data-filter="yalitim"]');
-          if (capatectPill) capatectPill.click();
-        }
-        targetEl.scrollIntoView({ behavior: "smooth" });
+      if (!targetEl) return;
+
+      if (targetId === "bmInsulation") {
+        var capatectPill = document.querySelector('#paintMenuPills [data-filter="yalitim"]');
+        if (capatectPill) capatectPill.click();
       }
+
+      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      var targetRect = targetEl.getBoundingClientRect();
+      var hOffset = (header && !header.classList.contains("header--hidden")) ? (header.offsetHeight || 60) : 0;
+      var subnavHeight = subnav.offsetHeight || 52;
+      var finalY = targetRect.top + currentScroll - hOffset - subnavHeight - 18;
+
+      window.scrollTo({
+        top: Math.max(0, finalY),
+        behavior: "smooth"
+      });
     });
   });
 })();
