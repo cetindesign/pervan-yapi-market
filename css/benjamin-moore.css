@@ -1704,36 +1704,62 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: none;
 }
 
+/* ==========================================================================
+   JON COFFEE (joncoffee) 1:1 REFERENCE ARCHITECTURE
+   Line-Item Typographic Menu & Interactive Bottom Sheet Modal
+   ========================================================================== */
+
+/* Category Star Tabs (Jon Coffee 1:1 Clean & Focused) */
+.bm-menu-pills-wrap {
+  margin-bottom: 28px;
+}
+
+.bm-menu-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.bm-menu-pills::-webkit-scrollbar {
+  display: none;
+}
+
 .bm-menu-pill {
   flex-shrink: 0;
   appearance: none;
-  border: 1px solid transparent;
-  background: #F4F4F5;
-  color: #52525B;
+  border: 1px solid rgba(24, 24, 27, 0.25);
+  background: #FFFFFF;
+  color: #18181B;
   font-family: var(--bm-font);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 18px;
   border-radius: 9999px;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .bm-menu-pill:hover {
-  background: #E4E4E7;
-  color: #18181B;
+  border-color: #18181B;
+  background: #F9FAFB;
 }
 
 .bm-menu-pill.active {
   background: #18181B;
   color: #FFFFFF;
-  font-weight: 600;
   border-color: #18181B;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .bm-menu-pill-count {
@@ -1744,38 +1770,34 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   height: 18px;
   padding: 0 5px;
   border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10.5px;
+  font-weight: 800;
   line-height: 1;
-  background: rgba(0, 0, 0, 0.06);
-  color: #71717A;
+  background: rgba(24, 24, 27, 0.08);
+  color: #18181B;
   transition: all 0.18s ease;
 }
 
-.bm-menu-pill:hover .bm-menu-pill-count {
-  background: rgba(0, 0, 0, 0.1);
-  color: #18181B;
-}
-
 .bm-menu-pill.active .bm-menu-pill-count {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
 }
 
-/* Menu List Container & Items */
+/* Menu List Container & Jon Coffee Line-Item Rows */
 .bm-menu-list {
-  border-top: 1px solid #E4E4E7;
-  border-bottom: 1px solid #E4E4E7;
+  border-top: 1px solid rgba(24, 24, 27, 0.12);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.12);
 }
 
 .bm-menu-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 14px;
-  border-bottom: 1px solid #F4F4F5;
+  gap: 16px;
+  padding: 18px 12px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: background-color 0.15s ease, transform 0.15s ease;
   user-select: none;
 }
@@ -1785,32 +1807,26 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-menu-row:hover {
-  background-color: #FAFAFA;
+  background-color: rgba(24, 24, 27, 0.03);
 }
 
 .bm-menu-row.hidden {
   display: none !important;
 }
 
-/* Left: Media & Text Stack */
-.bm-menu-main {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-width: 0;
-}
-
+/* Left: Product Can Thumbnail (Murat's single extra) */
 .bm-menu-thumb {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   flex-shrink: 0;
-  border-radius: 8px;
-  background: #F8F8F8;
-  border: 1px solid #EAEAEA;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .bm-menu-thumb img {
@@ -1820,8 +1836,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: block;
 }
 
-.bm-menu-info {
+/* Middle: Editorial Typographic Stack */
+.bm-menu-main {
+  flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .bm-menu-title-row {
@@ -1832,114 +1853,137 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-menu-name {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 16.5px;
+  font-weight: 800;
   color: #18181B;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  font-family: var(--bm-font);
+}
+
+.bm-menu-dots {
+  display: none;
+  color: rgba(24, 24, 27, 0.2);
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bm-menu-dots {
+    display: inline-block;
+  }
 }
 
 .bm-menu-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: #EFF6FF;
-  color: #1D4ED8;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2.5px 8px;
+  border-radius: 9999px;
+  background: #18181B;
+  color: #FFFFFF;
   white-space: nowrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .bm-menu-tag.tag-amber {
-  background: #FEF3C7;
-  color: #92400E;
+  background: #B45309;
+  color: #FFFFFF;
 }
 
 .bm-menu-tag.tag-emerald {
-  background: #D1FAE5;
-  color: #065F46;
+  background: #047857;
+  color: #FFFFFF;
 }
 
 .bm-menu-tag.tag-purple {
-  background: #F3E8FF;
-  color: #6B21A8;
+  background: #7E22CE;
+  color: #FFFFFF;
 }
 
 .bm-menu-desc-line {
   font-size: 13px;
-  color: #71717A;
-  margin-top: 3px;
-  line-height: 1.35;
+  color: #52525B;
+  line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 480px;
+  max-width: 540px;
 }
 
-/* Middle: Dotted Leader */
-.bm-menu-leader {
-  flex: 1;
-  border-bottom: 1px dotted #D4D4D8;
-  margin: 0 16px;
-  min-width: 20px;
-  display: none;
+.bm-menu-meta-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(24, 24, 27, 0.7);
+  padding-top: 2px;
 }
 
-@media (min-width: 680px) {
-  .bm-menu-leader {
-    display: block;
-  }
-}
-
-/* Right: Badges & Action Arrow */
+/* Right: Action Label & Circular Arrow */
 .bm-menu-aside {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
-.bm-menu-badge-specs {
-  font-size: 13px;
-  font-weight: 600;
-  color: #3F3F46;
-  background: #F4F4F5;
-  padding: 6px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
+.bm-menu-action-label {
+  display: none;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #18181B;
+}
+
+@media (min-width: 640px) {
+  .bm-menu-action-label {
+    display: inline-block;
+  }
 }
 
 .bm-menu-arrow {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #F4F4F5;
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #52525B;
-  transition: all 0.18s ease;
-  flex-shrink: 0;
+  color: #18181B;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .bm-menu-row:hover .bm-menu-arrow {
-  background: var(--bm-black);
-  color: var(--bm-white);
-  transform: translateX(2px);
+  background: #18181B;
+  color: #FFFFFF;
+  border-color: #18181B;
+  transform: translateX(3px);
 }
 
-/* Bottom Sheet / Modal Dialog (Jon Coffee 1:1) */
+/* ==========================================================================
+   JON COFFEE 1:1 INTERACTIVE BOTTOM SHEET MODAL
+   ========================================================================== */
 .bm-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 9999;
+  z-index: 10000;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.22s ease;
+  transition: opacity 0.25s ease;
+  padding: 0;
 }
 
 .bm-modal-backdrop.open {
@@ -1947,31 +1991,39 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   pointer-events: auto;
 }
 
-.bm-modal-card {
-  background: #FFFFFF;
-  width: 100%;
-  max-height: 90vh;
-  border-radius: 20px 20px 0 0;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
-  transform: translateY(100%);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-  position: relative;
-}
-
 @media (min-width: 640px) {
   .bm-modal-backdrop {
     align-items: center;
     padding: 24px;
   }
+}
+
+.bm-modal-card {
+  background: #FAF8F2;
+  width: 100%;
+  max-width: 520px;
+  max-height: 88vh;
+  max-height: 88dvh;
+  border-radius: 24px 24px 0 0;
+  border-top: 2px solid #18181B;
+  border-left: 2px solid #18181B;
+  border-right: 2px solid #18181B;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
   .bm-modal-card {
-    max-width: 580px;
-    border-radius: 16px;
-    max-height: 85vh;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
-    transform: scale(0.96) translateY(8px);
+    border-radius: 24px;
+    border: 2px solid #18181B;
+    transform: scale(0.96) translateY(12px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   }
   .bm-modal-backdrop.open .bm-modal-card {
     transform: scale(1) translateY(0);
@@ -1981,19 +2033,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-modal-backdrop.open .bm-modal-card {
   transform: translateY(0);
 }
-@media (min-width: 640px) {
-  .bm-modal-backdrop.open .bm-modal-card {
-    transform: scale(1) translateY(0);
-  }
-}
 
 /* Mobile Pull Handle */
 .bm-modal-handle {
-  width: 40px;
-  height: 4px;
-  background: #E4E4E7;
-  border-radius: 2px;
-  margin: 10px auto 4px;
+  width: 44px;
+  height: 4.5px;
+  background: rgba(24, 24, 27, 0.25);
+  border-radius: 9999px;
+  margin: 10px auto 2px;
   flex-shrink: 0;
 }
 
@@ -2003,255 +2050,334 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   }
 }
 
-/* Close Button */
-.bm-modal-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
+/* Sticky Modal Header (Jon Coffee 1:1) */
+.bm-modal-sticky-header {
+  padding: 16px 24px 14px;
+  background: rgba(250, 248, 242, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.12);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.bm-modal-eyebrow {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(24, 24, 27, 0.6);
+  margin-bottom: 2px;
+}
+
+.bm-modal-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #18181B;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.bm-modal-close-btn {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #F4F4F5;
-  border: none;
-  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #71717A;
-  transition: background 0.15s ease, color 0.15s ease;
-  z-index: 2;
+  color: #18181B;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.bm-modal-close:hover {
-  background: #E4E4E7;
-  color: var(--bm-black);
+.bm-modal-close-btn:hover {
+  background: #18181B;
+  color: #FFFFFF;
+  border-color: #18181B;
 }
 
-/* Modal Body Scroll */
-.bm-modal-body {
-  padding: 16px 24px 24px;
+/* Modal Scrollable Content */
+.bm-modal-scroll {
+  padding: 20px 24px 28px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  scrollbar-width: none;
 }
 
-/* Modal Hero Block */
-.bm-modal-product-head {
+.bm-modal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Info Card */
+.bm-modal-product-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #F4F4F5;
+  gap: 18px;
+  padding: 14px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid rgba(24, 24, 27, 0.1);
 }
 
-.bm-modal-product-img {
-  width: 84px;
-  height: 84px;
+.bm-modal-product-card .bm-modal-img-wrap {
+  width: 82px;
+  height: 82px;
   flex-shrink: 0;
-  background: #F8F8F8;
-  border-radius: 12px;
-  border: 1px solid #EEEEEE;
+  background: #FAF8F2;
+  border-radius: 14px;
   padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bm-modal-product-img img {
+.bm-modal-product-card .bm-modal-img-wrap img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-.bm-modal-product-details {
+.bm-modal-product-card .bm-modal-info {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.bm-modal-product-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: #EFF6FF;
-  color: #1D4ED8;
-  margin-bottom: 6px;
+.bm-modal-product-card .bm-modal-card-tag {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #18181B;
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-.bm-modal-product-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--bm-black);
-  letter-spacing: -0.015em;
-  margin-bottom: 4px;
-  line-height: 1.25;
-}
-
-.bm-modal-product-sub {
+.bm-modal-product-desc {
   font-size: 13px;
-  color: #52525B;
-  line-height: 1.4;
+  color: #3F3F46;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
-/* Packaging Options Pills */
-.bm-modal-section-title {
+/* Interactive Selectors */
+.bm-modal-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bm-modal-select-title {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #71717A;
-  margin-top: 18px;
-  margin-bottom: 8px;
+  color: #18181B;
 }
 
-.bm-modal-sizes {
+.bm-modal-pills-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.bm-modal-size-btn {
+.bm-size-pill {
   appearance: none;
-  background: #F4F4F5;
-  border: 1px solid #E4E4E7;
-  border-radius: 8px;
-  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.2);
+  border-radius: 9999px;
+  padding: 7px 15px;
   font-family: var(--bm-font);
-  font-size: 13px;
-  font-weight: 600;
-  color: #27272A;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.bm-modal-size-btn:hover {
-  background: #E4E4E7;
-}
-
-.bm-modal-size-btn.active {
-  background: var(--bm-black);
-  border-color: var(--bm-black);
-  color: #FFFFFF;
-}
-
-/* 4-Box Technical Spec Grid */
-.bm-modal-specs-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.bm-modal-spec-card {
-  background: #F9FAFB;
-  border: 1px solid #F0F0F0;
-  border-radius: 10px;
-  padding: 12px 14px;
-}
-
-.bm-modal-spec-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #71717A;
-  margin-bottom: 4px;
-}
-
-.bm-modal-spec-val {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #18181B;
-  line-height: 1.35;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
 }
 
-/* Color Swatches Quick-Select */
-.bm-modal-swatches {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+.bm-size-pill:hover {
+  border-color: #18181B;
+  background: #F4F4F5;
 }
 
-.bm-modal-swatches::-webkit-scrollbar {
-  display: none;
+.bm-size-pill.active {
+  background: #18181B;
+  color: #FFFFFF;
+  border-color: #18181B;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.bm-modal-swatch {
-  display: flex;
+.bm-color-pill {
+  appearance: none;
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.2);
+  border-radius: 9999px;
+  padding: 6px 13px;
+  font-family: var(--bm-font);
+  font-size: 12px;
+  font-weight: 700;
+  color: #18181B;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #F4F4F5;
-  border: 1px solid #E4E4E7;
-  border-radius: 8px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  color: #27272A;
-  white-space: nowrap;
   transition: all 0.15s ease;
-  flex-shrink: 0;
+  user-select: none;
 }
 
-.bm-modal-swatch:hover {
-  background: #E4E4E7;
+.bm-color-pill:hover {
+  border-color: #18181B;
 }
 
-.bm-modal-swatch.active {
-  border-color: var(--bm-black);
-  background: #FFFFFF;
-  box-shadow: 0 0 0 1.5px var(--bm-black);
+.bm-color-pill.active {
+  border-color: #18181B;
+  background: #18181B;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.bm-modal-swatch-dot {
-  width: 14px;
-  height: 14px;
+.bm-color-dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
 }
 
-/* CTA Footer in Modal */
-.bm-modal-footer {
-  margin-top: 22px;
-  padding-top: 16px;
-  border-top: 1px solid #F4F4F5;
+/* Specifications Card (Jon Coffee style) */
+.bm-modal-specs-box {
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid rgba(24, 24, 27, 0.1);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.bm-modal-cta-wa {
+.bm-modal-spec-row {
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+.bm-modal-spec-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.bm-modal-spec-k {
+  font-weight: 900;
+  color: #18181B;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.bm-modal-spec-v {
+  font-weight: 600;
+  color: #3F3F46;
+  text-align: right;
+  line-height: 1.35;
+}
+
+/* Action Buttons (Jon Coffee 1:1) */
+.bm-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.bm-btn-chamberlain-primary {
+  background: #18181B;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-family: var(--bm-font);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 15px 22px;
+  min-height: 48px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #18181B;
-  color: #FFFFFF;
   text-decoration: none;
-  font-family: var(--bm-font);
-  font-size: 15px;
-  font-weight: 700;
-  padding: 15px 20px;
-  border-radius: 10px;
-  width: 100%;
-  transition: background 0.15s ease, transform 0.15s ease;
   cursor: pointer;
   border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
   box-sizing: border-box;
 }
 
-.bm-modal-cta-wa:hover {
-  background: #27272A;
+.bm-btn-chamberlain-primary:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.bm-btn-chamberlain-primary:active {
+  transform: translateY(0);
+}
+
+.bm-btn-chamberlain-secondary {
+  background: #FFFFFF;
+  color: #18181B;
+  border: 1.5px solid rgba(24, 24, 27, 0.3);
+  border-radius: 9999px;
+  font-family: var(--bm-font);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bm-btn-chamberlain-secondary:hover {
+  background: #F4EFE4;
+  border-color: #18181B;
   transform: translateY(-1px);
 }
 
-.bm-modal-footer-note {
+.bm-modal-note {
   font-size: 11px;
   color: #71717A;
   text-align: center;
-  margin-top: 8px;
+  font-weight: 500;
   line-height: 1.4;
 }
 
