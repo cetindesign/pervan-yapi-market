@@ -508,6 +508,30 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   transform: translateX(4px);
 }
 
+/* Directional Nudge (Breathing Slide Cue) */
+.bm-stage-nudge .bm-nudge-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: bmNudgeSlide 1.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes bmNudgeSlide {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+}
+
+.bm-stage-nudge:hover .bm-nudge-arrow {
+  animation: none;
+  transform: translateX(6px);
+}
+
 /* Thin Architectural Slider Line */
 .bm-stage-progress-line {
   width: 140px;

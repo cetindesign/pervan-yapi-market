@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.1" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -58,8 +58,8 @@ html body.bm-transparent-header-page .bm-page-main {
 #bmTransparentHeader .navbar-top,
 #bmTransparentHeader .navbar-sticky,
 #bmTransparentHeader .navbar-top-row2,
-#bmTransparentHeader .navbar-contents,
-#bmTransparentHeader .navbar-contents-overflow {
+#bmTransparentHeader .navbar-contents:not(.opened),
+#bmTransparentHeader .navbar-contents-overflow:not(.opened) {
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -121,10 +121,11 @@ html body.bm-transparent-header-page .bm-page-main {
   vertical-align: middle !important;
 }
 
-/* SOLID WHITE STATE WHEN SCROLLED PAST HERO (> 380px) */
-#bmTransparentHeader.header--solid {
-  background: rgba(255, 255, 255, 0.96) !important;
-  background-color: rgba(255, 255, 255, 0.96) !important;
+/* SOLID WHITE STATE WHEN SCROLLED PAST HERO (> 380px) OR MOBILE MENU IS OPEN */
+#bmTransparentHeader.header--solid,
+#bmTransparentHeader.header--menu-open {
+  background: rgba(255, 255, 255, 0.98) !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
 }
@@ -132,40 +133,84 @@ html body.bm-transparent-header-page .bm-page-main {
 #bmTransparentHeader.header--solid .navbar,
 #bmTransparentHeader.header--solid .navbar-top,
 #bmTransparentHeader.header--solid .navbar-sticky,
-#bmTransparentHeader.header--solid .navbar-top-row2 {
+#bmTransparentHeader.header--solid .navbar-top-row2,
+#bmTransparentHeader.header--menu-open .navbar,
+#bmTransparentHeader.header--menu-open .navbar-top,
+#bmTransparentHeader.header--menu-open .navbar-sticky,
+#bmTransparentHeader.header--menu-open .navbar-top-row2 {
   background: transparent !important;
   background-color: transparent !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-#bmTransparentHeader.header--solid .navbar-logo {
+#bmTransparentHeader.header--solid .navbar-logo,
+#bmTransparentHeader.header--menu-open .navbar-logo {
   color: #000000 !important;
 }
 
 #bmTransparentHeader.header--solid .navbar-title,
 #bmTransparentHeader.header--solid .menu-item,
-#bmTransparentHeader.header--solid .navbar-sticky a.navbar-item {
+#bmTransparentHeader.header--solid .navbar-sticky a.navbar-item,
+#bmTransparentHeader.header--menu-open .navbar-sticky a.navbar-item {
   color: #000000 !important;
 }
 
 #bmTransparentHeader.header--solid .menu-item .arrow,
-#bmTransparentHeader.header--solid .navbar-sticky .arrow {
+#bmTransparentHeader.header--solid .navbar-sticky .arrow,
+#bmTransparentHeader.header--menu-open .navbar-sticky .arrow {
   background: #000000 !important;
 }
 
 #bmTransparentHeader.header--solid .menu-item .arrow::before,
 #bmTransparentHeader.header--solid .menu-item .arrow::after,
 #bmTransparentHeader.header--solid .navbar-sticky .arrow::before,
-#bmTransparentHeader.header--solid .navbar-sticky .arrow::after {
+#bmTransparentHeader.header--solid .navbar-sticky .arrow::after,
+#bmTransparentHeader.header--menu-open .navbar-sticky .arrow::before,
+#bmTransparentHeader.header--menu-open .navbar-sticky .arrow::after {
   background: #000000 !important;
 }
 
-#bmTransparentHeader.header--solid #mobile-menu .bar {
+#bmTransparentHeader.header--solid #mobile-menu .bar,
+#bmTransparentHeader.header--menu-open #mobile-menu .bar {
   background-color: #000000 !important;
 }
 
-#bmTransparentHeader.header--solid .navbar-sticky a.navbar-item {
+#bmTransparentHeader.header--solid .navbar-sticky a.navbar-item,
+#bmTransparentHeader.header--menu-open .navbar-sticky a.navbar-item {
   border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* REFORM 1:1 MOBILE DRAWER GUARANTEED CONTRAST & VISIBILITY */
+@media (max-width: 1259px) {
+  #bmTransparentHeader .navbar-contents.opened,
+  #bmTransparentHeader .navbar-contents.opened .navbar-contents-overflow,
+  #bmTransparentHeader .navbar-contents.opened .navbar-menu,
+  #bmTransparentHeader .navbar-contents.opened .menu-item {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+  }
+
+  #bmTransparentHeader .navbar-contents.opened .navbar-title,
+  #bmTransparentHeader .navbar-contents.opened .menu-item,
+  #bmTransparentHeader .navbar-contents.opened a.navbar-item,
+  #bmTransparentHeader .navbar-contents.opened .navbar-dropdown a.navbar-item {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  #bmTransparentHeader .navbar-contents.opened .menu-item .arrow {
+    background: #000000 !important;
+  }
+
+  #bmTransparentHeader .navbar-contents.opened .menu-item .arrow::before,
+  #bmTransparentHeader .navbar-contents.opened .menu-item .arrow::after {
+    background: #000000 !important;
+  }
+
+  #bmTransparentHeader .navbar-contents.opened .navbar-dropdown {
+    background-color: #FFFFFF !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
 }
 
 /* GROUND INFO BLOCK TO BOTTOM-LEFT */
@@ -1449,9 +1494,9 @@ html body.bm-transparent-header-page .bm-page-main {
             <span class="bm-spec-sep">&bull;</span>
             <span>Momento Silan</span>
           </div>
-          <a href="javascript:void(0)" class="bm-stage-text-link" id="bmStageExploreBtn">
-            <span>Koleksiyonu Keşfet</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="javascript:void(0)" class="bm-stage-text-link bm-stage-nudge" id="bmStageExploreBtn">
+            <span>Keşfet</span>
+            <svg class="bm-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
             <div class="bm-stage-progress-bar"></div>
