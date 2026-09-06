@@ -289,151 +289,324 @@
 </section>
 
 <!-- ==========================================================================
-     3. PRODUCT DECISION MATRIX (Segmented Decision Engine)
+     3. ARCHITECTURAL PAINT MENU (Jon Coffee 1:1 Reference Architecture)
      ========================================================================== -->
-<section class="bm-catalog-section" id="bmProductCatalog">
+<section class="bm-menu-section" id="bmProductCatalog">
   <div class="bm-container">
-    
-    <h2 class="bm-catalog-title">Ürün Ailesi &amp; Mimari Çözümler</h2>
-
-    <!-- Segmented Navigation Tabs -->
-    <div class="bm-segment-bar" role="tablist">
-      <button type="button" class="bm-segment-btn active" role="tab" aria-selected="true" data-segment="ic-cephe">İç Cephe &amp; Tavan</button>
-      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="dis-cephe">Dış Cephe &amp; Koruma</button>
-      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="donusum">Kendin Yap &amp; Dönüşüm</button>
-      <button type="button" class="bm-segment-btn" role="tab" aria-selected="false" data-segment="yalitim">Capatect Yalıtım</button>
+    <div class="bm-menu-header">
+      <div class="bm-menu-pretitle">MİMARİ BOYA &amp; KAPLAMA MENÜSÜ</div>
+      <h2 class="bm-menu-title">Filli Boya Ürün Ailesi &amp; Reçeteler</h2>
+      <p class="bm-menu-desc">
+        Balçova showroom ve Urla ana depomuzdaki RenXMatik™ bilgisayarlı mikron renk merkezimizde dilediğiniz formülasyon anında hazırlanır. Detaylı teknik föy ve doğrudan sipariş reçetesi için ürüne dokunun.
+      </p>
     </div>
 
-    <!-- Segment 1: İç Cephe & Tavan -->
-    <div class="bm-product-rail active" id="rail-ic-cephe">
+    <!-- Category Filter Pills -->
+    <div class="bm-menu-pills-wrap">
+      <div class="bm-menu-pills" id="paintMenuPills" role="tablist">
+        <button type="button" class="bm-menu-pill active" data-filter="all" role="tab" aria-selected="true">
+          Tümü <span class="bm-menu-pill-count">12</span>
+        </button>
+        <button type="button" class="bm-menu-pill" data-filter="ic-cephe" role="tab" aria-selected="false">
+          İç Cephe &amp; Tavan <span class="bm-menu-pill-count">4</span>
+        </button>
+        <button type="button" class="bm-menu-pill" data-filter="dis-cephe" role="tab" aria-selected="false">
+          Dış Cephe &amp; Koruma <span class="bm-menu-pill-count">2</span>
+        </button>
+        <button type="button" class="bm-menu-pill" data-filter="donusum" role="tab" aria-selected="false">
+          Kendin Yap &amp; Dönüşüm <span class="bm-menu-pill-count">3</span>
+        </button>
+        <button type="button" class="bm-menu-pill" data-filter="ahsap-metal" role="tab" aria-selected="false">
+          Ahşap &amp; Metal <span class="bm-menu-pill-count">2</span>
+        </button>
+        <button type="button" class="bm-menu-pill" data-filter="yalitim" role="tab" aria-selected="false">
+          Capatect Yalıtım <span class="bm-menu-pill-count">1</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 1:1 Line-Item Menu List -->
+    <div class="bm-menu-list" id="paintMenuList">
+
       <!-- 01: Momento Silan -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/momento-silan.png" alt="Momento Silan İpeksi Mat Boya" loading="lazy" decoding="async" />
+      <div class="bm-menu-row" data-category="ic-cephe" data-product-id="momento-silan" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/momento-silan.png" alt="Momento Silan" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Momento Silan</span>
+              <span class="bm-menu-tag">Aktif Silikon</span>
+            </div>
+            <div class="bm-menu-desc-line">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®</div>
+          </div>
         </div>
-        <div class="bm-product-tag">Aktif Silikon Teknolojisi</div>
-        <div class="bm-product-name">Momento Silan · İpeksi Mat®</div>
-        <div class="bm-product-desc">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı.</div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">13–17 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
       </div>
 
       <!-- 02: Momento Max -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/momento-max.png" alt="Momento Max Tam Mat Boya" loading="lazy" decoding="async" />
+      <div class="bm-menu-row" data-category="ic-cephe" data-product-id="momento-max" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/momento-max.png" alt="Momento Max" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Momento Max</span>
+              <span class="bm-menu-tag tag-amber">Kusur Kapatıcı</span>
+            </div>
+            <div class="bm-menu-desc-line">Parlama yapmayan, pürüzleri örten mimari iç cephe boyası · Tam Mat</div>
+          </div>
         </div>
-        <div class="bm-product-tag">Ultra Mat Doku</div>
-        <div class="bm-product-name">Momento Max · Tam Mat</div>
-        <div class="bm-product-desc">Işığı yansıtmayan, yüzey hatalarını gizleyen pürüzsüz bitiş.</div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">12–15 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
       </div>
 
-      <!-- 03: Momento Life -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/momento-life.png" alt="Momento Life Düşük VOC Boya" loading="lazy" decoding="async" />
+      <!-- 03: Betakril İç Cephe -->
+      <div class="bm-menu-row" data-category="ic-cephe" data-product-id="betakril" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/betakril.png" alt="Betakril İç Cephe" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Betakril İç Cephe</span>
+              <span class="bm-menu-tag tag-emerald">Ekonomik Proje</span>
+            </div>
+            <div class="bm-menu-desc-line">Kopolimer akrilik emülsiyon esaslı, yüksek örtücülük sağlayan boya · Mat</div>
+          </div>
         </div>
-        <div class="bm-product-tag">Hava Temizleyen İç Cephe</div>
-        <div class="bm-product-name">Momento Life &amp; Kids</div>
-        <div class="bm-product-desc">Formaldehit bağlayıcı, kokusuz bebek ve çocuk odası standardı.</div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">11–14 m²/kg</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
       </div>
 
-      <!-- 04: Süper Tavan -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/betakril-tavan.png" alt="Betakril Tavan Boyası" loading="lazy" decoding="async" />
+      <!-- 04: Betakril Süper Tavan -->
+      <div class="bm-menu-row" data-category="ic-cephe" data-product-id="betakril-tavan" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/betakril-tavan.png" alt="Betakril Süper Tavan" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Betakril Süper Tavan</span>
+              <span class="bm-menu-tag">Damlamaz Beyaz</span>
+            </div>
+            <div class="bm-menu-desc-line">Rulo izi bırakmayan, nefes alan ekstra beyaz tavan boyası · Tam Mat</div>
+          </div>
         </div>
-        <div class="bm-product-tag">Damlatmayan Formül</div>
-        <div class="bm-product-name">Betakril Tavan Boyası</div>
-        <div class="bm-product-desc">Yüksek örtücülük, nefes alan ekstra beyaz tam mat tavan standardı.</div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">7–9 m²/kg</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
       </div>
+
+      <!-- 05: Aqusto Silan -->
+      <div class="bm-menu-row" data-category="dis-cephe" data-product-id="aqusto-silan" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqusto-silan.png" alt="Aqusto Silan" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqusto Silan</span>
+              <span class="bm-menu-tag">DuoMax® Su İtici</span>
+            </div>
+            <div class="bm-menu-desc-line">Ege ve Çeşme tuzu, yüksek nem ve UV ışınlarına karşı tam koruma · Mat</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">8–11 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 06: Aqusto Sil -->
+      <div class="bm-menu-row" data-category="dis-cephe" data-product-id="aqusto-sil" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqusto-sil.png" alt="Aqusto Sil" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqusto Sil</span>
+              <span class="bm-menu-tag tag-emerald">Fotokatalitik</span>
+            </div>
+            <div class="bm-menu-desc-line">Güneş ışığıyla kirleri parçalayan kendi kendini temizleyen teknoloji · Mat</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">8–10 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 07: Aqua Reno Mutfak & Fayans -->
+      <div class="bm-menu-row" data-category="donusum" data-product-id="aqua-reno-mutfak" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqua-reno-mutfak.png" alt="Aqua Reno Mutfak" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqua Reno® Mutfak &amp; Dolap</span>
+              <span class="bm-menu-tag tag-emerald">Astarsız Dönüşüm</span>
+            </div>
+            <div class="bm-menu-desc-line">Kırmadan dökmeden mutfak dolabı ve seramikleri yenileyen su bazlı boya</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">12–14 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 08: Aqua Reno Banyo & Zemin -->
+      <div class="bm-menu-row" data-category="donusum" data-product-id="aqua-reno-banyo" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqua-reno-banyo.png" alt="Aqua Reno Banyo" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqua Reno® Banyo &amp; Zemin</span>
+              <span class="bm-menu-tag">Islak Hacim Direnci</span>
+            </div>
+            <div class="bm-menu-desc-line">Banyo fayansı ve ıslak hacimler için maksimum yapışma gücü · Mat</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">10–12 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 09: Aqua Reno Sıvı Cam Vernik -->
+      <div class="bm-menu-row" data-category="donusum" data-product-id="aqua-reno-vernik" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqua-reno-vernik.png" alt="Aqua Reno Sıvı Cam" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqua Reno® Sıvı Cam</span>
+              <span class="bm-menu-tag tag-amber">Çift Bileşenli Koruma</span>
+            </div>
+            <div class="bm-menu-desc-line">Tezgah ve ıslak hacimler için çizilmez, şeffaf koruyucu sır tabakası</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">14–16 m²/kg</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 10: Aqualux -->
+      <div class="bm-menu-row" data-category="ahsap-metal" data-product-id="aqualux" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/aqualux.png" alt="Aqualux" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Aqualux Kokusuz Emaye</span>
+              <span class="bm-menu-tag">Saf Akrilik</span>
+            </div>
+            <div class="bm-menu-desc-line">Kokusuz, sararmayan iç ve dış mekan ahşap &amp; metal boyası · Parlak / Yarımat</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">13–15 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 11: Panel Kapı Boyası -->
+      <div class="bm-menu-row" data-category="ahsap-metal" data-product-id="panel-kapi" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/panel-kapi.png" alt="Panel Kapı Boyası" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Panel Kapı Boyası</span>
+              <span class="bm-menu-tag tag-emerald">Darbe Direnci</span>
+            </div>
+            <div class="bm-menu-desc-line">Amerikan panel kapılar için sararmayan, su bazlı koruyucu boya · İpeksi Mat</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">13–16 m²/L</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- 12: Capatect Dalmaçyalı EPS -->
+      <div class="bm-menu-row" data-category="yalitim" data-product-id="capatect-dalmacyali" role="button" tabindex="0">
+        <div class="bm-menu-main">
+          <div class="bm-menu-thumb">
+            <img src="assets/filli-official/capatect-dalmacyali.png" alt="Capatect Dalmaçyalı EPS" loading="lazy" decoding="async" />
+          </div>
+          <div class="bm-menu-info">
+            <div class="bm-menu-title-row">
+              <span class="bm-menu-name">Capatect Dalmaçyalı EPS</span>
+              <span class="bm-menu-tag tag-purple">%50 Tasarruf</span>
+            </div>
+            <div class="bm-menu-desc-line">İdeal karbon dağılımlı dış cephe ısı yalıtım levhası · TS EN 13163</div>
+          </div>
+        </div>
+        <div class="bm-menu-leader"></div>
+        <div class="bm-menu-aside">
+          <span class="bm-menu-badge-specs">50x100 cm</span>
+          <span class="bm-menu-arrow" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Segment 2: Dış Cephe & Koruma -->
-    <div class="bm-product-rail" id="rail-dis-cephe">
-      <!-- 01: Aqusto Silan -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqusto-silan.png" alt="Aqusto Silan Duomax Dış Cephe" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Duomax® Teknolojisi</div>
-        <div class="bm-product-name">Aqusto Silan</div>
-        <div class="bm-product-desc">Ege nemi ve tuzuna karşı maksimum nefes alma ve su iticilik.</div>
-      </div>
-
-      <!-- 02: Nucleus -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/nucleus.png" alt="Nucleus Frontier Polymer Dış Cephe" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Ultra UV Direnci</div>
-        <div class="bm-product-name">Nucleus Dış Cephe</div>
-        <div class="bm-product-desc">Frontier Polymer teknolojisi ile solmayan tescilli renk dayanımı.</div>
-      </div>
-
-      <!-- 03: Aqusto Sil -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqusto-sil.png" alt="Aqusto Sil Fotokatalitik Boya" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Kendi Kendini Temizleyen</div>
-        <div class="bm-product-name">Aqusto Sil</div>
-        <div class="bm-product-desc">Güneş ışığı ve yağmurla kir tutmayan fotokatalitik yüzey.</div>
-      </div>
-
-      <!-- 04: Betakril -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/betakril.png" alt="Betakril Akrilik Dış Cephe Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Akrilik Kalkan</div>
-        <div class="bm-product-name">Betakril Dış Cephe</div>
-        <div class="bm-product-desc">Geniş yüzeylerde yüksek tutunma ve ekonomik dış cephe koruması.</div>
-      </div>
-    </div>
-
-    <!-- Segment 3: Kendin Yap & Dönüşüm -->
-    <div class="bm-product-rail" id="rail-donusum">
-      <!-- 01: Aqua Reno Mutfak -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqua-reno-mutfak.png" alt="Aqua Reno Mutfak Dönüşüm Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Mutfak &amp; Dolap Yenileme</div>
-        <div class="bm-product-name">Aqua Reno® Mutfak</div>
-        <div class="bm-product-desc">Mutfak dolabı ve tezgahları kırmadan dökmeden şıp diye yenileyin.</div>
-      </div>
-
-      <!-- 02: Aqua Reno Banyo -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqua-reno-banyo.png" alt="Aqua Reno Banyo ve Fayans Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Fayans &amp; Seramik Boyası</div>
-        <div class="bm-product-name">Aqua Reno® Banyo</div>
-        <div class="bm-product-desc">Banyo seramikleri ve ıslak hacimler için yüksek tutunma direnci.</div>
-      </div>
-
-      <!-- 03: Aqua Reno Sıvı Cam Vernik -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqua-reno-vernik.png" alt="Aqua Reno Sıvı Cam Koruyucu Vernik" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Çift Bileşenli Koruma</div>
-        <div class="bm-product-name">Aqua Reno® Sıvı Cam</div>
-        <div class="bm-product-desc">Tezgah ve ıslak hacimler için çizilmez, şeffaf koruyucu sır tabakası.</div>
-      </div>
-
-      <!-- 04: Aqualux -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/aqualux.png" alt="Aqualux Su Bazlı Kokusuz Emaye" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Kokusuz Saf Akrilik</div>
-        <div class="bm-product-name">Aqualux Parlak / Yarımat</div>
-        <div class="bm-product-desc">Ahşap ve metal yüzeyler için sararmayan, su bazlı emaye boya.</div>
-      </div>
-    </div>
-
-    <!-- Aqua Reno In-Page Transformation Bridge (Appears on Donusum segment) -->
+    <!-- Specialized Bridges (Aqua Reno & Capatect) -->
     <div class="bm-reno-bridge" id="renoBridge" style="display: none;">
       <div>
         <div class="bm-reno-bridge-title">Kırmadan, Dökmeden Dönüşüm: Aqua Reno® Uygulama Sistemi</div>
@@ -445,50 +618,6 @@
       </a>
     </div>
 
-    <!-- Segment 4: Capatect Yalıtım -->
-    <div class="bm-product-rail" id="rail-yalitim">
-      <!-- 01: Capatect Dalmaçyalı EPS -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/filli-official/capatect-dalmacyali.png" alt="Capatect Dalmaçyalı Karbonlu EPS Levha" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Isı Yalıtım Levhası</div>
-        <div class="bm-product-name">Dalmaçyalı Karbonlu EPS</div>
-        <div class="bm-product-desc">İdeal karbon dağılımı ile binalarda %50'ye varan enerji tasarrufu.</div>
-      </div>
-
-      <!-- 02: Capatect Sıva & Harç -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/rf-card-cement.jpg" alt="Capatect Yapıştırma ve Sıva Harcı" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Polimer Harç</div>
-        <div class="bm-product-name">Capatect Sıva &amp; Yapıştırıcı</div>
-        <div class="bm-product-desc">Yüksek elastikiyet ve tutunma gücü ile çatlamaya son veren formül.</div>
-      </div>
-
-      <!-- 03: Donatı Filesi & Dübel -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/rf-card-fasteners.jpg" alt="Capatect Donatı Filesi ve Dübel" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Mekanik Güvenlik</div>
-        <div class="bm-product-name">Donatı Filesi &amp; Çelik Dübel</div>
-        <div class="bm-product-desc">160 gr alkali dayanımlı file ve rüzgar yüküne karşı test edilmiş dübeller.</div>
-      </div>
-
-      <!-- 04: Capatect Mineral Sıva -->
-      <div class="bm-product-item">
-        <div class="bm-product-media">
-          <img src="assets/rf-filli-exterior.jpg" alt="Capatect Mineral Kaplama Sıvası" loading="lazy" decoding="async" />
-        </div>
-        <div class="bm-product-tag">Dekoratif Son Kat</div>
-        <div class="bm-product-name">Capatect Mineral Sıva</div>
-        <div class="bm-product-desc">Nefes alan, doğal desenli ve hava şartlarına tam dayanımlı koruyucu kaplama.</div>
-      </div>
-    </div>
-
-    <!-- Capatect Dedicated Subpage Bridge (Appears on Capatect segment) -->
     <a href="capatect-dalmacyali-mantolama.html" class="bm-capatect-bridge" id="capatectBridge" style="display: none;">
       <div>
         <div class="bm-capatect-bridge-title">Capatect Dalmaçyalı® Dış Cephe Mantolama Sistemini İnceleyin</div>
@@ -500,15 +629,102 @@
       </span>
     </a>
 
-    <!-- Centered Action Button (Matches Page 4) -->
-    <div class="bm-catalog-btn-wrap">
+    <!-- Bottom Catalog Action -->
+    <div class="bm-catalog-btn-wrap" style="margin-top: 32px;">
       <a href="https://wa.me/905323844497?text=Merhaba%2C%20Filli%20Boya%20%C3%BCr%C3%BCnleri%20ve%20RenXMatik%20hakk%C4%B1nda%20teknik%20f%C3%B6y%20ve%20fiyat%20listesi%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-btn-black">
-        Teknik Föy &amp; Fiyat Listesi İste
+        Teknik Föy &amp; Fiyat Listesi İste (WhatsApp)
       </a>
     </div>
 
   </div>
 </section>
+
+<!-- ==========================================================================
+     JON COFFEE 1:1 BOTTOM-SHEET / MODAL SPEC SHEET
+     ========================================================================== -->
+<div class="bm-modal-backdrop" id="paintModalBackdrop" aria-hidden="true">
+  <div class="bm-modal-card" id="paintModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="bm-modal-handle"></div>
+    <button type="button" class="bm-modal-close" id="modalCloseBtn" aria-label="Kapat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="bm-modal-body">
+      <!-- Modal Product Head -->
+      <div class="bm-modal-product-head">
+        <div class="bm-modal-product-img">
+          <img id="modalProductImg" src="assets/filli-official/momento-silan.png" alt="Ürün Görseli" />
+        </div>
+        <div class="bm-modal-product-details">
+          <span class="bm-modal-product-tag" id="modalProductTag">Aktif Silikon</span>
+          <h3 class="bm-modal-product-title" id="modalProductTitle">Momento Silan</h3>
+          <div class="bm-modal-product-sub" id="modalProductSub">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®</div>
+        </div>
+      </div>
+
+      <!-- Packaging Selector -->
+      <div class="bm-modal-section-title">Ambalaj &amp; Hacim Seçenekleri</div>
+      <div class="bm-modal-sizes" id="modalSizesContainer">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- 4-Box Technical Matrix -->
+      <div class="bm-modal-section-title">Teknik Şartname &amp; Uygulama</div>
+      <div class="bm-modal-specs-grid">
+        <div class="bm-modal-spec-card">
+          <div class="bm-modal-spec-label">Sarfiyat / Kapsama</div>
+          <div class="bm-modal-spec-val" id="modalSpecCoverage">13 – 17 m²/L</div>
+        </div>
+        <div class="bm-modal-spec-card">
+          <div class="bm-modal-spec-label">Bitiş / Doku</div>
+          <div class="bm-modal-spec-val" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</div>
+        </div>
+        <div class="bm-modal-spec-card">
+          <div class="bm-modal-spec-label">Kuruma Süresi</div>
+          <div class="bm-modal-spec-val" id="modalSpecDrying">2 – 4 Saat (Kat arası)</div>
+        </div>
+        <div class="bm-modal-spec-card">
+          <div class="bm-modal-spec-label">Uygulama Alanı</div>
+          <div class="bm-modal-spec-val" id="modalSpecSurface">İç cephe sıva, alçı, brüt beton</div>
+        </div>
+      </div>
+
+      <!-- Popüler Filli Boya Renkleri Seçimi -->
+      <div class="bm-modal-section-title">Reçete İçin Popüler Renk (İsteğe Bağlı)</div>
+      <div class="bm-modal-swatches" id="modalSwatchesContainer">
+        <button type="button" class="bm-modal-swatch" data-color-name="Rezene 190" data-color-hex="#8D9B8E">
+          <span class="bm-modal-swatch-dot" style="background-color: #8D9B8E;"></span>
+          <span>Rezene 190</span>
+        </button>
+        <button type="button" class="bm-modal-swatch" data-color-name="Rüzgar 15" data-color-hex="#B8C5C8">
+          <span class="bm-modal-swatch-dot" style="background-color: #B8C5C8;"></span>
+          <span>Rüzgar 15</span>
+        </button>
+        <button type="button" class="bm-modal-swatch" data-color-name="Dağ Kristali" data-color-hex="#DFD8CA">
+          <span class="bm-modal-swatch-dot" style="background-color: #DFD8CA;"></span>
+          <span>Dağ Kristali</span>
+        </button>
+        <button type="button" class="bm-modal-swatch" data-color-name="Sis Beyazı" data-color-hex="#E8E6DF">
+          <span class="bm-modal-swatch-dot" style="background-color: #E8E6DF;"></span>
+          <span>Sis Beyazı</span>
+        </button>
+        <button type="button" class="bm-modal-swatch" data-color-name="Kehribar 140" data-color-hex="#C98A53">
+          <span class="bm-modal-swatch-dot" style="background-color: #C98A53;"></span>
+          <span>Kehribar 140</span>
+        </button>
+      </div>
+
+      <!-- Modal Footer CTA -->
+      <div class="bm-modal-footer">
+        <a href="#" id="modalWhatsAppBtn" target="_blank" rel="noopener" class="bm-modal-cta-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416C6.574 4 2.172 8.402 2.172 13.829c0 1.996.584 3.901 1.691 5.534L2 25l5.808-1.809c1.57.887 3.364 1.365 5.223 1.365 5.457 0 9.859-4.402 9.859-9.827C22.89 8.402 18.488 4 12.031 4z"/></svg>
+          <span id="modalCtaText">Balçova &amp; Urla'dan Reçete İste (WhatsApp)</span>
+        </a>
+        <div class="bm-modal-footer-note">Balçova showroom &amp; Urla ana depo RenXMatik™ bilgisayarlı dolum · Aynı gün şantiye teslimatı</div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ==========================================================================
      4. BLACK ARCHITECTURAL BAR: "Access the professional experience" (Pages 4 & 5)
@@ -2398,44 +2614,312 @@
   }
 })();
 
-/* SEGMENTED PRODUCT DECISION ENGINE SWITCHER */
+/* JON COFFEE 1:1 ARCHITECTURAL PAINT MENU & SPEC MODAL CONTROLLER */
 (function() {
-  var segmentBtns = document.querySelectorAll(".bm-segment-btn");
-  var productRails = document.querySelectorAll(".bm-product-rail");
+  var products = {
+    "momento-silan": {
+      name: "Momento Silan",
+      tag: "Aktif Silikon",
+      sub: "Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®",
+      img: "assets/filli-official/momento-silan.png",
+      sizes: ["2.5 L", "7.5 L", "15 L"],
+      coverage: "13 – 17 m²/L",
+      sheen: "İpeksi Mat® (Silinebilir)",
+      drying: "2 – 4 Saat (Kat arası)",
+      surface: "İç cephe alçı, sıva, brüt beton"
+    },
+    "momento-max": {
+      name: "Momento Max",
+      tag: "Kusur Kapatıcı",
+      sub: "Parlama yapmayan, yüzey pürüzlerini örten mimari matlık · Tam Mat",
+      img: "assets/filli-official/momento-max.png",
+      sizes: ["2.5 L", "7.5 L", "15 L"],
+      coverage: "12 – 15 m²/L",
+      sheen: "Tam Mat (Yansıma Yok)",
+      drying: "2 – 4 Saat (Kat arası)",
+      surface: "İç cephe geniş duvar ve salonlar"
+    },
+    "betakril": {
+      name: "Betakril İç Cephe",
+      tag: "Ekonomik Proje",
+      sub: "Kopolimer akrilik emülsiyon esaslı, yüksek örtücülük sağlayan boya · Mat",
+      img: "assets/filli-official/betakril.png",
+      sizes: ["3.5 kg", "10 kg", "20 kg"],
+      coverage: "11 – 14 m²/kg",
+      sheen: "Mat",
+      drying: "2 – 3 Saat",
+      surface: "İç cephe sıva, alçıpan, beton"
+    },
+    "betakril-tavan": {
+      name: "Betakril Süper Tavan",
+      tag: "Damlamaz Beyaz",
+      sub: "Rulo izi bırakmayan, nefes alan ekstra beyaz tavan boyası · Tam Mat",
+      img: "assets/filli-official/betakril-tavan.png",
+      sizes: ["3.5 kg", "10 kg", "17.5 kg"],
+      coverage: "7 – 9 m²/kg",
+      sheen: "Tam Mat (Işık Kırıcı Beyaz)",
+      drying: "1 – 2 Saat",
+      surface: "Tüm iç mekan tavan yüzeyleri"
+    },
+    "aqusto-silan": {
+      name: "Aqusto Silan",
+      tag: "DuoMax® Su İtici",
+      sub: "Ege ve Çeşme tuzu, yüksek nem ve UV ışınlarına karşı tam koruma · Mat",
+      img: "assets/filli-official/aqusto-silan.png",
+      sizes: ["2.5 L", "7.5 L", "15 L"],
+      coverage: "8 – 11 m²/L",
+      sheen: "Mat Dış Cephe",
+      drying: "6 – 8 Saat",
+      surface: "Dış cephe sıva, brüt beton, mantolama"
+    },
+    "aqusto-sil": {
+      name: "Aqusto Sil",
+      tag: "Fotokatalitik",
+      sub: "Güneş ışığıyla kirleri parçalayan kendi kendini temizleyen teknoloji · Mat",
+      img: "assets/filli-official/aqusto-sil.png",
+      sizes: ["2.5 L", "7.5 L", "15 L"],
+      coverage: "8 – 10 m²/L",
+      sheen: "Mat / Nefes Alan",
+      drying: "6 – 8 Saat",
+      surface: "Dış cephe mineral sıva ve boyalı yüzey"
+    },
+    "aqua-reno-mutfak": {
+      name: "Aqua Reno® Mutfak & Dolap",
+      tag: "Astarsız Dönüşüm",
+      sub: "Kırmadan dökmeden mutfak dolabı ve seramikleri yenileyen su bazlı boya",
+      img: "assets/filli-official/aqua-reno-mutfak.png",
+      sizes: ["0.75 L", "2 L"],
+      coverage: "12 – 14 m²/L",
+      sheen: "İpeksi Mat / Yarı Mat",
+      drying: "3 – 4 Saat (Kat arası)",
+      surface: "Laminant, MDF, lake dolap, seramik"
+    },
+    "aqua-reno-banyo": {
+      name: "Aqua Reno® Banyo & Zemin",
+      tag: "Islak Hacim Direnci",
+      sub: "Banyo fayansı ve ıslak hacimler için maksimum yapışma gücü · Mat",
+      img: "assets/filli-official/aqua-reno-banyo.png",
+      sizes: ["0.75 L", "2 L"],
+      coverage: "10 – 12 m²/L",
+      sheen: "Yüksek Tutunma Mat",
+      drying: "4 Saat (Kat arası), 48s kullanım",
+      surface: "Banyo fayansı, seramik, granit zemin"
+    },
+    "aqua-reno-vernik": {
+      name: "Aqua Reno® Sıvı Cam Vernik",
+      tag: "Çift Bileşenli Koruma",
+      sub: "Tezgah ve ıslak hacimler için çizilmez, şeffaf koruyucu sır tabakası",
+      img: "assets/filli-official/aqua-reno-vernik.png",
+      sizes: ["0.75 kg Set", "1.5 kg Set"],
+      coverage: "14 – 16 m²/kg",
+      sheen: "Şeffaf Parlak / Yarı Mat",
+      drying: "6s dokunma, 7 gün tam kürlenme",
+      surface: "Boyalı tezgah, seramik, dolap üstü sır"
+    },
+    "aqualux": {
+      name: "Aqualux Kokusuz Emaye",
+      tag: "Saf Akrilik",
+      sub: "Kokusuz, sararmayan iç ve dış mekan ahşap & metal boyası · Parlak / Yarımat",
+      img: "assets/filli-official/aqualux.png",
+      sizes: ["0.75 L", "2.5 L"],
+      coverage: "13 – 15 m²/L",
+      sheen: "Parlak / Yarımat",
+      drying: "2 – 3 Saat",
+      surface: "İç ve dış ahşap doğrama, metal, demir"
+    },
+    "panel-kapi": {
+      name: "Panel Kapı Boyası",
+      tag: "Darbe Direnci",
+      sub: "Amerikan panel kapılar için sararmayan, su bazlı koruyucu boya · İpeksi Mat",
+      img: "assets/filli-official/panel-kapi.png",
+      sizes: ["0.75 L", "2.5 L"],
+      coverage: "13 – 16 m²/L",
+      sheen: "İpeksi Mat",
+      drying: "2 – 3 Saat",
+      surface: "Amerikan panel kapı, ahşap mobilya"
+    },
+    "capatect-dalmacyali": {
+      name: "Capatect Dalmaçyalı EPS",
+      tag: "%50 Tasarruf",
+      sub: "İdeal karbon dağılımlı dış cephe ısı yalıtım levhası · TS EN 13163",
+      img: "assets/filli-official/capatect-dalmacyali.png",
+      sizes: ["3 cm", "4 cm", "5 cm", "6 cm", "8 cm"],
+      coverage: "50x100 cm Levha",
+      sheen: "Isı İletim: 0.032 W/mK",
+      drying: "5 m² / Paket",
+      surface: "Tüm dış cephe mantolama sistemleri"
+    }
+  };
 
-  segmentBtns.forEach(function(btn) {
+  var pillBtns = document.querySelectorAll("#paintMenuPills .bm-menu-pill");
+  var menuRows = document.querySelectorAll("#paintMenuList .bm-menu-row");
+  var capatectBridge = document.getElementById("capatectBridge");
+  var renoBridge = document.getElementById("renoBridge");
+
+  var backdrop = document.getElementById("paintModalBackdrop");
+  var closeBtn = document.getElementById("modalCloseBtn");
+
+  var modalImg = document.getElementById("modalProductImg");
+  var modalTag = document.getElementById("modalProductTag");
+  var modalTitle = document.getElementById("modalProductTitle");
+  var modalSub = document.getElementById("modalProductSub");
+  var modalSizesWrap = document.getElementById("modalSizesContainer");
+  var modalCoverage = document.getElementById("modalSpecCoverage");
+  var modalSheen = document.getElementById("modalSpecSheen");
+  var modalDrying = document.getElementById("modalSpecDrying");
+  var modalSurface = document.getElementById("modalSpecSurface");
+  var modalSwatches = document.querySelectorAll("#modalSwatchesContainer .bm-modal-swatch");
+  var modalWABtn = document.getElementById("modalWhatsAppBtn");
+
+  var currentProduct = null;
+  var selectedSize = "";
+  var selectedColor = "";
+
+  // Category Pill Filter Logic
+  pillBtns.forEach(function(btn) {
     btn.addEventListener("click", function() {
-      var segment = btn.getAttribute("data-segment");
-      var targetId = "rail-" + segment;
-
-      segmentBtns.forEach(function(b) {
+      pillBtns.forEach(function(b) {
         b.classList.remove("active");
         b.setAttribute("aria-selected", "false");
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
 
-      var capatectBridge = document.getElementById("capatectBridge");
+      var filter = btn.getAttribute("data-filter");
+
       if (capatectBridge) {
-        capatectBridge.style.display = (segment === "yalitim") ? "flex" : "none";
+        capatectBridge.style.display = (filter === "yalitim") ? "flex" : "none";
       }
-
-      var renoBridge = document.getElementById("renoBridge");
       if (renoBridge) {
-        renoBridge.style.display = (segment === "donusum") ? "flex" : "none";
+        renoBridge.style.display = (filter === "donusum") ? "flex" : "none";
       }
 
-      productRails.forEach(function(rail) {
-        if (rail.id === targetId) {
-          rail.classList.add("active");
-          rail.scrollLeft = 0;
+      menuRows.forEach(function(row) {
+        var cat = row.getAttribute("data-category");
+        if (filter === "all" || cat === filter) {
+          row.classList.remove("hidden");
         } else {
-          rail.classList.remove("active");
+          row.classList.add("hidden");
         }
       });
     });
   });
+
+  function updateWhatsAppUrl() {
+    if (!currentProduct) return;
+    var text = "Merhaba, " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    if (selectedColor) {
+      text += " " + selectedColor + " rengi";
+    }
+    text += " için RenXMatik hazırlık ve sevkiyat bilgisi almak istiyorum.";
+    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+  }
+
+  function openModal(productId) {
+    var p = products[productId];
+    if (!p) return;
+    currentProduct = p;
+    selectedColor = "";
+
+    // Fill Product Info
+    modalImg.src = p.img;
+    modalImg.alt = p.name;
+    modalTag.textContent = p.tag;
+    modalTitle.textContent = p.name;
+    modalSub.textContent = p.sub;
+
+    // Fill Specs
+    modalCoverage.textContent = p.coverage;
+    modalSheen.textContent = p.sheen;
+    modalDrying.textContent = p.drying;
+    modalSurface.textContent = p.surface;
+
+    // Build Size Options
+    modalSizesWrap.innerHTML = "";
+    selectedSize = p.sizes[0] || "";
+    p.sizes.forEach(function(size, idx) {
+      var sBtn = document.createElement("button");
+      sBtn.type = "button";
+      sBtn.className = "bm-modal-size-btn" + (idx === 0 ? " active" : "");
+      sBtn.textContent = size;
+      sBtn.addEventListener("click", function() {
+        modalSizesWrap.querySelectorAll(".bm-modal-size-btn").forEach(function(b) {
+          b.classList.remove("active");
+        });
+        sBtn.classList.add("active");
+        selectedSize = size;
+        updateWhatsAppUrl();
+      });
+      modalSizesWrap.appendChild(sBtn);
+    });
+
+    // Reset Swatches
+    modalSwatches.forEach(function(sw) {
+      sw.classList.remove("active");
+    });
+
+    updateWhatsAppUrl();
+
+    // Show Modal
+    backdrop.classList.add("open");
+    backdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    backdrop.classList.remove("open");
+    backdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Row click bindings
+  menuRows.forEach(function(row) {
+    row.addEventListener("click", function() {
+      var pid = row.getAttribute("data-product-id");
+      openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var pid = row.getAttribute("data-product-id");
+        openModal(pid);
+      }
+    });
+  });
+
+  // Swatch click bindings
+  modalSwatches.forEach(function(sw) {
+    sw.addEventListener("click", function() {
+      var colorName = sw.getAttribute("data-color-name");
+      if (sw.classList.contains("active")) {
+        sw.classList.remove("active");
+        selectedColor = "";
+      } else {
+        modalSwatches.forEach(function(s) { s.classList.remove("active"); });
+        sw.classList.add("active");
+        selectedColor = colorName;
+      }
+      updateWhatsAppUrl();
+    });
+  });
+
+  // Close bindings
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (backdrop) {
+    backdrop.addEventListener("click", function(e) {
+      if (e.target === backdrop) closeModal();
+    });
+  }
+  window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && backdrop.classList.contains("open")) {
+      closeModal();
+    }
+  });
 })();
+
 
 /* ATLAS FILTERING & SEARCH ENGINE */
 (function() {
