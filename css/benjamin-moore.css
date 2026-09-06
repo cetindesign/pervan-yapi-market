@@ -143,323 +143,382 @@
 }
 
 /* ==========================================================================
-   1. HERO COLOR FAN-DECK CAROUSEL (Filli Boya 2026 Gerçeğe Bağlan)
+   1. APPLE PRO FULL-BLEED ARCHITECTURAL ROOM & COLOR STAGE
    ========================================================================== */
-.bm-hero-wrapper {
-  background-color: #405E66; /* Default: Irmak 65 */
+.bm-stage-hero {
   position: relative;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
+  max-height: 940px;
+  background-color: #121316;
   overflow: hidden;
-  padding: 44px 0 48px;
-  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.bm-hero-eyebrow {
+@media (min-width: 992px) {
+  .bm-stage-hero {
+    min-height: 82vh;
+    max-height: 920px;
+  }
+}
+
+.bm-stage-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bm-stage-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.03);
+  display: flex;
+  align-items: flex-end;
+}
+
+.bm-stage-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.bm-stage-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bm-stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.88) 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .bm-stage-slide {
+    align-items: center;
+  }
+  .bm-stage-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.52) 42%, rgba(0, 0, 0, 0.15) 75%, rgba(0, 0, 0, 0.05) 100%);
+  }
+}
+
+.bm-stage-content-wrap {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding-bottom: 96px;
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .bm-stage-content-wrap {
+    padding-bottom: 90px;
+    padding-top: 60px;
+  }
+}
+
+.bm-stage-card {
+  max-width: 540px;
+  color: #FFFFFF;
+}
+
+.bm-stage-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 12px;
-}
-
-.bm-hero-eyebrow-badge {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 5px 12px;
   border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.bm-stage-badge-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.bm-stage-title {
+  font-size: clamp(38px, 6vw, 68px);
   font-weight: 800;
-  font-size: 10px;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
-.bm-hero-header {
-  margin-bottom: 28px;
-  max-width: 680px;
-}
-
-.bm-hero-sub {
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  max-width: 620px;
-}
-
-/* Fan-Deck Rail Wrapper with Desktop Arrows */
-.bm-fandeck-rail-wrap {
-  position: relative;
-  width: 100%;
-}
-
-.bm-fandeck-rail {
+.bm-stage-meta {
   display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 8px 4px 20px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
-.bm-fandeck-rail::-webkit-scrollbar {
-  display: none;
+.bm-stage-room {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.02em;
 }
 
-.bm-fandeck-nav-btn {
+.bm-stage-hex {
+  font-family: monospace;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.bm-stage-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px;
+  max-width: 480px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.bm-stage-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .bm-stage-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.bm-stage-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.bm-stage-btn-wa:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+}
+
+.bm-stage-btn-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.bm-stage-btn-menu:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Stage Large Side Arrows */
+.bm-stage-arrow {
   display: none;
 }
 
 @media (min-width: 1024px) {
-  .bm-fandeck-nav-btn {
+  .bm-stage-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: calc(50% - 24px);
-    z-index: 20;
-    width: 44px;
-    height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-    color: #111111;
+    background: rgba(18, 18, 20, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: all 0.2s ease;
   }
-  .bm-fandeck-nav-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  .bm-stage-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #111111;
+    transform: translateY(-50%) scale(1.1);
   }
-  .bm-fandeck-nav-btn.prev {
-    left: -20px;
+  .bm-stage-arrow.prev {
+    left: 24px;
   }
-  .bm-fandeck-nav-btn.next {
-    right: -20px;
+  .bm-stage-arrow.next {
+    right: 24px;
   }
 }
 
-/* Swatch Card Component */
-.bm-fandeck-card {
-  flex: 0 0 240px;
-  max-width: 260px;
-  scroll-snap-align: start;
-  background: #FFFFFF;
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
+/* Floating Glassmorphic Fandeck HUD */
+.bm-stage-hud {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
   display: flex;
-  flex-direction: column;
-  border: 2px solid transparent;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-  text-align: left;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bm-fandeck-card {
-    flex: 0 0 270px;
-    max-width: 290px;
-    padding: 12px;
-  }
-}
-
-.bm-fandeck-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-}
-
-.bm-fandeck-card.active {
-  border-color: #111111;
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
-}
-
-/* Swatch Chip Box */
-.bm-fandeck-chip {
-  width: 100%;
-  aspect-ratio: 4/3;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: flex-start;
-  padding: 10px;
-}
-
-.bm-fandeck-badge {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
-/* Swatch Card Body */
-.bm-fandeck-info {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.bm-fandeck-meta-top {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.bm-fandeck-name {
-  font-size: 16px;
-  font-weight: 800;
-  color: #111111;
-  letter-spacing: -0.01em;
-}
-
-.bm-fandeck-hex {
-  font-size: 11px;
-  font-family: monospace;
-  color: #71717A;
-  font-weight: 600;
-}
-
-.bm-fandeck-desc {
-  font-size: 12px;
-  color: #52525B;
-  line-height: 1.4;
-  min-height: 34px;
-}
-
-.bm-fandeck-actions {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #F0F0F0;
-}
-
-.bm-fandeck-sample-btn {
-  width: 100%;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 7px 10px;
-  background: #F4F4F5;
-  color: #18181B;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.bm-fandeck-sample-btn:hover {
-  background: #18181B;
-  color: #FFFFFF;
-}
-
-/* Dual Action Buttons Below Rail */
-.bm-hero-actions {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
-  margin-top: 20px;
+  background: rgba(18, 18, 20, 0.76);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  max-width: calc(100vw - 32px);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-@media (min-width: 640px) {
-  .bm-hero-actions {
-    flex-direction: row;
-    max-width: 580px;
-  }
+.bm-stage-hud::-webkit-scrollbar {
+  display: none;
 }
 
-.bm-hero-actions .bm-btn-black {
-  flex: 1;
-  padding: 14px 22px;
-  font-size: 14px;
+.bm-stage-hud-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  padding-left: 4px;
 }
 
-.bm-btn-secondary-wa {
-  flex: 1;
+.bm-stage-hud-swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bm-stage-chip {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  padding: 4px 10px 4px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.bm-stage-chip:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.bm-stage-chip.active {
   background: rgba(255, 255, 255, 0.95);
-  color: #111111;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: var(--bm-radius-btn);
-  font-size: 14px;
+  border-color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.bm-stage-chip-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.bm-stage-chip-name {
+  font-size: 12px;
   font-weight: 700;
-  padding: 14px 22px;
-  text-decoration: none;
-  transition: all 0.15s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.bm-btn-secondary-wa:hover {
-  background: #FFFFFF;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
-}
-
-/* Dynamic Contrast Themes for Hero */
-.bm-hero-wrapper.theme-dark .bm-h1 {
   color: #FFFFFF;
 }
 
-.bm-hero-wrapper.theme-dark .bm-hero-sub {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.bm-hero-wrapper.theme-dark .bm-hero-eyebrow {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.bm-hero-wrapper.theme-light {
-  background-color: #ECE5D4;
-}
-
-.bm-hero-wrapper.theme-light .bm-h1 {
+.bm-stage-chip.active .bm-stage-chip-name {
   color: #111111;
 }
 
-.bm-hero-wrapper.theme-light .bm-hero-sub {
-  color: #333333;
+/* Stage Bottom Scroll Prompt */
+.bm-stage-scroll-hint {
+  display: none;
 }
 
-.bm-hero-wrapper.theme-light .bm-hero-eyebrow {
-  color: #444444;
+@media (min-width: 1200px) {
+  .bm-stage-scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: absolute;
+    bottom: 30px;
+    right: 32px;
+    z-index: 25;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s ease;
+  }
+  .bm-stage-scroll-hint:hover {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(2px);
+  }
 }
-
-.bm-hero-wrapper.theme-light .bm-hero-eyebrow-badge {
-  background: rgba(0, 0, 0, 0.1);
-  color: #111111;
-}
-
-.bm-hero-wrapper.theme-light .bm-hero-actions .bm-btn-black {
-  background-color: #111111;
-  color: #FFFFFF;
-}
-
-.bm-hero-wrapper.theme-light .bm-btn-secondary-wa {
-  background: #FFFFFF;
-  color: #111111;
-  border-color: rgba(0, 0, 0, 0.18);
-}
-
 
 /* ==========================================================================
+   2. PROMO BANNER/* ==========================================================================
    2. PROMO BANNER ("Excellence for the Everyday") (Pages 1 bottom & 2)
    ========================================================================== */
 .bm-promo-banner {
