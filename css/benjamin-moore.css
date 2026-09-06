@@ -1634,19 +1634,17 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   line-height: 1.5;
 }
 
-/* Category Filter Tabs (Tailwind UI Underline Tabs with Badges) */
+/* Category Filter Pills (Level 2: Solid Contrast Filter Pills) */
 .bm-menu-pills-wrap {
   position: relative;
-  margin-bottom: 28px;
-  border-bottom: 1px solid #E4E4E7;
+  margin-bottom: 24px;
 }
 
 .bm-menu-pills {
   display: flex;
-  gap: 28px;
+  gap: 8px;
   overflow-x: auto;
-  padding: 0;
-  margin: 0 0 -1px 0;
+  padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -1658,61 +1656,58 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
 .bm-menu-pill {
   flex-shrink: 0;
   appearance: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: transparent;
-  color: #71717A;
+  border: 1px solid transparent;
+  background: #F4F4F5;
+  color: #52525B;
   font-family: var(--bm-font);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  padding: 12px 2px 14px 2px;
+  padding: 7px 16px;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: all 0.18s ease;
   user-select: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .bm-menu-pill:hover {
-  color: #27272A;
-  border-bottom-color: #D4D4D8;
-  background: transparent;
+  background: #E4E4E7;
+  color: #18181B;
 }
 
 .bm-menu-pill.active {
-  color: #09090B;
+  background: #18181B;
+  color: #FFFFFF;
   font-weight: 600;
-  border-bottom-color: #09090B;
-  background: transparent;
-  box-shadow: none;
+  border-color: #18181B;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .bm-menu-pill-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
   border-radius: 9999px;
   font-size: 11px;
   font-weight: 600;
   line-height: 1;
-  background: #F4F4F5;
+  background: rgba(0, 0, 0, 0.06);
   color: #71717A;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
 }
 
 .bm-menu-pill:hover .bm-menu-pill-count {
-  background: #E4E4E7;
+  background: rgba(0, 0, 0, 0.1);
   color: #18181B;
 }
 
 .bm-menu-pill.active .bm-menu-pill-count {
-  background: #18181B;
+  background: rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
 }
 
@@ -2295,17 +2290,15 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   }
 }
 
+/* Level 1: Architectural Underline / Ghost Navigation (Apple & Vercel Standard) */
 .bm-subnav-links {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 2px;
-  background: #F4F4F5;
-  padding: 3px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 24px;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  height: 52px;
 }
 
 .bm-subnav-links::-webkit-scrollbar {
@@ -2320,46 +2313,50 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 6px 14px;
-  border-radius: 9px;
+  padding: 0 2px;
+  height: 52px;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
   font-family: var(--bm-font);
   font-size: 13px;
   font-weight: 500;
   color: #71717A;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.15s ease, border-color 0.15s ease;
   user-select: none;
 }
 
 .bm-subnav-link:hover {
   color: #18181B;
-  background: rgba(255, 255, 255, 0.6);
+  border-bottom-color: rgba(0, 0, 0, 0.18);
+  background: transparent;
 }
 
 .bm-subnav-link.active {
-  background: #FFFFFF;
   color: #09090B;
   font-weight: 600;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom-color: #09090B;
+  background: transparent;
+  box-shadow: none;
 }
 
 .bm-subnav-num {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.05);
+  color: #A1A1AA;
+  transition: color 0.15s ease;
+}
+
+.bm-subnav-link:hover .bm-subnav-num {
   color: #71717A;
-  transition: all 0.18s ease;
 }
 
 .bm-subnav-link.active .bm-subnav-num {
-  background: #18181B;
-  color: #FFFFFF;
+  color: #09090B;
+  font-weight: 700;
 }
 
 .bm-subnav-cta-wrap {
