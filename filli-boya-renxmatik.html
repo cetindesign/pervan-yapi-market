@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=9.6.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=9.7.0" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -620,18 +620,18 @@ html body.bm-transparent-header-page .bm-page-main {
     </div>
     
     <div class="bm-subnav-links" id="bmSubnavLinks" role="tablist">
-      <a href="#bmProductCatalog" class="bm-subnav-link active" data-target="bmProductCatalog" role="tab">
+      <button type="button" class="bm-subnav-link active" data-target="bmProductCatalog" role="tab" aria-selected="true">
         <span class="bm-subnav-num">01</span> Boya Menüsü
-      </a>
-      <a href="#bmTrends" class="bm-subnav-link" data-target="bmTrends" role="tab">
+      </button>
+      <button type="button" class="bm-subnav-link" data-target="bmTrends" role="tab" aria-selected="false">
         <span class="bm-subnav-num">02</span> 2026 Trendleri
-      </a>
-      <a href="#bmTransformation" class="bm-subnav-link" data-target="bmTransformation" role="tab">
+      </button>
+      <button type="button" class="bm-subnav-link" data-target="bmTransformation" role="tab" aria-selected="false">
         <span class="bm-subnav-num">03</span> Dönüşüm (Reno)
-      </a>
-      <a href="#bmInsulation" class="bm-subnav-link" data-target="bmInsulation" role="tab">
+      </button>
+      <button type="button" class="bm-subnav-link" data-target="bmInsulationSection" role="tab" aria-selected="false">
         <span class="bm-subnav-num">04</span> Capatect Yalıtım
-      </a>
+      </button>
     </div>
 
     <div class="bm-subnav-cta-wrap">
@@ -1121,7 +1121,7 @@ html body.bm-transparent-header-page .bm-page-main {
 <!-- ==========================================================================
      5. COLOR TRENDS 2026 - SIGNATURE STACKED COLOR BANDS (Pages 5, 6, 7, 8)
      ========================================================================== -->
-<section class="bm-trends-section" id="bmTrends">
+<section class="bm-trends-section" id="bmTrends" style="display: none;">
   <div class="bm-container">
     
     <h2 class="bm-trends-title">2026 Renk Paleti: Gerçeğe Bağlan</h2>
@@ -1389,7 +1389,7 @@ html body.bm-transparent-header-page .bm-page-main {
 <!-- ==========================================================================
      6. THE LATEST - EDITORIAL PHOTO + COLOR BAR CARDS (Pages 8 bottom - 21)
      ========================================================================== -->
-<section class="bm-latest-section" id="bmTransformation">
+<section class="bm-latest-section" id="bmTransformation" style="display: none;">
   <div class="bm-container">
     
     <h2 class="bm-latest-title">Filli Boya'dan En Yeniler</h2>
@@ -1436,6 +1436,113 @@ html body.bm-transparent-header-page .bm-page-main {
 
   </div>
 </section>
+
+<!-- ==========================================================================
+     CAPATECT DALMAÇYALI MANTOLAMA TAB PANEL
+     ========================================================================== -->
+<section class="bm-insulation-section" id="bmInsulationSection" style="display: none;">
+  <div class="bm-container">
+    <div class="bm-menu-header">
+      <div class="bm-menu-pretitle">DIŞ CEPHE ISI YALITIM SİSTEMLERİ</div>
+      <h2 class="bm-menu-title">Capatect Dalmaçyalı® Mantolama Sistemi</h2>
+      <p class="bm-menu-desc">
+        %50'ye varan enerji tasarrufu sağlayan ideal karbon dağılımlı Dalmaçyalı EPS teknolojisi. Balçova showroom ve Urla ana depomuzdan doğrudan şantiye teslimatı, teknik föy ve sarfiyat reçeteleri.
+      </p>
+    </div>
+
+    <!-- Capatect System Components Grid -->
+    <div class="bm-insulation-grid">
+      <!-- Item 1: Dalmaçyalı EPS -->
+      <div class="bm-insulation-card">
+        <div class="bm-insulation-thumb">
+          <img src="assets/filli-official/capatect-dalmacyali.png" alt="Capatect Dalmaçyalı EPS Levha" decoding="async" />
+        </div>
+        <div class="bm-insulation-body">
+          <div class="bm-insulation-tag">Ana Isı Yalıtım Levhası</div>
+          <h3 class="bm-insulation-name">Capatect Dalmaçyalı EPS</h3>
+          <p class="bm-insulation-text">İdeal karbon dağılımı sayesinde standart beyaz EPS'ye göre %20 daha yüksek yalıtım performansı (λ = 0.032 W/mK). TS EN 13163 standartlarında.</p>
+          <div class="bm-insulation-specs">
+            <span>50 x 100 cm</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>4, 5, 6, 8, 10 cm Kalınlık</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>E Yangın Sınıfı</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Yapıştırıcı & Sıva Harçları -->
+      <div class="bm-insulation-card">
+        <div class="bm-insulation-thumb">
+          <img src="assets/rf-filli-exterior.jpg" alt="Capatect Yapıştırıcı ve Donatı Sıvası" decoding="async" />
+        </div>
+        <div class="bm-insulation-body">
+          <div class="bm-insulation-tag">Sistem Harçları</div>
+          <h3 class="bm-insulation-name">Capatect Yapıştırıcı &amp; Elyaf Donatı Sıvası</h3>
+          <p class="bm-insulation-text">Polimer modifiyeli, elyaf takviyeli çimento esaslı özel yapıştırma ve donatı sıva harçları. Yüksek aderans ve termal şok direnci.</p>
+          <div class="bm-insulation-specs">
+            <span>25 kg Torba</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>4.5 - 5.0 kg/m² Sarfiyat</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>Çatlama Önleyici</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Donatı Filesi & Dübel -->
+      <div class="bm-insulation-card">
+        <div class="bm-insulation-thumb">
+          <img src="assets/rf-hero-materials.jpg" alt="Capatect Alkali Dayanımlı Donatı Filesi" decoding="async" />
+        </div>
+        <div class="bm-insulation-body">
+          <div class="bm-insulation-tag">Güçlendirme &amp; Sabitleme</div>
+          <h3 class="bm-insulation-name">Capatect Donatı Filesi &amp; Mekanik Dübel</h3>
+          <p class="bm-insulation-text">160 gr/m² alkali dayanımlı cam elyaf donatı filesi ve cephe rüzgar yüklerine karşı yüksek tutunma sağlayan onaylı mekanik dübeller.</p>
+          <div class="bm-insulation-specs">
+            <span>160 gr/m² File</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>50 m² Rulo</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>ETAG 004 Uyumlu</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Son Kat Aqusto Silan -->
+      <div class="bm-insulation-card">
+        <div class="bm-insulation-thumb">
+          <img src="assets/filli-official/aqusto-silan.png" alt="Aqusto Silan Dış Cephe Kaplaması" decoding="async" />
+        </div>
+        <div class="bm-insulation-body">
+          <div class="bm-insulation-tag">Son Kat Koruma</div>
+          <h3 class="bm-insulation-name">Aqusto Silan Fotokatalitik Dış Cephe</h3>
+          <p class="bm-insulation-text">Duomax® teknolojili su itici, kendi kendini temizleyen ve güneş ışığıyla kirleri parçalayan mikron boya. Ege iklimine tam uyumlu.</p>
+          <div class="bm-insulation-specs">
+            <span>15 Lt Kova</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>İpeksi Mat Dış Cephe</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>Duomax® Koruma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Bridge -->
+    <div class="bm-capatect-cta-bridge">
+      <div class="bm-capatect-cta-info">
+        <h4 class="bm-capatect-cta-title">Şantiye Metraj &amp; Paket Fiyat Hesaplama</h4>
+        <p class="bm-capatect-cta-desc">Binanızın dış cephe metrekaresine göre levha, yapıştırıcı, sıva, file, profil ve son kat boya dahil anahtar teslim paket malzeme listesi hazırlayalım.</p>
+      </div>
+      <div class="bm-capatect-cta-actions">
+        <a href="capatect-dalmacyali-mantolama.html" class="bm-btn-black">Mantolama Sayfasına Git ›</a>
+        <a href="https://wa.me/905323844497?text=Merhaba%2C%20Capatect%20Dalma%C3%A7yal%C4%B1%20mantolama%20i%C3%A7in%20metraj%20ve%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-btn-whatsapp">WhatsApp Şantiye Danışmanı</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ==========================================================================
      7. WHY FILLI BOYA & PERVAN (Page 22)
@@ -2128,7 +2235,7 @@ html body.bm-transparent-header-page .bm-page-main {
   });
 })();
 
-/* STICKY ARCHITECTURAL SUB-NAV HUB CONTROLLER (Apple & Jon Coffee Pinned Standard) */
+/* IN-PLACE ARCHITECTURAL SUB-NAV TAB CONTROLLER (Zero Scroll, Instant Panel Switch) */
 (function() {
   var subnav = document.getElementById("bmSubnav");
   var spacer = document.getElementById("bmSubnavSpacer");
@@ -2136,13 +2243,41 @@ html body.bm-transparent-header-page .bm-page-main {
   var subnavLinks = document.querySelectorAll("#bmSubnavLinks .bm-subnav-link");
   if (!subnav || !subnavLinks.length) return;
 
-  var targets = [
-    { id: "bmProductCatalog", el: document.getElementById("bmProductCatalog") },
-    { id: "bmTrends", el: document.getElementById("bmTrends") },
-    { id: "bmTransformation", el: document.getElementById("bmTransformation") },
-    { id: "bmInsulation", el: document.getElementById("bmInsulation") }
-  ];
+  var panels = {
+    "bmProductCatalog": document.getElementById("bmProductCatalog"),
+    "bmTrends": document.getElementById("bmTrends"),
+    "bmTransformation": document.getElementById("bmTransformation"),
+    "bmInsulationSection": document.getElementById("bmInsulationSection")
+  };
 
+  function switchTab(targetId) {
+    if (!panels[targetId]) return;
+
+    // 1. Update tab buttons
+    subnavLinks.forEach(function(link) {
+      var isTarget = (link.getAttribute("data-target") === targetId);
+      link.classList.toggle("active", isTarget);
+      link.setAttribute("aria-selected", isTarget ? "true" : "false");
+    });
+
+    // 2. Switch panels instantly in place (ZERO SCROLL)
+    for (var key in panels) {
+      if (panels[key]) {
+        panels[key].style.display = (key === targetId) ? "block" : "none";
+      }
+    }
+  }
+
+  // Attach instant click event to each tab
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var targetId = link.getAttribute("data-target");
+      switchTab(targetId);
+    });
+  });
+
+  // Sticky subnav header clearance sync
   var initialSubnavTop = 0;
   function getSubnavOrigin() {
     if (spacer && spacer.classList.contains("is-active")) {
@@ -2151,19 +2286,16 @@ html body.bm-transparent-header-page .bm-page-main {
     return subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
   }
 
-  // Calculate once DOM is stable
   setTimeout(function() {
     initialSubnavTop = getSubnavOrigin();
   }, 300);
 
-  function syncSubnavState() {
+  function syncSubnavPin() {
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
     if (!initialSubnavTop) initialSubnavTop = getSubnavOrigin();
-
     var headerHeight = (header && !header.classList.contains("header--hidden")) ? (header.offsetHeight || 60) : 0;
     var pinThreshold = initialSubnavTop - headerHeight;
 
-    // Pinning state
     if (scrollPos >= pinThreshold) {
       if (!subnav.classList.contains("is-pinned")) {
         subnav.classList.add("is-pinned");
@@ -2181,71 +2313,14 @@ html body.bm-transparent-header-page .bm-page-main {
         if (spacer) spacer.classList.remove("is-active");
       }
     }
-
-    // ScrollSpy active link detection
-    var currentId = "";
-    for (var i = 0; i < targets.length; i++) {
-      var t = targets[i];
-      if (t.el) {
-        var elTop = t.el.getBoundingClientRect().top + scrollPos - 140;
-        if (scrollPos >= elTop) {
-          currentId = t.id;
-        }
-      }
-    }
-
-    if (currentId) {
-      subnavLinks.forEach(function(link) {
-        var targetAttr = link.getAttribute("data-target");
-        if (targetAttr === currentId) {
-          if (!link.classList.contains("active")) {
-            link.classList.add("active");
-            var parent = link.parentElement;
-            if (parent && parent.scrollWidth > parent.clientWidth) {
-              var offset = link.offsetLeft - parent.offsetLeft - 16;
-              parent.scrollTo({ left: offset, behavior: "smooth" });
-            }
-          }
-        } else {
-          link.classList.remove("active");
-        }
-      });
-    }
   }
 
-  window.addEventListener("scroll", syncSubnavState, { passive: true });
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
   window.addEventListener("resize", function() {
     initialSubnavTop = getSubnavOrigin();
-    syncSubnavState();
+    syncSubnavPin();
   }, { passive: true });
-
-  syncSubnavState();
-
-  // Pixel-perfect click scrolling with full clearance
-  subnavLinks.forEach(function(link) {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      var targetId = link.getAttribute("data-target");
-      var targetEl = document.getElementById(targetId);
-      if (!targetEl) return;
-
-      if (targetId === "bmInsulation") {
-        var capatectPill = document.querySelector('#paintMenuPills [data-filter="yalitim"]');
-        if (capatectPill) capatectPill.click();
-      }
-
-      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      var targetRect = targetEl.getBoundingClientRect();
-      var hOffset = (header && !header.classList.contains("header--hidden")) ? (header.offsetHeight || 60) : 0;
-      var subnavHeight = subnav.offsetHeight || 52;
-      var finalY = targetRect.top + currentScroll - hOffset - subnavHeight - 18;
-
-      window.scrollTo({
-        top: Math.max(0, finalY),
-        behavior: "smooth"
-      });
-    });
-  });
+  syncSubnavPin();
 })();
 </script>
 
