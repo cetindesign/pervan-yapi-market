@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.0.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.1.0" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -2125,33 +2125,59 @@ html body.bm-transparent-header-page .bm-page-main {
     return subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
   }
 
-  setTimeout(function() {
-    initialSubnavTop = getSubnavOrigin();
-  }, 300);
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
 
   function syncSubnavPin() {
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    if (!initialSubnavTop) initialSubnavTop = getSubnavOrigin();
-    var headerHeight = (header && !header.classList.contains("header--hidden")) ? (header.offsetHeight || 60) : 0;
-    var pinThreshold = initialSubnavTop - headerHeight;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
 
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    // As long as we are scrolled to or past the subnav area (boya menüsü or other tabs):
     if (scrollPos >= pinThreshold) {
       if (!subnav.classList.contains("is-pinned")) {
         subnav.classList.add("is-pinned");
-        if (spacer) spacer.classList.add("is-active");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 52) + "px";
+          spacer.classList.add("is-active");
+        }
       }
-      if (header && header.classList.contains("header--hidden")) {
+
+      if (!headerVisible) {
+        // Scrolling DOWN -> Header hidden -> Pin at very top of screen (0px)
         subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
       } else {
+        // Scrolling UP -> Header revealed -> Pin directly under header
         subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
       }
     } else {
+      // Scrolled all the way back up into hero -> unpin and return to natural flow
       if (subnav.classList.contains("is-pinned")) {
         subnav.classList.remove("is-pinned");
         subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
         if (spacer) spacer.classList.remove("is-active");
       }
     }
+  }
+
+  // MutationObserver on header so class changes (header--hidden added/removed by reform.js)
+  // trigger instantaneous, synchronized repositioning of subnav without waiting for scroll events
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
   }
 
   window.addEventListener("scroll", syncSubnavPin, { passive: true });
@@ -2159,7 +2185,16 @@ html body.bm-transparent-header-page .bm-page-main {
     initialSubnavTop = getSubnavOrigin();
     syncSubnavPin();
   }, { passive: true });
-  syncSubnavPin();
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  setTimeout(function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, 150);
 })();
 </script>
 
