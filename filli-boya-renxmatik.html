@@ -18478,7 +18478,7 @@ html body.bm-transparent-header-page .bm-page-main {
     }
 
     // Color Selector visibility & selection
-    var isPaint = (p.category === "ic-cephe" || p.category === "dis-cephe" || p.category === "ahsap-metal" || p.category === "donusum");
+    var isPaint = (p.category === "ic-cephe" || p.category === "dis-cephe" || p.category === "ahsap-metal" || p.category === "donusum" || p.category === "donusum-efekt" || (p.category === "expert" && p.id.indexOf("boya") !== -1));
     if (isPaint) {
       modalColorGroup.style.display = "flex";
       selectedColor = preferredColor || "Irmak 65 (2026 Yılın Rengi)";
@@ -18604,8 +18604,16 @@ html body.bm-transparent-header-page .bm-page-main {
     var itemId = params.get("item");
     if (itemId && products[itemId]) {
       var prod = products[itemId];
-      var targetPill = document.querySelector('#paintMenuPills .bm-menu-pill[data-filter="' + prod.category + '"]');
-      if (targetPill) targetPill.click();
+      var row = document.querySelector('.bm-menu-row[data-product-id="' + itemId + '"]');
+      if (row) {
+        var sec = row.closest("section");
+        if (sec && sec.id) {
+          var subnavLink = document.querySelector('#bmSubnavLinks .bm-subnav-link[data-target="' + sec.id + '"]');
+          if (subnavLink) subnavLink.click();
+          var targetPill = sec.querySelector('.bm-menu-pill[data-filter="' + prod.category + '"]');
+          if (targetPill) targetPill.click();
+        }
+      }
       openModal(itemId);
     }
   }
