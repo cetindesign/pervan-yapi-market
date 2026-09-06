@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.1" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.2" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -52,60 +52,60 @@ html body.bm-transparent-header-page .bm-page-main {
   margin-top: 0 !important;
 }
 
-/* 100% UNCONDITIONAL TRANSPARENT HEADER ON HERO FOLD */
-#bmTransparentHeader,
-#bmTransparentHeader .navbar,
-#bmTransparentHeader .navbar-top,
-#bmTransparentHeader .navbar-sticky,
-#bmTransparentHeader .navbar-top-row2,
-#bmTransparentHeader .navbar-contents:not(.opened),
-#bmTransparentHeader .navbar-contents-overflow:not(.opened) {
+/* 100% UNCONDITIONAL TRANSPARENT HEADER ON HERO FOLD (INACTIVE ON SCROLL OR MENU OPEN) */
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open),
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top-row2,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-contents,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-contents-overflow {
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
 }
 
-#bmTransparentHeader {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-#bmTransparentHeader .navbar-sticky {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
-#bmTransparentHeader .navbar-top-row2 {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top-row2 {
   border-bottom: none !important;
 }
 
-#bmTransparentHeader .navbar-logo {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-logo {
   color: #FFFFFF !important;
 }
 
-#bmTransparentHeader .navbar-title,
-#bmTransparentHeader .menu-item,
-#bmTransparentHeader .navbar-sticky a.navbar-item {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-title,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky a.navbar-item {
   color: #FFFFFF !important;
 }
 
-#bmTransparentHeader .menu-item .arrow,
-#bmTransparentHeader .navbar-sticky .arrow {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow {
   background: #FFFFFF !important;
 }
 
-#bmTransparentHeader .menu-item .arrow::before,
-#bmTransparentHeader .menu-item .arrow::after,
-#bmTransparentHeader .navbar-sticky .arrow::before,
-#bmTransparentHeader .navbar-sticky .arrow::after {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow::before,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow::after,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::before,
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::after {
   background: #FFFFFF !important;
 }
 
-#bmTransparentHeader #mobile-menu .bar {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) #mobile-menu .bar {
   background-color: #FFFFFF !important;
 }
 
-#bmTransparentHeader .navbar-sticky a.navbar-item {
+#bmTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky a.navbar-item {
   border-color: rgba(255, 255, 255, 0.16) !important;
 }
 
@@ -151,12 +151,18 @@ html body.bm-transparent-header-page .bm-page-main {
 #bmTransparentHeader.header--solid .navbar-title,
 #bmTransparentHeader.header--solid .menu-item,
 #bmTransparentHeader.header--solid .navbar-sticky a.navbar-item,
-#bmTransparentHeader.header--menu-open .navbar-sticky a.navbar-item {
+#bmTransparentHeader.header--solid .navbar-sticky .navbar-title,
+#bmTransparentHeader.header--menu-open .navbar-title,
+#bmTransparentHeader.header--menu-open .menu-item,
+#bmTransparentHeader.header--menu-open .navbar-sticky a.navbar-item,
+#bmTransparentHeader.header--menu-open .navbar-sticky .navbar-title {
   color: #000000 !important;
+  text-shadow: none !important;
 }
 
 #bmTransparentHeader.header--solid .menu-item .arrow,
 #bmTransparentHeader.header--solid .navbar-sticky .arrow,
+#bmTransparentHeader.header--menu-open .menu-item .arrow,
 #bmTransparentHeader.header--menu-open .navbar-sticky .arrow {
   background: #000000 !important;
 }
@@ -165,6 +171,8 @@ html body.bm-transparent-header-page .bm-page-main {
 #bmTransparentHeader.header--solid .menu-item .arrow::after,
 #bmTransparentHeader.header--solid .navbar-sticky .arrow::before,
 #bmTransparentHeader.header--solid .navbar-sticky .arrow::after,
+#bmTransparentHeader.header--menu-open .menu-item .arrow::before,
+#bmTransparentHeader.header--menu-open .menu-item .arrow::after,
 #bmTransparentHeader.header--menu-open .navbar-sticky .arrow::before,
 #bmTransparentHeader.header--menu-open .navbar-sticky .arrow::after {
   background: #000000 !important;

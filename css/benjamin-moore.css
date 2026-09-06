@@ -169,8 +169,8 @@ body.bm-transparent-header-page .bm-page-main {
   padding-top: 0 !important;
 }
 
-/* Transparent Header in Hero Fold */
-body.bm-transparent-header-page header:not(.header--solid) {
+/* Transparent Header in Hero Fold (Inactive when Scrolled or Mobile Menu Open) */
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) {
   background: transparent !important;
   background-color: transparent !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
@@ -180,47 +180,51 @@ body.bm-transparent-header-page header:not(.header--solid) {
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .navbar,
-body.bm-transparent-header-page header:not(.header--solid) .navbar-top,
-body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky,
-body.bm-transparent-header-page header:not(.header--solid) .navbar-top-row2,
-body.bm-transparent-header-page header:not(.header--solid) .navbar-contents,
-body.bm-transparent-header-page header:not(.header--solid) .navbar-contents-overflow {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-top,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-sticky,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-top-row2,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-contents,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-contents-overflow {
   background: transparent !important;
   background-color: transparent !important;
   border-color: rgba(255, 255, 255, 0.16) !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .navbar-logo {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-logo {
   color: #FFFFFF !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .navbar-title,
-body.bm-transparent-header-page header:not(.header--solid) .menu-item {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-title,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .menu-item {
   color: #FFFFFF !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .menu-item .arrow,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow {
   background: #FFFFFF !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::before,
-body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::after {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .menu-item .arrow::before,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .menu-item .arrow::after,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::before,
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::after {
   background: #FFFFFF !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) #mobile-menu .bar {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) #mobile-menu .bar {
   background-color: #FFFFFF !important;
 }
 
-body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky a.navbar-item {
+body.bm-transparent-header-page header:not(.header--solid):not(.header--menu-open) .navbar-sticky a.navbar-item {
   color: #FFFFFF !important;
   border-color: rgba(255, 255, 255, 0.16) !important;
 }
 
-/* Solid Header When Scrolled Past Hero */
-body.bm-transparent-header-page header.header--solid {
-  background: rgba(255, 255, 255, 0.96) !important;
+/* Solid Header When Scrolled Past Hero OR Mobile Menu Open */
+body.bm-transparent-header-page header.header--solid,
+body.bm-transparent-header-page header.header--menu-open {
+  background: rgba(255, 255, 255, 0.98) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
@@ -228,34 +232,57 @@ body.bm-transparent-header-page header.header--solid {
 body.bm-transparent-header-page header.header--solid .navbar,
 body.bm-transparent-header-page header.header--solid .navbar-top,
 body.bm-transparent-header-page header.header--solid .navbar-sticky,
-body.bm-transparent-header-page header.header--solid .navbar-top-row2 {
+body.bm-transparent-header-page header.header--solid .navbar-top-row2,
+body.bm-transparent-header-page header.header--menu-open .navbar,
+body.bm-transparent-header-page header.header--menu-open .navbar-top,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky,
+body.bm-transparent-header-page header.header--menu-open .navbar-top-row2 {
   background: transparent !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-body.bm-transparent-header-page header.header--solid .navbar-logo {
+body.bm-transparent-header-page header.header--solid .navbar-logo,
+body.bm-transparent-header-page header.header--menu-open .navbar-logo {
   color: #000000 !important;
 }
 
 body.bm-transparent-header-page header.header--solid .navbar-title,
-body.bm-transparent-header-page header.header--solid .menu-item {
+body.bm-transparent-header-page header.header--solid .menu-item,
+body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-item,
+body.bm-transparent-header-page header.header--solid .navbar-sticky .navbar-title,
+body.bm-transparent-header-page header.header--menu-open .navbar-title,
+body.bm-transparent-header-page header.header--menu-open .menu-item,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar-item,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky .navbar-title {
   color: #000000 !important;
+  text-shadow: none !important;
 }
 
-body.bm-transparent-header-page header.header--solid .menu-item .arrow {
+body.bm-transparent-header-page header.header--solid .menu-item .arrow,
+body.bm-transparent-header-page header.header--solid .navbar-sticky .arrow,
+body.bm-transparent-header-page header.header--menu-open .menu-item .arrow,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky .arrow {
   background: #000000 !important;
 }
 
 body.bm-transparent-header-page header.header--solid .menu-item .arrow::before,
-body.bm-transparent-header-page header.header--solid .menu-item .arrow::after {
+body.bm-transparent-header-page header.header--solid .menu-item .arrow::after,
+body.bm-transparent-header-page header.header--solid .navbar-sticky .arrow::before,
+body.bm-transparent-header-page header.header--solid .navbar-sticky .arrow::after,
+body.bm-transparent-header-page header.header--menu-open .menu-item .arrow::before,
+body.bm-transparent-header-page header.header--menu-open .menu-item .arrow::after,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky .arrow::before,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky .arrow::after {
   background: #000000 !important;
 }
 
-body.bm-transparent-header-page header.header--solid #mobile-menu .bar {
+body.bm-transparent-header-page header.header--solid #mobile-menu .bar,
+body.bm-transparent-header-page header.header--menu-open #mobile-menu .bar {
   background-color: #000000 !important;
 }
 
-body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-item {
+body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-item,
+body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar-item {
   color: #000000 !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
