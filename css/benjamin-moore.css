@@ -462,39 +462,50 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   font-size: 8px;
 }
 
+.bm-stage-text-link,
 .bm-stage-pill-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(var(--bm-chroma-rgb), 0.45);
+  gap: 7px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0 0 3px 0;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 0;
   color: #FFFFFF;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 9px 20px;
-  border-radius: 999px;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25), 0 0 16px rgba(var(--bm-chroma-rgb), 0.2);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
+.bm-stage-text-link:hover,
 .bm-stage-pill-cta:hover {
-  background: #FFFFFF;
-  color: #111111;
-  border-color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(var(--bm-chroma-rgb), 0.45);
+  background: transparent;
+  color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+  opacity: 0.95;
+  transform: none;
+  box-shadow: none;
 }
 
+.bm-stage-text-link svg,
 .bm-stage-pill-cta svg {
-  transition: transform 0.2s ease;
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.bm-stage-text-link:hover svg,
 .bm-stage-pill-cta:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* Stage Large Side Arrows */
