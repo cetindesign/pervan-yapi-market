@@ -147,75 +147,119 @@
    ========================================================================== */
 
 /* Seamless Transparent Header Integration */
-.bm-transparent-header-page {
+body.bm-transparent-header-page {
   padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
-@media (min-width: 1260px) {
-  .bm-transparent-header-page {
+@media (min-width: 0px) {
+  body.bm-transparent-header-page {
     padding-top: 0 !important;
   }
 }
 
-.bm-transparent-header-page header {
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+@media (min-width: 1260px) {
+  body.bm-transparent-header-page {
+    padding-top: 0 !important;
+  }
+}
+
+body.bm-transparent-header-page .bm-page-main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Transparent Header in Hero Fold */
+body.bm-transparent-header-page header:not(.header--solid) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: none !important;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
-.bm-transparent-header-page .navbar {
-  background: transparent;
+body.bm-transparent-header-page header:not(.header--solid) .navbar,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-top,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-top-row2,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-contents,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-contents-overflow {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
 }
 
-.bm-transparent-header-page .navbar-logo {
+body.bm-transparent-header-page header:not(.header--solid) .navbar-logo {
   color: #FFFFFF !important;
 }
 
-.bm-transparent-header-page .navbar-title {
-  color: #FFFFFF;
+body.bm-transparent-header-page header:not(.header--solid) .navbar-title,
+body.bm-transparent-header-page header:not(.header--solid) .menu-item {
+  color: #FFFFFF !important;
 }
 
-.bm-transparent-header-page .menu-item .arrow {
-  border-color: #FFFFFF;
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow {
+  background: #FFFFFF !important;
 }
 
-.bm-transparent-header-page #mobile-menu .bar {
-  background-color: #FFFFFF;
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::before,
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::after {
+  background: #FFFFFF !important;
 }
 
-.bm-transparent-header-page .navbar-sticky .navbar-item {
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.25);
+body.bm-transparent-header-page header:not(.header--solid) #mobile-menu .bar {
+  background-color: #FFFFFF !important;
 }
 
-/* Header Solid State When Scrolled Past Hero */
-.bm-transparent-header-page header.header--scrolled {
+body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky a.navbar-item {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Solid Header When Scrolled Past Hero */
+body.bm-transparent-header-page header.header--solid {
   background: rgba(255, 255, 255, 0.96) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
-.bm-transparent-header-page header.header--scrolled .navbar-logo {
+body.bm-transparent-header-page header.header--solid .navbar,
+body.bm-transparent-header-page header.header--solid .navbar-top,
+body.bm-transparent-header-page header.header--solid .navbar-sticky,
+body.bm-transparent-header-page header.header--solid .navbar-top-row2 {
+  background: transparent !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.bm-transparent-header-page header.header--solid .navbar-logo {
   color: #000000 !important;
 }
 
-.bm-transparent-header-page header.header--scrolled .navbar-title {
-  color: #000000;
+body.bm-transparent-header-page header.header--solid .navbar-title,
+body.bm-transparent-header-page header.header--solid .menu-item {
+  color: #000000 !important;
 }
 
-.bm-transparent-header-page header.header--scrolled .menu-item .arrow {
-  border-color: #000000;
+body.bm-transparent-header-page header.header--solid .menu-item .arrow {
+  background: #000000 !important;
 }
 
-.bm-transparent-header-page header.header--scrolled #mobile-menu .bar {
-  background-color: #000000;
+body.bm-transparent-header-page header.header--solid .menu-item .arrow::before,
+body.bm-transparent-header-page header.header--solid .menu-item .arrow::after {
+  background: #000000 !important;
 }
 
-.bm-transparent-header-page header.header--scrolled .navbar-sticky .navbar-item {
-  color: #000000;
-  border-color: rgba(0, 0, 0, 0.1);
+body.bm-transparent-header-page header.header--solid #mobile-menu .bar {
+  background-color: #000000 !important;
 }
+
+body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-item {
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
 
 .bm-stage-hero {
   --bm-chroma-hex: #405E66;

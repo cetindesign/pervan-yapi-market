@@ -24,7 +24,58 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=9.0.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=9.2.0" />
+<style id="bmHeaderTransparentCritical">
+body.bm-transparent-header-page,
+body.bm-transparent-header-page.rf-body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+@media (min-width: 0px) {
+  body.bm-transparent-header-page { padding-top: 0 !important; }
+}
+@media (min-width: 1260px) {
+  body.bm-transparent-header-page { padding-top: 0 !important; }
+}
+body.bm-transparent-header-page header:not(.header--solid) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: none !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .navbar,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-top,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky,
+body.bm-transparent-header-page header:not(.header--solid) .navbar-top-row2 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .navbar-logo {
+  color: #FFFFFF !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .navbar-title,
+body.bm-transparent-header-page header:not(.header--solid) .menu-item {
+  color: #FFFFFF !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow {
+  background: #FFFFFF !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::before,
+body.bm-transparent-header-page header:not(.header--solid) .menu-item .arrow::after {
+  background: #FFFFFF !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) #mobile-menu .bar {
+  background-color: #FFFFFF !important;
+}
+body.bm-transparent-header-page header:not(.header--solid) .navbar-sticky a.navbar-item {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+</style>
+
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -1561,11 +1612,11 @@
   // Header Transparency Scroll Spy
   function syncHeaderScroll() {
     if (!header) return;
-    var threshold = stage.offsetHeight - 80;
-    if (window.pageYOffset > threshold) {
-      header.classList.add("header--scrolled");
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (scrollY > 380) {
+      header.classList.add("header--solid");
     } else {
-      header.classList.remove("header--scrolled");
+      header.classList.remove("header--solid");
     }
   }
   window.addEventListener("scroll", syncHeaderScroll, { passive: true });
