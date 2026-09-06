@@ -143,29 +143,57 @@
 }
 
 /* ==========================================================================
-   1. HERO COLOR FAN-DECK CAROUSEL (Pages 0 & 1)
+   1. HERO COLOR FAN-DECK CAROUSEL (Filli Boya 2026 Gerçeğe Bağlan)
    ========================================================================== */
 .bm-hero-wrapper {
-  background-color: #BDC8C1; /* Active swatch color */
+  background-color: #405E66; /* Default: Irmak 65 */
   position: relative;
   overflow: hidden;
-  padding: 36px 0 52px;
-  transition: background-color 0.4s ease;
+  padding: 44px 0 48px;
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bm-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+}
+
+.bm-hero-eyebrow-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 10px;
 }
 
 .bm-hero-header {
-  margin-bottom: 24px;
-  max-width: 600px;
+  margin-bottom: 28px;
+  max-width: 680px;
 }
 
 .bm-hero-sub {
-  font-size: 17px;
-  line-height: 1.45;
-  color: #222222;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
+  max-width: 620px;
 }
 
-/* Horizontal Card Carousel Rail */
+/* Fan-Deck Rail Wrapper with Desktop Arrows */
+.bm-fandeck-rail-wrap {
+  position: relative;
+  width: 100%;
+}
+
 .bm-fandeck-rail {
   display: flex;
   gap: 16px;
@@ -173,75 +201,219 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-bottom: 20px;
+  padding: 8px 4px 20px;
 }
 
 .bm-fandeck-rail::-webkit-scrollbar {
   display: none;
 }
 
+.bm-fandeck-nav-btn {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bm-fandeck-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 24px);
+    z-index: 20;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    color: #111111;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .bm-fandeck-nav-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  .bm-fandeck-nav-btn.prev {
+    left: -20px;
+  }
+  .bm-fandeck-nav-btn.next {
+    right: -20px;
+  }
+}
+
+/* Swatch Card Component */
 .bm-fandeck-card {
-  flex: 0 0 84%;
-  max-width: 340px;
+  flex: 0 0 240px;
+  max-width: 260px;
   scroll-snap-align: start;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  border: 2px solid transparent;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  text-align: left;
+  user-select: none;
 }
 
 @media (min-width: 768px) {
   .bm-fandeck-card {
-    flex: 0 0 380px;
+    flex: 0 0 270px;
+    max-width: 290px;
+    padding: 12px;
   }
 }
 
-.bm-fandeck-media {
+.bm-fandeck-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+.bm-fandeck-card.active {
+  border-color: #111111;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* Swatch Chip Box */
+.bm-fandeck-chip {
   width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: var(--bm-radius-card);
-  overflow: hidden;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
   position: relative;
-  background: #EAEAEA;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
 }
 
-.bm-fandeck-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.bm-fandeck-badge {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
 }
 
+/* Swatch Card Body */
 .bm-fandeck-info {
-  margin-top: 12px;
-  padding-left: 2px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.bm-fandeck-meta-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .bm-fandeck-name {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+
+.bm-fandeck-hex {
+  font-size: 11px;
+  font-family: monospace;
+  color: #71717A;
+  font-weight: 600;
+}
+
+.bm-fandeck-desc {
+  font-size: 12px;
+  color: #52525B;
+  line-height: 1.4;
+  min-height: 34px;
+}
+
+.bm-fandeck-actions {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #F0F0F0;
+}
+
+.bm-fandeck-sample-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 7px 10px;
+  background: #F4F4F5;
+  color: #18181B;
+  font-size: 11px;
   font-weight: 700;
-  color: var(--bm-black);
-  line-height: 1.25;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.bm-fandeck-code {
-  font-size: 14px;
-  font-weight: 400;
-  color: #333333;
-  margin-top: 2px;
+.bm-fandeck-sample-btn:hover {
+  background: #18181B;
+  color: #FFFFFF;
 }
 
-/* Dual Black Action Buttons Below Rail */
+/* Dual Action Buttons Below Rail */
 .bm-hero-actions {
   display: flex;
+  flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 20px;
+}
+
+@media (min-width: 640px) {
+  .bm-hero-actions {
+    flex-direction: row;
+    max-width: 580px;
+  }
 }
 
 .bm-hero-actions .bm-btn-black {
   flex: 1;
+  padding: 14px 22px;
+  font-size: 14px;
 }
 
-/* Dynamic Contrast Theme for Hero */
+.bm-btn-secondary-wa {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--bm-radius-btn);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 22px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.bm-btn-secondary-wa:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+/* Dynamic Contrast Themes for Hero */
 .bm-hero-wrapper.theme-dark .bm-h1 {
   color: #FFFFFF;
 }
@@ -250,22 +422,42 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-.bm-hero-wrapper.theme-dark .bm-fandeck-name {
+.bm-hero-wrapper.theme-dark .bm-hero-eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bm-hero-wrapper.theme-light {
+  background-color: #ECE5D4;
+}
+
+.bm-hero-wrapper.theme-light .bm-h1 {
+  color: #111111;
+}
+
+.bm-hero-wrapper.theme-light .bm-hero-sub {
+  color: #333333;
+}
+
+.bm-hero-wrapper.theme-light .bm-hero-eyebrow {
+  color: #444444;
+}
+
+.bm-hero-wrapper.theme-light .bm-hero-eyebrow-badge {
+  background: rgba(0, 0, 0, 0.1);
+  color: #111111;
+}
+
+.bm-hero-wrapper.theme-light .bm-hero-actions .bm-btn-black {
+  background-color: #111111;
   color: #FFFFFF;
 }
 
-.bm-hero-wrapper.theme-dark .bm-fandeck-code {
-  color: rgba(255, 255, 255, 0.75);
+.bm-hero-wrapper.theme-light .bm-btn-secondary-wa {
+  background: #FFFFFF;
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
-.bm-hero-wrapper.theme-dark .bm-hero-actions .bm-btn-black {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.bm-hero-wrapper.theme-dark .bm-hero-actions .bm-btn-black:hover {
-  background-color: #EAEAEA;
-}
 
 /* ==========================================================================
    2. PROMO BANNER ("Excellence for the Everyday") (Pages 1 bottom & 2)
