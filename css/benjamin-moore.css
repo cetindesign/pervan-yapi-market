@@ -2088,6 +2088,212 @@
   line-height: 1.4;
 }
 
+/* ==========================================================================
+   ANCHOR SCROLL OFFSET
+   ========================================================================== */
+#bmProductCatalog,
+#bmTrends,
+#bmColorAtlas,
+#bmTransformation,
+#bmInsulation,
+.bm-promo-banner,
+.bm-pro-section {
+  scroll-margin-top: 76px;
+}
+
+/* ==========================================================================
+   STICKY ARCHITECTURAL SUB-NAV HUB (Apple & Benjamin Moore Standard)
+   ========================================================================== */
+.bm-subnav-hub {
+  position: sticky;
+  top: 0;
+  z-index: 850;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.bm-subnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  height: 52px;
+}
+
+.bm-subnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bm-subnav-logo-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: var(--bm-black);
+  color: var(--bm-white);
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.bm-subnav-brand-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #18181B;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bm-subnav-brand-title {
+    display: inline-block;
+  }
+}
+
+.bm-subnav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0;
+}
+
+.bm-subnav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.bm-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #52525B;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.bm-subnav-link:hover {
+  color: var(--bm-black);
+  background: #F4F4F5;
+}
+
+.bm-subnav-link.active {
+  background: var(--bm-black);
+  color: var(--bm-white);
+}
+
+.bm-subnav-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  opacity: 0.55;
+}
+
+.bm-subnav-link.active .bm-subnav-num {
+  opacity: 0.9;
+  color: #E4E4E7;
+}
+
+.bm-subnav-cta-wrap {
+  flex-shrink: 0;
+}
+
+.bm-subnav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #18181B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.bm-subnav-cta-btn:hover {
+  background: #27272A;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .bm-subnav-brand {
+    display: none;
+  }
+  .bm-subnav-cta-wrap {
+    display: none;
+  }
+  .bm-subnav-inner {
+    padding: 0 12px;
+  }
+}
+
+/* Modal jump link to 128 Atlas */
+.bm-modal-atlas-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #1D4ED8;
+  font-family: var(--bm-font);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.bm-modal-atlas-link:hover {
+  background: #EFF6FF;
+  text-decoration: underline;
+}
+
+/* Cross-Linking button on 128 Atlas Cards */
+.bm-atlas-link-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px solid #F0F0F0;
+}
+
+.bm-atlas-btn-menu {
+  background: #18181B;
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--bm-font);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.bm-atlas-btn-menu:hover {
+  background: #27272A;
+  transform: translateY(-1px);
+}
+
 
 
 

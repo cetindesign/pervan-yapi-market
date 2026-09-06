@@ -289,6 +289,43 @@
 </section>
 
 <!-- ==========================================================================
+     STICKY ARCHITECTURAL SUB-NAV (Apple & Benjamin Moore Hub Reference)
+     ========================================================================== -->
+<nav class="bm-subnav-hub" id="bmSubnav" aria-label="Sayfa İçi Kılavuz">
+  <div class="bm-container bm-subnav-inner">
+    <div class="bm-subnav-brand">
+      <span class="bm-subnav-logo-badge">RenXMatik™</span>
+      <span class="bm-subnav-brand-title">Mimari Renk Merkezi</span>
+    </div>
+    
+    <div class="bm-subnav-links" id="bmSubnavLinks" role="tablist">
+      <a href="#bmProductCatalog" class="bm-subnav-link active" data-target="bmProductCatalog" role="tab">
+        <span class="bm-subnav-num">01</span> Boya Menüsü
+      </a>
+      <a href="#bmTrends" class="bm-subnav-link" data-target="bmTrends" role="tab">
+        <span class="bm-subnav-num">02</span> 2026 Trendleri
+      </a>
+      <a href="#bmColorAtlas" class="bm-subnav-link" data-target="bmColorAtlas" role="tab">
+        <span class="bm-subnav-num">03</span> 128 Renk Atlası
+      </a>
+      <a href="#bmTransformation" class="bm-subnav-link" data-target="bmTransformation" role="tab">
+        <span class="bm-subnav-num">04</span> Dönüşüm (Reno)
+      </a>
+      <a href="#bmInsulation" class="bm-subnav-link" data-target="bmInsulation" role="tab">
+        <span class="bm-subnav-num">05</span> Capatect Yalıtım
+      </a>
+    </div>
+
+    <div class="bm-subnav-cta-wrap">
+      <a href="https://wa.me/905323844497?text=Merhaba%2C%20Filli%20Boya%20RenXMatik%20hakk%C4%B1nda%20teknik%20dan%C4%B1%C5%9Fmanl%C4%B1k%20almak%20istiyorum." target="_blank" rel="noopener" class="bm-subnav-cta-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416C6.574 4 2.172 8.402 2.172 13.829c0 1.996.584 3.901 1.691 5.534L2 25l5.808-1.809c1.57.887 3.364 1.365 5.223 1.365 5.457 0 9.859-4.402 9.859-9.827C22.89 8.402 18.488 4 12.031 4z"/></svg>
+        <span>Hızlı Reçete</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==========================================================================
      3. ARCHITECTURAL PAINT MENU (Jon Coffee 1:1 Reference Architecture)
      ========================================================================== -->
 <section class="bm-menu-section" id="bmProductCatalog">
@@ -582,7 +619,7 @@
       </div>
 
       <!-- 12: Capatect Dalmaçyalı EPS -->
-      <div class="bm-menu-row" data-category="yalitim" data-product-id="capatect-dalmacyali" role="button" tabindex="0">
+      <div class="bm-menu-row" id="bmInsulation" data-category="yalitim" data-product-id="capatect-dalmacyali" role="button" tabindex="0">
         <div class="bm-menu-main">
           <div class="bm-menu-thumb">
             <img src="assets/filli-official/capatect-dalmacyali.png" alt="Capatect Dalmaçyalı EPS" loading="lazy" decoding="async" />
@@ -710,6 +747,13 @@
         <button type="button" class="bm-modal-swatch" data-color-name="Kehribar 140" data-color-hex="#C98A53">
           <span class="bm-modal-swatch-dot" style="background-color: #C98A53;"></span>
           <span>Kehribar 140</span>
+        </button>
+      </div>
+      <div style="margin-top: 10px; text-align: center;">
+        <button type="button" class="bm-modal-atlas-link" id="modalJumpToAtlasBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Tüm 128 Filli Boya Rengini Atlas'ta İncele
+          <span style="font-size: 11px; margin-left: 2px;">↓</span>
         </button>
       </div>
 
@@ -1026,7 +1070,7 @@
       </div>
 
       <!-- 128-Color Full Atlas Explorer -->
-      <div style="margin-top: 48px; border-top: 1px solid #EAEAEA; padding-top: 36px;">
+      <div id="bmColorAtlas" style="margin-top: 48px; border-top: 1px solid #EAEAEA; padding-top: 36px;">
         <div style="display: flex; flex-direction: column; gap: 8px;">
           <h4 style="font-size: 20px; font-weight: 800; color: #1A1A1A; margin: 0;">Filli Boya 128 Renk Kütüphanesi &amp; RenXMatik™ Arama</h4>
           <p style="font-size: 14px; color: #666666; margin: 0; line-height: 1.5;">
@@ -2341,7 +2385,7 @@
 <!-- ==========================================================================
      6. THE LATEST - EDITORIAL PHOTO + COLOR BAR CARDS (Pages 8 bottom - 21)
      ========================================================================== -->
-<section class="bm-latest-section">
+<section class="bm-latest-section" id="bmTransformation">
   <div class="bm-container">
     
     <h2 class="bm-latest-title">Filli Boya'dan En Yeniler</h2>
@@ -2858,7 +2902,11 @@
 
     // Reset Swatches
     modalSwatches.forEach(function(sw) {
-      sw.classList.remove("active");
+      if (colorName && sw.getAttribute("data-color-name").toLowerCase() === colorName.toLowerCase()) {
+        sw.classList.add("active");
+      } else {
+        sw.classList.remove("active");
+      }
     });
 
     updateWhatsAppUrl();
@@ -2868,6 +2916,8 @@
     backdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   }
+
+  window.openProductModalWithColor = openModal;
 
   function closeModal() {
     backdrop.classList.remove("open");
@@ -2906,6 +2956,22 @@
     });
   });
 
+  // Jump from modal to 128 atlas
+  var jumpToAtlasBtn = document.getElementById("modalJumpToAtlasBtn");
+  if (jumpToAtlasBtn) {
+    jumpToAtlasBtn.addEventListener("click", function() {
+      closeModal();
+      var atlasEl = document.getElementById("bmColorAtlas");
+      if (atlasEl) {
+        atlasEl.scrollIntoView({ behavior: "smooth" });
+        setTimeout(function() {
+          var sInput = document.getElementById("bmColorSearch");
+          if (sInput) sInput.focus();
+        }, 400);
+      }
+    });
+  }
+
   // Close bindings
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (backdrop) {
@@ -2920,8 +2986,86 @@
   });
 })();
 
+/* STICKY ARCHITECTURAL SUB-NAV HUB CONTROLLER (ScrollSpy & Header Sync) */
+(function() {
+  var subnav = document.getElementById("bmSubnav");
+  var header = document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#bmSubnavLinks .bm-subnav-link");
+  if (!subnav || !subnavLinks.length) return;
 
-/* ATLAS FILTERING & SEARCH ENGINE */
+  var targets = [
+    { id: "bmProductCatalog", el: document.getElementById("bmProductCatalog") },
+    { id: "bmTrends", el: document.getElementById("bmTrends") },
+    { id: "bmColorAtlas", el: document.getElementById("bmColorAtlas") },
+    { id: "bmTransformation", el: document.getElementById("bmTransformation") },
+    { id: "bmInsulation", el: document.getElementById("bmInsulation") }
+  ];
+
+  function syncSubnav() {
+    if (!header) return;
+    if (header.classList.contains("header--hidden")) {
+      subnav.style.top = "0px";
+    } else {
+      var h = header.offsetHeight || 60;
+      subnav.style.top = h + "px";
+    }
+  }
+
+  function onScroll() {
+    syncSubnav();
+
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    var currentId = "";
+
+    for (var i = 0; i < targets.length; i++) {
+      var t = targets[i];
+      if (t.el) {
+        var top = t.el.getBoundingClientRect().top + scrollPos - 120;
+        if (scrollPos >= top) {
+          currentId = t.id;
+        }
+      }
+    }
+
+    if (currentId) {
+      subnavLinks.forEach(function(link) {
+        var targetAttr = link.getAttribute("data-target");
+        if (targetAttr === currentId) {
+          if (!link.classList.contains("active")) {
+            link.classList.add("active");
+            var parent = link.parentElement;
+            if (parent && parent.scrollWidth > parent.clientWidth) {
+              var offset = link.offsetLeft - parent.offsetLeft - 16;
+              parent.scrollTo({ left: offset, behavior: "smooth" });
+            }
+          }
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  syncSubnav();
+
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      var targetId = link.getAttribute("data-target");
+      var targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        if (targetId === "bmInsulation") {
+          var capatectPill = document.querySelector('#paintMenuPills [data-filter="yalitim"]');
+          if (capatectPill) capatectPill.click();
+        }
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+})();
+
+/* ATLAS FILTERING, SEARCH & CROSS-SYSTEM FORMULATION ENGINE */
 (function() {
   var searchInput = document.getElementById('bmColorSearch');
   var pillBtns = document.querySelectorAll('#bmFilterPills .bm-pill-btn');
@@ -2961,6 +3105,28 @@
       currentFilter = btn.getAttribute('data-filter');
       filterColors();
     });
+  });
+
+  // Cross-System Linkage: Swatch click in Atlas selects color in Paint Menu
+  items.forEach(function(item) {
+    var swatch = item.querySelector('.bm-atlas-swatch');
+    var nameEl = item.querySelector('.bm-atlas-name');
+    var code = item.getAttribute('data-code');
+    if (swatch && nameEl) {
+      swatch.style.cursor = 'pointer';
+      swatch.title = 'Boya Menüsünde Reçetelendir (' + nameEl.textContent.trim() + ')';
+      swatch.addEventListener('click', function(e) {
+        e.preventDefault();
+        var cName = nameEl.textContent.trim();
+        var menuEl = document.getElementById('bmProductCatalog');
+        if (menuEl) menuEl.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+          if (typeof window.openProductModalWithColor === 'function') {
+            window.openProductModalWithColor('momento-silan', cName, code);
+          }
+        }, 350);
+      });
+    }
   });
 })();
 
