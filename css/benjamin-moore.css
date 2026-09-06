@@ -146,26 +146,91 @@
    1. APPLE PRO FULL-BLEED ARCHITECTURAL ROOM & COLOR STAGE
    ========================================================================== */
 
+/* Seamless Transparent Header Integration */
+.bm-transparent-header-page {
+  padding-top: 0 !important;
+}
+
+@media (min-width: 1260px) {
+  .bm-transparent-header-page {
+    padding-top: 0 !important;
+  }
+}
+
+.bm-transparent-header-page header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.bm-transparent-header-page .navbar {
+  background: transparent;
+}
+
+.bm-transparent-header-page .navbar-logo {
+  color: #FFFFFF !important;
+}
+
+.bm-transparent-header-page .navbar-title {
+  color: #FFFFFF;
+}
+
+.bm-transparent-header-page .menu-item .arrow {
+  border-color: #FFFFFF;
+}
+
+.bm-transparent-header-page #mobile-menu .bar {
+  background-color: #FFFFFF;
+}
+
+.bm-transparent-header-page .navbar-sticky .navbar-item {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Header Solid State When Scrolled Past Hero */
+.bm-transparent-header-page header.header--scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.bm-transparent-header-page header.header--scrolled .navbar-logo {
+  color: #000000 !important;
+}
+
+.bm-transparent-header-page header.header--scrolled .navbar-title {
+  color: #000000;
+}
+
+.bm-transparent-header-page header.header--scrolled .menu-item .arrow {
+  border-color: #000000;
+}
+
+.bm-transparent-header-page header.header--scrolled #mobile-menu .bar {
+  background-color: #000000;
+}
+
+.bm-transparent-header-page header.header--scrolled .navbar-sticky .navbar-item {
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 .bm-stage-hero {
   --bm-chroma-hex: #405E66;
   --bm-chroma-rgb: 64, 94, 102;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 64px);
-  min-height: calc(100svh - 64px);
-  max-height: 940px;
+  height: 100vh;
+  height: 100svh;
+  min-height: 640px;
+  max-height: 980px;
   background-color: #121316;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
-
-@media (min-width: 992px) {
-  .bm-stage-hero {
-    min-height: 82vh;
-    max-height: 920px;
-  }
 }
 
 /* Chromatic Ambient Light Bleed (Dynamic Atmospheric Bloom) */
@@ -246,13 +311,13 @@
 .bm-stage-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.58) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.58) 100%);
   pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .bm-stage-overlay {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.16) 32%, rgba(0, 0, 0, 0) 65%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.16) 34%, rgba(0, 0, 0, 0) 65%);
   }
 }
 
@@ -261,18 +326,18 @@
   z-index: 5;
   width: 100%;
   padding-bottom: 96px;
-  padding-top: 40px;
+  padding-top: 100px;
 }
 
 @media (min-width: 768px) {
   .bm-stage-content-wrap {
     padding-bottom: 90px;
-    padding-top: 60px;
+    padding-top: 110px;
   }
 }
 
 .bm-stage-info {
-  max-width: 480px;
+  max-width: 460px;
   color: #FFFFFF;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateY(0);
@@ -281,7 +346,7 @@
 
 .bm-stage-slide:not(.active) .bm-stage-info {
   opacity: 0.35;
-  transform: translateY(12px);
+  transform: translateY(10px);
 }
 
 .bm-stage-eyebrow {
@@ -293,7 +358,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.88);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -306,49 +371,32 @@
   flex-shrink: 0;
 }
 
+/* Compact Architectural Title */
 .bm-stage-title {
-  font-size: clamp(42px, 6.5vw, 76px);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.035em;
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
   color: #FFFFFF;
-  margin: 0 0 16px;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  margin: 0 0 10px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* Architectural Specimen Grid (Technical Identity HUD) */
+/* Clean Single-Line Architectural Spec */
 .bm-stage-spec {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 22px;
-  padding: 10px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  max-width: 380px;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
 }
 
-.bm-spec-cell {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.bm-spec-k {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
-}
-
-.bm-spec-v {
-  font-size: 13px;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+.bm-spec-sep {
+  opacity: 0.45;
+  font-size: 8px;
 }
 
 .bm-stage-pill-cta {
@@ -363,7 +411,7 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  padding: 10px 22px;
+  padding: 9px 20px;
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -400,10 +448,10 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 25;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(18, 18, 20, 0.55);
+    background: rgba(18, 18, 20, 0.45);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -414,7 +462,7 @@
   .bm-stage-arrow:hover {
     background: rgba(255, 255, 255, 0.95);
     color: #111111;
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.08);
   }
   .bm-stage-arrow.prev {
     left: 24px;
@@ -424,136 +472,99 @@
   }
 }
 
-/* Architectural Tactile Color Ruler HUD */
-.bm-stage-hud {
+/* Floating Chromatic Rail (Pure Borderless Palette & Kinetic Progress) */
+.bm-stage-rail {
   position: absolute;
-  bottom: 24px;
+  bottom: 26px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 25;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  background: rgba(18, 19, 22, 0.82);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 6px 12px;
-  border-radius: 999px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(var(--bm-chroma-rgb), 0.3), 0 0 30px rgba(var(--bm-chroma-rgb), 0.22);
-  max-width: calc(100vw - 28px);
-  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+  gap: 10px;
+  pointer-events: auto;
+  max-width: calc(100vw - 32px);
 }
 
-.bm-ruler-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 10px 0 4px;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.bm-ruler-tag {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.6);
-  white-space: nowrap;
-}
-
-.bm-ruler-counter {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 11px;
-  font-weight: 700;
-  color: #FFFFFF;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-
-.bm-ruler-track {
+.bm-rail-swatches {
   display: flex;
   align-items: center;
   gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 2px 0;
+  padding: 4px;
 }
 
-.bm-ruler-track::-webkit-scrollbar {
+.bm-rail-swatches::-webkit-scrollbar {
   display: none;
 }
 
-.bm-ruler-item {
-  position: relative;
+.bm-rail-disc {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid transparent;
-  padding: 5px 11px 5px 7px;
+  gap: 7px;
+  background: rgba(18, 19, 22, 0.48);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 5px 10px 5px 6px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
   color: #FFFFFF;
+  white-space: nowrap;
 }
 
-.bm-ruler-item:hover {
-  background: rgba(255, 255, 255, 0.16);
+.bm-rail-disc:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
 }
 
-.bm-ruler-item.active {
+.bm-rail-disc.active {
   background: #FFFFFF;
   color: #111111;
   border-color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
-.bm-ruler-tick {
-  width: 2px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 1px;
-  transition: background 0.2s ease, height 0.2s ease;
-}
-
-.bm-ruler-item.active .bm-ruler-tick {
-  background: #111111;
-  height: 12px;
-}
-
-.bm-ruler-color {
+.bm-disc-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
 }
 
-.bm-ruler-meta {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.bm-ruler-name {
+.bm-disc-name {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-.bm-ruler-hex {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10px;
-  font-weight: 600;
-  opacity: 0.65;
+/* Hair-thin 1:1 Kinetic Scrubber Rail */
+.bm-rail-progress-track {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
 }
 
-.bm-ruler-item.active .bm-ruler-hex {
-  opacity: 0.75;
+.bm-rail-progress-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transition: transform 0.08s ease-out;
+  will-change: transform;
 }
 
 /* Stage Bottom Scroll Prompt */
