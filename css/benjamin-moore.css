@@ -2961,3 +2961,161 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #20BA5A;
   transform: translateY(-2px);
 }
+
+/* ==========================================================================
+   CROSS-CATALOG INSTANT SEARCH HUB (259 Ürün Canlı Arama)
+   ========================================================================== */
+.bm-search-hub {
+  padding: 16px 0 12px;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+.bm-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  background: #F4F4F5;
+  border: 1.5px solid rgba(24, 24, 27, 0.12);
+  border-radius: 9999px;
+  padding: 0 16px;
+  min-height: 48px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.bm-search-box:focus-within {
+  background: #FFFFFF;
+  border-color: #18181B;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.bm-search-icon {
+  color: #71717A;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.bm-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--bm-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: #18181B;
+  outline: none;
+  height: 48px;
+  padding: 0;
+  -webkit-appearance: none;
+  min-width: 0;
+}
+
+.bm-search-input::placeholder {
+  color: #A1A1AA;
+  font-weight: 500;
+}
+
+.bm-search-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #71717A;
+  background: rgba(24, 24, 27, 0.06);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 8px;
+  user-select: none;
+}
+
+.bm-search-kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717A;
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.15);
+  border-radius: 6px;
+  padding: 3px 7px;
+  margin-left: 8px;
+  display: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bm-search-kbd {
+    display: inline-block;
+  }
+}
+
+.bm-search-clear-btn {
+  appearance: none;
+  border: none;
+  background: rgba(24, 24, 27, 0.1);
+  color: #18181B;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 8px;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  transition: all 0.15s ease;
+}
+
+.bm-search-clear-btn:hover {
+  background: #18181B;
+  color: #FFFFFF;
+}
+
+.bm-search-results-section {
+  padding: 32px 0 64px;
+}
+
+.bm-search-empty-box {
+  text-align: center;
+  padding: 48px 24px;
+  background: #FAFAFA;
+  border-radius: 20px;
+  border: 1.5px dashed rgba(24, 24, 27, 0.15);
+  margin-top: 24px;
+}
+
+.bm-search-empty-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #18181B;
+  margin-bottom: 8px;
+}
+
+.bm-search-empty-desc {
+  font-size: 13px;
+  color: #71717A;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+.bm-menu-domain-chip {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(24, 24, 27, 0.07);
+  color: #27272A;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
