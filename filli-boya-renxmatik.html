@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=9.5.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=9.6.0" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -218,6 +218,27 @@ html body.bm-transparent-header-page .bm-page-main {
 .bm-stage-pill-cta:hover svg {
   transform: translateX(4px) !important;
 }
+.bm-stage-progress-line {
+  width: 140px !important;
+  height: 2px !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px !important;
+  margin-top: 14px !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+.bm-stage-progress-bar {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 20px !important;
+  background: #FFFFFF !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.2s ease !important;
+  pointer-events: none !important;
+}
 </style>
 
 
@@ -373,20 +394,43 @@ html body.bm-transparent-header-page .bm-page-main {
   
   <!-- Slide Stage Track -->
   <div class="bm-stage-track" id="bmStageTrack">
-    <!-- Slide 1: Irmak 65 (2026 Yılın Rengi - Gerçeğe Bağlan) -->
-    <div class="bm-stage-slide active" data-index="0" data-color="Irmak 65" data-code="#405E66">
-      <img src="assets/renkler-2026/irmak65-duvar-hd.jpg" alt="Filli Boya 2026 Yılın Rengi Irmak 65 Salon Uygulaması" class="bm-stage-img" fetchpriority="high" decoding="async" />
+    <!-- Slide 0: Filli Boya 2026 Renkleri - Gerçeğe Bağlan (Açılış Karşılama) -->
+    <div class="bm-stage-slide active" data-index="0" data-color="2026 Renkleri" data-code="#405E66">
+      <img src="assets/renkler-2026/gercege-baglan-2026-hd.jpg" alt="Filli Boya 2026 Renkleri - Gerçeğe Bağlan Koleksiyonu" class="bm-stage-img" fetchpriority="high" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>01 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Yılın Rengi &bull; Gerçeğe Bağlan</span>
+          <div class="bm-stage-title-wrap">
+            <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background:linear-gradient(135deg, #405E66 0%, #BCD7EA 25%, #A9A49B 50%, #ECE5D4 75%, #834456 100%);border-radius:6px;border:1.5px solid rgba(255,255,255,0.7);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
+            <h1 class="bm-stage-title">2026 Renkleri</h1>
           </div>
+          <div class="bm-stage-spec">
+            <span>Gerçeğe Bağlan</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>6 Yeni Mimari Renk</span>
+            <span class="bm-spec-sep">&bull;</span>
+            <span>Momento Silan</span>
+          </div>
+          <a href="javascript:void(0)" class="bm-stage-text-link" id="bmStageExploreBtn">
+            <span>Koleksiyonu Keşfet</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 1: Irmak 65 (2026 Yılın Rengi) -->
+    <div class="bm-stage-slide" data-index="1" data-color="Irmak 65" data-code="#405E66">
+      <img src="assets/renkler-2026/irmak65-duvar-hd.jpg" alt="Filli Boya 2026 Yılın Rengi Irmak 65 Salon Uygulaması" class="bm-stage-img" decoding="async" />
+      <div class="bm-stage-overlay"></div>
+      <div class="bm-container bm-stage-content-wrap">
+        <div class="bm-stage-info">
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#405E66;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
-            <h1 class="bm-stage-title">Irmak 65</h1>
+            <h2 class="bm-stage-title">Irmak 65</h2>
           </div>
           <div class="bm-stage-spec">
             <span>İpeksi Mat</span>
@@ -399,21 +443,19 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 2: Rüzgar 15 (2026 Koleksiyonu - Dinlendirici Mavi) -->
-    <div class="bm-stage-slide" data-index="1" data-color="Rüzgar 15" data-code="#BCD7EA">
+    <!-- Slide 2: Rüzgar 15 (Dinlendirici Mavi) -->
+    <div class="bm-stage-slide" data-index="2" data-color="Rüzgar 15" data-code="#BCD7EA">
       <img src="assets/renkler-2026/ruzgar15-duvar-hd.jpg" alt="Filli Boya 2026 Rüzgar 15 Yatak Odası Uygulaması" class="bm-stage-img" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>02 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Renk Paleti &bull; Dinlendirici Mavi</span>
-          </div>
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#BCD7EA;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="bm-stage-title">Rüzgar 15</h2>
@@ -429,21 +471,19 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 3: Rezene 325 (2026 Koleksiyonu - Dingin Nötr Gri) -->
-    <div class="bm-stage-slide" data-index="2" data-color="Rezene 325" data-code="#A9A49B">
+    <!-- Slide 3: Rezene 325 (Dingin Nötr Gri) -->
+    <div class="bm-stage-slide" data-index="3" data-color="Rezene 325" data-code="#A9A49B">
       <img src="assets/renkler-2026/rezene325-duvar-hd.jpg" alt="Filli Boya 2026 Rezene 325 Galeri ve Yaşam Alanı Uygulaması" class="bm-stage-img" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>03 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Renk Paleti &bull; Dingin Nötr Gri</span>
-          </div>
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#A9A49B;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="bm-stage-title">Rezene 325</h2>
@@ -459,21 +499,19 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 4: Rezene 190 (2026 Koleksiyonu - Sıcak Bej Denge) -->
-    <div class="bm-stage-slide" data-index="3" data-color="Rezene 190" data-code="#ECE5D4">
+    <!-- Slide 4: Rezene 190 (Sıcak Bej Denge) -->
+    <div class="bm-stage-slide" data-index="4" data-color="Rezene 190" data-code="#ECE5D4">
       <img src="assets/renkler-2026/rezene190-duvar-hd.jpg" alt="Filli Boya 2026 Rezene 190 Sıcak Bej Uygulaması" class="bm-stage-img" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>04 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Renk Paleti &bull; Sıcak Bej Denge</span>
-          </div>
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#ECE5D4;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="bm-stage-title">Rezene 190</h2>
@@ -489,21 +527,19 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 5: Kum Beyazı (2026 Koleksiyonu - Ferah Doğal Beyaz) -->
-    <div class="bm-stage-slide" data-index="4" data-color="Kum Beyazı" data-code="#EEEDEB">
+    <!-- Slide 5: Kum Beyazı (Ferah Doğal Beyaz) -->
+    <div class="bm-stage-slide" data-index="5" data-color="Kum Beyazı" data-code="#EEEDEB">
       <img src="assets/renkler-2026/kumbeyazi-duvar-hd.jpg" alt="Filli Boya 2026 Kum Beyazı Doğal Işık Uygulaması" class="bm-stage-img" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>05 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Renk Paleti &bull; Ferah Doğal Beyaz</span>
-          </div>
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#EEEDEB;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="bm-stage-title">Kum Beyazı</h2>
@@ -519,21 +555,19 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 6: Günbatımı (2026 Koleksiyonu - Sıcak Akşam Tonu) -->
-    <div class="bm-stage-slide" data-index="5" data-color="Günbatımı" data-code="#834456">
+    <!-- Slide 6: Günbatımı (Sıcak Akşam Tonu) -->
+    <div class="bm-stage-slide" data-index="6" data-color="Günbatımı" data-code="#834456">
       <img src="assets/renkler-2026/gunbatimi-duvar-hd.jpg" alt="Filli Boya 2026 Günbatımı Sıcak Karakter Uygulaması" class="bm-stage-img" decoding="async" />
       <div class="bm-stage-overlay"></div>
       <div class="bm-container bm-stage-content-wrap">
         <div class="bm-stage-info">
-          <div class="bm-stage-eyebrow">
-            <span>06 / 06</span>
-            <span class="bm-spec-sep">&bull;</span>
-            <span>2026 Renk Paleti &bull; Sıcak Akşam Tonu</span>
-          </div>
           <div class="bm-stage-title-wrap">
             <span class="bm-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#834456;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="bm-stage-title">Günbatımı</h2>
@@ -549,6 +583,9 @@ html body.bm-transparent-header-page .bm-page-main {
             <span>100 ml Numune İste</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <div class="bm-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="bm-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1607,6 +1644,14 @@ html body.bm-transparent-header-page .bm-page-main {
     if (themeColorTag) {
       themeColorTag.setAttribute("content", activeHex);
     }
+
+    // Sync thin slider progress lines
+    var barWidth = 140 / totalSlides;
+    var translateX = index * barWidth;
+    stage.querySelectorAll('.bm-stage-progress-bar').forEach(function(bar) {
+      bar.style.width = barWidth + 'px';
+      bar.style.transform = 'translateX(' + translateX + 'px)';
+    });
   }
 
   function goToSlide(index, smooth) {
@@ -1742,6 +1787,26 @@ html body.bm-transparent-header-page .bm-page-main {
 
   stage.addEventListener("mouseenter", stopAutoPlay);
   stage.addEventListener("mouseleave", startAutoPlay);
+
+  // Explore button on opening slide
+  var exploreBtn = document.getElementById("bmStageExploreBtn");
+  if (exploreBtn) {
+    exploreBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      goToSlide(1, true);
+    });
+  }
+
+  // Interactive progress line clicking
+  stage.querySelectorAll('.bm-stage-progress-line').forEach(function(line) {
+    line.addEventListener('click', function(e) {
+      var rect = line.getBoundingClientRect();
+      var clickX = e.clientX - rect.left;
+      var fraction = Math.max(0, Math.min(1, clickX / rect.width));
+      var targetIdx = Math.floor(fraction * totalSlides);
+      goToSlide(targetIdx, true);
+    });
+  });
 
   goToSlide(0, false);
   startAutoPlay();

@@ -508,6 +508,30 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   transform: translateX(4px);
 }
 
+/* Thin Architectural Slider Line */
+.bm-stage-progress-line {
+  width: 140px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  margin-top: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.bm-stage-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20px;
+  background: #FFFFFF;
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.2s ease;
+  pointer-events: none;
+}
+
 /* Stage Large Side Arrows */
 .bm-stage-arrow {
   display: none;
