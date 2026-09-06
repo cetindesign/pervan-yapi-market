@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.3" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.4" />
 <style id="bmHeaderTransparentCritical">
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
@@ -18403,6 +18403,9 @@ html body.bm-transparent-header-page .bm-page-main {
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+      if (typeof btn.scrollIntoView === "function") {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
 
       var filter = btn.getAttribute("data-filter");
 
@@ -18629,6 +18632,9 @@ html body.bm-transparent-header-page .bm-page-main {
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+      if (typeof btn.scrollIntoView === "function") {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
       var filter = btn.getAttribute("data-filter");
       suppliesRows.forEach(function(row) {
         var cat = row.getAttribute("data-category");
@@ -18666,6 +18672,9 @@ html body.bm-transparent-header-page .bm-page-main {
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+      if (typeof btn.scrollIntoView === "function") {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
       var filter = btn.getAttribute("data-filter");
       proRows.forEach(function(row) {
         var cat = row.getAttribute("data-category");
@@ -18703,6 +18712,9 @@ html body.bm-transparent-header-page .bm-page-main {
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+      if (typeof btn.scrollIntoView === "function") {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
       var filter = btn.getAttribute("data-filter");
       transRows.forEach(function(row) {
         var cat = row.getAttribute("data-category");
@@ -18740,6 +18752,9 @@ html body.bm-transparent-header-page .bm-page-main {
       });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
+      if (typeof btn.scrollIntoView === "function") {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
       var filter = btn.getAttribute("data-filter");
       insulRows.forEach(function(row) {
         var cat = row.getAttribute("data-category");
@@ -18794,6 +18809,9 @@ html body.bm-transparent-header-page .bm-page-main {
       var isTarget = (link.getAttribute("data-target") === targetId);
       link.classList.toggle("active", isTarget);
       link.setAttribute("aria-selected", isTarget ? "true" : "false");
+      if (isTarget && typeof link.scrollIntoView === "function") {
+        link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
     });
 
     // 2. Switch panels instantly in place (ZERO SCROLL)

@@ -1740,6 +1740,9 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 8px 18px;
+  min-height: 44px;
+  box-sizing: border-box;
+  touch-action: manipulation;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2085,8 +2088,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-modal-close-btn {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 1px solid rgba(24, 24, 27, 0.25);
@@ -2098,6 +2103,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   flex-shrink: 0;
   transition: all 0.18s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  touch-action: manipulation;
 }
 
 .bm-modal-close-btn:hover {
@@ -2108,9 +2114,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 /* Modal Scrollable Content */
 .bm-modal-scroll {
-  padding: 20px 24px 28px;
+  padding: 20px 24px max(28px, env(safe-area-inset-bottom, 24px));
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -2202,7 +2209,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #FFFFFF;
   border: 1px solid rgba(24, 24, 27, 0.2);
   border-radius: 9999px;
-  padding: 7px 15px;
+  padding: 8px 16px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  touch-action: manipulation;
   font-family: var(--bm-font);
   font-size: 12.5px;
   font-weight: 700;
@@ -2229,7 +2243,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #FFFFFF;
   border: 1px solid rgba(24, 24, 27, 0.2);
   border-radius: 9999px;
-  padding: 6px 13px;
+  padding: 8px 14px;
+  min-height: 44px;
+  box-sizing: border-box;
+  touch-action: manipulation;
   font-family: var(--bm-font);
   font-size: 12px;
   font-weight: 700;
@@ -2355,8 +2372,8 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 11px 18px;
-  min-height: 42px;
+  padding: 12px 18px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2365,6 +2382,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
   box-sizing: border-box;
+  touch-action: manipulation;
 }
 
 .bm-btn-chamberlain-secondary:hover {
@@ -2569,6 +2587,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   }
   .bm-subnav-inner {
     padding: 0 12px;
+  }
+  .bm-subnav-links {
+    gap: 16px;
+    padding: 0 4px;
+    scroll-padding: 0 16px;
+  }
+  .bm-subnav-link {
+    touch-action: manipulation;
   }
 }
 
