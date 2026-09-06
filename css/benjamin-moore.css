@@ -415,14 +415,30 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   flex-shrink: 0;
 }
 
-/* Compact Architectural Title */
+/* Architectural Swatch Block Lockup */
+.bm-stage-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.bm-stage-color-tile {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
 .bm-stage-title {
-  font-size: clamp(26px, 3.5vw, 40px);
+  font-size: clamp(26px, 3.5vw, 38px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1;
   letter-spacing: -0.025em;
   color: #FFFFFF;
-  margin: 0 0 10px;
+  margin: 0;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 
@@ -514,101 +530,6 @@ body.bm-transparent-header-page header.header--solid .navbar-sticky a.navbar-ite
   .bm-stage-arrow.next {
     right: 24px;
   }
-}
-
-/* Floating Chromatic Rail (Pure Borderless Palette & Kinetic Progress) */
-.bm-stage-rail {
-  position: absolute;
-  bottom: 26px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  pointer-events: auto;
-  max-width: calc(100vw - 32px);
-}
-
-.bm-rail-swatches {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding: 4px;
-}
-
-.bm-rail-swatches::-webkit-scrollbar {
-  display: none;
-}
-
-.bm-rail-disc {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(18, 19, 22, 0.48);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 5px 10px 5px 6px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  color: #FFFFFF;
-  white-space: nowrap;
-}
-
-.bm-rail-disc:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
-}
-
-.bm-rail-disc.active {
-  background: #FFFFFF;
-  color: #111111;
-  border-color: #FFFFFF;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px);
-}
-
-.bm-disc-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
-}
-
-.bm-disc-name {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-/* Hair-thin 1:1 Kinetic Scrubber Rail */
-.bm-rail-progress-track {
-  position: relative;
-  width: 200px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.bm-rail-progress-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 100%;
-  background: #FFFFFF;
-  border-radius: 999px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  transition: transform 0.08s ease-out;
-  will-change: transform;
 }
 
 /* Stage Bottom Scroll Prompt */
