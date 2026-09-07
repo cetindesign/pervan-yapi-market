@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.8" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.9" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7948,7 +7948,7 @@ html body.bm-transparent-header-page .bm-page-main {
         </div>
       </div>
 
-      <!-- 3. Architectural Spec Ledger (Zero Cards, Pure Typographic Ledger) -->
+      <!-- 3. Architectural Spec Ledger (Zero Cards, 3-Row Pure Typographic Ledger) -->
       <div class="bm-atelier-ledger">
         <div class="bm-ledger-row bm-ledger-highlight" id="modalAreaRow">
           <span class="bm-ledger-k">BOYANABİLİR ALAN</span>
@@ -7962,22 +7962,16 @@ html body.bm-transparent-header-page .bm-page-main {
           <span class="bm-ledger-k">KURUMA</span>
           <span class="bm-ledger-v font-mono-data" id="modalSpecDrying">2 – 4 Saat</span>
         </div>
-        <div class="bm-ledger-row">
-          <span class="bm-ledger-k">UYGULAMA</span>
-          <span class="bm-ledger-v" id="modalSpecSurface">İç cephe sıva, alçı, beton</span>
-        </div>
       </div>
 
-      <!-- 4. RenXMatik™ On-Demand Tinting Service Guarantee -->
+      <!-- 4. RenXMatik™ On-Demand Tinting Service Guarantee (Borderless Trust Row) -->
       <div class="bm-atelier-service-note" id="modalServiceNote">
-        <div class="bm-service-note-header">
-          <span class="bm-service-note-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-          </span>
-          <span class="bm-service-note-title" id="modalServiceTitle">RenXMatik™ Sınırsız Renk Hazırlığı</span>
-        </div>
+        <span class="bm-service-note-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        </span>
+        <span class="bm-service-note-title" id="modalServiceTitle" style="display:none;"></span>
         <p class="bm-service-note-desc" id="modalServiceDesc">
-          Bu ürün, Balçova Showroom ve Urla Ana Depomuzdaki RenXMatik™ bilgisayarlı renk merkezimizde dilediğiniz Filli Boya, RAL veya NCS renk koduna göre mikron hassasiyetle anında hazırlanır.
+          <strong>RenXMatik™ Güvencesi:</strong> Balçova Showroom ve Urla Ana Depomuzda dilediğiniz Filli Boya, RAL veya NCS renk koduna göre anında hazırlanır.
         </p>
       </div>
     </div>
@@ -18676,9 +18670,9 @@ html body.bm-transparent-header-page .bm-page-main {
 
     // Fill Specs
     if (modalCoverage) modalCoverage.textContent = p.coverage;
-    modalSheen.textContent = p.sheen;
-    modalDrying.textContent = p.drying;
-    modalSurface.textContent = p.surface;
+    if (modalSheen) modalSheen.textContent = p.sheen;
+    if (modalDrying) modalDrying.textContent = p.drying;
+    if (modalSurface) modalSurface.textContent = p.surface;
 
     // Build Size Options with Crisp Single-Token Pills
     modalSizesWrap.innerHTML = "";
@@ -18709,10 +18703,10 @@ html body.bm-transparent-header-page .bm-page-main {
     if (modalServiceNote) {
       if (isPaint) {
         if (modalServiceTitle) modalServiceTitle.textContent = "RenXMatik™ Sınırsız Renk Hazırlığı";
-        if (modalServiceDesc) modalServiceDesc.textContent = "Bu ürün, Balçova Showroom ve Urla Ana Depomuzdaki RenXMatik™ bilgisayarlı renk merkezimizde dilediğiniz Filli Boya, RAL veya NCS renk koduna göre mikron hassasiyetle anında hazırlanır.";
+        if (modalServiceDesc) modalServiceDesc.innerHTML = "<strong>RenXMatik™ Güvencesi:</strong> Balçova Showroom ve Urla Ana Depomuzda dilediğiniz Filli Boya, RAL veya NCS renk koduna göre anında hazırlanır.";
       } else {
         if (modalServiceTitle) modalServiceTitle.textContent = "Orijinal Üretim & Şantiye Sevk";
-        if (modalServiceDesc) modalServiceDesc.textContent = "Balçova Showroom ve Urla Ana Depo stoklarımızdan doğrudan şantiye adresinize güvenli lojistikle sevk edilir.";
+        if (modalServiceDesc) modalServiceDesc.innerHTML = "<strong>Şantiye Lojistiği:</strong> Balçova ve Urla depolarımızdan doğrudan şantiye adresinize aynı gün sevk edilir.";
       }
     }
 
