@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.9" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.0" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7934,33 +7934,45 @@ html body.bm-transparent-header-page .bm-page-main {
         <div class="bm-specimen-can-stage">
           <div class="bm-specimen-glow" id="modalChromaGlow"></div>
           <img id="modalProductImg" src="assets/filli-official/momento-silan.png" alt="Ürün Görseli" />
+          <div class="bm-can-shadow" id="modalCanShadow"></div>
         </div>
 
         <p class="bm-specimen-desc" id="modalProductSub">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®</p>
         <span id="modalProductTag" style="display:none;"></span>
       </div>
 
-      <!-- 2. Packaging / Size Selector -->
+      <!-- 2. Packaging / Size Segmented Track -->
       <div class="bm-modal-select-group">
-        <div class="bm-modal-select-title">Ambalaj / Hacim Seçimi</div>
-        <div class="bm-modal-pills-row" id="modalSizesContainer">
+        <div class="bm-modal-select-header">
+          <span class="bm-modal-select-title">Ambalaj Hacmi</span>
+          <span class="bm-modal-select-hint font-mono-data" id="modalSizeHint">15 L Büyük Boy</span>
+        </div>
+        <div class="bm-segmented-track" id="modalSizesContainer" role="radiogroup" aria-label="Ambalaj Hacmi">
           <!-- Dynamically populated via JS -->
         </div>
       </div>
 
-      <!-- 3. Architectural Spec Ledger (Zero Cards, 3-Row Pure Typographic Ledger) -->
-      <div class="bm-atelier-ledger">
-        <div class="bm-ledger-row bm-ledger-highlight" id="modalAreaRow">
-          <span class="bm-ledger-k">BOYANABİLİR ALAN</span>
-          <span class="bm-ledger-v font-mono-data" id="modalSpecArea">—</span>
+      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
+      <div class="bm-spec-gauges" id="modalSpecGauges">
+        <!-- Left Gauge: Coverage Area -->
+        <div class="bm-gauge-card bm-gauge-primary" id="modalAreaRow">
+          <div class="bm-gauge-eyebrow">BOYANABİLİR ALAN</div>
+          <div class="bm-gauge-metric">
+            <span class="bm-gauge-num font-mono-data" id="modalGaugeNum">~113</span>
+            <span class="bm-gauge-unit">m²</span>
+          </div>
+          <div class="bm-gauge-caption" id="modalGaugeSub">~98 – 128 m² Çift Kat Kaplama</div>
+          <span id="modalSpecArea" style="display:none;"></span>
         </div>
-        <div class="bm-ledger-row">
-          <span class="bm-ledger-k">DOKU &amp; BİTİŞ</span>
-          <span class="bm-ledger-v" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</span>
-        </div>
-        <div class="bm-ledger-row">
-          <span class="bm-ledger-k">KURUMA</span>
-          <span class="bm-ledger-v font-mono-data" id="modalSpecDrying">2 – 4 Saat</span>
+
+        <!-- Right Gauge: Finish & Drying -->
+        <div class="bm-gauge-card">
+          <div class="bm-gauge-eyebrow">BİTİŞ &amp; KURUMA</div>
+          <div class="bm-gauge-metric-text" id="modalGaugeSheen">İpeksi Mat®</div>
+          <div class="bm-gauge-caption bm-gauge-drying" id="modalGaugeDrying">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="modalGaugeDryingText">2 – 4 Saat Kuruma</span>
+          </div>
         </div>
       </div>
 
@@ -18540,28 +18552,43 @@ html body.bm-transparent-header-page .bm-page-main {
   }
 
   function updateAreaCoverage(size, product) {
-    if (!modalAreaRow || !modalSpecArea || !product) return;
+    var gaugeNum = document.getElementById("modalGaugeNum");
+    var gaugeSub = document.getElementById("modalGaugeSub");
+    var sizeHint = document.getElementById("modalSizeHint");
+    if (!product) return;
     var est = calculateCoverageEstimate(size, product.coverage);
     if (est) {
-      modalSpecArea.textContent = est.rangeLabel;
-      modalAreaRow.style.display = "flex";
+      if (gaugeNum) gaugeNum.textContent = "~" + est.avgArea;
+      if (gaugeSub) gaugeSub.textContent = est.rangeLabel || ("~" + est.avgArea + " m² Çift Kat");
+      if (modalSpecArea) modalSpecArea.textContent = est.rangeLabel;
+      if (modalAreaRow) modalAreaRow.style.display = "flex";
     } else {
-      modalAreaRow.style.display = "none";
+      if (gaugeNum) gaugeNum.textContent = "—";
+      if (gaugeSub) gaugeSub.textContent = product.coverage || "Standart Kaplama";
+      if (modalSpecArea) modalSpecArea.textContent = product.coverage || "—";
+    }
+    if (sizeHint) {
+      var s = (size || "").toLowerCase();
+      if (s.indexOf("15") !== -1 || s.indexOf("20") !== -1 || s.indexOf("25") !== -1) sizeHint.textContent = size + " Büyük Boy";
+      else if (s.indexOf("7.5") !== -1 || s.indexOf("10") !== -1 || s.indexOf("5") !== -1) sizeHint.textContent = size + " Orta Boy";
+      else if (s.indexOf("2.5") !== -1 || s.indexOf("1") !== -1 || s.indexOf("0.75") !== -1) sizeHint.textContent = size + " Küçük Boy";
+      else sizeHint.textContent = size ? size + " Ambalaj" : "";
     }
   }
 
   function updateCanScale(size) {
-    if (!modalImg) return;
+    var modalShadow = document.getElementById("modalCanShadow");
     var s = (size || "").toLowerCase();
+    var scale = 1;
     if (s.indexOf("15") !== -1 || s.indexOf("20") !== -1 || s.indexOf("25") !== -1) {
-      modalImg.style.transform = "scale(1)";
+      scale = 1;
     } else if (s.indexOf("7.5") !== -1 || s.indexOf("10") !== -1 || s.indexOf("5") !== -1) {
-      modalImg.style.transform = "scale(0.93)";
+      scale = 0.93;
     } else if (s.indexOf("2.5") !== -1 || s.indexOf("1") !== -1 || s.indexOf("0.75") !== -1) {
-      modalImg.style.transform = "scale(0.86)";
-    } else {
-      modalImg.style.transform = "scale(1)";
+      scale = 0.86;
     }
+    if (modalImg) modalImg.style.transform = "scale(" + scale + ")";
+    if (modalShadow) modalShadow.style.transform = "translateX(-50%) scale(" + scale + ")";
   }
 
   function updateSelectionSummary() {
@@ -18668,26 +18695,34 @@ html body.bm-transparent-header-page .bm-page-main {
       modalChromaGlow.style.background = "radial-gradient(circle, " + glowColor + " 0%, rgba(64, 94, 102, 0) 70%)";
     }
 
-    // Fill Specs
+    // Fill Specs & Gauges
+    var gaugeSheen = document.getElementById("modalGaugeSheen");
+    var gaugeDrying = document.getElementById("modalGaugeDryingText");
     if (modalCoverage) modalCoverage.textContent = p.coverage;
     if (modalSheen) modalSheen.textContent = p.sheen;
     if (modalDrying) modalDrying.textContent = p.drying;
     if (modalSurface) modalSurface.textContent = p.surface;
+    if (gaugeSheen) gaugeSheen.textContent = p.sheen;
+    if (gaugeDrying) gaugeDrying.textContent = p.drying + " Kuruma";
 
-    // Build Size Options with Crisp Single-Token Pills
+    // Build Size Options with Segmented Track
     modalSizesWrap.innerHTML = "";
     selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
     if (p.sizes && p.sizes.length > 0) {
       p.sizes.forEach(function(size, idx) {
         var sBtn = document.createElement("button");
         sBtn.type = "button";
-        sBtn.className = "bm-size-pill" + (idx === 0 ? " active" : "");
+        sBtn.className = "bm-segmented-btn bm-size-pill" + (idx === 0 ? " active" : "");
         sBtn.textContent = size;
+        sBtn.setAttribute("role", "radio");
+        sBtn.setAttribute("aria-checked", idx === 0 ? "true" : "false");
         sBtn.addEventListener("click", function() {
-          modalSizesWrap.querySelectorAll(".bm-size-pill").forEach(function(b) {
+          modalSizesWrap.querySelectorAll(".bm-segmented-btn").forEach(function(b) {
             b.classList.remove("active");
+            b.setAttribute("aria-checked", "false");
           });
           sBtn.classList.add("active");
+          sBtn.setAttribute("aria-checked", "true");
           selectedSize = size;
           updateCanScale(size);
           updateAreaCoverage(size, p);
