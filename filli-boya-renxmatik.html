@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.1" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -6441,24 +6441,30 @@ html body.bm-transparent-header-page .bm-page-main {
 
     <!-- Category Filter Pills -->
     <div class="bm-menu-pills-wrap">
-                  <div class="bm-menu-pills" id="paintMenuPills" role="tablist">
+      <div class="bm-menu-pills" id="paintMenuPills" role="tablist">
         <button type="button" class="bm-menu-pill active" data-filter="ic-cephe" role="tab" aria-selected="true">
-          ★ İç Cephe &amp; Tavan ★
+          <span>İç Cephe &amp; Tavan</span>
+          <span class="bm-menu-pill-count">17</span>
         </button>
         <button type="button" class="bm-menu-pill" data-filter="dis-cephe" role="tab" aria-selected="false">
-          ★ Dış Cephe &amp; Koruma ★
+          <span>Dış Cephe &amp; Koruma</span>
+          <span class="bm-menu-pill-count">13</span>
         </button>
         <button type="button" class="bm-menu-pill" data-filter="ahsap-metal" role="tab" aria-selected="false">
-          ★ Ahşap &amp; Metal ★
+          <span>Ahşap &amp; Metal</span>
+          <span class="bm-menu-pill-count">6</span>
         </button>
         <button type="button" class="bm-menu-pill" data-filter="donusum" role="tab" aria-selected="false">
-          ★ Kendin Yap &amp; Dönüşüm ★
+          <span>Kendin Yap &amp; Dönüşüm</span>
+          <span class="bm-menu-pill-count">4</span>
         </button>
         <button type="button" class="bm-menu-pill" data-filter="astar-hazirlik" role="tab" aria-selected="false">
-          ★ Astar &amp; Hazırlık ★
+          <span>Astar &amp; Hazırlık</span>
+          <span class="bm-menu-pill-count">4</span>
         </button>
         <button type="button" class="bm-menu-pill" data-filter="yalitim" role="tab" aria-selected="false">
-          ★ Capatect Yalıtım ★
+          <span>Capatect Yalıtım</span>
+          <span class="bm-menu-pill-count">4</span>
         </button>
       </div>
     </div>
@@ -18477,6 +18483,16 @@ html body.bm-transparent-header-page .bm-page-main {
         }
       });
     });
+  });
+
+  // Category Pill Counter Synchronization (System Control: Zero Stale Counts)
+  pillBtns.forEach(function(btn) {
+    var filter = btn.getAttribute("data-filter");
+    var matchingRows = document.querySelectorAll("#paintMenuList .bm-menu-row[data-category='" + filter + "']");
+    var badge = btn.querySelector(".bm-menu-pill-count");
+    if (badge && matchingRows.length > 0) {
+      badge.textContent = matchingRows.length;
+    }
   });
 
   function updateWhatsAppUrl() {
