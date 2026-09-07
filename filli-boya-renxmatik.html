@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.4" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.5" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -18662,8 +18662,9 @@ html body.bm-transparent-header-page .bm-page-main {
     currentProduct = p;
 
     // Fill Product Info
-    if (modalEyebrow) {
-      modalEyebrow.textContent = categoryDisplayNames[p.category] || "Filli Boya";
+    var elEyebrow = modalEyebrow || document.getElementById("modalProductEyebrow") || document.querySelector(".bm-atelier-eyebrow");
+    if (elEyebrow) {
+      elEyebrow.textContent = (categoryDisplayNames && categoryDisplayNames[p.category]) ? categoryDisplayNames[p.category] : "Filli Boya";
     }
     modalImg.src = p.img;
     modalImg.alt = p.name;
