@@ -2087,18 +2087,18 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-modal-card {
-  background: #FAF8F3;
+  background: #FFFFFF;
   width: 100%;
   max-width: 520px;
   max-height: 88vh;
   max-height: 88dvh;
   border-radius: 28px 28px 0 0;
-  border-top: 1px solid rgba(24, 24, 27, 0.12);
-  border-left: 1px solid rgba(24, 24, 27, 0.12);
-  border-right: 1px solid rgba(24, 24, 27, 0.12);
+  border-top: 1px solid rgba(24, 24, 27, 0.09);
+  border-left: 1px solid rgba(24, 24, 27, 0.09);
+  border-right: 1px solid rgba(24, 24, 27, 0.09);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.18);
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -2109,9 +2109,9 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 @media (min-width: 640px) {
   .bm-modal-card {
     border-radius: 28px;
-    border: 1px solid rgba(24, 24, 27, 0.14);
+    border: 1px solid rgba(24, 24, 27, 0.12);
     transform: scale(0.96) translateY(12px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
   }
   .bm-modal-backdrop.open .bm-modal-card {
     transform: scale(1) translateY(0);
@@ -2198,13 +2198,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 /* Modal Scrollable Content Area */
 .bm-modal-scroll {
-  padding: 4px 24px 22px;
+  padding: 6px 20px 20px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   flex: 1;
   min-height: 0;
   scrollbar-width: none;
@@ -2215,109 +2215,109 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 /* ==========================================================================
-   ATELIER SPECIMEN BOTTOM SHEET V2 (COMPACT EDGELOCK & PHYSICAL FEEDBACK)
+   COMPACT SPECIMEN HERO (FLUSH-LEFT ASYMMETRIC LOCKUP)
    ========================================================================== */
 
-/* 1. Atmospheric Hero Stage (Title Lockup + Floating Can with Physical Scale) */
+.bm-specimen-hero,
 .bm-atelier-hero {
   position: relative;
-  padding: 4px 10px 6px;
+  padding: 2px 0 14px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+  text-align: left;
 }
 
-.bm-atelier-glow {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(64, 94, 102, 0.18) 0%, rgba(64, 94, 102, 0) 70%);
-  pointer-events: none;
-  filter: blur(24px);
-  -webkit-filter: blur(24px);
-  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bm-atelier-header-lockup {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.bm-atelier-eyebrow {
-  font-size: 9.5px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #405E66;
-  margin-bottom: 2px;
-}
-
-.bm-atelier-title {
-  font-size: 23px;
-  font-weight: 900;
-  color: #121316;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0;
-}
-
+.bm-specimen-can-stage,
 .bm-atelier-can-stage {
   position: relative;
   z-index: 1;
-  width: 125px;
-  height: 125px;
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  min-height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
+.bm-specimen-glow,
+.bm-atelier-glow {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(64, 94, 102, 0.16) 0%, rgba(64, 94, 102, 0) 70%);
+  pointer-events: none;
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bm-specimen-can-stage img,
 .bm-atelier-can-stage img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
-  -webkit-filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.16));
+  -webkit-filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.16));
   transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: transform;
 }
 
-.bm-atelier-meta {
-  position: relative;
-  z-index: 1;
-  margin-top: 8px;
+.bm-specimen-meta,
+.bm-atelier-header-lockup {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  max-width: 380px;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  gap: 3px;
+  margin: 0;
 }
 
-.bm-atelier-tag {
-  display: inline-flex;
-  align-items: center;
-  font-size: 10.5px;
+.bm-specimen-eyebrow,
+.bm-atelier-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9.5px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 3px 11px;
-  border-radius: 9999px;
-  background: #18181B;
-  color: #FFFFFF;
+  letter-spacing: 0.12em;
+  color: #71717A;
+  margin: 0;
+  line-height: 1.2;
 }
 
+.bm-specimen-title,
+.bm-atelier-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111215;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.bm-specimen-desc,
 .bm-atelier-sub {
-  font-size: 12.5px;
+  font-size: 11.5px;
   color: #52525B;
-  line-height: 1.45;
+  line-height: 1.4;
   font-weight: 500;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bm-atelier-meta,
+.bm-atelier-tag {
+  display: none !important;
 }
 
 /* 2. Packaging & Color Selectors (Crisp, Natural Tactile Selectors) */
@@ -2533,11 +2533,11 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-ledger-row.bm-ledger-highlight {
-  background: rgba(24, 24, 27, 0.04);
-  padding: 10px 10px;
+  background: #F4F4F5;
+  padding: 8px 10px;
   border-radius: 6px;
-  margin: 4px 0;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.09);
+  margin: 2px 0;
+  border-bottom: none;
 }
 
 .bm-ledger-row.bm-ledger-highlight .bm-ledger-k {
@@ -2555,9 +2555,9 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 /* STICKY FOOTER ACTION BAR (Floating Action Dock) */
 .bm-modal-footer-sticky {
   flex-shrink: 0;
-  background: #FAF8F3;
+  background: #FFFFFF;
   border-top: 1px solid rgba(24, 24, 27, 0.08);
-  padding: 12px 24px max(16px, env(safe-area-inset-bottom, 16px));
+  padding: 12px 20px max(16px, env(safe-area-inset-bottom, 16px));
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -2570,7 +2570,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 0 4px;
+  padding: 8px 12px;
+  background: #FAFAFA;
+  border: 1px solid rgba(24, 24, 27, 0.07);
+  border-radius: 8px;
 }
 
 .bm-recipe-label {
