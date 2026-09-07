@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.9" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.0" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7924,18 +7924,19 @@ html body.bm-transparent-header-page .bm-page-main {
 
     <!-- Scrollable Modal Content Area -->
     <div class="bm-modal-scroll" id="modalScrollArea">
-      <!-- Product Card -->
-      <div class="bm-modal-product-card">
-        <div class="bm-modal-img-wrap">
+      <!-- 1. Hero Atmospheric Showcase (Floating Can Silhouette with Contact Shadow & Glow) -->
+      <div class="bm-atelier-hero">
+        <div class="bm-atelier-glow" id="modalChromaGlow"></div>
+        <div class="bm-atelier-can-stage">
           <img id="modalProductImg" src="assets/filli-official/momento-silan.png" alt="Ürün Görseli" />
         </div>
-        <div class="bm-modal-info">
-          <span class="bm-modal-card-tag" id="modalProductTag">Aktif Silikon</span>
-          <p class="bm-modal-product-desc" id="modalProductSub">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®</p>
+        <div class="bm-atelier-meta">
+          <span class="bm-atelier-tag" id="modalProductTag">★ Aktif Silikon</span>
+          <p class="bm-atelier-sub" id="modalProductSub">Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®</p>
         </div>
       </div>
 
-      <!-- Packaging Selector -->
+      <!-- 2. Packaging / Size Selector -->
       <div class="bm-modal-select-group">
         <div class="bm-modal-select-title">Ambalaj / Hacim Seçimi</div>
         <div class="bm-modal-pills-row" id="modalSizesContainer">
@@ -7943,9 +7944,9 @@ html body.bm-transparent-header-page .bm-page-main {
         </div>
       </div>
 
-      <!-- 2026 RenXMatik Color Selector -->
+      <!-- 3. 2026 RenXMatik Color Selector -->
       <div class="bm-modal-select-group" id="modalColorGroup">
-        <div class="bm-modal-select-title">2026 RenXMatik™ Renk Seçimi</div>
+        <div class="bm-modal-select-title">2026 RenXMatik™ Renk Laboratuvarı</div>
         <div class="bm-modal-pills-row" id="modalColorsContainer">
           <button type="button" class="bm-color-pill active" data-color-name="Irmak 65 (2026 Yılın Rengi)">
             <span class="bm-color-dot" style="background-color: #8BA2A4;"></span>
@@ -7974,38 +7975,23 @@ html body.bm-transparent-header-page .bm-page-main {
         </div>
       </div>
 
-      <!-- 2-Column Architectural Technical Spec Matrix (Apple & Jon Coffee 1:1) -->
-      <div class="bm-modal-specs-matrix">
-        <div class="bm-spec-card">
-          <div class="bm-spec-card-header">
-            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <span class="bm-spec-label">Sarfiyat</span>
-          </div>
-          <div class="bm-spec-value" id="modalSpecCoverage">13 – 17 m²/L</div>
+      <!-- 4. Architectural Spec Ledger (Zero Cards, Pure Typographic Ledger) -->
+      <div class="bm-atelier-ledger">
+        <div class="bm-ledger-row">
+          <span class="bm-ledger-k">SARFİYAT</span>
+          <span class="bm-ledger-v font-mono-data" id="modalSpecCoverage">13 – 17 m²/L</span>
         </div>
-
-        <div class="bm-spec-card">
-          <div class="bm-spec-card-header">
-            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z"/></svg>
-            <span class="bm-spec-label">Bitiş / Doku</span>
-          </div>
-          <div class="bm-spec-value" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</div>
+        <div class="bm-ledger-row">
+          <span class="bm-ledger-k">DOKU &amp; BİTİŞ</span>
+          <span class="bm-ledger-v" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</span>
         </div>
-
-        <div class="bm-spec-card">
-          <div class="bm-spec-card-header">
-            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span class="bm-spec-label">Kuruma Süresi</span>
-          </div>
-          <div class="bm-spec-value" id="modalSpecDrying">2 – 4 Saat</div>
+        <div class="bm-ledger-row">
+          <span class="bm-ledger-k">KURUMA</span>
+          <span class="bm-ledger-v font-mono-data" id="modalSpecDrying">2 – 4 Saat</span>
         </div>
-
-        <div class="bm-spec-card">
-          <div class="bm-spec-card-header">
-            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            <span class="bm-spec-label">Uygulama Alanı</span>
-          </div>
-          <div class="bm-spec-value" id="modalSpecSurface">İç cephe sıva, alçı, beton</div>
+        <div class="bm-ledger-row">
+          <span class="bm-ledger-k">UYGULAMA</span>
+          <span class="bm-ledger-v" id="modalSpecSurface">İç cephe sıva, alçı, beton</span>
         </div>
       </div>
     </div>
@@ -18454,6 +18440,7 @@ html body.bm-transparent-header-page .bm-page-main {
   var modalWABtn = document.getElementById("modalWhatsAppBtn");
   var modalShareBtn = document.getElementById("modalShareBtn");
   var modalShareText = document.getElementById("modalShareText");
+  var modalChromaGlow = document.getElementById("modalChromaGlow");
 
   var currentProduct = null;
   var selectedSize = "";
@@ -18517,6 +18504,15 @@ html body.bm-transparent-header-page .bm-page-main {
     modalTag.textContent = "★ " + p.tag;
     modalTitle.textContent = p.name;
     modalSub.textContent = p.sub;
+
+    // Atmospheric Chroma Glow Sync
+    if (modalChromaGlow) {
+      var glowColor = (p.category === "donusum" || p.category === "donusum-efekt") ? "rgba(59, 130, 246, 0.16)" :
+                      (p.category === "ahsap-metal") ? "rgba(217, 119, 6, 0.16)" :
+                      (p.category === "dis-cephe" || p.category === "yalitim") ? "rgba(180, 83, 9, 0.16)" :
+                      "rgba(64, 94, 102, 0.18)";
+      modalChromaGlow.style.background = "radial-gradient(circle, " + glowColor + " 0%, rgba(64, 94, 102, 0) 70%)";
+    }
 
     // Fill Specs
     modalCoverage.textContent = p.coverage;
@@ -18729,6 +18725,10 @@ html body.bm-transparent-header-page .bm-page-main {
       colorBtns.forEach(function(b) { b.classList.remove("active"); });
       btn.classList.add("active");
       selectedColor = btn.getAttribute("data-color-name");
+      var dot = btn.querySelector(".bm-color-dot");
+      if (modalChromaGlow && dot && dot.style.backgroundColor) {
+        modalChromaGlow.style.background = "radial-gradient(circle, " + dot.style.backgroundColor + "33 0%, rgba(0, 0, 0, 0) 70%)";
+      }
       updateWhatsAppUrl();
     });
   });

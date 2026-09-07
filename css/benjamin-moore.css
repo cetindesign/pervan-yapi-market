@@ -2011,18 +2011,18 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-modal-card {
-  background: #FAF8F2;
+  background: #FAF8F3;
   width: 100%;
   max-width: 520px;
   max-height: 88vh;
   max-height: 88dvh;
-  border-radius: 24px 24px 0 0;
-  border-top: 2px solid #18181B;
-  border-left: 2px solid #18181B;
-  border-right: 2px solid #18181B;
+  border-radius: 28px 28px 0 0;
+  border-top: 1px solid rgba(24, 24, 27, 0.12);
+  border-left: 1px solid rgba(24, 24, 27, 0.12);
+  border-right: 1px solid rgba(24, 24, 27, 0.12);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.2);
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -2032,10 +2032,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 @media (min-width: 640px) {
   .bm-modal-card {
-    border-radius: 24px;
-    border: 2px solid #18181B;
+    border-radius: 28px;
+    border: 1px solid rgba(24, 24, 27, 0.14);
     transform: scale(0.96) translateY(12px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
   }
   .bm-modal-backdrop.open .bm-modal-card {
     transform: scale(1) translateY(0);
@@ -2048,7 +2048,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 /* Mobile Pull Handle Zone (Vaul / iOS 1:1 Drag Target) */
 .bm-modal-handle-zone {
-  padding: 10px 0 4px;
+  padding: 12px 0 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2065,14 +2065,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-modal-handle {
   width: 44px;
   height: 5px;
-  background: rgba(24, 24, 27, 0.22);
+  background: rgba(24, 24, 27, 0.2);
   border-radius: 9999px;
   transition: background 0.15s ease, transform 0.15s ease;
   flex-shrink: 0;
 }
 
 .bm-modal-handle-zone:hover .bm-modal-handle {
-  background: rgba(24, 24, 27, 0.45);
+  background: rgba(24, 24, 27, 0.4);
 }
 
 @media (min-width: 640px) {
@@ -2081,12 +2081,12 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   }
 }
 
-/* Sticky Modal Header (Jon Coffee 1:1) */
+/* Sticky Modal Header (Jon Coffee & Editorial 1:1) */
 .bm-modal-sticky-header {
-  padding: 10px 22px 14px;
-  background: rgba(250, 248, 242, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 24px 14px;
+  background: rgba(250, 248, 243, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(24, 24, 27, 0.08);
   display: flex;
   align-items: flex-start;
@@ -2100,28 +2100,27 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(24, 24, 27, 0.6);
-  margin-bottom: 2px;
+  letter-spacing: 0.12em;
+  color: #405E66;
+  margin-bottom: 3px;
 }
 
 .bm-modal-title {
   font-size: 22px;
   font-weight: 900;
-  color: #18181B;
-  text-transform: uppercase;
+  color: #121316;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .bm-modal-close-btn {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
-  background: #FFFFFF;
-  border: 1px solid rgba(24, 24, 27, 0.2);
+  background: rgba(24, 24, 27, 0.05);
+  border: 1px solid rgba(24, 24, 27, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2129,7 +2128,6 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.18s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   touch-action: manipulation;
 }
 
@@ -2141,13 +2139,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 /* Modal Scrollable Content Area */
 .bm-modal-scroll {
-  padding: 18px 22px 20px;
+  padding: 16px 24px 24px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   flex: 1;
   min-height: 0;
   scrollbar-width: none;
@@ -2157,75 +2155,97 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: none;
 }
 
-/* Product Info Card */
-.bm-modal-product-card {
+/* ==========================================================================
+   ATELIER SPECIMEN BOTTOM SHEET (UNBOXED ARCHITECTURAL ATELIER)
+   ========================================================================== */
+
+/* 1. Atmospheric Hero Stage (Floating Can Silhouette with Contact Shadow & Glow) */
+.bm-atelier-hero {
+  position: relative;
+  padding: 14px 10px 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 12px 14px;
-  background: #FFFFFF;
-  border-radius: 16px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  justify-content: center;
+  text-align: center;
 }
 
-.bm-modal-product-card .bm-modal-img-wrap {
-  width: 78px;
-  height: 78px;
-  flex-shrink: 0;
-  background: #FAF8F2;
-  border-radius: 12px;
-  padding: 6px;
+.bm-atelier-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(64, 94, 102, 0.18) 0%, rgba(64, 94, 102, 0) 70%);
+  pointer-events: none;
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
+  transition: background 0.4s ease;
+}
+
+.bm-atelier-can-stage {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bm-modal-product-card .bm-modal-img-wrap img {
+.bm-atelier-can-stage img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
+  -webkit-filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bm-modal-product-card .bm-modal-info {
-  min-width: 0;
+.bm-atelier-meta {
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 6px;
+  max-width: 380px;
 }
 
-.bm-modal-product-card .bm-modal-card-tag {
-  align-self: flex-start;
-  font-size: 10px;
+.bm-atelier-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10.5px;
   font-weight: 800;
-  padding: 2.5px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 11px;
   border-radius: 9999px;
   background: #18181B;
   color: #FFFFFF;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
-.bm-modal-product-desc {
+.bm-atelier-sub {
   font-size: 13px;
-  color: #3F3F46;
-  line-height: 1.45;
+  color: #52525B;
+  line-height: 1.5;
   font-weight: 500;
+  margin: 0;
 }
 
-/* Interactive Selectors */
+/* 2. Packaging & Color Selectors (Crisp, Natural Tactile Selectors) */
 .bm-modal-select-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
 }
 
 .bm-modal-select-title {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #18181B;
+  letter-spacing: 0.08em;
+  color: #71717A;
 }
 
 .bm-modal-pills-row {
@@ -2237,11 +2257,11 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-size-pill {
   appearance: none;
   background: #FFFFFF;
-  border: 1px solid rgba(24, 24, 27, 0.2);
+  border: 1px solid rgba(24, 24, 27, 0.15);
   border-radius: 9999px;
-  padding: 8px 16px;
-  min-height: 42px;
-  min-width: 42px;
+  padding: 8px 18px;
+  min-height: 40px;
+  min-width: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2252,7 +2272,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-weight: 700;
   color: #18181B;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.16s ease;
   user-select: none;
 }
 
@@ -2265,16 +2285,16 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #18181B;
   color: #FFFFFF;
   border-color: #18181B;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .bm-color-pill {
   appearance: none;
   background: #FFFFFF;
-  border: 1px solid rgba(24, 24, 27, 0.2);
+  border: 1px solid rgba(24, 24, 27, 0.15);
   border-radius: 9999px;
-  padding: 7px 13px;
-  min-height: 40px;
+  padding: 6px 14px;
+  min-height: 38px;
   box-sizing: border-box;
   touch-action: manipulation;
   font-family: var(--bm-font);
@@ -2284,8 +2304,8 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: all 0.15s ease;
+  gap: 7px;
+  transition: all 0.16s ease;
   user-select: none;
 }
 
@@ -2297,77 +2317,77 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   border-color: #18181B;
   background: #18181B;
   color: #FFFFFF;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .bm-color-dot {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
 }
 
-/* 2-Column Architectural Technical Spec Matrix (Apple & Jon Coffee 1:1) */
-.bm-modal-specs-matrix {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+/* 3. Architectural Technical Ledger (ZERO CARDS, PURE TYPOGRAPHIC LEDGER) */
+.bm-atelier-ledger {
+  border-top: 1px solid rgba(24, 24, 27, 0.12);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.12);
+  margin-top: 4px;
 }
 
-.bm-spec-card {
-  background: #FFFFFF;
-  border-radius: 12px;
-  border: 1px solid rgba(24, 24, 27, 0.08);
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-}
-
-.bm-spec-card-header {
+.bm-ledger-row {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 10px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 2px;
+  font-size: 12.5px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.07);
+}
+
+.bm-ledger-row:last-child {
+  border-bottom: none;
+}
+
+.bm-ledger-k {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #71717A;
-}
-
-.bm-spec-icon {
+  letter-spacing: 0.08em;
   color: #71717A;
   flex-shrink: 0;
 }
 
-.bm-spec-value {
-  font-size: 13.5px;
+.bm-ledger-v {
   font-weight: 700;
   color: #18181B;
-  line-height: 1.35;
+  text-align: right;
+  line-height: 1.4;
 }
 
-/* STICKY FOOTER ACTION BAR (Apple Store & Vaul 1:1 Pinned Action) */
+.font-mono-data {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* STICKY FOOTER ACTION BAR (Floating Action Dock) */
 .bm-modal-footer-sticky {
   flex-shrink: 0;
-  background: #FAF8F2;
-  border-top: 1px solid rgba(24, 24, 27, 0.1);
-  padding: 14px 22px max(18px, env(safe-area-inset-bottom, 18px));
+  background: #FAF8F3;
+  border-top: 1px solid rgba(24, 24, 27, 0.08);
+  padding: 14px 24px max(18px, env(safe-area-inset-bottom, 18px));
   display: flex;
   flex-direction: column;
   gap: 10px;
-  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.05);
   z-index: 15;
 }
 
 .bm-btn-chamberlain-primary {
-  background: #18181B;
+  background: #111215;
   color: #FFFFFF;
   border-radius: 9999px;
   font-family: var(--bm-font);
-  font-weight: 900;
+  font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2380,8 +2400,8 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   text-decoration: none;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
   box-sizing: border-box;
 }
@@ -2389,7 +2409,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-btn-chamberlain-primary:hover {
   background: #000000;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 
 .bm-btn-chamberlain-primary:active {
@@ -2401,6 +2421,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  padding: 0 4px;
 }
 
 .bm-modal-delivery-chip {
@@ -2413,12 +2434,19 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-chip-pulse {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #16A34A;
   box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  animation: bmPulseGreen 2s infinite;
   flex-shrink: 0;
+}
+
+@keyframes bmPulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+  70% { box-shadow: 0 0 0 5px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
 }
 
 .bm-modal-share-link {
@@ -2432,7 +2460,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-family: var(--bm-font);
   font-size: 11.5px;
   font-weight: 700;
-  color: #18181B;
+  color: #52525B;
   padding: 4px 8px;
   border-radius: 6px;
   transition: all 0.15s ease;
@@ -2440,6 +2468,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-modal-share-link:hover {
+  color: #18181B;
   background: rgba(24, 24, 27, 0.06);
 }
 
