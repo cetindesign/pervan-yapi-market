@@ -24,8 +24,16 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.6" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.7" />
 <style id="bmHeaderTransparentCritical">
+/* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
+html, body {
+  overflow-x: hidden !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 /* ZERO TOP PADDING ON BODY */
 html body.bm-transparent-header-page,
 html body.bm-transparent-header-page.rf-body {
@@ -14433,6 +14441,7 @@ html body.bm-transparent-header-page .bm-page-main {
   var pointerMoved = 0;
 
   track.addEventListener("pointerdown", function(e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
     if (e.button !== 0) return;
     if (e.target.closest("a, button")) return;
     isPointerDown = true;
