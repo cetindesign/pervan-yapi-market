@@ -2340,23 +2340,23 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-size-pill {
   appearance: none;
   background: #FFFFFF;
-  border: 1px solid rgba(24, 24, 27, 0.15);
+  border: 1px solid rgba(24, 24, 27, 0.16);
   border-radius: 9999px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   min-height: 38px;
-  min-width: 44px;
+  min-width: 58px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
   box-sizing: border-box;
   touch-action: manipulation;
   font-family: var(--bm-font);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: #18181B;
   cursor: pointer;
-  transition: all 0.16s ease;
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
@@ -2369,7 +2369,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #111215;
   color: #FFFFFF;
   border-color: #111215;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
 }
 
 .bm-size-vol {

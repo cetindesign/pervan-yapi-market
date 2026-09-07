@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.7" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.8" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7953,10 +7953,6 @@ html body.bm-transparent-header-page .bm-page-main {
         <div class="bm-ledger-row bm-ledger-highlight" id="modalAreaRow">
           <span class="bm-ledger-k">BOYANABİLİR ALAN</span>
           <span class="bm-ledger-v font-mono-data" id="modalSpecArea">—</span>
-        </div>
-        <div class="bm-ledger-row">
-          <span class="bm-ledger-k">SARFİYAT</span>
-          <span class="bm-ledger-v font-mono-data" id="modalSpecCoverage">13 – 17 m²/L</span>
         </div>
         <div class="bm-ledger-row">
           <span class="bm-ledger-k">DOKU &amp; BİTİŞ</span>
@@ -18584,7 +18580,7 @@ html body.bm-transparent-header-page .bm-page-main {
     var est = calculateCoverageEstimate(selectedSize, currentProduct.coverage);
     var parts = [];
     if (selectedSize) {
-      parts.push(selectedSize + (est ? " (" + est.pillLabel + ")" : ""));
+      parts.push(selectedSize);
     }
     if (isPaint) {
       parts.push("RenXMatik™ Özel Renk Reçetesi");
@@ -18679,25 +18675,20 @@ html body.bm-transparent-header-page .bm-page-main {
     }
 
     // Fill Specs
-    modalCoverage.textContent = p.coverage;
+    if (modalCoverage) modalCoverage.textContent = p.coverage;
     modalSheen.textContent = p.sheen;
     modalDrying.textContent = p.drying;
     modalSurface.textContent = p.surface;
 
-    // Build Size Options with Coverage Intelligence
+    // Build Size Options with Crisp Single-Token Pills
     modalSizesWrap.innerHTML = "";
     selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
     if (p.sizes && p.sizes.length > 0) {
       p.sizes.forEach(function(size, idx) {
-        var est = calculateCoverageEstimate(size, p.coverage);
         var sBtn = document.createElement("button");
         sBtn.type = "button";
         sBtn.className = "bm-size-pill" + (idx === 0 ? " active" : "");
-        if (est) {
-          sBtn.innerHTML = '<span class="bm-size-vol">' + size + '</span><span class="bm-size-est">' + est.pillLabel + '</span>';
-        } else {
-          sBtn.textContent = size;
-        }
+        sBtn.textContent = size;
         sBtn.addEventListener("click", function() {
           modalSizesWrap.querySelectorAll(".bm-size-pill").forEach(function(b) {
             b.classList.remove("active");
