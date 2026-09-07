@@ -337,11 +337,11 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  overscroll-behavior: contain;
-  -ms-scroll-chaining: none;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
   cursor: grab;
   user-select: none;
-  touch-action: pan-y;
+  touch-action: pan-x pan-y;
   z-index: 1;
 }
 
