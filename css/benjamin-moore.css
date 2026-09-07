@@ -2346,12 +2346,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   background: #FFFFFF;
   border: 1px solid rgba(24, 24, 27, 0.15);
   border-radius: 9999px;
-  padding: 7px 16px;
+  padding: 6px 14px;
   min-height: 38px;
   min-width: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 7px;
   box-sizing: border-box;
   touch-action: manipulation;
   font-family: var(--bm-font);
@@ -2373,6 +2374,30 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   color: #FFFFFF;
   border-color: #111215;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.bm-size-vol {
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1;
+}
+
+.bm-size-est {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2.5px 6px;
+  border-radius: 4px;
+  background: rgba(24, 24, 27, 0.06);
+  color: #52525B;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transition: all 0.16s ease;
+}
+
+.bm-size-pill.active .bm-size-est {
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
 }
 
 .bm-color-pill {
@@ -2505,6 +2530,26 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 .font-mono-data {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.bm-ledger-row.bm-ledger-highlight {
+  background: rgba(24, 24, 27, 0.04);
+  padding: 10px 10px;
+  border-radius: 6px;
+  margin: 4px 0;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.09);
+}
+
+.bm-ledger-row.bm-ledger-highlight .bm-ledger-k {
+  color: #111215;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.bm-ledger-row.bm-ledger-highlight .bm-ledger-v {
+  color: #111215;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 /* STICKY FOOTER ACTION BAR (Floating Action Dock) */

@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.3" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.4" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7966,6 +7966,10 @@ html body.bm-transparent-header-page .bm-page-main {
 
       <!-- 4. Architectural Spec Ledger (Zero Cards, Pure Typographic Ledger) -->
       <div class="bm-atelier-ledger">
+        <div class="bm-ledger-row bm-ledger-highlight" id="modalAreaRow">
+          <span class="bm-ledger-k">BOYANABİLİR ALAN</span>
+          <span class="bm-ledger-v font-mono-data" id="modalSpecArea">—</span>
+        </div>
         <div class="bm-ledger-row">
           <span class="bm-ledger-k">SARFİYAT</span>
           <span class="bm-ledger-v font-mono-data" id="modalSpecCoverage">13 – 17 m²/L</span>
@@ -18429,6 +18433,8 @@ html body.bm-transparent-header-page .bm-page-main {
   var modalServiceNote = document.getElementById("modalServiceNote");
   var modalServiceTitle = document.getElementById("modalServiceTitle");
   var modalServiceDesc = document.getElementById("modalServiceDesc");
+  var modalAreaRow = document.getElementById("modalAreaRow");
+  var modalSpecArea = document.getElementById("modalSpecArea");
   var modalCoverage = document.getElementById("modalSpecCoverage");
   var modalSheen = document.getElementById("modalSpecSheen");
   var modalDrying = document.getElementById("modalSpecDrying");
@@ -18441,6 +18447,99 @@ html body.bm-transparent-header-page .bm-page-main {
 
   var currentProduct = null;
   var selectedSize = "";
+
+  function calculateCoverageEstimate(sizeStr, coverageStr) {
+    if (!sizeStr || !coverageStr) return null;
+    var sizeMatch = sizeStr.match(/([\d\.]+)\s*(l|litre|kg|g|ml)/i);
+    if (!sizeMatch) return null;
+    var val = parseFloat(sizeMatch[1]);
+    var unit = sizeMatch[2].toLowerCase();
+
+    var isDoubleCoat = (coverageStr.indexOf("Çift kat") !== -1 || coverageStr.indexOf("çift kat") !== -1 || coverageStr.indexOf("İki kat") !== -1);
+    var covMatch = coverageStr.match(/([\d\.]+)\s*[–\-—]\s*([\d\.]+)\s*(m²|m2)\s*\/\s*(l|litre|kg)/i);
+
+    if (covMatch) {
+      var minCov = parseFloat(covMatch[1]);
+      var maxCov = parseFloat(covMatch[2]);
+      var covUnit = covMatch[4].toLowerCase();
+
+      if ((unit === "l" || unit === "litre") && (covUnit === "l" || covUnit === "litre")) {
+        var divisor = isDoubleCoat ? 1 : 2;
+        var minArea = Math.round((val * minCov) / divisor);
+        var maxArea = Math.round((val * maxCov) / divisor);
+        var avgArea = Math.round((minArea + maxArea) / 2);
+        return {
+          pillLabel: "~" + avgArea + " m²",
+          rangeLabel: "~" + minArea + " – " + maxArea + " m² (Çift Kat)",
+          summaryLabel: "~" + avgArea + " m² çift kat",
+          avgArea: avgArea
+        };
+      } else if (unit === "kg" && covUnit === "kg") {
+        var divisor = isDoubleCoat ? 1 : 2;
+        var minArea = Math.round((val * minCov) / divisor);
+        var maxArea = Math.round((val * maxCov) / divisor);
+        var avgArea = Math.round((minArea + maxArea) / 2);
+        return {
+          pillLabel: "~" + avgArea + " m²",
+          rangeLabel: "~" + minArea + " – " + maxArea + " m² (Çift Kat)",
+          summaryLabel: "~" + avgArea + " m² çift kat",
+          avgArea: avgArea
+        };
+      }
+    }
+
+    var singleMatch = coverageStr.match(/([\d\.]+)\s*(m²|m2)\s*\/\s*(l|litre|kg)/i);
+    if (singleMatch) {
+      var covVal = parseFloat(singleMatch[1]);
+      var covUnit = singleMatch[3].toLowerCase();
+      if ((unit === "l" || unit === "litre") && (covUnit === "l" || covUnit === "litre")) {
+        var divisor = isDoubleCoat ? 1 : 2;
+        var area = Math.round((val * covVal) / divisor);
+        return {
+          pillLabel: "~" + area + " m²",
+          rangeLabel: "~" + area + " m² (Çift Kat)",
+          summaryLabel: "~" + area + " m² çift kat",
+          avgArea: area
+        };
+      } else if (unit === "kg" && covUnit === "kg") {
+        var divisor = isDoubleCoat ? 1 : 2;
+        var area = Math.round((val * covVal) / divisor);
+        return {
+          pillLabel: "~" + area + " m²",
+          rangeLabel: "~" + area + " m² (Çift Kat)",
+          summaryLabel: "~" + area + " m² çift kat",
+          avgArea: area
+        };
+      }
+    }
+
+    var kgPerM2Match = coverageStr.match(/([\d\.]+)\s*[–\-—]\s*([\d\.]+)\s*kg\s*\/\s*(m²|m2)/i);
+    if (kgPerM2Match && unit === "kg") {
+      var minKg = parseFloat(kgPerM2Match[1]);
+      var maxKg = parseFloat(kgPerM2Match[2]);
+      var minArea = Math.round(val / maxKg);
+      var maxArea = Math.round(val / minKg);
+      var avgArea = Math.round((minArea + maxArea) / 2);
+      return {
+        pillLabel: "~" + avgArea + " m²",
+        rangeLabel: "~" + minArea + " – " + maxArea + " m² (Tek Kat Kaplama)",
+        summaryLabel: "~" + avgArea + " m² kaplama",
+        avgArea: avgArea
+      };
+    }
+    return null;
+  }
+
+  function updateAreaCoverage(size, product) {
+    if (!modalAreaRow || !modalSpecArea || !product) return;
+    var est = calculateCoverageEstimate(size, product.coverage);
+    if (est) {
+      modalSpecArea.textContent = est.rangeLabel;
+      modalAreaRow.style.display = "flex";
+    } else {
+      modalAreaRow.style.display = "none";
+    }
+  }
 
   function updateCanScale(size) {
     if (!modalImg) return;
@@ -18463,8 +18562,11 @@ html body.bm-transparent-header-page .bm-page-main {
       return;
     }
     var isPaint = (currentProduct.category === "ic-cephe" || currentProduct.category === "dis-cephe" || currentProduct.category === "ahsap-metal" || currentProduct.category === "donusum" || currentProduct.category === "donusum-efekt" || (currentProduct.category === "expert" && currentProduct.id.indexOf("boya") !== -1));
+    var est = calculateCoverageEstimate(selectedSize, currentProduct.coverage);
     var parts = [];
-    if (selectedSize) parts.push(selectedSize);
+    if (selectedSize) {
+      parts.push(selectedSize + (est ? " (" + est.pillLabel + ")" : ""));
+    }
     if (isPaint) {
       parts.push("RenXMatik™ Özel Renk Reçetesi");
     } else {
@@ -18519,8 +18621,9 @@ html body.bm-transparent-header-page .bm-page-main {
   function updateWhatsAppUrl() {
     if (!currentProduct) return;
     var text = "Merhaba, Filli Boya " + currentProduct.name;
+    var est = calculateCoverageEstimate(selectedSize, currentProduct.coverage);
     if (selectedSize) {
-      text += " (" + selectedSize + ")";
+      text += " (" + selectedSize + (est ? " · " + est.summaryLabel : "") + ")";
     }
     var isPaint = (currentProduct.category === "ic-cephe" || currentProduct.category === "dis-cephe" || currentProduct.category === "ahsap-metal" || currentProduct.category === "donusum" || currentProduct.category === "donusum-efekt" || (currentProduct.category === "expert" && currentProduct.id.indexOf("boya") !== -1));
     if (isPaint) {
@@ -18558,15 +18661,20 @@ html body.bm-transparent-header-page .bm-page-main {
     modalDrying.textContent = p.drying;
     modalSurface.textContent = p.surface;
 
-    // Build Size Options
+    // Build Size Options with Coverage Intelligence
     modalSizesWrap.innerHTML = "";
     selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
     if (p.sizes && p.sizes.length > 0) {
       p.sizes.forEach(function(size, idx) {
+        var est = calculateCoverageEstimate(size, p.coverage);
         var sBtn = document.createElement("button");
         sBtn.type = "button";
         sBtn.className = "bm-size-pill" + (idx === 0 ? " active" : "");
-        sBtn.textContent = size;
+        if (est) {
+          sBtn.innerHTML = '<span class="bm-size-vol">' + size + '</span><span class="bm-size-est">' + est.pillLabel + '</span>';
+        } else {
+          sBtn.textContent = size;
+        }
         sBtn.addEventListener("click", function() {
           modalSizesWrap.querySelectorAll(".bm-size-pill").forEach(function(b) {
             b.classList.remove("active");
@@ -18574,6 +18682,7 @@ html body.bm-transparent-header-page .bm-page-main {
           sBtn.classList.add("active");
           selectedSize = size;
           updateCanScale(size);
+          updateAreaCoverage(size, p);
           updateSelectionSummary();
           updateWhatsAppUrl();
         });
@@ -18594,6 +18703,7 @@ html body.bm-transparent-header-page .bm-page-main {
     }
 
     updateCanScale(selectedSize);
+    updateAreaCoverage(selectedSize, p);
     updateSelectionSummary();
     updateWhatsAppUrl();
 
