@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.2" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.3.3" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7951,35 +7951,17 @@ html body.bm-transparent-header-page .bm-page-main {
         </div>
       </div>
 
-      <!-- 3. 2026 RenXMatik Color Selector -->
-      <div class="bm-modal-select-group" id="modalColorGroup">
-        <div class="bm-modal-select-title">2026 RenXMatik™ Renk Laboratuvarı</div>
-        <div class="bm-modal-pills-row" id="modalColorsContainer">
-          <button type="button" class="bm-color-pill active" data-color-name="Irmak 65 (2026 Yılın Rengi)">
-            <span class="bm-color-dot" style="background-color: #8BA2A4;"></span>
-            <span>Irmak 65 (2026)</span>
-          </button>
-          <button type="button" class="bm-color-pill" data-color-name="Kozmik 155">
-            <span class="bm-color-dot" style="background-color: #4A5568;"></span>
-            <span>Kozmik 155</span>
-          </button>
-          <button type="button" class="bm-color-pill" data-color-name="Açık Fildişi">
-            <span class="bm-color-dot" style="background-color: #F7F5EC;"></span>
-            <span>Açık Fildişi</span>
-          </button>
-          <button type="button" class="bm-color-pill" data-color-name="Koral 95">
-            <span class="bm-color-dot" style="background-color: #D97757;"></span>
-            <span>Koral 95</span>
-          </button>
-          <button type="button" class="bm-color-pill" data-color-name="Kumtaşı 20">
-            <span class="bm-color-dot" style="background-color: #D2C4B2;"></span>
-            <span>Kumtaşı 20</span>
-          </button>
-          <button type="button" class="bm-color-pill" data-color-name="Baz / Beyaz">
-            <span class="bm-color-dot" style="background-color: #FFFFFF;"></span>
-            <span>Baz / Beyaz</span>
-          </button>
+      <!-- 3. RenXMatik™ On-Demand Tinting Service Guarantee -->
+      <div class="bm-atelier-service-note" id="modalServiceNote">
+        <div class="bm-service-note-header">
+          <span class="bm-service-note-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+          </span>
+          <span class="bm-service-note-title" id="modalServiceTitle">RenXMatik™ Sınırsız Renk Hazırlığı</span>
         </div>
+        <p class="bm-service-note-desc" id="modalServiceDesc">
+          Bu ürün, Balçova Showroom ve Urla Ana Depomuzdaki RenXMatik™ bilgisayarlı renk merkezimizde dilediğiniz Filli Boya, RAL veya NCS renk koduna göre mikron hassasiyetle anında hazırlanır.
+        </p>
       </div>
 
       <!-- 4. Architectural Spec Ledger (Zero Cards, Pure Typographic Ledger) -->
@@ -18444,8 +18426,9 @@ html body.bm-transparent-header-page .bm-page-main {
   var modalTitle = document.getElementById("modalProductTitle");
   var modalSub = document.getElementById("modalProductSub");
   var modalSizesWrap = document.getElementById("modalSizesContainer");
-  var modalColorGroup = document.getElementById("modalColorGroup");
-  var modalColorsWrap = document.getElementById("modalColorsContainer");
+  var modalServiceNote = document.getElementById("modalServiceNote");
+  var modalServiceTitle = document.getElementById("modalServiceTitle");
+  var modalServiceDesc = document.getElementById("modalServiceDesc");
   var modalCoverage = document.getElementById("modalSpecCoverage");
   var modalSheen = document.getElementById("modalSpecSheen");
   var modalDrying = document.getElementById("modalSpecDrying");
@@ -18458,7 +18441,6 @@ html body.bm-transparent-header-page .bm-page-main {
 
   var currentProduct = null;
   var selectedSize = "";
-  var selectedColor = "Irmak 65 (2026 Yılın Rengi)";
 
   function updateCanScale(size) {
     if (!modalImg) return;
@@ -18476,12 +18458,19 @@ html body.bm-transparent-header-page .bm-page-main {
 
   function updateSelectionSummary() {
     if (!modalSelectionSummary) return;
+    if (!currentProduct) {
+      modalSelectionSummary.textContent = "";
+      return;
+    }
+    var isPaint = (currentProduct.category === "ic-cephe" || currentProduct.category === "dis-cephe" || currentProduct.category === "ahsap-metal" || currentProduct.category === "donusum" || currentProduct.category === "donusum-efekt" || (currentProduct.category === "expert" && currentProduct.id.indexOf("boya") !== -1));
     var parts = [];
     if (selectedSize) parts.push(selectedSize);
-    if (selectedColor && modalColorGroup && modalColorGroup.style.display !== "none") {
-      parts.push(selectedColor.replace(" (2026 Yılın Rengi)", " (2026)"));
+    if (isPaint) {
+      parts.push("RenXMatik™ Özel Renk Reçetesi");
+    } else {
+      parts.push("Orijinal Ambalaj");
     }
-    modalSelectionSummary.textContent = parts.join(" · ") || (currentProduct ? currentProduct.name : "");
+    modalSelectionSummary.textContent = parts.join(" · ");
   }
 
   // Category Filtering
@@ -18533,15 +18522,16 @@ html body.bm-transparent-header-page .bm-page-main {
     if (selectedSize) {
       text += " (" + selectedSize + ")";
     }
-    var isPaint = (currentProduct.category === "ic-cephe" || currentProduct.category === "dis-cephe" || currentProduct.category === "ahsap-metal" || currentProduct.category === "donusum");
-    if (selectedColor && isPaint) {
-      text += " " + selectedColor + " rengi";
+    var isPaint = (currentProduct.category === "ic-cephe" || currentProduct.category === "dis-cephe" || currentProduct.category === "ahsap-metal" || currentProduct.category === "donusum" || currentProduct.category === "donusum-efekt" || (currentProduct.category === "expert" && currentProduct.id.indexOf("boya") !== -1));
+    if (isPaint) {
+      text += " için RenXMatik renk hazırlığı ve şantiye teslimat bilgisi almak istiyorum.";
+    } else {
+      text += " için Balçova Showroom / Urla Ana Depo şantiye teslimat ve fiyat bilgisi almak istiyorum.";
     }
-    text += " için Balçova Showroom / Urla Ana Depo RenXMatik teslimat ve fiyat bilgisi almak istiyorum.";
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
-  function openModal(productId, preferredColor) {
+  function openModal(productId) {
     var p = products[productId];
     if (!p) return;
     currentProduct = p;
@@ -18591,26 +18581,16 @@ html body.bm-transparent-header-page .bm-page-main {
       });
     }
 
-    // Color Selector visibility & selection
+    // Contextual RenXMatik / Depot Service Guarantee Note
     var isPaint = (p.category === "ic-cephe" || p.category === "dis-cephe" || p.category === "ahsap-metal" || p.category === "donusum" || p.category === "donusum-efekt" || (p.category === "expert" && p.id.indexOf("boya") !== -1));
-    if (isPaint) {
-      modalColorGroup.style.display = "flex";
-      selectedColor = preferredColor || "Irmak 65 (2026 Yılın Rengi)";
-      var colorBtns = modalColorsWrap.querySelectorAll(".bm-color-pill");
-      colorBtns.forEach(function(btn) {
-        var cName = btn.getAttribute("data-color-name");
-        if (preferredColor && cName.toLowerCase().indexOf(preferredColor.toLowerCase()) !== -1) {
-          btn.classList.add("active");
-          selectedColor = cName;
-        } else if (!preferredColor && cName.indexOf("Irmak 65") !== -1) {
-          btn.classList.add("active");
-        } else {
-          btn.classList.remove("active");
-        }
-      });
-    } else {
-      modalColorGroup.style.display = "none";
-      selectedColor = "";
+    if (modalServiceNote) {
+      if (isPaint) {
+        if (modalServiceTitle) modalServiceTitle.textContent = "RenXMatik™ Sınırsız Renk Hazırlığı";
+        if (modalServiceDesc) modalServiceDesc.textContent = "Bu ürün, Balçova Showroom ve Urla Ana Depomuzdaki RenXMatik™ bilgisayarlı renk merkezimizde dilediğiniz Filli Boya, RAL veya NCS renk koduna göre mikron hassasiyetle anında hazırlanır.";
+      } else {
+        if (modalServiceTitle) modalServiceTitle.textContent = "Orijinal Üretim & Şantiye Sevk";
+        if (modalServiceDesc) modalServiceDesc.textContent = "Balçova Showroom ve Urla Ana Depo stoklarımızdan doğrudan şantiye adresinize güvenli lojistikle sevk edilir.";
+      }
     }
 
     updateCanScale(selectedSize);
@@ -18667,7 +18647,7 @@ html body.bm-transparent-header-page .bm-page-main {
 
   function onDragStart(e) {
     if (!backdrop.classList.contains("open")) return;
-    if (e.target.closest("button, a, input, select, textarea, .bm-size-pill, .bm-color-pill")) return;
+    if (e.target.closest("button, a, input, select, textarea, .bm-size-pill")) return;
 
     var touch = e.touches ? e.touches[0] : e;
     dragStartY = touch.clientY;
@@ -18767,22 +18747,6 @@ html body.bm-transparent-header-page .bm-page-main {
         var pid = row.getAttribute("data-product-id");
         openModal(pid);
       }
-    });
-  });
-
-  // Color pill click bindings
-  var colorBtns = modalColorsWrap.querySelectorAll(".bm-color-pill");
-  colorBtns.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      colorBtns.forEach(function(b) { b.classList.remove("active"); });
-      btn.classList.add("active");
-      selectedColor = btn.getAttribute("data-color-name");
-      var dot = btn.querySelector(".bm-color-dot");
-      if (modalChromaGlow && dot && dot.style.backgroundColor) {
-        modalChromaGlow.style.background = "radial-gradient(circle, " + dot.style.backgroundColor + "44 0%, rgba(64, 94, 102, 0) 72%)";
-      }
-      updateSelectionSummary();
-      updateWhatsAppUrl();
     });
   });
 

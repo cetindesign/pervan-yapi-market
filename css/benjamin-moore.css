@@ -2422,6 +2422,49 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
+/* Editorial RenXMatik™ On-Demand Tinting Service Guarantee */
+.bm-atelier-service-note {
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-left: 3px solid #111215;
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.bm-service-note-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bm-service-note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111215;
+  flex-shrink: 0;
+}
+
+.bm-service-note-title {
+  font-family: var(--bm-font);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #111215;
+}
+
+.bm-service-note-desc {
+  font-family: var(--bm-font);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #52525B;
+  margin: 0;
+}
+
 /* 3. Architectural Technical Ledger (ZERO CARDS, PURE TYPOGRAPHIC LEDGER) */
 .bm-atelier-ledger {
   border-top: 1px solid rgba(24, 24, 27, 0.12);
