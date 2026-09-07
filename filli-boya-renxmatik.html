@@ -7929,7 +7929,7 @@ html body.bm-transparent-header-page .bm-page-main {
         <div class="bm-atelier-glow" id="modalChromaGlow"></div>
         
         <div class="bm-atelier-header-lockup">
-          <div class="bm-atelier-eyebrow">★ FİLLİ BOYA &amp; RENXMATİK REÇETESİ ★</div>
+          <div class="bm-atelier-eyebrow" id="modalProductEyebrow">İç Cephe &amp; Tavan</div>
           <h3 class="bm-atelier-title" id="modalProductTitle">Momento Silan</h3>
         </div>
 
@@ -18426,6 +18426,7 @@ html body.bm-transparent-header-page .bm-page-main {
   var modalScrollArea = document.getElementById("modalScrollArea");
 
   var modalImg = document.getElementById("modalProductImg");
+  var modalEyebrow = document.getElementById("modalProductEyebrow");
   var modalTag = document.getElementById("modalProductTag");
   var modalTitle = document.getElementById("modalProductTitle");
   var modalSub = document.getElementById("modalProductSub");
@@ -18444,6 +18445,27 @@ html body.bm-transparent-header-page .bm-page-main {
   var modalShareText = document.getElementById("modalShareText");
   var modalChromaGlow = document.getElementById("modalChromaGlow");
   var modalSelectionSummary = document.getElementById("modalSelectionSummary");
+
+  var categoryDisplayNames = {
+    "ic-cephe": "İç Cephe & Tavan",
+    "dis-cephe": "Dış Cephe & Koruma",
+    "ahsap-metal": "Ahşap & Metal",
+    "donusum": "Kendin Yap & Dönüşüm",
+    "astar-hazirlik": "Astar & Hazırlık",
+    "yalitim": "Capatect Yalıtım",
+    "firca-rulo": "Fırça & Rulo",
+    "yuzey-hazirlik": "Yüzey Hazırlık",
+    "santiye-sarf": "Şantiye Sarf",
+    "yapi-kimyasal": "Yapı Kimyasalları",
+    "sanayi-epoksi": "Sanayi & Epoksi",
+    "expert": "Expert Profesyonel",
+    "donusum-efekt": "Dönüşüm & Efekt",
+    "super-mobilya": "Süper Mobilya",
+    "fine-ultra": "Fine & Ultra",
+    "eps-levha": "EPS Isı Yalıtım",
+    "tasyunu": "Taşyünü Yalıtım",
+    "sistem-harc": "Sistem Harçları"
+  };
 
   var currentProduct = null;
   var selectedSize = "";
@@ -18640,6 +18662,9 @@ html body.bm-transparent-header-page .bm-page-main {
     currentProduct = p;
 
     // Fill Product Info
+    if (modalEyebrow) {
+      modalEyebrow.textContent = categoryDisplayNames[p.category] || "Filli Boya";
+    }
     modalImg.src = p.img;
     modalImg.alt = p.name;
     modalTag.textContent = "★ " + p.tag;
