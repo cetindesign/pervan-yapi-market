@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.8" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.2.9" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -7906,11 +7906,13 @@ html body.bm-transparent-header-page .bm-page-main {
      ========================================================================== -->
 <div class="bm-modal-backdrop" id="paintModalBackdrop" aria-hidden="true">
   <div class="bm-modal-card" id="paintModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-    <!-- Drag Handle for Mobile Drawer -->
-    <div class="bm-modal-handle"></div>
+    <!-- Kinetic Drag Handle Zone (Vaul 1:1 Gesture Target) -->
+    <div class="bm-modal-handle-zone" id="modalHandleZone">
+      <div class="bm-modal-handle"></div>
+    </div>
 
     <!-- Sticky Modal Header (Jon Coffee 1:1) -->
-    <div class="bm-modal-sticky-header">
+    <div class="bm-modal-sticky-header" id="modalStickyHeader">
       <div>
         <div class="bm-modal-eyebrow">★ FİLLİ BOYA &amp; RENXMATİK REÇETESİ ★</div>
         <h3 class="bm-modal-title" id="modalProductTitle">Momento Silan</h3>
@@ -7920,8 +7922,8 @@ html body.bm-transparent-header-page .bm-page-main {
       </button>
     </div>
 
-    <!-- Scrollable Modal Content -->
-    <div class="bm-modal-scroll">
+    <!-- Scrollable Modal Content Area -->
+    <div class="bm-modal-scroll" id="modalScrollArea">
       <!-- Product Card -->
       <div class="bm-modal-product-card">
         <div class="bm-modal-img-wrap">
@@ -7972,41 +7974,59 @@ html body.bm-transparent-header-page .bm-page-main {
         </div>
       </div>
 
-      <!-- Technical Specifications Box (Jon Coffee 1:1) -->
-      <div class="bm-modal-specs-box">
-        <div class="bm-modal-spec-row">
-          <span class="bm-modal-spec-k">Sarfiyat</span>
-          <span class="bm-modal-spec-v" id="modalSpecCoverage">13 – 17 m²/L</span>
+      <!-- 2-Column Architectural Technical Spec Matrix (Apple & Jon Coffee 1:1) -->
+      <div class="bm-modal-specs-matrix">
+        <div class="bm-spec-card">
+          <div class="bm-spec-card-header">
+            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span class="bm-spec-label">Sarfiyat</span>
+          </div>
+          <div class="bm-spec-value" id="modalSpecCoverage">13 – 17 m²/L</div>
         </div>
-        <div class="bm-modal-spec-row">
-          <span class="bm-modal-spec-k">Bitiş / Parlaklık</span>
-          <span class="bm-modal-spec-v" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</span>
+
+        <div class="bm-spec-card">
+          <div class="bm-spec-card-header">
+            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z"/></svg>
+            <span class="bm-spec-label">Bitiş / Doku</span>
+          </div>
+          <div class="bm-spec-value" id="modalSpecSheen">İpeksi Mat® (Silinebilir)</div>
         </div>
-        <div class="bm-modal-spec-row">
-          <span class="bm-modal-spec-k">Kuruma Süresi</span>
-          <span class="bm-modal-spec-v" id="modalSpecDrying">2 – 4 Saat (Kat arası)</span>
+
+        <div class="bm-spec-card">
+          <div class="bm-spec-card-header">
+            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="bm-spec-label">Kuruma Süresi</span>
+          </div>
+          <div class="bm-spec-value" id="modalSpecDrying">2 – 4 Saat</div>
         </div>
-        <div class="bm-modal-spec-row">
-          <span class="bm-modal-spec-k">Uygulama Alanı</span>
-          <span class="bm-modal-spec-v" id="modalSpecSurface">İç cephe sıva, alçı, brüt beton</span>
+
+        <div class="bm-spec-card">
+          <div class="bm-spec-card-header">
+            <svg class="bm-spec-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span class="bm-spec-label">Uygulama Alanı</span>
+          </div>
+          <div class="bm-spec-value" id="modalSpecSurface">İç cephe sıva, alçı, beton</div>
         </div>
       </div>
+    </div>
 
-      <!-- Modal Action Buttons (Jon Coffee 1:1) -->
-      <div class="bm-modal-actions">
-        <a href="#" id="modalWhatsAppBtn" target="_blank" rel="noopener" class="bm-btn-chamberlain-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416C6.574 4 2.172 8.402 2.172 13.829c0 1.996.584 3.901 1.691 5.534L2 25l5.808-1.809c1.57.887 3.364 1.365 5.223 1.365 5.457 0 9.859-4.402 9.859-9.827C22.89 8.402 18.488 4 12.031 4z"/></svg>
-          <span id="modalCtaText">WhatsApp ile Reçete &amp; Fiyat İste</span>
-        </a>
+    <!-- STICKY FOOTER ACTION BAR (Apple Store & Vaul 1:1 Pinned Action) -->
+    <div class="bm-modal-footer-sticky" id="modalFooterSticky">
+      <a href="#" id="modalWhatsAppBtn" target="_blank" rel="noopener" class="bm-btn-chamberlain-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416C6.574 4 2.172 8.402 2.172 13.829c0 1.996.584 3.901 1.691 5.534L2 25l5.808-1.809c1.57.887 3.364 1.365 5.223 1.365 5.457 0 9.859-4.402 9.859-9.827C22.89 8.402 18.488 4 12.031 4z"/></svg>
+        <span id="modalCtaText">WhatsApp ile Reçete &amp; Fiyat İste</span>
+      </a>
 
-        <div class="bm-modal-note">
-          Balçova Showroom &amp; Urla Ana Depo RenXMatik™ bilgisayarlı dolum · Aynı gün şantiye teslimatı
-        </div>
+      <div class="bm-modal-footer-aux">
+        <span class="bm-modal-delivery-chip">
+          <span class="bm-chip-pulse"></span>
+          <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
+        </span>
 
-        <button type="button" id="modalShareBtn" class="bm-btn-chamberlain-secondary">
-          <svg class="bm-share-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
-          <svg class="bm-check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span id="modalShareText">Ürün Bağlantısını Paylaş</span>
+        <button type="button" id="modalShareBtn" class="bm-modal-share-link" aria-label="Ürün Bağlantısını Kopyala">
+          <svg class="bm-share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+          <svg class="bm-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span id="modalShareText">Paylaş</span>
         </button>
       </div>
     </div>
@@ -18414,7 +18434,11 @@ html body.bm-transparent-header-page .bm-page-main {
   var renoBridge = document.getElementById("renoBridge");
 
   var backdrop = document.getElementById("paintModalBackdrop");
+  var modalCard = document.getElementById("paintModalCard");
   var closeBtn = document.getElementById("modalCloseBtn");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalStickyHeader = document.getElementById("modalStickyHeader");
+  var modalScrollArea = document.getElementById("modalScrollArea");
 
   var modalImg = document.getElementById("modalProductImg");
   var modalTag = document.getElementById("modalProductTag");
@@ -18546,6 +18570,7 @@ html body.bm-transparent-header-page .bm-page-main {
     updateWhatsAppUrl();
 
     // Show Modal
+    resetSheetStyles();
     backdrop.classList.add("open");
     backdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -18560,10 +18585,22 @@ html body.bm-transparent-header-page .bm-page-main {
 
   window.openProductModalWithColor = openModal;
 
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (backdrop) {
+      backdrop.style.opacity = "";
+      backdrop.style.transition = "";
+    }
+  }
+
   function closeModal() {
     backdrop.classList.remove("open");
     backdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    resetSheetStyles();
 
     // URL sync (Jon Coffee 1:1)
     if (window.history && window.history.replaceState) {
@@ -18571,6 +18608,103 @@ html body.bm-transparent-header-page .bm-page-main {
       url.searchParams.delete("item");
       window.history.replaceState(null, "", url.toString());
     }
+  }
+
+  // VAUL / iOS 1:1 KINETIC DRAG-TO-DISMISS BOTTOM SHEET ENGINE
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var isSheetDragging = false;
+  var canDragFromScroll = false;
+
+  function onDragStart(e) {
+    if (!backdrop.classList.contains("open")) return;
+    if (e.target.closest("button, a, input, select, textarea, .bm-size-pill, .bm-color-pill")) return;
+
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
+
+  function onDragMove(e) {
+    if (!backdrop.classList.contains("open") || !dragStartY) return;
+
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
+
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalHandleZone, #modalStickyHeader");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+
+        modalCard.style.transition = "none";
+        modalCard.style.transform = "translateY(" + deltaY + "px)";
+
+        var progress = Math.min(1, deltaY / 360);
+        backdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
+      }
+    } else if (deltaY < -4 && e.target.closest("#modalHandleZone, #modalStickyHeader")) {
+      isSheetDragging = true;
+      if (e.cancelable) e.preventDefault();
+      var resisted = deltaY * 0.18;
+      modalCard.style.transition = "none";
+      modalCard.style.transform = "translateY(" + resisted + "px)";
+    }
+  }
+
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+
+    dragStartY = 0;
+
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      backdrop.style.transition = "opacity 0.24s ease";
+      backdrop.style.opacity = "0";
+      setTimeout(function() {
+        closeModal();
+        resetSheetStyles();
+      }, 240);
+    } else {
+      modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(0)";
+      backdrop.style.transition = "opacity 0.25s ease";
+      backdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
+    }
+  }
+
+  [modalHandleZone, modalStickyHeader, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  if (modalHandleZone) {
+    modalHandleZone.addEventListener("mousedown", onDragStart);
+    window.addEventListener("mousemove", function(e) {
+      if (dragStartY && isSheetDragging) onDragMove(e);
+    });
+    window.addEventListener("mouseup", function(e) {
+      if (dragStartY && isSheetDragging) onDragEnd(e);
+    });
   }
 
   // Row click bindings
