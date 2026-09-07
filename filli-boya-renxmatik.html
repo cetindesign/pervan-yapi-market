@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.0" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.1" />
 <style id="bmHeaderTransparentCritical">
 /* GLOBAL ROOT VIEWPORT SCROLLER LOCK (ELIMINATE 2D DRIFT & OVERFLOW GAPS) */
 html, body {
@@ -18688,11 +18688,11 @@ html body.bm-transparent-header-page .bm-page-main {
 
     // Atmospheric Chroma Glow Sync
     if (modalChromaGlow) {
-      var glowColor = (p.category === "donusum" || p.category === "donusum-efekt") ? "rgba(59, 130, 246, 0.16)" :
-                      (p.category === "ahsap-metal") ? "rgba(217, 119, 6, 0.16)" :
-                      (p.category === "dis-cephe" || p.category === "yalitim") ? "rgba(180, 83, 9, 0.16)" :
-                      "rgba(64, 94, 102, 0.18)";
-      modalChromaGlow.style.background = "radial-gradient(circle, " + glowColor + " 0%, rgba(64, 94, 102, 0) 70%)";
+      var glowColor = (p.category === "donusum" || p.category === "donusum-efekt") ? "rgba(59, 130, 246, 0.24)" :
+                      (p.category === "ahsap-metal") ? "rgba(217, 119, 6, 0.24)" :
+                      (p.category === "dis-cephe" || p.category === "yalitim") ? "rgba(180, 83, 9, 0.24)" :
+                      "rgba(64, 94, 102, 0.26)";
+      modalChromaGlow.style.background = "radial-gradient(circle at 50% 50%, " + glowColor + " 0%, rgba(255, 255, 255, 0) 72%)";
     }
 
     // Fill Specs & Gauges

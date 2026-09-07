@@ -2227,7 +2227,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   align-items: center;
   text-align: center;
   gap: 10px;
-  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .bm-specimen-meta,
@@ -2236,7 +2236,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 3px;
+  gap: 4px;
   margin: 0;
 }
 
@@ -2247,7 +2247,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #71717A;
+  color: #8E8E93;
   margin: 0;
   line-height: 1.2;
 }
@@ -2279,13 +2279,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-specimen-glow,
 .bm-atelier-glow {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(64, 94, 102, 0.16) 0%, rgba(64, 94, 102, 0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(64, 94, 102, 0.22) 0%, rgba(255, 255, 255, 0) 72%);
   pointer-events: none;
-  filter: blur(18px);
-  -webkit-filter: blur(18px);
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
   transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2294,8 +2294,8 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.18));
-  -webkit-filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.16));
+  -webkit-filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.16));
   transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: transform;
 }
@@ -2305,13 +2305,13 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 78px;
-  height: 10px;
+  width: 82px;
+  height: 11px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(17, 18, 21, 0.28) 0%, rgba(17, 18, 21, 0.1) 40%, rgba(17, 18, 21, 0) 70%);
+  background: radial-gradient(ellipse at center, rgba(17, 18, 21, 0.22) 0%, rgba(17, 18, 21, 0.08) 42%, transparent 72%);
   pointer-events: none;
-  filter: blur(1.5px);
-  -webkit-filter: blur(1.5px);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
   transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.32s ease;
   will-change: transform;
 }
@@ -2332,7 +2332,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: none !important;
 }
 
-/* 2. Packaging / Size Segmented Track (Hardware Controller Feel) */
+/* 2. Packaging / Size Segmented Track (Tactile Hardware Controller) */
 .bm-modal-select-group {
   display: flex;
   flex-direction: column;
@@ -2343,22 +2343,22 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1px;
+  padding: 0 2px;
 }
 
 .bm-modal-select-title {
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #71717A;
+  letter-spacing: 0.09em;
+  color: #8E8E93;
 }
 
 .bm-modal-select-hint {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 10px;
   font-weight: 700;
-  color: #71717A;
+  color: #8E8E93;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -2367,19 +2367,20 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  background: #F4F4F6;
+  background: #F1F1F4;
   padding: 3.5px;
-  border-radius: 12px;
+  border-radius: 14px;
   gap: 3px;
   box-sizing: border-box;
-  border: 1px solid rgba(24, 24, 27, 0.06);
+  border: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .bm-segmented-btn {
   appearance: none;
   border: none;
   background: transparent;
-  border-radius: 9px;
+  border-radius: 11px;
   height: 38px;
   display: flex;
   align-items: center;
@@ -2388,9 +2389,9 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-size: 13.5px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #52525B;
+  color: #636366;
   cursor: pointer;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   touch-action: manipulation;
   user-select: none;
 }
@@ -2399,10 +2400,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   color: #111215;
 }
 
+.bm-segmented-btn:active {
+  transform: scale(0.96);
+}
+
 .bm-segmented-btn.active {
   background: #FFFFFF;
   color: #111215;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .bm-modal-pills-row {
@@ -2519,14 +2524,15 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 /* Minimalist RenXMatik™ On-Demand Tinting Service Guarantee (Borderless Trust Row) */
 .bm-atelier-service-note {
-  background: transparent;
+  background: rgba(244, 244, 246, 0.65);
   border: none;
-  border-radius: 0;
-  padding: 4px 2px 2px;
+  border-radius: 12px;
+  padding: 10px 13px;
   display: flex;
   align-items: flex-start;
   gap: 10px;
   box-sizing: border-box;
+  margin-top: -2px;
 }
 
 .bm-service-note-header {
@@ -2540,7 +2546,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   align-items: center;
   justify-content: center;
   color: #111215;
-  margin-top: 1px;
+  margin-top: 1.5px;
   flex-shrink: 0;
 }
 
@@ -2561,34 +2567,34 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-weight: 700;
 }
 
-/* 3. Dual Spec Gauges (Industrial Data Cartridges) */
+/* 3. Dual Spec Gauges (Soft Bento Materiality & Specular Depth) */
 .bm-spec-gauges {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 8px;
+  gap: 10px;
 }
 
 .bm-gauge-card {
-  background: #F9FAFB;
-  border: 1px solid rgba(24, 24, 27, 0.08);
-  border-radius: 12px;
-  padding: 11px 13px;
+  background: #F6F6F8;
+  border: none;
+  border-radius: 16px;
+  padding: 13px 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 84px;
+  min-height: 86px;
   box-sizing: border-box;
-  transition: all 0.18s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .bm-gauge-card:hover {
-  border-color: rgba(24, 24, 27, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .bm-gauge-primary {
   background: #FFFFFF;
-  border-color: rgba(24, 24, 27, 0.13);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .bm-gauge-eyebrow {
@@ -2596,8 +2602,8 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-size: 9px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #71717A;
+  letter-spacing: 0.11em;
+  color: #8E8E93;
   margin-bottom: 2px;
 }
 
@@ -2609,11 +2615,11 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-gauge-num {
-  font-size: 26px;
+  font-size: 27px;
   font-weight: 900;
   line-height: 1;
   color: #111215;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   transition: all 0.2s ease;
 }
 
@@ -2621,7 +2627,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 13px;
   font-weight: 800;
-  color: #71717A;
+  color: #8E8E93;
   line-height: 1;
 }
 
@@ -2644,8 +2650,14 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-gauge-drying {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 3px 7px;
+  border-radius: 9999px;
+  width: fit-content;
   color: #52525B;
+  font-weight: 600;
+  font-size: 10.5px;
 }
 
 .bm-gauge-drying svg {
@@ -2763,11 +2775,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   border-radius: 9999px;
   font-family: var(--bm-font);
   font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   padding: 14px 22px;
-  min-height: 46px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2775,7 +2786,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   text-decoration: none;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
   box-sizing: border-box;
@@ -2784,11 +2795,12 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-btn-chamberlain-primary:hover {
   background: #000000;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .bm-btn-chamberlain-primary:active {
-  transform: translateY(0);
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
 }
 
 .bm-modal-footer-aux {
