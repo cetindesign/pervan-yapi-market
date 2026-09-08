@@ -1923,9 +1923,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 
 .bm-menu-title-row {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 2px;
 }
 
 .bm-menu-name {
@@ -1934,6 +1935,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   color: #121316;
   letter-spacing: -0.015em;
   font-family: var(--bm-font);
+  line-height: 1.25;
   transition: color 0.18s ease;
 }
 
@@ -1945,36 +1947,43 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   display: none !important;
 }
 
+/* Modern Apple-Caliber Feature Pill Badges */
 .bm-menu-tag {
-  font-size: 10px;
-  font-weight: 700;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: rgba(4, 120, 87, 0.08);
-  color: #047857;
-  border: 1px solid rgba(4, 120, 87, 0.18);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: #F4F4F6;
+  color: #18181B;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
   white-space: nowrap;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  line-height: 1.35;
+  text-transform: none;
+  box-shadow: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .bm-menu-tag.tag-amber {
-  background: rgba(180, 83, 9, 0.08);
+  background: rgba(217, 119, 6, 0.09);
   color: #B45309;
-  border-color: rgba(180, 83, 9, 0.18);
+  border: none;
 }
 
 .bm-menu-tag.tag-emerald {
-  background: rgba(4, 120, 87, 0.08);
+  background: rgba(5, 150, 105, 0.09);
   color: #047857;
-  border-color: rgba(4, 120, 87, 0.18);
+  border: none;
 }
 
 .bm-menu-tag.tag-purple {
-  background: rgba(126, 34, 206, 0.08);
-  color: #7E22CE;
-  border-color: rgba(126, 34, 206, 0.18);
+  background: rgba(99, 102, 241, 0.09);
+  color: #4338CA;
+  border: none;
 }
 
 .bm-menu-desc-line {
@@ -1992,10 +2001,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   align-items: center;
   flex-wrap: wrap;
   gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 11.5px;
+  font-weight: 500;
   color: #71717A;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   padding-top: 1px;
 }
 
