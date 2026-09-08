@@ -8179,10 +8179,10 @@ html body.bm-transparent-header-page .bm-page-main {
         <div class="bm-gauge-card bm-gauge-primary" id="modalAreaRow">
           <div class="bm-gauge-eyebrow">BOYANABİLİR ALAN</div>
           <div class="bm-gauge-metric">
-            <span class="bm-gauge-num font-mono-data" id="modalGaugeNum">~113</span>
+            <span class="bm-gauge-num font-mono-data" id="modalGaugeNum">113</span>
             <span class="bm-gauge-unit">m²</span>
           </div>
-          <div class="bm-gauge-caption" id="modalGaugeSub">~98 – 128 m² Çift Kat Kaplama</div>
+          <div class="bm-gauge-caption" id="modalGaugeSub">98 – 128 m² Çift Kat Kaplama</div>
           <span id="modalSpecArea" style="display:none;"></span>
         </div>
 
@@ -18707,9 +18707,9 @@ html body.bm-transparent-header-page .bm-page-main {
         var maxArea = Math.round((val * maxCov) / divisor);
         var avgArea = Math.round((minArea + maxArea) / 2);
         return {
-          pillLabel: "~" + avgArea + " m²",
-          rangeLabel: "~" + minArea + " – " + maxArea + " m² (Çift Kat)",
-          summaryLabel: "~" + avgArea + " m² çift kat",
+          pillLabel: avgArea + " m²",
+          rangeLabel: minArea + " – " + maxArea + " m² (Çift Kat)",
+          summaryLabel: avgArea + " m² çift kat",
           avgArea: avgArea
         };
       } else if (unit === "kg" && covUnit === "kg") {
@@ -18718,9 +18718,9 @@ html body.bm-transparent-header-page .bm-page-main {
         var maxArea = Math.round((val * maxCov) / divisor);
         var avgArea = Math.round((minArea + maxArea) / 2);
         return {
-          pillLabel: "~" + avgArea + " m²",
-          rangeLabel: "~" + minArea + " – " + maxArea + " m² (Çift Kat)",
-          summaryLabel: "~" + avgArea + " m² çift kat",
+          pillLabel: avgArea + " m²",
+          rangeLabel: minArea + " – " + maxArea + " m² (Çift Kat)",
+          summaryLabel: avgArea + " m² çift kat",
           avgArea: avgArea
         };
       }
@@ -18734,18 +18734,18 @@ html body.bm-transparent-header-page .bm-page-main {
         var divisor = isDoubleCoat ? 1 : 2;
         var area = Math.round((val * covVal) / divisor);
         return {
-          pillLabel: "~" + area + " m²",
-          rangeLabel: "~" + area + " m² (Çift Kat)",
-          summaryLabel: "~" + area + " m² çift kat",
+          pillLabel: area + " m²",
+          rangeLabel: area + " m² (Çift Kat)",
+          summaryLabel: area + " m² çift kat",
           avgArea: area
         };
       } else if (unit === "kg" && covUnit === "kg") {
         var divisor = isDoubleCoat ? 1 : 2;
         var area = Math.round((val * covVal) / divisor);
         return {
-          pillLabel: "~" + area + " m²",
-          rangeLabel: "~" + area + " m² (Çift Kat)",
-          summaryLabel: "~" + area + " m² çift kat",
+          pillLabel: area + " m²",
+          rangeLabel: area + " m² (Çift Kat)",
+          summaryLabel: area + " m² çift kat",
           avgArea: area
         };
       }
@@ -18759,9 +18759,9 @@ html body.bm-transparent-header-page .bm-page-main {
       var maxArea = Math.round(val / minKg);
       var avgArea = Math.round((minArea + maxArea) / 2);
       return {
-        pillLabel: "~" + avgArea + " m²",
-        rangeLabel: "~" + minArea + " – " + maxArea + " m² (Tek Kat Kaplama)",
-        summaryLabel: "~" + avgArea + " m² kaplama",
+        pillLabel: avgArea + " m²",
+        rangeLabel: minArea + " – " + maxArea + " m² (Tek Kat Kaplama)",
+        summaryLabel: avgArea + " m² kaplama",
         avgArea: avgArea
       };
     }
@@ -18775,8 +18775,8 @@ html body.bm-transparent-header-page .bm-page-main {
     if (!product) return;
     var est = calculateCoverageEstimate(size, product.coverage);
     if (est) {
-      if (gaugeNum) gaugeNum.textContent = "~" + est.avgArea;
-      if (gaugeSub) gaugeSub.textContent = est.rangeLabel || ("~" + est.avgArea + " m² Çift Kat");
+      if (gaugeNum) gaugeNum.textContent = est.avgArea;
+      if (gaugeSub) gaugeSub.textContent = est.rangeLabel || (est.avgArea + " m² Çift Kat");
       if (modalSpecArea) modalSpecArea.textContent = est.rangeLabel;
       if (modalAreaRow) modalAreaRow.style.display = "flex";
     } else {
