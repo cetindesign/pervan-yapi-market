@@ -8232,21 +8232,23 @@ html body.bm-transparent-header-page .bm-page-main {
       <div class="bm-spec-gauges" id="modalSpecGauges">
         <!-- Left Gauge: Coverage Area -->
         <div class="bm-gauge-card bm-gauge-primary" id="modalAreaRow">
-          <div class="bm-gauge-eyebrow">BOYANABİLİR ALAN</div>
+          <div class="bm-gauge-eyebrow" id="modalGaugeAreaEyebrow">BOYANABİLİR ALAN</div>
           <div class="bm-gauge-metric">
             <span class="bm-gauge-num font-mono-data" id="modalGaugeNum">113</span>
-            <span class="bm-gauge-unit">m²</span>
+            <span class="bm-gauge-unit" id="modalGaugeUnit">m²</span>
           </div>
           <div class="bm-gauge-caption" id="modalGaugeSub">98 – 128 m² Çift Kat Kaplama</div>
           <span id="modalSpecArea" style="display:none;"></span>
         </div>
 
         <!-- Right Gauge: Finish & Drying -->
-        <div class="bm-gauge-card">
-          <div class="bm-gauge-eyebrow">BİTİŞ &amp; KURUMA</div>
+        <div class="bm-gauge-card" id="modalSpecRightCard">
+          <div class="bm-gauge-eyebrow" id="modalGaugeSheenEyebrow">DOKU &amp; KURUMA</div>
           <div class="bm-gauge-metric-text" id="modalGaugeSheen">İpeksi Mat®</div>
           <div class="bm-gauge-caption bm-gauge-drying" id="modalGaugeDrying">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="modalGaugeDryingIcon" style="display:inline-flex;align-items:center;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
             <span id="modalGaugeDryingText">2 – 4 Saat Kuruma</span>
           </div>
         </div>
@@ -18825,17 +18827,20 @@ html body.bm-transparent-header-page .bm-page-main {
 
   function updateAreaCoverage(size, product) {
     var gaugeNum = document.getElementById("modalGaugeNum");
+    var gaugeUnit = document.getElementById("modalGaugeUnit");
     var gaugeSub = document.getElementById("modalGaugeSub");
     var sizeHint = document.getElementById("modalSizeHint");
     if (!product) return;
     var est = calculateCoverageEstimate(size, product.coverage);
     if (est) {
       if (gaugeNum) gaugeNum.textContent = est.avgArea;
+      if (gaugeUnit) gaugeUnit.style.display = "inline";
       if (gaugeSub) gaugeSub.textContent = est.rangeLabel || (est.avgArea + " m² Çift Kat");
       if (modalSpecArea) modalSpecArea.textContent = est.rangeLabel;
       if (modalAreaRow) modalAreaRow.style.display = "flex";
     } else {
       if (gaugeNum) gaugeNum.textContent = "—";
+      if (gaugeUnit) gaugeUnit.style.display = "none";
       if (gaugeSub) gaugeSub.textContent = product.coverage || "Standart Kaplama";
       if (modalSpecArea) modalSpecArea.textContent = product.coverage || "—";
     }
@@ -18942,9 +18947,94 @@ html body.bm-transparent-header-page .bm-page-main {
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
+  var SPEC_ICONS = {
+    clock: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    timer: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>',
+    shield: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    layers: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+    tool: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+  };
+
+  function updateCategorySpecCartridges(p, productId) {
+    if (!p) return;
+    var cat = p.category || "";
+    var pid = (productId || p.id || "").toLowerCase();
+
+    var rightEyebrow = "DOKU & KURUMA";
+    var leftEyebrow = "BOYANABİLİR ALAN";
+    var iconSvg = SPEC_ICONS.clock;
+    var dryingLabel = p.drying || "";
+
+    // 1. Application Hardware & Tools (fırça, rulo, şantiye sarf)
+    if (cat === "firca-rulo" || cat === "santiye-sarf") {
+      rightEyebrow = "YAPI & DAYANIM";
+      leftEyebrow = "UYUMLU KULLANIM";
+      iconSvg = SPEC_ICONS.tool;
+      dryingLabel = p.drying || "Kullanıma Hazır";
+    }
+    // 2. Boards, Insulation Fasteners & Mesh (EPS levha, taşyünü, file, dübel)
+    else if (cat === "eps-levha" || cat === "tasyunu" || pid.indexOf("file") !== -1 || pid.indexOf("dubel") !== -1 || pid.indexOf("dalmacyali") !== -1) {
+      rightEyebrow = "MATERYAL & MONTAJ";
+      leftEyebrow = "KAPLAMA & SARFİYAT";
+      iconSvg = SPEC_ICONS.layers;
+      dryingLabel = p.drying || "Montaja Hazır";
+    }
+    // 3. Mortars, Plasters & Adhesives (sistem harçları, yapı kimyasalları, yalıtım harç/sıvaları)
+    else if (cat === "sistem-harc" || cat === "yapi-kimyasal" || pid.indexOf("harc") !== -1 || pid.indexOf("siva") !== -1 || pid.indexOf("yapistir") !== -1) {
+      rightEyebrow = "YAPI & KÜRLENME";
+      leftEyebrow = "KAPLAMA & SARFİYAT";
+      iconSvg = SPEC_ICONS.shield;
+      dryingLabel = p.drying || "Priz / Kürlenme";
+    }
+    // 4. Primers & Surface Preparation (astar, macun, tiner)
+    else if (cat === "astar-hazirlik" || cat === "yuzey-hazirlik" || pid.indexOf("astar") !== -1 || pid.indexOf("macun") !== -1 || pid.indexOf("tiner") !== -1) {
+      rightEyebrow = "İŞLEV & BEKLEME";
+      leftEyebrow = "UYGULAMA & SARFİYAT";
+      iconSvg = SPEC_ICONS.timer;
+      dryingLabel = p.drying || "Bekleme Süresi";
+    }
+    // 5. Industrial & Heavy Duty Epoxy
+    else if (cat === "sanayi-epoksi") {
+      rightEyebrow = "DİRENÇ & TRAFİK";
+      leftEyebrow = "KAPLAMA ALANI";
+      iconSvg = SPEC_ICONS.shield;
+      dryingLabel = p.drying || "Kürlenme Süresi";
+    }
+    // 6. Architectural & Decorative Paints (Default)
+    else {
+      rightEyebrow = "DOKU & KURUMA";
+      leftEyebrow = "BOYANABİLİR ALAN";
+      iconSvg = SPEC_ICONS.clock;
+      var raw = p.drying || "";
+      if (raw.toLowerCase().indexOf("kuruma") !== -1) {
+        dryingLabel = raw;
+      } else if (raw.toLowerCase().indexOf("saat") !== -1 || raw.toLowerCase().indexOf("dakika") !== -1) {
+        dryingLabel = raw + " Kuruma";
+      } else {
+        dryingLabel = raw;
+      }
+    }
+
+    var elRightEyebrow = document.getElementById("modalGaugeSheenEyebrow");
+    if (elRightEyebrow) elRightEyebrow.textContent = rightEyebrow;
+
+    var elLeftEyebrow = document.getElementById("modalGaugeAreaEyebrow");
+    if (elLeftEyebrow) elLeftEyebrow.textContent = leftEyebrow;
+
+    var elSheen = document.getElementById("modalGaugeSheen");
+    if (elSheen) elSheen.textContent = p.sheen || "—";
+
+    var elDryingIcon = document.getElementById("modalGaugeDryingIcon");
+    if (elDryingIcon) elDryingIcon.innerHTML = iconSvg;
+
+    var elDryingText = document.getElementById("modalGaugeDryingText");
+    if (elDryingText) elDryingText.textContent = dryingLabel;
+  }
+
   function openModal(productId) {
     var p = products[productId];
     if (!p) return;
+    p.id = productId;
     currentProduct = p;
 
     // Fill Product Info
@@ -18967,15 +19057,12 @@ html body.bm-transparent-header-page .bm-page-main {
       modalChromaGlow.style.background = "radial-gradient(circle at 50% 50%, " + glowColor + " 0%, rgba(255, 255, 255, 0) 72%)";
     }
 
-    // Fill Specs & Gauges
-    var gaugeSheen = document.getElementById("modalGaugeSheen");
-    var gaugeDrying = document.getElementById("modalGaugeDryingText");
+    // Fill Specs & Gauges with Category-Aware Spec Adapter
     if (modalCoverage) modalCoverage.textContent = p.coverage;
     if (modalSheen) modalSheen.textContent = p.sheen;
     if (modalDrying) modalDrying.textContent = p.drying;
     if (modalSurface) modalSurface.textContent = p.surface;
-    if (gaugeSheen) gaugeSheen.textContent = p.sheen;
-    if (gaugeDrying) gaugeDrying.textContent = p.drying + " Kuruma";
+    updateCategorySpecCartridges(p, productId);
 
     // Build Size Options with Segmented Track
     modalSizesWrap.innerHTML = "";
