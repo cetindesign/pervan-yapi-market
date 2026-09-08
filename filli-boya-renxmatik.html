@@ -24,7 +24,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.7" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.8" />
 <style id="bmModalAtelierV2">
 /* ATELIER WARMTH & CHROMATIC RENXMATIK ARCHITECTURE (ZERO CACHE LAG) */
 .bm-modal-sheet {
@@ -323,6 +323,11 @@
   background: rgba(99, 102, 241, 0.09) !important;
   color: #4338CA !important;
   border: none !important;
+}
+
+/* Redundant size hint badge elimination */
+.bm-modal-select-hint {
+  display: none !important;
 }
 </style>
 <style id="bmHeaderTransparentCritical">
@@ -8245,7 +8250,6 @@ html body.bm-transparent-header-page .bm-page-main {
       <div class="bm-modal-select-group">
         <div class="bm-modal-select-header">
           <span class="bm-modal-select-title" id="modalSelectTitle">Ambalaj Hacmi</span>
-          <span class="bm-modal-select-hint font-mono-data" id="modalSizeHint">15 L Büyük Boy</span>
         </div>
         <div class="bm-segmented-track" id="modalSizesContainer" role="radiogroup" aria-label="Ambalaj Hacmi">
           <!-- Dynamically populated via JS -->
@@ -18853,7 +18857,6 @@ html body.bm-transparent-header-page .bm-page-main {
     var gaugeNum = document.getElementById("modalGaugeNum");
     var gaugeUnit = document.getElementById("modalGaugeUnit");
     var gaugeSub = document.getElementById("modalGaugeSub");
-    var sizeHint = document.getElementById("modalSizeHint");
     if (!product) return;
     var est = calculateCoverageEstimate(size, product.coverage);
     if (est) {
@@ -18867,24 +18870,6 @@ html body.bm-transparent-header-page .bm-page-main {
       if (gaugeUnit) gaugeUnit.style.display = "none";
       if (gaugeSub) gaugeSub.textContent = product.coverage || "Standart Kaplama";
       if (modalSpecArea) modalSpecArea.textContent = product.coverage || "—";
-    }
-    if (sizeHint) {
-      var s = (size || "").trim();
-      var volMatch = s.match(/^(\d+(?:[\.,]\d+)?)\s*(l|litre|kg|teneke|kova)/i);
-      if (volMatch) {
-        var num = parseFloat(volMatch[1].replace(",", "."));
-        if (num >= 15) sizeHint.textContent = size + " · Büyük Boy";
-        else if (num >= 5) sizeHint.textContent = size + " · Orta Boy";
-        else sizeHint.textContent = size + " · Standart Boy";
-      } else {
-        if (product.category === "firca-rulo") {
-          sizeHint.textContent = size + " · Seçili Ebat";
-        } else if (product.category === "eps-levha" || product.category === "tasyunu") {
-          sizeHint.textContent = size + " · Seçili Kalınlık";
-        } else {
-          sizeHint.textContent = size ? size + " · Seçili Ölçü" : "";
-        }
-      }
     }
   }
 

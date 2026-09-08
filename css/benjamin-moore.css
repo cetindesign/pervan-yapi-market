@@ -2364,15 +2364,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-modal-select-hint {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10px;
-  font-weight: 800;
-  color: #111215;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: rgba(24, 24, 27, 0.06);
-  padding: 2.5px 7px;
-  border-radius: 5px;
+  display: none !important;
 }
 
 .bm-segmented-track {
