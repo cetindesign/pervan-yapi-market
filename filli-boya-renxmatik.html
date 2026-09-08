@@ -24,23 +24,41 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/reform.css?v=33.0.0" />
-<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.6" />
+<link rel="stylesheet" href="css/benjamin-moore.css?v=10.4.7" />
 <style id="bmModalAtelierV2">
 /* ATELIER WARMTH & CHROMATIC RENXMATIK ARCHITECTURE (ZERO CACHE LAG) */
 .bm-modal-sheet {
   background: #FFFFFF !important;
 }
 
-/* 1. Packaging Volume Tactile Key Buttons */
+/* 1. Packaging & Size Segmented Track Responsive Architecture */
 .bm-segmented-track {
-  display: grid !important;
-  grid-auto-flow: column !important;
-  grid-auto-columns: 1fr !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
   gap: 8px !important;
+  width: 100% !important;
   background: transparent !important;
   padding: 0 !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+.bm-segmented-track.bm-sizes-row-1 .bm-segmented-btn { flex: 1 1 100% !important; }
+.bm-segmented-track.bm-sizes-row-2 .bm-segmented-btn { flex: 1 1 calc(50% - 4px) !important; }
+.bm-segmented-track.bm-sizes-row-3 .bm-segmented-btn { flex: 1 1 calc(33.333% - 6px) !important; }
+.bm-segmented-track.bm-sizes-row-4 .bm-segmented-btn { flex: 1 1 calc(25% - 6px) !important; }
+.bm-segmented-track.bm-sizes-row-5 .bm-segmented-btn { flex: 1 1 calc(20% - 7px) !important; }
+
+.bm-segmented-track.bm-sizes-grid-2 .bm-segmented-btn {
+  flex: 1 1 calc(50% - 4px) !important;
+  min-width: 120px !important;
+}
+
+.bm-segmented-track.bm-sizes-stack .bm-segmented-btn {
+  flex: 1 1 100% !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  padding: 10px 14px !important;
 }
 
 .bm-segmented-btn {
@@ -48,14 +66,16 @@
   border: 1.5px solid rgba(28, 25, 23, 0.18) !important;
   background: #FFFFFF !important;
   border-radius: 12px !important;
-  height: 44px !important;
   min-height: 44px !important;
+  height: auto !important;
+  padding: 8px 10px !important;
+  box-sizing: border-box !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 800 !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
   letter-spacing: -0.015em !important;
   color: #1C1917 !important;
   cursor: pointer !important;
@@ -63,6 +83,10 @@
   touch-action: manipulation !important;
   user-select: none !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  word-break: normal !important;
+  white-space: normal !important;
 }
 
 .bm-segmented-btn:hover:not(.active) {
@@ -8220,7 +8244,7 @@ html body.bm-transparent-header-page .bm-page-main {
       <!-- 2. Packaging / Size Segmented Track -->
       <div class="bm-modal-select-group">
         <div class="bm-modal-select-header">
-          <span class="bm-modal-select-title">Ambalaj Hacmi</span>
+          <span class="bm-modal-select-title" id="modalSelectTitle">Ambalaj Hacmi</span>
           <span class="bm-modal-select-hint font-mono-data" id="modalSizeHint">15 L Büyük Boy</span>
         </div>
         <div class="bm-segmented-track" id="modalSizesContainer" role="radiogroup" aria-label="Ambalaj Hacmi">
@@ -18845,11 +18869,22 @@ html body.bm-transparent-header-page .bm-page-main {
       if (modalSpecArea) modalSpecArea.textContent = product.coverage || "—";
     }
     if (sizeHint) {
-      var s = (size || "").toLowerCase();
-      if (s.indexOf("15") !== -1 || s.indexOf("20") !== -1 || s.indexOf("25") !== -1) sizeHint.textContent = size + " Büyük Boy";
-      else if (s.indexOf("7.5") !== -1 || s.indexOf("10") !== -1 || s.indexOf("5") !== -1) sizeHint.textContent = size + " Orta Boy";
-      else if (s.indexOf("2.5") !== -1 || s.indexOf("1") !== -1 || s.indexOf("0.75") !== -1) sizeHint.textContent = size + " Küçük Boy";
-      else sizeHint.textContent = size ? size + " Ambalaj" : "";
+      var s = (size || "").trim();
+      var volMatch = s.match(/^(\d+(?:[\.,]\d+)?)\s*(l|litre|kg|teneke|kova)/i);
+      if (volMatch) {
+        var num = parseFloat(volMatch[1].replace(",", "."));
+        if (num >= 15) sizeHint.textContent = size + " · Büyük Boy";
+        else if (num >= 5) sizeHint.textContent = size + " · Orta Boy";
+        else sizeHint.textContent = size + " · Standart Boy";
+      } else {
+        if (product.category === "firca-rulo") {
+          sizeHint.textContent = size + " · Seçili Ebat";
+        } else if (product.category === "eps-levha" || product.category === "tasyunu") {
+          sizeHint.textContent = size + " · Seçili Kalınlık";
+        } else {
+          sizeHint.textContent = size ? size + " · Seçili Ölçü" : "";
+        }
+      }
     }
   }
 
@@ -19064,10 +19099,48 @@ html body.bm-transparent-header-page .bm-page-main {
     if (modalSurface) modalSurface.textContent = p.surface;
     updateCategorySpecCartridges(p, productId);
 
-    // Build Size Options with Segmented Track
+    // Dynamic Size Section Title
+    var modalSelectTitle = document.getElementById("modalSelectTitle");
+    if (modalSelectTitle) {
+      if (p.category === "firca-rulo" || p.category === "santiye-sarf") {
+        modalSelectTitle.textContent = "Ölçü & Ebat Seçimi";
+      } else if (p.category === "eps-levha" || p.category === "tasyunu") {
+        modalSelectTitle.textContent = "Kalınlık & Paket Seçimi";
+      } else if (p.category === "sistem-harc" || p.category === "yapi-kimyasal") {
+        var pid = (productId || p.id || "").toLowerCase();
+        if (pid.indexOf("profil") !== -1) modalSelectTitle.textContent = "Profil Tipi & Uzunluk";
+        else if (pid.indexOf("dubel") !== -1) modalSelectTitle.textContent = "Ölçü & Paket Seçimi";
+        else if (pid.indexOf("file") !== -1) modalSelectTitle.textContent = "Rulo Ebat Seçimi";
+        else modalSelectTitle.textContent = "Ambalaj & Torba Seçimi";
+      } else {
+        modalSelectTitle.textContent = "Ambalaj Hacmi";
+      }
+    }
+
+    // Build Size Options with Adaptive Segmented Track
     modalSizesWrap.innerHTML = "";
     selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
     if (p.sizes && p.sizes.length > 0) {
+      var maxLen = 0;
+      p.sizes.forEach(function(s) {
+        if (s.length > maxLen) maxLen = s.length;
+      });
+      var count = p.sizes.length;
+
+      modalSizesWrap.className = "bm-segmented-track";
+      var isCompact = (count <= 3 && maxLen <= 8) || (count === 4 && maxLen <= 6) || (count === 5 && maxLen <= 5);
+      var isLong = (maxLen > 20);
+
+      if (count === 1) {
+        modalSizesWrap.classList.add("bm-sizes-row-1");
+      } else if (isCompact) {
+        modalSizesWrap.classList.add("bm-sizes-row-" + count);
+      } else if (isLong) {
+        modalSizesWrap.classList.add("bm-sizes-stack");
+      } else {
+        modalSizesWrap.classList.add("bm-sizes-grid-2");
+      }
+
       p.sizes.forEach(function(size, idx) {
         var sBtn = document.createElement("button");
         sBtn.type = "button";

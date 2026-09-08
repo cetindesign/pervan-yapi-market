@@ -2376,10 +2376,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 }
 
 .bm-segmented-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+  width: 100%;
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -2388,19 +2388,39 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   box-shadow: none;
 }
 
+.bm-segmented-track.bm-sizes-row-1 .bm-segmented-btn { flex: 1 1 100%; }
+.bm-segmented-track.bm-sizes-row-2 .bm-segmented-btn { flex: 1 1 calc(50% - 4px); }
+.bm-segmented-track.bm-sizes-row-3 .bm-segmented-btn { flex: 1 1 calc(33.333% - 6px); }
+.bm-segmented-track.bm-sizes-row-4 .bm-segmented-btn { flex: 1 1 calc(25% - 6px); }
+.bm-segmented-track.bm-sizes-row-5 .bm-segmented-btn { flex: 1 1 calc(20% - 7px); }
+
+.bm-segmented-track.bm-sizes-grid-2 .bm-segmented-btn {
+  flex: 1 1 calc(50% - 4px);
+  min-width: 120px;
+}
+
+.bm-segmented-track.bm-sizes-stack .bm-segmented-btn {
+  flex: 1 1 100%;
+  text-align: left;
+  justify-content: flex-start;
+  padding: 10px 14px;
+}
+
 .bm-segmented-btn {
   appearance: none;
   border: 1.5px solid rgba(28, 25, 23, 0.18);
   background: #FFFFFF;
   border-radius: 12px;
-  height: 44px;
   min-height: 44px;
+  height: auto;
+  padding: 8px 10px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--bm-font);
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 750;
   letter-spacing: -0.015em;
   color: #1C1917;
   cursor: pointer;
@@ -2408,6 +2428,10 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   touch-action: manipulation;
   user-select: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  line-height: 1.25;
+  text-align: center;
+  word-break: normal;
+  white-space: normal;
 }
 
 .bm-segmented-btn:hover:not(.active) {
