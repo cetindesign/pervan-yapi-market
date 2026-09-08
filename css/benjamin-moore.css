@@ -2810,7 +2810,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .bm-btn-chamberlain-primary {
   background: #111215;
   color: #FFFFFF;
-  border-radius: 9999px;
+  border-radius: 14px;
   font-family: var(--bm-font);
   font-weight: 800;
   font-size: 13.5px;
@@ -3116,7 +3116,7 @@ body.bm-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   padding: 7px 14px;
   height: 34px;
   box-sizing: border-box;
-  border-radius: 9999px;
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.15s ease;
   white-space: nowrap;
