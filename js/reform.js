@@ -430,7 +430,7 @@
       if (resPrimer) resPrimer.innerText = d.primer;
       if (resTools) resTools.innerText = d.tools;
       if (calcWaBtn) {
-        var msg = "Merhaba Pervan Yapı Filli Boya hesaplama reçetesi siparişi vermek istiyorum:\n" +
+        var msg = "Merhaba Pervan Yapı Filli Boya malzeme listesi için sipariş ve fiyat bilgisi almak istiyorum:\n" +
                   "Alan Tipi: " + d.name + "\n" +
                   "İç Cephe Boyası: " + d.wall + "\n" +
                   "Tavan Boyası: " + d.ceil + "\n" +
