@@ -1,14 +1,14 @@
 /* ==========================================================================
-   REFORM CPH (reformcph.com) 1:1 CLONE — MASTER JAVASCRIPT
+   PERVAN ARCHITECTURAL DESIGN SYSTEM — MASTER JAVASCRIPT
    Mobile-First Drawer · Accordions · Modal · WhatsApp Routing · Configurator
    ========================================================================== */
 
 (function() {
   "use strict";
 
-  function initReform() {
+  function initPervan() {
 
-    // REFORM 1:1 MOBILE NAVBAR TOGGLE
+    // PERVAN MOBILE NAVBAR TOGGLE
     var headerEl = document.querySelector("header");
     var mobileBtn = document.getElementById("mobile-menu");
     var navbarContents = document.querySelector(".navbar-contents");
@@ -36,7 +36,7 @@
       });
     }
 
-    // REFORM 1:1 ACCORDION TOGGLE ON MOBILE
+    // PERVAN ACCORDION TOGGLE ON MOBILE
     document.querySelectorAll(".navbar-menu .menu-item").forEach(function(item) {
       item.addEventListener("click", function(e) {
         if (window.innerWidth <= 1259) {
@@ -67,7 +67,7 @@
       });
     }
 
-    // REFORM 1:1 SMART SCROLL-DIRECTION HEADER (HEADROOM PATTERN)
+    // PERVAN SMART SCROLL-DIRECTION HEADER (HEADROOM PATTERN)
     if (headerEl) {
       var lastScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
       var accumulatedDelta = 0;
@@ -135,7 +135,7 @@
       }, { passive: true });
     }
 
-    // REFORM 1:1 BACKGROUND AUTOPLAY VIDEO HELPER
+    // PERVAN BACKGROUND AUTOPLAY VIDEO HELPER
     document.querySelectorAll("video.responsive-video").forEach(function(vid) {
       vid.muted = true;
       vid.setAttribute("muted", "");
@@ -452,8 +452,8 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initReform);
+    document.addEventListener("DOMContentLoaded", initPervan);
   } else {
-    initReform();
+    initPervan();
   }
 })();
