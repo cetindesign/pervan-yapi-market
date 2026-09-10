@@ -3068,7 +3068,7 @@ img, svg {
 }
 
 /* Oval (Capsule) Standard across all buttons in the platform */
-button,
+button:not(.pv-drawer-item):not(.rf-mob-accordion-btn),
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -3086,7 +3086,6 @@ input[type="reset"],
 .pv-btn-whatsapp,
 .pv-subnav-cta-btn,
 .pv-segmented-btn,
-.pv-subnav-link,
 .pv-subnav-search-btn,
 .pv-filter-chip,
 .pv-dept-trigger,

@@ -19552,7 +19552,10 @@ html body.pv-transparent-header-page .pv-page-main {
         '  <span class="pv-drawer-item-num">' + d.num + '</span>' +
         '  <span class="pv-drawer-item-name">' + d.full + '</span>' +
         '</div>' +
-        '<span class="pv-drawer-item-count">' + d.count + ' Ürün</span>';
+        '<div class="pv-drawer-item-right">' +
+        '  <span class="pv-drawer-item-count">' + d.count + ' Ürün</span>' +
+        '  <svg class="pv-drawer-item-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
 
       btn.addEventListener("click", function() {
         switchTab(d.id);
