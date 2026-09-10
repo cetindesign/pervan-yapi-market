@@ -50,7 +50,7 @@
     "tag": "Mobilya & Dolap Kapakları · Mat Bitiş",
     "deptId": "biancaTransformSection",
     "category": "tum-yuzeyler",
-    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "thumb": "assets/bianca-official/stella-2024.jpg",
     "desc": "Mutfak dolapları, vestiyer, kapı ve ahşap mobilyalarda parlamayan, modern pastel ve ipeksi mat görünüm sunan özel formüllü dönüşüm boyası.",
     "meta": [
       "Modern İpeksi Mat Doku",
@@ -90,7 +90,7 @@
     "tag": "Masif & Ağaç Damarı Dönüşümü",
     "deptId": "biancaTransformSection",
     "category": "ahsap-efekt",
-    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "thumb": "assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png",
     "desc": "Düz renk Stella zemin boyası üzerine damar tarağı (budak aparatı) ile uygulanarak meşe, ceviz, kestane ve eskitme ahşap dokusu oluşturan yarı şeffaf efekt boyası.",
     "meta": [
       "Meşe, Ceviz, Kestane, Pelesenk, Eskitme ve Gri Tonları",
@@ -129,7 +129,7 @@
     "tag": "Altın, Gümüş, Bronz, Antrasit & Sedef",
     "deptId": "biancaTransformSection",
     "category": "metalik-efekt",
-    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "thumb": "assets/bianca-official/bianca-stella-metal-renkler-packshot.png",
     "desc": "Mobilya ayakları, kulplar, banyo bataryaları, çerçeveler ve metal aksamlar için zengin pigmentli metalik sedef efekt boyası.",
     "meta": [
       "Altın, Bakır, Bronz, Gümüş, Antrasit ve Sedef",
@@ -233,7 +233,7 @@
     "tag": "Mutfak Tezgahı, Duşakabin & Islak Zemin Zırhı",
     "deptId": "biancaProtectionSection",
     "category": "sivi-cam",
-    "thumb": "assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png",
+    "thumb": "assets/bianca-official/bianca-maximo-sivi-cam-packshot.png",
     "desc": "Mutfak tezgahları, duş içi fayanslar ve ağır zemin trafiği için kimyasal maddelere, çizilmeye ve sıcak tava/tencere ısısına karşı aşırı dirençli çift bileşenli solvent bazlı sıvı cam.",
     "meta": [
       "2 Bileşenli (A Komponent Boya + B Komponent Sertleştirici)",
@@ -307,7 +307,7 @@
     "tag": "Mobilya, Duvar Fayansı & Kapılar İçin Vernik",
     "deptId": "biancaProtectionSection",
     "category": "sivi-elmas",
-    "thumb": "assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png",
+    "thumb": "assets/bianca-official/bianca-diamond-parlak-2.png",
     "desc": "Su bazlı, kokusuz, tek bileşenli, sararma yapmayan ve boyanın çizilme ömrünü 2 katına çıkaran berrak sıvı elmas koruyucu cila.",
     "meta": [
       "Su Bazlı & Tamamen Kokusuz",
@@ -445,7 +445,7 @@
     "tag": "Mobilya Delik & Derz Kırık Dolgusu",
     "deptId": "biancaPrepSection",
     "category": "tamir-macun",
-    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
     "desc": "Mutfak dolaplarında yer değiştiren kulp delikleri, vida boşlukları, kırık seramik kenarları ve derz çatlaklarını pürüzsüzce dolduran zımparalanabilir esnek macun.",
     "meta": [
       "Çökme ve Çatlama Yapmayan Dolgu",
@@ -470,6 +470,41 @@
       {
         "title": "Kulp Değişimi ve Vida Boşluğu Kapatma",
         "body": "Eski kulpların deliklerine macun spatula ile bastırılarak doldurulur, 4 saat sonra ince diş zımpara ile sıfırlanıp üzerine doğrudan Stella boyanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-rutubetkes-boya",
+    "name": "Bianca Rutubetkes Nem & Rutubet Boyası",
+    "badge": "Termal İzolasyonlu Nem Bariyeri",
+    "tag": "Banyo, Bodrum & Nemli Duvar Koruması",
+    "deptId": "biancaPrepSection",
+    "category": "tamir-macun",
+    "thumb": "assets/bianca-official/bianca-rutubetkes-packshot.png",
+    "desc": "İç cephelerde nem, rutubet ve küf oluşumunu kökten engelleyen, mikro cam kürecikli yapısıyla ısı yalıtımı sağlayıp terlemeyi önleyen özel yalıtım boyası.",
+    "meta": [
+      "Nem, Rutubet ve Küfe Karşı Kesin Çözüm",
+      "Mikro Cam Kürecikli Termal Yalıtım",
+      "Duvar Terlemesini ve Kararmayı Önler",
+      "Banyo, Bodrum ve Soğuk Duvarlarda Etkili"
+    ],
+    "coverage": "3 – 4 m² / Litre (Çift Kat)",
+    "sizes": [
+      "1.00 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Anti-Moisture Thermal Barrier",
+      "packaging": "1.0 L · 2.5 L Kutu",
+      "consumption": "250 – 300 ml / m² (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 6 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Rutubetli ve Küflü Duvarlarda Uygulama",
+        "body": "Kabarmış eski boyalar kazınır, zemin zımparalanıp kurulanır. Bianca Rutubetkes rulo ile 2 kat uygulanır. Üzerine istenirse Bianca Stella veya iç cephe boyası sürülebilir."
       }
     ]
   },
@@ -585,7 +620,7 @@
     "tag": "Sıfır İnce Çizgi & Kalıntı Bırakmayan Bant",
     "deptId": "biancaToolsSection",
     "category": "yardimci-setler",
-    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "thumb": "assets/bianca-official/bianca-maskeleme-bandi-packshot.png",
     "desc": "Tezgah kenarları, süpürgelikler, cam fitilleri ve priz çevrelerinde boyanın altına sızmasını engelleyen ve söküldüğünde alt boyayı kaldırmayan Japon pirinç kağıdı maskeleme bandı.",
     "meta": [
       "Boya Sızdırmaz Keskin Çizgi Teknolojisi",
@@ -655,7 +690,7 @@
     "tag": "Tam Silinebilir Lüks İç Cephe Boyası",
     "deptId": "biancaArchitecturalSection",
     "category": "ic-cephe",
-    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "thumb": "assets/bianca-official/bianca-vals-ipek-mat-packshot.png",
     "desc": "Duvarlarda ipeksi mat zarafet sunan, kahve, çay, ketçap ve çocuk kalemi lekelerinin ıslak bezle kolayca silindiği, nefes alan lüks iç cephe boyası.",
     "meta": [
       "Teflon Katkılı Üstün Silinebilirlik",
@@ -685,13 +720,49 @@
     ]
   },
   {
+    "id": "bianca-vals-mat",
+    "name": "Bianca Vals Mat İç Cephe Boyası",
+    "badge": "Kusur Kapatıcı Mat Bitiş",
+    "tag": "Silinebilir Mat İç Cephe Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-vals-mat-packshot.png",
+    "desc": "Işık yansımasını önleyerek yüzeydeki sıva ve alçı kusurlarını gizleyen, kadife mat dokusu ve yüksek nefes alma özelliğiyle ferah iç mekanlar yaratan boya.",
+    "meta": [
+      "Kusur Gizleyen Kadife Mat Optik Doku",
+      "Kolay Silinebilir ve Leke Tutmaz",
+      "Yüksek Örtücülük & Düşük Sarfiyat",
+      "VOC Uyumlu Kokusuz Formül"
+    ],
+    "coverage": "13 – 15 m² / Litre (Tek Kat)",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 / TS EN 13300 Mat",
+      "packaging": "2.5 L · 7.5 L · 15 L Plastik Kova",
+      "consumption": "75 – 95 ml / m² (tek kat)",
+      "mixingRatio": "%10 – 15 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Mat İç Cephe Boyası?",
+        "body": "Geniş salon ve koridorlarda tavan ve duvar ışık kırılmalarını emerek homojen, dingin ve modern bir mimari zemin sağlar."
+      }
+    ]
+  },
+  {
     "id": "bianca-artistico-sedef-boya",
-    "name": "Bianca Artistico Dekoratif Sedef Boya",
+    "name": "Bianca Madreperla İtalyan Sedef Efekt Boyası",
     "badge": "İtalyan Efekt Işıltısı",
     "tag": "Dekoratif Duvar & Tavan Sedef Kaplaması",
     "deptId": "biancaArchitecturalSection",
     "category": "ic-cephe",
-    "thumb": "assets/bianca-official/sedef-150x150.jpg",
+    "thumb": "assets/bianca-official/bianca-madreperla-sedef-packshot.png",
     "desc": "Işığın geliş açısına göre farklı ışıltılar ve renk tonları sergileyen, salon ve yatak odası vurgu duvarları için İtalyan sedef efekt boyası.",
     "meta": [
       "Göz Alıcı İnci & Sedef Dokusu",
@@ -715,7 +786,42 @@
     "accordions": [
       {
         "title": "Efekt Uygulama Teknikleri",
-        "body": "Zemin uygun renkle boyandıktan sonra Artistico özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+        "body": "Zemin uygun renkle boyandıktan sonra Madreperla özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-panel-kapi-boyasi",
+    "name": "Bianca Panel Kapı Boyası (Su Bazlı)",
+    "badge": "Sararmaz Yarı Mat Bitiş",
+    "tag": "Amerikan Panel & Ahşap Kapı Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-panel-kapi-packshot.png",
+    "desc": "Amerikan panel kapılar, masif kapılar ve ahşap doğramalar için zamanla sararmayan, çizilme direnci yüksek ve su bazlı kokusuz kapı boyası.",
+    "meta": [
+      "Zamanla Sararmayan UV Dirençli Formül",
+      "Ahşap Dokusunu Korumalı İpeksi Bitiş",
+      "Kokusuz ve Hızlı Kuruyan Su Bazlı Yapı",
+      "Kolay Silinebilir ve Darbeye Dayanıklı"
+    ],
+    "coverage": "12 – 14 m² / Litre (Tek Kat)",
+    "sizes": [
+      "0.75 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "TS EN ISO 2813",
+      "packaging": "0.75 L · 2.5 L Kutu",
+      "consumption": "75 – 90 ml / m² (tek kat)",
+      "mixingRatio": "%5 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 3–4 saat · Dokunma: 1 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Panel Kapı Boyama Yöntemi",
+        "body": "Kapı kolları ve menteşeler maskelenir. Girintili panel çizgileri ipek kestirme fırçası ile boyandıktan sonra düz yüzeyler kadife rulo ile taranır."
       }
     ]
   },
@@ -726,7 +832,7 @@
     "tag": "Damlatmayan & Örtücü Tavan Boyası",
     "deptId": "biancaArchitecturalSection",
     "category": "tavan-astar",
-    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "thumb": "assets/bianca-official/bianca-tavan-plastik-packshot.png",
     "desc": "Tavanlarda sıfır parlama, yüksek matlık, ekstra beyazlık ve rulo uygulamasında damlama yapmayan yüksek nefes alma kabiliyetli tavan boyası.",
     "meta": [
       "Ekstra Kar Beyazı Görünüm",
@@ -762,7 +868,7 @@
     "tag": "Sentetikten Su Bazlıya Geçiş Astarı",
     "deptId": "biancaArchitecturalSection",
     "category": "tavan-astar",
-    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "thumb": "assets/bianca-official/aile_2024.png",
     "desc": "Daha önce yağlı boya veya saten boya yapılmış duvarların su bazlı boyaya dönüştürülmesinde zemin ile yeni boya arasında güçlü tutunma köprüsü oluşturan örtücü astar.",
     "meta": [
       "Sentetik Boyadan Su Bazlıya Güvenli Geçiş",

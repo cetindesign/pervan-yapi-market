@@ -163,6 +163,7 @@ html body.pv-transparent-header-page .pv-page-main {
 <header id="pvTransparentHeader">
   <nav class="navbar">
     <div class="navbar-top">
+      <!-- ROW 1 ON MOBILE (SPLIT 50/50 ACTION BAR) / RIGHT SIDE ON DESKTOP -->
       <div class="navbar-sticky">
         <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20boyas%C4%B1%20ve%20Maximo%20s%C4%B1v%C4%B1%20cam%20hakk%C4%B1nda%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
           <span class="navbar-title">Fiyat &amp; Stok Sor</span>
@@ -174,51 +175,77 @@ html body.pv-transparent-header-page .pv-page-main {
         </a>
       </div>
 
+      <!-- ROW 2 ON MOBILE (LEFT HAMBURGER, RIGHT LOGO) / LEFT SIDE ON DESKTOP -->
       <div class="navbar-top-row2">
-        <div class="navbar-brand">
-          <a class="navbar-logo" title="PERVAN" href="index.html">Pervan</a>
+        <div id="mobile-menu" class="closed">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
         </div>
-        <button class="navbar-toggle" id="mobile-menu" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+        <a class="navbar-logo" href="index.html">Pervan</a>
       </div>
-    </div>
 
-    <div class="navbar-contents">
-      <div class="navbar-contents-overflow">
-        <ul class="navbar-nav">
-          <li class="navbar-item"><a href="index.html">Ana Sayfa</a></li>
-          <li class="navbar-item"><a href="kesif-randevusu.html">Keşif Al</a></li>
-          <li class="navbar-item"><a href="nasil-calisiriz.html">Nasıl Çalışırız?</a></li>
-          <li class="navbar-item dropdown">
-            <button class="dropdown-toggle" aria-expanded="false">Hizmetlerimiz</button>
-            <ul class="dropdown-menu">
-              <li><a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa Tadilatı</a></li>
-              <li><a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a></li>
-              <li><a href="mutfak-dolap-tezgah.html" class="navbar-item">Mutfak &amp; Tezgah</a></li>
-              <li><a href="cati-teras-izolasyon.html" class="navbar-item">Çatı &amp; İzolasyon</a></li>
-              <li><a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a></li>
-              <li><a href="tesisat-altyapi.html" class="navbar-item">Tesisat &amp; Altyapı</a></li>
-              <li><a href="otomatik-kepenk-panjur.html" class="navbar-item">Kepenk &amp; Panjur</a></li>
-              <li><a href="peyzaj-bahce-duvari.html" class="navbar-item">Peyzaj &amp; Bahçe</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item dropdown">
-            <button class="dropdown-toggle" aria-expanded="false">Yetkili Bayilikler</button>
-            <ul class="dropdown-menu">
-              <li><a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a></li>
-              <li><a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a></li>
-              <li><a href="bianca-stella-boya.html" class="navbar-item" style="color: var(--pv-brand-red, #E11D48); font-weight: 700;">Bianca Stella</a></li>
-              <li><a href="capatect-dalmacyali-mantolama.html" class="navbar-item">Capatect Yalıtım</a></li>
-              <li><a href="isonem-yalitim-izolasyon.html" class="navbar-item">İsonem İzolasyon</a></li>
-            </ul>
-          </li>
-          <li class="navbar-item"><a href="katalog.html">E-Katalog</a></li>
-          <li class="navbar-item"><a href="hakkimizda.html">Hakkımızda</a></li>
-          <li class="navbar-item"><a href="iletisim.html">İletişim</a></li>
-        </ul>
+      <!-- DESKTOP MENU & MOBILE DRAWER -->
+      <div class="navbar-contents">
+        <div class="navbar-contents-overflow">
+          <div class="navbar-menu">
+            <!-- 01: Yetkili Bayilikler -->
+            <div data-link="yetkili-bayilikler.html" class="navbar-item has-dropdown menu-item active">
+              <div class="navbar-title">Yetkili Bayilikler</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+                <a href="bianca-stella-boya.html" class="navbar-item active">Bianca Stella</a>
+                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+                <a href="k-othrine-hasere.html" class="navbar-item">Bayer K-Othrine</a>
+              </div>
+            </div>
+
+            <!-- 02: Temel Malzemeler -->
+            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Temel Malzemeler</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+                <a href="el-aletleri.html" class="navbar-item">El Aletleri &amp; Hırdavat</a>
+              </div>
+            </div>
+
+            <!-- 03: Mimari Taahhüt -->
+            <div data-link="taahhut.html" class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Mimari Taahhüt</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="taahhut.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+                <a href="kesif-randevusu.html" class="navbar-item">Ücretsiz Keşif Randevusu</a>
+              </div>
+            </div>
+
+            <!-- 04: Merkezlerimiz -->
+            <div data-link="showroom.html" class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Merkezlerimiz</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="showroom.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="balcova-showroom.html" class="navbar-item">Balçova Showroom &amp; Renk Lab</a>
+                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -510,7 +537,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Stella Mat Saf Akrilik Boya -->
       <div class="pv-menu-row" data-category="tum-yuzeyler" data-product-id="bianca-stella-mat-seri" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Mat Saf Akrilik Boya" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/stella-2024.jpg" alt="Bianca Stella Mat Saf Akrilik Boya" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -543,7 +570,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Stella Ahşap Desen Görünüm Boyası -->
       <div class="pv-menu-row" data-category="ahsap-efekt" data-product-id="bianca-stella-ahsap-desen" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella_ahsap_025_2024.png" alt="Bianca Stella Ahşap Desen Görünüm Boyası" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png" alt="Bianca Stella Ahşap Desen Görünüm Boyası" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -576,7 +603,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Stella Metalik Efekt Boyası -->
       <div class="pv-menu-row" data-category="metalik-efekt" data-product-id="bianca-stella-metal-renkler" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella_ahsap_025_2024.png" alt="Bianca Stella Metalik Efekt Boyası" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-stella-metal-renkler-packshot.png" alt="Bianca Stella Metalik Efekt Boyası" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -697,7 +724,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Maximo 2K Sıvı Cam (Parlak) -->
       <div class="pv-menu-row" data-category="sivi-cam" data-product-id="bianca-maximo-sivi-cam-parlak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png" alt="Bianca Maximo 2K Sıvı Cam (Parlak)" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-maximo-sivi-cam-packshot.png" alt="Bianca Maximo 2K Sıvı Cam (Parlak)" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -763,7 +790,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Liquid Diamond Sıvı Elmas (Parlak) -->
       <div class="pv-menu-row" data-category="sivi-elmas" data-product-id="bianca-liquid-diamond-parlak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png" alt="Bianca Liquid Diamond Sıvı Elmas (Parlak)" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-diamond-parlak-2.png" alt="Bianca Liquid Diamond Sıvı Elmas (Parlak)" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -842,7 +869,7 @@ html body.pv-transparent-header-page .pv-page-main {
       </button>
       <button type="button" class="pv-menu-pill" data-filter="tamir-macun" role="tab" aria-selected="false">
         <span>Tamir &amp; Macun</span>
-        <span class="pv-pill-count">1</span>
+        <span class="pv-pill-count">2</span>
       </button>
     </div>
 
@@ -917,7 +944,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Stella Dolgu & Çatlak Macunu -->
       <div class="pv-menu-row" data-category="tamir-macun" data-product-id="bianca-stella-akrilik-macun" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/her-seyi-ambalaj.png" alt="Bianca Stella Dolgu & Çatlak Macunu" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Dolgu & Çatlak Macunu" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -934,6 +961,39 @@ html body.pv-transparent-header-page .pv-page-main {
             <span>Stella Boya ile Birebir Uyumlu</span>
             <span>&bull;</span>
             <span>İç ve Dış Mekan Ahşap & Seramik Uyumlu</span>
+          </div>
+        </div>
+        <div class="pv-menu-aside">
+          <span class="pv-menu-action-label">Teknik Detay</span>
+          <div class="pv-menu-arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item: Bianca Rutubetkes Nem & Rutubet Boyası -->
+      <div class="pv-menu-row" data-category="tamir-macun" data-product-id="bianca-rutubetkes-boya" role="button" tabindex="0">
+        <div class="pv-menu-thumb">
+          <img src="assets/bianca-official/bianca-rutubetkes-packshot.png" alt="Bianca Rutubetkes Nem & Rutubet Boyası" loading="lazy" decoding="async" />
+        </div>
+        <div class="pv-menu-main">
+          <div class="pv-menu-title-row">
+            <span class="pv-menu-name">Bianca Rutubetkes Nem & Rutubet Boyası</span>
+            <span class="pv-menu-dots">........................................</span>
+            <span class="pv-menu-tag">Banyo, Bodrum & Nemli Duvar Koruması</span>
+          </div>
+          <div class="pv-menu-desc-line">İç cephelerde nem, rutubet ve küf oluşumunu kökten engelleyen, mikro cam kürecikli yapısıyla ısı yalıtımı sağlayıp terlemeyi önleyen özel yalıtım boyası.</div>
+          <div class="pv-menu-meta-chips">
+            <span>Nem, Rutubet ve Küfe Karşı Kesin Çözüm</span>
+            <span>&bull;</span>
+            <span>Mikro Cam Kürecikli Termal Yalıtım</span>
+            <span>&bull;</span>
+            <span>Duvar Terlemesini ve Kararmayı Önler</span>
+            <span>&bull;</span>
+            <span>Banyo, Bodrum ve Soğuk Duvarlarda Etkili</span>
           </div>
         </div>
         <div class="pv-menu-aside">
@@ -1075,7 +1135,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Stella Hassas Maskeleme Bandı -->
       <div class="pv-menu-row" data-category="yardimci-setler" data-product-id="bianca-stella-maskeleme-bandi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Hassas Maskeleme Bandı" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-maskeleme-bandi-packshot.png" alt="Bianca Stella Hassas Maskeleme Bandı" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -1150,7 +1210,7 @@ html body.pv-transparent-header-page .pv-page-main {
     <div class="pv-menu-pills-wrap" id="architecturalMenuPills">
       <button type="button" class="pv-menu-pill active" data-filter="ic-cephe" role="tab" aria-selected="true">
         <span>İç Cephe &amp; Sedef</span>
-        <span class="pv-pill-count">2</span>
+        <span class="pv-pill-count">4</span>
       </button>
       <button type="button" class="pv-menu-pill" data-filter="tavan-astar" role="tab" aria-selected="false">
         <span>Tavan &amp; Astar</span>
@@ -1163,7 +1223,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Vals İpek Mat Silinebilir İç Cephe Boyası -->
       <div class="pv-menu-row" data-category="ic-cephe" data-product-id="bianca-vals-ipek-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-2024.jpg" alt="Bianca Vals İpek Mat Silinebilir İç Cephe Boyası" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-vals-ipek-mat-packshot.png" alt="Bianca Vals İpek Mat Silinebilir İç Cephe Boyası" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -1193,14 +1253,47 @@ html body.pv-transparent-header-page .pv-page-main {
         </div>
       </div>
 
-      <!-- Item: Bianca Artistico Dekoratif Sedef Boya -->
-      <div class="pv-menu-row" data-category="ic-cephe" data-product-id="bianca-artistico-sedef-boya" role="button" tabindex="0">
+      <!-- Item: Bianca Vals Mat İç Cephe Boyası -->
+      <div class="pv-menu-row" data-category="ic-cephe" data-product-id="bianca-vals-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/sedef-150x150.jpg" alt="Bianca Artistico Dekoratif Sedef Boya" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-vals-mat-packshot.png" alt="Bianca Vals Mat İç Cephe Boyası" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Bianca Artistico Dekoratif Sedef Boya</span>
+            <span class="pv-menu-name">Bianca Vals Mat İç Cephe Boyası</span>
+            <span class="pv-menu-dots">........................................</span>
+            <span class="pv-menu-tag">Silinebilir Mat İç Cephe Boyası</span>
+          </div>
+          <div class="pv-menu-desc-line">Işık yansımasını önleyerek yüzeydeki sıva ve alçı kusurlarını gizleyen, kadife mat dokusu ve yüksek nefes alma özelliğiyle ferah iç mekanlar yaratan boya.</div>
+          <div class="pv-menu-meta-chips">
+            <span>Kusur Gizleyen Kadife Mat Optik Doku</span>
+            <span>&bull;</span>
+            <span>Kolay Silinebilir ve Leke Tutmaz</span>
+            <span>&bull;</span>
+            <span>Yüksek Örtücülük & Düşük Sarfiyat</span>
+            <span>&bull;</span>
+            <span>VOC Uyumlu Kokusuz Formül</span>
+          </div>
+        </div>
+        <div class="pv-menu-aside">
+          <span class="pv-menu-action-label">Teknik Detay</span>
+          <div class="pv-menu-arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item: Bianca Madreperla İtalyan Sedef Efekt Boyası -->
+      <div class="pv-menu-row" data-category="ic-cephe" data-product-id="bianca-artistico-sedef-boya" role="button" tabindex="0">
+        <div class="pv-menu-thumb">
+          <img src="assets/bianca-official/bianca-madreperla-sedef-packshot.png" alt="Bianca Madreperla İtalyan Sedef Efekt Boyası" loading="lazy" decoding="async" />
+        </div>
+        <div class="pv-menu-main">
+          <div class="pv-menu-title-row">
+            <span class="pv-menu-name">Bianca Madreperla İtalyan Sedef Efekt Boyası</span>
             <span class="pv-menu-dots">........................................</span>
             <span class="pv-menu-tag">Dekoratif Duvar & Tavan Sedef Kaplaması</span>
           </div>
@@ -1226,10 +1319,43 @@ html body.pv-transparent-header-page .pv-page-main {
         </div>
       </div>
 
+      <!-- Item: Bianca Panel Kapı Boyası (Su Bazlı) -->
+      <div class="pv-menu-row" data-category="ic-cephe" data-product-id="bianca-panel-kapi-boyasi" role="button" tabindex="0">
+        <div class="pv-menu-thumb">
+          <img src="assets/bianca-official/bianca-panel-kapi-packshot.png" alt="Bianca Panel Kapı Boyası (Su Bazlı)" loading="lazy" decoding="async" />
+        </div>
+        <div class="pv-menu-main">
+          <div class="pv-menu-title-row">
+            <span class="pv-menu-name">Bianca Panel Kapı Boyası (Su Bazlı)</span>
+            <span class="pv-menu-dots">........................................</span>
+            <span class="pv-menu-tag">Amerikan Panel & Ahşap Kapı Boyası</span>
+          </div>
+          <div class="pv-menu-desc-line">Amerikan panel kapılar, masif kapılar ve ahşap doğramalar için zamanla sararmayan, çizilme direnci yüksek ve su bazlı kokusuz kapı boyası.</div>
+          <div class="pv-menu-meta-chips">
+            <span>Zamanla Sararmayan UV Dirençli Formül</span>
+            <span>&bull;</span>
+            <span>Ahşap Dokusunu Korumalı İpeksi Bitiş</span>
+            <span>&bull;</span>
+            <span>Kokusuz ve Hızlı Kuruyan Su Bazlı Yapı</span>
+            <span>&bull;</span>
+            <span>Kolay Silinebilir ve Darbeye Dayanıklı</span>
+          </div>
+        </div>
+        <div class="pv-menu-aside">
+          <span class="pv-menu-action-label">Teknik Detay</span>
+          <div class="pv-menu-arrow" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <!-- Item: Bianca Profesyonel Tavan Boyası -->
       <div class="pv-menu-row" data-category="tavan-astar" data-product-id="bianca-profesyonel-tavan" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/her-seyi-ambalaj.png" alt="Bianca Profesyonel Tavan Boyası" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/bianca-tavan-plastik-packshot.png" alt="Bianca Profesyonel Tavan Boyası" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -1262,7 +1388,7 @@ html body.pv-transparent-header-page .pv-page-main {
       <!-- Item: Bianca Universal Dönüşüm Astarı -->
       <div class="pv-menu-row" data-category="tavan-astar" data-product-id="bianca-universal-donusum-astari" role="button" tabindex="0">
         <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-2024.jpg" alt="Bianca Universal Dönüşüm Astarı" loading="lazy" decoding="async" />
+          <img src="assets/bianca-official/aile_2024.png" alt="Bianca Universal Dönüşüm Astarı" loading="lazy" decoding="async" />
         </div>
         <div class="pv-menu-main">
           <div class="pv-menu-title-row">
@@ -1298,102 +1424,104 @@ html body.pv-transparent-header-page .pv-page-main {
 </main>
 
 <!-- ==========================================================================
-     PRODUCT DETAIL BOTTOM SHEET MODAL (Filli Boya / Weber Unified Architecture)
+     ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
      ========================================================================== -->
 <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
   <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-    
-    <!-- Drag Handle Zone for Touch Physics -->
-    <div class="pv-modal-handle-zone" id="modalHandleZone">
-      <div class="pv-modal-handle"></div>
-    </div>
-
-    <!-- Sticky Header Bar -->
+    <!-- Top Gesture Bar & Absolute Close Action -->
     <div class="pv-modal-top-bar" id="modalTopBar">
-      <div class="pv-modal-brand-tag">
-        <span class="pv-modal-brand-name">BİANCA STELLA</span>
-        <span class="pv-modal-brand-sub">YETKİLİ DÖNÜŞÜM MERKEZİ</span>
+      <div class="pv-modal-handle-zone" id="modalHandleZone">
+        <div class="pv-modal-handle"></div>
       </div>
-      <button type="button" class="pv-modal-close" id="pvModalCloseBtn" aria-label="Kapat">&times;</button>
+      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
-    <!-- Scrollable Modal Body -->
+    <!-- Scrollable Modal Content Area -->
     <div class="pv-modal-scroll" id="modalScrollArea">
-      
-      <!-- Stage 1: Pedestal Packshot Showcase -->
-      <div class="pv-specimen-can-stage">
-        <div class="pv-specimen-ambient-glow" aria-hidden="true"></div>
-        <div class="pv-specimen-pedestal" aria-hidden="true"></div>
-        <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Ürün Görseli" class="pv-specimen-img" id="modalProductImg" />
-        <div class="pv-specimen-contact-shadow" aria-hidden="true"></div>
+      <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
+      <div class="pv-specimen-hero">
+        <div class="pv-specimen-meta">
+          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">BİANCA STELLA · DÖNÜŞÜM SİSTEMLERİ</div>
+          <h3 class="pv-specimen-title" id="modalProductTitle">Bianca Stella Su Bazlı Saf Akrilik Boya</h3>
+        </div>
+
+        <div class="pv-specimen-can-stage">
+          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+          <img id="modalProductImg" src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Ürün Görseli" />
+          <div class="pv-can-shadow" id="modalCanShadow"></div>
+        </div>
+
+        <p class="pv-specimen-desc" id="modalProductDesc">Fayans, seramik, tezgah, mobilya, lake dolap ve cam yüzeylerde astar gerektirmeden üstün tutunma sağlayan kokusuz saf akrilik dönüşüm boyası.</p>
+        <span id="modalProductTag" style="display:none;"></span>
       </div>
 
-      <!-- Stage 2: Product Header & Typography -->
-      <div class="pv-specimen-header">
-        <div class="pv-specimen-eyebrow" id="modalProductEyebrow">BİANCA STELLA &bull; DÖNÜŞÜM SİSTEMLERİ</div>
-        <h2 class="pv-specimen-title" id="modalProductTitle">Bianca Stella Su Bazlı Saf Akrilik Boya</h2>
-        <p class="pv-specimen-desc" id="modalProductDesc">
-          Fayans, seramik, tezgah, mobilya, lake dolap ve cam yüzeylerde astar gerektirmeden üstün tutunma sağlayan kokusuz saf akrilik dönüşüm boyası.
-        </p>
-      </div>
-
-      <!-- Stage 3: Packaging Size Segmented Track -->
-      <div class="pv-segmented-section">
-        <label class="pv-section-label">AMBALAJ &amp; KAPLAMA SEÇENEKLERİ</label>
-        <div class="pv-segmented-track" id="modalSizeTrack">
-          <!-- Populated dynamically via JS -->
+      <!-- 2. Packaging / Size Segmented Track -->
+      <div class="pv-modal-select-group">
+        <div class="pv-modal-select-header">
+          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Kaplama Seçenekleri</span>
+        </div>
+        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
+          <!-- Dynamically populated -->
         </div>
       </div>
 
-      <!-- Stage 4: Technical Specifications Grid -->
-      <div class="pv-specs-section">
-        <label class="pv-section-label">TEKNİK PERFORMANS DEĞERLERİ</label>
-        <div class="pv-specs-grid">
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">Standart &amp; Sertifika</span>
-            <span class="pv-spec-v" id="modalSpecStandard">TS EN 71-3 / CE</span>
-          </div>
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">Ambalaj Tipi</span>
-            <span class="pv-spec-v" id="modalSpecPackaging">1.0 Litre Kutu</span>
-          </div>
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">Sarfiyat (Kaplama)</span>
-            <span class="pv-spec-v" id="modalSpecConsumption">10 – 12 m² / Litre</span>
-          </div>
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">İnceltme / Karışım</span>
-            <span class="pv-spec-v" id="modalSpecMixing">İnceltilmez (Kullanıma Hazır)</span>
-          </div>
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">Kuruma Süresi</span>
-            <span class="pv-spec-v" id="modalSpecPotLife">Katlar arası: 2–3 saat</span>
-          </div>
-          <div class="pv-spec-box">
-            <span class="pv-spec-k">Lojistik / Teslimat</span>
-            <span class="pv-spec-v" id="modalSpecLogistics">Balçova &amp; Urla Stok</span>
-          </div>
+      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
+      <div class="pv-spec-gauges" id="modalSpecGauges">
+        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
+          <div class="pv-gauge-eyebrow">STANDART &amp; SERTİFİKA</div>
+          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 71-3 / CE</div>
+          <div class="pv-gauge-caption" id="modalGaugeStandardCaption">EN 71-3 Gıda &amp; Oyuncak</div>
+        </div>
+
+        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
+          <div class="pv-gauge-eyebrow">SARFİYAT &amp; KAPLAMA</div>
+          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">10 – 12 m² / L</div>
+          <div class="pv-gauge-caption" id="modalSpecPackaging">1.0 Litre Kutu</div>
         </div>
       </div>
 
-      <!-- Stage 5: Application Guide & Technical Accordions -->
-      <div class="pv-accordions-section">
-        <label class="pv-section-label">UYGULAMA REHBERİ &amp; TEKNİK DETAYLAR</label>
-        <div class="pv-accordions-group" id="modalAccordions">
-          <!-- Accordions populated dynamically via JS -->
+      <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
+      <div class="pv-specs-table" id="modalSpecsTable">
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">İnceltme / Karışım:</span>
+          <span class="pv-spec-v" id="modalSpecMixing">İnceltilmez · Kullanıma hazır</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Kuruma &amp; Kürlenme:</span>
+          <span class="pv-spec-v" id="modalSpecPotLife">Katlar arası: 2–3 saat · Kürlenme: 7 gün</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Lojistik Dağıtım:</span>
+          <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Depo</span>
         </div>
       </div>
 
+      <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
+      <div class="pv-modal-accordions" id="modalAccordions">
+        <!-- Injected dynamically -->
+      </div>
     </div>
 
-    <!-- Stage 6: Sticky Bottom Direct WhatsApp CTA Dock -->
-    <div class="pv-modal-dock">
-      <a href="https://wa.me/905323844497" target="_blank" rel="noopener" class="pv-dock-btn" id="modalWABtn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-        <span id="modalWABtnText">Fiyat &amp; Renk Formülü Sor</span>
+    <!-- STICKY FOOTER ACTION BAR -->
+    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp ile Renk Danış &amp; Fiyat Al</span>
       </a>
+      <div class="pv-modal-footer-aux">
+        <span class="pv-modal-delivery-chip">
+          <span class="pv-chip-pulse"></span>
+          <span>Balçova Showroom &amp; Urla Depodan Aynı Gün Teslimat</span>
+        </span>
+      </div>
     </div>
-
   </div>
 </div>
 
@@ -1608,7 +1736,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Mobilya & Dolap Kapakları · Mat Bitiş",
     "deptId": "biancaTransformSection",
     "category": "tum-yuzeyler",
-    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "thumb": "assets/bianca-official/stella-2024.jpg",
     "desc": "Mutfak dolapları, vestiyer, kapı ve ahşap mobilyalarda parlamayan, modern pastel ve ipeksi mat görünüm sunan özel formüllü dönüşüm boyası.",
     "meta": [
       "Modern İpeksi Mat Doku",
@@ -1648,7 +1776,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Masif & Ağaç Damarı Dönüşümü",
     "deptId": "biancaTransformSection",
     "category": "ahsap-efekt",
-    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "thumb": "assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png",
     "desc": "Düz renk Stella zemin boyası üzerine damar tarağı (budak aparatı) ile uygulanarak meşe, ceviz, kestane ve eskitme ahşap dokusu oluşturan yarı şeffaf efekt boyası.",
     "meta": [
       "Meşe, Ceviz, Kestane, Pelesenk, Eskitme ve Gri Tonları",
@@ -1687,7 +1815,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Altın, Gümüş, Bronz, Antrasit & Sedef",
     "deptId": "biancaTransformSection",
     "category": "metalik-efekt",
-    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "thumb": "assets/bianca-official/bianca-stella-metal-renkler-packshot.png",
     "desc": "Mobilya ayakları, kulplar, banyo bataryaları, çerçeveler ve metal aksamlar için zengin pigmentli metalik sedef efekt boyası.",
     "meta": [
       "Altın, Bakır, Bronz, Gümüş, Antrasit ve Sedef",
@@ -1791,7 +1919,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Mutfak Tezgahı, Duşakabin & Islak Zemin Zırhı",
     "deptId": "biancaProtectionSection",
     "category": "sivi-cam",
-    "thumb": "assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png",
+    "thumb": "assets/bianca-official/bianca-maximo-sivi-cam-packshot.png",
     "desc": "Mutfak tezgahları, duş içi fayanslar ve ağır zemin trafiği için kimyasal maddelere, çizilmeye ve sıcak tava/tencere ısısına karşı aşırı dirençli çift bileşenli solvent bazlı sıvı cam.",
     "meta": [
       "2 Bileşenli (A Komponent Boya + B Komponent Sertleştirici)",
@@ -1865,7 +1993,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Mobilya, Duvar Fayansı & Kapılar İçin Vernik",
     "deptId": "biancaProtectionSection",
     "category": "sivi-elmas",
-    "thumb": "assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png",
+    "thumb": "assets/bianca-official/bianca-diamond-parlak-2.png",
     "desc": "Su bazlı, kokusuz, tek bileşenli, sararma yapmayan ve boyanın çizilme ömrünü 2 katına çıkaran berrak sıvı elmas koruyucu cila.",
     "meta": [
       "Su Bazlı & Tamamen Kokusuz",
@@ -2003,7 +2131,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Mobilya Delik & Derz Kırık Dolgusu",
     "deptId": "biancaPrepSection",
     "category": "tamir-macun",
-    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
     "desc": "Mutfak dolaplarında yer değiştiren kulp delikleri, vida boşlukları, kırık seramik kenarları ve derz çatlaklarını pürüzsüzce dolduran zımparalanabilir esnek macun.",
     "meta": [
       "Çökme ve Çatlama Yapmayan Dolgu",
@@ -2028,6 +2156,41 @@ html body.pv-transparent-header-page .pv-page-main {
       {
         "title": "Kulp Değişimi ve Vida Boşluğu Kapatma",
         "body": "Eski kulpların deliklerine macun spatula ile bastırılarak doldurulur, 4 saat sonra ince diş zımpara ile sıfırlanıp üzerine doğrudan Stella boyanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-rutubetkes-boya",
+    "name": "Bianca Rutubetkes Nem & Rutubet Boyası",
+    "badge": "Termal İzolasyonlu Nem Bariyeri",
+    "tag": "Banyo, Bodrum & Nemli Duvar Koruması",
+    "deptId": "biancaPrepSection",
+    "category": "tamir-macun",
+    "thumb": "assets/bianca-official/bianca-rutubetkes-packshot.png",
+    "desc": "İç cephelerde nem, rutubet ve küf oluşumunu kökten engelleyen, mikro cam kürecikli yapısıyla ısı yalıtımı sağlayıp terlemeyi önleyen özel yalıtım boyası.",
+    "meta": [
+      "Nem, Rutubet ve Küfe Karşı Kesin Çözüm",
+      "Mikro Cam Kürecikli Termal Yalıtım",
+      "Duvar Terlemesini ve Kararmayı Önler",
+      "Banyo, Bodrum ve Soğuk Duvarlarda Etkili"
+    ],
+    "coverage": "3 – 4 m² / Litre (Çift Kat)",
+    "sizes": [
+      "1.00 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Anti-Moisture Thermal Barrier",
+      "packaging": "1.0 L · 2.5 L Kutu",
+      "consumption": "250 – 300 ml / m² (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 6 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Rutubetli ve Küflü Duvarlarda Uygulama",
+        "body": "Kabarmış eski boyalar kazınır, zemin zımparalanıp kurulanır. Bianca Rutubetkes rulo ile 2 kat uygulanır. Üzerine istenirse Bianca Stella veya iç cephe boyası sürülebilir."
       }
     ]
   },
@@ -2143,7 +2306,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Sıfır İnce Çizgi & Kalıntı Bırakmayan Bant",
     "deptId": "biancaToolsSection",
     "category": "yardimci-setler",
-    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "thumb": "assets/bianca-official/bianca-maskeleme-bandi-packshot.png",
     "desc": "Tezgah kenarları, süpürgelikler, cam fitilleri ve priz çevrelerinde boyanın altına sızmasını engelleyen ve söküldüğünde alt boyayı kaldırmayan Japon pirinç kağıdı maskeleme bandı.",
     "meta": [
       "Boya Sızdırmaz Keskin Çizgi Teknolojisi",
@@ -2213,7 +2376,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Tam Silinebilir Lüks İç Cephe Boyası",
     "deptId": "biancaArchitecturalSection",
     "category": "ic-cephe",
-    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "thumb": "assets/bianca-official/bianca-vals-ipek-mat-packshot.png",
     "desc": "Duvarlarda ipeksi mat zarafet sunan, kahve, çay, ketçap ve çocuk kalemi lekelerinin ıslak bezle kolayca silindiği, nefes alan lüks iç cephe boyası.",
     "meta": [
       "Teflon Katkılı Üstün Silinebilirlik",
@@ -2243,13 +2406,49 @@ html body.pv-transparent-header-page .pv-page-main {
     ]
   },
   {
+    "id": "bianca-vals-mat",
+    "name": "Bianca Vals Mat İç Cephe Boyası",
+    "badge": "Kusur Kapatıcı Mat Bitiş",
+    "tag": "Silinebilir Mat İç Cephe Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-vals-mat-packshot.png",
+    "desc": "Işık yansımasını önleyerek yüzeydeki sıva ve alçı kusurlarını gizleyen, kadife mat dokusu ve yüksek nefes alma özelliğiyle ferah iç mekanlar yaratan boya.",
+    "meta": [
+      "Kusur Gizleyen Kadife Mat Optik Doku",
+      "Kolay Silinebilir ve Leke Tutmaz",
+      "Yüksek Örtücülük & Düşük Sarfiyat",
+      "VOC Uyumlu Kokusuz Formül"
+    ],
+    "coverage": "13 – 15 m² / Litre (Tek Kat)",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 / TS EN 13300 Mat",
+      "packaging": "2.5 L · 7.5 L · 15 L Plastik Kova",
+      "consumption": "75 – 95 ml / m² (tek kat)",
+      "mixingRatio": "%10 – 15 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Mat İç Cephe Boyası?",
+        "body": "Geniş salon ve koridorlarda tavan ve duvar ışık kırılmalarını emerek homojen, dingin ve modern bir mimari zemin sağlar."
+      }
+    ]
+  },
+  {
     "id": "bianca-artistico-sedef-boya",
-    "name": "Bianca Artistico Dekoratif Sedef Boya",
+    "name": "Bianca Madreperla İtalyan Sedef Efekt Boyası",
     "badge": "İtalyan Efekt Işıltısı",
     "tag": "Dekoratif Duvar & Tavan Sedef Kaplaması",
     "deptId": "biancaArchitecturalSection",
     "category": "ic-cephe",
-    "thumb": "assets/bianca-official/sedef-150x150.jpg",
+    "thumb": "assets/bianca-official/bianca-madreperla-sedef-packshot.png",
     "desc": "Işığın geliş açısına göre farklı ışıltılar ve renk tonları sergileyen, salon ve yatak odası vurgu duvarları için İtalyan sedef efekt boyası.",
     "meta": [
       "Göz Alıcı İnci & Sedef Dokusu",
@@ -2273,7 +2472,42 @@ html body.pv-transparent-header-page .pv-page-main {
     "accordions": [
       {
         "title": "Efekt Uygulama Teknikleri",
-        "body": "Zemin uygun renkle boyandıktan sonra Artistico özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+        "body": "Zemin uygun renkle boyandıktan sonra Madreperla özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-panel-kapi-boyasi",
+    "name": "Bianca Panel Kapı Boyası (Su Bazlı)",
+    "badge": "Sararmaz Yarı Mat Bitiş",
+    "tag": "Amerikan Panel & Ahşap Kapı Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-panel-kapi-packshot.png",
+    "desc": "Amerikan panel kapılar, masif kapılar ve ahşap doğramalar için zamanla sararmayan, çizilme direnci yüksek ve su bazlı kokusuz kapı boyası.",
+    "meta": [
+      "Zamanla Sararmayan UV Dirençli Formül",
+      "Ahşap Dokusunu Korumalı İpeksi Bitiş",
+      "Kokusuz ve Hızlı Kuruyan Su Bazlı Yapı",
+      "Kolay Silinebilir ve Darbeye Dayanıklı"
+    ],
+    "coverage": "12 – 14 m² / Litre (Tek Kat)",
+    "sizes": [
+      "0.75 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "TS EN ISO 2813",
+      "packaging": "0.75 L · 2.5 L Kutu",
+      "consumption": "75 – 90 ml / m² (tek kat)",
+      "mixingRatio": "%5 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 3–4 saat · Dokunma: 1 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Panel Kapı Boyama Yöntemi",
+        "body": "Kapı kolları ve menteşeler maskelenir. Girintili panel çizgileri ipek kestirme fırçası ile boyandıktan sonra düz yüzeyler kadife rulo ile taranır."
       }
     ]
   },
@@ -2284,7 +2518,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Damlatmayan & Örtücü Tavan Boyası",
     "deptId": "biancaArchitecturalSection",
     "category": "tavan-astar",
-    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "thumb": "assets/bianca-official/bianca-tavan-plastik-packshot.png",
     "desc": "Tavanlarda sıfır parlama, yüksek matlık, ekstra beyazlık ve rulo uygulamasında damlama yapmayan yüksek nefes alma kabiliyetli tavan boyası.",
     "meta": [
       "Ekstra Kar Beyazı Görünüm",
@@ -2320,7 +2554,7 @@ html body.pv-transparent-header-page .pv-page-main {
     "tag": "Sentetikten Su Bazlıya Geçiş Astarı",
     "deptId": "biancaArchitecturalSection",
     "category": "tavan-astar",
-    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "thumb": "assets/bianca-official/aile_2024.png",
     "desc": "Daha önce yağlı boya veya saten boya yapılmış duvarların su bazlı boyaya dönüştürülmesinde zemin ile yeni boya arasında güçlü tutunma köprüsü oluşturan örtücü astar.",
     "meta": [
       "Sentetik Boyadan Su Bazlıya Güvenli Geçiş",
@@ -2693,6 +2927,7 @@ html body.pv-transparent-header-page .pv-page-main {
   var modalProductDesc = document.getElementById("modalProductDesc");
   var modalSizeTrack = document.getElementById("modalSizeTrack");
   var modalSpecStandard = document.getElementById("modalSpecStandard");
+  var modalGaugeStandardCaption = document.getElementById("modalGaugeStandardCaption");
   var modalSpecPackaging = document.getElementById("modalSpecPackaging");
   var modalSpecConsumption = document.getElementById("modalSpecConsumption");
   var modalSpecMixing = document.getElementById("modalSpecMixing");
@@ -2715,16 +2950,17 @@ html body.pv-transparent-header-page .pv-page-main {
 
     modalProductImg.src = p.thumb;
     modalProductImg.alt = p.name;
-    if (modalProductEyebrow) modalProductEyebrow.textContent = "BİANCA STELLA · DÖNÜŞÜM BOYASI SİSTEMLERİ";
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "BİANCA STELLA · DÖNÜŞÜM SİSTEMLERİ";
     modalProductTitle.textContent = p.name;
     modalProductDesc.textContent = p.desc;
 
-    modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
-    modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
-    modalSpecConsumption.textContent = p.specs.consumption || "-";
-    modalSpecMixing.textContent = p.specs.mixingRatio || "-";
-    modalSpecPotLife.textContent = p.specs.potLife || "-";
-    modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
+    if (modalSpecStandard) modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
+    if (modalGaugeStandardCaption) modalGaugeStandardCaption.textContent = p.badge || "EN 71-3 Gıda & Oyuncak";
+    if (modalSpecConsumption) modalSpecConsumption.textContent = p.specs.consumption || p.coverage || "-";
+    if (modalSpecPackaging) modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
+    if (modalSpecMixing) modalSpecMixing.textContent = p.specs.mixingRatio || "İnceltilmez · Kullanıma hazır";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = p.specs.potLife || "Katlar arası: 2–3 saat";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
 
     modalSizeTrack.innerHTML = "";
     if (p.sizes && p.sizes.length > 0) {
@@ -2732,10 +2968,16 @@ html body.pv-transparent-header-page .pv-page-main {
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+        btn.setAttribute("role", "radio");
+        btn.setAttribute("aria-checked", idx === 0 ? "true" : "false");
         btn.textContent = size;
         btn.addEventListener("click", function() {
-          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
+          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) {
+            b.classList.remove("active");
+            b.setAttribute("aria-checked", "false");
+          });
           btn.classList.add("active");
+          btn.setAttribute("aria-checked", "true");
           selectedSize = size;
           updateWhatsAppUrl();
         });
@@ -2754,7 +2996,8 @@ html body.pv-transparent-header-page .pv-page-main {
           '  <span class="pv-acc-icon">+</span>' +
           '</button>' +
           '<div class="pv-acc-body">' +
-          '  <p>' + acc.body.replace(/\n/g, "<br>") + '</p>' +
+          '  <p>' + acc.body.replace(/
+/g, "<br>") + '</p>' +
           '</div>';
 
         var h = item.querySelector(".pv-acc-header");
@@ -2772,29 +3015,47 @@ html body.pv-transparent-header-page .pv-page-main {
 
     updateWhatsAppUrl();
 
+    modalBackdrop.classList.add("open");
     modalBackdrop.classList.add("is-open");
     modalBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     if (modalScrollArea) modalScrollArea.scrollTop = 0;
-    history.replaceState(null, "", "#urun-" + productId);
+    try {
+      history.replaceState(null, "", "#urun-" + p.id);
+    } catch(e) {}
+  }
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove("open");
+    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    currentProduct = null;
+    resetSheetStyles();
+    try {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch(e) {}
   }
 
   function updateWhatsAppUrl() {
     if (!currentProduct || !modalWABtn) return;
-    var msg = "Merhaba, Pervan Yapı Market üzerinden Bianca Stella ürünü hakkında bilgi ve sipariş vermek istiyorum:\n\n" +
-              "• Ürün: " + currentProduct.name + "\n" +
-              "• Ambalaj / Boyut: " + selectedSize + "\n" +
-              "• Standart / Seri: " + (currentProduct.badge || "Standart") + "\n" +
-              "• Teslimat: Balçova Showroom veya Urla Depodan adrese teslim.";
-    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
-  }
-
-  function closeModal() {
-    modalBackdrop.classList.remove("is-open");
-    modalBackdrop.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    resetSheetStyles();
-    history.replaceState(null, "", window.location.pathname);
+    var text = "Merhaba, Bianca Stella " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    text += " için Balçova Showroom / Urla depo stok ve güncel fiyat bilgisi almak istiyorum.";
+    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
@@ -2805,64 +3066,56 @@ html body.pv-transparent-header-page .pv-page-main {
   }
 
   document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape" && modalBackdrop.classList.contains("is-open")) {
+    if (e.key === "Escape" && (modalBackdrop.classList.contains("is-open") || modalBackdrop.classList.contains("open"))) {
       closeModal();
     }
   });
 
-  // iOS 18 Gesture Engine
-  function resetSheetStyles() {
-    if (!modalCard) return;
-    modalCard.style.transform = "";
-    modalCard.style.transition = "";
-    if (modalBackdrop) {
-      modalBackdrop.style.backgroundColor = "";
-      modalBackdrop.style.opacity = "";
-      modalBackdrop.style.transition = "";
-    }
-  }
-
+  // Touch gesture physics for mobile bottom sheet dismissal
   function onDragStart(e) {
-    if (window.innerWidth > 768) return;
-    if (!modalBackdrop.classList.contains("is-open")) return;
-    var touch = e.touches[0];
+    if (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) return;
+    var touch = e.touches ? e.touches[0] : e;
     dragStartY = touch.clientY;
     dragCurrentY = touch.clientY;
     dragStartTime = Date.now();
-    isSheetDragging = true;
+    isSheetDragging = false;
     canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
-    modalCard.style.transition = "none";
-    modalBackdrop.style.transition = "none";
   }
 
   function onDragMove(e) {
-    if (!isSheetDragging) return;
-    var touch = e.touches[0];
+    if ((!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
     dragCurrentY = touch.clientY;
-    var deltaY = dragCurrentY - dragStartY;
 
-    if (deltaY > 0) {
-      if (e.target === modalHandleZone || e.target === modalTopBar || modalTopBar.contains(e.target) || canDragFromScroll) {
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
         if (e.cancelable) e.preventDefault();
+        modalCard.style.transition = "none";
         modalCard.style.transform = "translateY(" + deltaY + "px)";
-        var opacityRatio = Math.max(0, 1 - (deltaY / 400));
-        modalBackdrop.style.backgroundColor = "rgba(0, 0, 0, " + (0.5 * opacityRatio) + ")";
+        var progress = Math.min(1, deltaY / 360);
+        modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
       }
-    } else if (deltaY < 0 && canDragFromScroll) {
-      var resistedY = deltaY * 0.15;
-      modalCard.style.transform = "translateY(" + resistedY + "px)";
     }
   }
 
-  function onDragEnd() {
-    if (!isSheetDragging) return;
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
     isSheetDragging = false;
     var deltaY = dragCurrentY - dragStartY;
-    var elapsed = Date.now() - dragStartTime;
-    var velocity = deltaY / Math.max(elapsed, 1);
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+    dragStartY = 0;
 
-    if (deltaY > 120 || (velocity > 0.5 && deltaY > 30)) {
-      modalCard.style.transition = "transform 0.24s cubic-bezier(0.32, 0.72, 0, 1)";
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
       modalCard.style.transform = "translateY(100%)";
       modalBackdrop.style.transition = "opacity 0.24s ease";
       modalBackdrop.style.opacity = "0";
