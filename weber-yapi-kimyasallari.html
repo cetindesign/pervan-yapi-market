@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#FFFFFF" />
+<meta name="theme-color" content="#FEE000" id="themeColorTag" />
 
 <title>Saint-Gobain Weber Yapı Kimyasalları Yetkili Bayi — Balçova & Urla | Pervan</title>
 <meta name="description" content="Weberkol flex konfor seramik yapıştırıcıları, weberjoint derz dolguları, weberdry su yalıtım sistemleri, weberep tamir harçları ve weberfloor zemin şapları paletli şantiye teslim." />
@@ -22,6 +22,86 @@
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=33.0.0" />
+
+<style>
+/* 100% UNCONDITIONAL TRANSPARENT HEADER ON HERO FOLD */
+@media (min-width: 1260px) {
+  html body.pv-transparent-header-page,
+  html body.pv-transparent-header-page.rf-body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+html body.pv-transparent-header-page .pv-page-main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open),
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top-row2,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-contents,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-contents-overflow {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-top-row2 {
+  border-bottom: none !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-logo {
+  color: #FFFFFF !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-title,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky a.navbar-item {
+  color: #FFFFFF !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow {
+  background: #FFFFFF !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow::before,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .menu-item .arrow::after,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::before,
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky .arrow::after {
+  background: #FFFFFF !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) #mobile-menu .bar {
+  background-color: #FFFFFF !important;
+}
+
+#pvTransparentHeader:not(.header--solid):not(.header--menu-open) .navbar-sticky a.navbar-item {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+#pvTransparentHeader.header--solid,
+#pvTransparentHeader.header--menu-open {
+  background: rgba(255, 255, 255, 0.98) !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
+}
+</style>
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -72,7 +152,7 @@
 <body class="pv-transparent-header-page">
 
 <!-- PERVAN NAVBAR -->
-<header>
+<header id="pvTransparentHeader">
   <nav class="navbar">
     <div class="navbar-top">
       <!-- ROW 1 ON MOBILE (SPLIT 50/50 ACTION BAR) / RIGHT SIDE ON DESKTOP -->
@@ -163,56 +243,150 @@
   </nav>
 </header>
 
-<main class="pv-page-main">
+<main class="pv-scope pv-page-main">
 
-<!-- WEBER HERO & SPEC BRIDGE -->
-<section class="pv-brand-hero">
-  <div class="pv-container">
-    <div class="pv-hero-inner">
-      <div class="pv-hero-top">
-        <div class="pv-hero-brand-lockup">
-          <img src="assets/weber-logo.svg" alt="Saint-Gobain Weber Logo" class="pv-hero-brand-logo" width="160" height="42" loading="eager" decoding="async" />
-          <span class="pv-hero-brand-pill">Yetkili Bayilik &amp; Lojistik Dağıtım</span>
+<!-- ==========================================================================
+     1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE
+     ========================================================================== -->
+<section class="pv-stage-hero" id="pvStageHero" aria-label="Saint-Gobain Weber Yapı Kimyasalları">
+  
+  <!-- Slide Stage Track -->
+  <div class="pv-stage-track" id="pvStageTrack">
+    <!-- Slide 0: Weber Brand Opening -->
+    <div class="pv-stage-slide active" data-index="0" data-color="Saint-Gobain Weber" data-code="#FEE000">
+      <img src="assets/rf-brand-weber.jpg" alt="Saint-Gobain Weber Yapı Kimyasalları Yetkili Bayi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
+      <div class="pv-stage-overlay"></div>
+      <div class="pv-container pv-stage-content-wrap">
+        <div class="pv-stage-info">
+          <div class="pv-stage-title-wrap">
+            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background:#FEE000;border-radius:6px;border:1.5px solid rgba(255,255,255,0.7);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
+            <h1 class="pv-stage-title">Saint-Gobain Weber</h1>
+          </div>
+          <div class="pv-stage-spec">
+            <span>Yetkili Bayi Dağıtım</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>TS EN 12004 C2TE S1</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>Urla &amp; Balçova Depo</span>
+          </div>
+          <a href="#weberProductCatalog" class="pv-stage-text-link pv-stage-nudge" id="pvStageExploreBtn">
+            <span>Kataloğu İncele</span>
+            <svg class="pv-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="pv-stage-progress-bar"></div>
+          </div>
         </div>
-        <h1 class="pv-hero-title">Saint-Gobain Weber Yapı Kimyasalları &amp; Harçlar</h1>
-        <p class="pv-hero-desc">
-          Büyük ebatlı granit karolar, porselen seramikler, suya dayanıklı flex derz dolguları, yapısal tamir harçları ve zemin tesviye şaplarında dünya lideri Saint-Gobain Weber çözümleri.
-        </p>
       </div>
+    </div>
 
-      <!-- Quick Spec & Standard Badges -->
-      <div class="pv-spec-badges">
-        <div class="pv-spec-badge">
-          <span class="pv-spec-val">TS EN 12004</span>
-          <span class="pv-spec-lbl">C2TE S1 Flex Konfor</span>
-        </div>
-        <div class="pv-spec-badge">
-          <span class="pv-spec-val">TS EN 1504-3</span>
-          <span class="pv-spec-lbl">R4 Yapısal Tamir</span>
-        </div>
-        <div class="pv-spec-badge">
-          <span class="pv-spec-val">TS EN 13888</span>
-          <span class="pv-spec-lbl">CG2 WA Esnek Derz</span>
-        </div>
-        <div class="pv-spec-badge">
-          <span class="pv-spec-val">TS EN 14891</span>
-          <span class="pv-spec-lbl">CM O2P Tam Elastik</span>
+    <!-- Slide 1: Weberkol Flex Konfor -->
+    <div class="pv-stage-slide" data-index="1" data-color="Weberkol Flex Konfor" data-code="#C8461E">
+      <img src="assets/svc-seramik.jpg" alt="Büyük Ebat Porselen Granit Seramik Yapıştırıcısı" class="pv-stage-img" decoding="async" />
+      <div class="pv-stage-overlay"></div>
+      <div class="pv-container pv-stage-content-wrap">
+        <div class="pv-stage-info">
+          <div class="pv-stage-title-wrap">
+            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#C8461E;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
+            <h2 class="pv-stage-title">Weberkol Flex Konfor</h2>
+          </div>
+          <div class="pv-stage-spec">
+            <span>60x120 &amp; 120x240 Granit</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>C2TE S1 Flex</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>Toz Çıkarmaz</span>
+          </div>
+          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberkol%20Flex%20Konfor%20(25%20kg)%20palet%20fiyat%C4%B1%20ve%20%C5%9Fantiye%20teslimat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+            <span>Palet Fiyatı Sor</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="pv-stage-progress-bar"></div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Live Logistics Strip -->
-      <div class="pv-hero-stock-strip">
-        <span class="pv-stock-dot"></span>
-        <span>Urla Ana Lojistik Deposu &amp; Balçova Showroom’da Stoktan Teslim &bull; Çeşme, Urla ve İzmir Şantiyelerine Paletli Aynı Gün Sevkiyat</span>
+    <!-- Slide 2: Weberdry SS-10 Su Yalıtımı -->
+    <div class="pv-stage-slide" data-index="2" data-color="Weberdry SS-10" data-code="#0072CE">
+      <img src="assets/rf-card-waterproof.jpg" alt="Teras ve Havuz Tam Elastik Su Yalıtımı" class="pv-stage-img" decoding="async" />
+      <div class="pv-stage-overlay"></div>
+      <div class="pv-container pv-stage-content-wrap">
+        <div class="pv-stage-info">
+          <div class="pv-stage-title-wrap">
+            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#0072CE;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
+            <h2 class="pv-stage-title">Weberdry SS-10</h2>
+          </div>
+          <div class="pv-stage-spec">
+            <span>CM O2P Tam Elastik</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>Teras &amp; Yüzme Havuzu</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>33 kg Set</span>
+          </div>
+          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberdry%20SS-10%20tam%20elastik%20su%20yal%C4%B1t%C4%B1m%C4%B1%20hakk%C4%B1nda%20fiyat%20ve%20sarfiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+            <span>Teknik Şartname Al</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="pv-stage-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Weberep MA 200 Yapısal Tamir Harcı -->
+    <div class="pv-stage-slide" data-index="3" data-color="Weberep MA 200" data-code="#EF4444">
+      <img src="assets/rf-hero-materials.jpg" alt="Yapısal Beton Onarımı ve Grout Harçları" class="pv-stage-img" decoding="async" />
+      <div class="pv-stage-overlay"></div>
+      <div class="pv-container pv-stage-content-wrap">
+        <div class="pv-stage-info">
+          <div class="pv-stage-title-wrap">
+            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#EF4444;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
+            <h2 class="pv-stage-title">Weberep MA 200</h2>
+          </div>
+          <div class="pv-stage-spec">
+            <span>TS EN 1504-3 R4</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>50+ MPa Mukavemet</span>
+            <span class="pv-spec-sep">&bull;</span>
+            <span>Kolon &amp; Kiriş Onarım</span>
+          </div>
+          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberep%20MA%20200%20R4%20yap%C4%B1sal%20tamir%20harc%C4%B1%20stok%20ve%20palet%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+            <span>Şantiye Teklifi İste</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+            <div class="pv-stage-progress-bar"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Stage Left / Right Floating Arrow Navigation -->
+  <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+
+  <!-- Stage Bottom Scroll Prompt -->
+  <a href="#weberProductCatalog" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Weber Kataloğuna Kaydır">
+    <span>Weber Kataloğunu Keşfet</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+
 </section>
 
-<!-- ARCHITECTURAL STICKY SUB-NAV (Zero-Scroll Instant Switcher) -->
+<!-- ==========================================================================
+     2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
+     ========================================================================== -->
 <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Weber Ürün Departmanları">
-  <div class="pv-subnav-inner">
+  <div class="pv-container pv-subnav-inner">
     <div class="pv-subnav-brand">
       <img src="assets/weber-logo.svg" alt="Weber" class="pv-subnav-logo" width="100" height="26" loading="lazy" decoding="async" />
       <span class="pv-subnav-tag">Yapı Kimyasalları</span>
@@ -1539,8 +1713,108 @@
   </div>
 </footer>
 
+<script src="js/pervan.js?v=9.0.0"></script>
+
 <!-- SCRIPTS & INTERACTIVE ENGINE -->
 <script>
+/* 1. HERO STAGE SLIDER & TRANSPARENT HEADER OBSERVER */
+(function() {
+  var stage = document.getElementById("pvStageHero");
+  var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
+
+  if (header) {
+    function checkHeaderSolid() {
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 120) {
+        header.classList.add("header--solid");
+      } else {
+        header.classList.remove("header--solid");
+      }
+    }
+    window.addEventListener("scroll", checkHeaderSolid, { passive: true });
+    checkHeaderSolid();
+  }
+
+  if (!stage) return;
+  var track = document.getElementById("pvStageTrack");
+  if (!track) return;
+
+  var slides = stage.querySelectorAll(".pv-stage-slide");
+  var prevBtn = document.getElementById("pvStagePrev");
+  var nextBtn = document.getElementById("pvStageNext");
+  var currentIndex = 0;
+  var totalSlides = slides.length;
+  var autoPlayTimer = null;
+
+  function syncActiveState(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+
+    slides.forEach(function(slide, idx) {
+      slide.classList.toggle("active", idx === index);
+    });
+
+    var barWidth = 140 / totalSlides;
+    var translateX = index * barWidth;
+    stage.querySelectorAll(".pv-stage-progress-bar").forEach(function(bar) {
+      bar.style.width = barWidth + "px";
+      bar.style.transform = "translateX(" + translateX + "px)";
+    });
+  }
+
+  function goToSlide(index, smooth) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    var slideWidth = track.clientWidth;
+    var targetLeft = index * slideWidth;
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth !== false ? "smooth" : "auto"
+    });
+
+    syncActiveState(index);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function() {
+      stopAutoPlay();
+      goToSlide(currentIndex - 1);
+      startAutoPlay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function() {
+      stopAutoPlay();
+      goToSlide(currentIndex + 1);
+      startAutoPlay();
+    });
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function() {
+      goToSlide(currentIndex + 1);
+    }, 6000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  stage.addEventListener("mouseenter", stopAutoPlay);
+  stage.addEventListener("mouseleave", startAutoPlay);
+  stage.addEventListener("touchstart", stopAutoPlay, { passive: true });
+
+  syncActiveState(0);
+  startAutoPlay();
+})();
+
+/* 2. ARCHITECTURAL SUBNAV & 5-DEPARTMENT ZERO-SCROLL ENGINE */
 (function() {
   var WEBER_PRODUCTS_DATA = [
   {
@@ -2632,7 +2906,6 @@
     "weberFloorSection": document.getElementById("weberFloorSection")
   };
 
-  // Sticky subnav scroll handler
   function getHeaderHeight() {
     return header ? header.offsetHeight : 0;
   }
@@ -2796,7 +3069,6 @@
     });
   }
 
-  // Generic Filter Setup for all 5 departments
   function setupCategoryFiltering(pillsContainerId, listContainerId) {
     var container = document.getElementById(pillsContainerId);
     var list = document.getElementById(listContainerId);
@@ -2826,7 +3098,6 @@
       });
     });
 
-    // Initial filter run
     var activePill = container.querySelector(".pv-menu-pill.active") || pills[0];
     if (activePill) {
       var initialFilter = activePill.getAttribute("data-filter");
@@ -2844,9 +3115,7 @@
   setupCategoryFiltering("repMenuPills", "repMenuList");
   setupCategoryFiltering("floorMenuPills", "floorMenuList");
 
-  // ==========================================================================
-  // MODAL CONFIGURATOR & TECHNICAL SPECS ENGINE
-  // ==========================================================================
+  // MODAL ENGINE
   var modalBackdrop = document.getElementById("pvModalBackdrop");
   var modalCloseBtn = document.getElementById("pvModalCloseBtn");
   var modalProductImg = document.getElementById("modalProductImg");
@@ -2877,7 +3146,6 @@
     modalProductTitle.textContent = p.name;
     modalProductDesc.textContent = p.desc;
 
-    // Specs
     modalSpecStandard.textContent = p.specs.standard || "-";
     modalSpecPackaging.textContent = p.specs.packaging || "-";
     modalSpecConsumption.textContent = p.specs.consumption || "-";
@@ -2885,7 +3153,6 @@
     modalSpecPotLife.textContent = p.specs.potLife || "-";
     modalSpecLogistics.textContent = p.specs.logistics || "-";
 
-    // Size Pills
     modalSizeTrack.innerHTML = "";
     if (p.sizes && p.sizes.length > 0) {
       p.sizes.forEach(function(size, idx) {
@@ -2903,7 +3170,6 @@
       });
     }
 
-    // Accordions
     modalAccordions.innerHTML = "";
     if (p.accordions && p.accordions.length > 0) {
       p.accordions.forEach(function(acc, idx) {
@@ -2961,7 +3227,6 @@
     });
   }
 
-  // Attach click listener to all product rows
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
       var pid = row.getAttribute("data-product-id");
@@ -2976,7 +3241,6 @@
     });
   });
 
-  // Deep Link Handling
   function checkDeepLink() {
     var hash = window.location.hash;
     if (hash && hash.indexOf("#urun-") === 0) {
@@ -2991,7 +3255,6 @@
     }
   }
 
-  // Initial Sync
   switchTab("weberProductCatalog");
   checkDeepLink();
   window.addEventListener("popstate", checkDeepLink);
