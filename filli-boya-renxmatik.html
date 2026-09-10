@@ -6413,9 +6413,10 @@ html body.pv-transparent-header-page .pv-page-main {
 
     <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
     <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
-      <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer">
-        <span id="pvDeptTriggerLabel">01 Boya</span>
-        <svg class="pv-dept-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
+        <span class="pv-dept-badge" id="pvDeptBadge">01</span>
+        <span class="pv-dept-label" id="pvDeptTriggerLabel">Boya</span>
+        <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </button>
@@ -19666,14 +19667,20 @@ html body.pv-transparent-header-page .pv-page-main {
 
     // 3. Update mobile compact bar & drawer
     var currentDept = DEPARTMENTS_DATA.find(function(d) { return d.id === targetId; }) || DEPARTMENTS_DATA[0];
+    var deptBadge = document.getElementById("pvDeptBadge");
+    if (deptBadge) deptBadge.textContent = currentDept.num;
     if (deptTriggerLabel) {
-      deptTriggerLabel.textContent = currentDept.short;
+      deptTriggerLabel.textContent = currentDept.short.replace(/^\d+\s*/, "");
     }
     renderDeptDrawer(targetId);
     syncMobileFilterRail(targetId);
   }
 
   // Initial state setup for mobile bar
+  var initialDept = DEPARTMENTS_DATA[0];
+  var initialBadge = document.getElementById("pvDeptBadge");
+  if (initialBadge) initialBadge.textContent = initialDept.num;
+  if (deptTriggerLabel) deptTriggerLabel.textContent = initialDept.short.replace(/^\d+\s*/, "");
   renderDeptDrawer("pvProductCatalog");
   syncMobileFilterRail("pvProductCatalog");
 
