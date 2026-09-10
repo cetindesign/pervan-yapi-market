@@ -18,7 +18,7 @@
   --pv-quote-bg: #EAE3D8;
   --pv-border-subtle: rgba(0, 0, 0, 0.08);
   --pv-border: rgba(0, 0, 0, 0.12);
-  --pv-radius-btn: 8px;
+  --pv-radius-btn: 9999px;
   --pv-radius-card: 12px;
   --pv-radius-stack: 16px;
 }
@@ -2402,7 +2402,7 @@ body.pv-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   appearance: none;
   border: 1.5px solid rgba(28, 25, 23, 0.18);
   background: #FFFFFF;
-  border-radius: 12px;
+  border-radius: var(--pv-radius-btn, 9999px);
   min-height: 44px;
   height: auto;
   padding: 8px 10px;
@@ -2835,7 +2835,7 @@ body.pv-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
 .pv-btn-primary {
   background: #111215;
   color: #FFFFFF;
-  border-radius: 14px;
+  border-radius: var(--pv-radius-btn, 9999px);
   font-family: var(--pv-font);
   font-weight: 800;
   font-size: 13.5px;
@@ -3141,7 +3141,7 @@ body.pv-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   padding: 7px 14px;
   height: 34px;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: var(--pv-radius-btn, 9999px);
   text-decoration: none;
   transition: all 0.15s ease;
   white-space: nowrap;

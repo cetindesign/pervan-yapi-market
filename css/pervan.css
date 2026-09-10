@@ -3058,19 +3058,40 @@ img, svg {
 /* ==========================================================================
    PERVAN UNIFIED ARCHITECTURAL GRID & COMPONENT SYSTEM
    Gutter Standard: 7.2vw Desktop · 20px Mobile
-   Corner Standard: 0px (border-radius: 0 everywhere)
+   Corner Standard: 9999px Oval (Pill / Capsule) for All Buttons
    ========================================================================== */
 
 :root {
+  --radius-btn: 9999px;
   --gutter-desktop: 7.2vw;
   --gutter-mobile: 20px;
 }
 
-/* Sharp 90-degree corners across the design system */
-*, *::before, *::after,
-button, input, select, textarea,
-.media-button, .site-button, .activation-button, .rf-nav-pill, .rf-btn {
-  border-radius: 0 !important;
+/* Oval (Capsule) Standard across all buttons in the platform */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.media-button,
+.site-button,
+.activation-button,
+.rf-nav-pill,
+.rf-btn,
+.rf-site-btn,
+.rf-dock-btn,
+.rf-tool-btn,
+.pv-btn-black,
+.pv-btn-white,
+.pv-btn-primary,
+.pv-btn-whatsapp,
+.pv-subnav-cta-btn,
+.pv-segmented-btn,
+.pv-subnav-link,
+.pv-subnav-search-btn,
+.pv-filter-chip,
+.pv-dept-trigger,
+.pv-menu-pill {
+  border-radius: 9999px !important;
 }
 
 body {
@@ -3459,7 +3480,7 @@ header.header--menu-open {
     border: 1px solid rgba(255, 255, 255, 0.9) !important;
     background: rgba(0, 0, 0, 0.25) !important;
     color: #FFFFFF !important;
-    border-radius: 0 !important;
+    border-radius: 9999px !important;
     white-space: nowrap !important;
   }
 
@@ -4004,7 +4025,7 @@ header.header--menu-open {
   -webkit-backdrop-filter: blur(6px);
   pointer-events: auto;
   white-space: nowrap;
-  border-radius: 0 !important;
+  border-radius: 9999px !important;
   transition: all 0.2s ease;
 }
 
@@ -4145,7 +4166,7 @@ header.header--menu-open {
   border: 1px solid #000000 !important;
   background-color: transparent !important;
   text-decoration: none !important;
-  border-radius: 0 !important;
+  border-radius: 9999px !important;
   box-sizing: border-box !important;
   transition: background-color 0.2s ease, color 0.2s ease !important;
 }
@@ -4373,7 +4394,7 @@ header.header--menu-open {
   letter-spacing: 0.02em;
   text-decoration: none !important;
   white-space: nowrap;
-  border-radius: 0 !important;
+  border-radius: 9999px !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
