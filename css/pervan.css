@@ -3062,6 +3062,9 @@ img, svg {
    ========================================================================== */
 
 :root {
+  --btn-primary-bg: #1C1917;
+  --btn-primary-hover-bg: #292524;
+  --btn-primary-text: #FFFFFF;
   --radius-btn: 9999px;
   --gutter-desktop: 7.2vw;
   --gutter-mobile: 20px;
@@ -4172,7 +4175,7 @@ header.header--menu-open {
 
 .block.site-links .button-group .site-button:hover,
 .site-button.interactive.text-color-black:hover {
-  background-color: #000000 !important;
+  background-color: var(--btn-primary-bg, #1C1917) !important;
   color: #FFFFFF !important;
 }
 
@@ -4398,7 +4401,7 @@ header.header--menu-open {
 }
 
 .block.activation .button-group .activation-button:hover {
-  background: #000000;
+  background: var(--btn-primary-bg, #1C1917);
   color: #FFFFFF !important;
 }
 
