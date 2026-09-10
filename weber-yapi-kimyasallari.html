@@ -1577,87 +1577,99 @@ html body.pv-transparent-header-page .pv-page-main {
      ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
      ========================================================================== -->
 <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
-  <div class="pv-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-    <button type="button" class="pv-modal-close" id="pvModalCloseBtn" aria-label="Kapat">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
+  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <!-- Top Gesture Bar & Absolute Close Action -->
+    <div class="pv-modal-top-bar" id="modalTopBar">
+      <div class="pv-modal-handle-zone" id="modalHandleZone">
+        <div class="pv-modal-handle"></div>
+      </div>
+      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
 
-    <div class="pv-modal-body">
-      <!-- Media Gallery Left -->
-      <div class="pv-modal-media-col">
-        <div class="pv-modal-media-frame">
-          <img id="modalProductImg" src="assets/rf-brand-weber.jpg" alt="Ürün Görseli" loading="lazy" decoding="async" />
+    <!-- Scrollable Modal Content Area -->
+    <div class="pv-modal-scroll" id="modalScrollArea">
+      <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
+      <div class="pv-specimen-hero">
+        <div class="pv-specimen-meta">
+          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">Saint-Gobain Weber Yapı Kimyasalları</div>
+          <h3 class="pv-specimen-title" id="modalProductTitle">weberkol flex konfor</h3>
         </div>
-        <div class="pv-modal-badges-strip" id="modalBadgesStrip">
-          <span class="pv-modal-badge" id="modalProductBadge">TS EN 12004</span>
-          <span class="pv-modal-badge-alt" id="modalProductTag">Yetkili Bayi Orijinal Ürün</span>
+
+        <div class="pv-specimen-can-stage">
+          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+          <img id="modalProductImg" src="assets/rf-brand-weber.jpg" alt="Ürün Görseli" />
+          <div class="pv-can-shadow" id="modalCanShadow"></div>
+        </div>
+
+        <p class="pv-specimen-desc" id="modalProductDesc">Büyük ebatlı granit karolar için flex seramik yapıştırıcısı.</p>
+        <span id="modalProductTag" style="display:none;"></span>
+      </div>
+
+      <!-- 2. Packaging / Size Segmented Track -->
+      <div class="pv-modal-select-group">
+        <div class="pv-modal-select-header">
+          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
+        </div>
+        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
+          <!-- Dynamically populated -->
         </div>
       </div>
 
-      <!-- Configurator & Technical Specs Right -->
-      <div class="pv-modal-info-col">
-        <div class="pv-modal-header">
-          <span class="pv-modal-kicker" id="modalProductKicker">Saint-Gobain Weber Yapı Kimyasalları</span>
-          <h2 class="pv-modal-title" id="modalProductTitle">weberkol flex konfor</h2>
-          <p class="pv-modal-desc" id="modalProductDesc">Büyük ebatlı granit karolar için flex seramik yapıştırıcısı.</p>
+      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
+      <div class="pv-spec-gauges" id="modalSpecGauges">
+        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
+          <div class="pv-gauge-eyebrow">STANDART &amp; SINIF</div>
+          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 12004 C2TE S1</div>
+          <div class="pv-gauge-caption" id="modalProductBadge">CE &amp; TS Belgeli</div>
         </div>
 
-        <!-- Packaging / Size Selector -->
-        <div class="pv-modal-section">
-          <label class="pv-config-label">Ambalaj &amp; Satış Birimi:</label>
-          <div class="pv-segmented-track" id="modalSizeTrack">
-            <!-- Dynamic size buttons -->
-          </div>
+        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
+          <div class="pv-gauge-eyebrow">SARFİYAT MİKTARI</div>
+          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">4.5 – 5.5 kg / m²</div>
+          <div class="pv-gauge-caption" id="modalSpecPackaging">25 kg Kraft Torba</div>
         </div>
+      </div>
 
-        <!-- Live Technical Specs Grid -->
-        <div class="pv-modal-section">
-          <label class="pv-config-label">Teknik Performans Parametreleri:</label>
-          <div class="pv-specs-table" id="modalSpecsTable">
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Standart &amp; Sınıf:</span>
-              <span class="pv-spec-v" id="modalSpecStandard">TS EN 12004 C2TE S1</span>
-            </div>
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Ambalaj:</span>
-              <span class="pv-spec-v" id="modalSpecPackaging">25 kg Kraft Torba</span>
-            </div>
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Sarfiyat:</span>
-              <span class="pv-spec-v" id="modalSpecConsumption">4.5 - 5.5 kg / m²</span>
-            </div>
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Karışım Oranı:</span>
-              <span class="pv-spec-v" id="modalSpecMixing">6.0 - 6.5 lt su / torba</span>
-            </div>
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Kap Ömrü &amp; Priz:</span>
-              <span class="pv-spec-v" id="modalSpecPotLife">Açık bekletme 30 dk</span>
-            </div>
-            <div class="pv-spec-row">
-              <span class="pv-spec-k">Lojistik:</span>
-              <span class="pv-spec-v" id="modalSpecLogistics">Balçova &amp; Urla Depo Stok</span>
-            </div>
-          </div>
+      <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
+      <div class="pv-specs-table" id="modalSpecsTable">
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Karışım Oranı:</span>
+          <span class="pv-spec-v" id="modalSpecMixing">6.0 - 6.5 lt su / torba</span>
         </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Kap Ömrü &amp; Priz:</span>
+          <span class="pv-spec-v" id="modalSpecPotLife">Açık bekletme 30 dk</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Lojistik Dağıtım:</span>
+          <span class="pv-spec-v" id="modalSpecLogistics">Balçova &amp; Urla Depo Stok</span>
+        </div>
+      </div>
 
-        <!-- Technical Accordions (Placed ABOVE CTA) -->
-        <div class="pv-modal-accordions" id="modalAccordions">
-          <!-- Injected dynamically -->
-        </div>
+      <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
+      <div class="pv-modal-accordions" id="modalAccordions">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
 
-        <!-- Direct WhatsApp CTA (Strict Bottom Decision Anchor) -->
-        <div class="pv-modal-cta-group">
-          <a href="#" id="modalWABtn" class="pv-btn-primary pv-btn-block" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            <span>WhatsApp ile Stok &amp; Palet Teklifi Al</span>
-          </a>
-        </div>
+    <!-- STICKY FOOTER ACTION BAR -->
+    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp ile Stok &amp; Palet Teklifi Al</span>
+      </a>
+      <div class="pv-modal-footer-aux">
+        <span class="pv-modal-delivery-chip">
+          <span class="pv-chip-pulse"></span>
+          <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
+        </span>
       </div>
     </div>
   </div>
@@ -3156,10 +3168,16 @@ html body.pv-transparent-header-page .pv-page-main {
 
   // MODAL ENGINE
   var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCard = document.getElementById("pvModalCard");
   var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+
   var modalProductImg = document.getElementById("modalProductImg");
   var modalProductBadge = document.getElementById("modalProductBadge");
   var modalProductTag = document.getElementById("modalProductTag");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
   var modalProductTitle = document.getElementById("modalProductTitle");
   var modalProductDesc = document.getElementById("modalProductDesc");
   var modalSizeTrack = document.getElementById("modalSizeTrack");
@@ -3172,6 +3190,12 @@ html body.pv-transparent-header-page .pv-page-main {
   var modalWABtn = document.getElementById("modalWABtn");
   var modalAccordions = document.getElementById("modalAccordions");
 
+  var isSheetDragging = false;
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var canDragFromScroll = false;
+
   function openModal(productId) {
     var p = WEBER_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
     if (!p) return;
@@ -3180,8 +3204,9 @@ html body.pv-transparent-header-page .pv-page-main {
 
     modalProductImg.src = p.thumb;
     modalProductImg.alt = p.name;
-    modalProductBadge.textContent = p.badge;
-    modalProductTag.textContent = p.tag;
+    if (modalProductBadge) modalProductBadge.textContent = p.badge || "TS & CE Onaylı";
+    if (modalProductTag) modalProductTag.textContent = p.tag || "Yetkili Bayi Orijinal";
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "Saint-Gobain Weber Yapı Kimyasalları";
     modalProductTitle.textContent = p.name;
     modalProductDesc.textContent = p.desc;
 
@@ -3190,7 +3215,7 @@ html body.pv-transparent-header-page .pv-page-main {
     modalSpecConsumption.textContent = p.specs.consumption || "-";
     modalSpecMixing.textContent = p.specs.mixingRatio || "-";
     modalSpecPotLife.textContent = p.specs.potLife || "-";
-    modalSpecLogistics.textContent = p.specs.logistics || "-";
+    modalSpecLogistics.textContent = p.specs.logistics || "Balçova & Urla Depo Stok";
 
     modalSizeTrack.innerHTML = "";
     if (p.sizes && p.sizes.length > 0) {
@@ -3230,6 +3255,7 @@ html body.pv-transparent-header-page .pv-page-main {
 
     updateWhatsAppUrl();
 
+    modalBackdrop.classList.add("open");
     modalBackdrop.classList.add("is-open");
     modalBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -3239,11 +3265,24 @@ html body.pv-transparent-header-page .pv-page-main {
     } catch(e) {}
   }
 
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
+  }
+
   function closeModal() {
+    modalBackdrop.classList.remove("open");
     modalBackdrop.classList.remove("is-open");
     modalBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     currentProduct = null;
+    resetSheetStyles();
     try {
       history.replaceState(null, "", window.location.pathname + window.location.search);
     } catch(e) {}
@@ -3265,6 +3304,73 @@ html body.pv-transparent-header-page .pv-page-main {
       if (e.target === modalBackdrop) closeModal();
     });
   }
+
+  // Touch gesture physics for mobile bottom sheet dismissal
+  function onDragStart(e) {
+    if (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
+
+  function onDragMove(e) {
+    if ((!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
+
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+        modalCard.style.transition = "none";
+        modalCard.style.transform = "translateY(" + deltaY + "px)";
+        var progress = Math.min(1, deltaY / 360);
+        modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
+      }
+    }
+  }
+
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+    dragStartY = 0;
+
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      modalBackdrop.style.transition = "opacity 0.24s ease";
+      modalBackdrop.style.opacity = "0";
+      setTimeout(function() {
+        closeModal();
+      }, 240);
+    } else {
+      modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(0)";
+      modalBackdrop.style.transition = "opacity 0.25s ease";
+      modalBackdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
+    }
+  }
+
+  [modalHandleZone, modalTopBar, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
 
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
