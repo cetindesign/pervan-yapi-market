@@ -6395,27 +6395,26 @@ html body.pv-transparent-header-page .pv-page-main {
     
     <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
       <button type="button" class="pv-subnav-link active" data-target="pvProductCatalog" role="tab" aria-selected="true">
-        <span class="pv-subnav-num">01</span> Boya Menüsü
+        Boya Menüsü
       </button>
       <button type="button" class="pv-subnav-link" data-target="pvSuppliesSection" role="tab" aria-selected="false">
-        <span class="pv-subnav-num">02</span> Boya Malzemeleri
+        Boya Malzemeleri
       </button>
       <button type="button" class="pv-subnav-link" data-target="pvProSection" role="tab" aria-selected="false">
-        <span class="pv-subnav-num">03</span> Profesyonel Seri
+        Profesyonel Seri
       </button>
       <button type="button" class="pv-subnav-link" data-target="pvTransformation" role="tab" aria-selected="false">
-        <span class="pv-subnav-num">04</span> Dönüşüm (Reno)
+        Dönüşüm (Reno)
       </button>
       <button type="button" class="pv-subnav-link" data-target="pvInsulationSection" role="tab" aria-selected="false">
-        <span class="pv-subnav-num">05</span> Capatect Yalıtım
+        Capatect Yalıtım
       </button>
     </div>
 
     <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
     <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
       <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
-        <span class="pv-dept-badge" id="pvDeptBadge">01</span>
-        <span class="pv-dept-label" id="pvDeptTriggerLabel">Boya</span>
+        <span class="pv-dept-label" id="pvDeptTriggerLabel">Boya Menüsü</span>
         <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
@@ -6477,28 +6476,22 @@ html body.pv-transparent-header-page .pv-page-main {
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="paintMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="ic-cephe" role="tab" aria-selected="true">
-          <span>İç Cephe &amp; Tavan</span>
-          <span class="pv-menu-pill-count">17</span>
+          İç Cephe &amp; Tavan
         </button>
         <button type="button" class="pv-menu-pill" data-filter="dis-cephe" role="tab" aria-selected="false">
-          <span>Dış Cephe &amp; Koruma</span>
-          <span class="pv-menu-pill-count">13</span>
+          Dış Cephe &amp; Koruma
         </button>
         <button type="button" class="pv-menu-pill" data-filter="ahsap-metal" role="tab" aria-selected="false">
-          <span>Ahşap &amp; Metal</span>
-          <span class="pv-menu-pill-count">6</span>
+          Ahşap &amp; Metal
         </button>
         <button type="button" class="pv-menu-pill" data-filter="donusum" role="tab" aria-selected="false">
-          <span>Kendin Yap &amp; Dönüşüm</span>
-          <span class="pv-menu-pill-count">4</span>
+          Kendin Yap &amp; Dönüşüm
         </button>
         <button type="button" class="pv-menu-pill" data-filter="astar-hazirlik" role="tab" aria-selected="false">
-          <span>Astar &amp; Hazırlık</span>
-          <span class="pv-menu-pill-count">4</span>
+          Astar &amp; Hazırlık
         </button>
         <button type="button" class="pv-menu-pill" data-filter="yalitim" role="tab" aria-selected="false">
-          <span>Capatect Yalıtım</span>
-          <span class="pv-menu-pill-count">4</span>
+          Capatect Yalıtım
         </button>
       </div>
     </div>
@@ -19524,11 +19517,11 @@ html body.pv-transparent-header-page .pv-page-main {
   };
 
   var DEPARTMENTS_DATA = [
-    { id: "pvProductCatalog", num: "01", short: "01 Boya", full: "Boya Menüsü", count: 85, pillsId: "paintMenuPills" },
-    { id: "pvSuppliesSection", num: "02", short: "02 Malzemeler", full: "Boya Malzemeleri", count: 48, pillsId: "suppliesMenuPills" },
-    { id: "pvProSection", num: "03", short: "03 Pro Seri", full: "Profesyonel Seri", count: 53, pillsId: "proMenuPills" },
-    { id: "pvTransformation", num: "04", short: "04 Dönüşüm", full: "Dönüşüm (Reno)", count: 26, pillsId: "transformationMenuPills" },
-    { id: "pvInsulationSection", num: "05", short: "05 Yalıtım", full: "Capatect Yalıtım", count: 47, pillsId: "insulationMenuPills" }
+    { id: "pvProductCatalog", short: "Boya Menüsü", full: "Boya Menüsü", pillsId: "paintMenuPills" },
+    { id: "pvSuppliesSection", short: "Boya Malzemeleri", full: "Boya Malzemeleri", pillsId: "suppliesMenuPills" },
+    { id: "pvProSection", short: "Profesyonel Seri", full: "Profesyonel Seri", pillsId: "proMenuPills" },
+    { id: "pvTransformation", short: "Dönüşüm (Reno)", full: "Dönüşüm (Reno)", pillsId: "transformationMenuPills" },
+    { id: "pvInsulationSection", short: "Capatect Yalıtım", full: "Capatect Yalıtım", pillsId: "insulationMenuPills" }
   ];
 
   var deptTrigger = document.getElementById("pvDeptTrigger");
@@ -19548,14 +19541,8 @@ html body.pv-transparent-header-page .pv-page-main {
       var isSelected = (d.id === activeId);
       btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
       btn.innerHTML = 
-        '<div class="pv-drawer-item-left">' +
-        '  <span class="pv-drawer-item-num">' + d.num + '</span>' +
-        '  <span class="pv-drawer-item-name">' + d.full + '</span>' +
-        '</div>' +
-        '<div class="pv-drawer-item-right">' +
-        '  <span class="pv-drawer-item-count">' + d.count + ' Ürün</span>' +
-        '  <svg class="pv-drawer-item-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-        '</div>';
+        '<span class="pv-drawer-item-name">' + d.full + '</span>' +
+        '<svg class="pv-drawer-item-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 
       btn.addEventListener("click", function() {
         switchTab(d.id);

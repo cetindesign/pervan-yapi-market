@@ -3062,8 +3062,8 @@ img, svg {
    ========================================================================== */
 
 :root {
-  --btn-primary-bg: #1C1917;
-  --btn-primary-hover-bg: #292524;
+  --btn-primary-bg: #C8461E;
+  --btn-primary-hover-bg: #A83614;
   --btn-primary-text: #FFFFFF;
   --radius-btn: 9999px;
   --gutter-desktop: 7.2vw;
