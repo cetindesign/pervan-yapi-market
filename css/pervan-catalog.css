@@ -73,6 +73,134 @@ html, body {
   }
 }
 
+/* ==========================================================================
+   PERVAN BRAND HERO & TECHNICAL SPEC HEADER
+   ========================================================================== */
+.pv-brand-hero {
+  padding: 120px 0 48px;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+@media (max-width: 768px) {
+  .pv-brand-hero {
+    padding: 80px 0 32px;
+  }
+}
+
+.pv-hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pv-hero-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #FAF9F5;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  padding: 6px 16px 6px 12px;
+  border-radius: 9999px;
+}
+
+.pv-hero-brand-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.pv-hero-brand-pill {
+  font-family: var(--pv-font);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #71717A;
+  letter-spacing: -0.01em;
+}
+
+.pv-hero-title {
+  font-family: var(--pv-font);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: #09090B;
+  margin: 0;
+}
+
+.pv-hero-desc {
+  font-size: clamp(14px, 1.4vw, 16px);
+  color: #52525B;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0;
+}
+
+.pv-spec-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.pv-spec-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 18px;
+  background: #F8F8F7;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 14px;
+  min-width: 140px;
+  box-sizing: border-box;
+}
+
+.pv-spec-val {
+  font-family: var(--pv-font);
+  font-size: 13px;
+  font-weight: 800;
+  color: #09090B;
+  letter-spacing: -0.01em;
+}
+
+.pv-spec-lbl {
+  font-family: var(--pv-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717A;
+  margin-top: 2px;
+}
+
+.pv-hero-stock-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FAF5F2;
+  border: 1px solid rgba(200, 70, 30, 0.2);
+  color: #C8461E;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-family: var(--pv-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 6px;
+}
+
+.pv-stock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #C8461E;
+  box-shadow: 0 0 0 3px rgba(200, 70, 30, 0.2);
+  flex-shrink: 0;
+}
+
 /* Standard Typography */
 .pv-h1 {
   font-size: clamp(34px, 5vw, 52px);
@@ -4119,4 +4247,275 @@ body.pv-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
   padding: 1px 7px;
   font-size: 10px;
   margin-right: 2px;
+}
+
+/* ==========================================================================
+   PERVAN TECHNICAL MODAL & WEBER CONFIGURATOR EXTENSIONS
+   ========================================================================== */
+.pv-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pv-modal-backdrop.is-open .pv-modal-card {
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .pv-modal-backdrop.is-open .pv-modal-card {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.pv-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(24, 24, 27, 0.06);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #18181B;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  z-index: 10;
+}
+
+.pv-modal-close:hover {
+  background: rgba(24, 24, 27, 0.12);
+  transform: scale(1.05);
+}
+
+.pv-modal-body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .pv-modal-card {
+    max-width: 860px;
+  }
+  .pv-modal-body {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+  }
+  .pv-modal-media-col {
+    width: 320px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+  }
+  .pv-modal-info-col {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.pv-modal-media-frame {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 18px;
+  background: #F8F8F7;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.pv-modal-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pv-modal-badges-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.pv-modal-badge {
+  font-family: var(--pv-font);
+  font-size: 11px;
+  font-weight: 700;
+  background: #FEE000;
+  color: #111111;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
+}
+
+.pv-modal-badge-alt {
+  font-family: var(--pv-font);
+  font-size: 11px;
+  font-weight: 600;
+  background: #F4F4F5;
+  color: #52525B;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.pv-modal-kicker {
+  font-family: var(--pv-font);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #A1A1AA;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pv-modal-title {
+  font-family: var(--pv-font);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #09090B;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.pv-modal-desc {
+  font-size: 13.5px;
+  color: #52525B;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.pv-modal-section {
+  margin-bottom: 20px;
+}
+
+.pv-specs-table {
+  background: #FAF9F6;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pv-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12.5px;
+  line-height: 1.4;
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.04);
+}
+
+.pv-spec-row:last-child {
+  border-bottom: none;
+}
+
+.pv-spec-k {
+  color: #71717A;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.pv-spec-v {
+  color: #09090B;
+  font-weight: 700;
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+
+.pv-modal-cta-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pv-btn-block {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none;
+  background: var(--pv-btn-primary-bg, #C8461E);
+  color: #FFFFFF;
+  transition: all 0.16s ease;
+  box-shadow: 0 4px 16px rgba(200, 70, 30, 0.28);
+}
+
+.pv-btn-block:hover {
+  background: var(--pv-btn-primary-hover-bg, #A83614);
+  transform: translateY(-1px);
+}
+
+.pv-modal-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.pv-modal-accordions .pv-acc-item {
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #FFFFFF;
+  transition: border-color 0.15s ease;
+}
+
+.pv-modal-accordions .pv-acc-header {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--pv-font);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #18181B;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pv-modal-accordions .pv-acc-icon {
+  font-size: 15px;
+  color: #8E8E93;
+  transition: transform 0.2s ease;
+}
+
+.pv-modal-accordions .pv-acc-item.active .pv-acc-icon {
+  transform: rotate(45deg);
+}
+
+.pv-modal-accordions .pv-acc-body {
+  display: none;
+  padding: 0 14px 12px;
+  font-size: 12px;
+  color: #52525B;
+  line-height: 1.55;
+  border-top: 1px solid rgba(24, 24, 27, 0.04);
+}
+
+.pv-modal-accordions .pv-acc-item.active .pv-acc-body {
+  display: block;
 }
