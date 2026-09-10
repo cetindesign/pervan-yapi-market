@@ -1,0 +1,794 @@
+[
+  {
+    "id": "bianca-stella-saf-akrilik",
+    "name": "Bianca Stella Su Bazlı Saf Akrilik Boya",
+    "badge": "EN 71-3 Oyuncak & Gıda Güvenliği",
+    "tag": "Tüm Yüzeyler İçin Astar Gerektirmeyen Dönüşüm",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "desc": "Fayans, seramik, tezgah, mobilya, lake dolap, PVC pencere, cam, alüminyum ve beyaz eşya yüzeylerinde astar ve zımpara gerektirmeden kimyasal tutunma sağlayan kokusuz saf akrilik boya.",
+    "meta": [
+      "EN 71-3 Çocuk & Oyuncak Güvenliği Sertifikalı",
+      "Astar & Zımpara Gerektirmeyen Nano Tutunma",
+      "Colorate Renklendirme Sistemi ile Sınırsız Renk",
+      "Parfümlü & Kokusuz Yaşam Alanı Konforu"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre (5 – 6 m²)",
+      "1.00 Litre (10 – 12 m²)",
+      "2.50 Litre (25 – 30 m²)"
+    ],
+    "specs": {
+      "standard": "TS EN 71-3 / CE",
+      "packaging": "0.5 L · 1.0 L · 2.5 L Metal Kutu",
+      "consumption": "10 – 12 m² / L (çift kat uygulama)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır (homojen karıştırılır)",
+      "potLife": "Katlar arası: 2–3 saat · Dokunma: 2 saat · Tam sertlik: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Astar ve Zımpara Gerektirmeyen Nano Yapışma Teknolojisi",
+        "body": "Bianca Stella, formülündeki çapraz bağlı saf akrilik kopolimerler sayesinde cam, sırlı seramik ve pürüzsüz laminat yüzeylere mikro düzeyde kilitlenir. Katmanlar arasında soyulma, kabarma veya tırnakla çizilme yapmaz."
+      },
+      {
+        "title": "Uygulama Adımları ve Kadife Rulo Tavsiyesi",
+        "body": "Boya öncesinde yüzey Bianca Özel Temizleyici ile yağ ve kireçten tamamen arındırılmalı, kurulanmalıdır. İpek fırça ile köşeler kestirildikten sonra kısa tüylü kadife vernik rulo ile tarama yapılarak 2 kat uygulanır. Katlar arasında en az 2–3 saat beklenmelidir."
+      },
+      {
+        "title": "Isı ve Ev Kimyasallarına Dayanım",
+        "body": "Ocak arkası yağ sıçramaları ve sıcak temaslara dayanıklıdır. Ağır asitli veya aşındırıcı ovma telleri yerine mikrofiber bez ve genel yüzey temizleyicileri ile silinmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-mat-seri",
+    "name": "Bianca Stella Mat Saf Akrilik Boya",
+    "badge": "EN 71-3 İpeksi Mat Doku",
+    "tag": "Mobilya & Dolap Kapakları · Mat Bitiş",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "desc": "Mutfak dolapları, vestiyer, kapı ve ahşap mobilyalarda parlamayan, modern pastel ve ipeksi mat görünüm sunan özel formüllü dönüşüm boyası.",
+    "meta": [
+      "Modern İpeksi Mat Doku",
+      "Işık Yansıtmayan Kusur Gizleme Özelliği",
+      "Astar ve Zımparasız Doğrudan Tutunma",
+      "Kokusuz ve VOC Uyumlu"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre (5 – 6 m²)",
+      "1.00 Litre (10 – 12 m²)",
+      "2.50 Litre (25 – 30 m²)"
+    ],
+    "specs": {
+      "standard": "TS EN 71-3 / İpeksi Mat",
+      "packaging": "0.5 L · 1.0 L · 2.5 L Metal Kutu",
+      "consumption": "10 – 12 m² / L (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2–3 saat · Dokunma: 2 saat · Tam kürlenme: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusurları Gizleyen Mat Optik Bitiş",
+        "body": "Işığı kırmadan yutan mat yapısı sayesinde mobilya üzerindeki hafif dalgalanmaları ve kılcal yüzey kusurlarını gizler; modern mimari projelere sofistike bir doku kazandırır."
+      },
+      {
+        "title": "Mobilya & Dolap Uygulama İpucu",
+        "body": "MDF, masif ahşap veya kaplama mobilyalarda zımpara yapmadan doğrudan uygulanır. Kulplar sökülmeli, delik yerleri macunla düzeltilmeli ve kadife rulo ile taranmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ahsap-desen",
+    "name": "Bianca Stella Ahşap Desen Görünüm Boyası",
+    "badge": "Doğal Budak & Doku Efekti",
+    "tag": "Masif & Ağaç Damarı Dönüşümü",
+    "deptId": "biancaTransformSection",
+    "category": "ahsap-efekt",
+    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "desc": "Düz renk Stella zemin boyası üzerine damar tarağı (budak aparatı) ile uygulanarak meşe, ceviz, kestane ve eskitme ahşap dokusu oluşturan yarı şeffaf efekt boyası.",
+    "meta": [
+      "Meşe, Ceviz, Kestane, Pelesenk, Eskitme ve Gri Tonları",
+      "Damar Aparatı ile Kolay Budak Efekti",
+      "Doğal Masif Ahşap Görünümü",
+      "Fayans ve Mobilyada Ahşap Sıcaklığı"
+    ],
+    "coverage": "6 – 8 m² / 0.25 Litre",
+    "sizes": [
+      "0.25 Litre Kutu",
+      "Budak Aparatlı Uygulama Seti"
+    ],
+    "specs": {
+      "standard": "Özel Dekoratif Efekt",
+      "packaging": "0.25 Litre Kutu",
+      "consumption": "25 – 35 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Desen çekme süresi: 10–15 dk · Kuruma: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Adım Adım Ahşap Doku Uygulama Tekniği",
+        "body": "1. Zemin olarak açık ton bir Bianca Stella (örneğin Krem, Vizon veya Açık Gri) 2 kat boyanır ve 4 saat kurumaya bırakılır.\n2. Bianca Stella Ahşap Desen Boyası fırça veya rulo ile tek şerit halinde sürülür.\n3. Boya yaşken Bianca Budak Tarağı yukarıdan aşağıya hafif bilek hareketleriyle salınım yaparak çekilir."
+      },
+      {
+        "title": "Renk Kartelası Uyumları",
+        "body": "0701 Meşe, 0702 Ceviz, 0703 Kestane, 0704 Eskitme, 0705 Açık Ceviz, 0706 Pelesenk ve 0707 Gri tonları ile her tarza uygun ahşap efekti elde edilir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-metal-renkler",
+    "name": "Bianca Stella Metalik Efekt Boyası",
+    "badge": "Işıltılı Metal Dokusu",
+    "tag": "Altın, Gümüş, Bronz, Antrasit & Sedef",
+    "deptId": "biancaTransformSection",
+    "category": "metalik-efekt",
+    "thumb": "assets/bianca-official/stella_ahsap_025_2024.png",
+    "desc": "Mobilya ayakları, kulplar, banyo bataryaları, çerçeveler ve metal aksamlar için zengin pigmentli metalik sedef efekt boyası.",
+    "meta": [
+      "Altın, Bakır, Bronz, Gümüş, Antrasit ve Sedef",
+      "Kararma ve Paslanmaya Karşı Koruyucu",
+      "Yüksek Örtücülük ve Parlak Yansıma",
+      "Astar İstemeyen Metal & Plastik Tutunması"
+    ],
+    "coverage": "4 – 5 m² / 0.25 Litre",
+    "sizes": [
+      "0.25 Litre Kutu",
+      "0.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Dekoratif Metalik Akrilik",
+      "packaging": "0.25 L · 0.50 L Kutu",
+      "consumption": "50 – 60 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Batarya ve Metal Detaylarda Şık Vurgu",
+        "body": "Banyo ve mutfaklarda krom veya sararmış bataryaları, kulp ve avize gövdelerini modern antrasit, mat altın veya bronz dokuya dönüştürmek için idealdir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-mermer-efekt-spreyi",
+    "name": "Bianca Stella Mermer Efekt Spreyi",
+    "badge": "Organik Kılcal Damar Dokusu",
+    "tag": "Mutfak Tezgahı & Sehpa Mermer Deseni",
+    "deptId": "biancaTransformSection",
+    "category": "mermer-efekt",
+    "thumb": "assets/bianca-official/bianca-stella-mermer-efekt-spreyi.png",
+    "desc": "Tezgah, masa, sehpa veya fayans zeminlerde Calacatta, Carrara ve Nero Marquina mermer damarı görünümü oluşturan özel lif püskürtme spreyi.",
+    "meta": [
+      "Siyah, Beyaz, Gümüş ve Altın Damar Seçenekleri",
+      "Özel İnce Lif Nozülü ile Doğal Mermer Deseni",
+      "Kolay Püskürtme ve Hızlı Kuruma",
+      "Maximo Sıvı Cam ile Zırhlanan Pürüzsüz Yüzey"
+    ],
+    "coverage": "2 – 3 m² / 400 ml Sprey",
+    "sizes": [
+      "400 ml Aerosol Sprey Kutu"
+    ],
+    "specs": {
+      "standard": "Aerosol Mermer Efekt",
+      "packaging": "400 ml Sprey Kutu",
+      "consumption": "1 Kutu / 2–3 m²",
+      "mixingRatio": "Kullanmadan önce 2 dk çalkalayınız",
+      "potLife": "Dokunma: 15 dk · Üzerine Sıvı Cam: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Calacatta Mermer Efekti Nasıl Yapılır?",
+        "body": "1. Tezgah Bianca Stella Beyaz ile 2 kat boyanır ve 4 saat kuruması beklenir.\n2. Mermer Efekt Spreyi 30-40 cm mesafeden yatay açıyla hafifçe püskürtülerek doğal damarlar atılır.\n3. Damar yoğunluğu göz zevkine göre ayarlanır; 24 saat sonra üzeri Bianca Maximo Sıvı Cam ile kaplanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-beyaz-esya",
+    "name": "Bianca Stella Beyaz Eşya & Radyatör Boyası",
+    "badge": "Isı & Nem Dayanımlı",
+    "tag": "Buzdolabı, Bulaşık Makinesi & Panel Radyatör",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "desc": "Buzdolabı, çamaşır makinesi, termosifon, döküm veya panel radyatör gibi metal ve emaye yüzeylerin paslanmadan modern renklere dönüştürülmesini sağlayan esnek saf akrilik boya.",
+    "meta": [
+      "80°C Radyatör Isısına Dayanıklı",
+      "Emaye ve Sac Metalde Güçlü Tutunma",
+      "Sarı Pas Lekelerini Kapatan Güçlü Formül",
+      "Kokusuz ve Leke Tutmaz"
+    ],
+    "coverage": "10 – 12 m² / Litre",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Termal Dirençli Saf Akrilik",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L",
+      "mixingRatio": "İnceltilmez",
+      "potLife": "Katlar arası: 3 saat · Radyatör çalıştırma: 48 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Radyatör Boyama Öncesi Dikkat Edilecekler",
+        "body": "Petekler soğukken boyanmalı, varsa kabaran eski paslı boyalar tel fırça ile temizlenmelidir. Boya tamamlandıktan sonra en az 48 saat kalorifer yakılmamalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-maximo-sivi-cam-parlak",
+    "name": "Bianca Maximo 2K Sıvı Cam (Parlak)",
+    "badge": "2 Bileşenli Solvent Bazlı Zırh",
+    "tag": "Mutfak Tezgahı, Duşakabin & Islak Zemin Zırhı",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-cam",
+    "thumb": "assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png",
+    "desc": "Mutfak tezgahları, duş içi fayanslar ve ağır zemin trafiği için kimyasal maddelere, çizilmeye ve sıcak tava/tencere ısısına karşı aşırı dirençli çift bileşenli solvent bazlı sıvı cam.",
+    "meta": [
+      "2 Bileşenli (A Komponent Boya + B Komponent Sertleştirici)",
+      "Sıcak Tencere ve Çizilmeye Karşı Üstün Mukavemet",
+      "Duş İçi ve Sürekli Su Gören Alanlarda %100 Su Geçirimsizlik",
+      "Kristal Berraklığında Cam Parlaklığı"
+    ],
+    "coverage": "6 – 8 m² / 1.00 kg Set (Çift Kat)",
+    "sizes": [
+      "0.50 kg Set (A+B)",
+      "1.00 kg Set (A+B)"
+    ],
+    "specs": {
+      "standard": "2K Solvent Based Polyurethane Glass",
+      "packaging": "0.50 kg (A+B) · 1.00 kg (A+B) Teneke Set",
+      "consumption": "120 – 150 gr / m² (çift kat)",
+      "mixingRatio": "A ve B bileşenleri kutu üzerindeki tam oranda karıştırılır",
+      "potLife": "Karışım ömrü: 45 dk · Katlar arası: 2–3 saat · Su teması: 48 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mutfak Tezgahında Sıcak Tencere ve Bıçak Dayanımı",
+        "body": "Bianca Maximo, kürlendikten sonra sert cam polimer yapısına ulaşır. Limon, sirke, çamaşır suyu, kahve ve yağ lekelerini gözeneklerine geçirmez; nemli bezle silindiğinde anında temizlenir."
+      },
+      {
+        "title": "2K Karışım Hazırlama ve Uygulama Kuralı",
+        "body": "A ve B bileşenleri temiz bir kapta 2-3 dakika yavaş devirde karıştırılmalıdır. Karışım hazırlandıktan sonra 45 dakika içerisinde kadife vernik rulo ile tek yönde uygulanmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-maximo-sivi-cam-mat",
+    "name": "Bianca Maximo 2K Sıvı Cam (İpeksi Mat)",
+    "badge": "2 Bileşenli İpeksi Mat Koruma",
+    "tag": "Parlama İstemeyen Tezgah & Zeminler İçin",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-cam",
+    "thumb": "assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png",
+    "desc": "Mutfak tezgahı ve seramik zeminlerde parlak yansıma istemeyen kullanıcılar için aynı üstün 2K çizilmezlik direncini ipeksi mat dokuyla sunan koruyucu sıvı cam.",
+    "meta": [
+      "Zarif İpeksi Mat Cam Bitişi",
+      "2 Bileşenli Solvent Bazlı Zırh Koruması",
+      "Kimyasal ve Su Lekelerine Karşı Tam Kalkan",
+      "Kaydırmazlık Hissi Veren Mat Yüzey"
+    ],
+    "coverage": "6 – 8 m² / 1.00 kg Set",
+    "sizes": [
+      "0.50 kg Set (A+B)",
+      "1.00 kg Set (A+B)"
+    ],
+    "specs": {
+      "standard": "2K Polyurethane Silk-Mat",
+      "packaging": "0.50 kg · 1.00 kg Teneke Set",
+      "consumption": "120 – 150 gr / m²",
+      "mixingRatio": "A + B tam oranlı karışım",
+      "potLife": "Karışım ömrü: 45 dk · Katlar arası: 2–3 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mat Seramik ve Tezgah Uyumunun Avantajı",
+        "body": "Göz alıcı parlamayı önler, özellikle beton veya mermer desenli mat yüzeylerde doğal taş hissini korurken leke tutmazlık kalkanı sağlar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-liquid-diamond-parlak",
+    "name": "Bianca Liquid Diamond Sıvı Elmas (Parlak)",
+    "badge": "Su Bazlı Kokusuz Elmas Koruması",
+    "tag": "Mobilya, Duvar Fayansı & Kapılar İçin Vernik",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-elmas",
+    "thumb": "assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png",
+    "desc": "Su bazlı, kokusuz, tek bileşenli, sararma yapmayan ve boyanın çizilme ömrünü 2 katına çıkaran berrak sıvı elmas koruyucu cila.",
+    "meta": [
+      "Su Bazlı & Tamamen Kokusuz",
+      "Sararma Yapmayan UV Dirençli Şeffaf Tabaka",
+      "Tek Bileşenli Kolay Uygulama (Karışım Gerektirmez)",
+      "Mutfak Dolabı, Kapı ve Banyo Duvarlarında İdeal"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Water-based Liquid Diamond Gloss",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2 saat · Dokunma: 1 saat · Tam mukavemet: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Liquid Diamond Tercih Edilmeli?",
+        "body": "Mutfak dolapları, iç kapılar, masa ve komodin gibi su altında kalmayan ancak sık temas edilen yüzeylerde solvent kokusu olmadan maksimum koruma sağlar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-liquid-diamond-mat",
+    "name": "Bianca Liquid Diamond Sıvı Elmas (Mat)",
+    "badge": "Su Bazlı Kokusuz İpeksi Mat",
+    "tag": "Mobilya ve Ahşap Yüzeyler İçin Mat Cila",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-elmas",
+    "thumb": "assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png",
+    "desc": "Stella boya ile boyanmış mobilya ve ahşap yüzeylerin mat dokusunu bozmadan parlamayan elmas koruma katmanı oluşturan su bazlı cila.",
+    "meta": [
+      "Parlamayan Doğal Mat Bitiş",
+      "Parmak İzi ve Toz Tutmayan Doku",
+      "Su Bazlı, Çevre Dostu ve Kokusuz",
+      "Kolay Silinebilir Pürüzsüz Katman"
+    ],
+    "coverage": "10 – 12 m² / Litre",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Water-based Liquid Diamond Matte",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L",
+      "mixingRatio": "İnceltilmez",
+      "potLife": "Katlar arası: 2 saat · Kürlenme: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mat Mobilyalarda Kalıcı Temizlik Kolaylığı",
+        "body": "Mat boyalı yüzeylerin temizlenirken parlamasını veya yağ lekelerinin gözeneklere işlemesini engeller."
+      }
+    ]
+  },
+  {
+    "id": "bianca-silfex-silikon-sokucu",
+    "name": "Bianca Silfex Çok Amaçlı Silikon Sökücü",
+    "badge": "Boya Öncesi Silikon & Mastik Çözücü",
+    "tag": "Lavabo, Küvet & Tezgah Kenarı Temizliği",
+    "deptId": "biancaPrepSection",
+    "category": "temizleyici-sokucu",
+    "thumb": "assets/bianca-official/bianca-silfex-silikon-sokucu.png",
+    "desc": "Boya tutunmasını engelleyen eski silikon, akrilik mastik ve tutkal artıklarını yüzeyi çizmeden 10 dakikada jelleştirerek söken güçlü solüsyon.",
+    "meta": [
+      "Eski ve Küflü Silikonları Anında Yumuşatır",
+      "Seramik, Akrilik Küvet ve Cama Zarar Vermez",
+      "Boya Öncesi Silikonsuz Kusursuz Kenarlar",
+      "Spatula ile Zahmetsiz Temizlik"
+    ],
+    "coverage": "1 Şişe (500 ml) / Yaklaşık 20–30 metre derz",
+    "sizes": [
+      "500 ml Şişe"
+    ],
+    "specs": {
+      "standard": "Özel Silikon & Mastik Çözücü",
+      "packaging": "500 ml Şişe",
+      "consumption": "1 Şişe / 20–30 metre derz hattı",
+      "mixingRatio": "Kullanıma hazır",
+      "potLife": "Etki süresi: 10–15 dakika",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Boya Öncesi Silikon Neden Mutlaka Sökülmelidir?",
+        "body": "Silikon üzerine hiçbir boya tutunamaz, boya çekilme (balıkgözü) yapar. Bianca Silfex ile eski silikon tamamen temizlenmeli, boya ve sıvı cam işlemi bittikten sonra yeni silikon çekilmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ozel-temizleyici",
+    "name": "Bianca Stella Özel Yüzey Temizleyici",
+    "badge": "Yağ, Kireç & Wax Arındırıcı",
+    "tag": "Boya Öncesi Yüzey Yağsızlaştırma",
+    "deptId": "biancaPrepSection",
+    "category": "temizleyici-sokucu",
+    "thumb": "assets/bianca-official/silfex-1.jpg",
+    "desc": "Mutfak fayanslarındaki yanmış yağları, banyodaki sabun ve kireç kalıntılarını sıfırlayarak Bianca Stella boyanın yüzeye %100 yapışmasını sağlayan profesyonel hazırlık solüsyonu.",
+    "meta": [
+      "Ağır Mutfak Yağı ve Kireç Sökücü",
+      "Durulama Sonrası Kalıntı Bırakmaz",
+      "Boya Tutunmasını %40 Artırır",
+      "Fayans, Granit, Mobilya ve Cam Uyumlu"
+    ],
+    "coverage": "1 Şişe (750 ml) / 30 – 40 m² Alan",
+    "sizes": [
+      "750 ml Sprey Şişe"
+    ],
+    "specs": {
+      "standard": "Endüstriyel Yüzey Yağsızlaştırıcı",
+      "packaging": "750 ml Sprey Şişe",
+      "consumption": "1 Şişe / 30–40 m²",
+      "mixingRatio": "Püskürtülüp süngerle ovulur, durulanır",
+      "potLife": "Bekleme: 2–3 dk ardından durulama",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Dönüşüm Boyasında Başarının 1 Numaralı Sırrı",
+        "body": "Gözle görülmeyen yağ ve kireç tabakası temizlenmezse boya altındaki kire yapışır. Bianca Özel Temizleyici ile yıkanıp durulanan zeminlerde boya ömrü 10+ yıla çıkar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-akrilik-macun",
+    "name": "Bianca Stella Dolgu & Çatlak Macunu",
+    "badge": "Esnek Su Bazlı Tamir Macunu",
+    "tag": "Mobilya Delik & Derz Kırık Dolgusu",
+    "deptId": "biancaPrepSection",
+    "category": "tamir-macun",
+    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "desc": "Mutfak dolaplarında yer değiştiren kulp delikleri, vida boşlukları, kırık seramik kenarları ve derz çatlaklarını pürüzsüzce dolduran zımparalanabilir esnek macun.",
+    "meta": [
+      "Çökme ve Çatlama Yapmayan Dolgu",
+      "Kolay Zımparalanır ve Sıfır Kot Oluşturur",
+      "Stella Boya ile Birebir Uyumlu",
+      "İç ve Dış Mekan Ahşap & Seramik Uyumlu"
+    ],
+    "coverage": "Derz ve boşluk büyüklüğüne göre",
+    "sizes": [
+      "250 gr Tüp",
+      "500 gr Kutu"
+    ],
+    "specs": {
+      "standard": "Akrilik Tamir Macunu",
+      "packaging": "250 gr Tüp · 500 gr Kutu",
+      "consumption": "Boşluk hacmine bağlı",
+      "mixingRatio": "Kullanıma hazır spatula ile",
+      "potLife": "Kuruma: 2–3 saat · Zımparalama: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kulp Değişimi ve Vida Boşluğu Kapatma",
+        "body": "Eski kulpların deliklerine macun spatula ile bastırılarak doldurulur, 4 saat sonra ince diş zımpara ile sıfırlanıp üzerine doğrudan Stella boyanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-kadife-rulo-seti",
+    "name": "Bianca Stella Kadife Vernik Rulo Seti",
+    "badge": "İz Bırakmayan Kadife Doku",
+    "tag": "10 cm Saplı Rulo + 2 Adet Yedek Başlık",
+    "deptId": "biancaToolsSection",
+    "category": "rulo-firca",
+    "thumb": "assets/bianca-official/firca-1-1024x759.png",
+    "desc": "Stella boya ve Maximo sıvı cam uygulamalarında hava kabarcığı ve portakal kabuğu dokusu yapmayan, ultra pürüzsüz finiş sağlayan kısa tüylü kadife rulo seti.",
+    "meta": [
+      "Tüy Dökmeyen Özel Dokuma Kadife Kumaş",
+      "Boya ve Sıvı Camda Sıfır Rulo İzi",
+      "10 cm Genişlik ile Dolap ve Fayans Boyama Konforu",
+      "Ergonomik Sap ve Değiştirilebilir Rulo Başlıkları"
+    ],
+    "coverage": "1 Set (Sap + 2 Rulo)",
+    "sizes": [
+      "10 cm Saplı Set (Sap + 2 Rulo Başlığı)",
+      "Yedek 5'li Rulo Paketi"
+    ],
+    "specs": {
+      "standard": "Profesyonel Vernik & Akrilik Rulosu",
+      "packaging": "10 cm Sap + 2 Yedek Rulo",
+      "consumption": "1 Rulo ile ortalama 10–15 m²",
+      "mixingRatio": "Kullanım öncesi yıkanıp kurulanır (tüy sıfırlama)",
+      "potLife": "Yıkanabilir ve tekrar kullanılabilir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusursuz Sonuç İçin Rulo Kullanım Kuralı",
+        "body": "Rulo ilk kullanılmadan önce koli bandına sarılıp çekilerek üretim tozu arındırılmalı, boyaya batırıldıktan sonra tavada taranarak fazla boya bırakılmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ipek-kestirme-fircasi",
+    "name": "Bianca Stella Saf İpek Kestirme Fırçası",
+    "badge": "Çizgi Bırakmayan Saf Kıl",
+    "tag": "Köşe, Kenar & Detay Boyama Fırçası",
+    "deptId": "biancaToolsSection",
+    "category": "rulo-firca",
+    "thumb": "assets/bianca-official/firca-2.png",
+    "desc": "Dolap kapak çıtaları, fayans derz dipleri, priz kenarları ve süpürgeliklerde fırça izi bırakmayan konik uçlu profesyonel ipek fırça.",
+    "meta": [
+      "Saf İpek Yumuşak Kıl Yapısı",
+      "Paslanmaz Çelik Yüksük & Ahşap Sap",
+      "Derz Dipleri ve Detaylarda Kusursuz Kestirme",
+      "Su Bazlı ve Solvent Boya Uyumlu"
+    ],
+    "coverage": "Detay kestirme uygulamaları",
+    "sizes": [
+      "No: 2 (40 mm)",
+      "No: 2.5 (50 mm)",
+      "No: 3 (60 mm)"
+    ],
+    "specs": {
+      "standard": "Ultra Fine Filament",
+      "packaging": "No: 2 / 2.5 / 3 Tekli Ambalaj",
+      "consumption": "Çok kullanımlık",
+      "mixingRatio": "Doğrudan kullanılır",
+      "potLife": "Su ile yıkanarak defalarca kullanılır",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kestirme Yaparken Dikkat Edilecekler",
+        "body": "Fırça ile köşeler boyanır boyanmaz üzerinden kadife rulo ile hafifçe geçilirse fırça izi tamamen kaybolur ve tek parça yüzey görünümü sağlanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-budak-damar-aparati",
+    "name": "Bianca Stella Ahşap Budak & Damar Aparatı",
+    "badge": "Doğal Ağaç Damar Deseni",
+    "tag": "Ahşap Efekt Uygulama Tarağı",
+    "deptId": "biancaToolsSection",
+    "category": "efekt-aparatlari",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "desc": "Stella Ahşap Desen Boyası yaşken çekilerek masif ağaç gövdesi, meşe ve ceviz damarları ile doğal budak halkaları çıkaran esnek kauçuk aparat.",
+    "meta": [
+      "Ergonomik Tutma Kulplu Kauçuk Doku",
+      "Hafif Bilek Hareketi ile Sonsuz Ahşap Deseni",
+      "Masa, Sehpa, Kapı ve Fayans Uyumlu",
+      "Su ile Kolay Temizlenir"
+    ],
+    "coverage": "Sınırsız kullanım",
+    "sizes": [
+      "Standart 10 cm & 15 cm Çiftli Set"
+    ],
+    "specs": {
+      "standard": "Esnek Kauçuk Budak Tarağı",
+      "packaging": "1 Adet Damar Tarağı",
+      "consumption": "Ömür boyu kullanım",
+      "mixingRatio": "Doğrudan kullanılır",
+      "potLife": "Her kullanım sonrası nemli bezle silinir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Budak Deseni Nasıl Çıkarılır?",
+        "body": "Aparatı yüzeye 45 derece açıyla koyup aşağı doğru çekerken bileğinizi öne ve arkaya hafifçe yuvarladığınızda her salınımda bir budak halkası oluşur."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-maskeleme-bandi",
+    "name": "Bianca Stella Hassas Maskeleme Bandı",
+    "badge": "Boya Sızdırmayan Wash Tape",
+    "tag": "Sıfır İnce Çizgi & Kalıntı Bırakmayan Bant",
+    "deptId": "biancaToolsSection",
+    "category": "yardimci-setler",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "desc": "Tezgah kenarları, süpürgelikler, cam fitilleri ve priz çevrelerinde boyanın altına sızmasını engelleyen ve söküldüğünde alt boyayı kaldırmayan Japon pirinç kağıdı maskeleme bandı.",
+    "meta": [
+      "Boya Sızdırmaz Keskin Çizgi Teknolojisi",
+      "60 Güne Kadar İzsiz ve Kalıntısız Söküm",
+      "Hassas Yüzeyleri ve Mobilya Kaplamasını Koparmaz",
+      "Nem ve Solvent Dirençli"
+    ],
+    "coverage": "25 mm × 50 metre / Rulo",
+    "sizes": [
+      "25 mm × 50 m",
+      "38 mm × 50 m"
+    ],
+    "specs": {
+      "standard": "Precision Washi Masking Tape",
+      "packaging": "50 Metre Rulo",
+      "consumption": "1 Rulo = 50 Metre",
+      "mixingRatio": "Kendinden yapışkanlı",
+      "potLife": "Boya kurumadan hemen önce sökülmelidir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Bant Ne Zaman Sökülmelidir?",
+        "body": "Bant boyanın son katı atıldıktan sonra boya henüz tamamen kurumadan (hafif yaşken) 45 derecelik açıyla çekilerek sökülmelidir. Bu sayede keskin ve jilet gibi kenar çizgisi elde edilir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-komple-donusum-seti",
+    "name": "Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti",
+    "badge": "Eksiksiz Uygulama Kiti",
+    "tag": "Boya + Sıvı Cam + Temizleyici + Rulo + Fırça + Bant",
+    "deptId": "biancaToolsSection",
+    "category": "yardimci-setler",
+    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "desc": "Mutfak dolabı, tezgah ve banyo fayanslarını baştan sona dönüştürmek için gereken tüm ürünlerin (Boya, Maximo Sıvı Cam, Özel Temizleyici, Kadife Rulo, İpek Fırça, Bant, Tava ve Zımpara) bir arada bulunduğu profesyonel paket.",
+    "meta": [
+      "İhtiyacınız Olan Her Şey Tek Kutuda",
+      "Renk ve Mat/Parlak Seçenekleriyle Özelleştirilebilir",
+      "Balçova Showroom Renk Danışmanlığı",
+      "Bireysel Uygulayıcılar İçin %100 Başarı Garantili Set"
+    ],
+    "coverage": "1 Mutfak veya 1 Banyo Dönüşüm Paketi (10 – 15 m²)",
+    "sizes": [
+      "Standart Mutfak Paketi (1L Boya + 0.5kg Maximo + Set)",
+      "Büyük Banyo Paketi (2.5L Boya + 1kg Maximo + Set)"
+    ],
+    "specs": {
+      "standard": "Full Conversion Kit",
+      "packaging": "Özel Koli Seti",
+      "consumption": "1 Set / 1 Komple Mekan",
+      "mixingRatio": "Tüm parçalar kullanıma hazır",
+      "potLife": "Uygulama kılavuzu kutu içinde",
+      "logistics": "Balçova Showroom & Adrese Aynı Gün Kargo"
+    },
+    "accordions": [
+      {
+        "title": "Set İçeriğinde Neler Var?",
+        "body": "• Bianca Stella Boya (İstediğiniz Renk)\n• Bianca Maximo 2K Sıvı Cam (Parlak veya Mat)\n• Bianca Özel Yüzey Temizleyici Sprey\n• 10 cm Kadife Vernik Rulo & Sapı\n• 2 Adet Yedek Kadife Rulo\n• No: 2.5 Saf İpek Kestirme Fırçası\n• 25 mm Hassas Maskeleme Bandı\n• Boya Tavası & Karıştırma Çubuğu\n• P220 Zımpara Süngeri & Uygulama Kılavuzu"
+      }
+    ]
+  },
+  {
+    "id": "bianca-vals-ipek-mat",
+    "name": "Bianca Vals İpek Mat Silinebilir İç Cephe Boyası",
+    "badge": "Leke Tutmaz Teflon Katkılı",
+    "tag": "Tam Silinebilir Lüks İç Cephe Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "desc": "Duvarlarda ipeksi mat zarafet sunan, kahve, çay, ketçap ve çocuk kalemi lekelerinin ıslak bezle kolayca silindiği, nefes alan lüks iç cephe boyası.",
+    "meta": [
+      "Teflon Katkılı Üstün Silinebilirlik",
+      "Yüksek Örtücülük ve Kolay Yayılma",
+      "Colorate Renklendirme ile 10.000+ Renk Formülü",
+      "Antibakteriyel & Küf Dirençli"
+    ],
+    "coverage": "14 – 16 m² / Litre (Tek Kat)",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 / TS EN 13300 Sınıf 1",
+      "packaging": "2.5 L · 7.5 L · 15 L Plastik Kova",
+      "consumption": "70 – 90 ml / m² (tek kat)",
+      "mixingRatio": "%10 – 15 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Teflon Koruma ve Silinebilirlik Avantajı",
+        "body": "Duvar yüzeyinde oluşturduğu mikro film sayesinde sıvı lekelerin sıvanın içine işlemesini engeller; mikrofiber bezle silindiğinde parlamaz ve renk atmaz."
+      }
+    ]
+  },
+  {
+    "id": "bianca-artistico-sedef-boya",
+    "name": "Bianca Artistico Dekoratif Sedef Boya",
+    "badge": "İtalyan Efekt Işıltısı",
+    "tag": "Dekoratif Duvar & Tavan Sedef Kaplaması",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/sedef-150x150.jpg",
+    "desc": "Işığın geliş açısına göre farklı ışıltılar ve renk tonları sergileyen, salon ve yatak odası vurgu duvarları için İtalyan sedef efekt boyası.",
+    "meta": [
+      "Göz Alıcı İnci & Sedef Dokusu",
+      "Mala, Sünger veya Fırça ile Farklı Desenler",
+      "Kokusuz ve Çevre Dostu Su Bazlı Formül",
+      "Gümüş, Altın ve Şampanya Baz Seçenekleri"
+    ],
+    "coverage": "8 – 10 m² / Litre",
+    "sizes": [
+      "1.00 Litre Kutu",
+      "2.50 Litre Kova"
+    ],
+    "specs": {
+      "standard": "Dekoratif Efekt Boya",
+      "packaging": "1.0 L · 2.5 L Ambalaj",
+      "consumption": "100 – 120 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Efekt Uygulama Teknikleri",
+        "body": "Zemin uygun renkle boyandıktan sonra Artistico özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-profesyonel-tavan",
+    "name": "Bianca Profesyonel Tavan Boyası",
+    "badge": "Ekstra Beyaz Mat",
+    "tag": "Damlatmayan & Örtücü Tavan Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "tavan-astar",
+    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "desc": "Tavanlarda sıfır parlama, yüksek matlık, ekstra beyazlık ve rulo uygulamasında damlama yapmayan yüksek nefes alma kabiliyetli tavan boyası.",
+    "meta": [
+      "Ekstra Kar Beyazı Görünüm",
+      "Işık Yansıtmayan Mat Bitiş",
+      "Damlama ve Sıçrama Yapmayan Viskozite",
+      "Yüksek Buhar Geçirgenliği ile Küf Önleyici"
+    ],
+    "coverage": "10 – 12 m² / kg",
+    "sizes": [
+      "3.5 kg Kova",
+      "10 kg Kova",
+      "17.5 kg Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 Tavan Standardı",
+      "packaging": "3.5 kg · 10 kg · 17.5 kg Kova",
+      "consumption": "150 – 200 gr / m² (çift kat)",
+      "mixingRatio": "%15 – 20 su ile inceltilir",
+      "potLife": "Katlar arası: 2 saat · Kuruma: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusursuz Tavan Boyama İpucu",
+        "body": "Tavanlar odadaki ana ışık (pencere) yönüne dik taranmalı, son kat pencereye paralel çekilerek ışık gölgeleri tamamen yok edilmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-universal-donusum-astari",
+    "name": "Bianca Universal Dönüşüm Astarı",
+    "badge": "Güçlü Tutunma Köprüsü",
+    "tag": "Sentetikten Su Bazlıya Geçiş Astarı",
+    "deptId": "biancaArchitecturalSection",
+    "category": "tavan-astar",
+    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "desc": "Daha önce yağlı boya veya saten boya yapılmış duvarların su bazlı boyaya dönüştürülmesinde zemin ile yeni boya arasında güçlü tutunma köprüsü oluşturan örtücü astar.",
+    "meta": [
+      "Sentetik Boyadan Su Bazlıya Güvenli Geçiş",
+      "Eski Koyu Renkleri Kapatarak Boya Tasarrufu Sağlar",
+      "Yüzey Emiciliğini Dengeler",
+      "Duvar, Alçı ve Sıva Uyumlu"
+    ],
+    "coverage": "12 – 15 m² / Litre",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 Astar",
+      "packaging": "2.5 L · 7.5 L · 15 L Kova",
+      "consumption": "80 – 100 ml / m²",
+      "mixingRatio": "%10 su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Kuruma: 12 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Dönüşüm Astarı Kullanılmalıdır?",
+        "body": "Eski yağlı boya üzerine doğrudan su bazlı boya sürülürse soyulma yapar. Bianca Universal Astar yüzeyi mikro düzeyde pürüzlendirerek yeni boyanın kopmasını engeller."
+      }
+    ]
+  }
+]
