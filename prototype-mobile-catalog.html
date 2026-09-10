@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pervan Design System — Mobile Catalog Prototype</title>
+  <link rel="stylesheet" href="css/pervan.css?v=1.0.0" />
+  <link rel="stylesheet" href="css/pervan-catalog.css?v=1.0.0" />
+  <style>
+    /* ==========================================================================
+       PERVAN COMPACT MOBILE STICKY ARCHITECTURE PROTOTYPE
+       Zero-Clutter Single-Line Contextual Control Bar (44px)
+       ========================================================================== */
+
+    :root {
+      --pv-bar-h: 46px;
+      --pv-brand-black: #111111;
+      --pv-border-soft: rgba(0, 0, 0, 0.08);
+      --pv-ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    body {
+      background: #FAFAFA;
+      margin: 0;
+      padding: 0;
+      color: #111111;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Prototype Header / Meta Banner */
+    .proto-banner {
+      background: #111111;
+      color: #FFFFFF;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .proto-banner span {
+      font-weight: 600;
+      color: #E5E5E5;
+    }
+    .proto-badge {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /* Site Micro-Header (Minimalist 44px) */
+    .proto-site-header {
+      background: #FFFFFF;
+      height: 48px;
+      border-bottom: 1px solid var(--pv-border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .proto-logo {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .proto-site-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666;
+    }
+
+    /* Context Hero Intro */
+    .proto-hero {
+      background: #FFFFFF;
+      padding: 24px 16px 16px;
+      border-bottom: 1px solid var(--pv-border-soft);
+    }
+    .proto-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .proto-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 6px 0;
+      line-height: 1.15;
+    }
+    .proto-desc {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       THE CORE COMPONENT: UNIFIED 44PX STICKY BAR
+       ========================================================================== */
+    .pv-compact-sticky-bar {
+      position: sticky;
+      top: 48px; /* sits right below site header */
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--pv-border-soft);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      height: var(--pv-bar-h);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 8px;
+    }
+
+    /* 1. Left: Department Drawer Trigger */
+    .pv-dept-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #111111;
+      color: #FFFFFF;
+      border: none;
+      height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s ease, transform 0.1s ease;
+      touch-action: manipulation;
+    }
+    .pv-dept-trigger:active {
+      transform: scale(0.97);
+      background: #27272A;
+    }
+    .pv-dept-chevron {
+      transition: transform 0.2s var(--pv-ease-spring);
+    }
+    .pv-dept-trigger[aria-expanded="true"] .pv-dept-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Vertical Divider */
+    .pv-bar-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--pv-border-soft);
+      flex-shrink: 0;
+    }
+
+    /* 2. Center: Horizontal Scrolling Subcategory Chips */
+    .pv-filter-rail {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+      min-width: 0;
+      padding: 2px 0;
+    }
+    .pv-filter-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pv-filter-chip {
+      height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #F3F3F2;
+      color: #555555;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+    .pv-filter-chip:hover {
+      background: #ECECEB;
+      color: #111111;
+    }
+    .pv-filter-chip.active {
+      background: #FFFFFF;
+      color: #111111;
+      font-weight: 600;
+      border-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+    .pv-chip-count {
+      font-size: 10px;
+      font-weight: 600;
+      opacity: 0.6;
+    }
+
+    /* 3. Right: Compact Search Trigger */
+    .pv-compact-search-btn {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid var(--pv-border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .pv-compact-search-btn:hover {
+      background: #F3F3F2;
+      color: #111;
+    }
+
+    /* ==========================================================================
+       DEPARTMENT BOTTOM SHEET (DRAWER)
+       ========================================================================== */
+    .pv-drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.24s ease, visibility 0.24s ease;
+    }
+    .pv-drawer-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .pv-drawer-sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #FFFFFF;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.16);
+      z-index: 1000;
+      transform: translateY(105%);
+      transition: transform 0.32s var(--pv-ease-spring);
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    .pv-drawer-backdrop.is-open .pv-drawer-sheet {
+      transform: translateY(0);
+    }
+
+    .pv-drawer-handle-zone {
+      padding: 12px 0 6px;
+      display: flex;
+      justify-content: center;
+      cursor: grab;
+    }
+    .pv-drawer-handle {
+      width: 40px;
+      height: 4px;
+      border-radius: 999px;
+      background: #D4D4D8;
+    }
+
+    .pv-drawer-header {
+      padding: 8px 20px 14px;
+      border-bottom: 1px solid var(--pv-border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pv-drawer-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .pv-drawer-subtitle {
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+    .pv-drawer-close {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #F3F3F2;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .pv-drawer-list {
+      padding: 12px 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .pv-drawer-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: #FAFAFA;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+      font-family: inherit;
+    }
+    .pv-drawer-item:active {
+      background: #EFEFEF;
+    }
+    .pv-drawer-item.is-selected {
+      background: #111111;
+      color: #FFFFFF;
+    }
+    .pv-drawer-item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pv-drawer-item-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: #888;
+      font-feature-settings: "tnum";
+    }
+    .pv-drawer-item.is-selected .pv-drawer-item-num {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .pv-drawer-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .pv-drawer-item-count {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.05);
+      color: #555;
+    }
+    .pv-drawer-item.is-selected .pv-drawer-item-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       PRODUCT LIST CONTAINER & CARDS
+       ========================================================================== */
+    .proto-product-list {
+      padding: 16px 14px 100px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .proto-list-status {
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Product row style */
+    .proto-row {
+      background: #FFFFFF;
+      border: 1px solid var(--pv-border-soft);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.15s ease;
+    }
+    .proto-row:active {
+      transform: scale(0.99);
+      background: #FCFCFC;
+    }
+    .proto-row-thumb {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      background: #F4F4F4;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    .proto-row-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .proto-row-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .proto-row-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .proto-row-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .proto-row-badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 7px;
+      background: #F3F3F2;
+      color: #666;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .proto-row-desc {
+      font-size: 11px;
+      color: #777;
+      margin-top: 3px;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .proto-row-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111;
+      padding-right: 4px;
+    }
+
+    /* Fixed Bottom Action */
+    .proto-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--pv-border-soft);
+      padding: 10px 16px env(safe-area-inset-bottom, 12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 80;
+    }
+    .proto-bottom-left {
+      font-size: 11px;
+      color: #666;
+    }
+    .proto-bottom-left strong {
+      color: #111;
+      display: block;
+      font-size: 12px;
+    }
+    .proto-bottom-cta {
+      background: #111;
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Prototype Metadata -->
+  <div class="proto-banner">
+    <div><span>PERVAN PROTO</span> · Mobile Contextual Filter Bar</div>
+    <div class="proto-badge">44px Single-Line</div>
+  </div>
+
+  <!-- Micro Site Header -->
+  <header class="proto-site-header">
+    <div class="proto-logo">Pervan Yapı</div>
+    <div class="proto-site-actions">
+      <span>Balçova &amp; Urla</span>
+    </div>
+  </header>
+
+  <!-- Context Hero (Compacted for mobile) -->
+  <div class="proto-hero">
+    <div class="proto-eyebrow" id="heroEyebrow">UYGULAMA EKİPMANLARI &amp; YÜZEY HAZIRLIK</div>
+    <h1 class="proto-title" id="heroTitle">Boya Malzemeleri &amp; Sarf</h1>
+    <p class="proto-desc" id="heroDesc">
+      Profesyonel fırça ve rulo serisi, leke/is bariyeri Kapatan, nem/tuz zırhı Panzer Astar ve şantiye zemin koruma ekipmanları.
+    </p>
+  </div>
+
+  <!-- ========================================================================
+       THE SOLUTION: SINGLE-LINE CONTEXTUAL STICKY BAR (44px)
+       ======================================================================== -->
+  <div class="pv-compact-sticky-bar" id="compactStickyBar">
+    <!-- 1. Left: Department Drawer Trigger -->
+    <button type="button" class="pv-dept-trigger" id="deptTrigger" aria-expanded="false" aria-controls="deptDrawer">
+      <span id="deptTriggerLabel">02 Malzemeler</span>
+      <svg class="pv-dept-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+
+    <div class="pv-bar-divider"></div>
+
+    <!-- 2. Center: Filter Chips Rail -->
+    <div class="pv-filter-rail" id="filterRail" role="tablist">
+      <!-- Injected via JavaScript based on current department -->
+    </div>
+
+    <div class="pv-bar-divider"></div>
+
+    <!-- 3. Right: Quick Search Button -->
+    <button type="button" class="pv-compact-search-btn" id="searchBtn" aria-label="Ürün Ara">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Product List Area -->
+  <main class="proto-product-list">
+    <div class="proto-list-status">
+      <span id="listCountLabel">48 Ürün Listeleniyor</span>
+      <span style="font-size: 10px; color: #111;">Doğrudan Sevkiyat</span>
+    </div>
+
+    <div id="productContainer">
+      <!-- Injected via JS -->
+    </div>
+  </main>
+
+  <!-- Bottom Sheet Drawer for Department Selection -->
+  <div class="pv-drawer-backdrop" id="deptDrawerBackdrop">
+    <div class="pv-drawer-sheet" id="deptDrawer" role="dialog" aria-modal="true">
+      <div class="pv-drawer-handle-zone" id="drawerHandle">
+        <div class="pv-drawer-handle"></div>
+      </div>
+
+      <div class="pv-drawer-header">
+        <div>
+          <h2 class="pv-drawer-title">Katalog Departmanı</h2>
+          <div class="pv-drawer-subtitle">Geçmek istediğiniz ana grubu seçin</div>
+        </div>
+        <button type="button" class="pv-drawer-close" id="drawerCloseBtn" aria-label="Kapat">&times;</button>
+      </div>
+
+      <div class="pv-drawer-list" id="deptList">
+        <!-- Departments injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom CTA Floating Bar -->
+  <div class="proto-bottom-bar">
+    <div class="proto-bottom-left">
+      <strong>Proje Bazlı Toptan Teklif</strong>
+      <span>Urla Depodan Şantiye Sevk</span>
+    </div>
+    <a href="https://wa.me/905323844497" target="_blank" class="proto-bottom-cta">WhatsApp Fiyat Al</a>
+  </div>
+
+  <!-- ========================================================================
+       INTERACTION CONTROLLER
+       ======================================================================== -->
+  <script>
+    (function() {
+      "use strict";
+
+      // 1. Data Store: Departments & Subcategories
+      var DEPARTMENTS = [
+        {
+          id: "01",
+          code: "paint",
+          name: "Boya Menüsü",
+          triggerText: "01 Boya",
+          count: 85,
+          eyebrow: "MİMARİ RENK LABORATUVARI & TEKNOLOJİLERİ",
+          title: "Filli Boya İç & Dış Cephe Sistemleri",
+          desc: "Aktif silikon teknolojili Momento serisi, nefes alan Aqusto dış cephe ve tavan boyaları.",
+          filters: [
+            { id: "all", label: "Tümü", count: 85 },
+            { id: "ic-cephe", label: "İç Cephe", count: 32 },
+            { id: "dis-cephe", label: "Dış Cephe", count: 24 },
+            { id: "tavan", label: "Tavan", count: 8 },
+            { id: "astar", label: "Astar & Macun", count: 12 },
+            { id: "sentetik", label: "Sentetik / Ahşap", count: 9 }
+          ],
+          products: [
+            { name: "Momento Silan", tag: "Aktif Silikon", cat: "ic-cephe", desc: "Tam silinebilir ve yıkanabilir yüzey koruma kalkanı · İpeksi Mat®", img: "assets/filli-official/momento-silan.png" },
+            { name: "Momento Max", tag: "Ultra Dayanım", cat: "ic-cephe", desc: "Maksimum silinme performansı ve üstün örtücülük teknolojisi.", img: "assets/filli-official/momento-max.png" },
+            { name: "Aqusto Silan", tag: "Nefes Alan Dış Cephe", cat: "dis-cephe", desc: "Silikon bağlayıcılı, yağmur suyu itici ve UV dayanımlı dış cephe zırhı.", img: "assets/filli-official/aqusto-silan.png" },
+            { name: "Betakril Tavan", tag: "Ekstra Beyaz", cat: "tavan", desc: "Yüksek örtücülüğe sahip, sıçratma yapmayan mat tavan boyası.", img: "assets/filli-official/betakril-tavan.png" },
+            { name: "Momento Konsantre Astar", tag: "1/7 Astar", cat: "astar", desc: "Gözenek doyurucu ve boya sarfiyatını %30 azaltan su bazlı astar.", img: "assets/filli-official/seffaf-astar.png" }
+          ]
+        },
+        {
+          id: "02",
+          code: "supplies",
+          name: "Boya Malzemeleri",
+          triggerText: "02 Malzemeler",
+          count: 48,
+          eyebrow: "UYGULAMA EKİPMANLARI & YÜZEY HAZIRLIK",
+          title: "Boya Malzemeleri & Sarf",
+          desc: "Profesyonel fırça ve rulo serisi, leke/is bariyeri Kapatan, nem/tuz zırhı Panzer Astar ve şantiye sarfı.",
+          filters: [
+            { id: "all", label: "Tümü", count: 48 },
+            { id: "firca-rulo", label: "Fırça & Rulo", count: 18 },
+            { id: "yuzey-hazirlik", label: "Yüzey Hazırlık", count: 16 },
+            { id: "santiye-sarf", label: "Şantiye Koruma", count: 14 }
+          ],
+          products: [
+            { name: "Kestirme Fırça", tag: "Doğal Kıl", cat: "firca-rulo", desc: "Tavan-duvar birleşimleri ve süpürgelik kenarları için kıl dökmeyen kestirme fırçası.", img: "assets/filli-official/kestirme-firca.png" },
+            { name: "Saten Rulo", tag: "Tüy Dökmeyen", cat: "firca-rulo", desc: "İpeksi mat ve yarı parlak boyalarda iz bırakmayan profesyonel kadife rulo.", img: "assets/filli-official/saten-rulo.png" },
+            { name: "Robot Fırça", tag: "Açılı Mafsallı", cat: "firca-rulo", desc: "Ulaşılamayan yüksek köşeler ve boru arkaları için açısı ayarlanabilir fırça.", img: "assets/filli-official/robot-firca.png" },
+            { name: "Kapatan", tag: "Leke Kalkanı", cat: "yuzey-hazirlik", desc: "İs, nikotin, yangın ve su lekelerini tek katta kilitleyen kalkan astar.", img: "assets/filli-official/kapatan.png" },
+            { name: "Panzer Astar", tag: "Nem & Tuz Bariyeri", cat: "yuzey-hazirlik", desc: "Karasal nem ve kusmaları engelleyen yüksek mukavemetli yüzey zırhı.", img: "assets/filli-official/panzer-astar.png" },
+            { name: "Filli Boya Maskeleme Bandı", tag: "Jilet Hatlı", cat: "santiye-sarf", desc: "Boya sızdırmayan ve söküldüğünde iz bırakmayan mavi hassas maskeleme bandı.", img: "assets/filli-official/rulo-elegi.png" }
+          ]
+        },
+        {
+          id: "03",
+          code: "pro",
+          name: "Profesyonel Seri",
+          triggerText: "03 Pro Seri",
+          count: 53,
+          eyebrow: "TEKNİK YAPI KİMYASALLARI & SANAYİ",
+          title: "Teknik Harçlar & Su Yalıtım",
+          desc: "Pozitif/negatif su yalıtım membranları, C2TE S1 seramik yapıştırıcıları ve epoksi zemin kaplamaları.",
+          filters: [
+            { id: "all", label: "Tümü", count: 53 },
+            { id: "su-yalitim", label: "Su Yalıtımı", count: 18 },
+            { id: "seramik", label: "Seramik Harçları", count: 15 },
+            { id: "tamir", label: "Tamir & Grout", count: 20 }
+          ],
+          products: [
+            { name: "Sutut Su Yalıtımı", tag: "Elastik Sıvı Membran", cat: "su-yalitim", desc: "Teras, balkon ve ıslak hacimler için UV dayanımlı su yalıtım kaplaması.", img: "assets/filli-official/yapi-kimyasallari.jpg" },
+            { name: "Fayfiks Seramik Harcı", tag: "C1T Standardı", cat: "seramik", desc: "Fayans ve seramik uygulamaları için yüksek kayma dirençli yapıştırma harcı.", img: "assets/filli-official/yapi-kimyasallari.jpg" },
+            { name: "Stako Tamir Harcı", tag: "Yapısal Tamir", cat: "tamir", desc: "Beton çatlakları ve köşe pahlamaları için polimer takviyeli rötresiz harç.", img: "assets/filli-official/yapi-kimyasallari.jpg" }
+          ]
+        },
+        {
+          id: "04",
+          code: "reno",
+          name: "Dönüşüm (Reno)",
+          triggerText: "04 Dönüşüm",
+          count: 26,
+          eyebrow: "KIRMADAN DÖKMEDEN YENİLEME",
+          title: "Aqua Reno & Ahşap Koruma",
+          desc: "Fayans, mutfak tezgahı ve ahşap yüzeyler için astar gerektirmeyen dönüşüm sistemleri.",
+          filters: [
+            { id: "all", label: "Tümü", count: 26 },
+            { id: "aqua-reno", label: "Aqua Reno Fayans", count: 14 },
+            { id: "ahsap", label: "Woodmaxx Ahşap", count: 12 }
+          ],
+          products: [
+            { name: "Aqua Reno Mutfak Tezgahı", tag: "Darbe & Su Zırhı", cat: "aqua-reno", desc: "Mutfak dolabı, seramik ve tezgahlar için kırmadan dönüştürme boyası.", img: "assets/filli-official/woodmaxx-wood-color.png" },
+            { name: "Woodmaxx Yat Vernik", tag: "Deniz Koşullarına Karşı", cat: "ahsap", desc: "Güneş ve tuza dirençli yüksek parlaklıkta poliüretan yat verniği.", img: "assets/filli-official/woodmaxx-yat-vernik.png" }
+          ]
+        },
+        {
+          id: "05",
+          code: "insulation",
+          name: "Capatect Yalıtım",
+          triggerText: "05 Yalıtım",
+          count: 47,
+          eyebrow: "DIŞ CEPHE ISI YALITIMI (MANTOLAMA)",
+          title: "Capatect Dalmaçyalı® Paket",
+          desc: "0.032 W/mK karbonlu EPS levha, Capatect yapıştırıcı, sıva, donatı filesi ve dübel sistemleri.",
+          filters: [
+            { id: "all", label: "Tümü", count: 47 },
+            { id: "eps", label: "Karbonlu EPS", count: 12 },
+            { id: "siva", label: "Yapıştırıcı & Sıva", count: 20 },
+            { id: "donati", label: "File & Dübel", count: 15 }
+          ],
+          products: [
+            { name: "Capatect Dalmaçyalı EPS (5cm)", tag: "0.032 W/mK", cat: "eps", desc: "Yüksek ısı yalıtım katsayılı orijinal benekli karbon takviyeli levha.", img: "assets/rf-bucket-amphisilan.jpg" },
+            { name: "Capatect Isı Yalıtım Sıvası", tag: "25 kg Torba", cat: "siva", desc: "Elyaf takviyeli, çatlama yapmayan yüksek elastikiyette mantolama sıvası.", img: "assets/rf-bucket-amphisilan.jpg" }
+          ]
+        }
+      ];
+
+      var currentDeptIndex = 1; // Default: 02 Malzemeler
+      var currentFilterId = "all";
+
+      // DOM references
+      var deptTrigger = document.getElementById("deptTrigger");
+      var deptTriggerLabel = document.getElementById("deptTriggerLabel");
+      var deptDrawerBackdrop = document.getElementById("deptDrawerBackdrop");
+      var deptDrawer = document.getElementById("deptDrawer");
+      var drawerCloseBtn = document.getElementById("drawerCloseBtn");
+      var deptList = document.getElementById("deptList");
+      var filterRail = document.getElementById("filterRail");
+      var productContainer = document.getElementById("productContainer");
+      var listCountLabel = document.getElementById("listCountLabel");
+
+      var heroEyebrow = document.getElementById("heroEyebrow");
+      var heroTitle = document.getElementById("heroTitle");
+      var heroDesc = document.getElementById("heroDesc");
+
+      // 2. Render Drawer Departments
+      function renderDrawer() {
+        deptList.innerHTML = "";
+        DEPARTMENTS.forEach(function(d, idx) {
+          var btn = document.createElement("button");
+          btn.className = "pv-drawer-item" + (idx === currentDeptIndex ? " is-selected" : "");
+          btn.type = "button";
+          btn.innerHTML = 
+            '<div class="pv-drawer-item-left">' +
+            '  <span class="pv-drawer-item-num">' + d.id + '</span>' +
+            '  <span class="pv-drawer-item-name">' + d.name + '</span>' +
+            '</div>' +
+            '<span class="pv-drawer-item-count">' + d.count + ' Ürün</span>';
+
+          btn.addEventListener("click", function() {
+            selectDepartment(idx);
+            closeDrawer();
+          });
+          deptList.appendChild(btn);
+        });
+      }
+
+      // 3. Render Filter Chips
+      function renderFilters() {
+        var dept = DEPARTMENTS[currentDeptIndex];
+        filterRail.innerHTML = "";
+
+        dept.filters.forEach(function(f) {
+          var chip = document.createElement("button");
+          chip.className = "pv-filter-chip" + (f.id === currentFilterId ? " active" : "");
+          chip.type = "button";
+          chip.role = "tab";
+          chip.setAttribute("aria-selected", f.id === currentFilterId ? "true" : "false");
+          chip.innerHTML = f.label + ' <span class="pv-chip-count">' + f.count + '</span>';
+
+          chip.addEventListener("click", function() {
+            currentFilterId = f.id;
+            renderFilters();
+            renderProducts();
+          });
+
+          filterRail.appendChild(chip);
+        });
+      }
+
+      // 4. Render Products
+      function renderProducts() {
+        var dept = DEPARTMENTS[currentDeptIndex];
+        productContainer.innerHTML = "";
+
+        var filtered = dept.products.filter(function(p) {
+          if (currentFilterId === "all") return true;
+          return p.cat === currentFilterId;
+        });
+
+        listCountLabel.textContent = filtered.length + " Ürün Listeleniyor (" + dept.name + ")";
+
+        if (filtered.length === 0) {
+          productContainer.innerHTML = '<div style="padding: 40px 16px; text-align: center; color: #888; font-size: 13px;">Bu filtrede ürün bulunamadı.</div>';
+          return;
+        }
+
+        filtered.forEach(function(p) {
+          var row = document.createElement("div");
+          row.className = "proto-row";
+          row.innerHTML = 
+            '<div class="proto-row-thumb">' +
+            '  <img src="' + p.img + '" alt="' + p.name + '" loading="lazy" onerror="this.src=\'assets/filli-official/momento-silan.png\'" />' +
+            '</div>' +
+            '<div class="proto-row-body">' +
+            '  <div class="proto-row-title-line">' +
+            '    <div class="proto-row-name">' + p.name + '</div>' +
+            '    <span class="proto-row-badge">' + p.tag + '</span>' +
+            '  </div>' +
+            '  <div class="proto-row-desc">' + p.desc + '</div>' +
+            '</div>' +
+            '<div class="proto-row-cta">&rarr;</div>';
+
+          productContainer.appendChild(row);
+        });
+      }
+
+      // 5. Select Department
+      function selectDepartment(idx) {
+        currentDeptIndex = idx;
+        currentFilterId = "all";
+        var dept = DEPARTMENTS[idx];
+
+        deptTriggerLabel.textContent = dept.triggerText;
+        heroEyebrow.textContent = dept.eyebrow;
+        heroTitle.textContent = dept.title;
+        heroDesc.textContent = dept.desc;
+
+        renderDrawer();
+        renderFilters();
+        renderProducts();
+
+        // Smooth scroll up to sticky bar if scrolled down
+        var stickyOffset = document.getElementById("compactStickyBar").offsetTop;
+        if (window.scrollY > stickyOffset) {
+          window.scrollTo({ top: stickyOffset - 48, behavior: "smooth" });
+        }
+      }
+
+      // 6. Drawer Open / Close Controls
+      function openDrawer() {
+        deptDrawerBackdrop.classList.add("is-open");
+        deptTrigger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeDrawer() {
+        deptDrawerBackdrop.classList.remove("is-open");
+        deptTrigger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      deptTrigger.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var isOpen = deptDrawerBackdrop.classList.contains("is-open");
+        if (isOpen) closeDrawer(); else openDrawer();
+      });
+
+      drawerCloseBtn.addEventListener("click", closeDrawer);
+
+      deptDrawerBackdrop.addEventListener("click", function(e) {
+        if (e.target === deptDrawerBackdrop) {
+          closeDrawer();
+        }
+      });
+
+      // Init
+      renderDrawer();
+      renderFilters();
+      renderProducts();
+
+    })();
+  </script>
+</body>
+</html>
