@@ -259,7 +259,6 @@ html body.pv-transparent-header-page .pv-page-main {
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
           <div class="pv-stage-title-wrap">
-            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background:#FEE000;border-radius:6px;border:1.5px solid rgba(255,255,255,0.7);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h1 class="pv-stage-title">Saint-Gobain Weber</h1>
           </div>
           <div class="pv-stage-spec">
@@ -287,7 +286,6 @@ html body.pv-transparent-header-page .pv-page-main {
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
           <div class="pv-stage-title-wrap">
-            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#C8461E;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="pv-stage-title">Weberkol Flex Konfor</h2>
           </div>
           <div class="pv-stage-spec">
@@ -315,7 +313,6 @@ html body.pv-transparent-header-page .pv-page-main {
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
           <div class="pv-stage-title-wrap">
-            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#0072CE;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="pv-stage-title">Weberdry SS-10</h2>
           </div>
           <div class="pv-stage-spec">
@@ -343,7 +340,6 @@ html body.pv-transparent-header-page .pv-page-main {
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
           <div class="pv-stage-title-wrap">
-            <span class="pv-stage-color-tile" style="display:inline-block;width:28px;height:28px;background-color:#EF4444;border-radius:6px;border:1.5px solid rgba(255,255,255,0.65);box-shadow:0 2px 10px rgba(0,0,0,0.45);flex-shrink:0;"></span>
             <h2 class="pv-stage-title">Weberep MA 200</h2>
           </div>
           <div class="pv-stage-spec">
@@ -2875,11 +2871,46 @@ html body.pv-transparent-header-page .pv-page-main {
 ];
 
   var DEPARTMENTS_DATA = [
-    { id: "weberProductCatalog", short: "Seramik Harçları", full: "Seramik Yapıştırıcıları & Harçlar", pillsId: "weberMenuPills" },
-    { id: "weberJointSection", short: "Derz & Mastik", full: "Derz Dolguları & Mastikler", pillsId: "jointMenuPills" },
-    { id: "weberDrySection", short: "Su Yalıtımı", full: "Su Yalıtım Sistemleri", pillsId: "dryMenuPills" },
-    { id: "weberRepSection", short: "Tamir & Grout", full: "Tamir, Grout & Güçlendirme", pillsId: "repMenuPills" },
-    { id: "weberFloorSection", short: "Zemin Şapları", full: "Zemin Sistemleri & Şaplar", pillsId: "floorMenuPills" }
+    { 
+      id: "weberProductCatalog", 
+      short: "Seramik Harçları", 
+      full: "Seramik Harçları & Astarlar", 
+      sub: "Porselen, granit, havuz ve hızlı priz harçları",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+      pillsId: "weberMenuPills" 
+    },
+    { 
+      id: "weberJointSection", 
+      short: "Derz & Mastik", 
+      full: "Derz Dolguları & Mastikler", 
+      sub: "Flex, silikonlu su itici ve epoksi derzler",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+      pillsId: "jointMenuPills" 
+    },
+    { 
+      id: "weberDrySection", 
+      short: "Su Yalıtımı", 
+      full: "Su Yalıtım Sistemleri", 
+      sub: "2K çimento, bitüm ve likit poliüretan membranlar",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+      pillsId: "dryMenuPills" 
+    },
+    { 
+      id: "weberRepSection", 
+      short: "Tamir & Grout", 
+      full: "Tamir, Grout & Güçlendirme", 
+      sub: "R4 yapısal onarım, akıcı grout ve epoksi ankraj",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 16 3-3"/><path d="M9 12l8-8 4 4-8 8"/><path d="m14 7 3 3"/></svg>',
+      pillsId: "repMenuPills" 
+    },
+    { 
+      id: "weberFloorSection", 
+      short: "Zemin Şapları", 
+      full: "Zemin Şapları & Kaplamalar", 
+      sub: "Kendiliğinden yayılan tesviye ve endüstriyel şaplar",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 17h16"/><path d="M7 13h10"/><path d="M10 9h4"/><path d="M12 3v3"/></svg>',
+      pillsId: "floorMenuPills" 
+    }
   ];
 
   var subnav = document.getElementById("pvSubnav");
@@ -2987,8 +3018,16 @@ html body.pv-transparent-header-page .pv-page-main {
       var isSelected = (d.id === activeId);
       btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
       btn.innerHTML = 
-        '<span class="pv-drawer-item-name">' + d.full + '</span>' +
-        '<svg class="pv-drawer-item-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + d.full + '</span>' +
+            '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
 
       btn.addEventListener("click", function() {
         switchTab(d.id);
@@ -3262,16 +3301,5 @@ html body.pv-transparent-header-page .pv-page-main {
 })();
 </script>
 
-
-<script id="auto-open-modal-test">
-  if (window.location.search.includes('testModal=1')) {
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const row = document.querySelector('.pv-menu-row');
-        if (row) row.click();
-      }, 300);
-    });
-  }
-</script>
 </body>
 </html>
