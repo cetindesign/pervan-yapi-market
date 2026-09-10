@@ -6411,6 +6411,22 @@ html body.pv-transparent-header-page .pv-page-main {
       </button>
     </div>
 
+    <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
+    <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
+      <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer">
+        <span id="pvDeptTriggerLabel">01 Boya</span>
+        <svg class="pv-dept-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+
+      <div class="pv-bar-divider"></div>
+
+      <div class="pv-filter-rail" id="pvFilterRail" role="tablist">
+        <!-- Injected via JavaScript from active section pills -->
+      </div>
+    </div>
+
     <div class="pv-subnav-actions">
       <button type="button" class="pv-subnav-search-btn" id="pvSpotlightTrigger" aria-label="Ürün Ara (⌘K veya /)">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -6427,63 +6443,24 @@ html body.pv-transparent-header-page .pv-page-main {
 <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
 <!-- ==========================================================================
-     ALTERNATIF 1: FLOATING FILTER ACTION PILL (Mobile Priority)
+     CATALOG DEPARTMENT DRAWER (Bottom Sheet for Mobile)
      ========================================================================== -->
-<button type="button" class="pv-floating-filter-pill is-hidden" id="pvFloatingFilterPill" aria-label="Filtrele ve Kategoriler" aria-haspopup="dialog">
-  <svg class="pv-floating-filter-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <line x1="4" y1="21" x2="4" y2="14"></line>
-    <line x1="4" y1="10" x2="4" y2="3"></line>
-    <line x1="12" y1="21" x2="12" y2="12"></line>
-    <line x1="12" y1="8" x2="12" y2="3"></line>
-    <line x1="20" y1="21" x2="20" y2="16"></line>
-    <line x1="20" y1="12" x2="20" y2="3"></line>
-    <line x1="1" y1="14" x2="7" y2="14"></line>
-    <line x1="9" y1="8" x2="15" y2="8"></line>
-    <line x1="17" y1="16" x2="23" y2="16"></line>
-  </svg>
-  <span class="pv-floating-filter-text" id="pvFloatingFilterText">Filtrele · 01 Boya (85)</span>
-</button>
-
-<!-- ==========================================================================
-     ALTERNATIF 1: FULL-WIDTH FILTER BOTTOM SHEET (Mobile Priority)
-     ========================================================================== -->
-<div class="pv-filter-sheet-backdrop" id="pvFilterSheetBackdrop" aria-hidden="true">
-  <div class="pv-filter-sheet" id="pvFilterSheet" role="dialog" aria-modal="true" aria-labelledby="pvFilterSheetTitle">
-    <div class="pv-filter-sheet-handle-zone" id="pvFilterSheetHandle">
-      <div class="pv-filter-sheet-handle"></div>
+<div class="pv-drawer-backdrop" id="pvDeptDrawerBackdrop" aria-hidden="true">
+  <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="pvDrawerTitle">
+    <div class="pv-drawer-handle-zone" id="pvDrawerHandle">
+      <div class="pv-drawer-handle"></div>
     </div>
 
-    <div class="pv-filter-sheet-header">
-      <div class="pv-filter-sheet-header-text">
-        <h2 class="pv-filter-sheet-title" id="pvFilterSheetTitle">Katalog &amp; Filtreler</h2>
-        <div class="pv-filter-sheet-subtitle" id="pvFilterSheetSubtitle">5 Departman · 259 Ürün</div>
-      </div>
-      <button type="button" class="pv-filter-sheet-close" id="pvFilterSheetCloseBtn" aria-label="Kapat">&times;</button>
-    </div>
-
-    <div class="pv-filter-sheet-body" id="pvFilterSheetBody">
-      <!-- Section 1: Department Selector -->
+    <div class="pv-drawer-header">
       <div>
-        <div class="pv-sheet-section-title">Departman</div>
-        <div class="pv-sheet-dept-track" id="pvSheetDeptTrack" role="tablist">
-          <!-- 5 Departments rendered dynamically -->
-        </div>
+        <h2 class="pv-drawer-title" id="pvDrawerTitle">Katalog Departmanı</h2>
+        <div class="pv-drawer-subtitle">Geçmek istediğiniz ana grubu seçin</div>
       </div>
-
-      <!-- Section 2: Subcategory Filters (Full Width, Zero Truncation) -->
-      <div>
-        <div class="pv-sheet-section-title" id="pvSheetSubcatHeading">Alt Kategori</div>
-        <div class="pv-sheet-subcat-list" id="pvSheetSubcatList" role="radiogroup">
-          <!-- Full-width subcategories rendered dynamically -->
-        </div>
-      </div>
+      <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
     </div>
 
-    <!-- Sticky Bottom Sheet Footer CTA -->
-    <div class="pv-filter-sheet-footer">
-      <button type="button" class="pv-sheet-apply-btn" id="pvSheetApplyBtn">
-        <span id="pvSheetApplyLabel">Sonuçları Göster (85 Ürün)</span>
-      </button>
+    <div class="pv-drawer-list" id="pvDeptList">
+      <!-- Departments injected dynamically via JS -->
     </div>
   </div>
 </div>
@@ -19535,10 +19512,7 @@ html body.pv-transparent-header-page .pv-page-main {
   window.addEventListener("popstate", checkDeepLink);
 })();
 
-/* ==========================================================================
-   ALTERNATIF 1: ZERO STICKY BAR + FLOATING FILTER PILL + BOTTOM SHEET
-   Architectural Sub-Nav Controller (Mobile Priority & Desktop Standard)
-   ========================================================================== */
+/* IN-PLACE ARCHITECTURAL SUB-NAV TAB CONTROLLER (Zero Scroll, Instant Panel Switch) */
 (function() {
   var subnav = document.getElementById("pvSubnav");
   var spacer = document.getElementById("pvSubnavSpacer");
@@ -19562,197 +19536,119 @@ html body.pv-transparent-header-page .pv-page-main {
     { id: "pvInsulationSection", num: "05", short: "05 Yalıtım", full: "Capatect Yalıtım", count: 47, pillsId: "insulationMenuPills" }
   ];
 
-  var currentActiveDept = "pvProductCatalog";
-  var stagedDeptId = "pvProductCatalog";
-  var stagedFilterValue = "";
-  var stagedCount = 85;
+  var deptTrigger = document.getElementById("pvDeptTrigger");
+  var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
+  var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
+  var deptDrawer = document.getElementById("pvDeptDrawer");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
 
-  var floatingPill = document.getElementById("pvFloatingFilterPill");
-  var floatingPillText = document.getElementById("pvFloatingFilterText");
-  var filterSheetBackdrop = document.getElementById("pvFilterSheetBackdrop");
-  var filterSheet = document.getElementById("pvFilterSheet");
-  var filterSheetCloseBtn = document.getElementById("pvFilterSheetCloseBtn");
-  var sheetDeptTrack = document.getElementById("pvSheetDeptTrack");
-  var sheetSubcatList = document.getElementById("pvSheetSubcatList");
-  var sheetSubcatHeading = document.getElementById("pvSheetSubcatHeading");
-  var sheetApplyBtn = document.getElementById("pvSheetApplyBtn");
-  var sheetApplyLabel = document.getElementById("pvSheetApplyLabel");
-
-  function updateFloatingPillLabel(subcatTitle, count) {
-    if (!floatingPillText) return;
-    var curDept = DEPARTMENTS_DATA.find(function(d) { return d.id === currentActiveDept; }) || DEPARTMENTS_DATA[0];
-    if (subcatTitle && count) {
-      floatingPillText.textContent = "Filtrele · " + subcatTitle + " (" + count + ")";
-    } else {
-      floatingPillText.textContent = "Filtrele · " + curDept.short + " (" + curDept.count + ")";
-    }
-  }
-
-  function renderFilterSheet(deptId) {
-    if (!sheetDeptTrack || !sheetSubcatList) return;
-    stagedDeptId = deptId;
-
-    var curDept = DEPARTMENTS_DATA.find(function(d) { return d.id === deptId; }) || DEPARTMENTS_DATA[0];
-
-    // 1. Render Department Pills
-    sheetDeptTrack.innerHTML = "";
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
     DEPARTMENTS_DATA.forEach(function(d) {
       var btn = document.createElement("button");
       btn.type = "button";
-      var isCur = (d.id === deptId);
-      btn.className = "pv-sheet-dept-pill" + (isCur ? " active" : "");
-      btn.setAttribute("aria-selected", isCur ? "true" : "false");
-      btn.innerHTML = '<span class="pv-dept-num">' + d.num + '</span> ' + d.full;
-      btn.addEventListener("click", function(e) {
-        e.preventDefault();
-        renderFilterSheet(d.id);
-      });
-      sheetDeptTrack.appendChild(btn);
-    });
-
-    // 2. Render Subcategory Vertical Rows
-    if (sheetSubcatHeading) {
-      sheetSubcatHeading.textContent = "ALT KATEGORİ (" + curDept.full + ")";
-    }
-
-    sheetSubcatList.innerHTML = "";
-    var pillContainer = document.getElementById(curDept.pillsId);
-    if (!pillContainer) return;
-
-    var origPills = pillContainer.querySelectorAll(".pv-menu-pill");
-    var activeFound = false;
-
-    origPills.forEach(function(origBtn, idx) {
-      var row = document.createElement("button");
-      row.type = "button";
-      var isPillActive = origBtn.classList.contains("active");
-      if (isPillActive) activeFound = true;
-
-      var titleSpan = origBtn.querySelector("span:not(.pv-menu-pill-count)") || origBtn;
-      var title = titleSpan ? titleSpan.textContent.trim() : origBtn.textContent.trim();
-      var countBadge = origBtn.querySelector(".pv-menu-pill-count");
-      var count = countBadge ? countBadge.textContent.trim() : "";
-      var filterVal = origBtn.getAttribute("data-filter") || "";
-
-      if (isPillActive) {
-        stagedFilterValue = filterVal;
-        stagedCount = count || curDept.count;
-      }
-
-      row.className = "pv-sheet-subcat-row" + (isPillActive ? " active" : "");
-      row.setAttribute("role", "radio");
-      row.setAttribute("aria-checked", isPillActive ? "true" : "false");
-      row.innerHTML = 
-        '<div class="pv-sheet-subcat-left">' +
-        '  <span class="pv-sheet-radio-dot"></span>' +
-        '  <span class="pv-sheet-subcat-title">' + title + '</span>' +
+      var isSelected = (d.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-left">' +
+        '  <span class="pv-drawer-item-num">' + d.num + '</span>' +
+        '  <span class="pv-drawer-item-name">' + d.full + '</span>' +
         '</div>' +
-        '<span class="pv-sheet-subcat-count">' + (count ? count + " Ürün" : "") + '</span>';
+        '<span class="pv-drawer-item-count">' + d.count + ' Ürün</span>';
 
-      row.addEventListener("click", function(e) {
+      btn.addEventListener("click", function() {
+        switchTab(d.id);
+        closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      });
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
         e.preventDefault();
-        sheetSubcatList.querySelectorAll(".pv-sheet-subcat-row").forEach(function(r) {
-          r.classList.remove("active");
-          r.setAttribute("aria-checked", "false");
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
         });
-        row.classList.add("active");
-        row.setAttribute("aria-checked", "true");
-
-        stagedFilterValue = filterVal;
-        stagedCount = count || curDept.count;
-        if (sheetApplyLabel) {
-          sheetApplyLabel.textContent = "Sonuçları Göster (" + stagedCount + " Ürün)";
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
         }
       });
 
-      sheetSubcatList.appendChild(row);
+      filterRail.appendChild(chip);
     });
-
-    if (sheetApplyLabel) {
-      sheetApplyLabel.textContent = "Sonuçları Göster (" + stagedCount + " Ürün)";
-    }
   }
 
-  function openFilterSheet() {
-    if (!filterSheetBackdrop) return;
-    renderFilterSheet(currentActiveDept);
-    filterSheetBackdrop.classList.add("is-open");
-    filterSheetBackdrop.setAttribute("aria-hidden", "false");
+  function openDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.add("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    deptTrigger.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
 
-  function closeFilterSheet() {
-    if (!filterSheetBackdrop) return;
-    filterSheetBackdrop.classList.remove("is-open");
-    filterSheetBackdrop.setAttribute("aria-hidden", "true");
+  function closeDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.remove("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    deptTrigger.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
-  function applyFilterSheet() {
-    closeFilterSheet();
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = deptDrawerBackdrop && deptDrawerBackdrop.classList.contains("is-open");
+      if (isOpen) closeDeptDrawer(); else openDeptDrawer();
+    });
+  }
 
-    // 1. Switch department if changed
-    if (stagedDeptId !== currentActiveDept) {
-      switchTab(stagedDeptId);
-    }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      closeDeptDrawer();
+    });
+  }
 
-    // 2. Trigger active pill click inside section
-    var curDept = DEPARTMENTS_DATA.find(function(d) { return d.id === currentActiveDept; }) || DEPARTMENTS_DATA[0];
-    var pillContainer = document.getElementById(curDept.pillsId);
-    if (pillContainer) {
-      var targetPill = pillContainer.querySelector('.pv-menu-pill[data-filter="' + stagedFilterValue + '"]') || pillContainer.querySelector(".pv-menu-pill");
-      if (targetPill) {
-        targetPill.click();
-        var titleSpan = targetPill.querySelector("span:not(.pv-menu-pill-count)") || targetPill;
-        var countBadge = targetPill.querySelector(".pv-menu-pill-count");
-        var title = titleSpan ? titleSpan.textContent.trim() : "";
-        var count = countBadge ? countBadge.textContent.trim() : "";
-        updateFloatingPillLabel(title, count);
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("click", function(e) {
+      if (e.target === deptDrawerBackdrop) {
+        closeDeptDrawer();
       }
-    }
-
-    // 3. Smooth scroll to top of catalog section (Zero Disorientation)
-    var origin = getSubnavOrigin();
-    window.scrollTo({ top: origin - 10, behavior: "smooth" });
-  }
-
-  // Bind Sheet Triggers
-  if (floatingPill) {
-    floatingPill.addEventListener("click", function(e) {
-      e.preventDefault();
-      openFilterSheet();
     });
   }
-
-  if (filterSheetCloseBtn) {
-    filterSheetCloseBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      closeFilterSheet();
-    });
-  }
-
-  if (filterSheetBackdrop) {
-    filterSheetBackdrop.addEventListener("click", function(e) {
-      if (e.target === filterSheetBackdrop) closeFilterSheet();
-    });
-  }
-
-  if (sheetApplyBtn) {
-    sheetApplyBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      applyFilterSheet();
-    });
-  }
-
-  window.addEventListener("keydown", function(e) {
-    if (e.key === "Escape" && filterSheetBackdrop && filterSheetBackdrop.classList.contains("is-open")) {
-      closeFilterSheet();
-    }
-  });
 
   function switchTab(targetId) {
     if (!panels[targetId]) return;
-    currentActiveDept = targetId;
     if (window.pvSetLastActiveTab) {
       window.pvSetLastActiveTab(targetId);
     }
@@ -19774,12 +19670,20 @@ html body.pv-transparent-header-page .pv-page-main {
       }
     }
 
-    // 3. Update floating pill text
-    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === targetId; }) || DEPARTMENTS_DATA[0];
-    updateFloatingPillLabel("", dept.count);
+    // 3. Update mobile compact bar & drawer
+    var currentDept = DEPARTMENTS_DATA.find(function(d) { return d.id === targetId; }) || DEPARTMENTS_DATA[0];
+    if (deptTriggerLabel) {
+      deptTriggerLabel.textContent = currentDept.short;
+    }
+    renderDeptDrawer(targetId);
+    syncMobileFilterRail(targetId);
   }
 
-  // Attach tab click events
+  // Initial state setup for mobile bar
+  renderDeptDrawer("pvProductCatalog");
+  syncMobileFilterRail("pvProductCatalog");
+
+  // Attach instant click event to each tab
   subnavLinks.forEach(function(link) {
     link.addEventListener("click", function(e) {
       e.preventDefault();
@@ -19788,19 +19692,7 @@ html body.pv-transparent-header-page .pv-page-main {
     });
   });
 
-  // Keep floating pill label synced when in-page pills are clicked directly
-  document.addEventListener("click", function(e) {
-    var pill = e.target.closest(".pv-menu-pill");
-    if (pill) {
-      var titleSpan = pill.querySelector("span:not(.pv-menu-pill-count)") || pill;
-      var countBadge = pill.querySelector(".pv-menu-pill-count");
-      var title = titleSpan ? titleSpan.textContent.trim() : "";
-      var count = countBadge ? countBadge.textContent.trim() : "";
-      updateFloatingPillLabel(title, count);
-    }
-  });
-
-  // Sticky subnav header clearance sync & mobile floating pill visibility
+  // Sticky subnav header clearance sync
   var initialSubnavTop = 0;
   function getSubnavOrigin() {
     if (spacer && spacer.classList.contains("is-active")) {
@@ -19820,33 +19712,11 @@ html body.pv-transparent-header-page .pv-page-main {
       initialSubnavTop = getSubnavOrigin();
     }
 
-    // Mobile viewport: Alternatif 1 -> Zero Sticky Subnav!
-    if (window.innerWidth <= 768) {
-      if (subnav.classList.contains("is-pinned")) {
-        subnav.classList.remove("is-pinned");
-        subnav.classList.remove("header-hidden");
-        subnav.style.top = "";
-        if (spacer) spacer.classList.remove("is-active");
-      }
-
-      // Toggle Floating Filter Pill visibility (show when user scrolls into catalog)
-      if (floatingPill) {
-        if (scrollPos > (initialSubnavTop + 120)) {
-          floatingPill.classList.remove("is-hidden");
-        } else {
-          floatingPill.classList.add("is-hidden");
-        }
-      }
-      return;
-    }
-
-    // Desktop viewport (> 768px): Retain standard sticky subnav hub
-    if (floatingPill) floatingPill.classList.add("is-hidden");
-
     var headerVisible = header && !header.classList.contains("header--hidden");
     var hHeight = getHeaderHeight();
     var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
 
+    // As long as we are scrolled to or past the subnav area (boya menüsü or other tabs):
     if (scrollPos >= pinThreshold) {
       if (!subnav.classList.contains("is-pinned")) {
         subnav.classList.add("is-pinned");
@@ -19857,14 +19727,17 @@ html body.pv-transparent-header-page .pv-page-main {
       }
 
       if (!headerVisible) {
+        // Scrolling DOWN -> Header hidden -> Pin at very top of screen (0px)
         subnav.classList.add("header-hidden");
         subnav.style.top = "0px";
       } else {
+        // Scrolling UP -> Header revealed -> Pin directly under header
         subnav.classList.remove("header-hidden");
         subnav.style.top = hHeight + "px";
         document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
       }
     } else {
+      // Scrolled all the way back up into hero -> unpin and return to natural flow
       if (subnav.classList.contains("is-pinned")) {
         subnav.classList.remove("is-pinned");
         subnav.classList.remove("header-hidden");
@@ -19874,6 +19747,8 @@ html body.pv-transparent-header-page .pv-page-main {
     }
   }
 
+  // MutationObserver on header so class changes (header--hidden added/removed by pervan.js)
+  // trigger instantaneous, synchronized repositioning of subnav without waiting for scroll events
   if (header && window.MutationObserver) {
     var headerObserver = new MutationObserver(function() {
       syncSubnavPin();
