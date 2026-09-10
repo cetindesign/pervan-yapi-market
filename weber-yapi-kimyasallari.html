@@ -380,7 +380,6 @@ html body.pv-transparent-header-page .pv-page-main {
 <!-- ==========================================================================
      2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
      ========================================================================== -->
-<div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Weber Ürün Departmanları">
   <div class="pv-container pv-subnav-inner">
     <div class="pv-subnav-brand">
@@ -436,6 +435,7 @@ html body.pv-transparent-header-page .pv-page-main {
     </div>
   </div>
 </nav>
+<div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
 <!-- ==========================================================================
      PANEL 1: SERAMİK YAPIŞTIRICILARI & HARÇLAR
@@ -2956,34 +2956,75 @@ html body.pv-transparent-header-page .pv-page-main {
     "weberFloorSection": document.getElementById("weberFloorSection")
   };
 
-  function getHeaderHeight() {
-    return header ? header.offsetHeight : 0;
-  }
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
   function getSubnavOrigin() {
-    return spacer ? spacer.offsetTop : 0;
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
   }
 
-  function handleScroll() {
-    if (!subnav || !spacer) return;
-    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    var headerH = getHeaderHeight();
-    var origin = getSubnavOrigin();
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
 
-    if (scrollY + headerH >= origin) {
-      if (!subnav.classList.contains("pv-is-pinned")) {
-        subnav.classList.add("pv-is-pinned");
-        subnav.style.top = headerH + "px";
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
       }
     } else {
-      if (subnav.classList.contains("pv-is-pinned")) {
-        subnav.classList.remove("pv-is-pinned");
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
         subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
       }
     }
   }
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  window.addEventListener("resize", handleScroll);
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
 
   function switchTab(tabId) {
     if (!panels[tabId]) return;
@@ -3411,6 +3452,5 @@ html body.pv-transparent-header-page .pv-page-main {
 
 })();
 </script>
-
 </body>
 </html>
