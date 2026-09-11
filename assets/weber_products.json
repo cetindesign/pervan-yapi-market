@@ -3,16 +3,15 @@
     "id": "weberkol-flex-konfor",
     "name": "Weberkol Flex Konfor",
     "badge": "TS EN 12004 C2TE S1",
-    "tag": "Granit & Porselen · S1 Flex",
+    "tag": "S1 Flex Granit",
     "deptId": "weberProductCatalog",
     "category": "porselen-granit",
     "thumb": "assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg",
-    "desc": "60×120 ve 120×240 cm büyük ebat porselen seramik ve granit karolar için toz çıkarmayan, yüksek polimer katkılı S1 esnek yapıştırma harcı.",
+    "desc": "60×120 ve 120×240 cm büyük ebat granit ve porselen için tozsuz harç · S1",
     "meta": [
-      "C2TE S1 Esneklik Sınıfı",
-      "Tozsuz Konfor Teknolojisi",
-      "Dikeyde Sıfır Kayma",
-      "Yerden Isıtmaya Tam Uyum"
+      "C2TE S1 Esnek",
+      "4.5 – 5.5 kg/m²",
+      "Kap Ömrü: 4 Saat"
     ],
     "coverage": "4.5 – 5.5 kg/m²",
     "sizes": [
@@ -46,16 +45,15 @@
     "id": "weberkol-flex-ekstra",
     "name": "Weberkol Flex Ekstra",
     "badge": "TS EN 12004 C2TE S2",
-    "tag": "Mega Porselen & Dış Cephe · S2 Ultra Flex",
+    "tag": "S2 Mega Plaka",
     "deptId": "weberProductCatalog",
     "category": "porselen-granit",
     "thumb": "assets/weber-official/weber-kol-flex-extra-beyaz-25-kg.jpg",
-    "desc": "120×280 cm mega porselen levhalar, dış cephe mekanik destekli kaplamalar ve yoğun titreşimli zeminler için ultra esnek S2 yapıştırıcı.",
+    "desc": "120×280 cm mega porselen ve dış cephe için ultra esnek yapıştırıcı · S2",
     "meta": [
-      "C2TE S2 Ultra Esnek Sınıf",
-      "Güneş ve Isı Genleşmesine Dayanıklı",
-      "Dış Cephe & Teras Uyumu",
-      "Mega Plaka Güvenliği"
+      "C2TE S2 Ultra Flex",
+      "5.0 – 6.0 kg/m²",
+      "Kap Ömrü: 4 Saat"
     ],
     "coverage": "5.0 – 6.0 kg/m²",
     "sizes": [
@@ -392,18 +390,17 @@
   },
   {
     "id": "weber-ep-easy",
-    "name": "Weber EP Easy",
+    "name": "Weber EP Easy Epoksi",
     "badge": "TS EN 13888 RG",
-    "tag": "Epoksi Derz Dolgusu · Kolay Temizlenen",
+    "tag": "Asit Dirençli 2K",
     "deptId": "weberJointSection",
     "category": "epoksi-derz",
     "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
-    "desc": "Yüzme havuzları, kaplıcalar, endüstriyel mutfaklar ve gıda tesisleri için suyla kolay temizlenen, kimyasallara dayanıklı 2K epoksi derz dolgusu.",
+    "desc": "Kimyasallara ve asitlere tam dirençli epoksi yapıştırıcı ve derz dolgusu · R2T",
     "meta": [
-      "RG Reaksiyon Reçineli",
-      "Su ile Kolay Temizlik",
-      "Asit & Leke Geçirimsiz",
-      "Havuz & Spa İçin İdeal"
+      "R2T / RG Asit Kalkanı",
+      "Suyla Kolay Temizlik",
+      "2 Bileşenli"
     ],
     "coverage": "0.40 – 1.20 kg/m²",
     "sizes": [
@@ -426,18 +423,17 @@
   },
   {
     "id": "weber-pu-2a",
-    "name": "Weber PU 2A",
+    "name": "Weber PU 2A Mastik",
     "badge": "ISO 11600 F 25 LM",
-    "tag": "Poliüretan Dilatasyon Mastiği",
+    "tag": "Poliüretan Derz Mastiği",
     "deptId": "weberJointSection",
     "category": "pu-mastik",
     "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
-    "desc": "Bina dilatasyonları, prekast panel derzleri, parapet ve pencere kenarları için yüksek elastikiyete sahip poliüretan sızdırmazlık mastiği.",
+    "desc": "Bina dilatasyonları ve cephe derzleri için UV dayanımlı poliüretan mastik · 600 ml",
     "meta": [
-      "ISO 11600 F 25 LM Sınıfı",
       "%25 Hareket Kabiliyeti",
-      "UV ve Hava Koşulu Direnci",
-      "600 ml Sosis Ambalaj"
+      "600 ml Sosis Ambalaj",
+      "UV & Hava Şartları"
     ],
     "coverage": "1 sosis / ~6 metre (10×10 mm derz)",
     "sizes": [
@@ -463,16 +459,15 @@
     "id": "weberdry-ss-10",
     "name": "Weberdry SS-10",
     "badge": "TS EN 14891 CM O2P",
-    "tag": "Tam Elastik 2K Çimento Yalıtım",
+    "tag": "Tam Elastik 2K",
     "deptId": "weberDrySection",
     "category": "cimento-esasli",
     "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
-    "desc": "Teraslar, yüzme havuzları, balkonlar ve su depoları için çatlak köprüleme kabiliyetine sahip 2 komponentli tam elastik su yalıtım harcı.",
+    "desc": "Teras, balkon ve havuzlar için çift bileşenli tam elastik su yalıtımı · CM O2P",
     "meta": [
-      "CM O2P Tam Elastik Sınıf",
-      "Teras & Yüzme Havuzu Uyumu",
-      "Çatlak Köprüleme Kapasitesi",
-      "33 kg Set (25 kg Toz + 8 kg Sıvı)"
+      "CM O2P Tam Elastik",
+      "3.0 – 3.5 kg/m² (2 Kat)",
+      "Basınçlı Su Direnci"
     ],
     "coverage": "3.0 – 3.5 kg/m² (Çift Kat)",
     "sizes": [
@@ -502,16 +497,15 @@
     "id": "weberdry-ss-7-easy",
     "name": "Weberdry SS-7 Easy",
     "badge": "TS EN 14891 CM O1P",
-    "tag": "Yarı Elastik 2K Banyo Yalıtımı",
+    "tag": "Yarı Elastik 2K",
     "deptId": "weberDrySection",
     "category": "cimento-esasli",
     "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
-    "desc": "Banyo, duş, mutfak ve tuvalet gibi iç mekan ıslak hacimler için seramik altı yarı elastik 2 komponentli su yalıtım harcı.",
+    "desc": "Banyo, mutfak ve ıslak hacimler için çift bileşenli yarı elastik su yalıtımı · CM O1P",
     "meta": [
       "CM O1P Yarı Elastik",
-      "İç Mekan Islak Hacimler",
-      "Seramik Altı Tam Koruma",
-      "25 kg Set (20 kg Toz + 5 kg Sıvı)"
+      "3.0 – 3.5 kg/m²",
+      "Fayans Altı Zırh"
     ],
     "coverage": "2.5 – 3.0 kg/m² (Çift Kat)",
     "sizes": [
@@ -569,18 +563,17 @@
   },
   {
     "id": "weberdry-ds",
-    "name": "Weberdry DS",
+    "name": "Weberdry DS Kristalize",
     "badge": "TS EN 1504-2",
-    "tag": "Kristalize Su Yalıtımı · Negatif/Pozitif",
+    "tag": "Negatif & Pozitif Su",
     "deptId": "weberDrySection",
     "category": "kristalize",
     "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
-    "desc": "Bodrum iç duvarları, asansör kuyuları ve su depolarında betonun kapiler boşluklarına kristal üreterek su geçişini durduran harç.",
+    "desc": "Bodrum ve perde duvarlarda betona işleyen kristalize kapiler su yalıtımı",
     "meta": [
-      "Negatif & Pozitif Çift Yönlü",
-      "Beton İçi Kristal Üretimi",
-      "Asansör Kuyusu & Bodrum",
-      "25 kg Kraft Torba"
+      "Kapiler Kristalize",
+      "2.0 – 3.0 kg/m²",
+      "Negatif Basınç Uyumlu"
     ],
     "coverage": "2.0 – 2.5 kg/m²",
     "sizes": [
@@ -605,16 +598,15 @@
     "id": "weberdry-rapid-stop",
     "name": "Weberdry Rapid Stop",
     "badge": "TS EN 1504-3",
-    "tag": "Şok Aktif Su Tıkacı · 1–2 Dakikada Priz",
+    "tag": "2 Dk Şok Tıkaç",
     "deptId": "weberDrySection",
     "category": "sok-tikama",
     "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
-    "desc": "Basınçlı fışkıran su kaçaklarını, boru geçiş deliklerini ve beton çatlaklarını 60–120 saniyede sertleşerek anında durduran şok tıkama harcı.",
+    "desc": "Basınçlı su kaçaklarını ve delikleri 2 dakikada donduran şok su tıkacı harcı",
     "meta": [
-      "60–120 Saniyede Şok Priz",
-      "Basınçlı Su Kaçaklarını Durdurur",
-      "Genleşerek Delik Kapatır",
-      "5 kg Plastik Kova"
+      "2 Dk Priz Hızı",
+      "Anında Su Kesici",
+      "Priz: 120 Saniye"
     ],
     "coverage": "Uygulama boşluğuna göre",
     "sizes": [
@@ -639,16 +631,15 @@
     "id": "weberdry-pur-seal",
     "name": "Weberdry PUR Seal",
     "badge": "ETAG 005 W3",
-    "tag": "Saf Poliüretan Likit Membran",
+    "tag": "Poliüretan Membran",
     "deptId": "weberDrySection",
     "category": "likit-poliuretan",
     "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
-    "desc": "Açık teraslar, çatılar ve UV ışınlarına maruz kalan zeminler için eksiz, yüksek elastikiyete sahip saf poliüretan likit su yalıtım membranı.",
+    "desc": "Teras ve çatılarda eksiz monolitik kalkan oluşturan likit poliüretan membran",
     "meta": [
-      "ETAG 005 W3 Sertifikalı",
-      "UV & Güneş Dayanımlı",
-      "Eksiz Kauçuk Membran Katmanı",
-      "25 kg Teneke Kova"
+      "%100 Poliüretan Likit",
+      "1.5 – 2.0 kg/m²",
+      "Eksiz Monolitik"
     ],
     "coverage": "1.5 – 2.0 kg/m²",
     "sizes": [
