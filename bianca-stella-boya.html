@@ -101,6 +101,14 @@ html body.pv-transparent-header-page .pv-page-main {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
 }
+
+/* Responsive Hero Picture Framing */
+.pv-stage-slide picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
@@ -246,7 +254,7 @@ html body.pv-transparent-header-page .pv-page-main {
 <main class="pv-scope pv-page-main">
 
 <!-- ==========================================================================
-     1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE
+     1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE (Official Bianca Stella Media)
      ========================================================================== -->
 <section class="pv-stage-hero" id="pvStageHero" aria-label="Bianca Stella Dönüşüm Boyaları ve Sıvı Cam">
   
@@ -254,7 +262,10 @@ html body.pv-transparent-header-page .pv-page-main {
   <div class="pv-stage-track" id="pvStageTrack">
     <!-- Slide 0: Bianca Stella Brand Opening -->
     <div class="pv-stage-slide active" data-index="0" data-color="Bianca Stella" data-code="#1E293B">
-      <img src="assets/rf-brand-bianca.jpg" alt="Bianca Stella Dönüşüm Boyası Yetkili Bayi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/rf-brand-bianca.jpg" />
+        <img src="assets/rf-brand-bianca.jpg" alt="Bianca Stella Yeni Nesil Dönüşüm Boyası Yetkili Bayi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
+      </picture>
       <div class="pv-stage-overlay"></div>
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
@@ -280,8 +291,11 @@ html body.pv-transparent-header-page .pv-page-main {
     </div>
 
     <!-- Slide 1: Mutfak & Dolap Dönüşümü -->
-    <div class="pv-stage-slide" data-index="1" data-color="Mutfak Dönüşümü" data-code="#0284C7">
-      <img src="assets/rf-transform-bianca-after.jpg" alt="Bianca Stella Mutfak Dolabı ve Fayans Dönüşümü" class="pv-stage-img" decoding="async" />
+    <div class="pv-stage-slide" data-index="1" data-color="Mutfak Dönüşümü" data-code="#0F766E">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/rf-transform-bianca-after.jpg" />
+        <img src="assets/rf-transform-bianca-after.jpg" alt="Bianca Stella Mutfak Dolabı ve Fayans Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+      </picture>
       <div class="pv-stage-overlay"></div>
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
@@ -306,9 +320,12 @@ html body.pv-transparent-header-page .pv-page-main {
       </div>
     </div>
 
-    <!-- Slide 2: Maximo 2K Sıvı Cam Zırhı -->
+    <!-- Slide 2: Maximo 2K Sıvı Cam (Tezgah & Islak Zemin Zırhı) -->
     <div class="pv-stage-slide" data-index="2" data-color="Maximo Sıvı Cam" data-code="#D97706">
-      <img src="assets/bianca-official/diamond4-scaled.png" alt="Mutfak Tezgahı Maximo 2K Sıvı Cam Zırhı" class="pv-stage-img" decoding="async" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-diamond-uygulama-1.jpg" />
+        <img src="assets/bianca-official/bianca-diamond-uygulama-1.jpg" alt="Mutfak Tezgahı Maximo 2K Sıvı Cam Zırhı" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+      </picture>
       <div class="pv-stage-overlay"></div>
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
@@ -333,9 +350,12 @@ html body.pv-transparent-header-page .pv-page-main {
       </div>
     </div>
 
-    <!-- Slide 3: Banyo & Zemin Dönüşümü -->
+    <!-- Slide 3: Banyo & Zemin Dönüşümü (Kırmadan Dökmeden) -->
     <div class="pv-stage-slide" data-index="3" data-color="Banyo & Zemin" data-code="#2563EB">
-      <img src="assets/bianca-official/bianca-diamond-uygulama-1.jpg" alt="Banyo Fayansı ve Duş İçi Dönüşümü" class="pv-stage-img" decoding="async" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/rf-transform-bath-after.jpg" />
+        <img src="assets/rf-transform-bath-after.jpg" alt="Banyo Fayansı ve Duş İçi Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+      </picture>
       <div class="pv-stage-overlay"></div>
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
@@ -360,9 +380,12 @@ html body.pv-transparent-header-page .pv-page-main {
       </div>
     </div>
 
-    <!-- Slide 4: Stella Ahşap Desen Efekti -->
+    <!-- Slide 4: Stella Ahşap Desen Efekti (Doğal Budak & Masif Doku) -->
     <div class="pv-stage-slide" data-index="4" data-color="Ahşap Desen" data-code="#92400E">
-      <img src="assets/bianca-official/bianca-stella-ahsap-desen-1-1024x390.jpg" alt="Stella Ahşap Efekt Budak Deseni Uygulaması" class="pv-stage-img" decoding="async" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-stella-ahsap-desen-3.jpg" />
+        <img src="assets/bianca-official/bianca-stella-ahsap-desen-1-1024x390.jpg" alt="Stella Ahşap Efekt Budak Deseni Uygulaması" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+      </picture>
       <div class="pv-stage-overlay"></div>
       <div class="pv-container pv-stage-content-wrap">
         <div class="pv-stage-info">
@@ -386,6 +409,7 @@ html body.pv-transparent-header-page .pv-page-main {
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Stage Left / Right Floating Arrow Navigation -->
