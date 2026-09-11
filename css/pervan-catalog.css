@@ -1794,9 +1794,15 @@ body.pv-transparent-header-page header.header--menu-open .navbar-sticky a.navbar
    ========================================================================== */
 
 .pv-menu-section {
-  padding: 64px 0 72px;
+  padding: 40px 0 72px;
   background-color: var(--pv-white);
   border-bottom: 1px solid var(--pv-border-subtle);
+}
+
+@media (max-width: 768px) {
+  .pv-menu-section {
+    padding: 20px 0 48px;
+  }
 }
 
 .pv-menu-header {
