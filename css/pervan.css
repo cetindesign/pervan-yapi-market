@@ -4605,3 +4605,272 @@ svg.brand-logo {
 .brand-card:hover .brand-logo {
   transform: scale(1.05);
 }
+
+/* ==========================================================================
+   PERVAN LOCATION NAVIGATION MODAL & BOTTOM SHEET COMPONENT
+   ========================================================================== */
+.pv-location-trigger {
+  cursor: pointer;
+}
+
+.pv-location-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.pv-location-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pv-location-sheet {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 620px;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.18);
+  padding: 12px 24px 32px;
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.pv-location-backdrop.is-open .pv-location-sheet {
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .pv-location-backdrop {
+    align-items: center;
+    padding: 24px;
+  }
+  .pv-location-sheet {
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    transform: scale(0.96) translateY(8px);
+    padding: 28px 32px 32px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .pv-location-backdrop.is-open .pv-location-sheet {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.pv-location-handle-zone {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0 16px;
+  cursor: grab;
+}
+
+@media (min-width: 640px) {
+  .pv-location-handle-zone {
+    display: none;
+  }
+}
+
+.pv-location-handle {
+  width: 36px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 999px;
+}
+
+.pv-location-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.pv-location-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C8461E;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.pv-location-title {
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111215;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.pv-location-subtitle {
+  font-size: 13.5px;
+  color: #71717A;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.pv-location-close {
+  background: #F4F4F5;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #71717A;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.pv-location-close:hover {
+  background: #E4E4E7;
+  color: #111215;
+}
+
+.pv-location-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pv-location-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+  background: #FAFAF9;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.pv-location-card:hover {
+  border-color: #111215;
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.pv-location-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.pv-location-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #E4E4E7;
+  color: #27272A;
+}
+
+.pv-location-tag.tag-balcova {
+  background: rgba(200, 70, 30, 0.1);
+  color: #C8461E;
+}
+
+.pv-location-tag.tag-urla {
+  background: rgba(30, 64, 175, 0.1);
+  color: #1E40AF;
+}
+
+.pv-location-status {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #059669;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pv-location-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #059669;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pv-location-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111215;
+  margin-bottom: 4px;
+}
+
+.pv-location-card-desc {
+  font-size: 13px;
+  color: #71717A;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.pv-location-card-address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #52525B;
+  margin-bottom: 14px;
+}
+
+.pv-location-card-address svg {
+  flex-shrink: 0;
+  color: #C8461E;
+}
+
+.pv-location-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #111215;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.pv-location-card:hover .pv-location-card-cta {
+  background: #C8461E;
+}
+
+.pv-location-card-cta svg {
+  transition: transform 0.2s ease;
+}
+
+.pv-location-card:hover .pv-location-card-cta svg {
+  transform: translateX(3px);
+}

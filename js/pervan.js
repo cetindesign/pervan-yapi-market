@@ -249,6 +249,54 @@
       });
     });
 
+    // 3.1. Location Navigation Modal / Bottom Sheet Logic
+    var locationModal = document.getElementById("pvLocationModal");
+    var closeLocationBtn = document.getElementById("pvLocationCloseBtn");
+
+    window.openLocationSheet = function() {
+      if (typeof closeMobileMenu === "function") {
+        closeMobileMenu();
+      }
+      if (!locationModal) return;
+      locationModal.classList.add("is-open");
+      locationModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    window.closeLocationSheet = function() {
+      if (!locationModal) return;
+      locationModal.classList.remove("is-open");
+      locationModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    if (closeLocationBtn) {
+      closeLocationBtn.addEventListener("click", window.closeLocationSheet);
+    }
+
+    if (locationModal) {
+      locationModal.addEventListener("click", function(e) {
+        if (e.target === locationModal) {
+          window.closeLocationSheet();
+        }
+      });
+    }
+
+    document.querySelectorAll(".pv-location-trigger, #openLocationSheetBtn").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.openLocationSheet();
+      });
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" || e.keyCode === 27) {
+        if (locationModal && locationModal.classList.contains("is-open")) {
+          window.closeLocationSheet();
+        }
+      }
+    });
+
     // 4. Form Submission -> WhatsApp
     var consultationForm = document.getElementById("consultationForm");
     if (consultationForm) {

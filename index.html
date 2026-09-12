@@ -224,9 +224,9 @@
         <a href="https://wa.me/905323844497?text=Merhaba,%20projem%20için%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="site-button interactive text-color-black">
           Fiyat bilgisi alın
         </a>
-        <a href="showroom.html" class="site-button interactive text-color-black">
-          Showroom ziyaret edin
-        </a>
+        <button type="button" id="openLocationSheetBtn" class="site-button interactive text-color-black pv-location-trigger" aria-haspopup="dialog" aria-expanded="false">
+          Mağazamıza Gelin
+        </button>
         <a href="kesif-randevusu.html" class="site-button interactive text-color-black">
           Randevu alın
         </a>
@@ -448,7 +448,63 @@
   </div>
 </footer>
 
-<script src="js/pervan.js?v=9.0.0"></script>
+<!-- PERVAN LOCATION NAVIGATION MODAL (BOTTOM SHEET) -->
+<div id="pvLocationModal" class="pv-location-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pvLocationTitle">
+  <div class="pv-location-sheet">
+    <div class="pv-location-handle-zone" id="pvLocationHandle">
+      <div class="pv-location-handle"></div>
+    </div>
+    <div class="pv-location-header">
+      <div>
+        <span class="pv-location-eyebrow">Pervan Yapı &amp; Mimarlık Lokasyonları</span>
+        <h3 id="pvLocationTitle" class="pv-location-title">Hangi mağazamıza gelmek istersiniz?</h3>
+        <p class="pv-location-subtitle">Seçtiğiniz lokasyon için anlık konumunuzdan direkt Google Haritalar navigasyonu başlatılır.</p>
+      </div>
+      <button type="button" class="pv-location-close" id="pvLocationCloseBtn" aria-label="Kapat">
+        &times;
+      </button>
+    </div>
+    <div class="pv-location-grid">
+      <!-- 1. Balçova Showroom -->
+      <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-location-card">
+        <div class="pv-location-card-top">
+          <span class="pv-location-tag tag-balcova">Showroom &amp; Renk Laboratuvarı</span>
+          <span class="pv-location-status">Haftanın 7 Günü Açık</span>
+        </div>
+        <div class="pv-location-card-name">Balçova Showroom</div>
+        <div class="pv-location-card-desc">Filli Boya RenXMatik renk makineleri, Bianca Stella dönüşüm stantları ve mimari danışmanlık merkezi.</div>
+        <div class="pv-location-card-address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Eğitim Mah. Balçova / İzmir · 0232 278 43 40</span>
+        </div>
+        <div class="pv-location-card-cta">
+          <span>Yol Tarifi Al</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </a>
+
+      <!-- 2. Urla Lojistik & Kaba Yapı Depo -->
+      <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-location-card">
+        <div class="pv-location-card-top">
+          <span class="pv-location-tag tag-urla">Ana Depo &amp; Şantiye Sevkiyat</span>
+          <span class="pv-location-status">Açık · Pz: Dinlenme</span>
+        </div>
+        <div class="pv-location-card-name">Urla Ana Depo</div>
+        <div class="pv-location-card-desc">Çimento, kaba yapı, Saint-Gobain Weber kimyasalları, tesisat ve vinçli şantiye sevkiyat merkezi.</div>
+        <div class="pv-location-card-address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Kalabak Mah. 3004 Sk. No:2 Urla / İzmir · 0532 384 44 97</span>
+        </div>
+        <div class="pv-location-card-cta">
+          <span>Yol Tarifi Al</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="js/pervan.js?v=33.0.0"></script>
 
 </body>
 </html>
