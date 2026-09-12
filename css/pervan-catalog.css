@@ -5235,3 +5235,274 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     display: none;
   }
 }
+
+/* ==========================================================================
+   24. KABA YAPI & ÇİMENTO CALCULATOR, MATRIX & LOGISTICS STYLES
+   ========================================================================== */
+.pv-kaba-section {
+  padding: 48px 0 64px;
+  background: #FAFAFA;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pv-kaba-hero-banner {
+  background: #1C1917;
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pv-kaba-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pv-kaba-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #F4F4F5;
+}
+
+/* Harç & Torba Hesaplayıcı Bileşeni */
+.pv-calc-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  margin-bottom: 48px;
+}
+
+.pv-calc-header {
+  margin-bottom: 24px;
+}
+
+.pv-calc-pretitle {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta, #C8461E);
+  margin-bottom: 6px;
+}
+
+.pv-calc-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0 0 6px 0;
+}
+
+.pv-calc-desc {
+  font-size: 14px;
+  color: #71717A;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pv-calc-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pv-calc-pill-btn {
+  background: #F4F4F5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3F3F46;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pv-calc-pill-btn span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #71717A;
+}
+
+.pv-calc-pill-btn.active {
+  background: #1C1917;
+  color: #FFFFFF;
+  border-color: #1C1917;
+}
+
+.pv-calc-pill-btn.active span {
+  color: #D4D4D8;
+}
+
+.pv-calc-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .pv-calc-input-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pv-calc-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pv-calc-field-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #27272A;
+}
+
+.pv-calc-field-group input {
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #18181B;
+  background: #FAFAFA;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.pv-calc-field-group input:focus {
+  outline: none;
+  border-color: var(--accent-terracotta, #C8461E);
+  background: #FFFFFF;
+}
+
+.pv-calc-results-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.pv-calc-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.pv-calc-res-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pv-calc-res-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+}
+
+.pv-calc-res-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.pv-calc-res-val small {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.pv-calc-action-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pv-calc-wa-btn {
+  flex: 1;
+  min-width: 240px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #16A34A;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.pv-calc-wa-btn:hover {
+  background: #15803D;
+}
+
+/* Lojistik & Boşaltma Protokolü Grid */
+.pv-logistics-corridor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.pv-logistics-corridor-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pv-logistics-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1C1917;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.pv-logistics-card-desc {
+  font-size: 13px;
+  color: #52525B;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pv-logistics-card-meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-terracotta, #C8461E);
+  margin-top: auto;
+  padding-top: 8px;
+}
+
