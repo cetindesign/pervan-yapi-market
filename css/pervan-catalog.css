@@ -5019,6 +5019,17 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   transform: scale(0.94);
 }
 
+.pv-brands-nav-btn:disabled,
+.pv-brands-nav-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #F4F4F5;
+  color: #A1A1AA;
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: none;
+}
+
 .pv-brands-rail {
   display: flex;
   gap: 20px;
