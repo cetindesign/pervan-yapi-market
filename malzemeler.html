@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#FFFFFF" />
 
-<title>Yapı Market & Hırdavat Departmanları — Balçova & Urla | Pervan</title>
+<title>Yapı Market &amp; Hırdavat Departmanları — Balçova &amp; Urla | Pervan</title>
 <meta name="description" content="Kaba yapı, sıhhi tesisat, elektrik, hırdavat, kilit, bağlantı elemanları ve Bayer çevre sağlığı ürünlerinde Balçova mağaza ve Urla lojistik depomuzla şantiyelere toptan ve perakende kesintisiz tedarik." />
 <meta name="keywords" content="Pervan Yapı Market, Balçova nalbur, Urla şantiye malzemeleri, toptan çimento Urla, sıhhi tesisat Balçova, hırdavat malzemeleri, elektrik malzemesi İzmir" />
-<meta name="author" content="Pervan Yapı Market & Taahhüt" />
+<meta name="author" content="Pervan Yapı Market &amp; Taahhüt" />
 <link rel="canonical" href="https://www.pervanyapimarket.com/malzemeler.html" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="tr_TR" />
 <meta property="og:site_name" content="Pervan" />
-<meta property="og:title" content="Yapı Market & Hırdavat Departmanları — Balçova & Urla | Pervan" />
+<meta property="og:title" content="Yapı Market &amp; Hırdavat Departmanları — Balçova &amp; Urla | Pervan" />
 <meta property="og:description" content="Kaba yapı, sıhhi tesisat, elektrik, hırdavat, kilit, bağlantı elemanları ve Bayer çevre sağlığı ürünlerinde Balçova mağaza ve Urla lojistik depomuzla şantiyelere toptan ve perakende kesintisiz tedarik." />
 <meta property="og:url" content="https://www.pervanyapimarket.com/malzemeler.html" />
 <meta property="og:image" content="assets/rf-hero-materials.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=33.6.0" />
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
@@ -75,11 +76,28 @@
       "telephone": "+902322784340",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Kalabak Mah. 3004 Sk. No:2",
         "addressLocality": "Urla",
         "addressRegion": "İzmir",
+        "postalCode": "35430",
         "addressCountry": "TR"
       },
-      "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.3540547,
+        "longitude": 26.8064487
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Urla" },
+        { "@type": "City", "name": "Çeşme" },
+        { "@type": "City", "name": "Alaçatı" },
+        { "@type": "City", "name": "Seferihisar" },
+        { "@type": "City", "name": "Güzelbahçe" },
+        { "@type": "City", "name": "Karaburun" },
+        { "@type": "City", "name": "Balçova" },
+        { "@type": "City", "name": "Narlıdere" },
+        { "@type": "AdministrativeArea", "name": "İzmir" }
+      ]
     }
   ]
 }
@@ -112,7 +130,7 @@
         <a class="navbar-logo" href="index.html">Pervan</a>
       </div>
 
-            <!-- DESKTOP MENU & MOBILE DRAWER -->
+      <!-- DESKTOP MENU & MOBILE DRAWER -->
       <div class="navbar-contents">
         <div class="navbar-contents-overflow">
           <div class="navbar-menu">
@@ -130,7 +148,7 @@
             </div>
 
             <!-- 02: Yapı Market & Hırdavat -->
-            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item">
+            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item active">
               <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
@@ -179,193 +197,236 @@
 </header>
 
 <main>
-<!-- YAPI MARKET & HIRDAVAT EDITORIAL HERO -->
-<section class="rf-subpage-section" style="padding: 40px 0 32px; background: var(--bg-white); border-bottom: 1px solid var(--border-light);">
-  <div class="rf-wrapper">
-    <div class="rf-breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="sep">/</span>
-      <span>Yapı Market &amp; Hırdavat</span>
+<!-- COMPACT APP-LIKE HORIZONTAL DEPARTMENT CAROUSEL & CARDS -->
+<section class="pv-brands-carousel-section" aria-label="Yapı Market ve Hırdavat Departmanları Koleksiyonu">
+  <div class="pv-container">
+    
+    <!-- UNIFIED COMPACT HEADER -->
+    <div class="pv-brands-compact-header">
+      <div class="pv-brands-top-bar">
+        <div class="rf-breadcrumb" style="margin-bottom: 0;">
+          <a href="index.html">Ana Sayfa</a>
+          <span class="sep">/</span>
+          <span>Yapı Market &amp; Hırdavat</span>
+        </div>
+        <div class="pv-brands-nav-controls" aria-label="Departman kaydırma butonları">
+          <button class="pv-brands-nav-btn" id="pvBrandsPrev" aria-label="Önceki Departman" type="button" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="pv-brands-nav-btn" id="pvBrandsNext" aria-label="Sonraki Departman" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+      <h1 class="pv-brands-compact-title">Yapı Market &amp; Hırdavat Departmanları</h1>
+      <p class="pv-brands-compact-sub">Kaba yapı, tesisat, elektrik, kilit, bağlantı elemanları ve el aletlerinde Balçova mağaza ve Urla depodan doğrudan tedarik.</p>
     </div>
-    <span class="rf-card-tag" style="margin-bottom: 8px;">7 Departman · Balçova Yapı Market &amp; Urla Tedarik</span>
-    <h1 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">
-      Yapı Market &amp; Hırdavat Departmanları
-    </h1>
-    <p style="font-size: 16px; color: var(--text-muted); max-width: 780px; line-height: 1.6;">
-      Kaba inşaat, sıhhi tesisat, elektrik altyapısı, anahtar çekimi &amp; kilit, vida/cıvata bağlantı elemanları, İzeltaş profesyonel el aletleri ve Bayer K-Othrine çevre sağlığı ürünlerinde İzmir ve Yarımada şantiyelerine toptan ve perakende kesintisiz tedarik.
-    </p>
+
+    <!-- HORIZONTAL SCROLL RAIL -->
+    <div class="pv-brands-rail" id="pvBrandsRail" role="region" aria-label="Yatay Departman Galerisi">
+      
+      <!-- Tile 1: Kaba Yapı & Çimento -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-cement.jpg" alt="Kaba Yapı ve Çimento" fetchpriority="high" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Kaba Yapı, Çimento &amp; Alçı</h2>
+            <p class="pv-brand-tile-desc">
+              Portland çimento, beyaz çimento, kireç, saten ve sıva alçısı, inşaat kumu ve şap toptan stokları.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="kaba-yapi-cimento.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 2: Sıhhi Tesisat & Altyapı -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-plumbing.jpg" alt="Sıhhi Tesisat ve Altyapı" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Sıhhi Tesisat &amp; Altyapı</h2>
+            <p class="pv-brand-tile-desc">
+              PPRC temiz su boruları, PVC sessiz atık su giderleri, küresel vanalar, gömme rezervuarlar ve bataryalar.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="tesisat-altyapi.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 3: Elektrik & Aydınlatma -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-electric.jpg" alt="Elektrik ve Aydınlatma" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Elektrik &amp; Aydınlatma</h2>
+            <p class="pv-brand-tile-desc">
+              TSE bakır kablolar, Viko modüler anahtar-prizler, sigorta panoları, buatlar ve LED aydınlatma.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="elektrik-aydinlatma.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 4: Anahtar Çekimi & Kilit -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-locks.jpg" alt="Anahtar Çekimi, Kilit ve Mobilya" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Anahtar Çekimi, Kilit &amp; Mobilya</h2>
+            <p class="pv-brand-tile-desc">
+              Balçova mağazamızda anahtar çoğaltma, Kale kilit barelleri, kapı kolları, menteşeler ve donanımlar.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="kilit-kapi-hirdavat.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 5: Vida & Bağlantı Elemanları -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-fasteners.jpg" alt="Vida, Çivi, Cıvata ve Dübel" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Vida, Çivi &amp; Bağlantı Elemanları</h2>
+            <p class="pv-brand-tile-desc">
+              Sunta vidaları, akıllı vidalar, çelik dübeller, plastik dübeller, metrik cıvatalar ve somunlar.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="baglanti-elemanlari.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 6: El Aletleri & Donanım -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-card-tools.jpg" alt="El Aletleri ve Hırdavat" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">El Aletleri &amp; Donanım</h2>
+            <p class="pv-brand-tile-desc">
+              İzeltaş mekanik el aletleri, akülü makineler, silikon tabancaları, silikon, montaj köpüğü ve mastikler.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="el-aletleri.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tile 7: Haşere & Çevre Sağlığı -->
+      <article class="pv-brand-tile">
+        <div class="pv-brand-tile-media">
+          <img src="assets/rf-brand-kothrine.jpg" alt="Bayer K-Othrine Çevre Sağlığı ve Haşere İlaçları" loading="lazy" decoding="async">
+        </div>
+        <div class="pv-brand-tile-body">
+          <div>
+            <h2 class="pv-brand-tile-title">Haşere &amp; Çevre Sağlığı</h2>
+            <p class="pv-brand-tile-desc">
+              T.C. Sağlık Bakanlığı onaylı orijinal Bayer K-Othrine SC50, AL ve Granül haşere mücadele serisi.
+            </p>
+          </div>
+          <div class="pv-brand-tile-actions">
+            <a href="k-othrine-hasere.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- 7 EDITORIAL MATERIAL DEPARTMENTS -->
-<section style="padding: 64px 0 80px; background: var(--bg-offwhite);">
-  <div class="rf-wrapper">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
+<!-- STORE HUBS & LOGISTICS SECTION -->
+<section class="pv-hubs-section" aria-label="Pervan Merkezleri ve Yol Tarifi">
+  <div class="pv-container">
+    
+    <div class="pv-hubs-header">
+      <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
+      <h2 class="pv-hubs-title">Daha Fazlası, Özel Ölçü &amp; Hızlı Tedarik İçin</h2>
+      <p class="pv-hubs-desc">Katalogda yer almayan özel bağlantı elemanları, toptan şantiye siparişleri veya doğrudan şantiyenize damperli/paletli sevkiyat için merkezlerimize ulaşın.</p>
+    </div>
+
+    <div class="pv-hubs-grid">
       
-      <!-- 01: Kaba Yapı & Çimento -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-cement.jpg" alt="Kaba Yapı ve Çimento" style="width: 100%; height: 100%; object-fit: cover;" fetchpriority="high" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 01
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Kaba Yapı, Çimento & Alçı</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Portland çimento, beyaz çimento, kireç, saten ve sıva alçısı, inşaat kumu ve şap toptan stokları.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              🚚 Urla Depodan Damperli & Paletli Şantiye Sevkiyatı
-            </div>
+      <!-- Card 1: Balçova Showroom -->
+      <div class="pv-hub-card">
+        <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
+        <p class="pv-hub-desc">Hırdavat, tesisat, elektrik, el aletleri, Kale kilit barelleri ve anahtar kopyalama, perakende ve toptan satış.</p>
+        
+        <div class="pv-hub-details">
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
           </div>
-          <a href="kaba-yapi-cimento.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Kaba Yapı Malzemeleri →
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
+          </div>
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
+          </div>
+        </div>
+
+        <div class="pv-hub-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Yol Tarifi Al (Haritalar)</span>
+          </a>
+          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ma%C4%9Fazan%C4%B1zdan%20malzeme%20stok%20ve%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>WhatsApp ile Danış</span>
           </a>
         </div>
       </div>
 
-      <!-- 02: Sıhhi Tesisat & Altyapı -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-plumbing.jpg" alt="Sıhhi Tesisat ve Altyapı" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 02
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Sıhhi Tesisat & Altyapı</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              PPRC temiz su boruları, PVC sessiz atık su giderleri, küresel vanalar, gömme rezervuarlar ve bataryalar.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              📍 Balçova ve Urla Stok · Tüm Çap ve Ölçülerde Hazır
-            </div>
+      <!-- Card 2: Urla Lojistik Depo -->
+      <div class="pv-hub-card">
+        <h3 class="pv-hub-title">Urla Ana Lojistik Deposu</h3>
+        <p class="pv-hub-desc">Kaba yapı, çimento, kireç, kum, paletli malzeme teslimatı, damperli kamyon ve tır yükleme sahası, Yarımada şantiye sevkiyatı.</p>
+        
+        <div class="pv-hub-details">
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Kalabak, 35430 Urla / İzmir</span>
           </div>
-          <a href="tesisat-altyapi.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Sıhhi Tesisat Ürünleri →
-          </a>
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
+          </div>
+          <div class="pv-hub-detail-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
+          </div>
         </div>
-      </div>
 
-      <!-- 03: Elektrik & Aydınlatma -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-electric.jpg" alt="Elektrik ve Aydınlatma" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 03
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Elektrik & Aydınlatma</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              TSE bakır kablolar, Viko modüler anahtar-prizler, sigorta panoları, buatlar ve LED aydınlatma.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              ⚡ Şantiye ve Ev Tipi Elektrik Altyapı Donanımları
-            </div>
-          </div>
-          <a href="elektrik-aydinlatma.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Elektrik Malzemeleri →
+        <div class="pv-hub-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Yol Tarifi Al (Haritalar)</span>
           </a>
-        </div>
-      </div>
-
-      <!-- 04: Anahtar Çekimi, Kilit & Mobilya -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-locks.jpg" alt="Anahtar Çekimi, Kilit ve Mobilya" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 04
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Anahtar Çekimi, Kilit & Mobilya</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Balçova mağazamızda anahtar çoğaltma, Kale kilit barelleri, kapı kolları, menteşeler ve köşe gönyeleri.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              🔑 2 Dakikada Anahtar Kopyalama & Çilingir Çözümleri
-            </div>
-          </div>
-          <a href="kilit-kapi-hirdavat.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Anahtar, Kilit & Mobilya →
-          </a>
-        </div>
-      </div>
-
-      <!-- 05: Vida, Çivi & Bağlantı Elemanları -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-fasteners.jpg" alt="Vida, Çivi, Cıvata ve Dübel" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 05
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Vida, Çivi & Bağlantı Elemanları</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              Sunta vidaları, akıllı vidalar, çelik dübeller, plastik dübeller, metrik cıvatalar, somunlar ve inşaat çivileri.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              🔩 Tüm Boy ve Metrik Çaplarda Kutulu/Toptan Stok
-            </div>
-          </div>
-          <a href="baglanti-elemanlari.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Vida & Bağlantı Çeşitleri →
-          </a>
-        </div>
-      </div>
-
-      <!-- 06: El Aletleri -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-card-tools.jpg" alt="El Aletleri ve Hırdavat" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 06
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">El Aletleri</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              İzeltaş mekanik el aletleri, akülü makineler, silikon tabancaları, silikon, montaj köpüğü ve mastikler.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              🛠️ İzeltaş Yetkili Satıcısı · Ömür Boyu Garanti
-            </div>
-          </div>
-          <a href="el-aletleri.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            El Aletleri & Makineler →
-          </a>
-        </div>
-      </div>
-
-      <!-- 07: Haşere & Çevre Sağlığı -->
-      <div style="background: #FFFFFF; border: 1px solid var(--border-light); display: flex; flex-direction: column; overflow: hidden;">
-        <div style="aspect-ratio: 16/10; overflow: hidden; background: #EEE;">
-          <img src="assets/rf-brand-kothrine.jpg" alt="Bayer K-Othrine Çevre Sağlığı ve Haşere İlaçları" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="padding: 32px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-          <div>
-            <div style="font-family: var(--font-display); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--accent-terracotta); margin-bottom: 8px;">
-              DEPARTMAN 07
-            </div>
-            <h2 style="font-size: 22px; font-weight: 500; color: var(--text-main); margin-bottom: 10px;">Haşere &amp; Çevre Sağlığı</h2>
-            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-              T.C. Sağlık Bakanlığı onaylı orijinal Bayer K-Othrine SC50, AL ve Granül haşere mücadele serisi.
-            </p>
-            <div style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">
-              📍 Karekodlu Orijinal Şişe · Balçova Mağazadan Aynı Gün
-            </div>
-          </div>
-          <a href="k-othrine-hasere.html" class="rf-btn rf-btn-primary" style="text-align: center; display: block;">
-            Haşere &amp; Çevre Sağlığı →
+          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20malzeme%20al%C4%B1m%C4%B1%20ve%20palet%20y%C3%BCkleme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>WhatsApp ile Danış</span>
           </a>
         </div>
       </div>
@@ -381,7 +442,7 @@
     <div class="footer-sizer">
       <div>
         <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market & Taahhüt. Balçova / İzmir</div>
+        <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
       </div>
       
       <div class="menu-container">
@@ -390,7 +451,7 @@
           <div class="navbar-item menu-item">
             <span class="navbar-title">Yetkili Bayilikler</span>
             <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya & RenXMatik</a>
+              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
               <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
               <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
               <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
@@ -400,6 +461,7 @@
           <div class="navbar-item menu-item">
             <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
             <div class="navbar-dropdown">
+              <a href="malzemeler.html" class="navbar-item">Tümünü gör</a>
               <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
               <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
               <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
@@ -415,7 +477,7 @@
             <div class="navbar-dropdown">
               <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
               <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
+              <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
               <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
               <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
               <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
@@ -438,61 +500,56 @@
   </div>
 </footer>
 
-<!-- CONSULTATION MODAL -->
-<div class="rf-modal-overlay" id="consultationModal">
-  <div class="rf-modal-drawer">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <span style="font-family: var(--font-display); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-terracotta);">Danışmanlık // Form</span>
-        <button class="rf-modal-close" id="closeModalBtn" aria-label="Kapat">✕</button>
-      </div>
-
-      <h3 style="font-size: 24px; font-weight: 500; text-transform: uppercase; margin-bottom: 8px;">Proje & Malzeme Danışmanlığı</h3>
-      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 32px;">
-        İhtiyacınızı belirtin; uzman kadromuz stok veya ücretsiz keşif randevusu için sizinle doğrudan iletişime geçsin.
-      </p>
-
-      <form id="consultationForm">
-        <div class="rf-form-group">
-          <label class="rf-form-label">İhtiyaç / Proje Türü</label>
-          <select class="rf-form-select" id="formServiceSelect">
-            <option value="Filli Boya & RenXMatik Renk Hazırlama">Filli Boya & RenXMatik Renk Hazırlama</option>
-            <option value="Saint-Gobain Weber Yapı Kimyasalları">Saint-Gobain Weber Yapı Kimyasalları</option>
-            <option value="Bianca Stella Dönüşüm Boyası">Bianca Stella Dönüşüm Boyası & Sıvı Cam</option>
-            <option value="İsonem Su Yalıtımı">İsonem Su Yalıtımı & İzolasyon</option>
-            <option value="Bayer K-Othrine İlaçlama">Bayer K-Othrine Haşere İlacı</option>
-            <option value="Komple Daire Tadilatı Keşfi">Komple Daire Tadilatı Keşfi</option>
-            <option value="Banyo & Duşakabin Yenileme">Banyo & Duşakabin Yenileme</option>
-          </select>
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Adınız Soyadınız</label>
-          <input type="text" class="rf-form-input" id="formName" placeholder="Örn. Murat Çetin" required />
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Telefon Numaranız</label>
-          <input type="tel" class="rf-form-input" id="formPhone" placeholder="Örn. 0532 000 00 00" required />
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Detaylar / Malzeme / Renk Kodu</label>
-          <textarea class="rf-form-textarea" id="formNotes" rows="3" placeholder="İstediğiniz renk kodunu veya ürün miktarını yazabilirsiniz..."></textarea>
-        </div>
-
-        <button type="submit" class="rf-site-btn primary" style="width: 100%;">
-          WhatsApp ile Doğrudan İlet
-        </button>
-      </form>
-    </div>
-
-    <div style="font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 20px; margin-top: 24px;">
-      Doğrudan aramak için: <a href="tel:+902322784340" style="color: var(--text-main); font-weight: 500;">0232 278 43 40</a> (Haftanın 7 Günü Açık)
-    </div>
-  </div>
-</div>
-
 <script src="js/pervan.js?v=9.0.0"></script>
+<script>
+  (function() {
+    function initBrandsCarousel() {
+      var rail = document.getElementById('pvBrandsRail');
+      var prevBtn = document.getElementById('pvBrandsPrev');
+      var nextBtn = document.getElementById('pvBrandsNext');
+      if (!rail || !prevBtn || !nextBtn) return;
+
+      function updateNavState() {
+        var sl = Math.ceil(rail.scrollLeft);
+        var maxScroll = rail.scrollWidth - rail.clientWidth;
+        prevBtn.disabled = sl <= 5;
+        nextBtn.disabled = (sl + rail.clientWidth) >= (rail.scrollWidth - 5);
+      }
+
+      function getScrollStep() {
+        var tile = rail.querySelector('.pv-brand-tile');
+        return tile ? (tile.offsetWidth + 20) : 360;
+      }
+
+      prevBtn.addEventListener('click', function(e) {
+        if (prevBtn.disabled) {
+          e.preventDefault();
+          return;
+        }
+        rail.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', function(e) {
+        if (nextBtn.disabled) {
+          e.preventDefault();
+          return;
+        }
+        rail.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      });
+
+      rail.addEventListener('scroll', updateNavState, { passive: true });
+      window.addEventListener('resize', updateNavState, { passive: true });
+      window.addEventListener('load', updateNavState);
+      
+      updateNavState();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBrandsCarousel);
+    } else {
+      initBrandsCarousel();
+    }
+  })();
+</script>
 </body>
 </html>
