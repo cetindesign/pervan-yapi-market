@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-card-cement.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=34.4.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=34.5.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -248,7 +248,7 @@
               <span class="pv-spec-sep">&bull;</span>
               <span>Sıva &amp; Saten Alçı</span>
             </div>
-            <a href="#item-cimento" class="pv-stage-text-link">
+            <a href="#kabaCementPanel" class="pv-stage-text-link" id="pvStageExploreBtn">
               <span>Tüm Malzemeleri İncele</span>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -268,7 +268,7 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </button>
 
-    <a href="#pvSubnav" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
+    <a href="#kabaCementPanel" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
       <span>Kaba Yapı Kataloğunu Keşfet</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
     </a>
@@ -277,278 +277,598 @@
   <!-- ==========================================================================
        2. CANONICAL STICKY SUB-NAV (Pervan Design System Standard)
        ========================================================================== -->
-  <nav class="pv-subnav-hub pv-kaba-subnav" id="pvSubnav" aria-label="Kaba Yapı Departmanları">
+  <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Kaba Yapı Departmanları">
     <div class="pv-container pv-subnav-inner">
       <div class="pv-subnav-brand">
         <span class="pv-subnav-logo-badge">Kaba Yapı</span>
         <span class="pv-subnav-brand-title">Urla Dağıtım</span>
       </div>
+      
       <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
-        <button type="button" class="pv-subnav-link active" data-target="item-cimento">
+        <button type="button" class="pv-subnav-link active" data-target="kabaCementPanel" role="tab" aria-selected="true">
           Torbalı Çimento
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-alci">
-          Sıva &amp; Saten Alçı
+        <button type="button" class="pv-subnav-link" data-target="kabaPlasterPanel" role="tab" aria-selected="false">
+          Yapı Alçısı &amp; Sıva
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-kum">
+        <button type="button" class="pv-subnav-link" data-target="kabaAggregatesPanel" role="tab" aria-selected="false">
           Şap Kumu &amp; Agrega
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-gazbeton">
-          Gazbeton Harçları
+        <button type="button" class="pv-subnav-link" data-target="kabaMasonryPanel" role="tab" aria-selected="false">
+          Gazbeton &amp; Harçlar
         </button>
-        <button type="button" class="pv-subnav-link pv-calc-accent" data-target="hesaplayici-bolumu">
+        <button type="button" class="pv-subnav-link" data-target="kabaSimulatorPanel" role="tab" aria-selected="false">
           ⚡ Harç Simülatörü
         </button>
-        <button type="button" class="pv-subnav-link" data-target="lojistik-bolumu">
+        <button type="button" class="pv-subnav-link" data-target="kabaLogisticsPanel" role="tab" aria-selected="false">
           Şantiye Lojistiği
         </button>
-        <button type="button" class="pv-subnav-link" data-target="faq-bolumu">
-          Teknik SSS
+      </div>
+
+      <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
+      <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
+        <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
+          <span class="pv-dept-label" id="pvDeptTriggerLabel">Torbalı Çimento</span>
+          <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </button>
-        <button type="button" class="pv-subnav-link" data-target="depo-bolumu">
-          Depolarımız
+        <div class="pv-filter-rail" id="pvFilterRail">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </div>
+
+      <div class="pv-subnav-actions">
+        <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Ara</span>
+          <kbd class="pv-subnav-search-kbd">⌘K</kbd>
         </button>
+        <a href="https://wa.me/905323844497?text=Merhaba,%20Kaba%20Yapı%20ve%20Çimento%20şantiye%20palet%20fiyatı%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn">
+          <span>Palet Fiyatı Al</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
     </div>
   </nav>
   <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
   <!-- ==========================================================================
-       3. PRO TRADE MATERIAL FEED
+       PANEL 1: TORBALI ÇİMENTO & BAĞLAYICILAR
        ========================================================================== -->
-  <section class="pv-kaba-section" style="padding-top: 32px; background:#F8FAFC;">
+  <div class="pv-tab-panel active" id="kabaCementPanel" role="tabpanel">
     <div class="pv-container">
-      
-      <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
-        <span class="pv-hubs-pretitle">Urla Ana Depo Dağıtım Portföyü</span>
-        <h2 class="pv-hubs-title">Şantiye Temel Kaba Yapı Malzemeleri</h2>
-        <p class="pv-hubs-desc">Teknik standartlara (EN 197-1 / EN 13279-1) tam uyumlu, şantiyeye doğrudan sevkiyatlı çimento, alçı, agrega ve yapı harçları.</p>
+      <div class="pv-menu-pills-wrap">
+        <div class="pv-menu-pills" id="cementMenuPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tumu" role="tab" aria-selected="true">Tümü</button>
+          <button type="button" class="pv-menu-pill" data-filter="portland-cimento" role="tab" aria-selected="false">Portland Çimento</button>
+          <button type="button" class="pv-menu-pill" data-filter="katkili-cimento" role="tab" aria-selected="false">Katkılı Çimento</button>
+          <button type="button" class="pv-menu-pill" data-filter="beyaz-cimento" role="tab" aria-selected="false">Beyaz Çimento</button>
+          <button type="button" class="pv-menu-pill" data-filter="harc-cimento" role="tab" aria-selected="false">Harç Çimentosu</button>
+        </div>
       </div>
 
-      <div class="pv-trade-feed">
-
-        <!-- ITEM 1: ÇİMENTO -->
-        <article class="pv-trade-item" data-category="cimento" id="item-cimento">
-          <div class="pv-trade-item-header">
-            <div class="pv-trade-standard-row">
-              <span class="pv-trade-code">TS EN 197-1 CEM I 42.5 R</span>
-            </div>
-            <h3 class="pv-trade-item-title">Portland Çimento (Yüksek Erken Mukavemet)</h3>
-            <p class="pv-trade-item-desc">Taşıyıcı betonarme, helikopterli zemin şapı, kolon-kiriş takviyesi ve prekast imalatları için saf Portland çimentosu.</p>
+      <div class="pv-menu-list" id="cementMenuList">
+        <!-- Item 1: CEM I 42.5 R -->
+        <div class="pv-menu-row" data-category="portland-cimento" data-product-id="cimento-cem-1-42-5" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Portland Çimento CEM I 42.5 R" loading="lazy" decoding="async" />
           </div>
-
-          <div class="pv-trade-kpis">
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">28 Gün Dayanım</span>
-              <span class="pv-trade-kpi-val">≥ 42.5 MPa</span>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Portland Çimento CEM I 42.5 R</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-amber">CEM I 42.5 R</span>
             </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Priz Başlangıcı</span>
-              <span class="pv-trade-kpi-val">≥ 60 Dakika</span>
-            </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">2 Gün Erken Dayanım</span>
-              <span class="pv-trade-kpi-val">≥ 20.0 MPa</span>
+            <div class="pv-menu-desc-line">Taşıyıcı betonarme, helikopterli zemin şapı ve kolon güçlendirmesi için yüksek erken mukavemetli saf Portland çimentosu.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 197-1</span>
+              <span>&bull;</span>
+              <span>≥ 42.5 MPa</span>
+              <span>&bull;</span>
+              <span>50 kg Kraft Torba</span>
+              <span>&bull;</span>
+              <span>Urla Depo Sevk</span>
             </div>
           </div>
-
-          <div class="pv-trade-switch-wrap">
-            <span class="pv-trade-switch-label">Ambalaj &amp; Teslimat Formatı</span>
-            <div class="pv-trade-segmented-bar" data-item="cimento">
-              <button class="pv-trade-seg-btn active" data-unit="torba" data-weight="50 kg" data-vehicle="Transit / Kamyonet" data-text="50 kg Torba CEM I 42.5 R">
-                50 kg Torba
-                <small>Tekli / Perakende</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="palet" data-weight="1.500 kg" data-vehicle="Vinçli Palet / 6-Teker" data-text="1 Palet (30 Torba / 1.5 Ton) CEM I 42.5 R">
-                1 Palet (30 Adet)
-                <small>1.5 Ton Shrinkli</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="dokme" data-weight="10 - 25 Ton" data-vehicle="Damperli Tır / Kamyon" data-text="Kamyon Bazı CEM I 42.5 R">
-                Kamyon / Dökme
-                <small>Şantiye Sevk</small>
-              </button>
-            </div>
-
-            <div class="pv-trade-unit-output" id="out-cimento">
-              <div class="pv-trade-unit-meta">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                <span class="pv-trade-unit-desc">Seçim: <strong>50 kg Kraft Torba</strong> • Transit Sevk</span>
-              </div>
-              <a href="https://wa.me/905323844497?text=Merhaba,%2050%20kg%20Torba%20CEM%20I%2042.5%20R%20Portland%20Çimento%20için%20şantiye%20teslim%20fiyatı%20almak%20istiyorum." class="pv-trade-action-btn" target="_blank" rel="noopener">
-                Teklif Al →
-              </a>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- ITEM 2: ALÇI GRUBU -->
-        <article class="pv-trade-item" data-category="alci" id="item-alci">
-          <div class="pv-trade-item-header">
-            <div class="pv-trade-standard-row">
-              <span class="pv-trade-code">TS EN 13279-1 Tip B1/B4</span>
-            </div>
-            <h3 class="pv-trade-item-title">Yapı &amp; Sıva Alçısı Grubu (Kaba / Saten / Makine)</h3>
-            <p class="pv-trade-item-desc">Tuğla, brüt beton ve gazbeton yüzeylerde yüksek aderans sağlayan, nefes alan perlitli sıva ve saten perdah sistemi.</p>
+        <!-- Item 2: CEM II 32.5 R -->
+        <div class="pv-menu-row" data-category="katkili-cimento" data-product-id="cimento-cem-2-32-5" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Katkılı Çimento CEM II 32.5 R" loading="lazy" decoding="async" />
           </div>
-
-          <div class="pv-trade-kpis">
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Basınç Dayanımı</span>
-              <span class="pv-trade-kpi-val">≥ 2.5 N/mm²</span>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Katkılı Çimento CEM II / B-LL 32.5 R</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-blue">CEM II 32.5 R</span>
             </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Çalışma Süresi</span>
-              <span class="pv-trade-kpi-val">120 - 150 Dk</span>
-            </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Sarfiyat (1 cm)</span>
-              <span class="pv-trade-kpi-val">~9.0 kg/m²</span>
+            <div class="pv-menu-desc-line">Tuğla-briket örme harçları, kaba sıva ve genel inşaat işleri için kalker katkılı ekonomik klinker bağlayıcı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 197-1</span>
+              <span>&bull;</span>
+              <span>≥ 32.5 MPa</span>
+              <span>&bull;</span>
+              <span>50 kg Kraft</span>
+              <span>&bull;</span>
+              <span>Ekonomik</span>
             </div>
           </div>
-
-          <div class="pv-trade-switch-wrap">
-            <span class="pv-trade-switch-label">Ambalaj &amp; Teslimat Formatı</span>
-            <div class="pv-trade-segmented-bar" data-item="alci">
-              <button class="pv-trade-seg-btn active" data-unit="torba" data-weight="35 kg" data-vehicle="Transit Kamyonet" data-text="35 kg PP Torba Sıva / Saten Alçısı">
-                35 kg Torba
-                <small>Perlitli / Saten</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="palet" data-weight="1.400 kg" data-vehicle="Vinçli Palet / Kat İndirme" data-text="1 Palet (40 Torba / 1.4 Ton) Sıva Alçısı">
-                1 Palet (40 Adet)
-                <small>1.4 Ton Shrinkli</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="makine" data-weight="Kamyon Bazı" data-vehicle="Şantiye Sevk" data-text="Makine Sıva Alçısı Toptan Şantiye Sevk">
-                Makine Sıvası
-                <small>Dökme / Paletli</small>
-              </button>
-            </div>
-
-            <div class="pv-trade-unit-output" id="out-alci">
-              <div class="pv-trade-unit-meta">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                <span class="pv-trade-unit-desc">Seçim: <strong>35 kg Torba</strong> • Şantiye Sevk</span>
-              </div>
-              <a href="https://wa.me/905323844497?text=Merhaba,%2035%20kg%20Torba%20Sıva/Saten%20Alçısı%20için%20fiyat%20almak%20istiyorum." class="pv-trade-action-btn" target="_blank" rel="noopener">
-                Teklif Al →
-              </a>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- ITEM 3: ŞAP KUMU & AGREGA -->
-        <article class="pv-trade-item" data-category="kum" id="item-kum">
-          <div class="pv-trade-item-header">
-            <div class="pv-trade-standard-row">
-              <span class="pv-trade-code">TS 706 EN 12620 Agrega</span>
-            </div>
-            <h3 class="pv-trade-item-title">0-3 mm Yıkanmış &amp; Elenmiş Şap Kumu</h3>
-            <p class="pv-trade-item-desc">Kil ve milden arındırılmış, homojen dane yapısına sahip helikopter şapı ve ince sıva kumu.</p>
+        <!-- Item 3: Beyaz Çimento -->
+        <div class="pv-menu-row" data-category="beyaz-cimento" data-product-id="cimento-beyaz-cem-1-52-5" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Süper Beyaz Çimento CEM I 52.5 R" loading="lazy" decoding="async" />
           </div>
-
-          <div class="pv-trade-kpis">
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Dane Dağılımı</span>
-              <span class="pv-trade-kpi-val">0 - 3 mm Elenmiş</span>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Süper Beyaz Çimento CEM I 52.5 R</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-green">Beyazlık ≥ %85</span>
             </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Kil / İnce Madde</span>
-              <span class="pv-trade-kpi-val">≤ %1.5 (Yıkanmış)</span>
-            </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Hacim Ağırlığı</span>
-              <span class="pv-trade-kpi-val">~1.58 ton/m³</span>
+            <div class="pv-menu-desc-line">Mimari prekast paneller, havuz derzleri ve dekoratif dökümlerde ultra yüksek beyazlık ve mukavemet.</div>
+            <div class="pv-menu-meta-chips">
+              <span>≥ 52.5 MPa</span>
+              <span>&bull;</span>
+              <span>Hunter Y %85.5+</span>
+              <span>&bull;</span>
+              <span>25 kg / 50 kg Torba</span>
             </div>
           </div>
-
-          <div class="pv-trade-switch-wrap">
-            <span class="pv-trade-switch-label">Ambalaj &amp; Teslimat Formatı</span>
-            <div class="pv-trade-segmented-bar" data-item="kum">
-              <button class="pv-trade-seg-btn active" data-unit="cuval" data-weight="40 kg" data-vehicle="Transit / Kamyonet" data-text="40 kg Çuval Şap Kumu">
-                40 kg Çuval
-                <small>Temiz Ambalaj</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="bigbag" data-weight="1.000 kg" data-vehicle="Vinçli Big-Bag Sevk" data-text="1 Tonluk Big-Bag Şap Kumu">
-                1 Ton Big-Bag
-                <small>Vinçli İndirme</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="damper" data-weight="10 - 20 Ton" data-vehicle="Damperli Kamyon Dökme" data-text="Damperli Dökme Kamyon Şap Kumu">
-                Damper Dökme
-                <small>Saha / Döküm</small>
-              </button>
-            </div>
-
-            <div class="pv-trade-unit-output" id="out-kum">
-              <div class="pv-trade-unit-meta">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                <span class="pv-trade-unit-desc">Seçim: <strong>40 kg Çuval</strong> • Hızlı Sevk</span>
-              </div>
-              <a href="https://wa.me/905323844497?text=Merhaba,%2040%20kg%20Çuval%20Şap%20Kumu%20için%20şantiye%20fiyatı%20almak%20istiyorum." class="pv-trade-action-btn" target="_blank" rel="noopener">
-                Teklif Al →
-              </a>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- ITEM 4: GAZBETON HARCI -->
-        <article class="pv-trade-item" data-category="gazbeton" id="item-gazbeton">
-          <div class="pv-trade-item-header">
-            <div class="pv-trade-standard-row">
-              <span class="pv-trade-code">TS EN 998-2 Sınıf G-M10</span>
-            </div>
-            <h3 class="pv-trade-item-title">Gazbeton &amp; Ytong Blok Yapıştırıcı Harcı</h3>
-            <p class="pv-trade-item-desc">Isı köprüsü yapmayan, 1-3 mm ince derz uygulamasına uygun yüksek yapışma mukavemetli örgü harcı.</p>
+        <!-- Item 4: Harç Çimentosu -->
+        <div class="pv-menu-row" data-category="harc-cimento" data-product-id="cimento-duvar-harc" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Hazır Harç Çimentosu MC 12.5" loading="lazy" decoding="async" />
           </div>
-
-          <div class="pv-trade-kpis">
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Basınç Dayanımı</span>
-              <span class="pv-trade-kpi-val">≥ 10.0 N/mm²</span>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Hazır Harç Çimentosu (MC 12.5)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-purple">Kireçsiz Kolay Harç</span>
             </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Yapışma / Aderans</span>
-              <span class="pv-trade-kpi-val">≥ 0.30 N/mm²</span>
-            </div>
-            <div class="pv-trade-kpi">
-              <span class="pv-trade-kpi-label">Sarfiyat (10 cm)</span>
-              <span class="pv-trade-kpi-val">~3.5 kg/m²</span>
+            <div class="pv-menu-desc-line">Kireç ilavesi gerektirmeyen, hava sürükleyici polimer katkılı, yüksek yağlılığa ve mala kayganlığına sahip harç çimentosu.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 413-1</span>
+              <span>&bull;</span>
+              <span>MC 12.5</span>
+              <span>&bull;</span>
+              <span>40 kg Kraft Torba</span>
             </div>
           </div>
-
-          <div class="pv-trade-switch-wrap">
-            <span class="pv-trade-switch-label">Ambalaj &amp; Teslimat Formatı</span>
-            <div class="pv-trade-segmented-bar" data-item="gazbeton">
-              <button class="pv-trade-seg-btn active" data-unit="torba" data-weight="25 kg" data-vehicle="Transit Kamyonet" data-text="25 kg Kraft Torba Gazbeton Harcı">
-                25 kg Torba
-                <small>Tekli Alım</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="palet" data-weight="1.200 kg" data-vehicle="Vinçli Palet / Şantiye Sevk" data-text="1 Palet (48 Torba / 1.2 Ton) Gazbeton Harcı">
-                1 Palet (48 Adet)
-                <small>1.2 Ton Shrinkli</small>
-              </button>
-              <button class="pv-trade-seg-btn" data-unit="proje" data-weight="Kamyon Bazı" data-vehicle="Toplu Proje Sevk" data-text="Toplu Şantiye Paletli Gazbeton Harcı">
-                Şantiye / Proje
-                <small>Kademeli Sevk</small>
-              </button>
-            </div>
-
-            <div class="pv-trade-unit-output" id="out-gazbeton">
-              <div class="pv-trade-unit-meta">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                <span class="pv-trade-unit-desc">Seçim: <strong>25 kg Torba</strong> • Hızlı Sevk</span>
-              </div>
-              <a href="https://wa.me/905323844497?text=Merhaba,%2025%20kg%20Gazbeton%20Yapıştırıcı%20harcı%20için%20fiyat%20almak%20istiyorum." class="pv-trade-action-btn" target="_blank" rel="noopener">
-                Teklif Al →
-              </a>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </div>
           </div>
-        </article>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- ==========================================================================
+       PANEL 2: YAPI & SIVA ALÇISI GRUBU
+       ========================================================================== -->
+  <div class="pv-tab-panel" id="kabaPlasterPanel" role="tabpanel" style="display:none;">
+    <div class="pv-container">
+      <div class="pv-menu-pills-wrap">
+        <div class="pv-menu-pills" id="plasterMenuPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tumu" role="tab" aria-selected="true">Tümü</button>
+          <button type="button" class="pv-menu-pill" data-filter="siva-alcisi" role="tab" aria-selected="false">Sıva Alçısı</button>
+          <button type="button" class="pv-menu-pill" data-filter="saten-alci" role="tab" aria-selected="false">Saten Perdah</button>
+          <button type="button" class="pv-menu-pill" data-filter="makine-alci" role="tab" aria-selected="false">Makine Sıvası</button>
+          <button type="button" class="pv-menu-pill" data-filter="kartonpiyer-derz" role="tab" aria-selected="false">Alçıpan Derz</button>
+        </div>
       </div>
 
-      <!-- ==========================================================================
-           4. ENTEGRE AKILLI ŞANTİYE HARÇ SİMÜLATÖRÜ
-           ========================================================================== -->
-      <section class="pv-trade-sim-card" id="hesaplayici-bolumu">
+      <div class="pv-menu-list" id="plasterMenuList">
+        <!-- Item 1: Perlitli Sıva Alçısı -->
+        <div class="pv-menu-row" data-category="siva-alcisi" data-product-id="alci-perlitli-siva" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="Perlitli Sıva Alçısı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Perlitli Sıva Alçısı (El Sıvası)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-amber">TS EN 13279-1 B1</span>
+            </div>
+            <div class="pv-menu-desc-line">Tuğla, brüt beton ve gazbetonda nefes alan, yangına dayanıklı hafifletilmiş perlitli iç mekan kaba sıvası.</div>
+            <div class="pv-menu-meta-chips">
+              <span>Basınç: ≥ 2.5 N/mm²</span>
+              <span>&bull;</span>
+              <span>Sarfiyat: ~9 kg/m²</span>
+              <span>&bull;</span>
+              <span>35 kg PP Torba</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Saten Perdah -->
+        <div class="pv-menu-row" data-category="saten-alci" data-product-id="alci-saten-perdah" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="Saten Perdah Alçısı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Saten Perdah Alçısı (Son Kat Pürüzsüzlük)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-green">Boya Altı Macun</span>
+            </div>
+            <div class="pv-menu-desc-line">Boya öncesi pürüzsüz, kılcal çatlaksız ve macun kıvamında yüzey oluşturan ekstra beyaz saten perdah alçısı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>Ultra İnce Mikron</span>
+              <span>&bull;</span>
+              <span>~0.9 kg/m²</span>
+              <span>&bull;</span>
+              <span>30 kg Kraft</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Makine Sıvası -->
+        <div class="pv-menu-row" data-category="makine-alci" data-product-id="alci-makine-sivasi" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="Makine Sıva Alçısı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Makine Sıva Alçısı (Püskürtmeli Tip)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-blue">Püskürtmeli Şantiye</span>
+            </div>
+            <div class="pv-menu-desc-line">Sıva pompalarıyla geniş duvar ve tavan yüzeylerine tek katta hızlı uygulanan yüksek verimli iç mekan sıvası.</div>
+            <div class="pv-menu-meta-chips">
+              <span>Tek Katta 10-25 mm</span>
+              <span>&bull;</span>
+              <span>~8.5 kg/m²</span>
+              <span>&bull;</span>
+              <span>35 kg Torba</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Alçıpan Derz Dolgu -->
+        <div class="pv-menu-row" data-category="kartonpiyer-derz" data-product-id="alci-derz-dolgu-yapistirici" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="Alçıpan Derz Dolgu Alçısı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Alçıpan Derz Dolgu &amp; Yapıştırma Alçısı</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-purple">Elastik &amp; Çatlamaz</span>
+            </div>
+            <div class="pv-menu-desc-line">Alçı plaka ek yerlerinde çatlama önleyici derz bandı uygulaması ve plaka duvar montajı için elastik dolgu harcı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 13963</span>
+              <span>&bull;</span>
+              <span>Yüksek Esneklik</span>
+              <span>&bull;</span>
+              <span>25 kg Kraft</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 3: ŞAP KUMU, ÇAKIL & AGREGA
+       ========================================================================== -->
+  <div class="pv-tab-panel" id="kabaAggregatesPanel" role="tabpanel" style="display:none;">
+    <div class="pv-container">
+      <div class="pv-menu-pills-wrap">
+        <div class="pv-menu-pills" id="aggregatesMenuPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tumu" role="tab" aria-selected="true">Tümü</button>
+          <button type="button" class="pv-menu-pill" data-filter="sap-kumu" role="tab" aria-selected="false">Şap Kumu</button>
+          <button type="button" class="pv-menu-pill" data-filter="siva-kumu" role="tab" aria-selected="false">Sıva Kumu</button>
+          <button type="button" class="pv-menu-pill" data-filter="micir-cakil" role="tab" aria-selected="false">Mıcır &amp; Çakıl</button>
+          <button type="button" class="pv-menu-pill" data-filter="dekoratif-agrega" role="tab" aria-selected="false">Beyaz Dolomit</button>
+        </div>
+      </div>
+
+      <div class="pv-menu-list" id="aggregatesMenuList">
+        <!-- Item 1: Şap Kumu -->
+        <div class="pv-menu-row" data-category="sap-kumu" data-product-id="kum-sap-03-elenmis" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="0-3 mm Yıkanmış &amp; Elenmiş Şap Kumu" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">0–3 mm Yıkanmış &amp; Elenmiş Şap Kumu</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-amber">TS 706 EN 12620</span>
+            </div>
+            <div class="pv-menu-desc-line">Kil ve milden arındırılmış, homojen dane yapısına sahip helikopter şapı ve zemin tesviye agregası.</div>
+            <div class="pv-menu-meta-chips">
+              <span>0-3 mm Elenmiş</span>
+              <span>&bull;</span>
+              <span>Kil: ≤ %1.5</span>
+              <span>&bull;</span>
+              <span>40 kg Çuval / Big-Bag / Damper</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Sıva Kumu -->
+        <div class="pv-menu-row" data-category="siva-kumu" data-product-id="kum-siva-05-yikanmis" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="0-5 mm İnce Sıva &amp; Duvar Kumu" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">0–5 mm İnce Sıva &amp; Duvar Kumu</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-blue">Yıkanmış Sıva Kumu</span>
+            </div>
+            <div class="pv-menu-desc-line">Kaba-ince sıva harçları ve tuğla duvar örme karışımları için elenmiş temiz agrega.</div>
+            <div class="pv-menu-meta-chips">
+              <span>0-5 mm Dane</span>
+              <span>&bull;</span>
+              <span>Yüksek Aderans</span>
+              <span>&bull;</span>
+              <span>40 kg Çuval / Big-Bag</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Mıcır & Çakıl -->
+        <div class="pv-menu-row" data-category="micir-cakil" data-product-id="micir-1-numara-cakil" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="7-15 mm 1 No Kırma Mıcır &amp; Çakıl" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">7–15 mm 1 No Kırma Mıcır &amp; Çakıl</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-green">Drenaj &amp; Beton</span>
+            </div>
+            <div class="pv-menu-desc-line">Saha betonu, otopark zemin takviyesi, istinat arkası su drenajı ve çevre düzenleme için kalker kırma mıcır.</div>
+            <div class="pv-menu-meta-chips">
+              <span>7-15 mm</span>
+              <span>&bull;</span>
+              <span>Kalker Kırmataş</span>
+              <span>&bull;</span>
+              <span>40 kg Çuval / Dökme</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Beyaz Dolomit -->
+        <div class="pv-menu-row" data-category="dekoratif-agrega" data-product-id="agrega-beyaz-dolomit" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-hero-materials.jpg" alt="Beyaz Dolomit Taşı 15-30 mm" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Beyaz Dolomit Taşı (15–30 mm)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-purple">Peyzaj &amp; Dekorasyon</span>
+            </div>
+            <div class="pv-menu-desc-line">Villa bahçeleri, havuz çevreleri, ağaç dipleri ve mimari saksılarda doğal parlak kar beyazı tamburlanmış dolomit taşı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>15-30 mm Ebat</span>
+              <span>&bull;</span>
+              <span>Doğal Beyaz Mermer</span>
+              <span>&bull;</span>
+              <span>25 kg Çuval</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 4: GAZBETON & YAPI HARÇLARI
+       ========================================================================== -->
+  <div class="pv-tab-panel" id="kabaMasonryPanel" role="tabpanel" style="display:none;">
+    <div class="pv-container">
+      <div class="pv-menu-pills-wrap">
+        <div class="pv-menu-pills" id="masonryMenuPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tumu" role="tab" aria-selected="true">Tümü</button>
+          <button type="button" class="pv-menu-pill" data-filter="gazbeton-harci" role="tab" aria-selected="false">Gazbeton Harcı</button>
+          <button type="button" class="pv-menu-pill" data-filter="hazir-sap-harci" role="tab" aria-selected="false">Hazır Şap &amp; Duvar</button>
+          <button type="button" class="pv-menu-pill" data-filter="isi-yalitim-harci" role="tab" aria-selected="false">Mantolama Harcı</button>
+        </div>
+      </div>
+
+      <div class="pv-menu-list" id="masonryMenuList">
+        <!-- Item 1: Gazbeton Harcı -->
+        <div class="pv-menu-row" data-category="gazbeton-harci" data-product-id="harc-gazbeton-ytong" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Gazbeton &amp; Ytong Örgü Harcı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Gazbeton &amp; Ytong Blok Örgü Harcı</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-amber">TS EN 998-2 G-M10</span>
+            </div>
+            <div class="pv-menu-desc-line">Isı köprüsü yapmayan, 1-3 mm ince derz uygulamasına uygun yüksek yapışma mukavemetli örgü harcı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>Basınç: ≥ 10.0 MPa</span>
+              <span>&bull;</span>
+              <span>Aderans: ≥ 0.30 N/mm²</span>
+              <span>&bull;</span>
+              <span>25 kg Kraft</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Hazır Duvar Harcı -->
+        <div class="pv-menu-row" data-category="hazir-sap-harci" data-product-id="harc-hazir-kaba-duvar" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Hazır Kaba Duvar &amp; Tuğla Harcı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Hazır Kaba Duvar &amp; Tuğla Harcı (M5)</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-blue">M5 Standart</span>
+            </div>
+            <div class="pv-menu-desc-line">Kum ve çimento karıştırma zahmeti olmadan, yalnızca su ilavesi ile hazırlanan fabrikasyon kontrollü tuğla harcı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 998-2 M5</span>
+              <span>&bull;</span>
+              <span>Yalnızca Su İlavesi</span>
+              <span>&bull;</span>
+              <span>25 kg Torba</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Hazır Şap C20 -->
+        <div class="pv-menu-row" data-category="hazir-sap-harci" data-product-id="harc-hazir-sap-c20" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Hazır Kuru Zemin Şap Harcı C20" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Hazır Kuru Zemin Şap Harcı C20-C25</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-green">CT-C20-F4</span>
+            </div>
+            <div class="pv-menu-desc-line">Kum-çimento eleme derdi olmadan, mikserle doğrudan karıştırılıp dökülen helikopterli ve mastarlı hazır zemin şapı.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 13813</span>
+              <span>&bull;</span>
+              <span>Çatlama Dirençli</span>
+              <span>&bull;</span>
+              <span>25 kg Torba</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Mantolama Harcı -->
+        <div class="pv-menu-row" data-category="isi-yalitim-harci" data-product-id="harc-isi-yalitim-levha" role="button" tabindex="0">
+          <div class="pv-menu-thumb">
+            <img src="assets/rf-card-cement.jpg" alt="Isı Yalıtım Levha Yapıştırma &amp; Sıva Harcı" loading="lazy" decoding="async" />
+          </div>
+          <div class="pv-menu-main">
+            <div class="pv-menu-title-row">
+              <span class="pv-menu-name">Isı Yalıtım Levha Yapıştırma &amp; Sıva Harcı</span>
+              <span class="pv-menu-dots">........................................</span>
+              <span class="pv-menu-tag tag-purple">Elyaf Takviyeli</span>
+            </div>
+            <div class="pv-menu-desc-line">Dış cephe mantolama sistemlerinde EPS, XPS ve Taşyünü levhaların yapıştırılması ve fileli sıva katı için elyaflı harç.</div>
+            <div class="pv-menu-meta-chips">
+              <span>TS EN 13499</span>
+              <span>&bull;</span>
+              <span>Polimer &amp; Elyaf</span>
+              <span>&bull;</span>
+              <span>25 kg Kraft</span>
+            </div>
+          </div>
+          <div class="pv-menu-aside">
+            <span class="pv-menu-action-label">Teknik Detay</span>
+            <div class="pv-menu-arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 5: AKILLI ŞANTİYE HARÇ SİMÜLATÖRÜ
+       ========================================================================== -->
+  <div class="pv-tab-panel" id="kabaSimulatorPanel" role="tabpanel" style="display:none;">
+    <div class="pv-container">
+      <div class="pv-trade-sim-card">
         <div class="pv-trade-sim-header">
           <span class="pv-trade-sim-badge">Akıllı Şantiye Reçete Motoru</span>
           <h2 class="pv-trade-sim-title">Harç, Şap &amp; Çimento Metraj Simülatörü</h2>
@@ -614,15 +934,14 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.073-2.027-.477-1.584-.657-2.618-2.26-2.697-2.366-.079-.105-.648-.863-.648-1.644 0-.781.408-1.166.554-1.325.145-.158.319-.198.425-.198.106 0 .213.002.306.007.098.005.23-.037.36.276.13.313.447 1.092.487 1.172.04.079.066.172.013.277-.053.106-.079.172-.158.265-.079.092-.167.206-.238.277-.08.079-.163.165-.07.324.093.159.412.68.884 1.101.608.542 1.12.71 1.279.79.159.079.252.066.345-.04.093-.105.397-.462.503-.62.106-.159.212-.132.358-.079.146.053.926.437 1.085.516.159.079.265.119.305.185.04.066.04.383-.104.788z"/></svg>
           Bu Reçete İçin Şantiye Teslim Fiyatı Al
         </a>
-      </section>
-
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- ==========================================================================
-       5. ŞANTİYE LOJİSTİĞİ & BOŞALTMA PROTOKOLÜ
+       PANEL 6: İZMİR – ÇEŞME ŞANTİYE LOJİSTİĞİ
        ========================================================================== -->
-  <section id="lojistik-bolumu" style="background:#FFFFFF; border-top:1px solid rgba(0,0,0,0.08); border-bottom:1px solid rgba(0,0,0,0.08); padding:56px 0;">
+  <div class="pv-tab-panel" id="kabaLogisticsPanel" role="tabpanel" style="display:none;">
     <div class="pv-container">
       <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
         <span class="pv-hubs-pretitle">Urla Depo Dağıtım Ağı</span>
@@ -664,12 +983,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ==========================================================================
        6. TEKNİK ŞARTNAME & SSS ACCORDION
        ========================================================================== -->
-  <section id="faq-bolumu" class="pv-faq-section">
+  <section class="pv-faq-section">
     <div class="pv-container">
       <div class="pv-faq-header">
         <span class="pv-faq-pretitle">Teknik Şartnameler &amp; Standartlar</span>
@@ -721,7 +1040,7 @@
   <!-- ==========================================================================
        7. GPS HUBS & DEPOLARIMIZ
        ========================================================================== -->
-  <section id="depo-bolumu" class="pv-hubs-section">
+  <section class="pv-hubs-section">
     <div class="pv-container">
       <div class="pv-hubs-header">
         <div class="pv-hubs-pretitle">Pervan Dağıtım Noktaları</div>
@@ -776,8 +1095,6 @@
   </section>
 
 </main>
-
-
 
 <!-- PERVAN CANONICAL FOOTER -->
 <footer class="footer">
@@ -843,310 +1160,1372 @@
   </div>
 </footer>
 
+<!-- ==========================================================================
+     ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
+     ========================================================================== -->
+<div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
+  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="pv-modal-top-bar" id="modalTopBar">
+      <div class="pv-modal-handle-zone" id="modalHandleZone">
+        <div class="pv-modal-handle"></div>
+      </div>
+      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="pv-modal-scroll" id="modalScrollArea">
+      <div class="pv-specimen-hero">
+        <div class="pv-specimen-meta">
+          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">URLA ANA LOJİSTİK DEPO · KABA YAPI DAĞITIM</div>
+          <h3 class="pv-specimen-title" id="modalProductTitle">Portland Çimento CEM I 42.5 R</h3>
+        </div>
+
+        <div class="pv-specimen-can-stage">
+          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+          <img id="modalProductImg" src="assets/rf-card-cement.jpg" alt="Ürün Görseli" />
+          <div class="pv-can-shadow" id="modalCanShadow"></div>
+        </div>
+
+        <p class="pv-specimen-desc" id="modalProductDesc">Taşıyıcı betonarme, helikopterli zemin şapı ve kolon güçlendirmesi için yüksek erken mukavemetli saf Portland çimentosu.</p>
+        <span id="modalProductTag" style="display:none;"></span>
+      </div>
+
+      <div class="pv-modal-select-group">
+        <div class="pv-modal-select-header">
+          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Formatı</span>
+        </div>
+        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Formatı">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="pv-spec-gauges" id="modalSpecGauges">
+        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
+          <div class="pv-gauge-eyebrow">STANDART &amp; MUKAVEMET</div>
+          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14px; font-weight: 800; color: #111215;">TS EN 197-1 CEM I 42.5 R</div>
+          <div class="pv-gauge-caption" id="modalGaugeStandardCaption">CE &amp; TSE Belgeli</div>
+        </div>
+
+        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
+          <div class="pv-gauge-eyebrow">SARFİYAT ORANI</div>
+          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14px; font-weight: 800; color: #111215;">~300 - 350 kg/m³</div>
+          <div class="pv-gauge-caption" id="modalSpecPackaging">50 kg Kraft Torba</div>
+        </div>
+      </div>
+
+      <div class="pv-specs-table" id="modalSpecsTable">
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Karışım Oranı:</span>
+          <span class="pv-spec-v" id="modalSpecMixing">Su/Çimento: ~0.45</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Priz &amp; Mukavemet:</span>
+          <span class="pv-spec-v" id="modalSpecPotLife">≥ 60 dk priz · 2 günde 20 MPa</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Lojistik Sevkiyat:</span>
+          <span class="pv-spec-v" id="modalSpecLogistics">Urla Ana Depo Damperli / Vinçli</span>
+        </div>
+      </div>
+
+      <div class="pv-modal-accordions" id="modalAccordions">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+
+    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp ile Şantiye Palet / Tonaj Fiyatı Al</span>
+      </a>
+      <div class="pv-modal-footer-aux">
+        <span class="pv-modal-delivery-chip">
+          <span class="pv-chip-pulse"></span>
+          <span>Urla Ana Depo Çıkışlı · Aynı Gün Şantiye Teslimatı</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     MOBILE iOS BOTTOM SHEET DRAWER (Department Switcher)
+     ========================================================================== -->
+<div class="pv-drawer-backdrop" id="pvDeptDrawerBackdrop" aria-hidden="true">
+  <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
+      <div class="pv-drawer-handle"></div>
+    </div>
+    
+    <div class="pv-drawer-header">
+      <div>
+        <h3 class="pv-drawer-title" id="drawerTitle">Kaba Yapı Departmanları</h3>
+        <div class="pv-drawer-subtitle">İncelemek istediğiniz malzeme grubunu seçin</div>
+      </div>
+      <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="pv-drawer-list" id="pvDeptList">
+      <!-- Injected via JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     SPOTLIGHT QUICK SEARCH MODAL (Cmd+K / Search)
+     ========================================================================== -->
+<div class="pv-spotlight-backdrop" id="pvSpotlightBackdrop" aria-hidden="true">
+  <div class="pv-spotlight-modal" id="pvSpotlightModal" role="dialog" aria-modal="true" aria-label="Hızlı Ürün Arama">
+    <div class="pv-spotlight-input-wrap">
+      <svg class="pv-spotlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="search" class="pv-spotlight-input" id="pvSpotlightInput" placeholder="Kaba yapı malzemesi ara (örn: CEM I 42.5, şap kumu, alçı, Ytong...)" autocomplete="off" autocorrect="off" spellcheck="false" />
+      <kbd class="pv-spotlight-kbd-hint">ESC</kbd>
+    </div>
+    <div class="pv-spotlight-results" id="pvSpotlightResults">
+      <!-- Results populated via JS -->
+    </div>
+  </div>
+</div>
+
 <script src="js/pervan.js?v=9.0.0"></script>
 <script>
-  (function() {
-    // 1. Stage Hero Carousel Controller
-    var track = document.getElementById('pvStageTrack');
-    var slides = document.querySelectorAll('.pv-stage-slide');
-    var prevBtn = document.getElementById('pvStagePrev');
-    var nextBtn = document.getElementById('pvStageNext');
-    var currentIndex = 0;
-    var autoPlayTimer = null;
+(function() {
+  "use strict";
 
-    function goToSlide(index) {
-      if (!track || slides.length === 0) return;
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      currentIndex = index;
-
-      var targetSlide = slides[currentIndex];
-      if (targetSlide) {
-        track.scrollTo({
-          left: targetSlide.offsetLeft,
-          behavior: 'smooth'
-        });
+  // 1. Data Definitions
+  var PRODUCTS_DATA = [
+  {
+    "id": "cimento-cem-1-42-5",
+    "name": "Portland Çimento CEM I 42.5 R",
+    "badge": "TS EN 197-1 CEM I 42.5 R",
+    "tag": "Yüksek Erken Mukavemetli Saf Portland",
+    "deptId": "kabaCementPanel",
+    "category": "portland-cimento",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Taşıyıcı betonarme sistemler, helikopterli zemin şapı, kolon-kiriş güçlendirmesi ve prekast eleman dökümleri için yüksek erken ve nihai mukavemetli saf Portland çimentosu.",
+    "meta": [
+      "≥ 42.5 MPa 28 Günlük Basınç Dayanımı",
+      "≥ 20.0 MPa 2 Günlük Erken Mukavemet",
+      "50 kg Shrinkli Kraft Torba",
+      "Urla Depo Vinçli / Damperli Sevk"
+    ],
+    "coverage": "~300 – 350 kg/m³ Beton Karışımı",
+    "sizes": [
+      "50 kg Kraft Torba",
+      "1 Palet (30 Torba / 1.5 Ton)",
+      "Kamyon Bazı (10–25 Ton Dökme)"
+    ],
+    "specs": {
+      "standard": "TS EN 197-1 CEM I 42.5 R",
+      "packaging": "50 kg Torba (Palet: 30 Adet / 1.5 Ton)",
+      "consumption": "~300–350 kg/m³ (Beton sınıfına göre)",
+      "mixingRatio": "Su/Çimento oranı ~0.45 – 0.50",
+      "potLife": "Priz Başlangıcı: ≥ 60 dk",
+      "logistics": "Urla Ana Depo Çıkışlı Sevk"
+    },
+    "accordions": [
+      {
+        "title": "CEM I 42.5 R Mukavemet Avantajı",
+        "body": "Katkısız saf Portland klinkeri içeriği sayesinde 2 günde 20 MPa, 28 günde 42.5 MPa üzerine çıkar. Zemin şaplarında tozuma ve çatlama riskini sıfıra indirir."
+      },
+      {
+        "title": "Şantiye Vinçli & Kat İndirme Teslimatı",
+        "body": "Urla Ana Depomuzdan Çeşme, Alaçatı, Urla ve Güzelbahçe şantiyelerine paletli vinçli araçlarla veya doğrudan kat kotuna indirme yapılır."
       }
+    ]
+  },
+  {
+    "id": "cimento-cem-2-32-5",
+    "name": "Katkılı Çimento CEM II / B-LL 32.5 R",
+    "badge": "TS EN 197-1 CEM II 32.5 R",
+    "tag": "Genel İnşaat & Duvar-Sıva Bağlayıcısı",
+    "deptId": "kabaCementPanel",
+    "category": "katkili-cimento",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Tuğla ve briket örme harçları, kaba sıva uygulamaları, çevre duvarları ve genel inşaat işleri için kalker katkılı ekonomik çimento.",
+    "meta": [
+      "≥ 32.5 MPa Basınç Dayanımı",
+      "Kolay İşlenebilirlik ve Yağlı Harç",
+      "50 kg Kraft Torba",
+      "Ekonomik Şantiye Çözümü"
+    ],
+    "coverage": "~250 – 300 kg/m³ Harç Karışımı",
+    "sizes": [
+      "50 kg Kraft Torba",
+      "1 Palet (30 Torba / 1.5 Ton)",
+      "Kamyon / Tır Bazı"
+    ],
+    "specs": {
+      "standard": "TS EN 197-1 CEM II / B-LL 32.5 R",
+      "packaging": "50 kg Torba (Palet: 30 Adet)",
+      "consumption": "Harç tipine göre değişken",
+      "mixingRatio": "1 torba çimentoya 3-4 çuval şap/sıva kumu",
+      "potLife": "Priz Başlangıcı: ≥ 75 dk",
+      "logistics": "Urla Depo Günlük Sevkiyat"
+    },
+    "accordions": [
+      {
+        "title": "Duvar ve Sıvada Çatlama Direnci",
+        "body": "Düşük hidratasyon ısısı sayesinde sıcak havalarda sıva ve duvar harçlarında ani su kaybı ve rötre çatlaklarını engeller."
+      }
+    ]
+  },
+  {
+    "id": "cimento-beyaz-cem-1-52-5",
+    "name": "Süper Beyaz Çimento CEM I 52.5 R",
+    "badge": "TS EN 197-1 CEM I 52.5 R",
+    "tag": "Ultra Yüksek Mukavemet & Beyazlık ≥ %85",
+    "deptId": "kabaCementPanel",
+    "category": "beyaz-cimento",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Mimari prekast cephe panelleri, dekoratif beyaz brüt beton, yüzme havuzu derzleri ve tarihi eser restorasyonları için ultra beyaz çimento.",
+    "meta": [
+      "Hunter Y Beyazlık: ≥ %85.5",
+      "≥ 52.5 MPa Üstün Dayanım Sınıfı",
+      "25 kg ve 50 kg Ambalaj",
+      "Dekoratif & Mimari Döküm"
+    ],
+    "coverage": "Proje döküm detayına göre",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "50 kg Kraft Torba",
+      "1 Palet (40 Torba / 1 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 197-1 CEM I 52.5 R",
+      "packaging": "25 kg ve 50 kg Torba",
+      "consumption": "Mimari reçeteye göre",
+      "mixingRatio": "Beyaz mermer tozu / silis kumu ile",
+      "potLife": "Priz Başlangıcı: ≥ 55 dk",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mükemmel Beyazlık ve Pürüzsüz Yüzey",
+        "body": "Demir oksit oranı çok düşük saf kalker ve kilden üretildiği için sararma yapmaz, parlak kar beyazı yüzey sağlar."
+      }
+    ]
+  },
+  {
+    "id": "cimento-duvar-harc",
+    "name": "Hazır Harç Çimentosu (MC 12.5)",
+    "badge": "TS EN 413-1 MC 12.5",
+    "tag": "Kireçsiz Duvar ve Kaba Sıva Bağlayıcısı",
+    "deptId": "kabaCementPanel",
+    "category": "harc-cimento",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Şantiyede sönmüş kireç kullanımına gerek bırakmayan, hava sürükleyici polimer katkılı, yüksek yağlılığa ve mala kayganlığına sahip özel harç çimentosu.",
+    "meta": [
+      "TS EN 413-1 MC 12.5 Standardı",
+      "Kireç İlavesi Gerektirmez",
+      "Yüksek Mala İşlenebilirliği",
+      "40 kg Torba"
+    ],
+    "coverage": "1 torba / ~40 m² tuğla duvar",
+    "sizes": [
+      "40 kg Kraft Torba",
+      "1 Palet (35 Torba / 1.4 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 413-1 MC 12.5",
+      "packaging": "40 kg Torba",
+      "consumption": "1 torba harç çimentosu + 3 çuval kum",
+      "mixingRatio": "Yalnızca kum ve su ilavesi",
+      "potLife": "İşlenebilirlik: 2 saat",
+      "logistics": "Urla Ana Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kireç Yanıklarına ve Kusmalara Son",
+        "body": "Kirecin yol açtığı tuz kusmalarını ve boya kabarmalarını önler; harcın tuğlaya ve betona yapışma gücünü artırır."
+      }
+    ]
+  },
+  {
+    "id": "alci-perlitli-siva",
+    "name": "Perlitli Sıva Alçısı (El Sıvası)",
+    "badge": "TS EN 13279-1 Tip B1",
+    "tag": "Hafif & Isı Yalıtımlı İç Mekan Kaba Sıvası",
+    "deptId": "kabaPlasterPanel",
+    "category": "siva-alcisi",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Tuğla, brüt beton ve gazbeton duvarlarda nefes alan, yangına dayanıklı (A1) ve yüksek ısı-ses yalıtımı sağlayan perlit katkılı iç mekan kaba sıva alçısı.",
+    "meta": [
+      "Basınç Dayanımı: ≥ 2.5 N/mm²",
+      "Sarfiyat: ~9.0 kg/m² (1 cm kalınlık)",
+      "A1 Yanmaz Yapı Malzemesi",
+      "35 kg PP Torba"
+    ],
+    "coverage": "~9.0 kg/m² (1 cm kalınlık)",
+    "sizes": [
+      "35 kg PP Torba",
+      "1 Palet (40 Torba / 1.4 Ton)",
+      "Şantiye Kamyon Sevk"
+    ],
+    "specs": {
+      "standard": "TS EN 13279-1 Tip B1/20/2",
+      "packaging": "35 kg Torba (Palet: 40 Torba)",
+      "consumption": "9.0 – 9.5 kg/m² (1 cm)",
+      "mixingRatio": "6.0 – 6.5 lt su / 10 kg alçı",
+      "potLife": "Çalışma Süresi: 120 – 150 dk",
+      "logistics": "Urla & Balçova Stok"
+    },
+    "accordions": [
+      {
+        "title": "Genleştirilmiş Perlit ile Isı ve Yangın Bariyeri",
+        "body": "İçerdiği mikro genleştirilmiş perlit tanecikleri sayesinde duvara binen statik yükü %40 hafifletir ve odadaki nem dengesini doğal olarak regüle eder."
+      }
+    ]
+  },
+  {
+    "id": "alci-saten-perdah",
+    "name": "Saten Perdah Alçısı (Son Kat Pürüzsüzlük)",
+    "badge": "TS EN 13279-1 Tip B4",
+    "tag": "Boya Altı Cam Pürüzsüzlüğünde Perdah",
+    "deptId": "kabaPlasterPanel",
+    "category": "saten-alci",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Sıva alçısı veya brüt beton yüzeylerde boya öncesi pürüzsüz, kılcal çatlaksız ve macun kıvamında yüzey oluşturan ekstra beyaz saten perdah alçısı.",
+    "meta": [
+      "Mikronize Ultra İnce Dane",
+      "Sarfiyat: ~0.9 kg/m² (1 mm)",
+      "Zımparalama Kolaylığı",
+      "30 kg Kraft Torba"
+    ],
+    "coverage": "~0.9 kg/m² (1 mm)",
+    "sizes": [
+      "30 kg Kraft Torba",
+      "1 Palet (40 Torba / 1.2 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 13279-1 Tip B4/20/2",
+      "packaging": "30 kg Torba",
+      "consumption": "0.8 – 1.0 kg/m² (1 mm)",
+      "mixingRatio": "6.5 – 7.0 lt su / 10 kg alçı",
+      "potLife": "Çalışma Süresi: 120 dk",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusursuz İpeksi Mat Boya Zemini",
+        "body": "Filli Boya ve diğer su bazlı mimari boyalar altında boya emilimini dengeler ve homojen parlaklık sağlar."
+      }
+    ]
+  },
+  {
+    "id": "alci-makine-sivasi",
+    "name": "Makine Sıva Alçısı (Püskürtmeli Tip)",
+    "badge": "TS EN 13279-1 Tip B3",
+    "tag": "Geniş Alanlar İçin Hızlı Püskürtme Sıvası",
+    "deptId": "kabaPlasterPanel",
+    "category": "makine-alci",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Alçı sıva pompaları ve püskürtme makineleriyle geniş duvar ve tavan yüzeylerine tek katta hızlı uygulanan yüksek verimli iç mekan sıvası.",
+    "meta": [
+      "Tek Katta 10–25 mm Uygulama",
+      "Sarfiyat: ~8.5 kg/m² (1 cm)",
+      "Şantiye İşçilik Hızı",
+      "35 kg Torba"
+    ],
+    "coverage": "~8.5 kg/m² (1 cm)",
+    "sizes": [
+      "35 kg Torba",
+      "1 Palet (40 Torba / 1.4 Ton)",
+      "Toplu Şantiye Sevk"
+    ],
+    "specs": {
+      "standard": "TS EN 13279-1 Tip B3",
+      "packaging": "35 kg Torba",
+      "consumption": "8.5 – 9.0 kg/m² (1 cm)",
+      "mixingRatio": "Otomatik makine karışımı",
+      "potLife": "Priz Başlangıcı: ~180 dk",
+      "logistics": "Şantiyeye Doğrudan Sevkiyat"
+    },
+    "accordions": [
+      {
+        "title": "Günde 150+ m² Duvar Sıvama Hızı",
+        "body": "Uygulama ekiplerine zamandan ve işçilik maliyetinden %50'ye varan tasarruf sağlar."
+      }
+    ]
+  },
+  {
+    "id": "alci-derz-dolgu-yapistirici",
+    "name": "Alçıpan Derz Dolgu & Plaka Yapıştırma Alçısı",
+    "badge": "TS EN 13963 Tip 3A",
+    "tag": "Alçı Levha Ek Yeri ve Montaj Harcı",
+    "deptId": "kabaPlasterPanel",
+    "category": "kartonpiyer-derz",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Alçı plaka (alçıpan) ek yerlerinde derz filesi ile birlikte kullanılan çatlamaz dolgu alçısı ve alçı plaka yapıştırma harcı.",
+    "meta": [
+      "Yüksek Esneklik & Yapışma Gücü",
+      "Çatlama Dirençli Elastik Yapı",
+      "25 kg Kraft Torba",
+      "Hızlı Priz & Kolay Zımpara"
+    ],
+    "coverage": "~0.35 kg/m² Alçıpan Derz",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (48 Torba)"
+    ],
+    "specs": {
+      "standard": "TS EN 13963",
+      "packaging": "25 kg Torba",
+      "consumption": "~350 gr/m² (Derz dolgu)",
+      "mixingRatio": "5.5 – 6.0 lt su / 10 kg alçı",
+      "potLife": "Donma Süresi: ~90 dk",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mikro Lif Destekli Çatlak Önleme",
+        "body": "Bina oturmalarında ve sıcaklık değişimlerinde levha ek yerlerinin kılcal çatlama yapmasını önler."
+      }
+    ]
+  },
+  {
+    "id": "kum-sap-03-elenmis",
+    "name": "0–3 mm Yıkanmış & Elenmiş Şap Kumu",
+    "badge": "TS 706 EN 12620 Agrega",
+    "tag": "Helikopterli Zemin Şapı ve Tesviye Kumu",
+    "deptId": "kabaAggregatesPanel",
+    "category": "sap-kumu",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Kil, mil ve organik atıklardan arındırılmış, 0–3 mm dane gradasyonuna sahip helikopterli zemin şapı ve sıva agregası.",
+    "meta": [
+      "Dane Aralığı: 0 – 3 mm Elenmiş",
+      "Kil / Mil Oranı: ≤ %1.5 (Yıkanmış)",
+      "Hacim Ağırlığı: ~1.58 ton/m³",
+      "Çuval / Big-Bag / Damperli Sevk"
+    ],
+    "coverage": "~1.58 ton / m³ Zemin Şapı",
+    "sizes": [
+      "40 kg Çuval",
+      "1 Tonluk Big-Bag (Vinçli)",
+      "Damperli Kamyon (10–20 Ton)"
+    ],
+    "specs": {
+      "standard": "TS 706 EN 12620",
+      "packaging": "40 kg Çuval / 1 Ton Big-Bag / Dökme",
+      "consumption": "Metraja göre tonaj hesabı",
+      "mixingRatio": "1 m³ şap için ~1.6 ton kum + 300 kg çimento",
+      "potLife": "Doğal agrega",
+      "logistics": "Urla Depo Çıkışlı Damperli & Vinçli Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Homojen Dane Dağılımı ve Sıfır Kil",
+        "body": "Helikopter tepsisinde ve perdah bıçağında çizik bırakmaz, pürüzsüz ayna gibi zemin şapı elde edilmesini sağlar."
+      }
+    ]
+  },
+  {
+    "id": "kum-siva-05-yikanmis",
+    "name": "0–5 mm İnce Sıva & Duvar Kumu",
+    "badge": "TS EN 13139 Sıva Agregası",
+    "tag": "Dış Cephe Kaba Sıva & Duvar Harcı Kumu",
+    "deptId": "kabaAggregatesPanel",
+    "category": "siva-kumu",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Kaba sıva, ince sıva ve tuğla duvar örme harçları için homojen elenmiş temiz doğal nehir/ocak kumu.",
+    "meta": [
+      "0 – 5 mm Dane Büyüklüğü",
+      "Harçta Yüksek Yağlılık & Bağlayıcılık",
+      "40 kg Çuval & Big-Bag",
+      "Urla Depo Stok"
+    ],
+    "coverage": "Uygulama alanına göre",
+    "sizes": [
+      "40 kg Çuval",
+      "1 Ton Big-Bag",
+      "Damper Dökme"
+    ],
+    "specs": {
+      "standard": "TS EN 13139",
+      "packaging": "40 kg Çuval / Big-Bag",
+      "consumption": "Harç oranına göre",
+      "mixingRatio": "1 torba çimento / 3 çuval kum",
+      "potLife": "Doğal agrega",
+      "logistics": "Urla Depo Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Dış Cephede Su Emme Direnci",
+        "body": "Yıkanmış agrega yapısı sayesinde yağmur suyuna karşı yüksek aderanslı ve dökülme yapmayan sıva katmanı oluşturur."
+      }
+    ]
+  },
+  {
+    "id": "micir-1-numara-cakil",
+    "name": "7–15 mm 1 No Kırma Mıcır & Çakıl",
+    "badge": "TS EN 12620 Agrega",
+    "tag": "Saha Betonu & Drenaj Kırmataşı",
+    "deptId": "kabaAggregatesPanel",
+    "category": "micir-cakil",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Saha betonu, otopark zemin takviyesi, istinat duvarı arkası su drenajı ve çevre düzenleme için kalker kırma mıcır.",
+    "meta": [
+      "Dane Aralığı: 7 – 15 mm (1 No)",
+      "Kalker Kırmataş Mukavemeti",
+      "40 kg Çuval / Big-Bag / Dökme",
+      "Drenaj & Beton"
+    ],
+    "coverage": "~1.60 ton/m³ Drenaj / Beton",
+    "sizes": [
+      "40 kg Çuval",
+      "1 Ton Big-Bag",
+      "Damperli Kamyon (15 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 12620",
+      "packaging": "40 kg Çuval / 1 Ton Big-Bag / Dökme",
+      "consumption": "Hacimsel dolgu",
+      "mixingRatio": "Beton/Drenaj reçetesi",
+      "potLife": "Doğal agrega",
+      "logistics": "Urla Ana Depo Damperli Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Temel ve İstinat Arkasında Kusursuz Su Tahliyesi",
+        "body": "Gözenekli drenaj yapısı ile temel çevresindeki suyun tahliye borularına hızla ulaşmasını sağlar."
+      }
+    ]
+  },
+  {
+    "id": "agrega-beyaz-dolomit",
+    "name": "Beyaz Dolomit Taşı (15–30 mm)",
+    "badge": "Doğal Peyzaj Taşı",
+    "tag": "Villa Bahçe & Havuz Kenarı Dekoratif Taş",
+    "deptId": "kabaAggregatesPanel",
+    "category": "dekoratif-agrega",
+    "thumb": "assets/rf-hero-materials.jpg",
+    "desc": "Villa bahçeleri, peyzaj düzenlemeleri, havuz çevreleri, ağaç dipleri ve mimari saksılarda doğal parlak kar beyazı tamburlanmış dolomit taşı.",
+    "meta": [
+      "15 – 30 mm Tamburlu Ebat",
+      "Kar Beyazı Parlak Doğal Mermer",
+      "25 kg Çuval & Big-Bag",
+      "Solmaz & Sararmaz"
+    ],
+    "coverage": "1 çuval / ~0.5 m² (3-4 cm katman)",
+    "sizes": [
+      "25 kg Çuval",
+      "1 Ton Big-Bag"
+    ],
+    "specs": {
+      "standard": "Doğal Dekoratif Taş",
+      "packaging": "25 kg Çuval (Palet: 40 Çuval)",
+      "consumption": "~40-50 kg/m²",
+      "mixingRatio": "Kullanıma hazır doğrudan serim",
+      "potLife": "Doğal taş",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Güneş ve Klora Karşı Sonsuz Beyazlık",
+        "body": "Doğal kristalize mermer yapısı sayesinde Çeşme güneşi altında ve havuz klorlu suyunda rengini kaybetmez."
+      }
+    ]
+  },
+  {
+    "id": "harc-gazbeton-ytong",
+    "name": "Gazbeton (Ytong) Örgü Yapıştırıcı Harcı",
+    "badge": "TS EN 998-2 Sınıf G-M10",
+    "tag": "Yüksek Aderanslı İnce Derz Örgü Harcı",
+    "deptId": "kabaMasonryPanel",
+    "category": "gazbeton-harci",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Gazbeton ve Ytong duvar bloklarının 1–3 mm ince derz ile örülmesinde kullanılan, ısı köprüsü oluşturmayan polimer takviyeli hazır harç.",
+    "meta": [
+      "Basınç Dayanımı: ≥ 10.0 N/mm²",
+      "Aderans / Yapışma: ≥ 0.30 N/mm²",
+      "Sarfiyat: ~3.5 kg/m² (10 cm blok)",
+      "25 kg Kraft Torba"
+    ],
+    "coverage": "~3.5 kg/m² (10 cm blok)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (48 Torba / 1.2 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 998-2 Sınıf G-M10",
+      "packaging": "25 kg Kraft Torba",
+      "consumption": "~3.5 kg/m² (10 cm)",
+      "mixingRatio": "6.0 – 6.5 lt su / 25 kg",
+      "potLife": "Kap ömrü: 3 saat · Düzeltme: 15 dk",
+      "logistics": "Urla & Balçova Stok"
+    },
+    "accordions": [
+      {
+        "title": "1-3 mm İnce Derz ile Sıfır Isı Köprüsü",
+        "body": "Geleneksel harçlara göre 5 kat daha ince derz oluşturarak binanın dış cephe ısı kayıplarını minimuma indirir."
+      }
+    ]
+  },
+  {
+    "id": "harc-hazir-kaba-duvar",
+    "name": "Hazır Kaba Duvar & Tuğla Harcı (M5)",
+    "badge": "TS EN 998-2 Sınıf M5",
+    "tag": "Fabrikasyon Standart Kuru Duvar Harcı",
+    "deptId": "kabaMasonryPanel",
+    "category": "hazir-sap-harci",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Kum ve çimento karıştırma zahmeti olmadan, yalnızca su ilavesi ile hazırlanan fabrikasyon kontrollü tuğla ve briket örme harcı.",
+    "meta": [
+      "Basınç Dayanımı: ≥ 5.0 N/mm²",
+      "Yalnızca Su İlavesiyle Hazır",
+      "25 kg Torba",
+      "Homojen Fabrikasyon Reçete"
+    ],
+    "coverage": "Tuğla ebadına göre ~20-25 kg/m²",
+    "sizes": [
+      "25 kg Torba",
+      "1 Palet (48 Torba)"
+    ],
+    "specs": {
+      "standard": "TS EN 998-2 Sınıf M5",
+      "packaging": "25 kg Torba",
+      "consumption": "~20 kg/m²",
+      "mixingRatio": "4.0 – 4.5 lt su / 25 kg",
+      "potLife": "Kap ömrü: 2 saat",
+      "logistics": "Urla Depo Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Kum Eleme ve Çimento Tartma Derdine Son",
+        "body": "Şantiye sahasında kum eleme ve çimento oranı ayarlama hatalarını ortadan kaldırır."
+      }
+    ]
+  },
+  {
+    "id": "harc-hazir-sap-c20",
+    "name": "Hazır Kuru Zemin Şap Harcı C20-C25",
+    "badge": "TS EN 13813 CT-C20-F4",
+    "tag": "Kendinden Agregalı Hazır Zemin Şapı",
+    "deptId": "kabaMasonryPanel",
+    "category": "hazir-sap-harci",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Şantiyede kum yığma ve eleme alanı olmayan projelerde, mikserle su katılarak doğrudan dökülen helikopterli ve mastarlı hazır şap harcı.",
+    "meta": [
+      "Basınç Sınıfı: CT-C20 (≥20 MPa)",
+      "Eğilme Sınıfı: F4 (≥4 MPa)",
+      "Sarfiyat: ~18-20 kg/m² (1 cm)",
+      "25 kg Torba"
+    ],
+    "coverage": "~18.0 – 20.0 kg/m² (1 cm)",
+    "sizes": [
+      "25 kg Torba",
+      "1 Palet (48 Torba / 1.2 Ton)"
+    ],
+    "specs": {
+      "standard": "TS EN 13813",
+      "packaging": "25 kg Torba",
+      "consumption": "18 – 20 kg/m² (1 cm)",
+      "mixingRatio": "3.5 – 4.0 lt su / 25 kg",
+      "potLife": "Kap ömrü: 90 dk · Yaya trafiği: 24 saat",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Temiz Şantiye ve Garantili Mukavemet",
+        "body": "Özellikle site içi villa ve kat tadilatlarında dışarıdan kum çekmeden temiz ve hızlı şap dökümü sağlar."
+      }
+    ]
+  },
+  {
+    "id": "harc-isi-yalitim-levha",
+    "name": "Isı Yalıtım Levha Yapıştırma & Sıva Harcı",
+    "badge": "TS EN 13499 / 13500",
+    "tag": "EPS / XPS / Taşyünü Mantolama Harcı",
+    "deptId": "kabaMasonryPanel",
+    "category": "isi-yalitim-harci",
+    "thumb": "assets/rf-card-cement.jpg",
+    "desc": "Dış cephe mantolama sistemlerinde EPS, XPS ve Taşyünü ısı yalıtım levhalarının yapıştırılması ve fileli sıva katı için elyaf katkılı polimer harç.",
+    "meta": [
+      "Polimer & Polipropilen Elyaf Takviyeli",
+      "Yapıştırma & Sıva Çift Fonksiyon",
+      "Yüksek Donma-Çözülme Direnci",
+      "25 kg Kraft Torba"
+    ],
+    "coverage": "Yapıştırma: ~4.5 kg/m² · Sıva: ~4.0 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (48 Torba)"
+    ],
+    "specs": {
+      "standard": "TS EN 13499 / ETAG 004",
+      "packaging": "25 kg Torba",
+      "consumption": "Yapıştırma: 4.0-5.0 kg/m², Sıva: 3.5-4.5 kg/m²",
+      "mixingRatio": "5.5 – 6.0 lt su / 25 kg",
+      "potLife": "Kap ömrü: 2.5 saat",
+      "logistics": "Balçova & Urla Hazır Stok"
+    },
+    "accordions": [
+      {
+        "title": "Çatlama Dirençli Mikro Elyaf Zırhı",
+        "body": "Fileli sıva katında cephenin termal genleşmelerini absorbe ederek dış cephe boya altı çatlaklarını engeller."
+      }
+    ]
+  }
+];
 
-      slides.forEach(function(s, idx) {
-        s.classList.toggle('active', idx === currentIndex);
+  var DEPARTMENTS_DATA = [
+  {
+    "id": "kabaCementPanel",
+    "short": "Torbalı Çimento",
+    "full": "Torbalı Çimento & Bağlayıcılar",
+    "sub": "Portland CEM I 42.5 R, CEM II 32.5 ve Beyaz Çimento",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/></svg>",
+    "pillsId": "cementMenuPills"
+  },
+  {
+    "id": "kabaPlasterPanel",
+    "short": "Yapı Alçısı & Sıva",
+    "full": "Yapı Alçısı & Sıva Grubu",
+    "sub": "Perlitli sıva, saten perdah, makine sıvası ve alçıpan derz dolgu",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>",
+    "pillsId": "plasterMenuPills"
+  },
+  {
+    "id": "kabaAggregatesPanel",
+    "short": "Şap Kumu & Agrega",
+    "full": "Şap Kumu, Çakıl & Agrega",
+    "sub": "0-3 mm elenmiş şap kumu, 0-5 mm sıva kumu, mıcır ve dolomit",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"/></svg>",
+    "pillsId": "aggregatesMenuPills"
+  },
+  {
+    "id": "kabaMasonryPanel",
+    "short": "Gazbeton & Harçlar",
+    "full": "Gazbeton & Yapı Harçları",
+    "sub": "Ytong yapıştırıcı, hazır kuru şap C20 ve mantolama harcı",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 20h20\"/><path d=\"m5 16 3-3\"/><path d=\"M9 12l8-8 4 4-8 8\"/><path d=\"m14 7 3 3\"/></svg>",
+    "pillsId": "masonryMenuPills"
+  },
+  {
+    "id": "kabaSimulatorPanel",
+    "short": "Harç Simülatörü",
+    "full": "Akıllı Şantiye Harç Simülatörü",
+    "sub": "Zemin şapı, sıva ve duvar için anlık torba & araç hesaplayıcı",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>",
+    "pillsId": "simMenuPills"
+  },
+  {
+    "id": "kabaLogisticsPanel",
+    "short": "Şantiye Lojistiği",
+    "full": "İzmir – Çeşme Şantiye Lojistiği",
+    "sub": "Urla Ana Depo damperli & vinçli filo ring seferleri",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>",
+    "pillsId": "logisticsMenuPills"
+  }
+];
+
+  // 2. Stage Hero Carousel Controller
+  var track = document.getElementById("pvStageTrack");
+  var slides = document.querySelectorAll(".pv-stage-slide");
+  var prevBtn = document.getElementById("pvStagePrev");
+  var nextBtn = document.getElementById("pvStageNext");
+  var currentIndex = 0;
+  var autoPlayTimer = null;
+
+  function goToSlide(index) {
+    if (!track || slides.length === 0) return;
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    currentIndex = index;
+
+    var targetSlide = slides[currentIndex];
+    if (targetSlide) {
+      track.scrollTo({
+        left: targetSlide.offsetLeft,
+        behavior: "smooth"
       });
     }
 
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', function() {
-        clearInterval(autoPlayTimer);
-        goToSlide(currentIndex - 1);
-      });
-      nextBtn.addEventListener('click', function() {
-        clearInterval(autoPlayTimer);
-        goToSlide(currentIndex + 1);
-      });
-    }
+    slides.forEach(function(s, idx) {
+      s.classList.toggle("active", idx === currentIndex);
+    });
+  }
 
-    autoPlayTimer = setInterval(function() {
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", function() {
+      clearInterval(autoPlayTimer);
+      goToSlide(currentIndex - 1);
+    });
+    nextBtn.addEventListener("click", function() {
+      clearInterval(autoPlayTimer);
       goToSlide(currentIndex + 1);
-    }, 6000);
+    });
+  }
 
-    // 2. Canonical Sticky Subnav Sync & Smooth Scroll Engine
-    var subnav = document.getElementById('pvSubnav');
-    var spacer = document.getElementById('pvSubnavSpacer');
-    var header = document.querySelector('header');
-    var subnavLinks = document.querySelectorAll('#pvSubnavLinks .pv-subnav-link');
-    var isClickScrolling = false;
-    var scrollTimeout = null;
+  autoPlayTimer = setInterval(function() {
+    goToSlide(currentIndex + 1);
+  }, 6000);
 
-    var initialSubnavTop = 0;
-    function getSubnavOrigin() {
-      if (spacer && spacer.classList.contains('is-active')) {
-        return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
-      }
-      return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  // 3. Canonical Sticky Subnav Header Sync (Weber / Filli Standartı)
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
+  var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
+  var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
+  var deptDrawer = document.getElementById("pvDeptDrawer");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
+
+  var currentActiveTab = "kabaCementPanel";
+  var currentProduct = null;
+  var selectedSize = "";
+
+  var panels = {
+    "kabaCementPanel": document.getElementById("kabaCementPanel"),
+    "kabaPlasterPanel": document.getElementById("kabaPlasterPanel"),
+    "kabaAggregatesPanel": document.getElementById("kabaAggregatesPanel"),
+    "kabaMasonryPanel": document.getElementById("kabaMasonryPanel"),
+    "kabaSimulatorPanel": document.getElementById("kabaSimulatorPanel"),
+    "kabaLogisticsPanel": document.getElementById("kabaLogisticsPanel")
+  };
+
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
     }
 
-    function getHeaderHeight() {
-      if (!header) return 60;
-      return header.offsetHeight || 60;
-    }
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
 
-    function syncSubnavPin() {
-      if (!subnav) return;
-      var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-      if (!initialSubnavTop || initialSubnavTop < 100) {
-        initialSubnavTop = getSubnavOrigin();
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
       }
 
-      var headerVisible = header && !header.classList.contains('header--hidden');
-      var hHeight = getHeaderHeight();
-      var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
-
-      if (scrollPos >= pinThreshold) {
-        if (!subnav.classList.contains('is-pinned')) {
-          subnav.classList.add('is-pinned');
-          if (spacer) {
-            spacer.style.height = (subnav.offsetHeight || 52) + 'px';
-            spacer.classList.add('is-active');
-          }
-        }
-
-        if (!headerVisible) {
-          subnav.classList.add('header-hidden');
-          subnav.style.top = '0px';
-        } else {
-          subnav.classList.remove('header-hidden');
-          subnav.style.top = hHeight + 'px';
-        }
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
       } else {
-        if (subnav.classList.contains('is-pinned')) {
-          subnav.classList.remove('is-pinned');
-          subnav.classList.remove('header-hidden');
-          subnav.style.top = '';
-          if (spacer) spacer.classList.remove('is-active');
-        }
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
       }
     }
+  }
 
-    if (header && window.MutationObserver) {
-      var headerObserver = new MutationObserver(function() {
-        syncSubnavPin();
-      });
-      headerObserver.observe(header, { attributes: true, attributeFilter: ['class'] });
-    }
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
 
-    // High Precision Target Section Click-to-Scroll
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  // 4. Tab Switching
+  function switchTab(tabId) {
+    if (!panels[tabId]) return;
+    currentActiveTab = tabId;
+
     subnavLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var targetId = link.getAttribute('data-target');
-        var targetEl = document.getElementById(targetId);
-        if (!targetEl) return;
-
-        // Immediately activate clicked link
-        subnavLinks.forEach(function(l) { l.classList.remove('active'); });
-        link.classList.add('active');
-        link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-
-        isClickScrolling = true;
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function() {
-          isClickScrolling = false;
-        }, 900);
-
-        var headerVisible = header && !header.classList.contains('header--hidden');
-        var hHeight = headerVisible ? getHeaderHeight() : 0;
-        var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
-        var totalOffset = hHeight + subnavHeight + 16;
-
-        var rect = targetEl.getBoundingClientRect();
-        var targetTop = rect.top + (window.pageYOffset || document.documentElement.scrollTop) - totalOffset;
-
-        window.scrollTo({
-          top: Math.max(0, targetTop),
-          behavior: 'smooth'
-        });
-      });
+      var match = (link.getAttribute("data-target") === tabId);
+      link.classList.toggle("active", match);
+      link.setAttribute("aria-selected", match ? "true" : "false");
     });
 
-    // True Document Coordinate ScrollSpy
-    var spySections = [
-      'item-cimento',
-      'item-alci',
-      'item-kum',
-      'item-gazbeton',
-      'hesaplayici-bolumu',
-      'lojistik-bolumu',
-      'faq-bolumu',
-      'depo-bolumu'
-    ];
-
-    function onScrollSpy() {
-      if (isClickScrolling) return;
-
-      var headerVisible = header && !header.classList.contains('header--hidden');
-      var hHeight = headerVisible ? getHeaderHeight() : 0;
-      var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
-      var currentScroll = (window.pageYOffset || document.documentElement.scrollTop);
-      var triggerPoint = currentScroll + hHeight + subnavHeight + 50;
-
-      for (var i = spySections.length - 1; i >= 0; i--) {
-        var el = document.getElementById(spySections[i]);
-        if (el) {
-          var rect = el.getBoundingClientRect();
-          var elDocTop = rect.top + currentScroll;
-          if (elDocTop <= triggerPoint) {
-            var activeLink = document.querySelector('#pvSubnavLinks .pv-subnav-link[data-target="' + spySections[i] + '"]');
-            if (activeLink && !activeLink.classList.contains('active')) {
-              subnavLinks.forEach(function(l) { l.classList.remove('active'); });
-              activeLink.classList.add('active');
-              activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
-            break;
-          }
+    Object.keys(panels).forEach(function(k) {
+      if (panels[k]) {
+        if (k === tabId) {
+          panels[k].style.display = "";
+          panels[k].classList.add("active");
+        } else {
+          panels[k].style.display = "none";
+          panels[k].classList.remove("active");
         }
       }
-    }
-
-    window.addEventListener('scroll', function() {
-      syncSubnavPin();
-      onScrollSpy();
-    }, { passive: true });
-
-    window.addEventListener('resize', function() {
-      initialSubnavTop = getSubnavOrigin();
-      syncSubnavPin();
-    }, { passive: true });
-
-    window.addEventListener('load', function() {
-      initialSubnavTop = getSubnavOrigin();
-      syncSubnavPin();
-      onScrollSpy();
     });
 
-    // 3. Tactile Segmented Unit Switcher per Item
-    var segBars = document.querySelectorAll('.pv-trade-segmented-bar');
-    segBars.forEach(function(bar) {
-      var itemKey = bar.dataset.item;
-      var outDiv = document.getElementById('out-' + itemKey);
-      var buttons = bar.querySelectorAll('.pv-trade-seg-btn');
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === tabId; });
+    if (dept && deptTriggerLabel) {
+      deptTriggerLabel.textContent = dept.short;
+    }
 
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          buttons.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
+    renderDeptDrawer(tabId);
+    syncMobileFilterRail(tabId);
+  }
 
-          var weight = btn.dataset.weight;
-          var vehicle = btn.dataset.vehicle;
-          var text = btn.dataset.text;
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var target = link.getAttribute("data-target");
+      switchTab(target);
+      var origin = getSubnavOrigin();
+      if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+        window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+      }
+    });
+  });
 
-          if (outDiv) {
-            var descSpan = outDiv.querySelector('.pv-trade-unit-desc');
-            var actionBtn = outDiv.querySelector('.pv-trade-action-btn');
-            if (descSpan) {
-              descSpan.innerHTML = 'Seçim: <strong>' + text + '</strong> (' + weight + ') • ' + vehicle;
-            }
-            if (actionBtn) {
-              var waUrl = "https://wa.me/905323844497?text=" + encodeURIComponent("Merhaba, " + text + " (" + weight + ") için şantiye teslimat fiyatı ve gün bilgisi almak istiyorum.");
-              actionBtn.href = waUrl;
-            }
+  // 5. Mobile Department Drawer
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
+    DEPARTMENTS_DATA.forEach(function(d) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      var isSelected = (d.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + d.full + '</span>' +
+            '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
+
+      btn.addEventListener("click", function() {
+        switchTab(d.id);
+        closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      });
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
+        e.preventDefault();
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      });
+
+      filterRail.appendChild(chip);
+    });
+  }
+
+  function openDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.add("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    deptTrigger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.remove("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    deptTrigger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      openDeptDrawer();
+    });
+  }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", closeDeptDrawer);
+  }
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("click", function(e) {
+      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
+    });
+  }
+
+  // 6. Category Filtering setup
+  function setupCategoryFiltering(pillsContainerId, listContainerId) {
+    var container = document.getElementById(pillsContainerId);
+    var list = document.getElementById(listContainerId);
+    if (!container || !list) return;
+
+    var pills = container.querySelectorAll(".pv-menu-pill");
+    var rows = list.querySelectorAll(".pv-menu-row");
+
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        var filter = pill.getAttribute("data-filter");
+        pills.forEach(function(p) {
+          p.classList.remove("active");
+          p.setAttribute("aria-selected", "false");
+        });
+        pill.classList.add("active");
+        pill.setAttribute("aria-selected", "true");
+
+        rows.forEach(function(row) {
+          var cat = row.getAttribute("data-category");
+          if (filter === "tumu" || cat === filter) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
           }
         });
       });
     });
+  }
 
-    // 4. Akıllı Şantiye Harç & Çimento Simülatörü
-    var simTypes = document.querySelectorAll('.pv-trade-sim-type-btn');
-    var simAreaRange = document.getElementById('simAreaRange');
-    var simThickRange = document.getElementById('simThickRange');
-    var simAreaDisplay = document.getElementById('simAreaDisplay');
-    var simThickDisplay = document.getElementById('simThickDisplay');
-    var simOutCement = document.getElementById('simOutCement');
-    var simOutSand = document.getElementById('simOutSand');
-    var simOutWater = document.getElementById('simOutWater');
-    var simOutTruck = document.getElementById('simOutTruck');
-    var simWaCta = document.getElementById('simWaCta');
+  setupCategoryFiltering("cementMenuPills", "cementMenuList");
+  setupCategoryFiltering("plasterMenuPills", "plasterMenuList");
+  setupCategoryFiltering("aggregatesMenuPills", "aggregatesMenuList");
+  setupCategoryFiltering("masonryMenuPills", "masonryMenuList");
 
-    var currentMix = "Zemin Şapı";
-    var cRatio = 0.32;
-    var sRatio = 1.15;
-    var wRatio = 8;
+  // 7. Product Detail Spec Modal Engine
+  var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
+  var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductDesc = document.getElementById("modalProductDesc");
+  var modalSizeTrack = document.getElementById("modalSizeTrack");
+  var modalSpecStandard = document.getElementById("modalSpecStandard");
+  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
+  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
+  var modalSpecMixing = document.getElementById("modalSpecMixing");
+  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
+  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
+  var modalWABtn = document.getElementById("modalWABtn");
+  var modalAccordions = document.getElementById("modalAccordions");
 
-    function updateSim() {
-      if (!simAreaRange || !simThickRange) return;
-      var area = parseFloat(simAreaRange.value) || 50;
-      var thick = parseFloat(simThickRange.value) || 5.0;
+  function openProductModal(productId) {
+    var prod = PRODUCTS_DATA.find(function(p) { return p.id === productId; });
+    if (!prod) return;
+    currentProduct = prod;
+    selectedSize = prod.sizes && prod.sizes.length > 0 ? prod.sizes[0] : "";
 
-      simAreaDisplay.innerText = area + " m²";
-      simThickDisplay.innerText = thick.toFixed(1) + " cm";
+    if (modalProductTitle) modalProductTitle.textContent = prod.name;
+    if (modalProductDesc) modalProductDesc.textContent = prod.desc;
+    if (modalProductImg) modalProductImg.src = prod.thumb;
 
-      var factor = thick / 5.0;
-      var totalCement = Math.ceil(area * cRatio * factor);
-      var totalSand = Math.ceil(area * sRatio * factor);
-      var totalWater = Math.round(area * wRatio * factor);
+    if (modalSpecStandard) modalSpecStandard.textContent = prod.specs.standard || "TS EN Standart";
+    if (modalSpecConsumption) modalSpecConsumption.textContent = prod.coverage || prod.specs.consumption;
+    if (modalSpecPackaging) modalSpecPackaging.textContent = prod.specs.packaging || selectedSize;
+    if (modalSpecMixing) modalSpecMixing.textContent = prod.specs.mixingRatio || "-";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = prod.specs.potLife || "-";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = prod.specs.logistics || "Urla Depo Sevk";
 
-      var truck = "Transit Kamyonet";
-      if (totalCement > 40 || totalSand > 120) {
-        truck = "Vinçli Palet / Damper";
-      } else if (totalCement > 20 || totalSand > 60) {
-        truck = "6-Teker Damperli";
-      }
-
-      simOutCement.innerHTML = totalCement + ' <small>Torba (50kg)</small>';
-      simOutSand.innerHTML = totalSand + ' <small>Çuval (40kg)</small>';
-      simOutWater.innerHTML = totalWater + ' <small>Litre</small>';
-      simOutTruck.innerHTML = truck;
-
-      if (simWaCta) {
-        var msg = "Merhaba, Şantiye Harç Simülatörü ile hesapladığım reçete için teklif almak istiyorum:
-" +
-                  "- Uygulama: " + currentMix + " (" + area + " m², " + thick + " cm)
-" +
-                  "- İhtiyaç: " + totalCement + " Torba CEM I Çimento + " + totalSand + " Çuval Şap Kumu
-" +
-                  "- Önerilen Araç: " + truck + "
-" +
-                  "Şantiye teslimat fiyatı alabilir miyim?";
-        simWaCta.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
-      }
+    if (modalSizeTrack && prod.sizes) {
+      modalSizeTrack.innerHTML = "";
+      prod.sizes.forEach(function(size, idx) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.role = "radio";
+        btn.className = "pv-segmented-btn" + (idx === 0 ? " is-active" : "");
+        btn.setAttribute("aria-checked", idx === 0 ? "true" : "false");
+        btn.textContent = size;
+        btn.addEventListener("click", function() {
+          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) {
+            b.classList.remove("is-active");
+            b.setAttribute("aria-checked", "false");
+          });
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-checked", "true");
+          selectedSize = size;
+          updateModalWA();
+        });
+        modalSizeTrack.appendChild(btn);
+      });
     }
 
-    simTypes.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        simTypes.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        currentMix = btn.dataset.mixName || "Zemin Şapı";
-        cRatio = parseFloat(btn.dataset.cRatio) || 0.32;
-        sRatio = parseFloat(btn.dataset.sRatio) || 1.15;
-        wRatio = parseFloat(btn.dataset.wRatio) || 8;
-        updateSim();
+    if (modalAccordions && prod.accordions) {
+      modalAccordions.innerHTML = "";
+      prod.accordions.forEach(function(acc) {
+        var det = document.createElement("details");
+        det.className = "pv-accordion-item";
+        det.innerHTML = 
+          '<summary class="pv-accordion-trigger">' +
+            '<span class="pv-accordion-heading">' + acc.title + '</span>' +
+            '<svg class="pv-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
+          '</summary>' +
+          '<div class="pv-accordion-body"><p>' + acc.body + '</p></div>';
+        modalAccordions.appendChild(det);
       });
+    }
+
+    updateModalWA();
+    if (modalBackdrop) {
+      modalBackdrop.classList.add("is-open");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function updateModalWA() {
+    if (!modalWABtn || !currentProduct) return;
+    var msg = "Merhaba, Urla Depo çıkışlı " + currentProduct.name + " (" + selectedSize + ") için şantiyemize teslim palet/tonaj fiyatı ve araç uygunluğu öğrenmek istiyorum.";
+    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
+  }
+
+  function closeProductModal() {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeProductModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      if (e.target === modalBackdrop) closeProductModal();
+    });
+  }
+
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    row.addEventListener("click", function() {
+      var prodId = row.getAttribute("data-product-id");
+      if (prodId) openProductModal(prodId);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var prodId = row.getAttribute("data-product-id");
+        if (prodId) openProductModal(prodId);
+      }
+    });
+  });
+
+  // 8. Spotlight Quick Search
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightInput = document.getElementById("pvSpotlightInput");
+  var spotlightResults = document.getElementById("pvSpotlightResults");
+  var subnavSearchBtn = document.getElementById("pvSubnavSearchBtn");
+
+  function openSpotlight() {
+    if (!spotlightBackdrop || !spotlightInput) return;
+    spotlightBackdrop.classList.add("is-open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    spotlightInput.value = "";
+    renderSpotlightResults("");
+    setTimeout(function() { spotlightInput.focus(); }, 50);
+  }
+
+  function closeSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("is-open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (subnavSearchBtn) subnavSearchBtn.addEventListener("click", openSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
+    });
+  }
+
+  window.addEventListener("keydown", function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      e.preventDefault();
+      openSpotlight();
+    } else if (e.key === "Escape") {
+      closeSpotlight();
+      closeProductModal();
+      closeDeptDrawer();
+    }
+  });
+
+  function renderSpotlightResults(q) {
+    if (!spotlightResults) return;
+    var query = (q || "").trim().toLowerCase();
+    var filtered = PRODUCTS_DATA.filter(function(p) {
+      if (!query) return true;
+      return (
+        p.name.toLowerCase().includes(query) ||
+        p.desc.toLowerCase().includes(query) ||
+        p.tag.toLowerCase().includes(query) ||
+        p.badge.toLowerCase().includes(query)
+      );
     });
 
-    if (simAreaRange && simThickRange) {
-      simAreaRange.addEventListener('input', updateSim);
-      simThickRange.addEventListener('input', updateSim);
-      updateSim();
+    if (filtered.length === 0) {
+      spotlightResults.innerHTML = '<div style="padding: 24px; text-align: center; color: #71717A;">Aradığınız kriterlere uygun kaba yapı malzemesi bulunamadı.</div>';
+      return;
     }
-  })();
+
+    spotlightResults.innerHTML = "";
+    filtered.forEach(function(p) {
+      var item = document.createElement("div");
+      item.className = "pv-spotlight-item";
+      item.innerHTML = 
+        '<div class="pv-spotlight-item-thumb"><img src="' + p.thumb + '" alt="' + p.name + '" /></div>' +
+        '<div class="pv-spotlight-item-info">' +
+          '<div class="pv-spotlight-item-title">' + p.name + ' <span class="pv-spotlight-badge">' + p.badge + '</span></div>' +
+          '<div class="pv-spotlight-item-desc">' + p.desc + '</div>' +
+        '</div>';
+      item.addEventListener("click", function() {
+        closeSpotlight();
+        switchTab(p.deptId);
+        openProductModal(p.id);
+      });
+      spotlightResults.appendChild(item);
+    });
+  }
+
+  if (spotlightInput) {
+    spotlightInput.addEventListener("input", function() {
+      renderSpotlightResults(spotlightInput.value);
+    });
+  }
+
+  // 9. Akıllı Şantiye Harç & Çimento Simülatörü Engine
+  var simTypes = document.querySelectorAll(".pv-trade-sim-type-btn");
+  var simAreaRange = document.getElementById("simAreaRange");
+  var simThickRange = document.getElementById("simThickRange");
+  var simAreaDisplay = document.getElementById("simAreaDisplay");
+  var simThickDisplay = document.getElementById("simThickDisplay");
+  var simOutCement = document.getElementById("simOutCement");
+  var simOutSand = document.getElementById("simOutSand");
+  var simOutWater = document.getElementById("simOutWater");
+  var simOutTruck = document.getElementById("simOutTruck");
+  var simWaCta = document.getElementById("simWaCta");
+
+  var currentMix = "Zemin Şapı";
+  var cRatio = 0.32;
+  var sRatio = 1.15;
+  var wRatio = 8;
+
+  function updateSim() {
+    if (!simAreaRange || !simThickRange) return;
+    var area = parseFloat(simAreaRange.value) || 50;
+    var thick = parseFloat(simThickRange.value) || 5.0;
+
+    simAreaDisplay.innerText = area + " m²";
+    simThickDisplay.innerText = thick.toFixed(1) + " cm";
+
+    var factor = thick / 5.0;
+    var totalCement = Math.ceil(area * cRatio * factor);
+    var totalSand = Math.ceil(area * sRatio * factor);
+    var totalWater = Math.round(area * wRatio * factor);
+
+    var truck = "Transit Kamyonet";
+    if (totalCement > 40 || totalSand > 120) {
+      truck = "Vinçli Palet / Damper";
+    } else if (totalCement > 20 || totalSand > 60) {
+      truck = "6-Teker Damperli";
+    }
+
+    if (simOutCement) simOutCement.innerHTML = totalCement + ' <small>Torba (50kg)</small>';
+    if (simOutSand) simOutSand.innerHTML = totalSand + ' <small>Çuval (40kg)</small>';
+    if (simOutWater) simOutWater.innerHTML = totalWater + ' <small>Litre</small>';
+    if (simOutTruck) simOutTruck.innerHTML = truck;
+
+    if (simWaCta) {
+      var msg = "Merhaba, Şantiye Harç Simülatörü ile hesapladığım reçete için teklif almak istiyorum:
+" +
+                "- Uygulama: " + currentMix + " (" + area + " m², " + thick + " cm)
+" +
+                "- İhtiyaç: " + totalCement + " Torba CEM I Çimento + " + totalSand + " Çuval Şap Kumu
+" +
+                "- Önerilen Araç: " + truck + "
+" +
+                "Şantiye teslimat fiyatı alabilir miyim?";
+      simWaCta.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
+    }
+  }
+
+  simTypes.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      simTypes.forEach(function(b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      currentMix = btn.dataset.mixName || "Zemin Şapı";
+      cRatio = parseFloat(btn.dataset.cRatio) || 0.32;
+      sRatio = parseFloat(btn.dataset.sRatio) || 1.15;
+      wRatio = parseFloat(btn.dataset.wRatio) || 8;
+      updateSim();
+    });
+  });
+
+  if (simAreaRange && simThickRange) {
+    simAreaRange.addEventListener("input", updateSim);
+    simThickRange.addEventListener("input", updateSim);
+    updateSim();
+  }
+
+  // Initial Sync
+  renderDeptDrawer("kabaCementPanel");
+  syncMobileFilterRail("kabaCementPanel");
+})();
 </script>
 </body>
 </html>
