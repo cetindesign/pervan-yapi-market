@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-card-cement.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=34.3.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=34.4.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -277,8 +277,12 @@
   <!-- ==========================================================================
        2. CANONICAL STICKY SUB-NAV (Pervan Design System Standard)
        ========================================================================== -->
-  <nav class="pv-subnav-hub pv-kaba-subnav" id="pvSubnav" aria-label="Kaba Yapı Kategori Gezintisi">
-    <div class="pv-subnav-inner">
+  <nav class="pv-subnav-hub pv-kaba-subnav" id="pvSubnav" aria-label="Kaba Yapı Departmanları">
+    <div class="pv-container pv-subnav-inner">
+      <div class="pv-subnav-brand">
+        <span class="pv-subnav-logo-badge">Kaba Yapı</span>
+        <span class="pv-subnav-brand-title">Urla Dağıtım</span>
+      </div>
       <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
         <button type="button" class="pv-subnav-link active" data-target="item-cimento">
           Torbalı Çimento
@@ -773,17 +777,7 @@
 
 </main>
 
-<!-- MOBILE STICKY PAYLOAD / SEVK BAR -->
-<aside class="pv-trade-bottom-bar" id="mobileStickyBar">
-  <div class="pv-trade-bottom-info">
-    <span class="pv-trade-bottom-title">Şantiye Sevk Hattı</span>
-    <span class="pv-trade-bottom-payload" id="bottomPayloadText">Urla Depo Çıkışlı Sevk</span>
-  </div>
-  <a href="https://wa.me/905323844497?text=Merhaba,%20Kaba%20Yapı%20şantiye%20teslimi%20için%20fiyat%20ve%20araç%20müsaitliği%20öğrenmek%20istiyorum." class="pv-trade-bottom-cta" id="bottomWaLink" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.073-2.027-.477-1.584-.657-2.618-2.26-2.697-2.366-.079-.105-.648-.863-.648-1.644 0-.781.408-1.166.554-1.325.145-.158.319-.198.425-.198.106 0 .213.002.306.007.098.005.23-.037.36.276.13.313.447 1.092.487 1.172.04.079.066.172.013.277-.053.106-.079.172-.158.265-.079.092-.167.206-.238.277-.08.079-.163.165-.07.324.093.159.412.68.884 1.101.608.542 1.12.71 1.279.79.159.079.252.066.345-.04.093-.105.397-.462.503-.62.106-.159.212-.132.358-.079.146.053.926.437 1.085.516.159.079.265.119.305.185.04.066.04.383-.104.788z"/></svg>
-    Teklif Al →
-  </a>
-</aside>
+
 
 <!-- PERVAN CANONICAL FOOTER -->
 <footer class="footer">
@@ -894,11 +888,13 @@
       goToSlide(currentIndex + 1);
     }, 6000);
 
-    // 2. Canonical Sticky Subnav Header Sync (Weber / Filli Standartı)
+    // 2. Canonical Sticky Subnav Sync & Smooth Scroll Engine
     var subnav = document.getElementById('pvSubnav');
     var spacer = document.getElementById('pvSubnavSpacer');
     var header = document.querySelector('header');
     var subnavLinks = document.querySelectorAll('#pvSubnavLinks .pv-subnav-link');
+    var isClickScrolling = false;
+    var scrollTimeout = null;
 
     var initialSubnavTop = 0;
     function getSubnavOrigin() {
@@ -957,7 +953,7 @@
       headerObserver.observe(header, { attributes: true, attributeFilter: ['class'] });
     }
 
-    // Scroll to Target Section on Click
+    // High Precision Target Section Click-to-Scroll
     subnavLinks.forEach(function(link) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -965,26 +961,33 @@
         var targetEl = document.getElementById(targetId);
         if (!targetEl) return;
 
+        // Immediately activate clicked link
         subnavLinks.forEach(function(l) { l.classList.remove('active'); });
         link.classList.add('active');
         link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
+        isClickScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+          isClickScrolling = false;
+        }, 900);
+
         var headerVisible = header && !header.classList.contains('header--hidden');
         var hHeight = headerVisible ? getHeaderHeight() : 0;
         var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
-        var totalOffset = hHeight + subnavHeight + 14;
+        var totalOffset = hHeight + subnavHeight + 16;
 
         var rect = targetEl.getBoundingClientRect();
-        var targetTop = rect.top + window.pageYOffset - totalOffset;
+        var targetTop = rect.top + (window.pageYOffset || document.documentElement.scrollTop) - totalOffset;
 
         window.scrollTo({
-          top: targetTop,
+          top: Math.max(0, targetTop),
           behavior: 'smooth'
         });
       });
     });
 
-    // ScrollSpy
+    // True Document Coordinate ScrollSpy
     var spySections = [
       'item-cimento',
       'item-alci',
@@ -997,21 +1000,28 @@
     ];
 
     function onScrollSpy() {
+      if (isClickScrolling) return;
+
       var headerVisible = header && !header.classList.contains('header--hidden');
       var hHeight = headerVisible ? getHeaderHeight() : 0;
       var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
-      var scrollPos = (window.pageYOffset || document.documentElement.scrollTop) + hHeight + subnavHeight + 40;
+      var currentScroll = (window.pageYOffset || document.documentElement.scrollTop);
+      var triggerPoint = currentScroll + hHeight + subnavHeight + 50;
 
       for (var i = spySections.length - 1; i >= 0; i--) {
         var el = document.getElementById(spySections[i]);
-        if (el && el.offsetTop <= scrollPos) {
-          var activeLink = document.querySelector('#pvSubnavLinks .pv-subnav-link[data-target="' + spySections[i] + '"]');
-          if (activeLink && !activeLink.classList.contains('active')) {
-            subnavLinks.forEach(function(l) { l.classList.remove('active'); });
-            activeLink.classList.add('active');
-            activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        if (el) {
+          var rect = el.getBoundingClientRect();
+          var elDocTop = rect.top + currentScroll;
+          if (elDocTop <= triggerPoint) {
+            var activeLink = document.querySelector('#pvSubnavLinks .pv-subnav-link[data-target="' + spySections[i] + '"]');
+            if (activeLink && !activeLink.classList.contains('active')) {
+              subnavLinks.forEach(function(l) { l.classList.remove('active'); });
+              activeLink.classList.add('active');
+              activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+            break;
           }
-          break;
         }
       }
     }
@@ -1034,9 +1044,6 @@
 
     // 3. Tactile Segmented Unit Switcher per Item
     var segBars = document.querySelectorAll('.pv-trade-segmented-bar');
-    var bottomPayloadText = document.getElementById('bottomPayloadText');
-    var bottomWaLink = document.getElementById('bottomWaLink');
-
     segBars.forEach(function(bar) {
       var itemKey = bar.dataset.item;
       var outDiv = document.getElementById('out-' + itemKey);
@@ -1061,11 +1068,6 @@
               var waUrl = "https://wa.me/905323844497?text=" + encodeURIComponent("Merhaba, " + text + " (" + weight + ") için şantiye teslimat fiyatı ve gün bilgisi almak istiyorum.");
               actionBtn.href = waUrl;
             }
-          }
-
-          if (bottomPayloadText && bottomWaLink) {
-            bottomPayloadText.innerText = text + ' • ' + vehicle;
-            bottomWaLink.href = "https://wa.me/905323844497?text=" + encodeURIComponent("Merhaba, " + text + " için Urla Depodan şantiye teslim teklifi almak istiyorum.");
           }
         });
       });

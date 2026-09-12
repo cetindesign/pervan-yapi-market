@@ -6099,102 +6099,116 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   background: #15803D;
 }
 
-/* 4. Kompakt & Akıcı Şantiye Harç Simülatörü */
+/* 4. Kompakt & Akıcı Şantiye Harç Simülatörü (Pervan Design System Standard) */
 .pv-trade-sim-card {
-  background: #0F172A;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #1C1917;
   border-radius: 18px;
-  padding: 24px;
-  margin: 16px 0 40px;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 28px 24px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .pv-trade-sim-header {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .pv-trade-sim-badge {
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #F59E0B;
-  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+  color: #C8461E;
+  background: #FFF1EE;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #FECDCA;
+  margin-bottom: 8px;
   display: inline-block;
 }
 
 .pv-trade-sim-title {
   font-size: 20px;
   font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 4px;
+  color: #1C1917;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
 }
 
 .pv-trade-sim-sub {
-  font-size: 13px;
-  color: #94A3B8;
+  font-size: 13.5px;
+  color: #52525B;
   margin: 0;
+  line-height: 1.5;
 }
 
 .pv-trade-sim-types {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .pv-trade-sim-type-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #E2E8F0;
-  font-size: 12px;
+  background: #F4F4F5;
+  border: 1px solid #E4E4E7;
+  color: #52525B;
+  font-size: 12.5px;
   font-weight: 600;
-  padding: 9px 10px;
+  padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
+}
+
+.pv-trade-sim-type-btn:hover {
+  background: #E4E4E7;
+  color: #18181B;
 }
 
 .pv-trade-sim-type-btn.active {
-  background: #FFFFFF;
-  color: #0F172A;
-  border-color: #FFFFFF;
+  background: #FFF1EE;
+  color: #C8461E;
+  border-color: #FECDCA;
+  box-shadow: 0 1px 3px rgba(200, 70, 30, 0.1);
 }
 
 .pv-trade-slider-group {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .pv-trade-slider-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .pv-trade-slider-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12.5px;
-  color: #CBD5E1;
+  font-size: 13px;
+  color: #52525B;
   font-weight: 600;
 }
 
 .pv-trade-slider-label strong {
   font-size: 15px;
-  color: #FFFFFF;
+  color: #1C1917;
 }
 
 .pv-trade-range {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 6px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #E4E4E7;
   outline: none;
 }
 
@@ -6204,25 +6218,25 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #F59E0B;
+  background: #C8461E;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 2px 6px rgba(200, 70, 30, 0.4);
   transition: transform 0.1s ease;
 }
 
 .pv-trade-range::-webkit-slider-thumb:active {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .pv-trade-sim-results {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 600px) {
@@ -6239,73 +6253,27 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 
 .pv-trade-sim-stat-lbl {
   font-size: 11px;
-  color: #94A3B8;
+  color: #71717A;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .pv-trade-sim-stat-val {
   font-size: 18px;
   font-weight: 800;
-  color: #FFFFFF;
+  color: #1C1917;
 }
 
 .pv-trade-sim-stat-val small {
   font-size: 11.5px;
   font-weight: 500;
-  color: #94A3B8;
+  color: #71717A;
 }
 
-/* 5. Mobile Sticky Payload / Sevk Bar */
+/* 5. Mobile Sticky Bottom Bar (Decommissioned) */
 .pv-trade-bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.pv-trade-bottom-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.pv-trade-bottom-title {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #94A3B8;
-}
-
-.pv-trade-bottom-payload {
-  font-size: 14px;
-  font-weight: 800;
-  color: #FFFFFF;
-}
-
-.pv-trade-bottom-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #16A34A;
-  color: #FFFFFF !important;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 2px 10px rgba(22, 163, 74, 0.4);
-  white-space: nowrap;
+  display: none !important;
 }
 
 @media (min-width: 860px) {
@@ -6315,111 +6283,8 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   }
 }
 
-
 /* ==========================================================================
-   KABA YAPI BULLETPROOF STICKY HORIZONTAL SUBNAV (ALL CATEGORIES OPEN)
-   ========================================================================== */
-.pv-kaba-subnav-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-  padding: 8px 0;
-  transition: all 0.2s ease;
-}
-
-.pv-kaba-subnav-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-}
-
-.pv-kaba-subnav-track {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  padding: 4px 0;
-}
-
-.pv-kaba-subnav-track::-webkit-scrollbar {
-  display: none;
-}
-
-.pv-kaba-subnav-btn {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #F1F5F9;
-  color: #475569;
-  border: 1px solid transparent;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  cursor: pointer;
-  white-space: nowrap;
-  text-decoration: none;
-  transition: all 0.18s ease;
-  user-select: none;
-  touch-action: manipulation;
-}
-
-.pv-kaba-subnav-btn:hover {
-  background: #E2E8F0;
-  color: #0F172A;
-}
-
-.pv-kaba-subnav-btn.active {
-  background: #0F172A;
-  color: #FFFFFF !important;
-  border-color: #0F172A;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
-}
-
-.pv-kaba-subnav-btn.pv-calc-accent {
-  color: #C8461E;
-  background: #FFF1EE;
-  border-color: #FECDCA;
-}
-
-.pv-kaba-subnav-btn.pv-calc-accent:hover {
-  background: #FFE4DE;
-  color: #A83614;
-}
-
-.pv-kaba-subnav-btn.pv-calc-accent.active {
-  background: #C8461E;
-  color: #FFFFFF !important;
-  border-color: #C8461E;
-}
-
-/* Scroll margin on target sections so sticky nav doesn't cover headings */
-[id="item-cimento"],
-[id="item-alci"],
-[id="item-kum"],
-[id="item-gazbeton"],
-[id="hesaplayici-bolumu"],
-[id="lojistik-bolumu"],
-[id="faq-bolumu"],
-[id="depo-bolumu"] {
-  scroll-margin-top: 70px;
-}
-
-
-/* ==========================================================================
-   KABA YAPI & ÇİMENTO — DESIGN SYSTEM SUBNAV & HARMONIZED TOKENS
+   KABA YAPI & ÇİMENTO — CANONICAL DESIGN SYSTEM SUBNAV
    ========================================================================== */
 .pv-subnav-hub.pv-kaba-subnav {
   display: block !important;
@@ -6449,15 +6314,50 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   padding: 0 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1C1917;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-brand-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #71717A;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .pv-subnav-hub.pv-kaba-subnav .pv-subnav-brand-title {
+    display: none;
+  }
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-links {
   display: flex !important;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -6471,55 +6371,59 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-link {
-  flex-shrink: 0;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #F4F4F5;
-  color: #52525B;
-  border: 1px solid transparent;
+  padding: 0 4px;
+  height: 52px;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
   font-family: var(--font-display, inherit);
   font-size: 13px;
-  font-weight: 600;
-  padding: 6px 14px;
-  height: 34px;
-  border-radius: 9999px;
-  cursor: pointer;
-  white-space: nowrap;
+  font-weight: 500;
+  color: #71717A;
   text-decoration: none;
-  transition: all 0.18s ease;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
   user-select: none;
-  touch-action: manipulation;
-  margin-bottom: 0;
-  border-bottom: 1px solid transparent;
+  flex-shrink: 0;
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-link:hover {
-  background: #E4E4E7;
   color: #18181B;
+  border-bottom-color: rgba(0, 0, 0, 0.18);
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.active {
-  background: #18181B;
-  color: #FFFFFF !important;
-  border-color: #18181B;
+  color: #C8461E !important;
+  font-weight: 700;
+  border-bottom-color: #C8461E !important;
+  background: transparent !important;
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent {
   color: #C8461E;
-  background: #FFF1EE;
-  border-color: #FECDCA;
-}
-
-.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent:hover {
-  background: #FFE4DE;
-  color: #A83614;
 }
 
 .pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent.active {
-  background: #C8461E;
-  color: #FFFFFF !important;
-  border-color: #C8461E;
+  color: #C8461E !important;
+  border-bottom-color: #C8461E !important;
+}
+
+/* Precise Target Clearance */
+#item-cimento,
+#item-alci,
+#item-kum,
+#item-gazbeton,
+#hesaplayici-bolumu,
+#lojistik-bolumu,
+#faq-bolumu,
+#depo-bolumu {
+  scroll-margin-top: 130px;
 }
 
 /* Material Feed Card Design Harmonization */
