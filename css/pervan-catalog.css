@@ -1914,15 +1914,18 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
    Pervan Yapı Market — Filli Boya & RenXMatik™ Yetkili Renk Merkezi
    ========================================================================== */
 
-.pv-menu-section {
-  padding: 40px 0 72px;
+.pv-menu-section,
+.pv-tab-panel {
+  padding: 36px 0 72px;
   background-color: var(--pv-white);
   border-bottom: 1px solid var(--pv-border-subtle);
 }
 
 @media (max-width: 768px) {
-  .pv-menu-section {
-    padding: 20px 0 48px;
+  .pv-menu-section,
+  .pv-tab-panel {
+    padding: 0 0 48px;
+    border-bottom: none;
   }
 }
 
@@ -1955,51 +1958,8 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   line-height: 1.5;
 }
 
-/* Category Filter Pills (Level 2: Solid Contrast Filter Pills) */
-.pv-menu-pills-wrap {
-  position: relative;
-  margin-bottom: 24px;
-}
-
-.pv-menu-pills {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.pv-menu-pills::-webkit-scrollbar {
-  display: none;
-}
-
 /* ==========================================================================
-   PERVAN ARCHITECTURAL CATALOG SYSTEM
-   Line-Item Typographic Menu & Interactive Bottom Sheet Modal
-   ========================================================================== */
-
-/* Category Star Tabs (Clean & Focused) */
-.pv-menu-pills-wrap {
-  margin-bottom: 28px;
-}
-
-.pv-menu-pills {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.pv-menu-pills::-webkit-scrollbar {
-  display: none;
-}
-
-/* ==========================================================================
-   ATELIER CATALOG RIBBON & CATEGORY PILLS
+   ATELIER CATALOG RIBBON & CATEGORY PILLS (DESKTOP)
    ========================================================================== */
 .pv-menu-pills-wrap {
   margin-bottom: 24px;
@@ -2065,11 +2025,16 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
    ========================================================================== */
 .pv-menu-list {
   background: #FFFFFF;
-  border-top: 1px solid rgba(24, 24, 27, 0.1);
-  border-bottom: 1px solid rgba(24, 24, 27, 0.1);
-  border-radius: 18px;
-  overflow: hidden;
-  padding: 4px;
+  border-top: 1px solid rgba(24, 24, 27, 0.08);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .pv-menu-list {
+    border-top: none;
+  }
 }
 
 .pv-menu-row {
@@ -2080,9 +2045,15 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   padding: 14px 12px;
   border-bottom: 1px solid rgba(24, 24, 27, 0.06);
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 0;
   transition: background-color 0.18s ease, transform 0.18s ease;
   user-select: none;
+}
+
+@media (min-width: 769px) {
+  .pv-menu-row {
+    border-radius: 8px;
+  }
 }
 
 .pv-menu-row:last-child {
