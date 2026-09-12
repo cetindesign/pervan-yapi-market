@@ -56,7 +56,9 @@
           "opens": "08:30",
           "closes": "19:30"
         }
-      ]
+      ],
+      "hasMerchantReturnPolicy": { "@id": "https://www.pervanyapimarket.com/#merchant-return-policy" },
+      "shippingDetails": { "@id": "https://www.pervanyapimarket.com/#shipping-policy-izmir" }
     },
     {
       "@type": "WarehouseOrDistributionCenter",
@@ -92,7 +94,9 @@
       "hasDeliveryMethod": [
         "https://schema.org/OnSitePickup",
         "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-      ]
+      ],
+      "hasMerchantReturnPolicy": { "@id": "https://www.pervanyapimarket.com/#merchant-return-policy" },
+      "shippingDetails": { "@id": "https://www.pervanyapimarket.com/#shipping-policy-izmir" }
     },
     {
       "@type": "DeliveryService",
@@ -113,6 +117,50 @@
       ],
       "hasDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
       "description": "Urla Lojistik Depo çıkışlı İsonem su yalıtımı, Liquid Glass sıvı cam ve Thermal Paint ısı yalıtım boyalarının Çeşme, Urla ve Yarımada şantiyelerine aynı gün paletli teslimatı."
+    },
+    {
+      "@type": "MerchantReturnPolicy",
+      "@id": "https://www.pervanyapimarket.com/#merchant-return-policy",
+      "name": "Pervan Mağaza ve Şantiye İade Şartnamesi",
+      "applicableCountry": "TR",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnInStore",
+      "returnFees": "https://schema.org/FreeReturn",
+      "inStoreReturnsOffered": true,
+      "url": "https://www.pervanyapimarket.com/hakkimizda.html"
+    },
+    {
+      "@type": "OfferShippingDetails",
+      "@id": "https://www.pervanyapimarket.com/#shipping-policy-izmir",
+      "name": "İzmir ve Yarımada Şantiye Sevkiyat Şartnamesi",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "TRY"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "TR",
+          "addressRegion": "İzmir"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        }
+      }
     }
   ]
 }
@@ -164,9 +212,9 @@
               </div>
             </div>
 
-            <!-- 02: Temel Malzemeler -->
+            <!-- 02: Yapı Market & Hırdavat -->
             <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Temel Malzemeler</div>
+              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
                 <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
@@ -176,6 +224,7 @@
                 <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
                 <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
                 <a href="el-aletleri.html" class="navbar-item">El Aletleri &amp; Hırdavat</a>
+                <a href="k-othrine-hasere.html" class="navbar-item">Bayer K-Othrine &amp; Çevre Sağlığı</a>
               </div>
             </div>
 
