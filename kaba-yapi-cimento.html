@@ -24,176 +24,15 @@
 <link rel="stylesheet" href="css/pervan-catalog.css?v=34.5.0" />
 
 <style>
-/* ==========================================================================
-   PERVAN CANONICAL DESIGN SYSTEM OVERRIDES (100% FIDELITY TO WEBER / FILLI BOYA)
-   ========================================================================== */
-
-/* Subnav Sticky Zero-Jitter Engine */
-.pv-subnav-hub {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 980 !important;
-  background: rgba(255, 255, 255, 0.94) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+/* Micro thumbnail crop containment */
+.pv-menu-thumb {
+  border-radius: 8px !important;
+  overflow: hidden !important;
 }
-.pv-subnav-spacer {
-  display: none !important;
-}
-
-/* Subnav Links: ALWAYS OPEN & HORIZONTALLY SCROLLABLE on ALL SCREEN SIZES */
-.pv-subnav-links {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  scrollbar-width: none !important;
-  flex: 1 !important;
-  min-width: 0 !important;
-  padding: 4px 2px !important;
-}
-.pv-subnav-links::-webkit-scrollbar {
-  display: none !important;
-}
-
-.pv-subnav-link {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #F4F4F5;
-  color: #52525B;
-  border: 1px solid transparent;
-  padding: 8px 14px;
-  border-radius: 9999px;
-  font-family: var(--pv-font);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-.pv-subnav-link:hover {
-  background: #E4E4E7;
-  color: #18181B;
-}
-.pv-subnav-link.active {
-  background: var(--pv-btn-primary-bg, #C8461E) !important;
-  color: #FFFFFF !important;
-  border-color: var(--pv-btn-primary-bg, #C8461E) !important;
-  box-shadow: 0 2px 10px rgba(200, 70, 30, 0.28) !important;
-}
-.pv-subnav-link.active .pv-subnav-num {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.pv-subnav-brand {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  flex-shrink: 0 !important;
-}
-.pv-subnav-logo-badge {
-  background: #18181B;
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-.pv-subnav-brand-title {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #18181B;
-  letter-spacing: -0.01em;
-}
-
-.pv-subnav-actions {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-shrink: 0 !important;
-}
-
-/* Category Filter Pills (In Page Body): ALWAYS OPEN on Mobile & Desktop */
-.pv-menu-pills-wrap {
-  display: block !important;
-  margin-bottom: 24px !important;
-}
-.pv-menu-pills {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  scrollbar-width: none !important;
-  padding: 4px 2px !important;
-}
-.pv-menu-pills::-webkit-scrollbar {
-  display: none !important;
-}
-.pv-menu-pill {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  background: #F4F4F5;
-  color: #52525B;
-  border: 1px solid transparent;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  font-family: var(--pv-font);
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.16s ease;
-}
-.pv-menu-pill:hover {
-  background: #E4E4E7;
-  color: #18181B;
-}
-.pv-menu-pill.active {
-  background: var(--pv-btn-primary-bg, #C8461E) !important;
-  color: #FFFFFF !important;
-  border-color: var(--pv-btn-primary-bg, #C8461E) !important;
-  box-shadow: 0 2px 10px rgba(200, 70, 30, 0.28) !important;
-}
-
-/* Mobile Responsive Optimizations */
-@media (max-width: 768px) {
-  .pv-subnav-inner {
-    height: 52px !important;
-    padding: 0 10px !important;
-    gap: 8px !important;
-  }
-  .pv-subnav-brand {
-    display: none !important; /* Full width for horizontal swipeable tabs */
-  }
-  .pv-subnav-actions {
-    display: none !important;
-  }
-  .pv-subnav-link {
-    height: 34px !important;
-    padding: 6px 13px !important;
-    font-size: 12.5px !important;
-  }
-}
-
-/* Product Line-Item Row Behavior */
-.pv-menu-row {
-  cursor: pointer;
-}
-.pv-menu-row.hidden {
-  display: none !important;
+.pv-menu-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 </style>
 
@@ -344,7 +183,7 @@
 <main class="pv-scope pv-page-main">
 
   <!-- ==========================================================================
-       1. ENDÜSTRİYEL KABA YAPI & DAĞITIM STAGE HERO
+       1. ENDÜSTRİYEL KABA YAPI & DAĞITIM STAGE HERO (100% CANONICAL WEBER ENGINE)
        ========================================================================== -->
   <section class="pv-stage-hero" id="pvStageHero" aria-label="Urla Ana Depo Kaba Yapı ve Çimento Dağıtımı">
     
@@ -434,36 +273,24 @@
       </div>
     </div>
 
-    <!-- Thumbnails Bar -->
-    <div class="pv-stage-thumbs-bar">
-      <div class="pv-container pv-stage-thumbs-wrap">
-        <button type="button" class="pv-stage-thumb-btn active" data-index="0" aria-label="CEM I 42.5 R Çimento Görseli">
-          <div class="pv-stage-thumb-indicator" style="background:#52525B;"></div>
-          <div class="pv-stage-thumb-meta">
-            <span class="pv-stage-thumb-code">CEM I 42.5 R</span>
-            <span class="pv-stage-thumb-name">Portland Çimento</span>
-          </div>
-        </button>
-        <button type="button" class="pv-stage-thumb-btn" data-index="1" aria-label="Urla Depo Sevkiyat Görseli">
-          <div class="pv-stage-thumb-indicator" style="background:#C8461E;"></div>
-          <div class="pv-stage-thumb-meta">
-            <span class="pv-stage-thumb-code">Urla Lojistik</span>
-            <span class="pv-stage-thumb-name">Damper &amp; Vinç Filosu</span>
-          </div>
-        </button>
-        <button type="button" class="pv-stage-thumb-btn" data-index="2" aria-label="Şap Kumu ve Alçı Görseli">
-          <div class="pv-stage-thumb-indicator" style="background:#D97706;"></div>
-          <div class="pv-stage-thumb-meta">
-            <span class="pv-stage-thumb-code">Kum &amp; Alçı</span>
-            <span class="pv-stage-thumb-name">0-3mm Şap &amp; Sıva</span>
-          </div>
-        </button>
-      </div>
-    </div>
+    <!-- Stage Left / Right Floating Arrow Navigation -->
+    <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <!-- Stage Bottom Scroll Prompt -->
+    <a href="#kabaCementPanel" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kaba Yapı Kataloğuna Kaydır">
+      <span>Kaba Yapı Kataloğunu Keşfet</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+
   </section>
 
   <!-- ==========================================================================
-       2. STICKY ARCHITECTURAL SUB-NAV (100% OPEN & SWIPEABLE ON ALL DEVICES)
+       2. STICKY ARCHITECTURAL SUB-NAV (100% CANONICAL PERVAN HUB STANDARD)
        ========================================================================== -->
   <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Kaba Yapı Departmanları">
     <div class="pv-container pv-subnav-inner">
@@ -472,19 +299,42 @@
         <span class="pv-subnav-brand-title">Urla Depo Dağıtım</span>
       </div>
       
+      <!-- Desktop Swipeable Tab Links -->
       <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
-      <button type="button" class="pv-subnav-link active" data-target="kabaCementPanel" role="tab" aria-selected="true"><span class="pv-subnav-num">01</span> Torbalı Çimento</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaPlasterPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">02</span> Yapı Alçısı & Sıva</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaAggregatesPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">03</span> Şap Kumu & Agrega</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaMasonryPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">04</span> Gazbeton & Tuğla</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaSteelPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">05</span> Demir & Hasır Çelik</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaFormworkPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">06</span> Kalıp & Plywood</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaMembranePanel" role="tab" aria-selected="false"><span class="pv-subnav-num">07</span> Su İzolasyon Membranı</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaSimulatorPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">08</span> Harç Simülatörü</button>
-      <button type="button" class="pv-subnav-link" data-target="kabaLogisticsPanel" role="tab" aria-selected="false"><span class="pv-subnav-num">09</span> Şantiye Lojistiği</button>
+      <button type="button" class="pv-subnav-link active" data-target="kabaCementPanel" role="tab" aria-selected="true">Torbalı Çimento</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaPlasterPanel" role="tab" aria-selected="false">Yapı Alçısı & Sıva</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaAggregatesPanel" role="tab" aria-selected="false">Şap Kumu & Agrega</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaMasonryPanel" role="tab" aria-selected="false">Gazbeton & Tuğla</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaSteelPanel" role="tab" aria-selected="false">Demir & Hasır Çelik</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaFormworkPanel" role="tab" aria-selected="false">Kalıp & Plywood</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaMembranePanel" role="tab" aria-selected="false">Su İzolasyon Membranı</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaSimulatorPanel" role="tab" aria-selected="false">Harç Simülatörü</button>
+      <button type="button" class="pv-subnav-link" data-target="kabaLogisticsPanel" role="tab" aria-selected="false">Şantiye Lojistiği</button>
+      </div>
+
+      <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
+      <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
+        <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
+          <span class="pv-dept-label" id="pvDeptTriggerLabel">Torbalı Çimento</span>
+          <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        <div class="pv-filter-rail" id="pvFilterRail">
+          <!-- Injected dynamically based on active department -->
+        </div>
       </div>
 
       <div class="pv-subnav-actions">
+        <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Ara</span>
+          <kbd class="pv-subnav-search-kbd">⌘K</kbd>
+        </button>
         <a href="https://wa.me/905323844497?text=Merhaba%2C%20Urla%20Depo%20kaba%20yap%C4%B1%20ve%20%C3%A7imento%20fiyatlar%C4%B1%20i%C3%A7in%20palet%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn" id="pvSubnavCtaBtn">
           <span>Palet Fiyatı Al</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -492,32 +342,43 @@
       </div>
     </div>
   </nav>
+  <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
   <!-- ==========================================================================
-       3. MALZEME DEPARTMANLARI (7 TEMEL KABA YAPI PANELİ)
+       MOBILE iOS 18 BOTTOM SHEET DRAWER (Department Switcher)
+       ========================================================================== -->
+  <div class="pv-drawer-backdrop" id="pvDeptDrawerBackdrop" aria-hidden="true">
+    <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="pvDrawerTitle">
+      <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
+        <div class="pv-drawer-handle"></div>
+      </div>
+      
+      <div class="pv-drawer-header">
+        <div>
+          <h3 class="pv-drawer-title" id="pvDrawerTitle">Kaba Yapı Departmanları</h3>
+          <div class="pv-drawer-subtitle">İncelemek istediğiniz ürün grubunu seçin</div>
+        </div>
+        <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
+      </div>
+
+      <div class="pv-drawer-list" id="pvDeptList">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       3. MALZEME DEPARTMANLARI (CANONICAL WEBER HIERARCHY)
        ========================================================================== -->
   <div class="pv-catalog-body" id="pvCatalogBody">
 
 <!-- =========================================================================
-     DEPARTMAN 1: TORBALI ÇIMENTO & BAĞLAYICILAR
+     PANEL 1: TORBALI ÇIMENTO & BAĞLAYICILAR
      ========================================================================= -->
 <div class="pv-tab-panel active" id="kabaCementPanel" role="tabpanel">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Torbalı Çimento & Bağlayıcılar</h2>
-        <p class="pv-menu-subtitle">Portland CEM I 42.5 R, CEM II 32.5, Beyaz Çimento ve Sönmüş Kireç</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">5</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="cementMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Çimento & Bağlayıcılar</button>
@@ -529,7 +390,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: Portland Çimento CEM I 42.5 R -->
       <div class="pv-menu-row" data-category="portland-cimento" data-product-id="cimento-cem-1-42-5" role="button" tabindex="0">
@@ -671,25 +532,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 2: YAPI ALÇISI & SIVA GRUBU
+     PANEL 2: YAPI ALÇISI & SIVA GRUBU
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaPlasterPanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Yapı Alçısı & Sıva Grubu</h2>
-        <p class="pv-menu-subtitle">Perlitli sıva, saten perdah, makine sıvası ve alçıpan derz dolgu</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">4</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="plasterMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Alçı Grubu</button>
@@ -700,7 +548,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: Perlitli Sıva Alçısı (El Sıvası) -->
       <div class="pv-menu-row" data-category="siva-alcisi" data-product-id="alci-perlitli-siva" role="button" tabindex="0">
@@ -815,25 +663,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 3: ŞAP KUMU, ÇAKIL & AGREGA
+     PANEL 3: ŞAP KUMU, ÇAKIL & AGREGA
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaAggregatesPanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Şap Kumu, Çakıl & Agrega</h2>
-        <p class="pv-menu-subtitle">0-3 mm elenmiş şap kumu, 0-5 mm sıva kumu, mıcır ve dolomit</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">4</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="aggregatesMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Şap Kumu & Agregalar</button>
@@ -844,7 +679,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: 0–3 mm Yıkanmış & Elenmiş Şap Kumu -->
       <div class="pv-menu-row" data-category="sap-kumu" data-product-id="kum-sap-03-elenmis" role="button" tabindex="0">
@@ -959,25 +794,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 4: GAZBETON, TUĞLA & DUVAR BLOKLARI
+     PANEL 4: GAZBETON, TUĞLA & DUVAR BLOKLARI
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaMasonryPanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Gazbeton, Tuğla & Duvar Blokları</h2>
-        <p class="pv-menu-subtitle">Ytong bloklar, gazbeton tutkalı, 13.5'lik tuğla ve hazır kuru şap C20</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">4</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="masonryMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Duvar Blokları & Harçlar</button>
@@ -987,7 +809,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: Gazbeton (Ytong) Duvar Blokları -->
       <div class="pv-menu-row" data-category="gazbeton-harci" data-product-id="gazbeton-ytong-blok" role="button" tabindex="0">
@@ -1102,25 +924,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 5: İNŞAAT DEMIRI & HASIR ÇELIK DONATI
+     PANEL 5: İNŞAAT DEMIRI & HASIR ÇELIK DONATI
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaSteelPanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">İnşaat Demiri & Hasır Çelik Donatı</h2>
-        <p class="pv-menu-subtitle">Ø8-Ø32 Nervürlü demir B500C, Q131/Q188 çelik hasır ve bağ teli</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">3</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="steelMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm İnşaat Demiri & Hasır</button>
@@ -1130,7 +939,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: Nervürlü İnşaat Demiri (B500C) -->
       <div class="pv-menu-row" data-category="insaat-demiri" data-product-id="demir-nervurlu-b500c" role="button" tabindex="0">
@@ -1218,25 +1027,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 6: KALIP, KERESTE & HUŞ PLYWOOD
+     PANEL 6: KALIP, KERESTE & HUŞ PLYWOOD
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaFormworkPanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Kalıp, Kereste & Huş Plywood</h2>
-        <p class="pv-menu-subtitle">18mm/21mm Huş Plywood, 5x10 çam kereste, OSB-3 ve kalıp yağı</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">3</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="formworkMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Kalıp & Ahşap Grubu</button>
@@ -1246,7 +1042,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: 18 mm Huş (Birch) Film Kaplı Kalıp Plywood -->
       <div class="pv-menu-row" data-category="plywood-kalip" data-product-id="plywood-hus-film-kapli" role="button" tabindex="0">
@@ -1334,25 +1130,12 @@
 </div>
 
 <!-- =========================================================================
-     DEPARTMAN 7: TEMEL & ÇATI İZOLASYON MEMBRANLARI
+     PANEL 7: TEMEL & ÇATI İZOLASYON MEMBRANLARI
      ========================================================================= -->
 <div class="pv-tab-panel" id="kabaMembranePanel" role="tabpanel" style="display: none;">
   <div class="pv-container">
     
-    <header class="pv-menu-header">
-      <div class="pv-menu-title-wrap">
-        <span class="pv-menu-dept-tag">Urla Depo Dağıtım Portföyü</span>
-        <h2 class="pv-menu-main-title">Temel & Çatı İzolasyon Membranları</h2>
-        <p class="pv-menu-subtitle">3mm/4mm bitümlü membran, arduvazlı çatı membranı ve drenaj levhası</p>
-      </div>
-      <div class="pv-menu-quick-stats">
-        <span class="pv-stat-item"><strong class="pv-prod-count">3</strong> Malzeme / Standart</span>
-        <span class="pv-stat-sep">&bull;</span>
-        <span class="pv-stat-item">Vinçli &amp; Damperli Sevkiyat</span>
-      </div>
-    </header>
-
-    <!-- Category Filter Pills (Always Open & Swipeable on Mobile) -->
+    <!-- Category Filter Pills -->
     <div class="pv-menu-pills-wrap">
       <div class="pv-menu-pills" id="membraneMenuPills" role="tablist">
         <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Yalıtım & Drenaj</button>
@@ -1362,7 +1145,7 @@
       </div>
     </div>
 
-    <!-- Product Line-Item List (Authentic Restaurant-Menu / Line-Item Architecture) -->
+    <!-- Product Line-Item List -->
     <div class="pv-menu-list">
       <!-- Item: 3 mm Polyester Keçeli Bitümlü Su İzolasyon Membranı -->
       <div class="pv-menu-row" data-category="bitumlu-membran" data-product-id="membran-bitumlu-polyester-3mm" role="button" tabindex="0">
@@ -1450,24 +1233,11 @@
 </div>
 
     <!-- =========================================================================
-         DEPARTMAN 8: AKILLI ŞANTİYE HARÇ & ÇİMENTO SİMÜLATÖRÜ
+         PANEL 8: AKILLI ŞANTİYE HARÇ & ÇİMENTO SİMÜLATÖRÜ
          ========================================================================= -->
     <div class="pv-tab-panel" id="kabaSimulatorPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
         
-        <header class="pv-menu-header">
-          <div class="pv-menu-title-wrap">
-            <span class="pv-menu-dept-tag">Şantiye Mühendislik Aracı</span>
-            <h2 class="pv-menu-main-title">Akıllı Şantiye Harç &amp; Çimento Simülatörü</h2>
-            <p class="pv-menu-subtitle">Metrekare ve kalınlık değerlerinize göre CEM I çimento, şap kumu ve lojistik araç ihtiyacınızı saniyeler içinde hesaplayın.</p>
-          </div>
-          <div class="pv-menu-quick-stats">
-            <span class="pv-stat-item">Tolerans Düzeltmeli Hesaplama</span>
-            <span class="pv-stat-sep">&bull;</span>
-            <span class="pv-stat-item">Anlık Şantiye WhatsApp Teklifi</span>
-          </div>
-        </header>
-
         <div class="pv-trade-sim-card">
           <div class="pv-trade-sim-grid">
             
@@ -1574,23 +1344,10 @@
     </div>
 
     <!-- =========================================================================
-         DEPARTMAN 9: İZMİR – ÇEŞME ŞANTİYE LOJİSTİĞİ & URLA DEPO SEVKİYATI
+         PANEL 9: İZMİR – ÇEŞME ŞANTİYE LOJİSTİĞİ & URLA DEPO SEVKİYATI
          ========================================================================= -->
     <div class="pv-tab-panel" id="kabaLogisticsPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
-        
-        <header class="pv-menu-header">
-          <div class="pv-menu-title-wrap">
-            <span class="pv-menu-dept-tag">Özmal Sevkiyat Filosu</span>
-            <h2 class="pv-menu-main-title">İzmir – Çeşme Hattı Şantiye Lojistiği</h2>
-            <p class="pv-menu-subtitle">Urla Ana Depomuzdan Yarımada şantiyelerine damperli, vinçli (Hi-Ab) ve kamyonet filomuzla aynı gün veya programlı sevkiyat.</p>
-          </div>
-          <div class="pv-menu-quick-stats">
-            <span class="pv-stat-item">10+ İlçe / Belde Ring Seferi</span>
-            <span class="pv-stat-sep">&bull;</span>
-            <span class="pv-stat-item">Kat Kotuna Vinçli İndirme</span>
-          </div>
-        </header>
 
         <div class="pv-trade-logistics-grid">
           
@@ -1655,187 +1412,227 @@
   </div>
 
   <!-- ==========================================================================
-       4. PERVAN CANONICAL SPECIMEN DETAIL MODAL & CONFIGURATOR
+       MERKEZLER & YOL TARİFİ (Showroom & Logistics GPS Hubs)
        ========================================================================== -->
-  <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
-    <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-      <!-- Top Gesture Bar & Absolute Close Action -->
-      <div class="pv-modal-top-bar" id="modalTopBar">
-        <div class="pv-modal-handle-zone" id="modalHandleZone">
-          <div class="pv-modal-handle"></div>
-        </div>
-        <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+  <section class="pv-hubs-section" aria-label="Pervan Merkezleri ve Yol Tarifi">
+    <div class="pv-container">
+      
+      <div class="pv-hubs-header">
+        <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
+        <h2 class="pv-hubs-title">Daha Fazlası &amp; Şantiye Tedariği İçin</h2>
+        <p class="pv-hubs-desc">Kaba yapı şantiye siparişleri, kamyonet/damper yüklemesi veya toptan malzeme anlaşmaları için merkezlerimize ulaşın.</p>
       </div>
 
-      <!-- Scrollable Modal Content Area -->
-      <div class="pv-modal-scroll" id="modalScrollArea">
-        <!-- 1. Centered Specimen Header Lockup -->
-        <div class="pv-specimen-hero">
-          <div class="pv-specimen-meta">
-            <div class="pv-specimen-eyebrow" id="modalProductEyebrow">PERVAN · KABA YAPI &amp; DAĞITIM</div>
-            <h3 class="pv-specimen-title" id="modalProductTitle">Ürün Adı</h3>
+      <div class="pv-hubs-grid">
+        
+        <!-- Card 1: Urla Lojistik Depo -->
+        <div class="pv-hub-card">
+          <h3 class="pv-hub-title">Urla Ana Lojistik Deposu (Kaba Yapı Üssü)</h3>
+          <p class="pv-hub-desc">Paletli çimento, demir, agrega ve gazbeton yükleme sahası; vinçli ve damperli filo lojistik merkezi.</p>
+          
+          <div class="pv-hub-details">
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Kalabak Mah. 3004 Sk. No:2, Urla / İzmir</span>
+            </div>
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
+            </div>
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span><strong>Şantiye Sevk Hattı:</strong> <a href="tel:+905323844497" class="pv-hub-phone-link">0 (532) 384 44 97</a></span>
+            </div>
           </div>
 
-          <div class="pv-specimen-can-stage">
-            <div class="pv-specimen-glow" id="modalChromaGlow"></div>
-            <img id="modalProductImg" src="assets/rf-card-cement.jpg" alt="Ürün Görseli" />
-            <div class="pv-can-shadow" id="modalCanShadow"></div>
-          </div>
-
-          <p class="pv-specimen-desc" id="modalProductDesc">Ürün açıklaması burada yer alacaktır.</p>
-          <span id="modalProductTag" style="display:none;"></span>
-        </div>
-
-        <!-- 2. Packaging / Size Segmented Track -->
-        <div class="pv-modal-select-group">
-          <div class="pv-modal-select-header">
-            <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
-          </div>
-          <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
-            <!-- Dynamically populated -->
-          </div>
-        </div>
-
-        <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
-        <div class="pv-spec-gauges" id="modalSpecGauges">
-          <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
-            <div class="pv-gauge-eyebrow">STANDART &amp; MUKAVEMET</div>
-            <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 197-1</div>
-            <div class="pv-gauge-caption" id="modalGaugeStandardCaption">CE &amp; TSE Onaylı</div>
-          </div>
-
-          <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
-            <div class="pv-gauge-eyebrow">SARFİYAT &amp; DOZAJ</div>
-            <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">~300-350 kg/m³</div>
-            <div class="pv-gauge-caption" id="modalSpecPackaging">50 kg Torba</div>
+          <div class="pv-hub-actions">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Yol Tarifi Al (Haritalar)</span>
+            </a>
+            <a href="https://wa.me/905323844497?text=Merhaba%2C%20Urla%20Deponuzdan%20kaba%20yap%C4%B1%20malzemesi%20sevkiyat%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp ile Sor</span>
+            </a>
           </div>
         </div>
 
-        <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
-        <div class="pv-specs-table" id="modalSpecsTable">
-          <div class="pv-spec-row">
-            <span class="pv-spec-k">Standart &amp; Sınıf:</span>
-            <span class="pv-spec-v" id="modalSpecStandardRow">-</span>
+        <!-- Card 2: Balçova Showroom -->
+        <div class="pv-hub-card">
+          <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
+          <p class="pv-hub-desc">Yapı kimyasalları, el aletleri, bağlantı elemanları, tesisat ve perakende yapı market alışverişi.</p>
+          
+          <div class="pv-hub-details">
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
+            </div>
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Pazartesi – Cumartesi: 08:30 – 19:30</span>
+            </div>
+            <div class="pv-hub-detail-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
+            </div>
           </div>
-          <div class="pv-spec-row">
-            <span class="pv-spec-k">Ambalaj / Palet:</span>
-            <span class="pv-spec-v" id="modalSpecPackagingRow">-</span>
-          </div>
-          <div class="pv-spec-row">
-            <span class="pv-spec-k">Karışım &amp; Dozaj:</span>
-            <span class="pv-spec-v" id="modalSpecMixing">-</span>
-          </div>
-          <div class="pv-spec-row">
-            <span class="pv-spec-k">Priz &amp; Mukavemet:</span>
-            <span class="pv-spec-v" id="modalSpecPotLife">-</span>
-          </div>
-          <div class="pv-spec-row">
-            <span class="pv-spec-k">Lojistik Dağıtım:</span>
-            <span class="pv-spec-v" id="modalSpecLogistics">Urla Ana Depo Paletli / Damperli Sevk</span>
+
+          <div class="pv-hub-actions">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Yol Tarifi Al (Haritalar)</span>
+            </a>
+            <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20ma%C4%9Fazan%C4%B1zdan%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp ile Danış</span>
+            </a>
           </div>
         </div>
 
-        <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
-        <div class="pv-modal-accordions" id="modalAccordions">
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-
-      <!-- STICKY FOOTER ACTION BAR -->
-      <div class="pv-modal-footer-sticky" id="modalFooterSticky">
-        <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
-          <span>WhatsApp ile Şantiye Palet &amp; Kamyon Fiyatı Al</span>
-        </a>
-        <div class="pv-modal-footer-aux">
-          <span class="pv-modal-delivery-chip">
-            <span class="pv-chip-pulse"></span>
-            <span>Urla Depo Çıkışlı · Damperli &amp; Vinçli Şantiye Teslim</span>
-          </span>
-        </div>
       </div>
     </div>
-  </div>
+  </section>
 
 </main>
 
 <!-- ==========================================================================
-     FOOTER & SUB-FOOTER
+     ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
      ========================================================================== -->
-<footer class="pv-footer" role="contentinfo">
-  <div class="pv-container">
-    
-    <div class="pv-footer-grid">
-      
-      <!-- Marka & Kurumsal Tanıtım -->
-      <div class="pv-footer-col pv-footer-brand">
-        <a class="pv-footer-logo" href="index.html" aria-label="Pervan Anasayfa">Pervan</a>
-        <p class="pv-footer-tagline">
-          İzmir ve Çeşme Yarımadası genelinde anahtar teslim inşaat taahhüt, mimari restorasyon, profesyonel yapı kimyasalları ve toptan kaba yapı malzeme tedarikçisi.
-        </p>
-        <div class="pv-footer-badges">
-          <span class="pv-badge">Urla Ana Lojistik Depo</span>
-          <span class="pv-badge">Balçova Yetkili Bayi</span>
-          <span class="pv-badge">Özmal Sevkiyat Filosu</span>
-        </div>
+<div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
+  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <!-- Top Gesture Bar & Absolute Close Action -->
+    <div class="pv-modal-top-bar" id="modalTopBar">
+      <div class="pv-modal-handle-zone" id="modalHandleZone">
+        <div class="pv-modal-handle"></div>
       </div>
-
-      <!-- Yetkili Bayilikler -->
-      <div class="pv-footer-col">
-        <h4 class="pv-footer-heading">Yetkili Bayilikler</h4>
-        <ul class="pv-footer-links">
-          <li><a href="filli-boya-renxmatik.html">Filli Boya &amp; RenXMatik</a></li>
-          <li><a href="weber-yapi-kimyasallari.html">Saint-Gobain Weber</a></li>
-          <li><a href="bianca-stella-boya.html">Bianca Stella Boya</a></li>
-          <li><a href="isonem-yalitim.html">İsonem Su Yalıtımı</a></li>
-          <li><a href="yetkili-bayilikler.html">Tüm Bayiliklerimiz &rarr;</a></li>
-        </ul>
-      </div>
-
-      <!-- Kaba Yapı & Malzeme -->
-      <div class="pv-footer-col">
-        <h4 class="pv-footer-heading">Yapı Market &amp; Malzeme</h4>
-        <ul class="pv-footer-links">
-          <li><a href="kaba-yapi-cimento.html" class="active">Kaba Yapı &amp; Çimento</a></li>
-          <li><a href="tesisat-altyapi.html">Sıhhi Tesisat &amp; Altyapı</a></li>
-          <li><a href="elektrik-aydinlatma.html">Elektrik &amp; Aydınlatma</a></li>
-          <li><a href="kilit-kapi-hirdavat.html">Kilit &amp; Kapı Hırdavat</a></li>
-          <li><a href="malzemeler.html">Tüm Malzemeler &rarr;</a></li>
-        </ul>
-      </div>
-
-      <!-- İletişim & Şubeler -->
-      <div class="pv-footer-col">
-        <h4 class="pv-footer-heading">Lojistik Merkezlerimiz</h4>
-        <div class="pv-footer-contact-item">
-          <strong>Balçova Showroom:</strong> Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir<br />
-          <a href="tel:+902322784340" class="pv-phone-link">0 (232) 278 43 40</a>
-        </div>
-        <div class="pv-footer-contact-item" style="margin-top: 12px;">
-          <strong>Urla Lojistik Depo:</strong> Kalabak Mah. 3004 Sk. No:2, Urla / İzmir<br />
-          <a href="tel:+905323844497" class="pv-phone-link">0 (532) 384 44 97</a>
-        </div>
-      </div>
-
+      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
-    <div class="pv-footer-bottom">
-      <p>&copy; 2026 Pervan Yapı Malzemeleri ve İnşaat Taahhüt San. Tic. Ltd. Şti. Tüm hakları saklıdır.</p>
+    <!-- Scrollable Modal Content Area -->
+    <div class="pv-modal-scroll" id="modalScrollArea">
+      <!-- 1. Specimen Header -->
+      <div class="pv-specimen-hero">
+        <div class="pv-specimen-meta">
+          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">PERVAN · KABA YAPI &amp; DAĞITIM</div>
+          <h3 class="pv-specimen-title" id="modalProductTitle">Ürün Adı</h3>
+        </div>
+
+        <div class="pv-specimen-can-stage">
+          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+          <img id="modalProductImg" src="assets/rf-card-cement.jpg" alt="Ürün Görseli" />
+          <div class="pv-can-shadow" id="modalCanShadow"></div>
+        </div>
+
+        <p class="pv-specimen-desc" id="modalProductDesc">Ürün açıklaması burada yer alacaktır.</p>
+        <span id="modalProductTag" style="display:none;"></span>
+      </div>
+
+      <!-- 2. Packaging / Size Segmented Track -->
+      <div class="pv-modal-select-group">
+        <div class="pv-modal-select-header">
+          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
+        </div>
+        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- 3. Key Performance Indicators -->
+      <div class="pv-specimen-gauges">
+        <div class="pv-gauge-tile">
+          <span class="pv-gauge-label">Standart / Norm</span>
+          <strong class="pv-gauge-val" id="modalSpecStandard">TS EN Standart</strong>
+        </div>
+        <div class="pv-gauge-tile">
+          <span class="pv-gauge-label">Sarfiyat / Verim</span>
+          <strong class="pv-gauge-val" id="modalSpecConsumption">Proje Bazlı</strong>
+        </div>
+        <div class="pv-gauge-tile">
+          <span class="pv-gauge-label">Palet / Ambalaj</span>
+          <strong class="pv-gauge-val" id="modalSpecPackaging">Kraft Torba</strong>
+        </div>
+      </div>
+
+      <!-- 4. Technical Specs Table -->
+      <div class="pv-modal-specs-table">
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Teknik Standart:</span>
+          <span class="pv-spec-v" id="modalSpecStandardRow">-</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Ambalaj Tipi:</span>
+          <span class="pv-spec-v" id="modalSpecPackagingRow">-</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Uygulama Oranı:</span>
+          <span class="pv-spec-v" id="modalSpecMixing">-</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Mukavemet / Priz:</span>
+          <span class="pv-spec-v" id="modalSpecPotLife">-</span>
+        </div>
+        <div class="pv-spec-row">
+          <span class="pv-spec-k">Lojistik Dağıtım:</span>
+          <span class="pv-spec-v" id="modalSpecLogistics">Urla Ana Depo Paletli / Damperli Sevk</span>
+        </div>
+      </div>
+
+      <!-- 5. Technical Accordions -->
+      <div class="pv-modal-accordions" id="modalAccordions">
+        <!-- Injected dynamically -->
+      </div>
     </div>
 
+    <!-- STICKY FOOTER ACTION BAR -->
+    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp ile Stok &amp; Palet Teklifi Al</span>
+      </a>
+      <div class="pv-modal-footer-aux">
+        <span class="pv-modal-delivery-chip">
+          <span class="pv-chip-pulse"></span>
+          <span>Urla Depo Çıkışlı Aynı Gün Vinçli &amp; Damperli Sevk</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-sizer">
+      <div>
+        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
+        <div class="footer-block" style="margin-top: 14px;">
+          Pervan Yapı Market &bull; Urla Ana Lojistik Deposu &bull; Balçova Showroom &bull; Kaba Yapı &amp; Çimento Dağıtımı
+        </div>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="yetkili-bayilikler.html">Yetkili Bayilikler</a>
+        <a href="kaba-yapi-cimento.html">Kaba Yapı &amp; Çimento</a>
+        <a href="filli-boya-renxmatik.html">Filli Boya</a>
+        <a href="weber-yapi-kimyasallari.html">Saint-Gobain Weber</a>
+        <a href="bianca-stella-boya.html">Bianca Stella</a>
+        <a href="taahhut.html">Mimari Taahhüt</a>
+        <a href="urla-lojistik-depo.html">Urla Lojistik Depo</a>
+        <a href="balcova-showroom.html">Balçova Yapı Market</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script src="js/pervan.js?v=33.0.0"></script>
 
-<!-- SCRIPTS & INTERACTIVE ENGINE -->
+<!-- SCRIPTS & INTERACTIVE ENGINE (100% CANONICAL PERVAN HUB STANDARD) -->
 <script>
 /* 1. HERO STAGE SLIDER & TRANSPARENT HEADER OBSERVER */
 (function() {
@@ -1860,7 +1657,8 @@
   if (!track) return;
 
   var slides = stage.querySelectorAll(".pv-stage-slide");
-  var thumbBtns = stage.querySelectorAll(".pv-stage-thumb-btn");
+  var prevBtn = document.getElementById("pvStagePrev");
+  var nextBtn = document.getElementById("pvStageNext");
   var currentIndex = 0;
   var totalSlides = slides.length;
   var autoPlayTimer = null;
@@ -1872,10 +1670,6 @@
 
     slides.forEach(function(slide, idx) {
       slide.classList.toggle("active", idx === index);
-    });
-
-    thumbBtns.forEach(function(btn, idx) {
-      btn.classList.toggle("active", idx === index);
     });
 
     var barWidth = 140 / totalSlides;
@@ -1902,13 +1696,21 @@
     syncActiveState(index);
   }
 
-  thumbBtns.forEach(function(btn, idx) {
-    btn.addEventListener("click", function() {
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function() {
       stopAutoPlay();
-      goToSlide(idx);
+      goToSlide(currentIndex - 1);
       startAutoPlay();
     });
-  });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function() {
+      stopAutoPlay();
+      goToSlide(currentIndex + 1);
+      startAutoPlay();
+    });
+  }
 
   function startAutoPlay() {
     stopAutoPlay();
@@ -1929,7 +1731,7 @@
   startAutoPlay();
 })();
 
-/* 2. CANONICAL CATALOG INTERACTIVE ENGINE & SPECIMEN MODAL */
+/* 2. ARCHITECTURAL SUBNAV & 9-DEPARTMENT ZERO-SCROLL ENGINE */
 (function() {
   var KABA_PRODUCTS_DATA = [
   {
@@ -2865,14 +2667,341 @@
     ]
   }
 ];
+  var DEPARTMENTS_DATA = [
+  {
+    "id": "kabaCementPanel",
+    "short": "Torbalı Çimento",
+    "full": "Torbalı Çimento & Bağlayıcılar",
+    "sub": "Portland CEM I 42.5 R, CEM II 32.5, Beyaz Çimento ve Sönmüş Kireç",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/></svg>",
+    "pillsId": "cementMenuPills"
+  },
+  {
+    "id": "kabaPlasterPanel",
+    "short": "Yapı Alçısı & Sıva",
+    "full": "Yapı Alçısı & Sıva Grubu",
+    "sub": "Perlitli sıva, saten perdah, makine sıvası ve alçıpan derz dolgu",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>",
+    "pillsId": "plasterMenuPills"
+  },
+  {
+    "id": "kabaAggregatesPanel",
+    "short": "Şap Kumu & Agrega",
+    "full": "Şap Kumu, Çakıl & Agrega",
+    "sub": "0-3 mm elenmiş şap kumu, 0-5 mm sıva kumu, mıcır ve dolomit",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"/></svg>",
+    "pillsId": "aggregatesMenuPills"
+  },
+  {
+    "id": "kabaMasonryPanel",
+    "short": "Gazbeton & Tuğla",
+    "full": "Gazbeton, Tuğla & Duvar Blokları",
+    "sub": "Ytong bloklar, gazbeton tutkalı, 13.5'lik tuğla ve hazır kuru şap C20",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 20h20\"/><path d=\"m5 16 3-3\"/><path d=\"M9 12l8-8 4 4-8 8\"/><path d=\"m14 7 3 3\"/></svg>",
+    "pillsId": "masonryMenuPills"
+  },
+  {
+    "id": "kabaSteelPanel",
+    "short": "Demir & Hasır Çelik",
+    "full": "İnşaat Demiri & Hasır Çelik Donatı",
+    "sub": "Ø8-Ø32 Nervürlü demir B500C, Q131/Q188 çelik hasır ve bağ teli",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"4\" y1=\"21\" x2=\"4\" y2=\"14\"/><line x1=\"4\" y1=\"10\" x2=\"4\" y2=\"3\"/><line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"3\"/><line x1=\"20\" y1=\"21\" x2=\"20\" y2=\"16\"/><line x1=\"20\" y1=\"12\" x2=\"20\" y2=\"3\"/><line x1=\"1\" y1=\"14\" x2=\"7\" y2=\"14\"/><line x1=\"9\" y1=\"8\" x2=\"15\" y2=\"8\"/><line x1=\"17\" y1=\"16\" x2=\"23\" y2=\"16\"/></svg>",
+    "pillsId": "steelMenuPills"
+  },
+  {
+    "id": "kabaFormworkPanel",
+    "short": "Kalıp & Plywood",
+    "full": "Kalıp, Kereste & Huş Plywood",
+    "sub": "18mm/21mm Huş Plywood, 5x10 çam kereste, OSB-3 ve kalıp yağı",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><line x1=\"3\" y1=\"9\" x2=\"21\" y2=\"9\"/><line x1=\"9\" y1=\"21\" x2=\"9\" y2=\"9\"/></svg>",
+    "pillsId": "formworkMenuPills"
+  },
+  {
+    "id": "kabaMembranePanel",
+    "short": "Su İzolasyon Membranı",
+    "full": "Temel & Çatı İzolasyon Membranları",
+    "sub": "3mm/4mm bitümlü membran, arduvazlı çatı membranı ve drenaj levhası",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>",
+    "pillsId": "membraneMenuPills"
+  },
+  {
+    "id": "kabaSimulatorPanel",
+    "short": "Harç Simülatörü",
+    "full": "Akıllı Şantiye Harç Simülatörü",
+    "sub": "Zemin şapı, sıva ve duvar için anlık torba & araç hesaplayıcı",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>",
+    "pillsId": "simMenuPills"
+  },
+  {
+    "id": "kabaLogisticsPanel",
+    "short": "Şantiye Lojistiği",
+    "full": "İzmir – Çeşme Şantiye Lojistiği",
+    "sub": "Urla Ana Depo damperli & vinçli filo ring seferleri",
+    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>",
+    "pillsId": "logisticsMenuPills"
+  }
+];
 
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.querySelector("header");
   var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
-  var panels = document.querySelectorAll(".pv-tab-panel");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
+  var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
+  var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
+  var deptDrawer = document.getElementById("pvDeptDrawer");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
+
   var currentActiveTab = "kabaCementPanel";
   var currentProduct = null;
   var selectedSize = "";
 
-  // Modal DOM Elements
+  var panels = {};
+  DEPARTMENTS_DATA.forEach(function(d) {
+    panels[d.id] = document.getElementById(d.id);
+  });
+
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+  }
+
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  function switchTab(tabId) {
+    if (!panels[tabId]) return;
+    currentActiveTab = tabId;
+
+    subnavLinks.forEach(function(link) {
+      var match = (link.getAttribute("data-target") === tabId);
+      link.classList.toggle("active", match);
+      link.setAttribute("aria-selected", match ? "true" : "false");
+      if (match && typeof link.scrollIntoView === "function") {
+        link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+    });
+
+    Object.keys(panels).forEach(function(k) {
+      if (panels[k]) {
+        if (k === tabId) {
+          panels[k].style.display = "";
+          panels[k].classList.add("active");
+        } else {
+          panels[k].style.display = "none";
+          panels[k].classList.remove("active");
+        }
+      }
+    });
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === tabId; });
+    if (dept && deptTriggerLabel) {
+      deptTriggerLabel.textContent = dept.short;
+    }
+
+    renderDeptDrawer(tabId);
+    syncMobileFilterRail(tabId);
+  }
+
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var target = link.getAttribute("data-target");
+      if (target) switchTab(target);
+    });
+  });
+
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
+
+    DEPARTMENTS_DATA.forEach(function(dept) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      var isAct = (dept.id === activeId);
+      btn.className = "pv-drawer-item" + (isAct ? " active" : "");
+      btn.setAttribute("role", "button");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-icon">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
+        '<div class="pv-drawer-item-info">' +
+          '<div class="pv-drawer-item-title">' + dept.full + '</div>' +
+          '<div class="pv-drawer-item-desc">' + dept.sub + '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-arrow">' +
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>' +
+        '</div>';
+
+      btn.addEventListener("click", function() {
+        switchTab(dept.id);
+        closeDeptDrawer();
+      });
+
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    if (!dept || !dept.pillsId) return;
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
+        e.preventDefault();
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      });
+
+      filterRail.appendChild(chip);
+    });
+  }
+
+  function openDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.add("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    deptTrigger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.remove("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    deptTrigger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      openDeptDrawer();
+    });
+  }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", closeDeptDrawer);
+  }
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("click", function(e) {
+      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
+    });
+  }
+
+  // Category filter click handler within page body
+  document.querySelectorAll(".pv-menu-pills .pv-menu-pill").forEach(function(pill) {
+    pill.addEventListener("click", function() {
+      var wrap = pill.closest(".pv-menu-pills");
+      wrap.querySelectorAll(".pv-menu-pill").forEach(function(p) {
+        p.classList.remove("active");
+        p.setAttribute("aria-selected", "false");
+      });
+      pill.classList.add("active");
+      pill.setAttribute("aria-selected", "true");
+      if (typeof pill.scrollIntoView === "function") {
+        pill.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+
+      var filter = pill.getAttribute("data-filter");
+      var panel = pill.closest(".pv-tab-panel");
+      if (!panel) return;
+
+      panel.querySelectorAll(".pv-menu-row").forEach(function(row) {
+        var cat = row.getAttribute("data-category");
+        if (filter === "all" || cat === filter) {
+          row.classList.remove("hidden");
+        } else {
+          row.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // Specimen Detail Modal Logic
   var modalBackdrop = document.getElementById("pvModalBackdrop");
   var modalCard = document.getElementById("pvModalCard");
   var modalCloseBtn = document.getElementById("pvModalCloseBtn");
@@ -2895,90 +3024,23 @@
   var modalAccordions = document.getElementById("modalAccordions");
   var modalWABtn = document.getElementById("modalWABtn");
 
-  // Touch variables for iOS bottom sheet swipe down
-  var dragStartY = 0;
-  var dragCurrentY = 0;
-  var dragStartTime = 0;
-  var isSheetDragging = false;
-  var canDragFromScroll = false;
-
-  // 1. Department Tab Switching
-  function switchTab(deptId) {
-    currentActiveTab = deptId;
-
-    subnavLinks.forEach(function(link) {
-      var isTarget = link.getAttribute("data-target") === deptId;
-      link.classList.toggle("active", isTarget);
-      link.setAttribute("aria-selected", isTarget ? "true" : "false");
-      if (isTarget) {
-        link.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-    });
-
-    panels.forEach(function(panel) {
-      if (panel.id === deptId) {
-        panel.style.display = "block";
-        panel.classList.add("active");
-      } else {
-        panel.style.display = "none";
-        panel.classList.remove("active");
-      }
-    });
-  }
-
-  subnavLinks.forEach(function(link) {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      var target = link.getAttribute("data-target");
-      if (target) switchTab(target);
-    });
-  });
-
-  // 2. Category Filter Pills within Panels
-  document.querySelectorAll(".pv-menu-pills .pv-menu-pill").forEach(function(pill) {
-    pill.addEventListener("click", function() {
-      var pillsWrap = pill.closest(".pv-menu-pills");
-      pillsWrap.querySelectorAll(".pv-menu-pill").forEach(function(p) {
-        p.classList.remove("active");
-        p.setAttribute("aria-selected", "false");
-      });
-      pill.classList.add("active");
-      pill.setAttribute("aria-selected", "true");
-      pill.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-
-      var filter = pill.getAttribute("data-filter");
-      var panel = pill.closest(".pv-tab-panel");
-      if (!panel) return;
-
-      var rows = panel.querySelectorAll(".pv-menu-row");
-      rows.forEach(function(row) {
-        if (filter === "all" || row.getAttribute("data-category") === filter) {
-          row.classList.remove("hidden");
-        } else {
-          row.classList.add("hidden");
-        }
-      });
-    });
-  });
-
-  // 3. Product Detail Modal Engine
   function openModal(productId) {
     var p = KABA_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
     if (!p) return;
     currentProduct = p;
 
-    if (modalProductEyebrow) modalProductEyebrow.textContent = "PERVAN · KABA YAPI & DAĞITIM";
     if (modalProductTitle) modalProductTitle.textContent = p.name;
+    if (modalProductEyebrow) modalProductEyebrow.textContent = p.badge ? ("PERVAN · " + p.badge) : "PERVAN · KABA YAPI & DAĞITIM";
+    if (modalProductDesc) modalProductDesc.textContent = p.desc;
     if (modalProductImg) {
       modalProductImg.src = p.thumb;
       modalProductImg.alt = p.name;
     }
-    if (modalProductDesc) modalProductDesc.textContent = p.desc;
 
-    // Ambalaj Boyutları
+    // Sizes
     if (modalSizeTrack) {
       modalSizeTrack.innerHTML = "";
-      var sizes = p.sizes && p.sizes.length ? p.sizes : ["Standart Ambalaj", "1 Palet"];
+      var sizes = p.sizes || ["Standart Şantiye Ambalajı"];
       selectedSize = sizes[0];
 
       sizes.forEach(function(size, idx) {
@@ -3101,6 +3163,12 @@
   });
 
   // Touch gesture physics for mobile bottom sheet dismissal
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var isSheetDragging = false;
+  var canDragFromScroll = false;
+
   function resetSheetStyles() {
     if (modalCard) {
       modalCard.style.transform = "";
@@ -3178,7 +3246,7 @@
     target.addEventListener("touchcancel", onDragEnd, { passive: true });
   });
 
-  // 4. Akıllı Şantiye Harç Simülatörü
+  // 3. Interactive Harç Simülatörü Engine (Panel 8)
   var simTypes = document.querySelectorAll(".pv-trade-sim-type-btn");
   var simAreaRange = document.getElementById("simAreaRange");
   var simThickRange = document.getElementById("simThickRange");
@@ -3190,65 +3258,70 @@
   var simOutTruck = document.getElementById("simOutTruck");
   var simWaCta = document.getElementById("simWaCta");
 
-  var currentMix = "Zemin Şapı";
-  var cRatio = 0.32;
-  var sRatio = 1.15;
-  var wRatio = 8;
+  var activeMix = {
+    name: "Zemin Şapı",
+    cRatio: 0.32,
+    sRatio: 1.15,
+    wRatio: 8
+  };
 
-  function updateSim() {
+  function updateSimCalc() {
     if (!simAreaRange || !simThickRange) return;
     var area = parseFloat(simAreaRange.value) || 50;
     var thick = parseFloat(simThickRange.value) || 5.0;
 
-    if (simAreaDisplay) simAreaDisplay.innerText = area + " m²";
-    if (simThickDisplay) simThickDisplay.innerText = thick.toFixed(1) + " cm";
+    if (simAreaDisplay) simAreaDisplay.textContent = area + " m²";
+    if (simThickDisplay) simThickDisplay.textContent = thick.toFixed(1) + " cm";
 
-    var factor = thick / 5.0;
-    var totalCement = Math.ceil(area * cRatio * factor);
-    var totalSand = Math.ceil(area * sRatio * factor);
-    var totalWater = Math.round(area * wRatio * factor);
+    var volM3 = area * (thick / 100.0);
 
-    var truck = "Transit Kamyonet";
-    if (totalCement > 40 || totalSand > 120) {
-      truck = "Vinçli Palet / Damper";
-    } else if (totalCement > 20 || totalSand > 60) {
-      truck = "6-Teker Damperli";
+    var cementBags = Math.ceil(volM3 * activeMix.cRatio * 20);
+    if (cementBags < 1) cementBags = 1;
+
+    var sandBags = Math.ceil(volM3 * activeMix.sRatio * 25);
+    if (sandBags < 1) sandBags = 1;
+
+    var waterLiters = Math.round(cementBags * activeMix.wRatio);
+
+    var totalWeightTons = ((cementBags * 50) + (sandBags * 40)) / 1000.0;
+    var truckName = "Transit Kamyonet (1–3 Ton)";
+    if (totalWeightTons > 12) {
+      truckName = "Damperli Kamyon / Tır (15+ Ton)";
+    } else if (totalWeightTons > 5) {
+      truckName = "Vinçli Ağır Kamyon (8–10 Ton)";
+    } else if (totalWeightTons > 2.5) {
+      truckName = "Damperli Kamyon (4–6 Ton)";
     }
 
-    if (simOutCement) simOutCement.innerHTML = totalCement + ' <small>Torba (50kg)</small>';
-    if (simOutSand) simOutSand.innerHTML = totalSand + ' <small>Çuval (40kg)</small>';
-    if (simOutWater) simOutWater.innerHTML = totalWater + ' <small>Litre</small>';
-    if (simOutTruck) simOutTruck.innerHTML = truck;
+    if (simOutCement) simOutCement.innerHTML = cementBags + ' <small>Torba (50kg)</small>';
+    if (simOutSand) simOutSand.innerHTML = sandBags + ' <small>Çuval (40kg)</small>';
+    if (simOutWater) simOutWater.innerHTML = waterLiters + ' <small>Litre</small>';
+    if (simOutTruck) simOutTruck.textContent = truckName;
 
     if (simWaCta) {
-      var msg = "Merhaba, Şantiye Harç Simülatörü ile hesapladığım reçete için teklif almak istiyorum:\n" +
-                "- Uygulama: " + currentMix + " (" + area + " m², " + thick + " cm)\n" +
-                "- İhtiyaç: " + totalCement + " Torba CEM I Çimento + " + totalSand + " Çuval Şap Kumu\n" +
-                "- Önerilen Araç: " + truck + "\n" +
-                "Urla Depo şantiye teslimat fiyatı alabilir miyim?";
-      simWaCta.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
+      var waMsg = "Merhaba, Urla Depo Harç Simülatörü ile hesapladığım " + activeMix.name + " (" + area + " m², " + thick.toFixed(1) + " cm kalınlık) için reçetem:\n- " + cementBags + " Torba Portland Çimento\n- " + sandBags + " Çuval 0-3 mm Şap Kumu\n- Lojistik Öneri: " + truckName + "\nŞantiye teslim palet fiyatı ve sevkiyat günü almak istiyorum.";
+      simWaCta.href = "https://wa.me/905323844497?text=" + encodeURIComponent(waMsg);
     }
   }
 
-  simTypes.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      simTypes.forEach(function(b) { b.classList.remove("active"); });
-      btn.classList.add("active");
-      currentMix = btn.dataset.mixName || "Zemin Şapı";
-      cRatio = parseFloat(btn.dataset.cRatio) || 0.32;
-      sRatio = parseFloat(btn.dataset.sRatio) || 1.15;
-      wRatio = parseFloat(btn.dataset.wRatio) || 8;
-      updateSim();
+  if (simTypes.length) {
+    simTypes.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        simTypes.forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        activeMix.name = btn.getAttribute("data-mix-name") || "Zemin Şapı";
+        activeMix.cRatio = parseFloat(btn.getAttribute("data-c-ratio")) || 0.32;
+        activeMix.sRatio = parseFloat(btn.getAttribute("data-s-ratio")) || 1.15;
+        activeMix.wRatio = parseFloat(btn.getAttribute("data-w-ratio")) || 8;
+        updateSimCalc();
+      });
     });
-  });
-
-  if (simAreaRange && simThickRange) {
-    simAreaRange.addEventListener("input", updateSim);
-    simThickRange.addEventListener("input", updateSim);
-    updateSim();
   }
 
-  // Deep Link Check
+  if (simAreaRange) simAreaRange.addEventListener("input", updateSimCalc);
+  if (simThickRange) simThickRange.addEventListener("input", updateSimCalc);
+  updateSimCalc();
+
   function checkDeepLink() {
     var hash = window.location.hash;
     if (hash && hash.indexOf("#urun-") === 0) {
@@ -3266,6 +3339,7 @@
   switchTab("kabaCementPanel");
   checkDeepLink();
   window.addEventListener("popstate", checkDeepLink);
+
 })();
 </script>
 </body>
