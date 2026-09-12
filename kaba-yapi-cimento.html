@@ -23,19 +23,6 @@
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=34.5.0" />
 
-<style>
-/* Micro thumbnail crop containment */
-.pv-menu-thumb {
-  border-radius: 8px !important;
-  overflow: hidden !important;
-}
-.pv-menu-thumb img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
-</style>
-
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
@@ -1496,6 +1483,33 @@
 </main>
 
 <!-- ==========================================================================
+     GLOBAL SPOTLIGHT COMMAND PALETTE (⌘K / 26 Ürün Arama)
+     ========================================================================== -->
+<div class="pv-spotlight-backdrop" id="pvSpotlightBackdrop" aria-hidden="true">
+  <div class="pv-spotlight-dialog" role="dialog" aria-modal="true" aria-label="Kaba Yapı ve Çimento Ürün Arama">
+    <div class="pv-spotlight-header">
+      <svg class="pv-spotlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="pvSpotlightInput" class="pv-spotlight-input" placeholder="26 ürün arasında ara (Çimento, Alçı, Kum, Gazbeton, Hasır, Plywood...)" autocomplete="off" spellcheck="false" aria-label="Ürün Ara" />
+      <span class="pv-spotlight-esc-chip">ESC</span>
+      <button type="button" class="pv-spotlight-close-btn" id="pvSpotlightCloseBtn" aria-label="Aramayı Kapat">✕</button>
+    </div>
+    <div class="pv-spotlight-results" id="pvSpotlightResults">
+      <div class="pv-spotlight-hint">
+        <span>Çimento CEM I, Perlitli Alçı, Şap Kumu, Ytong Gazbeton veya ambalaj boyutuna göre arayabilirsiniz.</span>
+      </div>
+    </div>
+    <div class="pv-spotlight-footer">
+      <span class="pv-spotlight-footer-stat" id="pvSpotlightCount">26 Ürün Yayında</span>
+      <div class="pv-spotlight-footer-keys">
+        <span><kbd>↑</kbd><kbd>↓</kbd> Gezin</span>
+        <span><kbd>↵</kbd> İncele</span>
+        <span><kbd>ESC</kbd> Çık</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
      ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
      ========================================================================== -->
 <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
@@ -2871,7 +2885,13 @@
     link.addEventListener("click", function(e) {
       e.preventDefault();
       var target = link.getAttribute("data-target");
-      if (target) switchTab(target);
+      if (target) {
+        switchTab(target);
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      }
     });
   });
 
@@ -2882,22 +2902,28 @@
     DEPARTMENTS_DATA.forEach(function(dept) {
       var btn = document.createElement("button");
       btn.type = "button";
-      var isAct = (dept.id === activeId);
-      btn.className = "pv-drawer-item" + (isAct ? " active" : "");
+      var isSelected = (dept.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
       btn.setAttribute("role", "button");
       btn.innerHTML = 
-        '<div class="pv-drawer-item-icon">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
-        '<div class="pv-drawer-item-info">' +
-          '<div class="pv-drawer-item-title">' + dept.full + '</div>' +
-          '<div class="pv-drawer-item-desc">' + dept.sub + '</div>' +
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + dept.full + '</span>' +
+            '<span class="pv-drawer-item-sub">' + dept.sub + '</span>' +
+          '</div>' +
         '</div>' +
-        '<div class="pv-drawer-item-arrow">' +
-          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
         '</div>';
 
       btn.addEventListener("click", function() {
         switchTab(dept.id);
         closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
       });
 
       deptList.appendChild(btn);
@@ -3244,6 +3270,235 @@
     target.addEventListener("touchmove", onDragMove, { passive: false });
     target.addEventListener("touchend", onDragEnd, { passive: true });
     target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  // ==========================================================================
+  // SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 26 Ürün Arama)
+  // ==========================================================================
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightTrigger = document.getElementById("pvSubnavSearchBtn");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
+  var spotlightInput = document.getElementById("pvSpotlightInput");
+  var spotlightResults = document.getElementById("pvSpotlightResults");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
+  var spotlightSelectedIdx = -1;
+
+  function normalizeTr(str) {
+    if (!str) return "";
+    return str
+      .toString()
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/i̇/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getProductDomain(deptId) {
+    var d = DEPARTMENTS_DATA.find(function(item) { return item.id === deptId; });
+    return d ? d.short : "Kaba Yapı";
+  }
+
+  function openSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (spotlightInput) {
+      spotlightInput.value = "";
+      renderSpotlightInitial();
+      setTimeout(function() { spotlightInput.focus(); }, 60);
+    }
+  }
+
+  function closeSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (spotlightInput) spotlightInput.blur();
+  }
+
+  function renderSpotlightInitial() {
+    spotlightSelectedIdx = -1;
+    if (spotlightCount) spotlightCount.textContent = KABA_PRODUCTS_DATA.length + " Ürün Yayında";
+    if (spotlightResults) {
+      spotlightResults.innerHTML = '<div class="pv-spotlight-hint">' +
+        '<span>İpucu: Çimento CEM I, Perlitli Alçı, Şap Kumu, Ytong Gazbeton veya ambalaj boyutuna göre arayabilirsiniz.</span>' +
+        '</div>';
+    }
+  }
+
+  function highlightSpotlightItem(items, newIdx) {
+    if (!items.length) return;
+    items.forEach(function(el) { el.classList.remove("is-selected"); });
+    if (newIdx < 0) newIdx = items.length - 1;
+    if (newIdx >= items.length) newIdx = 0;
+    spotlightSelectedIdx = newIdx;
+    items[newIdx].classList.add("is-selected");
+    items[newIdx].scrollIntoView({ block: "nearest" });
+  }
+
+  function performSpotlightSearch(rawQuery) {
+    var q = normalizeTr(rawQuery);
+    if (!q || q.length < 2) {
+      renderSpotlightInitial();
+      return;
+    }
+
+    var words = q.split(" ").filter(Boolean);
+    var matches = [];
+
+    KABA_PRODUCTS_DATA.forEach(function(prod) {
+      var haystack = normalizeTr([
+        prod.name || "",
+        prod.tag || "",
+        prod.desc || "",
+        prod.category || "",
+        (prod.meta || []).join(" "),
+        (prod.sizes || []).join(" ")
+      ].join(" "));
+
+      var matched = words.every(function(w) {
+        return haystack.indexOf(w) !== -1;
+      });
+
+      if (matched) {
+        matches.push(prod);
+      }
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Ürün Bulundu";
+    }
+
+    if (!spotlightResults) return;
+
+    if (matches.length === 0) {
+      spotlightSelectedIdx = -1;
+      var waText = encodeURIComponent("Merhaba, Kaba Yapı kataloğunuzda '" + rawQuery + "' aradım ancak bulamadım. Bu malzeme hakkında Urla Ana Depo stok ve paletli/kamyon sevkiyat bilgisi alabilir miyim?");
+      spotlightResults.innerHTML = '<div class="pv-spotlight-empty-box">' +
+        '<div class="pv-spotlight-empty-title">Eşleşen ürün bulunamadı</div>' +
+        '<p class="pv-spotlight-empty-desc">Aradığınız ürün standart katalog dışı veya özel şantiye siparişi olabilir. Urla lojistik merkezimize doğrudan danışabilirsiniz:</p>' +
+        '<a href="https://wa.me/905323844497?text=' + waText + '" target="_blank" rel="noopener" class="pv-btn-primary" style="max-width: 320px; font-size: 12px; padding: 11px 18px; min-height: 42px;">' +
+        'WhatsApp ile Malzeme Danış' +
+        '</a>' +
+        '</div>';
+      return;
+    }
+
+    var html = "";
+    matches.forEach(function(p, idx) {
+      var domain = getProductDomain(p.deptId);
+      var subText = (p.sizes && p.sizes.length) ? p.sizes.join(", ") : (p.tag || "");
+
+      html += '<div class="pv-spotlight-item' + (idx === 0 ? ' is-selected' : '') + '" data-product-id="' + p.id + '" role="option" tabindex="-1">';
+      html += '  <div class="pv-spotlight-item-left">';
+      html += '    <div class="pv-spotlight-thumb">';
+      html += '      <img src="' + p.thumb + '" alt="' + p.name + '" loading="lazy" decoding="async" />';
+      html += '    </div>';
+      html += '    <div class="pv-spotlight-item-info">';
+      html += '      <div class="pv-spotlight-item-title-row">';
+      html += '        <span class="pv-spotlight-item-name">' + p.name + '</span>';
+      html += '        <span class="pv-spotlight-item-domain">' + domain + '</span>';
+      html += '      </div>';
+      html += '      <div class="pv-spotlight-item-sub">' + subText + '</div>';
+      html += '    </div>';
+      html += '  </div>';
+      html += '  <div class="pv-spotlight-item-right">';
+      html += '    <span class="pv-spotlight-item-action">İncele &rarr;</span>';
+      html += '  </div>';
+      html += '</div>';
+    });
+
+    spotlightResults.innerHTML = html;
+    spotlightSelectedIdx = 0;
+
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
+      });
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-product-id");
+        closeSpotlight();
+        var p = KABA_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+        if (p && p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      });
+    });
+  }
+
+  if (spotlightTrigger) {
+    spotlightTrigger.addEventListener("click", openSpotlight);
+  }
+  if (spotlightCloseBtn) {
+    spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  }
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
+    });
+  }
+
+  if (spotlightInput) {
+    var spotlightDebounce;
+    spotlightInput.addEventListener("input", function() {
+      clearTimeout(spotlightDebounce);
+      spotlightDebounce = setTimeout(function() {
+        performSpotlightSearch(spotlightInput.value);
+      }, 90);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx + 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx - 1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (items.length && spotlightSelectedIdx >= 0 && items[spotlightSelectedIdx]) {
+          var pid = items[spotlightSelectedIdx].getAttribute("data-product-id");
+          closeSpotlight();
+          var p = KABA_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+          if (p && p.deptId && p.deptId !== currentActiveTab) {
+            switchTab(p.deptId);
+          }
+          openModal(pid);
+        }
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeSpotlight();
+      }
+    });
+  }
+
+  window.addEventListener("keydown", function(e) {
+    var isTyping = e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable);
+    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      e.preventDefault();
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else {
+        openSpotlight();
+      }
+    } else if (e.key === "/" && !isTyping && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      openSpotlight();
+    } else if (e.key === "Escape" && spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+      closeSpotlight();
+    }
   });
 
   // 3. Interactive Harç Simülatörü Engine (Panel 8)
