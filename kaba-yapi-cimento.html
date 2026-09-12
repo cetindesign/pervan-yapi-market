@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-card-cement.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=34.1.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=34.2.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -170,7 +170,7 @@
 <main class="pv-scope pv-page-main">
 
   <!-- ==========================================================================
-       1. ENDÜSTRİYEL KABA YAPI & DAĞITIM STAGE HERO (Weber / Filli Standartı)
+       1. ENDÜSTRİYEL KABA YAPI & DAĞITIM STAGE HERO
        ========================================================================== -->
   <section class="pv-stage-hero" id="pvStageHero" aria-label="Urla Ana Depo Kaba Yapı ve Çimento Dağıtımı">
     
@@ -248,7 +248,7 @@
               <span class="pv-spec-sep">&bull;</span>
               <span>Sıva &amp; Saten Alçı</span>
             </div>
-            <a href="#kabaKatalog" class="pv-stage-text-link">
+            <a href="#item-cimento" class="pv-stage-text-link">
               <span>Tüm Malzemeleri İncele</span>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -268,53 +268,50 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </button>
 
-    <a href="#kabaKatalog" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
+    <a href="#kabaSubnavBar" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
       <span>Kaba Yapı Kataloğunu Keşfet</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </section>
 
   <!-- ==========================================================================
-       2. STICKY SUB-NAV (Pervan Hub Standardı)
+       2. BULLETPROOF STICKY SUBNAV BAR (ALL CATEGORIES OPEN & HORIZONTAL SCROLL)
        ========================================================================== -->
-  <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Kaba Yapı Departmanları">
-    <div class="pv-container pv-subnav-inner">
-      <div class="pv-subnav-brand">
-        <span class="pv-subnav-tag" style="color:#0F172A; font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:0.06em;">KABA YAPI &amp; ÇİMENTO</span>
-      </div>
-      
-      <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
-        <button type="button" class="pv-subnav-link active" data-target="item-cimento" role="tab">
+  <nav class="pv-kaba-subnav-sticky" id="kabaSubnavBar" aria-label="Kaba Yapı Kategori Gezintisi">
+    <div class="pv-kaba-subnav-container">
+      <div class="pv-kaba-subnav-track" id="kabaSubnavTrack">
+        <button type="button" class="pv-kaba-subnav-btn active" data-target="item-cimento">
           Torbalı Çimento
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-alci" role="tab">
+        <button type="button" class="pv-kaba-subnav-btn" data-target="item-alci">
           Sıva &amp; Saten Alçı
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-kum" role="tab">
+        <button type="button" class="pv-kaba-subnav-btn" data-target="item-kum">
           Şap Kumu &amp; Agrega
         </button>
-        <button type="button" class="pv-subnav-link" data-target="item-gazbeton" role="tab">
+        <button type="button" class="pv-kaba-subnav-btn" data-target="item-gazbeton">
           Gazbeton Harçları
         </button>
-        <button type="button" class="pv-subnav-link" data-target="hesaplayici-bolumu" role="tab" style="color:#C8461E; font-weight:700;">
+        <button type="button" class="pv-kaba-subnav-btn pv-calc-accent" data-target="hesaplayici-bolumu">
           ⚡ Harç Simülatörü
         </button>
-      </div>
-
-      <!-- Mobile Contextual Single-Line Bar -->
-      <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
-        <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-label="Kategori Seç">
-          <span class="pv-dept-label" id="pvDeptTriggerLabel">Torbalı Çimento</span>
-          <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <button type="button" class="pv-kaba-subnav-btn" data-target="lojistik-bolumu">
+          Şantiye Lojistiği
+        </button>
+        <button type="button" class="pv-kaba-subnav-btn" data-target="faq-bolumu">
+          Teknik SSS
+        </button>
+        <button type="button" class="pv-kaba-subnav-btn" data-target="depo-bolumu">
+          Depolarımız
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ==========================================================================
-       3. PRO TRADE MATERIAL FEED (Tactile Unit Switchers & Spec Cards)
+       3. PRO TRADE MATERIAL FEED
        ========================================================================== -->
-  <section class="pv-kaba-section" id="kabaKatalog" style="padding-top: 36px; background:#F8FAFC;">
+  <section class="pv-kaba-section" style="padding-top: 32px; background:#F8FAFC;">
     <div class="pv-container">
       
       <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
@@ -548,7 +545,7 @@
       </div>
 
       <!-- ==========================================================================
-           4. ENTEGRE AKILLI ŞANTİYE HARÇ SİMÜLATÖRÜ (RenXMatik Düzeyinde Araç)
+           4. ENTEGRE AKILLI ŞANTİYE HARÇ SİMÜLATÖRÜ
            ========================================================================== -->
       <section class="pv-trade-sim-card" id="hesaplayici-bolumu">
         <div class="pv-trade-sim-header">
@@ -624,7 +621,7 @@
   <!-- ==========================================================================
        5. ŞANTİYE LOJİSTİĞİ & BOŞALTMA PROTOKOLÜ
        ========================================================================== -->
-  <section style="background:#FFFFFF; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; padding:56px 0;">
+  <section id="lojistik-bolumu" style="background:#FFFFFF; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; padding:56px 0;">
     <div class="pv-container">
       <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
         <span class="pv-hubs-pretitle">Urla Depo Dağıtım Ağı</span>
@@ -671,7 +668,7 @@
   <!-- ==========================================================================
        6. TEKNİK ŞARTNAME & SSS ACCORDION
        ========================================================================== -->
-  <section class="pv-faq-section">
+  <section id="faq-bolumu" class="pv-faq-section">
     <div class="pv-container">
       <div class="pv-faq-header">
         <span class="pv-faq-pretitle">Teknik Şartnameler &amp; Standartlar</span>
@@ -723,7 +720,7 @@
   <!-- ==========================================================================
        7. GPS HUBS & DEPOLARIMIZ
        ========================================================================== -->
-  <section class="pv-hubs-section">
+  <section id="depo-bolumu" class="pv-hubs-section">
     <div class="pv-container">
       <div class="pv-hubs-header">
         <div class="pv-hubs-pretitle">Pervan Dağıtım Noktaları</div>
@@ -858,7 +855,7 @@
 <script src="js/pervan.js?v=9.0.0"></script>
 <script>
   (function() {
-    // 1. Stage Hero Carousel Controller (Weber / Filli Standartı)
+    // 1. Stage Hero Carousel Controller
     var track = document.getElementById('pvStageTrack');
     var slides = document.querySelectorAll('.pv-stage-slide');
     var prevBtn = document.getElementById('pvStagePrev');
@@ -900,21 +897,55 @@
       goToSlide(currentIndex + 1);
     }, 6000);
 
-    // 2. Sticky Subnav Tabs & Scroll Spy
-    var subnavLinks = document.querySelectorAll('.pv-subnav-link');
-    subnavLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        subnavLinks.forEach(function(l) { l.classList.remove('active'); });
-        link.classList.add('active');
-        var targetId = link.dataset.target;
+    // 2. Open Sticky Subnav: Click-to-Scroll & Live ScrollSpy
+    var subnavBtns = document.querySelectorAll('.pv-kaba-subnav-btn');
+    var subnavTrack = document.getElementById('kabaSubnavTrack');
+
+    subnavBtns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = btn.dataset.target;
         var targetEl = document.getElementById(targetId);
         if (targetEl) {
-          var yOffset = -70;
-          var y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+          subnavBtns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          if (subnavTrack) {
+            btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
         }
       });
     });
+
+    // ScrollSpy
+    var spySections = [
+      'item-cimento',
+      'item-alci',
+      'item-kum',
+      'item-gazbeton',
+      'hesaplayici-bolumu',
+      'lojistik-bolumu',
+      'faq-bolumu',
+      'depo-bolumu'
+    ];
+
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY + 120;
+      for (var i = spySections.length - 1; i >= 0; i--) {
+        var el = document.getElementById(spySections[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          var activeBtn = document.querySelector('.pv-kaba-subnav-btn[data-target="' + spySections[i] + '"]');
+          if (activeBtn && !activeBtn.classList.contains('active')) {
+            subnavBtns.forEach(function(b) { b.classList.remove('active'); });
+            activeBtn.classList.add('active');
+            if (subnavTrack) {
+              activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+          }
+          break;
+        }
+      }
+    }, { passive: true });
 
     // 3. Tactile Segmented Unit Switcher per Item
     var segBars = document.querySelectorAll('.pv-trade-segmented-bar');

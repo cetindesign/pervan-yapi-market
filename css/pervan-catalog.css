@@ -6314,3 +6314,105 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* ==========================================================================
+   KABA YAPI BULLETPROOF STICKY HORIZONTAL SUBNAV (ALL CATEGORIES OPEN)
+   ========================================================================== */
+.pv-kaba-subnav-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  padding: 8px 0;
+  transition: all 0.2s ease;
+}
+
+.pv-kaba-subnav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+.pv-kaba-subnav-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.pv-kaba-subnav-track::-webkit-scrollbar {
+  display: none;
+}
+
+.pv-kaba-subnav-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.pv-kaba-subnav-btn:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+.pv-kaba-subnav-btn.active {
+  background: #0F172A;
+  color: #FFFFFF !important;
+  border-color: #0F172A;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+.pv-kaba-subnav-btn.pv-calc-accent {
+  color: #C8461E;
+  background: #FFF1EE;
+  border-color: #FECDCA;
+}
+
+.pv-kaba-subnav-btn.pv-calc-accent:hover {
+  background: #FFE4DE;
+  color: #A83614;
+}
+
+.pv-kaba-subnav-btn.pv-calc-accent.active {
+  background: #C8461E;
+  color: #FFFFFF !important;
+  border-color: #C8461E;
+}
+
+/* Scroll margin on target sections so sticky nav doesn't cover headings */
+[id="item-cimento"],
+[id="item-alci"],
+[id="item-kum"],
+[id="item-gazbeton"],
+[id="hesaplayici-bolumu"],
+[id="lojistik-bolumu"],
+[id="faq-bolumu"],
+[id="depo-bolumu"] {
+  scroll-margin-top: 70px;
+}
