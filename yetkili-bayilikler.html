@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=33.4.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=33.5.0" />
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
@@ -180,44 +180,32 @@
 </header>
 
 <main>
-<!-- YETKİLİ BAYİLİKLER EDITORIAL HERO -->
-<section class="rf-subpage-section" style="padding: 40px 0 32px; background: var(--bg-white); border-bottom: 1px solid var(--border-light);">
-  <div class="rf-wrapper">
-    <div class="rf-breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="sep">/</span>
-      <span>Yetkili Bayilikler</span>
-    </div>
-    <span class="rf-card-tag" style="margin-bottom: 8px;">4 Resmi Distribütörlük &amp; Orijinal Stok Güvencesi</span>
-    <h1 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: var(--text-main);">
-      Yetkili Bayiliklerimiz &amp; Marka Kütüphanesi
-    </h1>
-    <p style="font-size: 16px; color: var(--text-muted); max-width: 780px; line-height: 1.6;">
-      1998'den bu yana doğrudan üretici fabrikalardan sevk edilen, taze parti numaralı ve resmi distribütör garantili dünya markalarını Balçova Yapı Market ve Urla Depomuzda stokluyoruz.
-    </p>
-  </div>
-</section>
-
-<!-- HORIZONTAL BRAND CAROUSEL & CARDS -->
+<!-- COMPACT APP-LIKE HORIZONTAL BRAND CAROUSEL & CARDS -->
 <section class="pv-brands-carousel-section" aria-label="Yetkili Bayilikler Marka Koleksiyonu">
   <div class="pv-container">
-    <div class="pv-brands-carousel-header">
-      <div>
-        <span class="rf-card-tag" style="margin-bottom: 6px; display: inline-block;">Resmi Marka Bayilikleri</span>
-        <h2 style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); margin: 0;">
-          4 Resmi Distribütörlük &amp; Orijinal Stok Güvencesi
-        </h2>
+    
+    <!-- UNIFIED COMPACT HEADER -->
+    <div class="pv-brands-compact-header">
+      <div class="pv-brands-top-bar">
+        <div class="rf-breadcrumb" style="margin-bottom: 0;">
+          <a href="index.html">Ana Sayfa</a>
+          <span class="sep">/</span>
+          <span>Yetkili Bayilikler</span>
+        </div>
+        <div class="pv-brands-nav-controls" aria-label="Marka kaydırma butonları">
+          <button class="pv-brands-nav-btn" id="pvBrandsPrev" aria-label="Önceki Marka" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="pv-brands-nav-btn" id="pvBrandsNext" aria-label="Sonraki Marka" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
       </div>
-      <div class="pv-brands-nav-controls" aria-label="Marka kartları kaydırma butonları">
-        <button class="pv-brands-nav-btn" id="pvBrandsPrev" aria-label="Önceki Marka" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <button class="pv-brands-nav-btn" id="pvBrandsNext" aria-label="Sonraki Marka" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-      </div>
+      <h1 class="pv-brands-compact-title">Yetkili Marka Bayilikleri</h1>
+      <p class="pv-brands-compact-sub">4 resmi distribütörlük ve doğrudan fabrika sevkli taze parti güvencesi.</p>
     </div>
 
+    <!-- HORIZONTAL SCROLL RAIL -->
     <div class="pv-brands-rail" id="pvBrandsRail" role="region" aria-label="Yatay Marka Galerisi">
       
       <!-- Tile 1: Filli Boya -->
@@ -229,19 +217,22 @@
           <div>
             <div class="pv-brand-tile-header">
               <img src="assets/filliboya-logo.svg" alt="Filli Boya" class="pv-brand-tile-logo" loading="lazy" decoding="async">
-              <span class="rf-card-tag" style="margin: 0;">Resmi Ana Bayi</span>
+              <span class="rf-card-tag" style="margin: 0; font-size: 11px; padding: 2px 8px;">Ana Bayi</span>
             </div>
-            <h3 class="pv-brand-tile-title">Filli Boya Momento Max &amp; RenXMatik</h3>
+            <h2 class="pv-brand-tile-title">Filli Boya &amp; RenXMatik</h2>
             <p class="pv-brand-tile-desc">
-              Tam silinebilir ipek mat iç cephe boyaları, Betek AmphiSilan dış cephe koruması, Aqualyx su bazlı panel kapı boyaları ve bilgisayarlı RenXMatik laboratuvarı.
+              Momento Max tam silinebilir iç cephe, AmphiSilan dış cephe ve bilgisayarlı RenXMatik renk laboratuvarı.
             </p>
             <div class="pv-brand-tile-badge">
-              📍 Balçova Merkez Stok · 10.000+ Renk Dakikalar İçinde Hazır
+              📍 Balçova · 10.000+ Renk Anında Hazır
             </div>
           </div>
           <div class="pv-brand-tile-actions">
-            <a href="filli-boya-renxmatik.html" class="rf-btn rf-btn-primary">Koleksiyonu İncele →</a>
-            <a href="https://wa.me/905323844497?text=Merhaba%20Filli%20Boya%20hakk%C4%B1nda%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" style="font-size: 13.5px; color: var(--accent-green); font-weight: 600; text-decoration: none;">WhatsApp Renk Danış ↗</a>
+            <a href="filli-boya-renxmatik.html" class="pv-brand-btn-primary">Koleksiyonu İncele →</a>
+            <a href="https://wa.me/905323844497?text=Merhaba%20Filli%20Boya%20hakk%C4%B1nda%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-wa" aria-label="WhatsApp Renk Danış">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Danış</span>
+            </a>
           </div>
         </div>
       </article>
@@ -255,19 +246,22 @@
           <div>
             <div class="pv-brand-tile-header">
               <img src="assets/weber-logo.svg" alt="Saint-Gobain Weber" class="pv-brand-tile-logo" loading="lazy" decoding="async">
-              <span class="rf-card-tag" style="margin: 0;">Yetkili Dağıtım</span>
+              <span class="rf-card-tag" style="margin: 0; font-size: 11px; padding: 2px 8px;">Dağıtım</span>
             </div>
-            <h3 class="pv-brand-tile-title">Saint-Gobain Weber Yapı Kimyasalları</h3>
+            <h2 class="pv-brand-tile-title">Saint-Gobain Weber</h2>
             <p class="pv-brand-tile-desc">
-              Weberkol Flex Konfor C2TE S1 seramik yapıştırıcıları, suya dayanıklı flex derz dolguları, kristalize su yalıtım harçları ve yapısal tamir harçları.
+              Weberkol Flex Konfor C2TE S1 yapıştırıcılar, su yalıtım harçları ve şantiye sevkiyatı.
             </p>
             <div class="pv-brand-tile-badge">
-              📍 Urla Depo Paletli Dağıtım · Şantiyeye Kata Teslimat
+              📍 Urla Depo · Şantiyeye Paletli Teslimat
             </div>
           </div>
           <div class="pv-brand-tile-actions">
-            <a href="weber-yapi-kimyasallari.html" class="rf-btn rf-btn-primary">Weber Ürünlerini İncele →</a>
-            <a href="https://wa.me/905323844497?text=Merhaba%20Weber%20%C3%BCr%C3%BCnleri%20%C5%9Fantiye%20palet%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" style="font-size: 13.5px; color: var(--accent-green); font-weight: 600; text-decoration: none;">Paletli Fiyat İste ↗</a>
+            <a href="weber-yapi-kimyasallari.html" class="pv-brand-btn-primary">Ürünleri İncele →</a>
+            <a href="https://wa.me/905323844497?text=Merhaba%20Weber%20%C3%BCr%C3%BCnleri%20%C5%9Fantiye%20palet%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-wa" aria-label="WhatsApp Palet Fiyatı">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Fiyat Al</span>
+            </a>
           </div>
         </div>
       </article>
@@ -281,19 +275,22 @@
           <div>
             <div class="pv-brand-tile-header">
               <img src="assets/bianca-logo.svg" alt="Bianca Stella" class="pv-brand-tile-logo" loading="lazy" decoding="async">
-              <span class="rf-card-tag" style="margin: 0;">Yetkili Bayi</span>
+              <span class="rf-card-tag" style="margin: 0; font-size: 11px; padding: 2px 8px;">Yetkili Bayi</span>
             </div>
-            <h3 class="pv-brand-tile-title">Bianca Stella &amp; Maximo Sıvı Cam</h3>
+            <h2 class="pv-brand-tile-title">Bianca Stella &amp; Sıvı Cam</h2>
             <p class="pv-brand-tile-desc">
-              Fayans kırmadan, dökmeden mutfak dolabı, banyo seramiği, tezgah ve parke dönüştüren su bazlı saf akrilik boya ve çift komponentli sıvı cam.
+              Fayans kırmadan banyo, mutfak dolabı ve tezgah dönüştüren saf akrilik ve Maximo sıvı cam.
             </p>
             <div class="pv-brand-tile-badge">
-              📍 Balçova Yapı Market Uygulama &amp; Sarfiyat Danışmanlığı
+              📍 Balçova · Uygulama &amp; Sarfiyat Danışmanlığı
             </div>
           </div>
           <div class="pv-brand-tile-actions">
-            <a href="bianca-stella-boya.html" class="rf-btn rf-btn-primary">Dönüşüm Sistemini İncele →</a>
-            <a href="https://wa.me/905323844497?text=Merhaba%20Bianca%20Stella%20fayans%20boyama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" style="font-size: 13.5px; color: var(--accent-green); font-weight: 600; text-decoration: none;">Uygulama Danış ↗</a>
+            <a href="bianca-stella-boya.html" class="pv-brand-btn-primary">Sistemi İncele →</a>
+            <a href="https://wa.me/905323844497?text=Merhaba%20Bianca%20Stella%20fayans%20boyama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-wa" aria-label="WhatsApp Uygulama Danış">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Danış</span>
+            </a>
           </div>
         </div>
       </article>
@@ -307,19 +304,22 @@
           <div>
             <div class="pv-brand-tile-header">
               <img src="assets/isonem-logo.svg" alt="İsonem" class="pv-brand-tile-logo" loading="lazy" decoding="async">
-              <span class="rf-card-tag" style="margin: 0;">Yetkili Satış</span>
+              <span class="rf-card-tag" style="margin: 0; font-size: 11px; padding: 2px 8px;">Yetkili Satış</span>
             </div>
-            <h3 class="pv-brand-tile-title">İsonem Su Yalıtım Teknolojileri</h3>
+            <h2 class="pv-brand-tile-title">İsonem Su Yalıtımı</h2>
             <p class="pv-brand-tile-desc">
-              Teraslar, çatılar, havuzlar ve bodrum perdeleri için hibrit poliüretan membranlar, sıvı camlar ve termal ısı yalıtım kaplamaları.
+              Teras, çatı ve havuzlar için hibrit poliüretan membranlar, sıvı camlar ve termal yalıtım.
             </p>
             <div class="pv-brand-tile-badge">
-              📍 Urla ve Balçova Stok · Doğrudan Fabrika Sevk Garantisi
+              📍 Urla &amp; Balçova · Fabrika Doğrudan Sevk
             </div>
           </div>
           <div class="pv-brand-tile-actions">
-            <a href="isonem-yalitim.html" class="rf-btn rf-btn-primary">İsonem Çözümlerini Gör →</a>
-            <a href="https://wa.me/905323844497?text=Merhaba%20%C4%B0sonem%20yal%C4%B1t%C4%B1m%20%C3%BCr%C3%BCnleri%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" style="font-size: 13.5px; color: var(--accent-green); font-weight: 600; text-decoration: none;">Yalıtım Danış ↗</a>
+            <a href="isonem-yalitim.html" class="pv-brand-btn-primary">Çözümleri Gör →</a>
+            <a href="https://wa.me/905323844497?text=Merhaba%20%C4%B0sonem%20yal%C4%B1t%C4%B1m%20%C3%BCr%C3%BCnleri%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-wa" aria-label="WhatsApp Yalıtım Danış">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Danış</span>
+            </a>
           </div>
         </div>
       </article>
@@ -481,10 +481,10 @@
     const nextBtn = document.getElementById('pvBrandsNext');
     if (rail && prevBtn && nextBtn) {
       prevBtn.addEventListener('click', function() {
-        rail.scrollBy({ left: -420, behavior: 'smooth' });
+        rail.scrollBy({ left: -360, behavior: 'smooth' });
       });
       nextBtn.addEventListener('click', function() {
-        rail.scrollBy({ left: 420, behavior: 'smooth' });
+        rail.scrollBy({ left: 360, behavior: 'smooth' });
       });
     }
   });
