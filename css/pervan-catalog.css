@@ -6416,3 +6416,294 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 [id="depo-bolumu"] {
   scroll-margin-top: 70px;
 }
+
+
+/* ==========================================================================
+   KABA YAPI & ÇİMENTO — DESIGN SYSTEM SUBNAV & HARMONIZED TOKENS
+   ========================================================================== */
+.pv-subnav-hub.pv-kaba-subnav {
+  display: block !important;
+  width: 100%;
+  z-index: 980;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
+}
+
+.pv-subnav-hub.pv-kaba-subnav.is-pinned {
+  position: fixed;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pv-subnav-hub.pv-kaba-subnav.is-pinned.header-hidden {
+  top: 0px !important;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-inner {
+  height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-links {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 52px;
+  padding: 0;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F4F4F5;
+  color: #52525B;
+  border: 1px solid transparent;
+  font-family: var(--font-display, inherit);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  height: 34px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 0;
+  border-bottom: 1px solid transparent;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link:hover {
+  background: #E4E4E7;
+  color: #18181B;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.active {
+  background: #18181B;
+  color: #FFFFFF !important;
+  border-color: #18181B;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent {
+  color: #C8461E;
+  background: #FFF1EE;
+  border-color: #FECDCA;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent:hover {
+  background: #FFE4DE;
+  color: #A83614;
+}
+
+.pv-subnav-hub.pv-kaba-subnav .pv-subnav-link.pv-calc-accent.active {
+  background: #C8461E;
+  color: #FFFFFF !important;
+  border-color: #C8461E;
+}
+
+/* Material Feed Card Design Harmonization */
+.pv-trade-item {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pv-trade-item:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.pv-trade-item-header {
+  padding: 20px 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pv-trade-standard-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.pv-trade-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent-terracotta, #C8461E);
+  background: #FFF1EE;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #FECDCA;
+}
+
+.pv-trade-item-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1C1917;
+  letter-spacing: -0.02em;
+  margin: 4px 0 0;
+  line-height: 1.3;
+}
+
+.pv-trade-item-desc {
+  font-size: 13.5px;
+  color: #52525B;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pv-trade-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  padding: 14px 22px;
+  background: #FAFAFA;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pv-trade-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pv-trade-kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #71717A;
+}
+
+.pv-trade-kpi-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1C1917;
+}
+
+.pv-trade-switch-wrap {
+  padding: 20px 22px;
+}
+
+.pv-trade-switch-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #71717A;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.pv-trade-segmented-bar {
+  display: flex;
+  background: #F4F4F5;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.pv-trade-seg-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #52525B;
+  padding: 9px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pv-trade-seg-btn:hover {
+  color: #1C1917;
+}
+
+.pv-trade-seg-btn.active {
+  background: #FFFFFF;
+  color: #1C1917;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.pv-trade-seg-btn small {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #71717A;
+  margin-top: 2px;
+}
+
+.pv-trade-unit-output {
+  margin-top: 16px;
+  background: #FAFAFA;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.pv-trade-unit-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #27272A;
+  font-weight: 500;
+}
+
+.pv-trade-unit-meta svg {
+  color: #C8461E;
+  flex-shrink: 0;
+}
+
+.pv-trade-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #16A34A;
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.pv-trade-action-btn:hover {
+  background: #15803D;
+}

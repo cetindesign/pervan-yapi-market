@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-card-cement.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=34.2.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=34.3.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -268,45 +268,46 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </button>
 
-    <a href="#kabaSubnavBar" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
+    <a href="#pvSubnav" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kataloğa Kaydır">
       <span>Kaba Yapı Kataloğunu Keşfet</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </section>
 
   <!-- ==========================================================================
-       2. BULLETPROOF STICKY SUBNAV BAR (ALL CATEGORIES OPEN & HORIZONTAL SCROLL)
+       2. CANONICAL STICKY SUB-NAV (Pervan Design System Standard)
        ========================================================================== -->
-  <nav class="pv-kaba-subnav-sticky" id="kabaSubnavBar" aria-label="Kaba Yapı Kategori Gezintisi">
-    <div class="pv-kaba-subnav-container">
-      <div class="pv-kaba-subnav-track" id="kabaSubnavTrack">
-        <button type="button" class="pv-kaba-subnav-btn active" data-target="item-cimento">
+  <nav class="pv-subnav-hub pv-kaba-subnav" id="pvSubnav" aria-label="Kaba Yapı Kategori Gezintisi">
+    <div class="pv-subnav-inner">
+      <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
+        <button type="button" class="pv-subnav-link active" data-target="item-cimento">
           Torbalı Çimento
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="item-alci">
+        <button type="button" class="pv-subnav-link" data-target="item-alci">
           Sıva &amp; Saten Alçı
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="item-kum">
+        <button type="button" class="pv-subnav-link" data-target="item-kum">
           Şap Kumu &amp; Agrega
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="item-gazbeton">
+        <button type="button" class="pv-subnav-link" data-target="item-gazbeton">
           Gazbeton Harçları
         </button>
-        <button type="button" class="pv-kaba-subnav-btn pv-calc-accent" data-target="hesaplayici-bolumu">
+        <button type="button" class="pv-subnav-link pv-calc-accent" data-target="hesaplayici-bolumu">
           ⚡ Harç Simülatörü
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="lojistik-bolumu">
+        <button type="button" class="pv-subnav-link" data-target="lojistik-bolumu">
           Şantiye Lojistiği
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="faq-bolumu">
+        <button type="button" class="pv-subnav-link" data-target="faq-bolumu">
           Teknik SSS
         </button>
-        <button type="button" class="pv-kaba-subnav-btn" data-target="depo-bolumu">
+        <button type="button" class="pv-subnav-link" data-target="depo-bolumu">
           Depolarımız
         </button>
       </div>
     </div>
   </nav>
+  <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
   <!-- ==========================================================================
        3. PRO TRADE MATERIAL FEED
@@ -317,7 +318,7 @@
       <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
         <span class="pv-hubs-pretitle">Urla Ana Depo Dağıtım Portföyü</span>
         <h2 class="pv-hubs-title">Şantiye Temel Kaba Yapı Malzemeleri</h2>
-        <p class="pv-hubs-desc">Teknik standartlara (EN 197-1 / EN 13279-1) tam uyumlu, anlık stok güvenceli çimento, alçı, agrega ve yapı harçları.</p>
+        <p class="pv-hubs-desc">Teknik standartlara (EN 197-1 / EN 13279-1) tam uyumlu, şantiyeye doğrudan sevkiyatlı çimento, alçı, agrega ve yapı harçları.</p>
       </div>
 
       <div class="pv-trade-feed">
@@ -327,7 +328,6 @@
           <div class="pv-trade-item-header">
             <div class="pv-trade-standard-row">
               <span class="pv-trade-code">TS EN 197-1 CEM I 42.5 R</span>
-              <span class="pv-trade-stock-live">● Urla Depo Hazır Stok</span>
             </div>
             <h3 class="pv-trade-item-title">Portland Çimento (Yüksek Erken Mukavemet)</h3>
             <p class="pv-trade-item-desc">Taşıyıcı betonarme, helikopterli zemin şapı, kolon-kiriş takviyesi ve prekast imalatları için saf Portland çimentosu.</p>
@@ -382,7 +382,6 @@
           <div class="pv-trade-item-header">
             <div class="pv-trade-standard-row">
               <span class="pv-trade-code">TS EN 13279-1 Tip B1/B4</span>
-              <span class="pv-trade-stock-live">● Urla Depo Hazır Stok</span>
             </div>
             <h3 class="pv-trade-item-title">Yapı &amp; Sıva Alçısı Grubu (Kaba / Saten / Makine)</h3>
             <p class="pv-trade-item-desc">Tuğla, brüt beton ve gazbeton yüzeylerde yüksek aderans sağlayan, nefes alan perlitli sıva ve saten perdah sistemi.</p>
@@ -437,7 +436,6 @@
           <div class="pv-trade-item-header">
             <div class="pv-trade-standard-row">
               <span class="pv-trade-code">TS 706 EN 12620 Agrega</span>
-              <span class="pv-trade-stock-live">● Urla Depo Hazır Stok</span>
             </div>
             <h3 class="pv-trade-item-title">0-3 mm Yıkanmış &amp; Elenmiş Şap Kumu</h3>
             <p class="pv-trade-item-desc">Kil ve milden arındırılmış, homojen dane yapısına sahip helikopter şapı ve ince sıva kumu.</p>
@@ -492,7 +490,6 @@
           <div class="pv-trade-item-header">
             <div class="pv-trade-standard-row">
               <span class="pv-trade-code">TS EN 998-2 Sınıf G-M10</span>
-              <span class="pv-trade-stock-live">● Urla Depo Hazır Stok</span>
             </div>
             <h3 class="pv-trade-item-title">Gazbeton &amp; Ytong Blok Yapıştırıcı Harcı</h3>
             <p class="pv-trade-item-desc">Isı köprüsü yapmayan, 1-3 mm ince derz uygulamasına uygun yüksek yapışma mukavemetli örgü harcı.</p>
@@ -621,7 +618,7 @@
   <!-- ==========================================================================
        5. ŞANTİYE LOJİSTİĞİ & BOŞALTMA PROTOKOLÜ
        ========================================================================== -->
-  <section id="lojistik-bolumu" style="background:#FFFFFF; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; padding:56px 0;">
+  <section id="lojistik-bolumu" style="background:#FFFFFF; border-top:1px solid rgba(0,0,0,0.08); border-bottom:1px solid rgba(0,0,0,0.08); padding:56px 0;">
     <div class="pv-container">
       <div class="pv-hubs-header" style="text-align:left; margin-bottom:28px;">
         <span class="pv-hubs-pretitle">Urla Depo Dağıtım Ağı</span>
@@ -897,23 +894,93 @@
       goToSlide(currentIndex + 1);
     }, 6000);
 
-    // 2. Open Sticky Subnav: Click-to-Scroll & Live ScrollSpy
-    var subnavBtns = document.querySelectorAll('.pv-kaba-subnav-btn');
-    var subnavTrack = document.getElementById('kabaSubnavTrack');
+    // 2. Canonical Sticky Subnav Header Sync (Weber / Filli Standartı)
+    var subnav = document.getElementById('pvSubnav');
+    var spacer = document.getElementById('pvSubnavSpacer');
+    var header = document.querySelector('header');
+    var subnavLinks = document.querySelectorAll('#pvSubnavLinks .pv-subnav-link');
 
-    subnavBtns.forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var targetId = btn.dataset.target;
-        var targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-          subnavBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          if (subnavTrack) {
-            btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    var initialSubnavTop = 0;
+    function getSubnavOrigin() {
+      if (spacer && spacer.classList.contains('is-active')) {
+        return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+      }
+      return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+    }
+
+    function getHeaderHeight() {
+      if (!header) return 60;
+      return header.offsetHeight || 60;
+    }
+
+    function syncSubnavPin() {
+      if (!subnav) return;
+      var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      if (!initialSubnavTop || initialSubnavTop < 100) {
+        initialSubnavTop = getSubnavOrigin();
+      }
+
+      var headerVisible = header && !header.classList.contains('header--hidden');
+      var hHeight = getHeaderHeight();
+      var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+      if (scrollPos >= pinThreshold) {
+        if (!subnav.classList.contains('is-pinned')) {
+          subnav.classList.add('is-pinned');
+          if (spacer) {
+            spacer.style.height = (subnav.offsetHeight || 52) + 'px';
+            spacer.classList.add('is-active');
           }
         }
+
+        if (!headerVisible) {
+          subnav.classList.add('header-hidden');
+          subnav.style.top = '0px';
+        } else {
+          subnav.classList.remove('header-hidden');
+          subnav.style.top = hHeight + 'px';
+        }
+      } else {
+        if (subnav.classList.contains('is-pinned')) {
+          subnav.classList.remove('is-pinned');
+          subnav.classList.remove('header-hidden');
+          subnav.style.top = '';
+          if (spacer) spacer.classList.remove('is-active');
+        }
+      }
+    }
+
+    if (header && window.MutationObserver) {
+      var headerObserver = new MutationObserver(function() {
+        syncSubnavPin();
+      });
+      headerObserver.observe(header, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // Scroll to Target Section on Click
+    subnavLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = link.getAttribute('data-target');
+        var targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        subnavLinks.forEach(function(l) { l.classList.remove('active'); });
+        link.classList.add('active');
+        link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
+        var headerVisible = header && !header.classList.contains('header--hidden');
+        var hHeight = headerVisible ? getHeaderHeight() : 0;
+        var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
+        var totalOffset = hHeight + subnavHeight + 14;
+
+        var rect = targetEl.getBoundingClientRect();
+        var targetTop = rect.top + window.pageYOffset - totalOffset;
+
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
       });
     });
 
@@ -929,23 +996,41 @@
       'depo-bolumu'
     ];
 
-    window.addEventListener('scroll', function() {
-      var scrollPos = window.scrollY + 120;
+    function onScrollSpy() {
+      var headerVisible = header && !header.classList.contains('header--hidden');
+      var hHeight = headerVisible ? getHeaderHeight() : 0;
+      var subnavHeight = subnav ? (subnav.offsetHeight || 52) : 52;
+      var scrollPos = (window.pageYOffset || document.documentElement.scrollTop) + hHeight + subnavHeight + 40;
+
       for (var i = spySections.length - 1; i >= 0; i--) {
         var el = document.getElementById(spySections[i]);
         if (el && el.offsetTop <= scrollPos) {
-          var activeBtn = document.querySelector('.pv-kaba-subnav-btn[data-target="' + spySections[i] + '"]');
-          if (activeBtn && !activeBtn.classList.contains('active')) {
-            subnavBtns.forEach(function(b) { b.classList.remove('active'); });
-            activeBtn.classList.add('active');
-            if (subnavTrack) {
-              activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
+          var activeLink = document.querySelector('#pvSubnavLinks .pv-subnav-link[data-target="' + spySections[i] + '"]');
+          if (activeLink && !activeLink.classList.contains('active')) {
+            subnavLinks.forEach(function(l) { l.classList.remove('active'); });
+            activeLink.classList.add('active');
+            activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
           }
           break;
         }
       }
+    }
+
+    window.addEventListener('scroll', function() {
+      syncSubnavPin();
+      onScrollSpy();
     }, { passive: true });
+
+    window.addEventListener('resize', function() {
+      initialSubnavTop = getSubnavOrigin();
+      syncSubnavPin();
+    }, { passive: true });
+
+    window.addEventListener('load', function() {
+      initialSubnavTop = getSubnavOrigin();
+      syncSubnavPin();
+      onScrollSpy();
+    });
 
     // 3. Tactile Segmented Unit Switcher per Item
     var segBars = document.querySelectorAll('.pv-trade-segmented-bar');
