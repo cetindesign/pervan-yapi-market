@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-brand-filliboya.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=33.5.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=33.6.0" />
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
@@ -459,36 +459,54 @@
 
 <script src="js/pervan.js?v=9.0.0"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const rail = document.getElementById('pvBrandsRail');
-    const prevBtn = document.getElementById('pvBrandsPrev');
-    const nextBtn = document.getElementById('pvBrandsNext');
-    if (rail && prevBtn && nextBtn) {
+  (function() {
+    function initBrandsCarousel() {
+      var rail = document.getElementById('pvBrandsRail');
+      var prevBtn = document.getElementById('pvBrandsPrev');
+      var nextBtn = document.getElementById('pvBrandsNext');
+      if (!rail || !prevBtn || !nextBtn) return;
+
       function updateNavState() {
-        const scrollLeft = rail.scrollLeft;
-        const maxScroll = rail.scrollWidth - rail.clientWidth;
-        prevBtn.disabled = scrollLeft <= 8;
-        nextBtn.disabled = scrollLeft >= maxScroll - 8;
+        var sl = Math.ceil(rail.scrollLeft);
+        var maxScroll = rail.scrollWidth - rail.clientWidth;
+        prevBtn.disabled = sl <= 5;
+        nextBtn.disabled = (sl + rail.clientWidth) >= (rail.scrollWidth - 5);
       }
 
       function getScrollStep() {
-        const tile = rail.querySelector('.pv-brand-tile');
-        return tile ? tile.offsetWidth + 20 : 360;
+        var tile = rail.querySelector('.pv-brand-tile');
+        return tile ? (tile.offsetWidth + 20) : 360;
       }
 
-      prevBtn.addEventListener('click', function() {
+      prevBtn.addEventListener('click', function(e) {
+        if (prevBtn.disabled) {
+          e.preventDefault();
+          return;
+        }
         rail.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
       });
 
-      nextBtn.addEventListener('click', function() {
+      nextBtn.addEventListener('click', function(e) {
+        if (nextBtn.disabled) {
+          e.preventDefault();
+          return;
+        }
         rail.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
       });
 
       rail.addEventListener('scroll', updateNavState, { passive: true });
       window.addEventListener('resize', updateNavState, { passive: true });
+      window.addEventListener('load', updateNavState);
+      
       updateNavState();
     }
-  });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBrandsCarousel);
+    } else {
+      initBrandsCarousel();
+    }
+  })();
 </script>
 </body>
 </html>
