@@ -5506,3 +5506,176 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   padding-top: 8px;
 }
 
+
+
+/* ==========================================================================
+   PRO SPEC GRID & INDUSTRIAL COMMODITY CARDS (KABA YAPI & ÇİMENTO)
+   ========================================================================== */
+.pv-pro-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 860px) {
+  .pv-pro-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pv-pro-spec-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pv-pro-spec-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.pv-pro-card-header {
+  padding: 14px 18px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pv-pro-spec-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0F172A;
+  background: #E2E8F0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pv-pro-pack-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pv-pro-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pv-pro-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.pv-pro-card-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+}
+
+.pv-pro-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 12.5px;
+}
+
+.pv-pro-spec-table tr {
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.pv-pro-spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.pv-pro-spec-table td {
+  padding: 7px 0;
+  vertical-align: middle;
+}
+
+.pv-pro-spec-table td.pv-label {
+  color: #64748B;
+  width: 48%;
+}
+
+.pv-pro-spec-table td.pv-val {
+  color: #0F172A;
+  font-weight: 600;
+  text-align: right;
+}
+
+.pv-pro-logistics-bar {
+  background: #F1F5F9;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.pv-pro-logistics-bar svg {
+  color: #0284C7;
+  flex-shrink: 0;
+}
+
+.pv-pro-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pv-pro-quote-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #0F172A;
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.pv-pro-quote-btn:hover {
+  background: #1E293B;
+  color: #FFFFFF !important;
+}
+
+.pv-pro-quote-btn.pv-wa {
+  background: #16A34A;
+}
+
+.pv-pro-quote-btn.pv-wa:hover {
+  background: #15803D;
+}

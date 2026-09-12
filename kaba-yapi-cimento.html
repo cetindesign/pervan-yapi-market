@@ -21,7 +21,7 @@
 <meta property="og:image" content="assets/rf-card-cement.jpg" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=33.6.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=33.7.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -103,560 +103,625 @@
 }
 </script>
 </head>
-<body>
-<!-- PERVAN NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- ROW 1 ON MOBILE (SPLIT 50/50 ACTION BAR) / RIGHT SIDE ON DESKTOP -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba%2C%20kaba%20yap%C4%B1%20malzemeleri%20ve%20torbal%C4%B1%20%C3%A7imento/al%C3%A7%C4%B1%20fiyat%20listesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat & Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="kesif-randevusu.html" class="navbar-item menu-item">
-          <span class="navbar-title">Keşif Randevusu Al</span>
-          <div class="arrow"></div>
-        </a>
-      </div>
+<body class="pv-theme-white">
 
-      <!-- ROW 2 ON MOBILE (LEFT HAMBURGER, RIGHT LOGO) / LEFT SIDE ON DESKTOP -->
-      <div class="navbar-top-row2">
-        <div id="mobile-menu" class="closed">
-          <div class="bar bar1"></div>
-          <div class="bar bar2"></div>
-          <div class="bar bar3"></div>
-        </div>
-        <a class="navbar-logo" href="index.html">Pervan</a>
-      </div>
-
-      <!-- DESKTOP MENU & MOBILE DRAWER -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          <div class="navbar-menu">
-            <!-- 01: Yetkili Bayilikler -->
-            <div data-link="yetkili-bayilikler.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item active">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div data-link="taahhut.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-                <a href="kesif-randevusu.html" class="navbar-item">Ücretsiz Keşif Randevusu</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div data-link="showroom.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
+<!-- Header / Navigation -->
+<header class="navbar navbar-inverse" id="topNavbar">
+  <div class="navbar-contents">
+    <div class="brand">
+      <a href="index.html" class="brand-link" aria-label="Pervan Anasayfa">
+        <span class="brand-text">PERVAN</span>
+      </a>
+      <span class="brand-badge">Urla Depo &amp; Yapı Market</span>
+    </div>
+    <div class="navbar-contents-overflow">
+      <nav class="navbar-menu" aria-label="Ana Menü">
+        <a class="navbar-item" href="index.html">Anasayfa</a>
+        <div class="navbar-dropdown-wrapper">
+          <a class="navbar-item active" href="malzemeler.html">Yapı Market &amp; Malzemeler</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item active" href="kaba-yapi-cimento.html">Kaba Yapı &amp; Çimento</a>
+            <a class="navbar-item" href="boya-ve-dis-cephe.html">Boya &amp; Dış Cephe</a>
+            <a class="navbar-item" href="su-isi-yalitimi.html">Su &amp; Isı Yalıtımı</a>
+            <a class="navbar-item" href="el-aletleri-hirdavat.html">El Aletleri &amp; Hırdavat</a>
+            <a class="navbar-item" href="hasere-cevre-sagligi.html">Haşere &amp; Çevre Sağlığı</a>
+            <a class="navbar-item" href="elektrik-aydinlatma.html">Elektrik &amp; Aydınlatma</a>
+            <a class="navbar-item" href="sihhi-tesisat.html">Sıhhi Tesisat</a>
+            <a class="navbar-item" href="kilit-kapi-guvenlik.html">Kilit &amp; Kapı Güvenlik</a>
+            <a class="navbar-item" href="cati-izolasyon.html">Çatı &amp; İzolasyon</a>
+            <a class="navbar-item" href="banyo-yapi-elemanlari.html">Banyo &amp; Yapı Elemanları</a>
           </div>
         </div>
+        <a class="navbar-item" href="yetkili-bayilikler.html">Yetkili Bayilikler</a>
+        <a class="navbar-item" href="taahhut.html">Taahhüt &amp; Uygulama</a>
+        <a class="navbar-item" href="hakkimizda.html">Hakkımızda</a>
+        <a class="navbar-item" href="iletisim.html">İletişim</a>
+      </nav>
+      <div class="navbar-cta-group">
+        <a href="tel:+902322784340" class="navbar-phone-link" aria-label="Telefonla Arayın">
+          <svg class="icon-phone" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>0232 278 43 40</span>
+        </a>
+        <a href="https://wa.me/905323844497?text=Merhaba,%20Kaba%20Yapı%20ve%20Torbalı%20Çimento%20şantiye%20sevkiyatı%20için%20fiyat%20almak%20istiyorum." class="navbar-cta-btn" target="_blank" rel="noopener">Şantiye Teklifi Al</a>
       </div>
     </div>
-  </nav>
+    <button class="menu-item" id="menuToggle" aria-label="Menüyü Aç/Kapat">
+      <div class="arrow"></div>
+    </button>
+  </div>
 </header>
 
 <main>
-<!-- COMPACT APP-LIKE HEADER -->
-<section class="pv-brands-carousel-section" style="padding-bottom: 24px;" aria-label="Kaba Yapı ve Çimento Başlığı">
-  <div class="pv-container">
-    
-    <div class="pv-brands-compact-header">
-      <div class="pv-brands-top-bar">
-        <div class="rf-breadcrumb" style="margin-bottom: 0;">
-          <a href="index.html">Ana Sayfa</a>
-          <span class="sep">/</span>
-          <a href="malzemeler.html">Yapı Market &amp; Hırdavat</a>
-          <span class="sep">/</span>
-          <span>Kaba Yapı &amp; Çimento</span>
-        </div>
-        <div class="pv-brands-nav-controls" aria-label="Malzeme kaydırma butonları">
-          <button class="pv-brands-nav-btn" id="pvBrandsPrev" aria-label="Önceki Kategori" type="button" disabled>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          <button class="pv-brands-nav-btn" id="pvBrandsNext" aria-label="Sonraki Kategori" type="button">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
-        </div>
+  <!-- Kompakt Hero & Kategori Başlığı -->
+  <section class="pv-category-page-hero">
+    <div class="pv-container">
+      <nav class="pv-breadcrumb" aria-label="Ekmek Kırıntısı">
+        <ol>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="malzemeler.html">Yapı Market &amp; Malzemeler</a></li>
+          <li aria-current="page">Kaba Yapı &amp; Çimento</li>
+        </ol>
+      </nav>
+
+      <div class="pv-category-page-header">
+        <span class="pv-category-badge">Urla Ana Depo Çıkışlı Ağır Yapı Malzemeleri</span>
+        <h1 class="pv-category-page-title">Kaba Yapı, Torbalı Çimento &amp; Şap Kumu</h1>
+        <p class="pv-category-page-desc">
+          Portland CEM I 42.5 R çimento, sıva/saten alçısı, elenmiş torbalı şap kumu ve gazbeton yapıştırıcıları.
+          İzmir, Balçova, Güzelbahçe, Urla ve Çeşme–Alaçatı hattındaki şantiyelere damperli ve vinçli araç filomuzla toptan sevkiyat.
+        </p>
       </div>
-      
-      <h1 class="pv-brands-compact-title">Kaba Yapı, Torbalı Çimento, Alçı &amp; Şap Kumu</h1>
-      <p class="pv-brands-compact-sub">Urla Ana Depo çıkışlı CEM I 42.5 R çimento, sıva/saten alçısı, torbalı şap kumu ve Ytong harçları. İzmir, Balçova, Güzelbahçe, Urla ve Çeşme–Alaçatı şantiyelerine doğrudan damperli ve vinçli sevkiyat.</p>
     </div>
+  </section>
 
-    <!-- HORIZONTAL CAROUSEL: 4 CORE HEAVY MATERIAL CATEGORIES -->
-    <div class="pv-brands-rail" id="pvBrandsRail" role="region" aria-label="Kaba Yapı Malzemeleri Galerisi">
-      
-      <!-- Card 1: Portland Gri Çimento -->
-      <article class="pv-brand-tile">
-        <div class="pv-brand-tile-media">
-          <img src="assets/rf-card-cement.jpg" alt="Portland Gri Çimento CEM I 42.5 R ve CEM II" fetchpriority="high" decoding="async">
+  <!-- Kaba Yapı Çözümleri - PRO SPEC GRID -->
+  <section class="pv-kaba-section" id="kaba-malzemeler">
+    <div class="pv-container">
+      <div class="pv-kaba-section-header">
+        <div>
+          <span class="pv-kaba-section-badge">Şantiye ve Taahhüt Malzeme Matrisi</span>
+          <h2 class="pv-kaba-section-title">Temel Kaba Yapı Ürün Grupları</h2>
         </div>
-        <div class="pv-brand-tile-body">
-          <div>
-            <h2 class="pv-brand-tile-title">Portland Gri Çimento (CEM I 42.5 R &amp; CEM II)</h2>
-            <p class="pv-brand-tile-desc">
-              TS EN 197-1 yüksek erken mukavemetli taze fabrika partisi. 25 kg / 50 kg torbalı ve 1.500 kg paletli şantiye teslimatı.
-            </p>
-          </div>
-          <div class="pv-brand-tile-actions">
-            <a href="https://wa.me/905323844497?text=Merhaba%2C%20Portland%20Gri%20%C3%87imento%20(CEM%20I%2042.5%20R)%20torba%2Fpalet%20fiyat%C4%B1%20ve%20%C5%9Fantiye%20teslimat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-primary">Teklif &amp; Stok İste →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 2: Alçı Grubu -->
-      <article class="pv-brand-tile">
-        <div class="pv-brand-tile-media">
-          <img src="assets/rf-card-tools.jpg" alt="Rigips, Knauf ve ABS Torbalı Alçı Grubu" loading="lazy" decoding="async">
-        </div>
-        <div class="pv-brand-tile-body">
-          <div>
-            <h2 class="pv-brand-tile-title">Alçı Grubu (Sıva, Saten &amp; Makine)</h2>
-            <p class="pv-brand-tile-desc">
-              Knauf, Rigips ve ABS perlitli sıva alçısı (35 kg), saten perdah (30 kg), derz dolgu ve makine sıvası kuru kapalı depo stoklarında.
-            </p>
-          </div>
-          <div class="pv-brand-tile-actions">
-            <a href="https://wa.me/905323844497?text=Merhaba%2C%20Rigips%2FKnauf%20s%C4%B1va%20ve%20saten%20al%C3%A7%C4%B1s%C4%B1%20palet%20fiyat%C4%B1%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-primary">Teklif &amp; Stok İste →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3: Elenmiş Torbalı Şap Kumu -->
-      <article class="pv-brand-tile">
-        <div class="pv-brand-tile-media">
-          <img src="assets/rf-card-fasteners.jpg" alt="Elenmiş Torbalı Şap Kumu ve Mıcır" loading="lazy" decoding="async">
-        </div>
-        <div class="pv-brand-tile-body">
-          <div>
-            <h2 class="pv-brand-tile-title">Elenmiş Şap Kumu, Mıcır &amp; Kireç</h2>
-            <p class="pv-brand-tile-desc">
-              0–3 mm yıkanmış torbalı şap kumu (40 kg çuval), 1-2 no mıcır ve sönmüş torbalı kireç (25 kg). Daire içi ve şantiyeye vinçli indirme.
-            </p>
-          </div>
-          <div class="pv-brand-tile-actions">
-            <a href="https://wa.me/905323844497?text=Merhaba%2C%20elenmi%C5%9F%20torbal%C4%B1%20%C5%9Fap%20kumu%20ve%20m%C4%B1c%C4%B1r%20i%C3%A7in%20%C5%9Fantiye%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-primary">Teklif &amp; Stok İste →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4: Gazbeton & Ytong Yapıştırıcısı -->
-      <article class="pv-brand-tile">
-        <div class="pv-brand-tile-media">
-          <img src="assets/rf-card-plumbing.jpg" alt="Gazbeton ve Ytong Örgü Harçları" loading="lazy" decoding="async">
-        </div>
-        <div class="pv-brand-tile-body">
-          <div>
-            <h2 class="pv-brand-tile-title">Gazbeton &amp; Ytong Yapıştırıcı Harçları</h2>
-            <p class="pv-brand-tile-desc">
-              C2TE S1 yüksek yapışma mukavemetli ince yatak gazbeton harçları (25 kg). Duvar örümü için paletli şantiye sevkiyatı.
-            </p>
-          </div>
-          <div class="pv-brand-tile-actions">
-            <a href="https://wa.me/905323844497?text=Merhaba%2C%20Gazbeton%2FYtong%20yap%C4%B1%C5%9Ft%C4%B1r%C4%B1c%C4%B1%20harc%C4%B1%20i%C3%A7in%20palet%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-brand-btn-primary">Teklif &amp; Stok İste →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- INTERACTIVE HARÇ & METRAJ HESAPLAYICI (VOLUME & MIX CALCULATOR) -->
-<section class="pv-kaba-section" aria-label="İnteraktif Şantiye Harç Hesaplayıcı">
-  <div class="pv-container">
-    
-    <div class="pv-calc-card">
-      <div class="pv-calc-header">
-        <div class="pv-calc-pretitle">ŞANTİYE KARAR DESTEK ARACI</div>
-        <h2 class="pv-calc-title">Harç, Şap &amp; Çimento İhtiyaç Hesaplayıcı</h2>
-        <p class="pv-calc-desc">Uygulama türünü ve metrajınızı girin; gereken çimento torbası (50 kg) ve şap kumu çuvalını (40 kg) anında hesaplayıp tek tıkla şantiye fiyatı alın.</p>
-      </div>
-
-      <!-- Application Type Selector -->
-      <div class="pv-calc-pills" role="radiogroup" aria-label="Uygulama Türü">
-        <button type="button" class="pv-calc-pill-btn active" data-mix="sap" data-cement-ratio="0.32" data-sand-ratio="1.15" data-water-ratio="8">
-          <strong>01. Zemin Şapı</strong>
-          <span>1:3 Çimento / Kum Oranı (5 cm)</span>
-        </button>
-        <button type="button" class="pv-calc-pill-btn" data-mix="siva" data-cement-ratio="0.16" data-sand-ratio="0.55" data-water-ratio="4">
-          <strong>02. Kaba Duvar Sıvası</strong>
-          <span>1:3.5 Pervan Standart Sıva (2 cm)</span>
-        </button>
-        <button type="button" class="pv-calc-pill-btn" data-mix="duvar" data-cement-ratio="0.10" data-sand-ratio="0.35" data-water-ratio="2.5">
-          <strong>03. Tuğla / Briket Duvar</strong>
-          <span>1:4 Örgü Harcı (10 m² Duvar)</span>
-        </button>
-        <button type="button" class="pv-calc-pill-btn" data-mix="beton" data-cement-ratio="0.70" data-sand-ratio="2.40" data-water-ratio="16">
-          <strong>04. Saha Betonu</strong>
-          <span>1:2:3 C25 Saha / Temel (10 cm)</span>
-        </button>
-      </div>
-
-      <!-- User Input Row -->
-      <div class="pv-calc-input-row">
-        <div class="pv-calc-field-group">
-          <label for="calcAreaInput">Uygulama Alanı (m²)</label>
-          <input type="number" id="calcAreaInput" min="1" max="5000" value="100" placeholder="Örn. 100" />
-        </div>
-        <div class="pv-calc-field-group">
-          <label for="calcThicknessInput">Ortalama Kalınlık (cm)</label>
-          <input type="number" id="calcThicknessInput" min="1" max="30" value="5" step="0.5" placeholder="Örn. 5" />
-        </div>
-      </div>
-
-      <!-- Calculation Result Matrix -->
-      <div class="pv-calc-results-box">
-        <div class="pv-calc-results-grid">
-          <div class="pv-calc-res-item">
-            <span class="pv-calc-res-label">Portland Çimento</span>
-            <span class="pv-calc-res-val" id="resCementVal">32 <small>Torba (50 kg)</small></span>
-          </div>
-          <div class="pv-calc-res-item">
-            <span class="pv-calc-res-label">Elenmiş Şap Kumu</span>
-            <span class="pv-calc-res-val" id="resSandVal">115 <small>Çuval (40 kg)</small></span>
-          </div>
-          <div class="pv-calc-res-item">
-            <span class="pv-calc-res-label">Tahmini Karışım Suyu</span>
-            <span class="pv-calc-res-val" id="resWaterVal">800 <small>Litre</small></span>
-          </div>
-          <div class="pv-calc-res-item">
-            <span class="pv-calc-res-label">Önerilen Sevkiyat</span>
-            <span class="pv-calc-res-val" id="resTruckVal">Vinçli Palet <small>/ Damper</small></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Direct Action -->
-      <div class="pv-calc-action-bar">
-        <a href="https://wa.me/905323844497?text=Merhaba%2C%20kaba%20yap%C4%B1%20hesaplay%C4%B1c%C4%B1s%C4%B1%20ile%20hesaplad%C4%B1%C4%9F%C4%B1m%20re%C3%A7ete%20i%C3%A7in%20fiyat%20almak%20istiyorum%3A%0A-%20Uygulama%3A%20Zemin%20%C5%9Eap%C4%B1%20(100%20m%C2%B2%2C%205%20cm)%0A-%20Gereken%20%C3%87imento%3A%2032%20Torba%20(50%20kg)%0A-%20Gereken%20Kum%3A%20115%20%C3%87uval%20(40%20kg)%0A%C5%9Eantiyeye%20teslimat%20fiyat%C4%B1%20alabilir%20miyim%3F" id="calcWaBtn" target="_blank" rel="noopener" class="pv-calc-wa-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          <span>Hesaplanan Reçeteyi WhatsApp ile Fiyatlandır →</span>
+        <a href="#harc-hesaplayici" class="pv-calc-jump-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          Harç &amp; Metraj Hesaplayıcıya Git
         </a>
       </div>
-    </div>
 
-    <!-- İZMİR - ÇEŞME LOJİSTİK & BOŞALTMA PROTOKOLÜ -->
-    <div class="pv-calc-header" style="margin-top: 48px;">
-      <div class="pv-calc-pretitle">URLA DEPO ÇIKIŞLI ŞANTİYE LOJİSTİĞİ</div>
-      <h2 class="pv-calc-title">İzmir – Çeşme Koridoru Sevkiyat Protokolü</h2>
-      <p class="pv-calc-desc">Şantiyenizin dar sokak, eğimli parsel veya kat içi boşaltma koşullarına göre optimize edilmiş araç filomuzla aynı gün ring teslimat.</p>
-    </div>
-
-    <div class="pv-logistics-corridor-grid">
-      <!-- 01: Balçova & Narlıdere -->
-      <div class="pv-logistics-corridor-card">
-        <h3 class="pv-logistics-card-title">📍 Balçova &amp; Narlıdere</h3>
-        <p class="pv-logistics-card-desc">Ekspres hafif şantiye kamyoneti ve çimento/alçı takviyesi. Şehir içi dar sokaklara ve site otoparklarına uygun transit filo.</p>
-        <div class="pv-logistics-card-meta">⏱️ Teslimat: 30 – 45 Dakika · Günlük Kesintisiz</div>
-      </div>
-
-      <!-- 02: Güzelbahçe & Urla -->
-      <div class="pv-logistics-corridor-card">
-        <h3 class="pv-logistics-card-title">📍 Güzelbahçe &amp; Urla</h3>
-        <p class="pv-logistics-card-desc">Urla Ana Depodan doğrudan ring teslimatı. Damperli kum/şap ve paletli çimento sevkiyatı.</p>
-        <div class="pv-logistics-card-meta">⏱️ Teslimat: 15 – 30 Dakika · Sürekli Çıkış</div>
-      </div>
-
-      <!-- 03: Çeşme & Alaçatı -->
-      <div class="pv-logistics-corridor-card">
-        <h3 class="pv-logistics-card-title">📍 Çeşme, Alaçatı &amp; Ilıca</h3>
-        <p class="pv-logistics-card-desc">Günde 2 düzenli ring sevkiyatı. Villa şantiyelerine yola dökmeden bahçe içine vinçli palet indirme ve damperli şap teslimatı.</p>
-        <div class="pv-logistics-card-meta">⏱️ Ring Saatleri: 08:30 &amp; 14:00 Sevkiyatı</div>
-      </div>
-
-      <!-- 04: Seferihisar & Karaburun -->
-      <div class="pv-logistics-corridor-card">
-        <h3 class="pv-logistics-card-title">📍 Seferihisar &amp; Karaburun</h3>
-        <p class="pv-logistics-card-desc">Sığacık, Mordoğan ve Karaburun yarımada hattına tonajlı damperli ve paletli kaba yapı araç sevkiyatı.</p>
-        <div class="pv-logistics-card-meta">⏱️ Günlük Planlı Şantiye Çıkışları</div>
-      </div>
-    </div>
-
-    <!-- TECHNICAL FAQ & SPECS ACCORDION -->
-    <div class="pv-calc-header" style="margin-top: 48px;">
-      <div class="pv-calc-pretitle">TEKNİK ŞARTNAME &amp; USTA REHBERİ</div>
-      <h2 class="pv-calc-title">Sıkça Sorulan Sorular &amp; Standartlar</h2>
-    </div>
-
-    <div class="rf-acc-group" style="margin-bottom: 48px;">
-      <div class="rf-acc-item active">
-        <button type="button" class="rf-acc-header">
-          <span>01. CEM I 42.5 R ile CEM II 32.5 R arasındaki fark nedir, hangisini seçmeliyim?</span>
-          <span class="rf-acc-icon">+</span>
-        </button>
-        <div class="rf-acc-body">
-          <strong>CEM I 42.5 R (Portland Çimento):</strong> %95+ saf klinker içerir, erken yaşta (2 ve 7 gün) çok yüksek mukavemet verir. Kalıp söküm süresini hızlandırır; betonarme, kolon-kiriş, yüksek dayanımlı saha betonu ve ağır yük zemin şaplarında 1 numaralı tercihtir.<br><br>
-          <strong>CEM II 32.5 R (Katkılı Çimento):</strong> Puzolan veya kalker katkılıdır, hidratasyon ısısı düşüktür; genel duvar örme, kaba/ince sıva ve çatlama riski yüksek geniş yüzey şaplarında idealdir.
-        </div>
-      </div>
-
-      <div class="rf-acc-item">
-        <button type="button" class="rf-acc-header">
-          <span>02. Zemin şapında çatlamayı önlemek için doğru kum ve su oranı nedir?</span>
-          <span class="rf-acc-icon">+</span>
-        </button>
-        <div class="rf-acc-body">
-          Zemin şaplarında en sık yapılan hata fazla su kullanımı ve killi kumdur. Pervan 0-3 mm fırınlanmış elenmiş torbalı şap kumu kil içermez. İdeal karışım 1 torba CEM I 42.5 R (50 kg) için 3.5-4 çuval (140-160 kg) şap kumu ve 20-22 litre sudur. Şap döküldükten sonraki ilk 3 gün yüzey sulanmalı veya kürleme örtüsü serilmelidir.
-        </div>
-      </div>
-
-      <div class="rf-acc-item">
-        <button type="button" class="rf-acc-header">
-          <span>03. Şantiyede torbalı çimento ve alçının raf ömrü ve depolama şartı nedir?</span>
-          <span class="rf-acc-icon">+</span>
-        </button>
-        <div class="rf-acc-body">
-          Torbalı çimento ve alçılar doğrudan zeminle temas etmemeli, ahşap palet üzerinde ve yerden en az 10 cm yukarıda tutulmalıdır. Pervan Urla Depo, tüm partileri kuru kapalı hangarlarda muhafaza eder ve fabrikadan haftalık taze sevk alır. Torbalı çimentonun şantiyede ideal kullanım süresi 90 gündür.
-        </div>
-      </div>
-
-      <div class="rf-acc-item">
-        <button type="button" class="rf-acc-header">
-          <span>04. Çeşme, Alaçatı ve Urla şantiyelerine vinçli indirme nasıl çalışır?</span>
-          <span class="rf-acc-icon">+</span>
-        </button>
-        <div class="rf-acc-body">
-          Paletli çimento (30 torba / 1.500 kg), alçı ve gazbeton sevkiyatlarımızda vinçli (Hi-Ab) kamyonumuz şantiyenize gelerek malzemeyi sokağa dökmeden doğrudan parsel/bahçe içine veya 1. kata kadar güvenle indirir. Böylece işçilik ve taşıma maliyetiniz sıfıra iner.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- STORE HUBS & LOGISTICS SECTION -->
-<section class="pv-hubs-section" aria-label="Pervan Merkezleri ve Yol Tarifi">
-  <div class="pv-container">
-    
-    <div class="pv-hubs-header">
-      <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
-      <h2 class="pv-hubs-title">Daha Fazlası, Özel Tonaj &amp; Hızlı Tedarik İçin</h2>
-      <p class="pv-hubs-desc">Şantiyenize özel damperli kum, mıcır, dökme çimento ve vinçli palet sevkiyatı için merkezlerimizle doğrudan iletişime geçin.</p>
-    </div>
-
-    <div class="pv-hubs-grid">
-      
-      <!-- Card 1: Balçova Showroom -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
-        <p class="pv-hub-desc">Torbalı çimento, alçı, hırdavat, tesisat ve el aletleri perakende ve hafif şantiye takviye merkezi.</p>
+      <!-- PRO SPEC GRID (4 Core Material Cards) -->
+      <div class="pv-pro-spec-grid">
         
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
+        <!-- Kart 1: Çimento -->
+        <article class="pv-pro-spec-card">
+          <div class="pv-pro-card-header">
+            <span class="pv-pro-spec-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              TS EN 197-1 CEM I 42.5 R
+            </span>
+            <span class="pv-pro-pack-badge">50 kg Torba • 30 Torba / Palet (1.500 kg)</span>
           </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
-          </div>
-        </div>
+          <div class="pv-pro-card-body">
+            <h3 class="pv-pro-card-title">Portland Çimento (Yüksek Erken Dayanımlı)</h3>
+            <p class="pv-pro-card-subtitle">
+              Taşıyıcı betonarme, zemin şapı, kolon-kiriş takviyesi ve prekast imalatları için yüksek mukavemetli gri Portland çimento.
+            </p>
 
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ma%C4%9Fazan%C4%B1zdan%20kaba%20yap%C4%B1%20ve%20%C3%A7imento%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
+            <table class="pv-pro-spec-table">
+              <tr>
+                <td class="pv-label">28 Günlük Basınç Mukavemeti</td>
+                <td class="pv-val">≥ 42.5 MPa</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Priz Başlangıç Süresi</td>
+                <td class="pv-val">≥ 60 Dakika</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Genleşme / Hacim Sabitliği</td>
+                <td class="pv-val">≤ 10 mm</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Paletleme &amp; Ambalaj</td>
+                <td class="pv-val">30 Torba / 1.500 kg (Shrinkli)</td>
+              </tr>
+            </table>
+
+            <div class="pv-pro-logistics-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span><strong>Urla Depo: Anlık Stok</strong> — Damperli ve Vinçli Şantiye Teslimatı</span>
+            </div>
+
+            <div class="pv-pro-card-actions">
+              <a href="https://wa.me/905323844497?text=Merhaba,%20Urla%20Depo%20%C3%A7%C4%B1k%C4%B1%C5%9Fl%C4%B1%20CEM%20I%2042.5%20R%20Portland%20%C3%87imento%20i%C3%A7in%20palet/kamyon%20baz%C4%B1nda%20%C5%9Fantiye%20teslim%20fiyat%C4%B1%20almak%20istiyorum." class="pv-pro-quote-btn pv-wa" target="_blank" rel="noopener">
+                Palet &amp; Kamyon Şantiye Fiyatı Al
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 2: Alçı Grubu -->
+        <article class="pv-pro-spec-card">
+          <div class="pv-pro-card-header">
+            <span class="pv-pro-spec-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              TS EN 13279-1 Tip B1 / B4
+            </span>
+            <span class="pv-pro-pack-badge">35 kg PP Torba • 40 Torba / Palet (1.400 kg)</span>
+          </div>
+          <div class="pv-pro-card-body">
+            <h3 class="pv-pro-card-title">Yapı &amp; Sıva Alçısı Grubu (Kaba / Saten / Makine)</h3>
+            <p class="pv-pro-card-subtitle">
+              Tuğla, gazbeton ve brüt beton yüzeylerde yüksek aderans sağlayan, nefes alan perlitli sıva ve pürüzsüz saten perdah sistemi.
+            </p>
+
+            <table class="pv-pro-spec-table">
+              <tr>
+                <td class="pv-label">Basınç Dayanımı</td>
+                <td class="pv-val">≥ 2.5 N/mm² (Sıva) / ≥ 3.0 N/mm² (Saten)</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Uygulama &amp; Priz Süresi</td>
+                <td class="pv-val">120 – 150 Dakika</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Sarfiyat (1 cm kalınlıkta)</td>
+                <td class="pv-val">~8.5 – 9.5 kg/m²</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Paletleme &amp; Ambalaj</td>
+                <td class="pv-val">40 Torba / 1.400 kg</td>
+              </tr>
+            </table>
+
+            <div class="pv-pro-logistics-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span><strong>Urla &amp; Balçova Hazır Stok</strong> — Şantiyeye Kat / Depo Boşaltma</span>
+            </div>
+
+            <div class="pv-pro-card-actions">
+              <a href="https://wa.me/905323844497?text=Merhaba,%20S%C4%B1va%20ve%20Saten%20Al%C3%A7%C4%B1s%C4%B1%20grubu%20i%C3%A7in%20%C5%9Fantiyemize%20paletli%20teslimat%20teklifi%20almak%20istiyorum." class="pv-pro-quote-btn pv-wa" target="_blank" rel="noopener">
+                Palet &amp; Şantiye Fiyatı Al
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 3: Şap Kumu & Mıcır -->
+        <article class="pv-pro-spec-card">
+          <div class="pv-pro-card-header">
+            <span class="pv-pro-spec-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              TS 706 EN 12620 Agrega
+            </span>
+            <span class="pv-pro-pack-badge">40 kg Çuval • 1 Ton Big-Bag • Damper Dökme</span>
+          </div>
+          <div class="pv-pro-card-body">
+            <h3 class="pv-pro-card-title">0-3 mm Yıkanmış Şap Kumu &amp; Agrega</h3>
+            <p class="pv-pro-card-subtitle">
+              Kil ve organik maddelerden arındırılmış, homojen dane dağılımına sahip helikopter şapı, sıva ve harç agregası.
+            </p>
+
+            <table class="pv-pro-spec-table">
+              <tr>
+                <td class="pv-label">Dane Dağılımı (Fraksiyon)</td>
+                <td class="pv-val">0 – 3 mm / 0 – 5 mm Şap Kumu</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Kil &amp; İnce Madde Oranı</td>
+                <td class="pv-val">≤ %1.5 (Yıkanmış &amp; Elenmiş)</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Hacim Ağırlığı (Yoğunluk)</td>
+                <td class="pv-val">~1.55 – 1.60 ton/m³</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Sevkiyat Formatları</td>
+                <td class="pv-val">40 kg Çuval / 1 Ton Big-Bag / Damper</td>
+              </tr>
+            </table>
+
+            <div class="pv-pro-logistics-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span><strong>Urla Depo Çıkışlı Sevk</strong> — Damper Dökme ve Hi-Ab Vinçli Big-Bag</span>
+            </div>
+
+            <div class="pv-pro-card-actions">
+              <a href="https://wa.me/905323844497?text=Merhaba,%20%C5%9Eap%20kumu%20ve%20agrega%20grubu%20i%C3%A7in%20%C3%A7uvall%C4%B1%20/%20damperli%20%C5%9Fantiye%20d%C3%B6k%C3%BCm%20teklifi%20almak%20istiyorum." class="pv-pro-quote-btn pv-wa" target="_blank" rel="noopener">
+                Çuval / Big-Bag / Damper Fiyatı Al
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 4: Gazbeton Harcı -->
+        <article class="pv-pro-spec-card">
+          <div class="pv-pro-card-header">
+            <span class="pv-pro-spec-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              TS EN 998-2 Sınıf G-M10
+            </span>
+            <span class="pv-pro-pack-badge">25 kg Kraft Torba • 48 Torba / Palet (1.200 kg)</span>
+          </div>
+          <div class="pv-pro-card-body">
+            <h3 class="pv-pro-card-title">Gazbeton &amp; Ytong Blok Yapıştırıcı Harcı</h3>
+            <p class="pv-pro-card-subtitle">
+              Isı köprüsü oluşturmayan, 1-3 mm ince derz uygulamasına uygun yüksek tutunma mukavemetli gazbeton duvar örgü harcı.
+            </p>
+
+            <table class="pv-pro-spec-table">
+              <tr>
+                <td class="pv-label">Eğilme / Basınç Dayanımı</td>
+                <td class="pv-val">≥ 10.0 N/mm² (M10 Sınıfı)</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Yapışma / Aderans Mukavemeti</td>
+                <td class="pv-val">≥ 0.30 N/mm²</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Sarfiyat (10 cm blok için)</td>
+                <td class="pv-val">~3.0 – 4.0 kg/m²</td>
+              </tr>
+              <tr>
+                <td class="pv-label">Paletleme &amp; Ambalaj</td>
+                <td class="pv-val">48 Torba / 1.200 kg</td>
+              </tr>
+            </table>
+
+            <div class="pv-pro-logistics-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span><strong>Urla Depo: Anlık Stok</strong> — Paletli Vinçli Şantiye İndirme</span>
+            </div>
+
+            <div class="pv-pro-card-actions">
+              <a href="https://wa.me/905323844497?text=Merhaba,%20Gazbeton%20/%20Ytong%20yap%C4%B1%C5%9Ft%C4%B1rma%20harc%C4%B1%20i%C3%A7in%20palet%20baz%C4%B1nda%20%C5%9Fantiye%20teslim%20teklifi%20almak%20istiyorum." class="pv-pro-quote-btn pv-wa" target="_blank" rel="noopener">
+                Palet &amp; Şantiye Fiyatı Al
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
-
-      <!-- Card 2: Urla Lojistik Depo -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Urla Ana Lojistik Deposu (Kaba Yapı Üssü)</h3>
-        <p class="pv-hub-desc">Paletli çimento, alçı, torbalı şap kumu, damperli kamyon ve tır yükleme sahası, Yarımada şantiye sevkiyatı.</p>
-        
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Kalabak, 35430 Urla / İzmir</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
-          </div>
-        </div>
-
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323318763?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20kaba%20yap%C4%B1%20ve%20%C3%A7imento%20sevkiyat%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Canlı Harç, Çimento & Şap Metraj Hesaplayıcı -->
+  <section class="pv-calc-section" id="harc-hesaplayici">
+    <div class="pv-container">
+      <div class="pv-kaba-section-header">
+        <div>
+          <span class="pv-kaba-section-badge">Akıllı Şantiye Araçları</span>
+          <h2 class="pv-kaba-section-title">Harç &amp; Çimento Metraj Hesaplayıcı</h2>
+        </div>
+      </div>
+
+      <div class="pv-calc-card">
+        <p class="pv-calc-intro">
+          Uygulama tipini ve alan büyüklüğünü girin; standart karışım oranlarına göre gereken torba çimento, çuval kum, su miktarını ve uygun şantiye sevk aracını anında hesaplayın.
+        </p>
+
+        <!-- Karışım Tipi Seçimi -->
+        <div class="pv-calc-pills" role="tablist">
+          <button class="pv-calc-pill-btn active" data-mix="sap" data-cement-ratio="0.32" data-sand-ratio="1.15" data-water-ratio="8">
+            <strong>1. Zemin Şapı</strong>
+            <span>1:3 Çimento / Kum • 5 cm kalınlık</span>
+          </button>
+          <button class="pv-calc-pill-btn" data-mix="siva" data-cement-ratio="0.16" data-sand-ratio="0.55" data-water-ratio="4">
+            <strong>2. Kaba Sıva</strong>
+            <span>1:4 Karışım • 2 cm kalınlık</span>
+          </button>
+          <button class="pv-calc-pill-btn" data-mix="duvar" data-cement-ratio="0.10" data-sand-ratio="0.35" data-water-ratio="2.5">
+            <strong>3. Tuğla Duvar Harcı</strong>
+            <span>Örgü harcı • 100 m² duvar</span>
+          </button>
+          <button class="pv-calc-pill-btn" data-mix="beton" data-cement-ratio="0.70" data-sand-ratio="2.40" data-water-ratio="16">
+            <strong>4. Saha Betonu</strong>
+            <span>C20/25 Eşdeğeri • 10 cm kalınlık</span>
+          </button>
+        </div>
+
+        <!-- Giriş Alanları -->
+        <div class="pv-calc-inputs-grid">
+          <div class="pv-calc-field">
+            <label for="calcAreaInput">Uygulama Alanı (m²)</label>
+            <div class="pv-calc-input-wrap">
+              <input type="number" id="calcAreaInput" value="50" min="1" max="5000" step="1" />
+              <span class="pv-calc-unit">m²</span>
+            </div>
+          </div>
+          <div class="pv-calc-field">
+            <label for="calcThicknessInput">Katman Kalınlığı (cm)</label>
+            <div class="pv-calc-input-wrap">
+              <input type="number" id="calcThicknessInput" value="5" min="1" max="30" step="0.5" />
+              <span class="pv-calc-unit">cm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sonuç Kartları -->
+        <div class="pv-calc-results-box">
+          <div class="pv-calc-results-grid">
+            <div class="pv-calc-res-item">
+              <span class="pv-calc-res-label">Çimento (CEM I 42.5 R)</span>
+              <span class="pv-calc-res-val" id="resCementVal">16 <small>Torba (50 kg)</small></span>
+            </div>
+            <div class="pv-calc-res-item">
+              <span class="pv-calc-res-label">Şap Kumu (0-3 mm)</span>
+              <span class="pv-calc-res-val" id="resSandVal">58 <small>Çuval (40 kg)</small></span>
+            </div>
+            <div class="pv-calc-res-item">
+              <span class="pv-calc-res-label">Tahmini Su Miktarı</span>
+              <span class="pv-calc-res-val" id="resWaterVal">400 <small>Litre</small></span>
+            </div>
+            <div class="pv-calc-res-item">
+              <span class="pv-calc-res-label">Önerilen Sevkiyat Aracı</span>
+              <span class="pv-calc-res-val" id="resTruckVal">6 Teker Damperli <small>/ Depo Sevk</small></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action / CTA -->
+        <div class="pv-calc-action-bar">
+          <a href="#" id="calcWaBtn" class="pv-calc-wa-btn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.073-2.027-.477-1.584-.657-2.618-2.26-2.697-2.366-.079-.105-.648-.863-.648-1.644 0-.781.408-1.166.554-1.325.145-.158.319-.198.425-.198.106 0 .213.002.306.007.098.005.23-.037.36.276.13.313.447 1.092.487 1.172.04.079.066.172.013.277-.053.106-.079.172-.158.265-.079.092-.167.206-.238.277-.08.079-.163.165-.07.324.093.159.412.68.884 1.101.608.542 1.12.71 1.279.79.159.079.252.066.345-.04.093-.105.397-.462.503-.62.106-.159.212-.132.358-.079.146.053.926.437 1.085.516.159.079.265.119.305.185.04.066.04.383-.104.788z"/></svg>
+            Bu Reçete İçin Şantiye Teslim Fiyatı Al
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Şantiye Lojistiği & Boşaltma Protokolü -->
+  <section class="pv-kaba-section" style="background:#FFFFFF; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0;">
+    <div class="pv-container">
+      <div class="pv-kaba-section-header">
+        <div>
+          <span class="pv-kaba-section-badge">Urla Depo Dağıtım Ağı</span>
+          <h2 class="pv-kaba-section-title">İzmir – Çeşme Şantiye Lojistiği &amp; Boşaltma Güvencesi</h2>
+        </div>
+      </div>
+
+      <div class="pv-logistics-corridor-grid">
+        <div class="pv-logistics-corridor-card">
+          <h3 class="pv-logistics-card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8461E" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Yarımada Lojistik Hattı
+          </h3>
+          <p class="pv-logistics-card-desc">
+            Urla Kalabak Ana Depomuzdan Balçova, Narlıdere, Güzelbahçe, Seferihisar, Urla, Çeşme ve Alaçatı aksındaki tüm şantiyelere günlük ring ve ekspres sevkiyat.
+          </p>
+          <span class="pv-logistics-card-meta">Aynı Gün / Ertesi Sabah Şantiye Teslim</span>
+        </div>
+
+        <div class="pv-logistics-corridor-card">
+          <h3 class="pv-logistics-card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8461E" stroke-width="2"><path d="M10 17h4V5H10z"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            Hi-Ab Vinçli Kat &amp; Bahçe İndirme
+          </h3>
+          <p class="pv-logistics-card-desc">
+            Paletli çimento ve alçı yüklemelerinde bomlu vinç araçlarımızla şantiye içi zorlu zeminlere, kat balkonlarına veya bahçe kotuna güvenli sıfır hasar indirme.
+          </p>
+          <span class="pv-logistics-card-meta">İşçilik &amp; Vinç Tasarrufu</span>
+        </div>
+
+        <div class="pv-logistics-corridor-card">
+          <h3 class="pv-logistics-card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8461E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            İrsaliye &amp; Proje / Taahhüt Hesabı
+          </h3>
+          <p class="pv-logistics-card-desc">
+            Müteahhit, mimar ve taşeronlar için parti bazlı sevkiyat planı, e-fatura/e-irsaliye entegrasyonu ve kademeli şantiye döküm takibi.
+          </p>
+          <span class="pv-logistics-card-meta">Kurumsal Cari &amp; Şantiye Çözümleri</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teknik Şartname & SSS Accordion -->
+  <section class="pv-kaba-section">
+    <div class="pv-container">
+      <div class="pv-kaba-section-header">
+        <div>
+          <span class="pv-kaba-section-badge">Teknik Standartlar &amp; Şartnameler</span>
+          <h2 class="pv-kaba-section-title">Kaba Yapı Hakkında Sıkça Sorulan Sorular</h2>
+        </div>
+      </div>
+
+      <div class="pv-faq-accordion">
+        <details class="pv-faq-item" open>
+          <summary class="pv-faq-summary">
+            CEM I 42.5 R ile CEM II 32.5 arasındaki fark nedir? Zemin şapında hangisi kullanılmalıdır?
+            <svg class="pv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="pv-faq-content">
+            <p>
+              <strong>CEM I 42.5 R</strong> saf klinker oranı yüksek, 2 günlük erken mukavemeti (≥20 MPa) ve 28 günlük basınç dayanımı (≥42.5 MPa) çok yüksek olan saf Portland çimentosudur. Taşıyıcı betonarme sistemlerde, don riski olan havalarda ve helikopterli zemin şaplarında çatlama direncini ve erken sertleşmeyi sağlamak için kesinlikle CEM I 42.5 R tercih edilmelidir. <strong>CEM II 32.5</strong> ise katkılı çimentodur; daha yavaş priz alır, kaba sıva ve duvar harçları için uygundur.
+            </p>
+          </div>
+        </details>
+
+        <details class="pv-faq-item">
+          <summary class="pv-faq-summary">
+            Çeşme ve Urla bölgesine minimum kaç palet veya torba sipariş verebiliyoruz?
+            <svg class="pv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="pv-faq-content">
+            <p>
+              Urla Ana Depomuzdan kendi araçlarımızla:
+              <br>• <strong>Küçük İhtiyaçlar:</strong> 10-20 torbaya kadar kapalı kasa Transit kamyonetlerle hızlı servis,
+              <br>• <strong>Paletli / Toptan Şantiye:</strong> 1 palet (30 torba = 1.5 ton) ve üzeri siparişlerde 6-teker, 10-teker damperli veya vinçli kamyonlarımızla doğrudan şantiyenize boşaltma yapılmaktadır.
+            </p>
+          </div>
+        </details>
+
+        <details class="pv-faq-item">
+          <summary class="pv-faq-summary">
+            Şap kumu çuvallı mı yoksa damperli dökme olarak mı sevk ediliyor?
+            <svg class="pv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="pv-faq-content">
+            <p>
+              Her iki formatta da sevkiyatımız mevcuttur. Şantiye önü cadde, site içi veya döküm alanı kısıtlı olan projelerde 40 kg'lık polipropilen çuvallarda veya 1 tonluk Big-Bag torbalarda vinçli indirme yapılmaktadır. Geniş saha ve döküm imkanı olan şantiyelere ise doğrudan damperli kamyonla tonajlı dökme teslimat gerçekleştirilir.
+            </p>
+          </div>
+        </details>
+
+        <details class="pv-faq-item">
+          <summary class="pv-faq-summary">
+            Kış şartlarında ve yaz sıcağında dökülen şap ve harçta nelere dikkat edilmelidir?
+            <svg class="pv-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="pv-faq-content">
+            <p>
+              Yarımada (Çeşme–Urla) rüzgar ve yüksek sıcaklık geçişlerine sahiptir. Yazın dökülen şapın hızlı su kaybedip rötre çatlağı oluşturmaması için kürleme (sulama) veya kür membranı uygulanmalıdır. Kış dökümlerinde ise ortam sıcaklığı +5°C altına indiğinde don önleyici harç katkıları ve CEM I 42.5 R hızlı çimento tercih edilmelidir. Teknik danışmanlarımız doğru katkı reçetesini belirlemenize yardımcı olur.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lojistik Merkezleri & İletişim -->
+  <section class="pv-kaba-section" style="background: #F8FAFC; border-top:1px solid #E2E8F0;">
+    <div class="pv-container">
+      <div class="pv-hubs-section">
+        <div class="pv-hubs-intro">
+          <span class="pv-hubs-eyebrow">Pervan Dağıtım Noktaları</span>
+          <h2 class="pv-hubs-title">Depolarımız &amp; Şantiye İletişim</h2>
+          <p class="pv-hubs-desc">
+            Kaba yapı malzemeleri, çimento ve şap kumu doğrudan Urla Ana Depomuzdan sevk edilir. Renk, boya ve ince yapı danışmanlığı için Balçova Showroom’umuzu ziyaret edebilirsiniz.
+          </p>
+        </div>
+
+        <div class="pv-hubs-grid">
+          <!-- Urla Depo -->
+          <div class="pv-hub-card pv-hub-featured">
+            <div class="pv-hub-card-header">
+              <span class="pv-hub-badge">Kaba Yapı Dağıtım Merkezi</span>
+              <h3 class="pv-hub-name">Urla Ana Lojistik Depo</h3>
+            </div>
+            <p class="pv-hub-role">Torbalı Çimento, Şap Kumu, Tuğla, Alçı &amp; Ağır Malzeme Sevkiyatı</p>
+            <address class="pv-hub-address">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kalabak Mah. 3004 Sk. No:2, Urla / İZMİR
+            </address>
+            <div class="pv-hub-actions">
+              <a href="tel:+905323318763" class="pv-hub-btn pv-hub-btn-primary">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                0532 331 87 63
+              </a>
+              <a href="https://maps.google.com/?q=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn pv-hub-btn-outline">Yol Tarifi</a>
+            </div>
+          </div>
+
+          <!-- Balçova Showroom -->
+          <div class="pv-hub-card">
+            <div class="pv-hub-card-header">
+              <span class="pv-hub-badge pv-badge-subtle">Showroom &amp; Renk Lab</span>
+              <h3 class="pv-hub-name">Balçova Mağaza</h3>
+            </div>
+            <p class="pv-hub-role">Boya, Yalıtım, El Aletleri, RenXMatik &amp; Hırdavat Satış Noktası</p>
+            <address class="pv-hub-address">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İZMİR
+            </address>
+            <div class="pv-hub-actions">
+              <a href="tel:+902322784340" class="pv-hub-btn pv-hub-btn-primary">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                0232 278 43 40
+              </a>
+              <a href="https://maps.google.com/?q=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn pv-hub-btn-outline">Yol Tarifi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
-  <!-- Main Footer Navigation -->
   <div class="footer-container">
-    <div class="footer-sizer">
-      <div>
-        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="footer-logo-text">PERVAN</span>
+          <span class="footer-logo-tag">Yapı Market &amp; Taahhüt</span>
+        </a>
+        <p class="footer-desc">
+          1998'den bu yana İzmir ve Yarımada genelinde kaliteli yapı malzemeleri, toptan çimento dağıtımı ve profesyonel taahhüt çözümleri sunuyoruz.
+        </p>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <a href="tel:+902322784340">0232 278 43 40</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:info@pervanyapimarket.com">info@pervanyapimarket.com</a>
+        </div>
       </div>
-      
-      <div class="menu-container">
-        <nav class="navbar" role="navigation">
-          
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yetkili Bayilikler</span>
-            <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-              <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-              <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
-              <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-            </div>
-          </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
-            <div class="navbar-dropdown">
-              <a href="malzemeler.html" class="navbar-item">Tümünü gör</a>
-              <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-              <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
-              <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-              <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
-              <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
-              <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-              <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-            </div>
-          </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Kategoriler</h3>
+        <ul class="footer-links">
+          <li><a href="kaba-yapi-cimento.html">Kaba Yapı &amp; Çimento</a></li>
+          <li><a href="boya-ve-dis-cephe.html">Boya &amp; Dış Cephe</a></li>
+          <li><a href="su-isi-yalitimi.html">Su &amp; Isı Yalıtımı</a></li>
+          <li><a href="el-aletleri-hirdavat.html">El Aletleri &amp; Hırdavat</a></li>
+          <li><a href="hasere-cevre-sagligi.html">Haşere &amp; Çevre Sağlığı</a></li>
+          <li><a href="elektrik-aydinlatma.html">Elektrik &amp; Aydınlatma</a></li>
+        </ul>
+      </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Mimari Taahhüt</span>
-            <div class="navbar-dropdown">
-              <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
-              <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-              <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
-              <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
-              <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
-            </div>
-          </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Kurumsal &amp; Hizmetler</h3>
+        <ul class="footer-links">
+          <li><a href="yetkili-bayilikler.html">Yetkili Bayilikler</a></li>
+          <li><a href="taahhut.html">Taahhüt &amp; Uygulama</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="iletisim.html">İletişim &amp; Lokasyonlar</a></li>
+          <li><a href="urla-lojistik-depo.html">Urla Lojistik Depo</a></li>
+          <li><a href="balcova-showroom.html">Balçova Showroom</a></li>
+        </ul>
+      </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Merkezlerimiz</span>
-            <div class="navbar-dropdown">
-              <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
-              <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
-              <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
-              <a href="tel:+902322784340" class="navbar-item">0232 278 43 40</a>
-            </div>
-          </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Hizmet Bölgeleri</h3>
+        <p class="footer-text-muted">
+          İzmir Merkez, Balçova, Narlıdere, Güzelbahçe, Urla, Çeşme, Alaçatı, Seferihisar ve Karaburun şantiyelerine kendi araç filomuzla toptan ve perakende teslimat.
+        </p>
+        <div class="footer-badge-list">
+          <span class="footer-badge">Urla Depo Sevk</span>
+          <span class="footer-badge">Damperli Dağıtım</span>
+          <span class="footer-badge">Hi-Ab Vinç</span>
+        </div>
+      </div>
+    </div>
 
-        </nav>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Pervan Yapı Market &amp; Taahhüt. Tüm hakları saklıdır.</p>
+      <div class="footer-legal">
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+        <a href="kvkk.html">KVKK Aydınlatma</a>
+        <a href="cerez-politikasi.html">Çerez Politikası</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="js/pervan.js?v=9.0.0"></script>
 <script>
   (function() {
-    // 1. Horizontal Carousel State Handler
-    function initBrandsCarousel() {
-      var rail = document.getElementById('pvBrandsRail');
-      var prevBtn = document.getElementById('pvBrandsPrev');
-      var nextBtn = document.getElementById('pvBrandsNext');
-      if (!rail || !prevBtn || !nextBtn) return;
-
-      function updateNavState() {
-        var sl = Math.ceil(rail.scrollLeft);
-        var maxScroll = rail.scrollWidth - rail.clientWidth;
-        prevBtn.disabled = sl <= 5;
-        nextBtn.disabled = (sl + rail.clientWidth) >= (rail.scrollWidth - 5);
-      }
-
-      function getScrollStep() {
-        var tile = rail.querySelector('.pv-brand-tile');
-        return tile ? (tile.offsetWidth + 20) : 360;
-      }
-
-      prevBtn.addEventListener('click', function(e) {
-        if (prevBtn.disabled) {
-          e.preventDefault();
-          return;
-        }
-        rail.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    // Mobil Menü
+    var menuToggle = document.getElementById('menuToggle');
+    var topNavbar = document.getElementById('topNavbar');
+    if (menuToggle && topNavbar) {
+      menuToggle.addEventListener('click', function() {
+        topNavbar.classList.toggle('is-open');
+        var contents = topNavbar.querySelector('.navbar-contents');
+        if (contents) contents.classList.toggle('opened');
       });
-
-      nextBtn.addEventListener('click', function(e) {
-        if (nextBtn.disabled) {
-          e.preventDefault();
-          return;
-        }
-        rail.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      });
-
-      rail.addEventListener('scroll', updateNavState, { passive: true });
-      window.addEventListener('resize', updateNavState, { passive: true });
-      window.addEventListener('load', updateNavState);
-      
-      updateNavState();
     }
 
-    // 2. Harç & Çimento Hacim / Metraj Hesaplayıcı
+    // Harç & Çimento Hacim / Metraj Hesaplayıcı
     function initMixCalculator() {
       var pills = document.querySelectorAll('.pv-calc-pill-btn');
       var areaInput = document.getElementById('calcAreaInput');
@@ -680,7 +745,7 @@
         if (area <= 0) area = 1;
         if (thick <= 0) thick = 1;
 
-        // Thickness multiplier relative to 5cm base
+        // Kalınlık katsayısı (5cm baz)
         var thickFactor = thick / 5;
         var totalCement = Math.ceil(area * cementRatio * thickFactor);
         var totalSand = Math.ceil(area * sandRatio * thickFactor);
@@ -727,12 +792,8 @@
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        initBrandsCarousel();
-        initMixCalculator();
-      });
+      document.addEventListener('DOMContentLoaded', initMixCalculator);
     } else {
-      initBrandsCarousel();
       initMixCalculator();
     }
   })();
