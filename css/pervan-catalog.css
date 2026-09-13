@@ -658,53 +658,64 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   position: relative;
   z-index: 5;
   width: 100%;
-  padding-bottom: 44px;
-  padding-top: 0;
+  padding-bottom: clamp(32px, 4.5vh, 52px);
+  padding-top: clamp(60px, 8vh, 80px);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
   .pv-stage-content-wrap {
     padding-bottom: clamp(48px, 6.5vh, 76px);
-    padding-top: 0;
-    display: flex;
+    padding-top: clamp(64px, 8vh, 90px);
+    flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 32px;
+    gap: 40px;
   }
 }
 
 .pv-stage-visual {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 6;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .pv-stage-visual {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    flex-shrink: 0;
     margin-right: clamp(16px, 4vw, 56px);
     margin-bottom: 8px;
-    z-index: 6;
   }
+}
 
+.pv-stage-can-img {
+  height: clamp(130px, 28vw, 210px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.88)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  animation: pvStageFloat 4.5s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
   .pv-stage-can-img {
-    height: clamp(180px, 25vw, 330px);
-    max-height: 350px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.85)) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55));
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
-    animation: pvStageFloat 4.5s ease-in-out infinite;
-    pointer-events: none;
-    user-select: none;
+    height: clamp(220px, 28vw, 360px);
+    max-height: 380px;
+    filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.92)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
   }
+}
 
-  .pv-stage-slide:not(.active) .pv-stage-can-img {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
+.pv-stage-slide:not(.active) .pv-stage-can-img {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
 }
 
 @keyframes pvStageFloat {
@@ -712,8 +723,157 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   50% { transform: translateY(-9px); }
 }
 
+.pv-stage-product-grid {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: clamp(36px, 5vh, 64px);
+  padding-top: clamp(60px, 8vh, 80px);
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .pv-stage-product-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: clamp(48px, 6.5vh, 76px);
+  }
+}
+
+.pv-stage-product-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .pv-stage-product-hero {
+    justify-content: center;
+    margin-right: clamp(16px, 4vw, 48px);
+  }
+}
+
+.pv-stage-can-hero-img {
+  height: clamp(170px, 26vw, 340px);
+  max-height: 360px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.88)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+  animation: pvStageFloat 4.5s ease-in-out infinite;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.pv-stage-slide:not(.active) .pv-stage-can-hero-img {
+  opacity: 0;
+  transform: scale(0.9) translateY(24px);
+}
+
+.pv-stage-pedestal-glow {
+  position: absolute;
+  width: clamp(220px, 35vw, 440px);
+  height: clamp(220px, 35vw, 440px);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+  filter: blur(48px);
+}
+
+.pv-stage-eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pv-stage-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.pv-stage-hero-desc {
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.76);
+  margin-top: 8px;
+  margin-bottom: 14px;
+  max-width: 520px;
+}
+
+.pv-stage-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+
+.pv-stage-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #0B0F19;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s, filter 0.2s;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.pv-stage-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.pv-stage-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.pv-stage-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .pv-stage-info {
-  max-width: 460px;
+  max-width: 520px;
   color: #FFFFFF;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateY(0);
