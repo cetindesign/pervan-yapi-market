@@ -607,35 +607,67 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
-  background: radial-gradient(circle at 75% 50%, rgba(var(--pv-chroma-rgb), 0.15) 0%, transparent 60%);
 }
 
 .pv-stage-slide.active {
   z-index: 2;
 }
 
+.pv-stage-slide picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pv-stage-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.pv-stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.65) 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .pv-stage-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.72) 100%),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0) 70%);
+  }
+}
+
 .pv-stage-content-wrap {
   position: relative;
   z-index: 5;
   width: 100%;
-  padding-bottom: clamp(36px, 5vh, 60px);
-  padding-top: clamp(70px, 9vh, 96px);
+  padding-bottom: clamp(32px, 4.5vh, 52px);
+  padding-top: clamp(60px, 8vh, 80px);
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 24px;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
   .pv-stage-content-wrap {
-    padding-bottom: clamp(50px, 7vh, 80px);
-    padding-top: clamp(80px, 10vh, 110px);
+    padding-bottom: clamp(48px, 6.5vh, 76px);
+    padding-top: clamp(64px, 8vh, 90px);
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    gap: 48px;
+    gap: 40px;
   }
 }
 
@@ -652,186 +684,26 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   .pv-stage-visual {
     justify-content: center;
     margin-right: clamp(16px, 4vw, 56px);
+    margin-bottom: 8px;
   }
 }
 
 .pv-stage-can-img {
-  height: clamp(180px, 38vw, 260px);
+  height: clamp(160px, 32vw, 240px);
   width: auto;
   max-width: 85vw;
   object-fit: contain;
-  filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.95)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
-  opacity: 1;
+  filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.9)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.7));
   pointer-events: none;
   user-select: none;
 }
 
 @media (min-width: 768px) {
   .pv-stage-can-img {
-    height: clamp(300px, 36vw, 450px);
-    max-height: 460px;
-    filter: drop-shadow(0 32px 52px rgba(0, 0, 0, 0.96)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.8));
+    height: clamp(260px, 30vw, 400px);
+    max-height: 420px;
+    filter: drop-shadow(0 28px 46px rgba(0, 0, 0, 0.95)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.75));
   }
-}
-
-.pv-stage-pedestal-glow {
-  position: absolute;
-  width: clamp(240px, 40vw, 480px);
-  height: clamp(240px, 40vw, 480px);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: blur(52px);
-}
-
-.pv-stage-product-grid {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: clamp(36px, 5vh, 64px);
-  padding-top: clamp(60px, 8vh, 80px);
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .pv-stage-product-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding-bottom: clamp(48px, 6.5vh, 76px);
-  }
-}
-
-.pv-stage-product-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .pv-stage-product-hero {
-    justify-content: center;
-    margin-right: clamp(16px, 4vw, 48px);
-  }
-}
-
-.pv-stage-can-hero-img {
-  height: clamp(170px, 26vw, 340px);
-  max-height: 360px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.88)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
-  animation: pvStageFloat 4.5s ease-in-out infinite;
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
-}
-
-.pv-stage-slide:not(.active) .pv-stage-can-hero-img {
-  opacity: 0;
-  transform: scale(0.9) translateY(24px);
-}
-
-.pv-stage-pedestal-glow {
-  position: absolute;
-  width: clamp(220px, 35vw, 440px);
-  height: clamp(220px, 35vw, 440px);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.75;
-  filter: blur(48px);
-}
-
-.pv-stage-eyebrow-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 5px 12px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.pv-stage-chip-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 8px currentColor;
-}
-
-.pv-stage-hero-desc {
-  font-size: clamp(13px, 1.35vw, 15px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.76);
-  margin-top: 8px;
-  margin-bottom: 14px;
-  max-width: 520px;
-}
-
-.pv-stage-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-  margin-bottom: 14px;
-}
-
-.pv-stage-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #25D366;
-  color: #0B0F19;
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: transform 0.2s, filter 0.2s;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
-}
-
-.pv-stage-btn-primary:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.08);
-}
-
-.pv-stage-btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 9px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.pv-stage-btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .pv-stage-info {
@@ -891,7 +763,7 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 .pv-stage-title {
   font-size: clamp(26px, 3.5vw, 38px);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin: 0;
