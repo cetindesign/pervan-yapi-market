@@ -6280,6 +6280,54 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 @media (min-width: 860px) {
   .pv-trade-feed {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* 6. Trade & Logistics Contact Banner */
+.pv-trade-contact-banner {
+  background: #FAF9F6;
+  border: 1.5px solid rgba(215, 210, 200, 0.9);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  margin: 24px 0 40px;
+  box-shadow: 0 2px 8px rgba(40, 30, 20, 0.03);
+}
+
+@media (min-width: 768px) {
+  .pv-trade-contact-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.pv-trade-banner-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pv-trade-banner-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111215;
+  margin: 0 0 4px;
+  letter-spacing: -0.015em;
+  font-family: var(--pv-font);
+}
+
+.pv-trade-banner-desc {
+  font-size: 13px;
+  color: #57534E;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.pv-trade-banner-actions {
+  flex-shrink: 0;
+}
+
