@@ -2075,8 +2075,8 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 
 /* Unboxed Floating Silhouette with Contact Shadow (ZERO BOX CONTAINERS) */
 .pv-menu-thumb {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   flex-shrink: 0;
   position: relative;
   display: flex;
@@ -2091,10 +2091,10 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 .pv-menu-thumb::after {
   content: "";
   position: absolute;
-  left: 6px;
-  right: 6px;
+  left: 8px;
+  right: 8px;
   bottom: 2px;
-  height: 5px;
+  height: 6px;
   background: rgba(0, 0, 0, 0.12);
   border-radius: 50%;
   filter: blur(3px);
@@ -2491,21 +2491,21 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 .pv-atelier-can-stage {
   position: relative;
   z-index: 1;
-  width: 110px;
-  height: 110px;
-  min-width: 110px;
-  min-height: 110px;
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2px 0;
+  margin: 6px 0 10px;
 }
 
 .pv-specimen-glow,
 .pv-atelier-glow {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 50%, rgba(64, 94, 102, 0.22) 0%, rgba(255, 255, 255, 0) 72%);
   pointer-events: none;
@@ -2530,8 +2530,8 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 82px;
-  height: 11px;
+  width: 110px;
+  height: 14px;
   border-radius: 50%;
   background: radial-gradient(ellipse at center, rgba(17, 18, 21, 0.22) 0%, rgba(17, 18, 21, 0.08) 42%, transparent 72%);
   pointer-events: none;
