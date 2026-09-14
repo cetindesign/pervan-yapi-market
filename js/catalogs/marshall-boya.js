@@ -200,7 +200,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-dis",
     "thumb": "assets/marshall-official/akrikor-anti-alkali-örtücü-astar.png",
-    "desc": "Akrikor Anti Alkali+Örtücü Astar - Dış Cephe Astarı - Marshall Boya",
+    "desc": "Tuz kusması ve alkaliye karşı bariyer oluşturan, dış cephede son kat boyanın örtücülüğünü artıran astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 2,5 L / 12,5 L",
@@ -223,7 +223,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Anti Alkali+Örtücü Astar - Dış Cephe Astarı - Marshall Boya"
+        "body": "Tuz kusması ve alkaliye karşı bariyer oluşturan, dış cephede son kat boyanın örtücülüğünü artıran astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -239,7 +239,7 @@
     "deptId": "marshallExteriorPanel",
     "category": "akrikor-akrilik",
     "thumb": "assets/marshall-official/akrikor-saf-akrilik.png",
-    "desc": "Akrikor Saf Akrilik - Dış Cephe - Marshall Boya",
+    "desc": "%100 saf akrilik bağlayıcılı, sahil iklimi ve tuz serpintisine karşı maksimum direnç sağlayan dış cephe boyası.",
     "meta": [
       "Akrikor Dış Cephe",
       "Ambalaj: 2,5 L / 15 L",
@@ -264,7 +264,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Saf Akrilik - Dış Cephe - Marshall Boya"
+        "body": "%100 saf akrilik bağlayıcılı, sahil iklimi ve tuz serpintisine karşı maksimum direnç sağlayan dış cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -280,7 +280,7 @@
     "deptId": "marshallExteriorPanel",
     "category": "akrikor-grenli",
     "thumb": "assets/marshall-official/akrikor-silikonlu-akrilik-grenli.png",
-    "desc": "Akrikor Silikonlu+Akrilik Grenli - Dış Cephe - Marshall Boya",
+    "desc": "Güneş ışınlarına ve yağmura dayanıklı, yüzey hatalarını örten dekoratif grenli dış cephe kaplaması.",
     "meta": [
       "Akrikor Dış Cephe",
       "Ambalaj: 20 KG",
@@ -302,7 +302,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Silikonlu+Akrilik Grenli - Dış Cephe - Marshall Boya"
+        "body": "Güneş ışınlarına ve yağmura dayanıklı, yüzey hatalarını örten dekoratif grenli dış cephe kaplaması."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -318,7 +318,7 @@
     "deptId": "marshallExteriorPanel",
     "category": "akrikor-akrilik",
     "thumb": "assets/marshall-official/akrikor-silikonlu-akrilik.png",
-    "desc": "Akrikor Silikonlu+Akrilik - Dış Cephe - Marshall Boya",
+    "desc": "Yüksek su iticilik ve buhar geçirgenliği sağlayan, solmaya dirençli silikonlu akrilik dış cephe boyası.",
     "meta": [
       "Akrikor Dış Cephe",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -343,7 +343,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Silikonlu+Akrilik - Dış Cephe - Marshall Boya"
+        "body": "Yüksek su iticilik ve buhar geçirgenliği sağlayan, solmaya dirençli silikonlu akrilik dış cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -359,7 +359,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-dis",
     "thumb": "assets/marshall-official/akrikor-silikonlu-astar.png",
-    "desc": "Akrikor Silikonlu Astar - Dış Cephe Astarı - Marshall Boya",
+    "desc": "Dış cephe yüzeylerinde su emiciliği dengeleyen, boya sarfiyatını azaltan silikonlu bağlayıcı astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 4 L / 12,5 L",
@@ -382,7 +382,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Silikonlu Astar - Dış Cephe Astarı - Marshall Boya"
+        "body": "Dış cephe yüzeylerinde su emiciliği dengeleyen, boya sarfiyatını azaltan silikonlu bağlayıcı astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -398,7 +398,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-dis",
     "thumb": "assets/marshall-official/akrikor-silikonlu-örtücü-astar.png",
-    "desc": "Akrikor Silikonlu+Örtücü Astar - Dış Cephe Astarı - Marshall Boya",
+    "desc": "Eski boyalı veya renk değişimli dış cephelerde mükemmel zemin oluşturan pigmentli silikonlu astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 2,5 L / 10 KG",
@@ -422,7 +422,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Silikonlu+Örtücü Astar - Dış Cephe Astarı - Marshall Boya"
+        "body": "Eski boyalı veya renk değişimli dış cephelerde mükemmel zemin oluşturan pigmentli silikonlu astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -438,7 +438,7 @@
     "deptId": "marshallExteriorPanel",
     "category": "akrikor-kalkan",
     "thumb": "assets/marshall-official/akrikor-su-kalkanı-elyaflı.png",
-    "desc": "Akrikor Su Kalkanı Elyaflı - Su Kalkanı | Marshall Boya",
+    "desc": "Mikro elyaf takviyeli esnek yapısıyla kılcal çatlakları köprüleyen, su geçirimsiz elastik dış cephe kalkanı.",
     "meta": [
       "Akrikor Dış Cephe",
       "Ambalaj: 3 KG / 10 KG",
@@ -462,7 +462,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Su Kalkanı Elyaflı - Su Kalkanı | Marshall Boya"
+        "body": "Mikro elyaf takviyeli esnek yapısıyla kılcal çatlakları köprüleyen, su geçirimsiz elastik dış cephe kalkanı."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -478,7 +478,7 @@
     "deptId": "marshallExteriorPanel",
     "category": "akrikor-kalkan",
     "thumb": "assets/marshall-official/akrikor-su-kalkanı.jpg",
-    "desc": "Akrikor Su Kalkanı - Su Kalkanı | Marshall Boya",
+    "desc": "Binaları şiddetli yağmur, nem ve su sızıntılarına karşı tam koruma altına alan elastik su kalkanı boyası.",
     "meta": [
       "Akrikor Dış Cephe",
       "Ambalaj: 3 KG / 10 KG",
@@ -502,7 +502,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Akrikor Su Kalkanı - Su Kalkanı | Marshall Boya"
+        "body": "Binaları şiddetli yağmur, nem ve su sızıntılarına karşı tam koruma altına alan elastik su kalkanı boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -518,7 +518,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/antibakteriyel-hijyen.png",
-    "desc": "Antibakteriyel Hijyen - Boya | Marshall Boya",
+    "desc": "Gümüş iyon teknolojisiyle küf ve bakteri oluşumunu engelleyen, tam silinebilir hijyenik iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 15 L",
@@ -541,7 +541,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Antibakteriyel Hijyen - Boya | Marshall Boya"
+        "body": "Gümüş iyon teknolojisiyle küf ve bakteri oluşumunu engelleyen, tam silinebilir hijyenik iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -557,7 +557,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "ahsap-cila",
     "thumb": "assets/marshall-official/cuprinol-ultra-vernikli-ahşap-bakım.png",
-    "desc": "Cuprinol Ultra Vernikli Ahşap Bakım - Ahşap Boyası | Marshall Boya",
+    "desc": "Dış mekan ahşap doğrama, pergola ve cephe kaplamalarında UV filtreli uzun ömürlü vernikli koruyucu.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 0,75L",
@@ -579,7 +579,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Cuprinol Ultra Vernikli Ahşap Bakım - Ahşap Boyası | Marshall Boya"
+        "body": "Dış mekan ahşap doğrama, pergola ve cephe kaplamalarında UV filtreli uzun ömürlü vernikli koruyucu."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -595,7 +595,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "sentetik-metal",
     "thumb": "assets/marshall-official/cw-krom-efektli-sprey.png",
-    "desc": "CW Krom Efektli Sprey - Dış Cephe - Marshall Boya",
+    "desc": "Metal, ahşap ve sert plastik yüzeylerde parlak ayna/krom metalik efekt oluşturan hızlı kuruyan sprey boya.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 400 ML",
@@ -617,7 +617,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "CW Krom Efektli Sprey - Dış Cephe - Marshall Boya"
+        "body": "Metal, ahşap ve sert plastik yüzeylerde parlak ayna/krom metalik efekt oluşturan hızlı kuruyan sprey boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -633,7 +633,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "ahsap-cila",
     "thumb": "assets/marshall-official/cw-vernik-sprey-parlak.png",
-    "desc": "CW Vernik Sprey (Parlak) - İÇ MEKAN - Marshall Boya",
+    "desc": "Ahşap, metal ve hobi yüzeylerinde sararmayan, çizilmelere dayanıklı parlak koruyucu akrilik vernik sprey.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 400 ML",
@@ -655,7 +655,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "CW Vernik Sprey (Parlak) - İÇ MEKAN - Marshall Boya"
+        "body": "Ahşap, metal ve hobi yüzeylerinde sararmayan, çizilmelere dayanıklı parlak koruyucu akrilik vernik sprey."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -671,7 +671,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "sentetik-metal",
     "thumb": "assets/marshall-official/enamel-antipas.png",
-    "desc": "Enamel Antipas - Dış Cephe Astarı - Marshall Boya",
+    "desc": "Demir ve çelik yüzeylerde pas oluşumunu önleyen, mükemmel yapışma sağlayan sentetik antipas astar.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 750 ML / 2,5 L",
@@ -695,7 +695,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Enamel Antipas - Dış Cephe Astarı - Marshall Boya"
+        "body": "Demir ve çelik yüzeylerde pas oluşumunu önleyen, mükemmel yapışma sağlayan sentetik antipas astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -711,7 +711,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-dis",
     "thumb": "assets/marshall-official/enamel-sentetik-astar.png",
-    "desc": "Enamel Sentetik Astar - Dış Cephe Astarı - Marshall Boya",
+    "desc": "Sentetik son kat boyalar altında homojen, düzgün ve yüksek örtücülükte zemin hazırlayan astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 750 ML / 2,5 L",
@@ -735,7 +735,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Enamel Sentetik Astar - Dış Cephe Astarı - Marshall Boya"
+        "body": "Sentetik son kat boyalar altında homojen, düzgün ve yüksek örtücülükte zemin hazırlayan astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -751,7 +751,7 @@
     "deptId": "marshallCeilingPanel",
     "category": "tavan-fit",
     "thumb": "assets/marshall-official/fit-extra-tavan-boyası.jpg",
-    "desc": "Fit  Extra Tavan Boyası - Tavan Boyası | Marshall Boya",
+    "desc": "Ekstra beyazlık ve yüksek örtücülük sağlayan, damlatma yapmayan nefes alabilen tavan boyası.",
     "meta": [
       "Tavan Grubu",
       "Ambalaj: 3.5 KG / 17.5 KG",
@@ -774,7 +774,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit  Extra Tavan Boyası - Tavan Boyası | Marshall Boya"
+        "body": "Ekstra beyazlık ve yüksek örtücülük sağlayan, damlatma yapmayan nefes alabilen tavan boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -790,7 +790,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "ahsap-cila",
     "thumb": "assets/marshall-official/fit-parlak.jpg",
-    "desc": "Fit Parlak - Ahşap ve Metal Boyası | Marshall Boya",
+    "desc": "İç ve dış mekanda ahşap, demir ve metal yüzeylere uygulanan, parlaklığını uzun süre koruyan sentetik boya.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 2,5 / 15L",
@@ -813,7 +813,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Parlak - Ahşap ve Metal Boyası | Marshall Boya"
+        "body": "İç ve dış mekanda ahşap, demir ve metal yüzeylere uygulanan, parlaklığını uzun süre koruyan sentetik boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -829,7 +829,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "fit-ic",
     "thumb": "assets/marshall-official/fit-plastik.jpg",
-    "desc": "Fit Plastik - Boya | Marshall Boya",
+    "desc": "Ekonomik, mat bitişli, yüksek örtücülüğe sahip ve nefes alan mineral esaslı iç mekan duvar boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 3.5 KG / 10 KG",
@@ -853,7 +853,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Plastik - Boya | Marshall Boya"
+        "body": "Ekonomik, mat bitişli, yüksek örtücülüğe sahip ve nefes alan mineral esaslı iç mekan duvar boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -869,7 +869,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/fit-sentetik-astar.jpg",
-    "desc": "Fit Sentetik Astar - Astar | Marshall Boya",
+    "desc": "Ahşap ve metal yüzeylerde boya tutuculuğunu artıran, fırça izi bırakmayan ekonomik sentetik astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 1 kg / 3 KG",
@@ -893,7 +893,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Sentetik Astar - Astar | Marshall Boya"
+        "body": "Ahşap ve metal yüzeylerde boya tutuculuğunu artıran, fırça izi bırakmayan ekonomik sentetik astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -909,7 +909,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "fit-ic",
     "thumb": "assets/marshall-official/fit-silikonlu-flat.png",
-    "desc": "Fit Silikonlu Flat - Dış Cephe - Marshall Boya",
+    "desc": "Ekonomik dış cephe koruması sağlayan, mat dokulu ve hava koşullarına dayanıklı silikonlu boya.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -933,7 +933,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Silikonlu Flat - Dış Cephe - Marshall Boya"
+        "body": "Ekonomik dış cephe koruması sağlayan, mat dokulu ve hava koşullarına dayanıklı silikonlu boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -949,7 +949,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "fit-ic",
     "thumb": "assets/marshall-official/fit-silikonlu-i̇pek-mat.jpg",
-    "desc": "Fit Silikonlu İpek Mat - Boya | Marshall Boya",
+    "desc": "Silinebilir ipeksi mat dokusuyla iç mekanlarda dayanıklı ve ekonomik silikonlu duvar boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 3.5 KG / 10 KG",
@@ -972,7 +972,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Silikonlu İpek Mat - Boya | Marshall Boya"
+        "body": "Silinebilir ipeksi mat dokusuyla iç mekanlarda dayanıklı ve ekonomik silikonlu duvar boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -988,7 +988,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "fit-ic",
     "thumb": "assets/marshall-official/fit-silikonlu.jpg",
-    "desc": "Fit Silikonlu - Boya | Marshall Boya",
+    "desc": "Su itici silikon katkısıyla silinebilen, ekonomik ve yüksek kapatıcılıkta mat iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 3.5 KG / 10 KG",
@@ -1012,7 +1012,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Silikonlu - Boya | Marshall Boya"
+        "body": "Su itici silikon katkısıyla silinebilen, ekonomik ve yüksek kapatıcılıkta mat iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1028,7 +1028,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/fit-örtücü-i̇ç-cephe-astarı.png",
-    "desc": "Fit Örtücü İç Cephe Astarı - Astar | Marshall Boya",
+    "desc": "Renk geçişlerinde alttaki koyu tonu kapatan ve son kat boya tüketimini düşüren örtücü astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 3.5 KG / 20 KG",
@@ -1051,7 +1051,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Fit Örtücü İç Cephe Astarı - Astar | Marshall Boya"
+        "body": "Renk geçişlerinde alttaki koyu tonu kapatan ve son kat boya tüketimini düşüren örtücü astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1067,7 +1067,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/geçiş-astarı.png",
-    "desc": "Geçiş Astarı - İç Cephe Astarı - Marshall Boya",
+    "desc": "Solvent bazlı boyadan su bazlı boyaya geçişlerde aderans sağlayan, zımpara gerektirmeyen köprü astarı.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1091,7 +1091,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Geçiş Astarı - İç Cephe Astarı - Marshall Boya"
+        "body": "Solvent bazlı boyadan su bazlı boyaya geçişlerde aderans sağlayan, zımpara gerektirmeyen köprü astarı."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1107,7 +1107,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "hammerite",
     "thumb": "assets/marshall-official/hammerite-düz-metal-boyası.png",
-    "desc": "Hammerite Düz Metal Boyası - Dış Cephe - Marshall Boya",
+    "desc": "Paslı metallere zımpara ve antipas gerektirmeden direkt uygulanan, düz dokulu korozyon önleyici metal boyası.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 250 ML / 750 ML",
@@ -1132,7 +1132,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Hammerite Düz Metal Boyası - Dış Cephe - Marshall Boya"
+        "body": "Paslı metallere zımpara ve antipas gerektirmeden direkt uygulanan, düz dokulu korozyon önleyici metal boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1148,7 +1148,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "hammerite",
     "thumb": "assets/marshall-official/hammerite-çekiçlenmiş-metal-boyası.jpg",
-    "desc": "Hammerite Çekiçlenmiş Metal Boyası - Dış Cephe - Marshall Boya",
+    "desc": "Doğrudan pas üzerine uygulanan, yüzey kusurlarını gizleyen çekiçlenmiş dekoratif dokulu metal boyası.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 250 ML / 750 ML",
@@ -1173,7 +1173,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Hammerite Çekiçlenmiş Metal Boyası - Dış Cephe - Marshall Boya"
+        "body": "Doğrudan pas üzerine uygulanan, yüzey kusurlarını gizleyen çekiçlenmiş dekoratif dokulu metal boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1189,7 +1189,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/i̇zolasyon-astarı.png",
-    "desc": "İzolasyon Astarı - İç Cephe Astarı - Marshall Boya",
+    "desc": "Su ve nem sızıntılarına karşı kılcal gözenekleri tıkayan, aderans artırıcı şeffaf izolasyon astarı.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 750 ML / 2,5 L",
@@ -1214,7 +1214,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "İzolasyon Astarı - İç Cephe Astarı - Marshall Boya"
+        "body": "Su ve nem sızıntılarına karşı kılcal gözenekleri tıkayan, aderans artırıcı şeffaf izolasyon astarı."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1230,7 +1230,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/konsantre-astar.png",
-    "desc": "Konsantre Astar - Astar | Marshall Boya",
+    "desc": "1'e 7 oranında su ile inceltilen, tozuyan yüzeyleri bağlayan yüksek penetrasyonlu konsantre astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 0,75 / 2,5 L",
@@ -1255,7 +1255,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Konsantre Astar - Astar | Marshall Boya"
+        "body": "1'e 7 oranında su ile inceltilen, tozuyan yüzeyleri bağlayan yüksek penetrasyonlu konsantre astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1271,7 +1271,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/luksima-silikonlu-özel-mat.png",
-    "desc": "Luksima Silikonlu Özel Mat - Boya | Marshall Boya",
+    "desc": "Zarif kadife dokusu ve leke tutmayan silikon teknolojisiyle yüksek silinebilirlikte lüks iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 1L / 2,5L",
@@ -1296,7 +1296,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Luksima Silikonlu Özel Mat - Boya | Marshall Boya"
+        "body": "Zarif kadife dokusu ve leke tutmayan silikon teknolojisiyle yüksek silinebilirlikte lüks iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1312,7 +1312,7 @@
     "deptId": "marshallWoodMetalPanel",
     "category": "sentetik-metal",
     "thumb": "assets/marshall-official/luxe-parlak.png",
-    "desc": "Luxe Parlak - İÇ MEKAN - Marshall Boya",
+    "desc": "Yüksek parlaklık ve çizilme direnci sunan, ahşap ve metal yüzeyler için üstün kaliteli sentetik son kat boya.",
     "meta": [
       "Ahşap & Metal Zırhı",
       "Ambalaj: 2,5 L",
@@ -1334,7 +1334,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Luxe Parlak - İÇ MEKAN - Marshall Boya"
+        "body": "Yüksek parlaklık ve çizilme direnci sunan, ahşap ve metal yüzeyler için üstün kaliteli sentetik son kat boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1350,7 +1350,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/macun-dış-cephe.png",
-    "desc": "Macun Dış Cephe - Dış Cephe - Marshall Boya",
+    "desc": "Dış cephe çatlaklarını ve sıva kusurlarını dolduran, suya ve dış hava şartlarına dayanıklı macun.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 4,5 KG / 25 KG",
@@ -1373,7 +1373,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Macun Dış Cephe - Dış Cephe - Marshall Boya"
+        "body": "Dış cephe çatlaklarını ve sıva kusurlarını dolduran, suya ve dış hava şartlarına dayanıklı macun."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1389,7 +1389,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/macun-i̇ç-cephe.png",
-    "desc": "Macun İç Cephe - İÇ MEKAN - Marshall Boya",
+    "desc": "İç mekan sıva ve alçı yüzeylerde pürüzsüz son kat zemin hazırlayan, kolay zımparalanan dolgu macunu.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 4,5 KG / 25 KG",
@@ -1412,7 +1412,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Macun İç Cephe - İÇ MEKAN - Marshall Boya"
+        "body": "İç mekan sıva ve alçı yüzeylerde pürüzsüz son kat zemin hazırlayan, kolay zımparalanan dolgu macunu."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1428,7 +1428,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "sil-pak",
     "thumb": "assets/marshall-official/maximum-mat.png",
-    "desc": "Maximum Mat - Boya | Marshall Boya",
+    "desc": "Teflon katkılı leke tutmaz yapısıyla tam mat yüzey sunan, üstün örtücülüğe sahip leke kalkanı boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1452,7 +1452,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Maximum Mat - Boya | Marshall Boya"
+        "body": "Teflon katkılı leke tutmaz yapısıyla tam mat yüzey sunan, üstün örtücülüğe sahip leke kalkanı boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1468,7 +1468,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "sil-pak",
     "thumb": "assets/marshall-official/maximum.jpg",
-    "desc": "Maximum - İÇ MEKAN - Marshall Boya",
+    "desc": "Maksimum silinebilirlik ve leke itici bariyer sağlayan, ipeksi parlaklıkta üst segment iç mekan boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1492,7 +1492,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Maximum - İÇ MEKAN - Marshall Boya"
+        "body": "Maksimum silinebilirlik ve leke itici bariyer sağlayan, ipeksi parlaklıkta üst segment iç mekan boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1508,7 +1508,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/pastel-yarı-mat.png",
-    "desc": "Pastel Yarı Mat - İÇ MEKAN - Marshall Boya",
+    "desc": "Yarı mat dekoratif bitiş sunan, yoğun sirkülasyonlu alanlarda kolay temizlenen sentetik iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 1 L / 2,5 L",
@@ -1533,7 +1533,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Pastel Yarı Mat - İÇ MEKAN - Marshall Boya"
+        "body": "Yarı mat dekoratif bitiş sunan, yoğun sirkülasyonlu alanlarda kolay temizlenen sentetik iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1549,7 +1549,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/plastik-mat.png",
-    "desc": "Plastik Mat - İÇ MEKAN - Marshall Boya",
+    "desc": "Derin mat mineral dokulu, nefes alma kabiliyeti yüksek klasik iç cephe plastik duvar boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1573,7 +1573,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Plastik Mat - İÇ MEKAN - Marshall Boya"
+        "body": "Derin mat mineral dokulu, nefes alma kabiliyeti yüksek klasik iç cephe plastik duvar boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1589,7 +1589,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/protect-silikonlu-flat.png",
-    "desc": "Protect Silikonlu Flat - Dış Cephe - Marshall Boya",
+    "desc": "Dış cephede atmosferik kirlilik ve güneş ışığına karşı uzun ömürlü koruma sağlayan mat silikonlu boya.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1613,7 +1613,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Protect Silikonlu Flat - Dış Cephe - Marshall Boya"
+        "body": "Dış cephede atmosferik kirlilik ve güneş ışığına karşı uzun ömürlü koruma sağlayan mat silikonlu boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1629,7 +1629,7 @@
     "deptId": "marshallPrimersPanel",
     "category": "astar-ic",
     "thumb": "assets/marshall-official/saten-alçı-astarı.png",
-    "desc": "Saten Alçı Astarı - İç Cephe Astarı - Marshall Boya",
+    "desc": "Saten alçı, alçıpan ve emici yüzeylerde tozumayı önleyen, boyanın homojen kurumasını sağlayan şeffaf astar.",
     "meta": [
       "Yüzey Astarı",
       "Ambalaj: 750 ML / 4 L",
@@ -1653,7 +1653,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Saten Alçı Astarı - İç Cephe Astarı - Marshall Boya"
+        "body": "Saten alçı, alçıpan ve emici yüzeylerde tozumayı önleyen, boyanın homojen kurumasını sağlayan şeffaf astar."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1669,7 +1669,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/silikonlu-i̇pek-mat.png",
-    "desc": "Silikonlu İpek Mat - İÇ MEKAN - Marshall Boya",
+    "desc": "İpeksi dokusuyla ışığı zarif yansıtan, tam silinebilir ve sürtünmeye dayanıklı iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1693,7 +1693,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Silikonlu İpek Mat - İÇ MEKAN - Marshall Boya"
+        "body": "İpeksi dokusuyla ışığı zarif yansıtan, tam silinebilir ve sürtünmeye dayanıklı iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1709,7 +1709,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/silikonlu-mat.png",
-    "desc": "Silikonlu Mat - İÇ MEKAN - Marshall Boya",
+    "desc": "Işık parlamasını engelleyen mat bitişli, silikon katkısıyla kolay temizlenen iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1733,7 +1733,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Silikonlu Mat - İÇ MEKAN - Marshall Boya"
+        "body": "Işık parlamasını engelleyen mat bitişli, silikon katkısıyla kolay temizlenen iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1749,7 +1749,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/silikonlu-özel-mat.png",
-    "desc": "Silikonlu Özel Mat - İÇ MEKAN - Marshall Boya",
+    "desc": "Özel mat kadifemsi yapısıyla fırça/rulo izi bırakmayan, silinebilir profesyonel iç mekan boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 750 ML / 1 L",
@@ -1775,7 +1775,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Silikonlu Özel Mat - İÇ MEKAN - Marshall Boya"
+        "body": "Özel mat kadifemsi yapısıyla fırça/rulo izi bırakmayan, silinebilir profesyonel iç mekan boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1791,7 +1791,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/si̇l-pak-plus.png",
-    "desc": "SİL-PAK Plus - Boya | Marshall Boya",
+    "desc": "Su ve yağ bazlı lekeleri yüzeyden iten hidrofobik teknolojiye sahip, tam silinebilir leke tutmaz boya.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7.5 L",
@@ -1816,7 +1816,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "SİL-PAK Plus - Boya | Marshall Boya"
+        "body": "Su ve yağ bazlı lekeleri yüzeyden iten hidrofobik teknolojiye sahip, tam silinebilir leke tutmaz boya."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1832,7 +1832,7 @@
     "deptId": "marshallInteriorPanel",
     "category": "silikonlu",
     "thumb": "assets/marshall-official/si̇l-pak.png",
-    "desc": "SİL-PAK - Boya | Marshall Boya",
+    "desc": "Leke tutmayan silikonlu formülüyle temizliği kolaylaştıran, dayanıklı ve silinebilir iç cephe boyası.",
     "meta": [
       "İç Cephe Boyası",
       "Ambalaj: 2,5 L / 7,5 L",
@@ -1856,7 +1856,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "SİL-PAK - Boya | Marshall Boya"
+        "body": "Leke tutmayan silikonlu formülüyle temizliği kolaylaştıran, dayanıklı ve silinebilir iç cephe boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1872,7 +1872,7 @@
     "deptId": "marshallCeilingPanel",
     "category": "tavan-std",
     "thumb": "assets/marshall-official/tavan-boyası.png",
-    "desc": "Tavan Boyası - İÇ MEKAN - Marshall Boya",
+    "desc": "Yüksek beyazlık ve kapatıcılık sağlayan, sararmayan ve damlatmayan mat mineral tavan boyası.",
     "meta": [
       "Tavan Grubu",
       "Ambalaj: 3.5 KG / 10 KG",
@@ -1896,7 +1896,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Tavan Boyası - İÇ MEKAN - Marshall Boya"
+        "body": "Yüksek beyazlık ve kapatıcılık sağlayan, sararmayan ve damlatmayan mat mineral tavan boyası."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
@@ -1912,7 +1912,7 @@
     "deptId": "marshallChemicalsPanel",
     "category": "tiner-sentetik",
     "thumb": "assets/marshall-official/tiner-sentetik.png",
-    "desc": "Tiner Sentetik - İÇ MEKAN - Marshall Boya",
+    "desc": "Sentetik boya, vernik ve astarların kıvamını ayarlamak için özel formüle edilmiş saf sentetik tiner.",
     "meta": [
       "Solvent İnceltici",
       "Ambalaj: 500 ML / 1 L",
@@ -1937,7 +1937,7 @@
     "accordions": [
       {
         "title": "Ürün Tanımı ve Genel Performans",
-        "body": "Tiner Sentetik - İÇ MEKAN - Marshall Boya"
+        "body": "Sentetik boya, vernik ve astarların kıvamını ayarlamak için özel formüle edilmiş saf sentetik tiner."
       },
       {
         "title": "Uygulama ve Kuruma Bilgileri",
