@@ -4536,6 +4536,41 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   transform: translateY(-1px);
 }
 
+.pv-modal-tds-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  background: #FAF9F6;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 10px;
+  color: var(--pv-btn-primary-bg, #C8461E);
+  font-family: var(--pv-font);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: none !important;
+  box-shadow: none;
+  transition: all 0.16s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pv-modal-tds-link:hover {
+  background: #F3EFE6;
+  border-color: rgba(200, 70, 30, 0.3);
+  color: #A83614;
+}
+
+.pv-modal-tds-link svg {
+  flex-shrink: 0;
+}
+
+.pv-modal-tds-link .pv-tds-ext {
+  margin-left: auto;
+  opacity: 0.6;
+}
+
 .pv-modal-accordions {
   display: flex;
   flex-direction: column;

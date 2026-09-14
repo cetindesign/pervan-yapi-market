@@ -2535,27 +2535,23 @@
       modalAccordions.innerHTML = "";
       if (p.accordions && p.accordions.length) {
         p.accordions.forEach(function(acc, idx) {
-          var accDiv = document.createElement("div");
-          accDiv.className = "pv-accordion-card";
-          var isOpen = (idx === 0);
-          accDiv.innerHTML =
-            '<button type="button" class="pv-accordion-head" aria-expanded="' + (isOpen ? 'true' : 'false') + '">' +
-              '<span class="pv-accordion-title">' + acc.title + '</span>' +
-              '<svg class="pv-accordion-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>' +
+          var item = document.createElement("div");
+          item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
+          item.innerHTML =
+            '<button type="button" class="pv-acc-header" aria-expanded="' + (idx === 0 ? "true" : "false") + '">' +
+              '<span class="pv-acc-title">' + acc.title + '</span>' +
+              '<span class="pv-acc-icon">+</span>' +
             '</button>' +
-            '<div class="pv-accordion-body"' + (isOpen ? '' : ' style="display:none;"') + '>' +
-              '<p class="pv-accordion-p">' + acc.body + '</p>' +
-            '</div>';
+            '<div class="pv-acc-body">' + acc.body + '</div>';
 
-          var head = accDiv.querySelector(".pv-accordion-head");
-          var body = accDiv.querySelector(".pv-accordion-body");
-          head.addEventListener("click", function() {
-            var expanded = head.getAttribute("aria-expanded") === "true";
-            head.setAttribute("aria-expanded", !expanded ? "true" : "false");
-            body.style.display = !expanded ? "" : "none";
+          var btn = item.querySelector(".pv-acc-header");
+          btn.addEventListener("click", function() {
+            var isAct = item.classList.contains("active");
+            item.classList.toggle("active");
+            btn.setAttribute("aria-expanded", isAct ? "false" : "true");
           });
 
-          modalAccordions.appendChild(accDiv);
+          modalAccordions.appendChild(item);
         });
       }
     }
