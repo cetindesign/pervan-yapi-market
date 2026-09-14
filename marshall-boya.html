@@ -179,7 +179,10 @@
     <div class="pv-stage-track" id="pvStageTrack">
       <!-- Slide 0: Marshall SİL-PAK Plus & İç Cephe -->
       <div class="pv-stage-slide active" data-index="0" data-color="SİL-PAK Plus &amp; İç Cephe" data-code="#1E293B">
-        <img src="assets/rf-card-paint.jpg" alt="Marshall SİL-PAK Plus ve İç Cephe Boyaları" class="pv-stage-img" fetchpriority="high" decoding="async" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/marshall-official/hero/hero-marshall-1-silpak-mobile.jpg" />
+          <img src="assets/marshall-official/hero/hero-marshall-1-silpak.jpg" alt="Marshall SİL-PAK Plus ve İç Cephe Boyaları" class="pv-stage-img" fetchpriority="high" decoding="async" />
+        </picture>
         <div class="pv-stage-overlay"></div>
         <div class="pv-container pv-stage-content-wrap">
           <div class="pv-stage-info">
@@ -206,7 +209,10 @@
 
       <!-- Slide 1: Marshall Akrikor Dış Cephe & Su Kalkanı -->
       <div class="pv-stage-slide" data-index="1" data-color="Akrikor &amp; Su Kalkanı" data-code="#0F172A">
-        <img src="assets/rf-card-paint.jpg" alt="Marshall Akrikor Saf Akrilik ve Su Kalkanı Dış Cephe" class="pv-stage-img" loading="lazy" decoding="async" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/marshall-official/hero/hero-marshall-2-akrikor-mobile.jpg" />
+          <img src="assets/marshall-official/hero/hero-marshall-2-akrikor.jpg" alt="Marshall Akrikor Saf Akrilik ve Su Kalkanı Dış Cephe" class="pv-stage-img" decoding="async" />
+        </picture>
         <div class="pv-stage-overlay"></div>
         <div class="pv-container pv-stage-content-wrap">
           <div class="pv-stage-info">
@@ -233,7 +239,10 @@
 
       <!-- Slide 2: Hammerite Pas Üstü Metal & Cuprinol -->
       <div class="pv-stage-slide" data-index="2" data-color="Hammerite &amp; Cuprinol" data-code="#334155">
-        <img src="assets/rf-card-paint.jpg" alt="Hammerite Doğrudan Pas Üstü Metal Boyası" class="pv-stage-img" loading="lazy" decoding="async" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/marshall-official/hero/hero-marshall-3-hammerite-mobile.jpg" />
+          <img src="assets/marshall-official/hero/hero-marshall-3-hammerite.jpg" alt="Hammerite Doğrudan Pas Üstü Metal Boyası ve Cuprinol" class="pv-stage-img" decoding="async" />
+        </picture>
         <div class="pv-stage-overlay"></div>
         <div class="pv-container pv-stage-content-wrap">
           <div class="pv-stage-info">
@@ -1895,14 +1904,28 @@
   var totalSlides = slides.length;
   var autoPlayTimer = null;
 
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+      hex = hex.split('').map(function(c) { return c + c; }).join('');
+    }
+    var num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255].join(', ');
+  }
+
   function syncActiveState(index) {
     if (index < 0) index = 0;
     if (index >= totalSlides) index = totalSlides - 1;
     currentIndex = index;
 
+    var activeHex = slides[index].getAttribute("data-code") || '#1E293B';
+
     slides.forEach(function(slide, idx) {
       slide.classList.toggle("active", idx === index);
     });
+
+    stage.style.setProperty('--pv-chroma-hex', activeHex);
+    stage.style.setProperty('--pv-chroma-rgb', hexToRgb(activeHex));
 
     var barWidth = 140 / totalSlides;
     var translateX = index * barWidth;
@@ -1912,29 +1935,117 @@
     });
   }
 
-  function nextSlide() {
-    var n = (currentIndex + 1) % totalSlides;
-    syncActiveState(n);
+  function goToSlide(index, smooth) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    var slideWidth = track.clientWidth;
+    var targetLeft = index * slideWidth;
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth !== false ? "smooth" : "auto"
+    });
+
+    syncActiveState(index);
   }
 
-  function prevSlide() {
-    var p = (currentIndex - 1 + totalSlides) % totalSlides;
-    syncActiveState(p);
-  }
+  // 1:1 Kinetic Native Scroll Event
+  track.addEventListener("scroll", function() {
+    var slideWidth = track.clientWidth;
+    if (!slideWidth) return;
 
-  if (prevBtn) prevBtn.addEventListener("click", function() {
-    prevSlide();
-    restartAutoPlay();
+    var nearestIndex = Math.round(track.scrollLeft / slideWidth);
+    if (nearestIndex !== currentIndex && nearestIndex >= 0 && nearestIndex < totalSlides) {
+      syncActiveState(nearestIndex);
+    }
+  }, { passive: true });
+
+  // 1:1 Pointer Drag Engine
+  var isPointerDown = false;
+  var pointerStartX = 0;
+  var pointerScrollStart = 0;
+  var pointerMoved = 0;
+
+  track.addEventListener("pointerdown", function(e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
+    if (e.button !== 0) return;
+    if (e.target.closest("a, button")) return;
+    isPointerDown = true;
+    pointerStartX = e.clientX;
+    pointerScrollStart = track.scrollLeft;
+    pointerMoved = 0;
+    track.style.scrollBehavior = "auto";
+    track.style.scrollSnapType = "none";
+    stopAutoPlay();
   });
 
-  if (nextBtn) nextBtn.addEventListener("click", function() {
-    nextSlide();
-    restartAutoPlay();
+  window.addEventListener("pointermove", function(e) {
+    if (!isPointerDown) return;
+    var delta = e.clientX - pointerStartX;
+    pointerMoved += Math.abs(delta);
+    track.scrollLeft = pointerScrollStart - delta;
+  });
+
+  function handlePointerRelease() {
+    if (!isPointerDown) return;
+    isPointerDown = false;
+    track.style.scrollBehavior = "smooth";
+    track.style.scrollSnapType = "x mandatory";
+
+    var slideWidth = track.clientWidth;
+    var targetIdx = Math.round(track.scrollLeft / slideWidth);
+    targetIdx = Math.max(0, Math.min(totalSlides - 1, targetIdx));
+    goToSlide(targetIdx, true);
+    startAutoPlay();
+  }
+
+  window.addEventListener("pointerup", handlePointerRelease);
+  window.addEventListener("pointercancel", handlePointerRelease);
+
+  track.addEventListener("click", function(e) {
+    if (pointerMoved > 8) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
+
+  // Large arrow buttons
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      goToSlide(currentIndex - 1, true);
+      restartAutoPlay();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      goToSlide(currentIndex + 1, true);
+      restartAutoPlay();
+    });
+  }
+
+  // Keyboard navigation
+  window.addEventListener("keydown", function(e) {
+    var stageRect = stage.getBoundingClientRect();
+    if (stageRect.bottom > 100 && stageRect.top < window.innerHeight) {
+      if (e.key === "ArrowLeft") {
+        goToSlide(currentIndex - 1, true);
+        restartAutoPlay();
+      } else if (e.key === "ArrowRight") {
+        goToSlide(currentIndex + 1, true);
+        restartAutoPlay();
+      }
+    }
   });
 
   function startAutoPlay() {
     stopAutoPlay();
-    autoPlayTimer = setInterval(nextSlide, 7000);
+    autoPlayTimer = setInterval(function() {
+      goToSlide((currentIndex + 1) % totalSlides);
+    }, 7000);
   }
 
   function stopAutoPlay() {
@@ -1946,7 +2057,7 @@
     startAutoPlay();
   }
 
-  syncActiveState(0);
+  goToSlide(0, false);
   startAutoPlay();
 
   stage.addEventListener("mouseenter", stopAutoPlay);
