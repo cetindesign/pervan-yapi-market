@@ -1990,7 +1990,7 @@
     "id": "marshallInteriorPanel",
     "short": "İç Cephe & SİL-PAK",
     "full": "İç Cephe Boyaları, SİL-PAK Plus & Maximum",
-    "sub": "SİL-PAK Plus, Maximum Mat, Silikonlu İpek Mat, Luksima ve Fit Plastik",
+    "sub": "SİL-PAK Plus, Maximum, Luksima ve Fit",
     "pillsId": "marshallInteriorPills",
     "badge": "Leke Tutmaz İç Mekan",
     "summaryTitle": "AkzoNobel Marshall SİL-PAK Plus ve Yüksek Dayanımlı İç Cephe Serisi",
@@ -2023,7 +2023,7 @@
     "id": "marshallExteriorPanel",
     "short": "Dış Cephe & Akrikor",
     "full": "Akrikor Dış Cephe, Su Kalkanı & Grenli Kaplama",
-    "sub": "Akrikor Saf Akrilik, Silikonlu+Akrilik, Elyaflı Su Kalkanı ve Grenli",
+    "sub": "Akrikor Saf Akrilik, Su Kalkanı, Grenli",
     "pillsId": "marshallExteriorPills",
     "badge": "Akrikor Dış Cephe Zırhı",
     "summaryTitle": "Marshall Akrikor Ağır Sahil ve Ege İklimine Dayanıklı Dış Cephe Sistemleri",
@@ -2056,7 +2056,7 @@
     "id": "marshallWoodMetalPanel",
     "short": "Ahşap & Hammerite Metal",
     "full": "Cuprinol Ahşap Koruma, Hammerite & Sentetik Metal",
-    "sub": "Cuprinol Ultra Vernik, Hammerite Pas Üstü Metal, Fit Parlak Sentetik ve Cam Cila",
+    "sub": "Hammerite Pas Üstü, Cuprinol, Cam Cila",
     "pillsId": "marshallWoodMetalPills",
     "badge": "Ahşap, Marin & Pas Üstü Metal",
     "summaryTitle": "Cuprinol Ahşap Bakımı, Doğrudan Pas Üstüne Hammerite ve Sentetik Boyalar",
@@ -2089,7 +2089,7 @@
     "id": "marshallCeilingPanel",
     "short": "Tavan Boyaları",
     "full": "Marshall Profesyonel & Fit Extra Tavan Boyaları",
-    "sub": "Ekstra beyaz, nefes alan, mat ve sıçratmayan tavan çözümleri",
+    "sub": "Fit Extra Tavan, Standart Tavan Boyası",
     "pillsId": "marshallCeilingPills",
     "badge": "Ultra Beyaz Tavan Grubu",
     "summaryTitle": "Marshall Yüksek Örtücülü, Damlatmayan ve Nefes Alan Tavan Boyaları",
@@ -2117,7 +2117,7 @@
     "id": "marshallPrimersPanel",
     "short": "Astarlar & Macunlar",
     "full": "Akrikor Astar, Geçiş Astarı, İzolasyon & Macun",
-    "sub": "Akrikor Anti Alkali, Geçiş Astarı, Konsantre Astar ve İç/Dış Macun",
+    "sub": "Anti Alkali, Geçiş Astarı, İzolasyon, Macun",
     "pillsId": "marshallPrimersPills",
     "badge": "Yüzey Bağlayıcı Astarlar",
     "summaryTitle": "Marshall Yüzey Sağlamlaştırıcı Astarlar, Dönüşüm ve Dolgu Macunları",
@@ -2150,7 +2150,7 @@
     "id": "marshallChemicalsPanel",
     "short": "Tiner & Çözücüler",
     "full": "Sentetik & Selülozik Tinerler, Temizleyiciler",
-    "sub": "Marshall Orijinal Sentetik Tiner (0.75 L / 2.5 L / 12 L)",
+    "sub": "Marshall Orijinal Sentetik Tiner (0.5 L / 1 L)",
     "pillsId": "marshallChemicalsPills",
     "badge": "Saf Solvent & İncelticiler",
     "summaryTitle": "Marshall Sentetik Tiner ve Profesyonel İnceltme Solventleri",
@@ -2319,18 +2319,18 @@
       btn.type = "button";
       var isSelected = (dept.id === activeId);
       btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
-      btn.setAttribute("role", "button");
-      btn.innerHTML = 
-        '<div class="pv-drawer-item-left">' +
-          '<div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
-          '<div class="pv-drawer-text-stack">' +
-            '<span class="pv-drawer-item-title">' + dept.full + '</span>' +
-            '<span class="pv-drawer-item-sub">' + dept.sub + '</span>' +
-          '</div>' +
-        '</div>' +
-        '<div class="pv-drawer-item-right" aria-hidden="true">' +
-          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-        '</div>';
+      btn.innerHTML = [
+        '<div class="pv-drawer-item-left">',
+        '  <div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>',
+        '  <div class="pv-drawer-text-stack">',
+        '    <span class="pv-drawer-item-title">' + dept.short + '</span>',
+        '    <span class="pv-drawer-item-sub">' + dept.sub + '</span>',
+        '  </div>',
+        '</div>',
+        '<div class="pv-drawer-item-right" aria-hidden="true">',
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+        '</div>'
+      ].join("");
 
       btn.addEventListener("click", function() {
         switchTab(dept.id);
