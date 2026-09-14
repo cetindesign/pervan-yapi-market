@@ -3547,15 +3547,14 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     right: 0;
     bottom: 0;
     background: #FFFFFF;
-    border-radius: 20px 20px 0 0;
+    border-radius: 24px 24px 0 0;
     box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.16);
     z-index: 1001;
     transform: translateY(105%);
     transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
-    max-height: 80vh;
+    max-height: 88vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: env(safe-area-inset-bottom, 20px);
     overflow: hidden;
   }
   .pv-drawer-backdrop.is-open .pv-drawer-sheet {
@@ -3617,12 +3616,12 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   }
 
   .pv-drawer-list {
-    padding: 14px 16px;
+    padding: 12px 16px 32px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .pv-drawer-item {
@@ -3630,11 +3629,12 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 14px;
-    border-radius: 16px !important;
+    padding: 14px 16px;
+    min-height: 68px;
+    border-radius: 18px !important;
     border: 1px solid rgba(24, 24, 27, 0.08);
     background: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     cursor: pointer;
     transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     text-align: left;
@@ -3642,7 +3642,6 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     touch-action: manipulation;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
   }
   .pv-drawer-item:hover {
     border-color: rgba(200, 70, 30, 0.3);
@@ -3657,22 +3656,21 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     background: #FAF5F2;
     color: #C8461E;
     border-color: rgba(200, 70, 30, 0.4);
-    box-shadow: 0 2px 12px rgba(200, 70, 30, 0.12);
+    box-shadow: 0 2px 14px rgba(200, 70, 30, 0.14);
   }
   .pv-drawer-item-left,
   .pv-drawer-item-content {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     min-width: 0;
     flex: 1 1 auto;
-    overflow: hidden;
   }
   .pv-drawer-icon-box,
   .pv-drawer-item-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
     background: #F4F4F5;
     color: #52525B;
     display: flex;
@@ -3691,20 +3689,16 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   .pv-drawer-text-stack {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     min-width: 0;
     flex: 1 1 auto;
-    overflow: hidden;
   }
   .pv-drawer-item-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.015em;
     color: #18181B;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    line-height: 1.25;
     display: block;
   }
   .pv-drawer-item.is-selected .pv-drawer-item-title,
@@ -3712,18 +3706,16 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     color: #C8461E;
   }
   .pv-drawer-item-sub {
-    font-size: 11.5px;
+    font-size: 12px;
     color: #71717A;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    line-height: 1.42;
+    white-space: normal;
+    word-break: break-word;
     display: block;
   }
   .pv-drawer-item-right,
   .pv-drawer-item-arrow {
-    margin-left: 10px;
+    margin-left: 12px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -3734,7 +3726,7 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
     display: none !important;
   }
   .pv-drawer-item-name {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: -0.015em;
     color: #18181B;
