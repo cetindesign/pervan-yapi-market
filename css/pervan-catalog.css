@@ -644,14 +644,14 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 .pv-stage-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 10, 15, 0.45) 0%, rgba(8, 10, 15, 0.2) 30%, rgba(8, 10, 15, 0.75) 65%, rgba(8, 10, 15, 0.94) 100%);
+  background: linear-gradient(180deg, rgba(5, 7, 10, 0.55) 0%, rgba(5, 7, 10, 0.25) 30%, rgba(5, 7, 10, 0.82) 65%, rgba(5, 7, 10, 0.96) 100%);
   pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .pv-stage-overlay {
-    background: linear-gradient(180deg, rgba(8, 10, 15, 0.4) 0%, rgba(8, 10, 15, 0.15) 35%, rgba(8, 10, 15, 0.88) 100%),
-                linear-gradient(90deg, rgba(8, 10, 15, 0.94) 0%, rgba(8, 10, 15, 0.82) 35%, rgba(8, 10, 15, 0.45) 60%, rgba(8, 10, 15, 0.05) 85%);
+    background: linear-gradient(180deg, rgba(5, 7, 10, 0.5) 0%, rgba(5, 7, 10, 0.2) 35%, rgba(5, 7, 10, 0.9) 100%),
+                linear-gradient(90deg, rgba(5, 7, 10, 0.96) 0%, rgba(5, 7, 10, 0.86) 35%, rgba(5, 7, 10, 0.48) 60%, rgba(5, 7, 10, 0.05) 85%);
   }
 }
 
@@ -671,16 +671,22 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
 }
 
 .pv-stage-info {
-  max-width: 540px;
+  max-width: 560px;
   color: #FFFFFF;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   transform: translateY(0);
   opacity: 1;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.8));
 }
 
 .pv-stage-slide:not(.active) .pv-stage-info {
-  opacity: 0.35;
-  transform: translateY(10px);
+  opacity: 0.85;
+  transform: translateY(4px);
+}
+
+.pv-stage-slide.active .pv-stage-info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pv-stage-eyebrow {

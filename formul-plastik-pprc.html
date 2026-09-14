@@ -2156,71 +2156,173 @@
   var totalSlides = slides.length;
   var autoPlayTimer = null;
 
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+      hex = hex.split('').map(function(c) { return c + c; }).join('');
+    }
+    var num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255].join(', ');
+  }
+
   function syncActiveState(index) {
     if (index < 0) index = 0;
     if (index >= totalSlides) index = totalSlides - 1;
     currentIndex = index;
 
-    slides.forEach(function(s, idx) {
-      if (idx === currentIndex) {
-        s.classList.add("active");
-        var pbar = s.querySelector(".pv-stage-progress-bar");
-        if (pbar) {
-          pbar.style.transition = "none";
-          pbar.style.width = "0%";
-          setTimeout(function() {
-            pbar.style.transition = "width 6.5s linear";
-            pbar.style.width = "100%";
-          }, 30);
-        }
-      } else {
-        s.classList.remove("active");
-        var pb = s.querySelector(".pv-stage-progress-bar");
-        if (pb) {
-          pb.style.transition = "none";
-          pb.style.width = "0%";
-        }
-      }
+    var activeHex = slides[index].getAttribute("data-code") || '#0284C7';
+
+    slides.forEach(function(slide, idx) {
+      slide.classList.toggle("active", idx === index);
     });
 
-    track.style.transform = "translateX(-" + (currentIndex * 100) + "%)";
+    stage.style.setProperty('--pv-chroma-hex', activeHex);
+    stage.style.setProperty('--pv-chroma-rgb', hexToRgb(activeHex));
+
+    var barWidth = 140 / totalSlides;
+    var translateX = index * barWidth;
+    stage.querySelectorAll(".pv-stage-progress-bar").forEach(function(bar) {
+      bar.style.width = barWidth + "px";
+      bar.style.transform = "translateX(" + translateX + "px)";
+    });
   }
+
+  function goToSlide(index, smooth) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    var slideWidth = track.clientWidth;
+    var targetLeft = index * slideWidth;
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth !== false ? "smooth" : "auto"
+    });
+
+    syncActiveState(index);
+  }
+
+  // 1:1 Kinetic Native Scroll Event
+  track.addEventListener("scroll", function() {
+    var slideWidth = track.clientWidth;
+    if (!slideWidth) return;
+
+    var nearestIndex = Math.round(track.scrollLeft / slideWidth);
+    if (nearestIndex !== currentIndex && nearestIndex >= 0 && nearestIndex < totalSlides) {
+      syncActiveState(nearestIndex);
+    }
+  }, { passive: true });
+
+  // 1:1 Pointer Drag Engine
+  var isPointerDown = false;
+  var pointerStartX = 0;
+  var pointerScrollStart = 0;
+  var pointerMoved = 0;
+
+  track.addEventListener("pointerdown", function(e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
+    if (e.button !== 0) return;
+    if (e.target.closest("a, button")) return;
+    isPointerDown = true;
+    pointerStartX = e.clientX;
+    pointerScrollStart = track.scrollLeft;
+    pointerMoved = 0;
+    track.style.scrollBehavior = "auto";
+    track.style.scrollSnapType = "none";
+    stopAutoPlay();
+  });
+
+  window.addEventListener("pointermove", function(e) {
+    if (!isPointerDown) return;
+    var delta = e.clientX - pointerStartX;
+    pointerMoved += Math.abs(delta);
+    track.scrollLeft = pointerScrollStart - delta;
+  });
+
+  function handlePointerRelease() {
+    if (!isPointerDown) return;
+    isPointerDown = false;
+    track.style.scrollBehavior = "smooth";
+    track.style.scrollSnapType = "x mandatory";
+
+    var slideWidth = track.clientWidth;
+    var targetIdx = Math.round(track.scrollLeft / slideWidth);
+    targetIdx = Math.max(0, Math.min(totalSlides - 1, targetIdx));
+    goToSlide(targetIdx, true);
+    startAutoPlay();
+  }
+
+  window.addEventListener("pointerup", handlePointerRelease);
+  window.addEventListener("pointercancel", handlePointerRelease);
+
+  track.addEventListener("click", function(e) {
+    if (pointerMoved > 8) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
+
+  // Large arrow buttons
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      goToSlide(currentIndex - 1, true);
+      restartAutoPlay();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      goToSlide(currentIndex + 1, true);
+      restartAutoPlay();
+    });
+  }
+
+  // Keyboard navigation
+  window.addEventListener("keydown", function(e) {
+    var stageRect = stage.getBoundingClientRect();
+    if (stageRect.bottom > 100 && stageRect.top < window.innerHeight) {
+      if (e.key === "ArrowLeft") {
+        goToSlide(currentIndex - 1, true);
+        restartAutoPlay();
+      } else if (e.key === "ArrowRight") {
+        goToSlide(currentIndex + 1, true);
+        restartAutoPlay();
+      }
+    }
+  });
 
   function startAutoPlay() {
     stopAutoPlay();
     autoPlayTimer = setInterval(function() {
-      var next = (currentIndex + 1) % totalSlides;
-      syncActiveState(next);
-    }, 6500);
+      goToSlide((currentIndex + 1) % totalSlides);
+    }, 7000);
   }
 
   function stopAutoPlay() {
     if (autoPlayTimer) clearInterval(autoPlayTimer);
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", function() {
-      stopAutoPlay();
-      var prev = (currentIndex - 1 + totalSlides) % totalSlides;
-      syncActiveState(prev);
-      startAutoPlay();
-    });
+  function restartAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", function() {
-      stopAutoPlay();
-      var next = (currentIndex + 1) % totalSlides;
-      syncActiveState(next);
-      startAutoPlay();
-    });
-  }
+  goToSlide(0, false);
+  startAutoPlay();
 
   stage.addEventListener("mouseenter", stopAutoPlay);
   stage.addEventListener("mouseleave", startAutoPlay);
+  stage.addEventListener("touchstart", stopAutoPlay, { passive: true });
+  stage.addEventListener("touchend", startAutoPlay, { passive: true });
 
-  syncActiveState(0);
-  startAutoPlay();
+  // Global helper to switch to a dept from hero links
+  window.pvSwitchDept = function(deptId) {
+    if (typeof window.pvCatalogSwitchTab === "function") {
+      window.pvCatalogSwitchTab(deptId);
+    }
+  };
 })();
 
 /* 2. DATASETS & INTERACTIVE CATALOG ENGINE */
