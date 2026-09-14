@@ -4827,19 +4827,23 @@ var FORMUL_PRODUCTS_DATA = [
     dept.pills.forEach(function(p) {
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "pv-filter-pill" + (p[2] ? " active" : "");
+      btn.className = "pv-filter-chip" + (p[2] ? " active" : "");
       btn.setAttribute("data-filter", p[1]);
       btn.setAttribute("role", "tab");
       btn.setAttribute("aria-selected", p[2] ? "true" : "false");
       btn.textContent = p[0];
 
-      btn.addEventListener("click", function() {
-        mobileFilterRail.querySelectorAll(".pv-filter-pill").forEach(function(b) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        mobileFilterRail.querySelectorAll(".pv-filter-chip").forEach(function(b) {
           b.classList.remove("active");
           b.setAttribute("aria-selected", "false");
         });
         btn.classList.add("active");
         btn.setAttribute("aria-selected", "true");
+        if (typeof btn.scrollIntoView === "function") {
+          btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
         applyCategoryFilter(deptId, p[1]);
 
         // Also sync desktop pills
@@ -4876,10 +4880,13 @@ var FORMUL_PRODUCTS_DATA = [
 
       // Sync mobile rail
       if (mobileFilterRail) {
-        mobileFilterRail.querySelectorAll(".pv-filter-pill").forEach(function(mp) {
+        mobileFilterRail.querySelectorAll(".pv-filter-chip").forEach(function(mp) {
           var isMatch = mp.getAttribute("data-filter") === filterVal;
           mp.classList.toggle("active", isMatch);
           mp.setAttribute("aria-selected", isMatch ? "true" : "false");
+          if (isMatch && typeof mp.scrollIntoView === "function") {
+            mp.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+          }
         });
       }
     });
