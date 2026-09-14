@@ -99,14 +99,6 @@
 (function() {
   var DEPARTMENTS_DATA = [
   {
-    "id": "pprcPipePanel",
-    "short": "Formül PPRC & Temiz Su",
-    "full": "Formül PPRC & Temiz Su Tesisatı",
-    "sub": "Kompozit borular, kaynak ek parçaları, batarya şablonları",
-    "pillsId": "pprcMenuPills",
-    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 14h16M4 10h16M7 6v12M17 6v12\"/></svg>"
-  },
-  {
     "id": "wasteWaterPanel",
     "short": "PVC Atık Su & Drenaj",
     "full": "PVC Atık Su & Gider Drenajı",
@@ -149,265 +141,6 @@
 ];
 
   var TESISAT_PRODUCTS_DATA = [
-  {
-    "id": "formul-pprc-kompozit-pn20",
-    "name": "Formül PPRC Cam Elyaf Takviyeli Kompozit Boru (PN 20)",
-    "badge": "Formül 2026 Kataloğu · DIN 8077/8078",
-    "tag": "Formül Kompozit · PN20",
-    "deptId": "pprcPipePanel",
-    "category": "kompozit-boru",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Merkezi ısıtma, kombi sıcak-soğuk su dağıtımı ve bina içi ana kolon hatlarında uzama katsayısı %75 düşürülmüş, traşlama gerektirmeyen cam elyaf takviyeli Formül kompozit boru.",
-    "meta": [
-      "Cam Elyaf Takviyeli",
-      "95°C Sıcak Su Dayanımı",
-      "4 Metre Boy"
-    ],
-    "coverage": "Standart 4 Metre Çubuk (Bağ ve Palet Sevk)",
-    "sizes": [
-      "Ø20 mm (4 Metre)",
-      "Ø25 mm (4 Metre)",
-      "Ø32 mm (4 Metre)",
-      "Ø40 mm (4 Metre)",
-      "Ø50 mm (4 Metre)",
-      "Ø63 mm (4 Metre)"
-    ],
-    "specs": {
-      "standard": "DIN 8077 / 8078 - TS EN ISO 15874",
-      "packaging": "Standart 4 Metre Çubuklar (Bağlı)",
-      "consumption": "Tesisat projesine göre metraj hesabı",
-      "mixingRatio": "Termofüzyon kaynak makinesi ile 260°C kaynak",
-      "potLife": "50 Yıl Tasarım Ömrü",
-      "logistics": "Balçova Mağaza & Urla Depo Stoktan Sevk"
-    },
-    "accordions": [
-      {
-        "title": "Cam Elyaf Katmanının Avantajı",
-        "body": "Boru katmanları arasında yer alan özel cam elyaf bileşim, sıcak su hatlarında borunun sarkmasını ve uzamasını engeller. Dış kılıf tıraşlama gerektirmeden doğrudan soket kaynağı yapılır."
-      },
-      {
-        "title": "Hijyenik ve Kireç Tutmayan Doku",
-        "body": "Pürüzsüz iç yüzeyi suyun akış direncini düşürür, kireç ve bakteri tutunmasını imkansız hale getirerek içme suyu standartlarına tam uyum sağlar."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-duz-boru-pn16",
-    "name": "Formül PPRC Standart Düz Tesisat Borusu (PN 16)",
-    "badge": "DIN 8077/8078 Hijyen Sertifikalı",
-    "tag": "Standart PPRC · PN16",
-    "deptId": "pprcPipePanel",
-    "category": "standart-boru",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Bina içi soğuk içme suyu şebekelerinde, villa ve daire içi hidrofor hatlarında yüksek darbe ve korozyon dayanımlı saf polipropilen tip-3 boru.",
-    "meta": [
-      "Tip-3 Saf PPRC",
-      "20°C / 16 Bar Dayanım",
-      "4 Metre Boy"
-    ],
-    "coverage": "4 Metre Çubuk (Bağ Bazında)",
-    "sizes": [
-      "Ø20 mm (4 Metre)",
-      "Ø25 mm (4 Metre)",
-      "Ø32 mm (4 Metre)"
-    ],
-    "specs": {
-      "standard": "TS EN ISO 15874-2 / DIN 8077",
-      "packaging": "4 Metre Çubuklar (25-50-100 Adet Bağ)",
-      "consumption": "Metraj bazlı dağıtım",
-      "mixingRatio": "Standart PPRC kaynak lokması",
-      "potLife": "50 Yıl Ömür",
-      "logistics": "Balçova & Urla Günlük Sevk"
-    },
-    "accordions": [
-      {
-        "title": "Korozyon ve Paslanma Direnci",
-        "body": "Kireçli ve sert sularda asla korozyona uğramaz, çürüme veya renk değişimi yapmaz. Suyun tat ve kokusunu korur."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-dirsek-90-45",
-    "name": "Formül PPRC 90° ve 45° Füzyon Kaynak Dirsek",
-    "badge": "PN 25 Yüksek Mukavemet",
-    "tag": "PPRC Dirsek · 90° / 45°",
-    "deptId": "pprcPipePanel",
-    "category": "dirsek-te",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Su dağıtım şebekesinde yön değişimlerinde sürtünme kaybını en aza indiren, et kalınlığı takviyeli 90 derece ve 45 derece Formül PPRC dirsekler.",
-    "meta": [
-      "90° & 45° Seçenekleri",
-      "Ø20 – Ø50 mm Çap",
-      "PN 25 Basınç Sınıfı"
-    ],
-    "coverage": "Paket / Koli Adet Satışı",
-    "sizes": [
-      "Ø20 mm Dirsek 90°",
-      "Ø25 mm Dirsek 90°",
-      "Ø32 mm Dirsek 90°",
-      "Ø20 mm Dirsek 45°",
-      "Ø25 mm Dirsek 45°",
-      "Ø32 mm Dirsek 45°"
-    ],
-    "specs": {
-      "standard": "TS EN ISO 15874-3",
-      "packaging": "Koli / Paket",
-      "consumption": "Boru köşe dönüş noktaları",
-      "mixingRatio": "260°C soket füzyon",
-      "potLife": "Kalıcı sızdırmaz kaynak",
-      "logistics": "Stoktan Anında Teslim"
-    },
-    "accordions": [
-      {
-        "title": "Monoblok Moleküler Birleşme",
-        "body": "Doğru sıcaklıkta kaynatıldığında boru ve dirsek tek parça monoblok gövdeye dönüşür; ek yerinden ayrılma veya sızdırma yapmaz."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-te-inegal-te",
-    "name": "Formül PPRC Eşit Te ve İnegal Te Dağıtım Parçaları",
-    "badge": "Formül Orijinal Kalıp",
-    "tag": "PPRC Te / İnegal Te",
-    "deptId": "pprcPipePanel",
-    "category": "dirsek-te",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Tesisat hatlarından branşman alma ve çap düşürme noktalarında kullanılan, basınç dalgalanmalarına karşı mukavim eşit ve inegal Formül te ek parçaları.",
-    "meta": [
-      "Eşit & İnegal Te",
-      "Geniş Çap Varyasyonu",
-      "Tam Sızdırmazlık"
-    ],
-    "coverage": "Adet / Koli",
-    "sizes": [
-      "20×20×20 mm Eşit Te",
-      "25×20×25 mm İnegal Te",
-      "25×25×25 mm Eşit Te",
-      "32×25×32 mm İnegal Te",
-      "32×32×32 mm Eşit Te"
-    ],
-    "specs": {
-      "standard": "DIN 16962 / TS EN ISO 15874",
-      "packaging": "Poşetli / Kolili Sevk",
-      "consumption": "Hat ayrım noktaları",
-      "mixingRatio": "PPRC termofüzyon kaynağı",
-      "potLife": "Ömür boyu sızdırmaz",
-      "logistics": "Balçova Showroom & Urla Depo"
-    },
-    "accordions": [
-      {
-        "title": "İnegal Te Kullanım Kolaylığı",
-        "body": "Ayrıca manşon ve redüksiyon kullanmaya gerek kalmadan tek bir ek parçayla hem hat ayrımı hem çap daraltması sağlar, işçilik ve montaj süresini kısaltır."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-gecis-rekor-nipel",
-    "name": "Formül PPRC Pirinç Metal Geçiş Rekorları & Nipeller",
-    "badge": "MS58 Masif Pirinç İpek Uç",
-    "tag": "Pirinç Metal Geçiş",
-    "deptId": "pprcPipePanel",
-    "category": "gecis-rekor",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Plastik boru hattından vana, batarya, su saati ve metal dişli ekipmanlara geçiş sağlayan, sızdırmaz kilit kanallı MS58 pirinç alaşımlı geçiş parçaları.",
-    "meta": [
-      "İç & Dış Dişli Seçenek",
-      "MS58 Sıcak Dövme Pirinç",
-      "Ayrılmaz Metal Kilit"
-    ],
-    "coverage": "Adet Satışı",
-    "sizes": [
-      "20 × 1/2\" İç Dişli Rekor",
-      "20 × 1/2\" Dış Dişli Nipel",
-      "25 × 3/4\" İç Dişli Rekor",
-      "25 × 3/4\" Dış Dişli Nipel",
-      "32 × 1\" Oynar Başlıklı Rakor"
-    ],
-    "specs": {
-      "standard": "TS EN ISO 15874-3 / TS 579",
-      "packaging": "Kutulu / Adet",
-      "consumption": "Kolektör, vana ve armatür bağlantıları",
-      "mixingRatio": "Teflon bant veya keten ile diş sızdırmazlığı",
-      "potLife": "Korozyonsuz metal geçiş",
-      "logistics": "Stoktan Anında Sevk"
-    },
-    "accordions": [
-      {
-        "title": "Dönme ve Sıyırmaya Karşı Özel Tırnak Yapısı",
-        "body": "Pirinç gövde plastik içine enjekte edilirken ters kanallı kilit sistemiyle sabitlenir. Anahtarla sıkma esnasında pirinç metal parça plastik gövde içinde dönmez."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-batarya-baglantisi",
-    "name": "Formül PPRC Çiftli Batarya Montaj Şablonu (150 mm)",
-    "badge": "150 mm Standart Eksen",
-    "tag": "Batarya Montaj Şablonu",
-    "deptId": "pprcPipePanel",
-    "category": "batarya-sablon",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Banyo ve lavabo mikser bataryalarının duvara montajında 150 mm eksen aralığını ve su terazisi dengesini kusursuz sabitleyen tek gövde metal takviyeli şablon.",
-    "meta": [
-      "150 mm Hassas Eksen",
-      "Su Terazisi Kulakçığı",
-      "1/2\" İç Dişli Soket"
-    ],
-    "coverage": "Adet Bazında",
-    "sizes": [
-      "1/2\" × 150 mm Çiftli Batarya Şablonu",
-      "1/2\" Tekli Taharet Montaj Dirseği"
-    ],
-    "specs": {
-      "standard": "TS EN ISO 15874",
-      "packaging": "Adet",
-      "consumption": "Banyo bataryası duvar arkası altyapısı",
-      "mixingRatio": "Harç veya sıva altına teraziyle sabitlenir",
-      "potLife": "Kalıcı gömme montaj",
-      "logistics": "Balçova Mağaza Stok"
-    },
-    "accordions": [
-      {
-        "title": "Seramikçi ve Montajcı Güvencesi",
-        "body": "Batarya montajında iki borunun eğri kalmasını veya seramik döşendikten sonra bataryanın kasılmasını önler; eksen milimetrik olarak korunur."
-      }
-    ]
-  },
-  {
-    "id": "formul-pprc-kuresel-ankastre-vana",
-    "name": "Formül PPRC Küresel Vana & Gizli Ankastre Krom Vana",
-    "badge": "Tam Geçişli PN 25",
-    "tag": "PPRC Ankastre & Küresel",
-    "deptId": "pprcPipePanel",
-    "category": "batarya-sablon",
-    "thumb": "assets/rf-card-plumbing.jpg",
-    "desc": "Islak hacimlerin su girişini kontrol eden küresel plastik vanalar ve banyo seramiği üzerine krom aç-kapa rozetiyle şıklık katan gizli ankastre vanalar.",
-    "meta": [
-      "Tam Geçişli Küre",
-      "Krom Rozetli Ankastre",
-      "Sıfır Basınç Düşüşü"
-    ],
-    "coverage": "Adet Satışı",
-    "sizes": [
-      "Ø20 mm PPRC Küresel Vana",
-      "Ø25 mm PPRC Küresel Vana",
-      "Ø20 mm Krom Rozetli Ankastre Vana",
-      "Ø25 mm Krom Rozetli Ankastre Vana"
-    ],
-    "specs": {
-      "standard": "TS EN ISO 15874 / TS 13589",
-      "packaging": "Kutulu Adet",
-      "consumption": "Daire girişi ve banyo su ana kesme vanası",
-      "mixingRatio": "Plastik füzyon kaynağı",
-      "potLife": "50.000 açma-kapama testi",
-      "logistics": "Balçova & Urla Depo"
-    },
-    "accordions": [
-      {
-        "title": "Seramik Üstü Kolay Müdahale",
-        "body": "Ankastre vananın rozeti ve açma kapama volanı seramikten sonra takılır, salmastra arızası durumunda kırmadan seramik üstünden parça değişimi yapılabilir."
-      }
-    ]
-  },
   {
     "id": "sukar-rain-shower-sb5200",
     "name": "Sukar Rain Shower Set (SB.5200-01 Deluxe Paslanmaz Duş Kanalı)",
@@ -1443,7 +1176,6 @@
   var filterRail = document.getElementById("pvFilterRail");
 
   var panels = {
-    pprcPipePanel: document.getElementById("pprcPipePanel"),
     wasteWaterPanel: document.getElementById("wasteWaterPanel"),
     faucetShowerPanel: document.getElementById("faucetShowerPanel"),
     vitrifiyePanel: document.getElementById("vitrifiyePanel"),
@@ -1452,7 +1184,6 @@
   };
 
   var lists = {
-    pprcPipePanel: document.getElementById("listPprcPipe"),
     wasteWaterPanel: document.getElementById("listWasteWater"),
     faucetShowerPanel: document.getElementById("listFaucetShower"),
     vitrifiyePanel: document.getElementById("listVitrifiye"),
@@ -1460,7 +1191,7 @@
     valvesChemicalsPanel: document.getElementById("listValvesChemicals")
   };
 
-  var currentActiveTab = "pprcPipePanel";
+  var currentActiveTab = "wasteWaterPanel";
   var currentProduct = null;
   var selectedSize = "";
 
@@ -1646,7 +1377,7 @@
         '<div class="pv-drawer-item-left">' +
           '<div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
           '<div class="pv-drawer-text-stack">' +
-            '<span class="pv-drawer-item-title">' + dept.full + '</span>' +
+            '<span class="pv-drawer-item-title">' + dept.short + '</span>' +
             '<span class="pv-drawer-item-sub">' + dept.sub + '</span>' +
           '</div>' +
         '</div>' +
@@ -2029,7 +1760,7 @@
     if (spotlightCount) spotlightCount.textContent = TESISAT_PRODUCTS_DATA.length + " Ürün Yayında";
     if (spotlightResults) {
       spotlightResults.innerHTML = '<div class="pv-spotlight-hint">' +
-        '<span>İpucu: Formül PPRC, Sukar süzgeç, Visam rezervuar, GPD batarya, ALZ kağıtlık veya Mr. Caustic yazarak anında arayabilirsiniz.</span>' +
+        '<span>İpucu: Sukar süzgeç, Visam rezervuar, GPD batarya, ALZ kağıtlık veya Mr. Caustic yazarak anında arayabilirsiniz.</span>' +
         '</div>';
     }
   }
@@ -2198,6 +1929,6 @@
   });
 
   // INITIAL SETUP
-  renderDeptDrawer("pprcPipePanel");
-  syncMobileFilterRail("pprcPipePanel");
+  renderDeptDrawer("wasteWaterPanel");
+  syncMobileFilterRail("wasteWaterPanel");
 })();
