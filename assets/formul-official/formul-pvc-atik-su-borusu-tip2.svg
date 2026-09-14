@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <radialGradient id="stageGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brassGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="30%" stop-color="#EAB308"/>
+      <stop offset="70%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#854D0E"/>
+    </radialGradient>
+    <linearGradient id="pprcWhite" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="25%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="pprcGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="30%" stop-color="#10B981"/>
+      <stop offset="70%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+    <linearGradient id="pvcGrey" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="30%" stop-color="#94A3B8"/>
+      <stop offset="70%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="pertRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B91C1C"/>
+      <stop offset="30%" stop-color="#EF4444"/>
+      <stop offset="70%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+    <linearGradient id="chromeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="40%" stop-color="#E2E8F0"/>
+      <stop offset="60%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#bgGrad)"/>
+  <circle cx="200" cy="200" r="150" fill="url(#stageGlow)"/>
+  <ellipse cx="200" cy="340" rx="130" ry="24" fill="#0F172A" opacity="0.08"/>
+  <g filter="url(#dropShadow)">
+    
+        <!-- PVC Pipe Grey -->
+        <rect x="150" y="60" width="100" height="260" rx="8" fill="url(#pvcGrey)" stroke="#475569" stroke-width="2"/>
+        <!-- Rubber Gasket Muf -->
+        <rect x="140" y="60" width="120" height="40" rx="6" fill="#475569" stroke="#334155" stroke-width="2"/>
+        <ellipse cx="200" cy="60" rx="60" ry="16" fill="#334155" stroke="#1E293B" stroke-width="2"/>
+        <ellipse cx="200" cy="60" rx="46" ry="12" fill="#0F172A"/>
+        <text x="205" y="210" transform="rotate(-90 205 210)" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" letter-spacing="2">FORMÜL PVC ATIK SU TS EN 1329</text>
+        
+  </g>
+</svg>

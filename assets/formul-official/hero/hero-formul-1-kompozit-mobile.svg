@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+  <defs>
+    <radialGradient id="stageGlow" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.28" />
+      <stop offset="55%" stop-color="#0284C7" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#121316" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="canDropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  
+  <rect width="800" height="1100" fill="#121316" />
+  <rect width="800" height="1100" fill="url(#stageGlow)" />
+  
+  <ellipse cx="400" cy="760" rx="270" ry="35" fill="url(#floorShadow)" />
+  
+  <g filter="url(#canDropShadow)">
+    
+        <g transform="translate(400, 480) scale(0.85)">
+          <!-- Multi-tier PPRC Composite Pipe Bundle -->
+          <g transform="translate(-180, -220)">
+            <!-- White PN25 Pipe (Diagonal) -->
+            <path d="M-40,240 L260,60 L280,75 L-20,255 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3" />
+            <path d="M-30,245 L270,65" stroke="#0284C7" stroke-width="6" stroke-dasharray="24 12" />
+            <ellipse cx="-30" cy="247" rx="16" ry="8" fill="#E2E8F0" />
+            <!-- Blue Glass-Fiber Layer Cutaway -->
+            <path d="M0,210 L220,70 L230,80 L10,220 Z" fill="#0284C7" opacity="0.9" />
+            <text x="20" y="160" transform="rotate(-30 20,160)" font-family="monospace" font-size="11" font-weight="bold" fill="#0369A1">FORMÜL COMPOSITE FIBER PN25 Ø32</text>
+            
+            <!-- Fitting on Pipe -->
+            <rect x="180" y="75" width="65" height="45" rx="8" transform="rotate(-30 180,75)" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
+            <polygon points="190,55 210,45 225,75 205,85" fill="#F59E0B" stroke="#D97706" stroke-width="2" />
+          </g>
+        </g>
+        
+  </g>
+</svg>

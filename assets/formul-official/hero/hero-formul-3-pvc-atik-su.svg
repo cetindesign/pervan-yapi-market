@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 960" width="1920" height="960">
+  <defs>
+    <radialGradient id="stageGlow" cx="70%" cy="62%" r="50%">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.28" />
+      <stop offset="55%" stop-color="#475569" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#121316" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="canDropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  
+  <rect width="1920" height="960" fill="#121316" />
+  <rect width="1920" height="960" fill="url(#stageGlow)" />
+  
+  <ellipse cx="1340" cy="900" rx="350" ry="40" fill="url(#floorShadow)" />
+  
+  <g filter="url(#canDropShadow)">
+    
+        <g transform="translate(1340, 550) scale(1.15)">
+          <g transform="translate(-150, -180)">
+            <!-- Grey PVC Pipe Body -->
+            <rect x="60" y="80" width="120" height="220" rx="16" fill="#64748B" stroke="#475569" stroke-width="3" />
+            <!-- Socket & Gasket Lip -->
+            <rect x="50" y="50" width="140" height="45" rx="8" fill="#475569" stroke="#334155" stroke-width="2" />
+            <line x1="50" y1="68" x2="190" y2="68" stroke="#0F172A" stroke-width="6" />
+            <!-- Branch 45° Tee -->
+            <path d="M150,140 L260,60 L285,90 L180,180 Z" fill="#64748B" stroke="#475569" stroke-width="3" />
+            <text x="80" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#E2E8F0">PVC Ø110</text>
+          </g>
+        </g>
+        
+  </g>
+</svg>

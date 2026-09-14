@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="formulRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+    <linearGradient id="formulBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+  </defs>
+  <!-- Formül Emblem Shape -->
+  <g transform="translate(8, 10)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="url(#formulBlue)" />
+    <path d="M10 10 h18 v5 h-12 v6 h10 v5 h-10 v8 h-6 z" fill="#FFFFFF" />
+    <circle cx="30" cy="8" r="4" fill="url(#formulRed)" />
+  </g>
+  <!-- Brand Text -->
+  <text x="54" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="900" fill="#0F172A" letter-spacing="1.5">FORMÜL</text>
+  <text x="55" y="49" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700" fill="#64748B" letter-spacing="2.5">PPRC BORU SİSTEMLERİ</text>
+</svg>

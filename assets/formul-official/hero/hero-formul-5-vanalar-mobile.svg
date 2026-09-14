@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+  <defs>
+    <radialGradient id="stageGlow" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.28" />
+      <stop offset="55%" stop-color="#059669" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#121316" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="canDropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  
+  <rect width="800" height="1100" fill="#121316" />
+  <rect width="800" height="1100" fill="url(#stageGlow)" />
+  
+  <ellipse cx="400" cy="760" rx="270" ry="35" fill="url(#floorShadow)" />
+  
+  <g filter="url(#canDropShadow)">
+    
+        <g transform="translate(400, 480) scale(0.85)">
+          <g transform="translate(-130, -170)">
+            <!-- White PPRC Valve Body -->
+            <rect x="50" y="110" width="160" height="90" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3" />
+            <!-- Chrome / Green Butterfly Handle -->
+            <rect x="110" y="50" width="40" height="65" fill="#94A3B8" stroke="#64748B" stroke-width="2" />
+            <polygon points="40,40 220,40 200,65 60,65" fill="#059669" stroke="#047857" stroke-width="3" />
+            <circle cx="130" cy="52" r="12" fill="#E2E8F0" stroke="#64748B" stroke-width="2" />
+            <text x="80" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#059669">PN25 VANA</text>
+          </g>
+        </g>
+        
+  </g>
+</svg>

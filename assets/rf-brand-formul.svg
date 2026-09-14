@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <radialGradient id="pipeGlow" cx="65%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+    <filter id="dropSh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+  <rect width="800" height="600" fill="url(#pipeGlow)" />
+  
+  <!-- Technical Grid Overlay -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+  </g>
+
+  <!-- PPRC Pipe 3D Cylinder Visuals -->
+  <g filter="url(#dropSh)">
+    <!-- Main Green/White PPRC Pipe Layer -->
+    <rect x="360" y="180" width="340" height="64" rx="14" fill="#0284C7" stroke="#38BDF8" stroke-width="2" />
+    <line x1="380" y1="200" x2="680" y2="200" stroke="#E0F2FE" stroke-width="4" stroke-dasharray="12 8" />
+    <line x1="380" y1="220" x2="680" y2="220" stroke="#BAE6FD" stroke-width="2" />
+    
+    <!-- Red Fiber Layer Indicator -->
+    <rect x="360" y="260" width="380" height="52" rx="12" fill="#DC2626" stroke="#F87171" stroke-width="2" />
+    <line x1="380" y1="286" x2="720" y2="286" stroke="#FEE2E2" stroke-width="3" stroke-dasharray="16 10" />
+    
+    <!-- White PPRC Pipe Layer -->
+    <rect x="320" y="330" width="440" height="72" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+    <line x1="340" y1="360" x2="740" y2="360" stroke="#0284C7" stroke-width="4" stroke-dasharray="24 12" />
+    <text x="360" y="375" font-family="monospace" font-size="12" font-weight="bold" fill="#0284C7">FORMÜL PPRC PN25 DIN 8077/8078 Ø32</text>
+  </g>
+
+  <!-- Brass Fitting Accent -->
+  <g transform="translate(540, 420)" filter="url(#dropSh)">
+    <polygon points="0,15 25,0 75,0 100,15 75,30 25,30" fill="#F59E0B" stroke="#D97706" stroke-width="2" />
+    <rect x="25" y="6" width="50" height="18" fill="#D97706" />
+    <circle cx="50" cy="15" r="8" fill="#78350F" />
+  </g>
+
+  <!-- Badge Pill -->
+  <g transform="translate(48, 48)">
+    <rect width="190" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" />
+    <circle cx="20" cy="18" r="5" fill="#38BDF8" />
+    <text x="34" y="23" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" letter-spacing="0.5">YETKİLİ BAYİ DAĞITIM</text>
+  </g>
+
+  <!-- Main Title Area -->
+  <text x="48" y="280" font-family="sans-serif" font-size="42" font-weight="900" fill="#FFFFFF" letter-spacing="-1">FORMÜL</text>
+  <text x="48" y="325" font-family="sans-serif" font-size="26" font-weight="800" fill="#38BDF8">PPRC &amp; Tesisat Sistemleri</text>
+  <text x="48" y="365" font-family="sans-serif" font-size="14" font-weight="500" fill="#94A3B8">PN20 / PN25 Cam Elyaf Kompozit Borular · Füzyon Ek Parçalar</text>
+  <text x="48" y="390" font-family="sans-serif" font-size="14" font-weight="500" fill="#94A3B8">Pirinç Metal Geçişler · PVC Atık Su · Yerden Isıtma</text>
+  <text x="48" y="450" font-family="sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">Balçova Showroom &amp; Urla Ana Depo Stok Teslim</text>
+</svg>

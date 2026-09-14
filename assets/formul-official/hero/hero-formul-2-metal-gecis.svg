@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 960" width="1920" height="960">
+  <defs>
+    <radialGradient id="stageGlow" cx="70%" cy="62%" r="50%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.28" />
+      <stop offset="55%" stop-color="#D97706" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#121316" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="canDropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="28" stdDeviation="22" flood-color="#000000" flood-opacity="0.75" />
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  
+  <rect width="1920" height="960" fill="#121316" />
+  <rect width="1920" height="960" fill="url(#stageGlow)" />
+  
+  <ellipse cx="1340" cy="900" rx="350" ry="40" fill="url(#floorShadow)" />
+  
+  <g filter="url(#canDropShadow)">
+    
+        <g transform="translate(1340, 550) scale(1.15)">
+          <g transform="translate(-120, -160)">
+            <!-- PPRC Body -->
+            <rect x="40" y="100" width="160" height="80" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3" />
+            <!-- Brass Hexagonal Transition Nut -->
+            <polygon points="160,80 220,80 240,140 220,200 160,200 140,140" fill="#F59E0B" stroke="#B45309" stroke-width="3" />
+            <!-- Male Brass Thread Section -->
+            <rect x="235" y="105" width="55" height="70" fill="#D97706" stroke="#78350F" stroke-width="2" />
+            <!-- Thread grooves -->
+            <line x1="245" y1="105" x2="245" y2="175" stroke="#FEF3C7" stroke-width="3" />
+            <line x1="255" y1="105" x2="255" y2="175" stroke="#FEF3C7" stroke-width="3" />
+            <line x1="265" y1="105" x2="265" y2="175" stroke="#FEF3C7" stroke-width="3" />
+            <line x1="275" y1="105" x2="275" y2="175" stroke="#FEF3C7" stroke-width="3" />
+            <text x="60" y="145" font-family="sans-serif" font-size="14" font-weight="bold" fill="#64748B">1" × Ø32</text>
+          </g>
+        </g>
+        
+  </g>
+</svg>
