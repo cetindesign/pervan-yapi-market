@@ -4940,14 +4940,20 @@ var FORMUL_PRODUCTS_DATA = [
     DEPARTMENTS_DATA.forEach(function(d) {
       var item = document.createElement("button");
       item.type = "button";
-      item.className = "pv-drawer-item" + (d.id === activeId ? " active" : "");
+      var isSelected = (d.id === activeId);
+      item.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      item.setAttribute("role", "button");
       item.innerHTML = [
-        '<div class="pv-drawer-item-icon">' + d.icon + '</div>',
-        '<div class="pv-drawer-item-content">',
-        '  <div class="pv-drawer-item-title">' + d.short + '</div>',
-        '  <div class="pv-drawer-item-sub">' + d.sub + '</div>',
+        '<div class="pv-drawer-item-left">',
+        '  <div class="pv-drawer-icon-box" aria-hidden="true">' + (d.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>',
+        '  <div class="pv-drawer-text-stack">',
+        '    <span class="pv-drawer-item-title">' + d.short + '</span>',
+        '    <span class="pv-drawer-item-sub">' + d.sub + '</span>',
+        '  </div>',
         '</div>',
-        '<div class="pv-drawer-item-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></div>'
+        '<div class="pv-drawer-item-right" aria-hidden="true">',
+        '  <svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+        '</div>'
       ].join("");
 
       item.addEventListener("click", function() {
