@@ -419,9 +419,15 @@
         });
       }
 
+      var resizeTimer;
       window.addEventListener("resize", function() {
-        if (range) updateSlider(range.value);
-      });
+        if (!resizeTimer) {
+          resizeTimer = requestAnimationFrame(function() {
+            if (range) updateSlider(range.value);
+            resizeTimer = null;
+          });
+        }
+      }, { passive: true });
 
       // Initial alignment
       setTimeout(function() {

@@ -3,8 +3,6 @@
    Mobile-First Scandinavian Architectural Standard
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
-
 :root {
   --bg-white: #FFFFFF;
   --bg-offwhite: #F8F8F7;
@@ -724,6 +722,8 @@ img, svg {
   border: 1px solid var(--border-light);
   overflow: hidden;
   transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 380px;
 }
 
 .rf-card-media {
@@ -4555,6 +4555,8 @@ header.header--menu-open {
   text-decoration: none;
   box-sizing: border-box;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 140px;
 }
 
 @media (max-width: 768px) {

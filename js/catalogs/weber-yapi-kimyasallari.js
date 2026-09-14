@@ -1,0 +1,1726 @@
+/* 1. HERO STAGE SLIDER & TRANSPARENT HEADER OBSERVER */
+(function() {
+  var stage = document.getElementById("pvStageHero");
+  var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
+
+  if (header) {
+    function checkHeaderSolid() {
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 120) {
+        header.classList.add("header--solid");
+      } else {
+        header.classList.remove("header--solid");
+      }
+    }
+    window.addEventListener("scroll", checkHeaderSolid, { passive: true });
+    checkHeaderSolid();
+  }
+
+  if (!stage) return;
+  var track = document.getElementById("pvStageTrack");
+  if (!track) return;
+
+  var slides = stage.querySelectorAll(".pv-stage-slide");
+  var prevBtn = document.getElementById("pvStagePrev");
+  var nextBtn = document.getElementById("pvStageNext");
+  var currentIndex = 0;
+  var totalSlides = slides.length;
+  var autoPlayTimer = null;
+
+  function syncActiveState(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+
+    slides.forEach(function(slide, idx) {
+      slide.classList.toggle("active", idx === index);
+    });
+
+    var barWidth = 140 / totalSlides;
+    var translateX = index * barWidth;
+    stage.querySelectorAll(".pv-stage-progress-bar").forEach(function(bar) {
+      bar.style.width = barWidth + "px";
+      bar.style.transform = "translateX(" + translateX + "px)";
+    });
+  }
+
+  function goToSlide(index, smooth) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    var slideWidth = track.clientWidth;
+    var targetLeft = index * slideWidth;
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth !== false ? "smooth" : "auto"
+    });
+
+    syncActiveState(index);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function() {
+      stopAutoPlay();
+      goToSlide(currentIndex - 1);
+      startAutoPlay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function() {
+      stopAutoPlay();
+      goToSlide(currentIndex + 1);
+      startAutoPlay();
+    });
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function() {
+      goToSlide(currentIndex + 1);
+    }, 6000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  stage.addEventListener("mouseenter", stopAutoPlay);
+  stage.addEventListener("mouseleave", startAutoPlay);
+  stage.addEventListener("touchstart", stopAutoPlay, { passive: true });
+
+  syncActiveState(0);
+  startAutoPlay();
+})();
+
+/* 2. ARCHITECTURAL SUBNAV & 5-DEPARTMENT ZERO-SCROLL ENGINE */
+(function() {
+  var WEBER_PRODUCTS_DATA = [
+  {
+    "id": "weberkol-flex-konfor",
+    "name": "Weberkol Flex Konfor",
+    "badge": "TS EN 12004 C2TE S1",
+    "tag": "Granit & Porselen · S1 Flex",
+    "deptId": "weberProductCatalog",
+    "category": "porselen-granit",
+    "thumb": "assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg",
+    "desc": "60×120 ve 120×240 cm büyük ebat porselen seramik ve granit karolar için toz çıkarmayan, yüksek polimer katkılı S1 esnek yapıştırma harcı.",
+    "meta": [
+      "C2TE S1 Esneklik Sınıfı",
+      "Tozsuz Konfor Teknolojisi",
+      "Dikeyde Sıfır Kayma",
+      "Yerden Isıtmaya Tam Uyum"
+    ],
+    "coverage": "4.5 – 5.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C2TE S1",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "4.5 – 5.5 kg/m²",
+      "mixingRatio": "6.0 – 6.5 lt su / 25 kg torba",
+      "potLife": "Açık bekletme: 30 dk · Kap ömrü: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Büyük Ebatlı Porselen Granit Güvenliği (60×120 & 120×240)",
+        "body": "Weberkol Flex Konfor, yüksek polimer katkısı sayesinde ısı değişimlerinden ve binanın mikron düzeydeki oturmalarından kaynaklanan gerilmeleri sönümler. 60×120 ve 120×240 cm karoların ayrılmasını veya çatlamasını kesin olarak engeller."
+      },
+      {
+        "title": "Tarak Seçimi ve Çift Taraflı Kelebek Tarama",
+        "body": "Büyük formatlı karolarda mutlaka 10 mm veya 12 mm dişli çelik taraklı mala kullanılmalıdır. Harç hem zemine düz çekilip taranmalı, hem de karo arkasına sıfır kalınlıkta astar katı çekilmelidir (Back-buttering metodu)."
+      },
+      {
+        "title": "Toz Çıkarmayan Konfor Teknolojisi",
+        "body": "İç mekan yenileme ve tadilatlarında şantiye havasına toz yayılmasını %85 oranında azaltan özel formülasyona sahiptir. Yaşam alanlarındaki tadilatlarda yüksek konfor sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-flex-ekstra",
+    "name": "Weberkol Flex Ekstra",
+    "badge": "TS EN 12004 C2TE S2",
+    "tag": "Mega Porselen & Dış Cephe · S2 Ultra Flex",
+    "deptId": "weberProductCatalog",
+    "category": "porselen-granit",
+    "thumb": "assets/weber-official/weber-kol-flex-extra-beyaz-25-kg.jpg",
+    "desc": "120×280 cm mega porselen levhalar, dış cephe mekanik destekli kaplamalar ve yoğun titreşimli zeminler için ultra esnek S2 yapıştırıcı.",
+    "meta": [
+      "C2TE S2 Ultra Esnek Sınıf",
+      "Güneş ve Isı Genleşmesine Dayanıklı",
+      "Dış Cephe & Teras Uyumu",
+      "Mega Plaka Güvenliği"
+    ],
+    "coverage": "5.0 – 6.0 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C2TE S2",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "5.0 – 6.0 kg/m²",
+      "mixingRatio": "6.5 – 7.0 lt su / 25 kg torba",
+      "potLife": "Açık bekletme: 30 dk · Kap ömrü: 4 saat",
+      "logistics": "Urla Depo & Balçova Paletli Sevk"
+    },
+    "accordions": [
+      {
+        "title": "S2 Ultra Esneklik Katsayısı",
+        "body": "Geniş formatlı mega levhalarda güneş ısısından oluşan genleşmeleri kırılma riski olmadan tolere eden S2 sınıfı en üst düzey esneklik sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-flex-pool",
+    "name": "Weberkol Flex Pool",
+    "badge": "TS EN 12004 C2TE S1",
+    "tag": "Yüzme Havuzu & Su Deposu · Klor Dirençli",
+    "deptId": "weberProductCatalog",
+    "category": "havuz-su",
+    "thumb": "assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg",
+    "desc": "Yüzme havuzları, termal kaplıcalar, su depoları ve ıslak hacimlerde klorlu su basıncına ve sıcaklık şoklarına dayanıklı havuz yapıştırıcısı.",
+    "meta": [
+      "Havuz & Su Deposu Uyumu",
+      "Klor ve Kimyasal Dayanımlı",
+      "C2TE S1 Standart Güvencesi",
+      "Sürekli Islak Zemin Performansı"
+    ],
+    "coverage": "4.5 – 5.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C2TE S1",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "4.5 – 5.5 kg/m²",
+      "mixingRatio": "6.0 – 6.5 lt su / 25 kg torba",
+      "potLife": "Açık bekletme: 30 dk · Kap ömrü: 4 saat",
+      "logistics": "Çeşme & Urla Havuz Şantiyelerine Hızlı Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Klor ve Su Basıncına Tam Dayanım",
+        "body": "Havuz kimyasalları ve su altındaki sürekli hidrostatik basınca karşı yapışma mukavemetini kaybetmeyen polimer zengin yapıştırıcı harçtır."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-standart",
+    "name": "Weberkol Standart",
+    "badge": "TS EN 12004 C1T",
+    "tag": "İç Mekan Seramik & Fayans",
+    "deptId": "weberProductCatalog",
+    "category": "standart-seramik",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "İç mekan duvar ve zeminlerde küçük ve orta ebatlı seramik, karo ve fayans uygulamaları için kayma özelliği azaltılmış çimento harcı.",
+    "meta": [
+      "C1T Standart Sınıf",
+      "İç Duvar & Zemin Uyumu",
+      "Küçük ve Orta Ebat Karolar",
+      "Ekonomik Şantiye Çözümü"
+    ],
+    "coverage": "3.5 – 4.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C1T",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "3.5 – 4.5 kg/m²",
+      "mixingRatio": "5.5 – 6.0 lt su / 25 kg torba",
+      "potLife": "Açık bekletme: 20 dk · Kap ömrü: 3 saat",
+      "logistics": "Balçova & Urla Depo Hazır Stok"
+    },
+    "accordions": [
+      {
+        "title": "Standart Seramik ve Fayans Uygulamaları",
+        "body": "Su emme oranı yüksek klasik seramik ve fayans karolarında şap ve sıva yüzeylere güçlü yapışma sunar."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-serakol-konfor",
+    "name": "Weberkol Serakol Konfor",
+    "badge": "TS EN 12004 C1TE",
+    "tag": "Uzatılmış Çalışma Süresi · Tozsuz",
+    "deptId": "weberProductCatalog",
+    "category": "standart-seramik",
+    "thumb": "assets/weber-official/weber-kol-flex-porselen-gri-25-kg.jpg",
+    "desc": "Uzatılmış açık bekletme süresi (E) ve azaltılmış toz emisyonu ile iç mekanlarda ustaya geniş uygulama esnekliği sunan seramik harcı.",
+    "meta": [
+      "C1TE Uzatılmış Süre",
+      "Tozsuz Konfor Formülü",
+      "30 dk Açık Bekletme",
+      "Kolay ve Akıcı Tarama"
+    ],
+    "coverage": "3.5 – 4.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C1TE",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "3.5 – 4.5 kg/m²",
+      "mixingRatio": "6.0 lt su / 25 kg torba",
+      "potLife": "Açık bekletme: 30 dk · Kap ömrü: 4 saat",
+      "logistics": "Stoktan Hızlı Teslim"
+    },
+    "accordions": [
+      {
+        "title": "Uzatılmış Açık Bekletme Süresi",
+        "body": "Geniş yüzeylere tek seferde harç çekilmesine olanak tanır, harcın kabuk bağlama riskini ortadan kaldırır."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-rapid",
+    "name": "Weberkol Rapid",
+    "badge": "TS EN 12004 C2FTS1",
+    "tag": "Hızlı Priz · 3 Saatte Derzleme",
+    "deptId": "weberProductCatalog",
+    "category": "hizli-priz",
+    "thumb": "assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg",
+    "desc": "3 saat içinde yaya trafiğine ve derz dolgusuna açılması gereken mağaza, restoran, otel ve acil ticari tadilat projeleri için hızlı sertleşen flex harç.",
+    "meta": [
+      "3 Saatte Kullanıma Açılış",
+      "C2FTS1 Hızlı Priz Sınıfı",
+      "Yüksek Mekanik Mukavemet",
+      "Acil Ticari Tadilat Uyumu"
+    ],
+    "coverage": "4.5 – 5.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 C2FTS1",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "4.5 – 5.5 kg/m²",
+      "mixingRatio": "5.5 – 6.0 lt su / 25 kg torba",
+      "potLife": "Kap ömrü: 45 dk · Yaya trafiği: 3 saat",
+      "logistics": "Balçova & Urla Depolarında Hazır"
+    },
+    "accordions": [
+      {
+        "title": "Aynı Gün Teslim Edilen Projeler",
+        "body": "Sabah yapıştırılan zemin karoları öğleden sonra derzlenip akşam saatlerinde trafiğe açılabilir."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-fermafix",
+    "name": "Weberkol Fermafix",
+    "badge": "TS EN 12004 D2TE",
+    "tag": "Kullanıma Hazır Pasta · Alçıpan Uyumlu",
+    "deptId": "weberProductCatalog",
+    "category": "kullanima-hazir",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "Alçıpan, betopan, boyalı yüzey ve eski seramik üzerine su katılmadan doğrudan uygulanan kullanıma hazır macun kıvamında esnek yapıştırıcı.",
+    "meta": [
+      "D2TE Macun Tipi",
+      "Kullanıma Hazır Kova",
+      "Alçıpan & Betopan Uyumu",
+      "Su Karışımı Gerektirmez"
+    ],
+    "coverage": "2.0 – 3.5 kg/m²",
+    "sizes": [
+      "15 kg Plastik Kova",
+      "5 kg Plastik Kova"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 D2TE",
+      "packaging": "15 kg ve 5 kg Plastik Kova",
+      "consumption": "2.0 – 3.5 kg/m²",
+      "mixingRatio": "Kullanıma hazır (Su eklenmez)",
+      "potLife": "Kapak kapatılarak saklanabilir",
+      "logistics": "Balçova Showroom Stok"
+    },
+    "accordions": [
+      {
+        "title": "Alçıpan ve Esnek Panellere Mükemmel Uyum",
+        "body": "Çimento harcının suyunu emen alçıpan yüzeylerde astar ihtiyacını minimize ederek yüksek esneklikte tutunma sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberkol-epox",
+    "name": "Weberkol Epox Easy",
+    "badge": "TS EN 12004 R2T",
+    "tag": "Kimyasal Dirençli Epoksi Harç",
+    "deptId": "weberProductCatalog",
+    "category": "epoksi-harc",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Asit, yağ, alkali ve ağır kimyasallara maruz kalan gıda tesisleri, laboratuvarlar, endüstriyel mutfaklar ve oto yıkama alanları için epoksi yapıştırıcı.",
+    "meta": [
+      "R2T Reçine Esaslı",
+      "Ağır Kimyasal Dayanımı",
+      "2 Komponentli Reaktif Set",
+      "Gıda Tesislerine Tam Uyum"
+    ],
+    "coverage": "2.5 – 4.0 kg/m²",
+    "sizes": [
+      "5 kg Set (A+B Komponent)"
+    ],
+    "specs": {
+      "standard": "TS EN 12004 R2T",
+      "packaging": "5 kg Set (Reçine + Sertleştirici)",
+      "consumption": "2.5 – 4.0 kg/m²",
+      "mixingRatio": "A ve B bileşenleri tam karıştırılır",
+      "potLife": "Kap ömrü: 45 dk (20°C)",
+      "logistics": "Özel Şantiye Sevkiyatı"
+    },
+    "accordions": [
+      {
+        "title": "Kimyasal ve Mekanik Zırh",
+        "body": "Klasik çimento harçlarını eriten asidik ve bazik kimyasallara karşı tam geçirimsizlik ve mekanik mukavemet sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberjoint-flex",
+    "name": "Weberjoint Flex",
+    "badge": "TS EN 13888 CG2 WA",
+    "tag": "1–6 mm Esnek & Su İtici Derz",
+    "deptId": "weberJointSection",
+    "category": "flex-derz",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "desc": "1–6 mm derz aralıkları için yüksek aşınma dirençli, düşük su emme oranına sahip, antibakteriyel küf dirençli renkli derz dolgusu.",
+    "meta": [
+      "CG2 WA Yüksek Performans",
+      "1–6 mm Derz Genişliği",
+      "Küf ve Leke Dirençli",
+      "Yerden Isıtmaya Uygun"
+    ],
+    "coverage": "0.25 – 0.60 kg/m²",
+    "sizes": [
+      "20 kg Kraft Torba",
+      "5 kg Torba"
+    ],
+    "specs": {
+      "standard": "TS EN 13888 CG2 WA",
+      "packaging": "20 kg ve 5 kg Torba",
+      "consumption": "0.25 – 0.60 kg/m²",
+      "mixingRatio": "5.5 – 6.5 lt su / 20 kg",
+      "potLife": "Kap ömrü: 2 saat · Kullanıma açılış: 24 saat",
+      "logistics": "Tüm Renk Kartelası Balçova Showroom"
+    },
+    "accordions": [
+      {
+        "title": "Su İtici ve Leke Tutmaz Yüzey",
+        "body": "Kılcal su emmesini engelleyen hidrofobik yapısı sayesinde banyo, mutfak ve balkonlarda leke tutmaz, kolay silinir."
+      }
+    ]
+  },
+  {
+    "id": "weberjoint-sil",
+    "name": "Weberjoint Silikonlu",
+    "badge": "TS EN 13888 CG2 WA",
+    "tag": "Silikon Katkılı Su İtici Derz",
+    "deptId": "weberJointSection",
+    "category": "silikonlu-derz",
+    "thumb": "assets/weber-official/weber-joint-sil-20-kg.png",
+    "desc": "Silikon katkılı formülü ile duş kabinleri, banyo zeminleri ve balkonlar için su kaydırıcı pürüzsüz yüzey oluşturan renkli derz dolgu.",
+    "meta": [
+      "Silikon Katkılı Su Kaydırıcı",
+      "CG2 WA Standart Sınıfı",
+      "İpeksi Pürüzsüz Doku",
+      "Islak Hacim Kalkanı"
+    ],
+    "coverage": "0.30 – 0.50 kg/m²",
+    "sizes": [
+      "20 kg Kraft Torba",
+      "5 kg Torba"
+    ],
+    "specs": {
+      "standard": "TS EN 13888 CG2 WA",
+      "packaging": "20 kg ve 5 kg Torba",
+      "consumption": "0.30 – 0.50 kg/m²",
+      "mixingRatio": "6.0 – 6.5 lt su / 20 kg",
+      "potLife": "Kap ömrü: 2 saat",
+      "logistics": "Balçova & Urla Hazır Stok"
+    },
+    "accordions": [
+      {
+        "title": "Silikon Kalkan Teknolojisi",
+        "body": "Duş ve banyo alanlarında su damlacıklarının derz içine nüfuz etmesini engelleyerek derz altı yalıtımını korur."
+      }
+    ]
+  },
+  {
+    "id": "weberjoint-dzr-max",
+    "name": "Weberjoint DZR Max",
+    "badge": "TS EN 13888 CG2 WA",
+    "tag": "2–20 mm Geniş Derz & Rustik Taş",
+    "deptId": "weberJointSection",
+    "category": "genis-derz",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "desc": "2–20 mm geniş derz aralıkları, doğal taş, traverten, cotto ve klinker tuğla kaplamalar için çatlamayan iri agregalı derz dolgusu.",
+    "meta": [
+      "2–20 mm Geniş Aralık",
+      "Çatlamaz İri Agrega Yapısı",
+      "Doğal Taş & Traverten",
+      "Dış Mekan & Bahçe Zeminleri"
+    ],
+    "coverage": "0.80 – 2.00 kg/m²",
+    "sizes": [
+      "20 kg Kraft Torba"
+    ],
+    "specs": {
+      "standard": "TS EN 13888 CG2 WA",
+      "packaging": "20 kg Kraft Torba",
+      "consumption": "0.80 – 2.00 kg/m²",
+      "mixingRatio": "4.5 – 5.0 lt su / 20 kg",
+      "potLife": "Kap ömrü: 1 saat · Yaya trafiği: 24 saat",
+      "logistics": "Urla & Çeşme Projeleri Stok"
+    },
+    "accordions": [
+      {
+        "title": "Geniş Derzlerde Sıfır Büzülme",
+        "body": "Özel tane dağılımı sayesinde 20 mm kalınlığa kadar olan derzlerde çekme, çökme ve mikro çatlak oluşturmaz."
+      }
+    ]
+  },
+  {
+    "id": "weber-ep-easy",
+    "name": "Weber EP Easy",
+    "badge": "TS EN 13888 RG",
+    "tag": "Epoksi Derz Dolgusu · Kolay Temizlenen",
+    "deptId": "weberJointSection",
+    "category": "epoksi-derz",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Yüzme havuzları, kaplıcalar, endüstriyel mutfaklar ve gıda tesisleri için suyla kolay temizlenen, kimyasallara dayanıklı 2K epoksi derz dolgusu.",
+    "meta": [
+      "RG Reaksiyon Reçineli",
+      "Su ile Kolay Temizlik",
+      "Asit & Leke Geçirimsiz",
+      "Havuz & Spa İçin İdeal"
+    ],
+    "coverage": "0.40 – 1.20 kg/m²",
+    "sizes": [
+      "5 kg Set (Reçine + Sertleştirici)"
+    ],
+    "specs": {
+      "standard": "TS EN 13888 RG",
+      "packaging": "5 kg Set",
+      "consumption": "0.40 – 1.20 kg/m²",
+      "mixingRatio": "A+B tam karışım",
+      "potLife": "Kap ömrü: 45 dk (20°C)",
+      "logistics": "Balçova Showroom Özel Seri"
+    },
+    "accordions": [
+      {
+        "title": "Ilık Suyla Temizleme Kolaylığı",
+        "body": "Geleneksel epoksi derzlerin aksine, uygulama sonrasında tiner veya özel kimyasala gerek kalmadan ılık su ve süngerle kolayca yıkanır."
+      }
+    ]
+  },
+  {
+    "id": "weber-pu-2a",
+    "name": "Weber PU 2A",
+    "badge": "ISO 11600 F 25 LM",
+    "tag": "Poliüretan Dilatasyon Mastiği",
+    "deptId": "weberJointSection",
+    "category": "pu-mastik",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "Bina dilatasyonları, prekast panel derzleri, parapet ve pencere kenarları için yüksek elastikiyete sahip poliüretan sızdırmazlık mastiği.",
+    "meta": [
+      "ISO 11600 F 25 LM Sınıfı",
+      "%25 Hareket Kabiliyeti",
+      "UV ve Hava Koşulu Direnci",
+      "600 ml Sosis Ambalaj"
+    ],
+    "coverage": "1 sosis / ~6 metre (10×10 mm derz)",
+    "sizes": [
+      "600 ml Sosis (Koli: 20 Adet)",
+      "310 ml Kartuş"
+    ],
+    "specs": {
+      "standard": "ISO 11600 F 25 LM",
+      "packaging": "600 ml Sosis Folyo",
+      "consumption": "~100 ml / metre (10×10 mm derz)",
+      "mixingRatio": "Tek komponentli (Tabanca ile)",
+      "potLife": "Kabuk bağlama: 60-90 dk",
+      "logistics": "Gri & Beyaz Stok"
+    },
+    "accordions": [
+      {
+        "title": "Bina Genleşme ve Dilatasyon Güvenliği",
+        "body": "Sıcaklık farklarından oluşan yapı hareketlerini yırtılmadan sönümleyerek su sızıntılarını kalıcı olarak önler."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-ss-10",
+    "name": "Weberdry SS-10",
+    "badge": "TS EN 14891 CM O2P",
+    "tag": "Tam Elastik 2K Çimento Yalıtım",
+    "deptId": "weberDrySection",
+    "category": "cimento-esasli",
+    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "desc": "Teraslar, yüzme havuzları, balkonlar ve su depoları için çatlak köprüleme kabiliyetine sahip 2 komponentli tam elastik su yalıtım harcı.",
+    "meta": [
+      "CM O2P Tam Elastik Sınıf",
+      "Teras & Yüzme Havuzu Uyumu",
+      "Çatlak Köprüleme Kapasitesi",
+      "33 kg Set (25 kg Toz + 8 kg Sıvı)"
+    ],
+    "coverage": "3.0 – 3.5 kg/m² (Çift Kat)",
+    "sizes": [
+      "33 kg Set (25 kg Torba + 8 kg Sıvı)",
+      "1 Palet (36 Set / 1188 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 14891 CM O2P",
+      "packaging": "33 kg Set (25 kg Kraft + 8 kg Bidon)",
+      "consumption": "3.0 – 3.5 kg/m²",
+      "mixingRatio": "8 kg sıvıya 25 kg toz yavaşça katılır",
+      "potLife": "Kap ömrü: 2 saat · Katlar arası: 5-6 saat",
+      "logistics": "Urla & Balçova Depolarında Tam Stok"
+    },
+    "accordions": [
+      {
+        "title": "Teras ve Havuzlarda Pozitif Su Basıncı",
+        "body": "Weberdry SS-10, 2 mm kalınlıkta uygulandığında 7 bar su basıncına dayanıklıdır. Doğrudan üzerine seramik yapıştırılabilir."
+      },
+      {
+        "title": "Fileli Uygulama ve Kritik Köşeler",
+        "body": "Teras ve balkonlarda parapet dönüşlerinde weber elastik pah bandı kullanılmalı, birinci kat yaşken 75 gr/m² alkali dayanımlı file yatırılmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-ss-7-easy",
+    "name": "Weberdry SS-7 Easy",
+    "badge": "TS EN 14891 CM O1P",
+    "tag": "Yarı Elastik 2K Banyo Yalıtımı",
+    "deptId": "weberDrySection",
+    "category": "cimento-esasli",
+    "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
+    "desc": "Banyo, duş, mutfak ve tuvalet gibi iç mekan ıslak hacimler için seramik altı yarı elastik 2 komponentli su yalıtım harcı.",
+    "meta": [
+      "CM O1P Yarı Elastik",
+      "İç Mekan Islak Hacimler",
+      "Seramik Altı Tam Koruma",
+      "25 kg Set (20 kg Toz + 5 kg Sıvı)"
+    ],
+    "coverage": "2.5 – 3.0 kg/m² (Çift Kat)",
+    "sizes": [
+      "25 kg Set (20 kg Torba + 5 kg Bidon)",
+      "1 Palet (40 Set)"
+    ],
+    "specs": {
+      "standard": "TS EN 14891 CM O1P",
+      "packaging": "25 kg Set",
+      "consumption": "2.5 – 3.0 kg/m²",
+      "mixingRatio": "5 kg sıvıya 20 kg toz",
+      "potLife": "Kap ömrü: 2 saat · 2. kat: 4 saat sonra",
+      "logistics": "Hazır Stoktan Teslim"
+    },
+    "accordions": [
+      {
+        "title": "Banyo ve Mutfaklarda Su Sızıntısına Son",
+        "body": "Şap veya sıva üzerine fırça veya rulo ile iki kat uygulanarak alt kata su sızmasını kesin olarak engeller."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-706-plus",
+    "name": "Weberdry 706 Plus",
+    "badge": "TS EN 15814 2K",
+    "tag": "Bitüm-Kauçuk Temel & Perde Yalıtımı",
+    "deptId": "weberDrySection",
+    "category": "bitum-esasli",
+    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "desc": "Temel, perde duvar, bodrum dış duvarları ve istinat yapıları için polimer modifiyeli 2 komponentli kalın bitüm-kauçuk kaplama.",
+    "meta": [
+      "TS EN 15814 Standardı",
+      "Temel & Perde Duvar Zırhı",
+      "Yeraltı Sularına Tam Dayanım",
+      "32 kg Set (24 kg Sıvı + 8 kg Toz)"
+    ],
+    "coverage": "4.0 – 5.5 kg/m²",
+    "sizes": [
+      "32 kg Set (Plastik Kova)"
+    ],
+    "specs": {
+      "standard": "TS EN 15814 2K",
+      "packaging": "32 kg Set (Kova)",
+      "consumption": "4.0 – 5.5 kg/m²",
+      "mixingRatio": "Sıvı bileşene toz katılarak mikserlenir",
+      "potLife": "Kap ömrü: 1.5 saat · Kuruma: 24-48 saat",
+      "logistics": "Şantiye Paletli Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Toprak Altı Radon ve Nem Bariyeri",
+        "body": "Topraktaki asidik sulara, mikroorganizmalara ve zemin nemine karşı eksiz, elastik ve kalıcı bir yalıtım zırhı oluşturur."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-ds",
+    "name": "Weberdry DS",
+    "badge": "TS EN 1504-2",
+    "tag": "Kristalize Su Yalıtımı · Negatif/Pozitif",
+    "deptId": "weberDrySection",
+    "category": "kristalize",
+    "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
+    "desc": "Bodrum iç duvarları, asansör kuyuları ve su depolarında betonun kapiler boşluklarına kristal üreterek su geçişini durduran harç.",
+    "meta": [
+      "Negatif & Pozitif Çift Yönlü",
+      "Beton İçi Kristal Üretimi",
+      "Asansör Kuyusu & Bodrum",
+      "25 kg Kraft Torba"
+    ],
+    "coverage": "2.0 – 2.5 kg/m²",
+    "sizes": [
+      "25 kg Kraft Torba"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-2",
+      "packaging": "25 kg Kraft Torba",
+      "consumption": "2.0 – 2.5 kg/m²",
+      "mixingRatio": "7.0 – 7.5 lt su / 25 kg",
+      "potLife": "Kap ömrü: 30 dk",
+      "logistics": "Balçova & Urla Stok"
+    },
+    "accordions": [
+      {
+        "title": "Negatif Taraftan Su Yalıtımı",
+        "body": "Dışarıdan kazı yapılamayan bodrumlarda iç kısımdan sürülerek betonun içine doğru suyun ilerlemesini kristalize formülle bloke eder."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-rapid-stop",
+    "name": "Weberdry Rapid Stop",
+    "badge": "TS EN 1504-3",
+    "tag": "Şok Aktif Su Tıkacı · 1–2 Dakikada Priz",
+    "deptId": "weberDrySection",
+    "category": "sok-tikama",
+    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "desc": "Basınçlı fışkıran su kaçaklarını, boru geçiş deliklerini ve beton çatlaklarını 60–120 saniyede sertleşerek anında durduran şok tıkama harcı.",
+    "meta": [
+      "60–120 Saniyede Şok Priz",
+      "Basınçlı Su Kaçaklarını Durdurur",
+      "Genleşerek Delik Kapatır",
+      "5 kg Plastik Kova"
+    ],
+    "coverage": "Uygulama boşluğuna göre",
+    "sizes": [
+      "5 kg Plastik Kova"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-3",
+      "packaging": "5 kg Plastik Kova",
+      "consumption": "Uygulama boşluğuna göre",
+      "mixingRatio": "~1.2 lt su / 5 kg (Elde yoğrulur)",
+      "potLife": "Priz süresi: 1 – 2 dakika",
+      "logistics": "Balçova Showroom Hazır Stok"
+    },
+    "accordions": [
+      {
+        "title": "Anında Müdahale Teknolojisi",
+        "body": "Avuç içinde koni şekli verilip suyun fışkırdığı deliğe kuvvetle bastırılır; 1 dakika içinde taşlaşarak suyu keser."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-pur-seal",
+    "name": "Weberdry PUR Seal",
+    "badge": "ETAG 005 W3",
+    "tag": "Saf Poliüretan Likit Membran",
+    "deptId": "weberDrySection",
+    "category": "likit-poliuretan",
+    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "desc": "Açık teraslar, çatılar ve UV ışınlarına maruz kalan zeminler için eksiz, yüksek elastikiyete sahip saf poliüretan likit su yalıtım membranı.",
+    "meta": [
+      "ETAG 005 W3 Sertifikalı",
+      "UV & Güneş Dayanımlı",
+      "Eksiz Kauçuk Membran Katmanı",
+      "25 kg Teneke Kova"
+    ],
+    "coverage": "1.5 – 2.0 kg/m²",
+    "sizes": [
+      "25 kg Teneke Kova",
+      "6 kg Teneke Kova"
+    ],
+    "specs": {
+      "standard": "ETAG 005 W3",
+      "packaging": "25 kg ve 6 kg Metal Kova",
+      "consumption": "1.5 – 2.0 kg/m²",
+      "mixingRatio": "Tek komponentli, solventli",
+      "potLife": "Katlar arası: 12-24 saat",
+      "logistics": "Özel Proje Sevk"
+    },
+    "accordions": [
+      {
+        "title": "25 Yıl Beklenen Ömür (W3)",
+        "body": "UV ışınlarına ve göllenmiş sulara karşı tam dirençlidir. Teraslarda ek yeri oluşturmadan tek parça monolitik membran sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberdry-pah-bandi",
+    "name": "Weberdry Pah Bandı",
+    "badge": "Alkali Dayanımlı",
+    "tag": "Elastik Köşe Pah Bandı · 120 mm",
+    "deptId": "weberDrySection",
+    "category": "aksesuar-pah",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "Teras, balkon ve banyolarda zemin-duvar birleşim noktalarında su sızıntılarını önlemek için kullanılan termoplastik elastomer pah bandı.",
+    "meta": [
+      "120 mm Toplam Genişlik",
+      "Alkaliye Dayanıklı Fileli Kenar",
+      "Yüksek Elastikiyet",
+      "50 Metre Rulo"
+    ],
+    "coverage": "Metretül bazında",
+    "sizes": [
+      "50 Metre Rulo",
+      "10 Metre Rulo"
+    ],
+    "specs": {
+      "standard": "Alkali Dayanımlı Elastomer",
+      "packaging": "50 m ve 10 m Rulo",
+      "consumption": "1 m / köşe metretülü",
+      "mixingRatio": "Su yalıtım harcı arasına gömülür",
+      "potLife": "Süresiz saklama",
+      "logistics": "Sürekli Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kritik Köşe Birleşim Noktaları",
+        "body": "Bina oturmalarında duvar-taban birleşim çizgilerindeki kırılmaları tolere ederek suyun alt kata inmesini önler."
+      }
+    ]
+  },
+  {
+    "id": "weberep-ma-200",
+    "name": "Weberep MA 200",
+    "badge": "TS EN 1504-3 R4",
+    "tag": "Yapısal Kalın Tamir Harcı · R4 Sınıfı",
+    "deptId": "weberRepSection",
+    "category": "yapisal-tamir",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Kolon, kiriş, perde duvar ve köprü gibi taşıyıcı betonarme elemanlarda 10–40 mm kalınlıkta uygulanan R4 sınıfı yüksek mukavemetli yapısal tamir harcı.",
+    "meta": [
+      "TS EN 1504-3 R4 Sınıfı",
+      "50+ MPa Basınç Dayanımı",
+      "Tiksotropik · Tavanda Sarkma Yapmaz",
+      "Donatı Korozyonunu Önler"
+    ],
+    "coverage": "18.0 – 20.0 kg/m² (10 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-3 R4",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "18.0 – 20.0 kg/m² (10 mm)",
+      "mixingRatio": "3.5 – 4.0 lt su / 25 kg torba",
+      "potLife": "Kap ömrü: 45 dk · Priz: 2-3 saat",
+      "logistics": "Balçova & Urla Depolarında Hazır Stok"
+    },
+    "accordions": [
+      {
+        "title": "R4 Sınıfı Yapısal Mukavemet (50+ MPa)",
+        "body": "Deprem güçlendirme, karbon fiber kumaş öncesi yüzey tamiri ve paslanmış donatı açığa çıkmalarında orijinal beton dayanımının üstünde performans verir."
+      },
+      {
+        "title": "Tiksotropik Baş Üstü Uygulama",
+        "body": "Kiriş altı ve tavan onarımlarında mala ile çekildiğinde aşağıya sarkma ve dökülme yapmaz, kalıpsız tamir imkanı sunar."
+      }
+    ]
+  },
+  {
+    "id": "weberep-m352",
+    "name": "Weberep M352",
+    "badge": "TS EN 1504-3 R3",
+    "tag": "Elyaf Takviyeli İnce Tamir Harcı · R3 Sınıfı",
+    "deptId": "weberRepSection",
+    "category": "ince-tamir",
+    "thumb": "assets/weber-official/weber-kol-flex-porselen-gri-25-kg.jpg",
+    "desc": "Brüt beton, prefabrik elemanlar ve sıva yüzeylerde 2–10 mm kalınlıkta pürüzsüz kozmetik yüzey tamiri sağlayan polimer ve elyaf katkılı harç.",
+    "meta": [
+      "TS EN 1504-3 R3 Sınıfı",
+      "2–10 mm İnce Katman",
+      "Boya ve Kaplama Altı Pürüzsüzlük",
+      "Poliamid Elyaf Takviyeli"
+    ],
+    "coverage": "3.5 – 4.0 kg/m² (2 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-3 R3",
+      "packaging": "25 kg Kraft Torba",
+      "consumption": "1.7 kg/m² (1 mm kalınlık için)",
+      "mixingRatio": "4.5 – 5.0 lt su / 25 kg",
+      "potLife": "Kap ömrü: 60 dk",
+      "logistics": "Balçova Showroom Stok"
+    },
+    "accordions": [
+      {
+        "title": "Pürüzsüz Boya Öncesi Yüzey",
+        "body": "Brüt beton tij delikleri, segregasyonlar ve yüzey bozukluklarını boyaya hazır mükemmel düzlükte kapatır."
+      }
+    ]
+  },
+  {
+    "id": "weberep-hks",
+    "name": "Weberep HKS",
+    "badge": "TS EN 1504-3 R4 Sülfat",
+    "tag": "Sülfat Dirençli R4 Tamir Harcı",
+    "deptId": "weberRepSection",
+    "category": "yapisal-tamir",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Deniz yapıları, sahil şantiyeleri, atıksu arıtma tesisleri ve sülfatlı yeraltı sularına maruz kalan betonarme elemanlar için sülfata dayanıklı R4 harç.",
+    "meta": [
+      "Sülfat ve Deniz Suyu Direnci",
+      "R4 Yapısal Mukavemet Sınıfı",
+      "Kıyı & İskele Yapılarına Uygun",
+      "Düşük Klorür İyonu Geçirgenliği"
+    ],
+    "coverage": "19.0 kg/m² (10 mm)",
+    "sizes": [
+      "25 kg Kraft Torba"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-3 R4",
+      "packaging": "25 kg Kraft Torba",
+      "consumption": "19.0 kg/m² (10 mm)",
+      "mixingRatio": "3.5 – 4.0 lt su / 25 kg",
+      "potLife": "Kap ömrü: 40 dk",
+      "logistics": "Çeşme & Urla Sahil Projeleri Sevk"
+    },
+    "accordions": [
+      {
+        "title": "Kıyı ve Deniz Yapılarında Tuz Zırhı",
+        "body": "Deniz tuzu ve yeraltı sülfatının beton donatısını çürütmesini ve betonu pul pul dökmesini engelleyen özel çimento bağlayıcılıdır."
+      }
+    ]
+  },
+  {
+    "id": "webergrout-dry",
+    "name": "Webergrout Dry",
+    "badge": "TS EN 1504-6",
+    "tag": "Rötresiz Akıcı Grout & Ankraj",
+    "deptId": "weberRepSection",
+    "category": "grout-ankraj",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "desc": "Çelik kolon taban plakaları, makine temelleri, vinç rayları ve filiz ekme delikleri için büzülme yapmayan kendiliğinden yerleşen akıcı harç.",
+    "meta": [
+      "TS EN 1504-6 Ankraj Standardı",
+      "Rötresiz · Büzülme Yapmaz",
+      "65+ MPa Nihai Basınç Dayanımı",
+      "10–50 mm Kendiliğinden Yerleşen"
+    ],
+    "coverage": "20.0 kg/m² (10 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 1504-6",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "2.0 kg / dm³ (Boşluk hacmi)",
+      "mixingRatio": "3.25 – 3.75 lt su / 25 kg",
+      "potLife": "Akıcılık süresi: 30 dk · 1 günde 30 MPa",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Rötresiz Genleşme ve 65 MPa Dayanım",
+        "body": "Priz sırasında mikro genleşme yaparak metal plaka ile beton arasında sıfır boşluklu tam temas ve yük transferi sağlar."
+      }
+    ]
+  },
+  {
+    "id": "weberprim-tg-5",
+    "name": "Weberprim TG 5",
+    "badge": "Konsantre Akrilik",
+    "tag": "Konsantre Aderans Astarı",
+    "deptId": "weberRepSection",
+    "category": "astar-aderans",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "Emici zeminler, şaplar, alçıpan ve gazbeton yüzeylerde yapıştırıcı ve tamir harçlarının suyunu kaybetmesini önleyen derin penetrasyon astarı.",
+    "meta": [
+      "Derin Yüzey Penetrasyonu",
+      "Tozuma Önleyici ve Bağlayıcı",
+      "Su Emme Oranını Dengeler",
+      "1:3 Su ile İnceltilebilir"
+    ],
+    "coverage": "0.10 – 0.20 kg/m²",
+    "sizes": [
+      "20 kg Plastik Bidon",
+      "5 kg Bidon"
+    ],
+    "specs": {
+      "standard": "Akrilik Polimer Dispersiyon",
+      "packaging": "20 kg ve 5 kg Plastik Bidon",
+      "consumption": "100 – 150 gr/m²",
+      "mixingRatio": "Yüzeye göre 1:1 ile 1:3 su katılır",
+      "potLife": "Kuruma süresi: 2-3 saat",
+      "logistics": "Stoktan Teslim"
+    },
+    "accordions": [
+      {
+        "title": "Şap ve Sıvanın Hızlı Su Kaybını Önler",
+        "body": "Üzerine dökülecek şapın veya harcın suyunu emilmekten koruyarak çatlama ve kopmaları engeller."
+      }
+    ]
+  },
+  {
+    "id": "weberprim-epox",
+    "name": "Weberprim Epox",
+    "badge": "2K Epoksi",
+    "tag": "2K Epoksi Nem Bariyeri & Astar",
+    "deptId": "weberRepSection",
+    "category": "astar-aderans",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Nemli beton zeminlerde nem bariyeri oluşturan, metal ve parlak yüzeylerde mükemmel aderans köprüsü kuran solventsiz 2K epoksi astar.",
+    "meta": [
+      "Solventsiz 2K Epoksi Reçine",
+      "Nem Bariyeri Fonksiyonu",
+      "Zorlu Yüzeylerde Süper Aderans",
+      "10 kg Set (A+B Komponent)"
+    ],
+    "coverage": "0.30 – 0.50 kg/m²",
+    "sizes": [
+      "10 kg Set (7.5 kg A + 2.5 kg B)"
+    ],
+    "specs": {
+      "standard": "2K Solventsiz Epoksi",
+      "packaging": "10 kg Set",
+      "consumption": "300 – 500 gr/m²",
+      "mixingRatio": "A ve B tam karışım",
+      "potLife": "Kap ömrü: 40 dk · Kat kabul: 12 saat",
+      "logistics": "Balçova Showroom"
+    },
+    "accordions": [
+      {
+        "title": "Zemin Nemini Keserek Kaplamayı Korur",
+        "body": "Parke, PVC ve epoksi kaplama öncesinde zemin neminin kaplamayı kabartmasını kesin olarak bloke eder."
+      }
+    ]
+  },
+  {
+    "id": "weberfloor-level",
+    "name": "Weberfloor Level",
+    "badge": "TS EN 13813 CT-C25-F6",
+    "tag": "Kendiliğinden Yayılan Tesviye Şapı · 2–10 mm",
+    "deptId": "weberFloorSection",
+    "category": "tesviye-selfleveling",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "desc": "Seramik, parke, vinil ve lamine kaplamalar öncesinde zemin bozukluklarını kendiliğinden teraziye alarak düzelten pürüzsüz tesviye şapı.",
+    "meta": [
+      "CT-C25-F6 Dayanım Sınıfı",
+      "2–10 mm Kendiliğinden Yayılma",
+      "Pürüzsüz Ayna Gibi Düzlük",
+      "4–6 Saatte Yaya Trafiği"
+    ],
+    "coverage": "1.6 kg/m² (1 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 13813 CT-C25-F6",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "1.6 kg/m² (1 mm kalınlık için)",
+      "mixingRatio": "5.5 – 6.0 lt su / 25 kg torba",
+      "potLife": "Akıcılık: 20-30 dk · Yaya trafiği: 4 saat",
+      "logistics": "Urla Depo & Balçova Stok"
+    },
+    "accordions": [
+      {
+        "title": "Self-Leveling Ayna Yüzey Düzlüğü",
+        "body": "Döküldüğünde mala izi bırakmadan kendiliğinden yayılır ve milimetrik kod farklarını kusursuz şekilde teraziye alır."
+      },
+      {
+        "title": "Astar Önemi (Weberprim TG 5)",
+        "body": "Tesviye şapı dökülmeden önce zemin mutlaka Weberprim TG 5 ile astarlanmalıdır; bu sayede hava kabarcığı oluşmaz ve akışkanlık maksimize edilir."
+      }
+    ]
+  },
+  {
+    "id": "weberfloor-flex",
+    "name": "Weberfloor Flex",
+    "badge": "TS EN 13813 CT-C30-F7",
+    "tag": "Esnek Yerden Isıtma Şapı · 3–30 mm",
+    "deptId": "weberFloorSection",
+    "category": "tesviye-selfleveling",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "desc": "Sulu ve elektrikli yerden ısıtma sistemlerinde boru üzerini kaplamak ve geniş kot farklarını doldurmak için tasarlanmış fiber katkılı esnek şap.",
+    "meta": [
+      "CT-C30-F7 Yüksek Esneklik",
+      "3–30 mm Kalın Döküm Kapasitesi",
+      "Yerden Isıtma Termal Şokuna Tam Uyum",
+      "Fiber Lif Takviyeli"
+    ],
+    "coverage": "1.7 kg/m² (1 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 13813 CT-C30-F7",
+      "packaging": "25 kg Kraft Torba (Palet: 54 Torba)",
+      "consumption": "1.7 kg/m² (1 mm kalınlık)",
+      "mixingRatio": "4.75 – 5.25 lt su / 25 kg",
+      "potLife": "Akıcılık: 25 dk · Yaya trafiği: 6 saat",
+      "logistics": "Balçova & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Yerden Isıtma Borularında Hızlı Isı İletimi",
+        "body": "Boruların etrafını tam sararak hava boşluğu bırakmaz ve ısı transfer verimini %25 oranında artırır."
+      }
+    ]
+  },
+  {
+    "id": "weberfloor-industri",
+    "name": "Weberfloor Industri",
+    "badge": "TS EN 13813 CT-C40-F10",
+    "tag": "Ağır Trafik Endüstriyel Zemin Şapı",
+    "deptId": "weberFloorSection",
+    "category": "endustriyel-zemin",
+    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "desc": "Fabrikalar, otoparklar, depolar ve forklift trafiğinin olduğu endüstriyel sahalar için 40 MPa basınç dayanımlı aşınmaz zemin kaplama şapı.",
+    "meta": [
+      "CT-C40-F10 Ağır Hizmet Sınıfı",
+      "Forklift ve Kamyon Trafiği Dayanımı",
+      "Aşınma Dirençli Endüstriyel Yüzey",
+      "Pompa ile Hızlı Döküm"
+    ],
+    "coverage": "1.8 kg/m² (1 mm)",
+    "sizes": [
+      "25 kg Kraft Torba",
+      "1 Palet (54 Torba / 1350 kg)"
+    ],
+    "specs": {
+      "standard": "TS EN 13813 CT-C40-F10",
+      "packaging": "25 kg Kraft Torba",
+      "consumption": "1.8 kg/m² (1 mm)",
+      "mixingRatio": "4.5 – 5.0 lt su / 25 kg",
+      "potLife": "Akıcılık: 20 dk · Ağır trafik: 48 saat",
+      "logistics": "Fabrika & Depo Şantiye Sevkiyatı"
+    },
+    "accordions": [
+      {
+        "title": "Forklift ve Darbe Zırhı",
+        "body": "C40 yüksek basınç ve F10 eğilme dayanımı sayesinde ağır yüklerin altında çatlamaz, tozumaz ve aşınmaz."
+      }
+    ]
+  },
+  {
+    "id": "weberfloor-protect",
+    "name": "Weberfloor Protect",
+    "badge": "Şeffaf Yüzey Koruyucu",
+    "tag": "Tozuma Önleyici Şeffaf Zemin Koruyucu",
+    "deptId": "weberFloorSection",
+    "category": "koruyucu-kaplama",
+    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "desc": "Beton zeminler, şaplar ve teras kaplamaları üzerinde tozuma yapmayan, yağ ve leke tutmayan şeffaf emprenye yüzey koruyucu cila.",
+    "meta": [
+      "Tozuma Önleyici Sıvı Cila",
+      "Leke ve Yağ Geçirimsizliği",
+      "Şeffaf Doğal Görünüm",
+      "20 lt Plastik Bidon"
+    ],
+    "coverage": "0.10 – 0.25 lt/m²",
+    "sizes": [
+      "20 lt Plastik Bidon",
+      "5 lt Bidon"
+    ],
+    "specs": {
+      "standard": "Yüzey Sertleştirici Emprenye",
+      "packaging": "20 lt ve 5 lt Plastik Bidon",
+      "consumption": "100 – 200 ml/m²",
+      "mixingRatio": "Kullanıma hazır (İnceltilmez)",
+      "potLife": "Kuruma süresi: 4 saat",
+      "logistics": "Balçova & Urla Stok"
+    },
+    "accordions": [
+      {
+        "title": "Tozsuz ve Kolay Temizlenen Zeminler",
+        "body": "Betonun gözeneklerine nüfuz ederek yüzey sertliğini artırır; depo ve otoparklarda araç tekerleği izlerini ve yağ lekelerini engeller."
+      }
+    ]
+  }
+];
+
+  var DEPARTMENTS_DATA = [
+    { 
+      id: "weberProductCatalog", 
+      short: "Seramik Harçları", 
+      full: "Seramik Harçları & Astarlar", 
+      sub: "Porselen, granit, havuz ve hızlı priz harçları",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+      pillsId: "weberMenuPills" 
+    },
+    { 
+      id: "weberJointSection", 
+      short: "Derz & Mastik", 
+      full: "Derz Dolguları & Mastikler", 
+      sub: "Flex, silikonlu su itici ve epoksi derzler",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+      pillsId: "jointMenuPills" 
+    },
+    { 
+      id: "weberDrySection", 
+      short: "Su Yalıtımı", 
+      full: "Su Yalıtım Sistemleri", 
+      sub: "2K çimento, bitüm ve likit poliüretan membranlar",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+      pillsId: "dryMenuPills" 
+    },
+    { 
+      id: "weberRepSection", 
+      short: "Tamir & Grout", 
+      full: "Tamir, Grout & Güçlendirme", 
+      sub: "R4 yapısal onarım, akıcı grout ve epoksi ankraj",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 16 3-3"/><path d="M9 12l8-8 4 4-8 8"/><path d="m14 7 3 3"/></svg>',
+      pillsId: "repMenuPills" 
+    },
+    { 
+      id: "weberFloorSection", 
+      short: "Zemin Şapları", 
+      full: "Zemin Şapları & Kaplamalar", 
+      sub: "Kendiliğinden yayılan tesviye ve endüstriyel şaplar",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 17h16"/><path d="M7 13h10"/><path d="M10 9h4"/><path d="M12 3v3"/></svg>',
+      pillsId: "floorMenuPills" 
+    }
+  ];
+
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
+  var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
+  var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
+  var deptDrawer = document.getElementById("pvDeptDrawer");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
+
+  var currentActiveTab = "weberProductCatalog";
+  var currentProduct = null;
+  var selectedSize = "";
+
+  var panels = {
+    "weberProductCatalog": document.getElementById("weberProductCatalog"),
+    "weberJointSection": document.getElementById("weberJointSection"),
+    "weberDrySection": document.getElementById("weberDrySection"),
+    "weberRepSection": document.getElementById("weberRepSection"),
+    "weberFloorSection": document.getElementById("weberFloorSection")
+  };
+
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+  }
+
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  function switchTab(tabId) {
+    if (!panels[tabId]) return;
+    currentActiveTab = tabId;
+
+    subnavLinks.forEach(function(link) {
+      var match = (link.getAttribute("data-target") === tabId);
+      link.classList.toggle("active", match);
+      link.setAttribute("aria-selected", match ? "true" : "false");
+    });
+
+    Object.keys(panels).forEach(function(k) {
+      if (panels[k]) {
+        if (k === tabId) {
+          panels[k].style.display = "";
+          panels[k].classList.add("active");
+        } else {
+          panels[k].style.display = "none";
+          panels[k].classList.remove("active");
+        }
+      }
+    });
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === tabId; });
+    if (dept && deptTriggerLabel) {
+      deptTriggerLabel.textContent = dept.short;
+    }
+
+    renderDeptDrawer(tabId);
+    syncMobileFilterRail(tabId);
+  }
+
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var target = link.getAttribute("data-target");
+      switchTab(target);
+      var origin = getSubnavOrigin();
+      if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+        window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+      }
+    });
+  });
+
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
+    DEPARTMENTS_DATA.forEach(function(d) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      var isSelected = (d.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + d.full + '</span>' +
+            '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
+
+      btn.addEventListener("click", function() {
+        switchTab(d.id);
+        closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      });
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
+        e.preventDefault();
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      });
+
+      filterRail.appendChild(chip);
+    });
+  }
+
+  function openDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.add("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    deptTrigger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.remove("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    deptTrigger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      openDeptDrawer();
+    });
+  }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", closeDeptDrawer);
+  }
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("click", function(e) {
+      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
+    });
+  }
+
+  function setupCategoryFiltering(pillsContainerId, listContainerId) {
+    var container = document.getElementById(pillsContainerId);
+    var list = document.getElementById(listContainerId);
+    if (!container || !list) return;
+
+    var pills = container.querySelectorAll(".pv-menu-pill");
+    var rows = list.querySelectorAll(".pv-menu-row");
+
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        var filter = pill.getAttribute("data-filter");
+        pills.forEach(function(p) {
+          p.classList.remove("active");
+          p.setAttribute("aria-selected", "false");
+        });
+        pill.classList.add("active");
+        pill.setAttribute("aria-selected", "true");
+
+        rows.forEach(function(row) {
+          var cat = row.getAttribute("data-category");
+          if (cat === filter) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      });
+    });
+
+    var activePill = container.querySelector(".pv-menu-pill.active") || pills[0];
+    if (activePill) {
+      var initialFilter = activePill.getAttribute("data-filter");
+      rows.forEach(function(row) {
+        if (row.getAttribute("data-category") !== initialFilter) {
+          row.style.display = "none";
+        }
+      });
+    }
+  }
+
+  setupCategoryFiltering("weberMenuPills", "weberMenuList");
+  setupCategoryFiltering("jointMenuPills", "jointMenuList");
+  setupCategoryFiltering("dryMenuPills", "dryMenuList");
+  setupCategoryFiltering("repMenuPills", "repMenuList");
+  setupCategoryFiltering("floorMenuPills", "floorMenuList");
+
+  // MODAL ENGINE
+  var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCard = document.getElementById("pvModalCard");
+  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+
+  var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductBadge = document.getElementById("modalProductBadge");
+  var modalProductTag = document.getElementById("modalProductTag");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
+  var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductDesc = document.getElementById("modalProductDesc");
+  var modalSizeTrack = document.getElementById("modalSizeTrack");
+  var modalSpecStandard = document.getElementById("modalSpecStandard");
+  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
+  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
+  var modalSpecMixing = document.getElementById("modalSpecMixing");
+  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
+  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
+  var modalWABtn = document.getElementById("modalWABtn");
+  var modalAccordions = document.getElementById("modalAccordions");
+
+  var isSheetDragging = false;
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var canDragFromScroll = false;
+
+  function openModal(productId) {
+    var p = WEBER_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
+    if (!p) return;
+    currentProduct = p;
+    selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
+
+    modalProductImg.src = p.thumb;
+    modalProductImg.alt = p.name;
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "SAINT-GOBAIN WEBER · YAPI KİMYASALLARI";
+    modalProductTitle.textContent = p.name;
+    modalProductDesc.textContent = p.desc;
+
+    modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
+    modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
+    modalSpecConsumption.textContent = p.specs.consumption || "-";
+    modalSpecMixing.textContent = p.specs.mixingRatio || "-";
+    modalSpecPotLife.textContent = p.specs.potLife || "-";
+    modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
+
+    modalSizeTrack.innerHTML = "";
+    if (p.sizes && p.sizes.length > 0) {
+      p.sizes.forEach(function(size, idx) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+        btn.textContent = size;
+        btn.addEventListener("click", function() {
+          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          selectedSize = size;
+          updateWhatsAppUrl();
+        });
+        modalSizeTrack.appendChild(btn);
+      });
+    }
+
+    modalAccordions.innerHTML = "";
+    if (p.accordions && p.accordions.length > 0) {
+      p.accordions.forEach(function(acc, idx) {
+        var item = document.createElement("div");
+        item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
+        item.innerHTML = 
+          '<button type="button" class="pv-acc-header">' +
+          '  <span>' + acc.title + '</span>' +
+          '  <span class="pv-acc-icon">+</span>' +
+          '</button>' +
+          '<div class="pv-acc-body">' + acc.body + '</div>';
+
+        item.querySelector(".pv-acc-header").addEventListener("click", function() {
+          item.classList.toggle("active");
+        });
+        modalAccordions.appendChild(item);
+      });
+    }
+
+    updateWhatsAppUrl();
+
+    modalBackdrop.classList.add("open");
+    modalBackdrop.classList.add("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    try {
+      history.replaceState(null, "", "#urun-" + p.id);
+    } catch(e) {}
+  }
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove("open");
+    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    currentProduct = null;
+    resetSheetStyles();
+    try {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch(e) {}
+  }
+
+  function updateWhatsAppUrl() {
+    if (!currentProduct) return;
+    var text = "Merhaba, Saint-Gobain Weber " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    text += " için Urla / Balçova depo şantiye teslimat ve güncel palet fiyat bilgisi almak istiyorum.";
+    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      if (e.target === modalBackdrop) closeModal();
+    });
+  }
+
+  // Touch gesture physics for mobile bottom sheet dismissal
+  function onDragStart(e) {
+    if (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
+
+  function onDragMove(e) {
+    if ((!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
+
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+        modalCard.style.transition = "none";
+        modalCard.style.transform = "translateY(" + deltaY + "px)";
+        var progress = Math.min(1, deltaY / 360);
+        modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
+      }
+    }
+  }
+
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+    dragStartY = 0;
+
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      modalBackdrop.style.transition = "opacity 0.24s ease";
+      modalBackdrop.style.opacity = "0";
+      setTimeout(function() {
+        closeModal();
+      }, 240);
+    } else {
+      modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(0)";
+      modalBackdrop.style.transition = "opacity 0.25s ease";
+      modalBackdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
+    }
+  }
+
+  [modalHandleZone, modalTopBar, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    row.addEventListener("click", function() {
+      var pid = row.getAttribute("data-product-id");
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var pid = row.getAttribute("data-product-id");
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
+  function checkDeepLink() {
+    var hash = window.location.hash;
+    if (hash && hash.indexOf("#urun-") === 0) {
+      var pid = hash.replace("#urun-", "");
+      var p = WEBER_PRODUCTS_DATA.find(function(item) { return item.id === pid; });
+      if (p) {
+        if (p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      }
+    }
+  }
+
+  switchTab("weberProductCatalog");
+  checkDeepLink();
+  window.addEventListener("popstate", checkDeepLink);
+
+})();

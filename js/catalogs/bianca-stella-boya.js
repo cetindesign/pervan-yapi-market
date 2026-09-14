@@ -1,0 +1,1582 @@
+/* 1. HERO STAGE SLIDER & TRANSPARENT HEADER OBSERVER */
+(function() {
+  var stage = document.getElementById("pvStageHero");
+  var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
+
+  if (header) {
+    function checkHeaderSolid() {
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 120) {
+        header.classList.add("header--solid");
+      } else {
+        header.classList.remove("header--solid");
+      }
+    }
+    window.addEventListener("scroll", checkHeaderSolid, { passive: true });
+    checkHeaderSolid();
+  }
+
+  if (!stage) return;
+  var track = document.getElementById("pvStageTrack");
+  if (!track) return;
+
+  var slides = stage.querySelectorAll(".pv-stage-slide");
+  var prevBtn = document.getElementById("pvStagePrev");
+  var nextBtn = document.getElementById("pvStageNext");
+  var currentIndex = 0;
+  var totalSlides = slides.length;
+  var autoPlayTimer = null;
+
+  function syncActiveState(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+
+    slides.forEach(function(slide, idx) {
+      slide.classList.toggle("active", idx === index);
+    });
+
+    var barWidth = 140 / totalSlides;
+    var translateX = index * barWidth;
+    stage.querySelectorAll(".pv-stage-progress-bar").forEach(function(bar) {
+      bar.style.width = barWidth + "px";
+      bar.style.transform = "translateX(" + translateX + "px)";
+    });
+  }
+
+  function goToSlide(index, smooth) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+
+    var slideWidth = track.clientWidth;
+    var targetLeft = index * slideWidth;
+
+    track.scrollTo({
+      left: targetLeft,
+      behavior: smooth !== false ? "smooth" : "auto"
+    });
+
+    syncActiveState(index);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function() {
+      resetAutoPlay();
+      goToSlide(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function() {
+      resetAutoPlay();
+      goToSlide(currentIndex + 1);
+    });
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function() {
+      goToSlide(currentIndex + 1);
+    }, 6000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  track.addEventListener("scroll", function() {
+    var slideWidth = track.clientWidth;
+    if (!slideWidth) return;
+    var scrollLeft = track.scrollLeft;
+    var index = Math.round(scrollLeft / slideWidth);
+    if (index !== currentIndex && index >= 0 && index < totalSlides) {
+      syncActiveState(index);
+    }
+  }, { passive: true });
+
+  stage.addEventListener("mouseenter", stopAutoPlay);
+  stage.addEventListener("mouseleave", startAutoPlay);
+  stage.addEventListener("touchstart", stopAutoPlay, { passive: true });
+  stage.addEventListener("touchend", startAutoPlay, { passive: true });
+
+  syncActiveState(0);
+  startAutoPlay();
+})();
+
+/* 2. MASTER CATALOG, FILTERING, DRAWER & MODAL SYSTEM */
+(function() {
+  var BIANCA_PRODUCTS_DATA = [
+  {
+    "id": "bianca-stella-saf-akrilik",
+    "name": "Bianca Stella Su Bazlı Saf Akrilik Boya",
+    "badge": "EN 71-3 Oyuncak & Gıda Güvenliği",
+    "tag": "Tüm Yüzeyler İçin Astar Gerektirmeyen Dönüşüm",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "desc": "Fayans, seramik, tezgah, mobilya, lake dolap, PVC pencere, cam, alüminyum ve beyaz eşya yüzeylerinde astar ve zımpara gerektirmeden kimyasal tutunma sağlayan kokusuz saf akrilik boya.",
+    "meta": [
+      "EN 71-3 Çocuk & Oyuncak Güvenliği Sertifikalı",
+      "Astar & Zımpara Gerektirmeyen Nano Tutunma",
+      "Colorate Renklendirme Sistemi ile Sınırsız Renk",
+      "Parfümlü & Kokusuz Yaşam Alanı Konforu"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre (5 – 6 m²)",
+      "1.00 Litre (10 – 12 m²)",
+      "2.50 Litre (25 – 30 m²)"
+    ],
+    "specs": {
+      "standard": "TS EN 71-3 / CE",
+      "packaging": "0.5 L · 1.0 L · 2.5 L Metal Kutu",
+      "consumption": "10 – 12 m² / L (çift kat uygulama)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır (homojen karıştırılır)",
+      "potLife": "Katlar arası: 2–3 saat · Dokunma: 2 saat · Tam sertlik: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Astar ve Zımpara Gerektirmeyen Nano Yapışma Teknolojisi",
+        "body": "Bianca Stella, formülündeki çapraz bağlı saf akrilik kopolimerler sayesinde cam, sırlı seramik ve pürüzsüz laminat yüzeylere mikro düzeyde kilitlenir. Katmanlar arasında soyulma, kabarma veya tırnakla çizilme yapmaz."
+      },
+      {
+        "title": "Uygulama Adımları ve Kadife Rulo Tavsiyesi",
+        "body": "Boya öncesinde yüzey Bianca Özel Temizleyici ile yağ ve kireçten tamamen arındırılmalı, kurulanmalıdır. İpek fırça ile köşeler kestirildikten sonra kısa tüylü kadife vernik rulo ile tarama yapılarak 2 kat uygulanır. Katlar arasında en az 2–3 saat beklenmelidir."
+      },
+      {
+        "title": "Isı ve Ev Kimyasallarına Dayanım",
+        "body": "Ocak arkası yağ sıçramaları ve sıcak temaslara dayanıklıdır. Ağır asitli veya aşındırıcı ovma telleri yerine mikrofiber bez ve genel yüzey temizleyicileri ile silinmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-mat-seri",
+    "name": "Bianca Stella Mat Saf Akrilik Boya",
+    "badge": "EN 71-3 İpeksi Mat Doku",
+    "tag": "Mobilya & Dolap Kapakları · Mat Bitiş",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-2024.jpg",
+    "desc": "Mutfak dolapları, vestiyer, kapı ve ahşap mobilyalarda parlamayan, modern pastel ve ipeksi mat görünüm sunan özel formüllü dönüşüm boyası.",
+    "meta": [
+      "Modern İpeksi Mat Doku",
+      "Işık Yansıtmayan Kusur Gizleme Özelliği",
+      "Astar ve Zımparasız Doğrudan Tutunma",
+      "Kokusuz ve VOC Uyumlu"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre (5 – 6 m²)",
+      "1.00 Litre (10 – 12 m²)",
+      "2.50 Litre (25 – 30 m²)"
+    ],
+    "specs": {
+      "standard": "TS EN 71-3 / İpeksi Mat",
+      "packaging": "0.5 L · 1.0 L · 2.5 L Metal Kutu",
+      "consumption": "10 – 12 m² / L (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2–3 saat · Dokunma: 2 saat · Tam kürlenme: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusurları Gizleyen Mat Optik Bitiş",
+        "body": "Işığı kırmadan yutan mat yapısı sayesinde mobilya üzerindeki hafif dalgalanmaları ve kılcal yüzey kusurlarını gizler; modern mimari projelere sofistike bir doku kazandırır."
+      },
+      {
+        "title": "Mobilya & Dolap Uygulama İpucu",
+        "body": "MDF, masif ahşap veya kaplama mobilyalarda zımpara yapmadan doğrudan uygulanır. Kulplar sökülmeli, delik yerleri macunla düzeltilmeli ve kadife rulo ile taranmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ahsap-desen",
+    "name": "Bianca Stella Ahşap Desen Görünüm Boyası",
+    "badge": "Doğal Budak & Doku Efekti",
+    "tag": "Masif & Ağaç Damarı Dönüşümü",
+    "deptId": "biancaTransformSection",
+    "category": "ahsap-efekt",
+    "thumb": "assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png",
+    "desc": "Düz renk Stella zemin boyası üzerine damar tarağı (budak aparatı) ile uygulanarak meşe, ceviz, kestane ve eskitme ahşap dokusu oluşturan yarı şeffaf efekt boyası.",
+    "meta": [
+      "Meşe, Ceviz, Kestane, Pelesenk, Eskitme ve Gri Tonları",
+      "Damar Aparatı ile Kolay Budak Efekti",
+      "Doğal Masif Ahşap Görünümü",
+      "Fayans ve Mobilyada Ahşap Sıcaklığı"
+    ],
+    "coverage": "6 – 8 m² / 0.25 Litre",
+    "sizes": [
+      "0.25 Litre Kutu",
+      "Budak Aparatlı Uygulama Seti"
+    ],
+    "specs": {
+      "standard": "Özel Dekoratif Efekt",
+      "packaging": "0.25 Litre Kutu",
+      "consumption": "25 – 35 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Desen çekme süresi: 10–15 dk · Kuruma: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Adım Adım Ahşap Doku Uygulama Tekniği",
+        "body": "1. Zemin olarak açık ton bir Bianca Stella (örneğin Krem, Vizon veya Açık Gri) 2 kat boyanır ve 4 saat kurumaya bırakılır.\n2. Bianca Stella Ahşap Desen Boyası fırça veya rulo ile tek şerit halinde sürülür.\n3. Boya yaşken Bianca Budak Tarağı yukarıdan aşağıya hafif bilek hareketleriyle salınım yaparak çekilir."
+      },
+      {
+        "title": "Renk Kartelası Uyumları",
+        "body": "0701 Meşe, 0702 Ceviz, 0703 Kestane, 0704 Eskitme, 0705 Açık Ceviz, 0706 Pelesenk ve 0707 Gri tonları ile her tarza uygun ahşap efekti elde edilir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-metal-renkler",
+    "name": "Bianca Stella Metalik Efekt Boyası",
+    "badge": "Işıltılı Metal Dokusu",
+    "tag": "Altın, Gümüş, Bronz, Antrasit & Sedef",
+    "deptId": "biancaTransformSection",
+    "category": "metalik-efekt",
+    "thumb": "assets/bianca-official/bianca-stella-metal-renkler-packshot.png",
+    "desc": "Mobilya ayakları, kulplar, banyo bataryaları, çerçeveler ve metal aksamlar için zengin pigmentli metalik sedef efekt boyası.",
+    "meta": [
+      "Altın, Bakır, Bronz, Gümüş, Antrasit ve Sedef",
+      "Kararma ve Paslanmaya Karşı Koruyucu",
+      "Yüksek Örtücülük ve Parlak Yansıma",
+      "Astar İstemeyen Metal & Plastik Tutunması"
+    ],
+    "coverage": "4 – 5 m² / 0.25 Litre",
+    "sizes": [
+      "0.25 Litre Kutu",
+      "0.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Dekoratif Metalik Akrilik",
+      "packaging": "0.25 L · 0.50 L Kutu",
+      "consumption": "50 – 60 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Batarya ve Metal Detaylarda Şık Vurgu",
+        "body": "Banyo ve mutfaklarda krom veya sararmış bataryaları, kulp ve avize gövdelerini modern antrasit, mat altın veya bronz dokuya dönüştürmek için idealdir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-mermer-efekt-spreyi",
+    "name": "Bianca Stella Mermer Efekt Spreyi",
+    "badge": "Organik Kılcal Damar Dokusu",
+    "tag": "Mutfak Tezgahı & Sehpa Mermer Deseni",
+    "deptId": "biancaTransformSection",
+    "category": "mermer-efekt",
+    "thumb": "assets/bianca-official/bianca-stella-mermer-efekt-spreyi.png",
+    "desc": "Tezgah, masa, sehpa veya fayans zeminlerde Calacatta, Carrara ve Nero Marquina mermer damarı görünümü oluşturan özel lif püskürtme spreyi.",
+    "meta": [
+      "Siyah, Beyaz, Gümüş ve Altın Damar Seçenekleri",
+      "Özel İnce Lif Nozülü ile Doğal Mermer Deseni",
+      "Kolay Püskürtme ve Hızlı Kuruma",
+      "Maximo Sıvı Cam ile Zırhlanan Pürüzsüz Yüzey"
+    ],
+    "coverage": "2 – 3 m² / 400 ml Sprey",
+    "sizes": [
+      "400 ml Aerosol Sprey Kutu"
+    ],
+    "specs": {
+      "standard": "Aerosol Mermer Efekt",
+      "packaging": "400 ml Sprey Kutu",
+      "consumption": "1 Kutu / 2–3 m²",
+      "mixingRatio": "Kullanmadan önce 2 dk çalkalayınız",
+      "potLife": "Dokunma: 15 dk · Üzerine Sıvı Cam: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Calacatta Mermer Efekti Nasıl Yapılır?",
+        "body": "1. Tezgah Bianca Stella Beyaz ile 2 kat boyanır ve 4 saat kuruması beklenir.\n2. Mermer Efekt Spreyi 30-40 cm mesafeden yatay açıyla hafifçe püskürtülerek doğal damarlar atılır.\n3. Damar yoğunluğu göz zevkine göre ayarlanır; 24 saat sonra üzeri Bianca Maximo Sıvı Cam ile kaplanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-beyaz-esya",
+    "name": "Bianca Stella Beyaz Eşya & Radyatör Boyası",
+    "badge": "Isı & Nem Dayanımlı",
+    "tag": "Buzdolabı, Bulaşık Makinesi & Panel Radyatör",
+    "deptId": "biancaTransformSection",
+    "category": "tum-yuzeyler",
+    "thumb": "assets/bianca-official/stella-1-litre_2025-7.png",
+    "desc": "Buzdolabı, çamaşır makinesi, termosifon, döküm veya panel radyatör gibi metal ve emaye yüzeylerin paslanmadan modern renklere dönüştürülmesini sağlayan esnek saf akrilik boya.",
+    "meta": [
+      "80°C Radyatör Isısına Dayanıklı",
+      "Emaye ve Sac Metalde Güçlü Tutunma",
+      "Sarı Pas Lekelerini Kapatan Güçlü Formül",
+      "Kokusuz ve Leke Tutmaz"
+    ],
+    "coverage": "10 – 12 m² / Litre",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Termal Dirençli Saf Akrilik",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L",
+      "mixingRatio": "İnceltilmez",
+      "potLife": "Katlar arası: 3 saat · Radyatör çalıştırma: 48 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Radyatör Boyama Öncesi Dikkat Edilecekler",
+        "body": "Petekler soğukken boyanmalı, varsa kabaran eski paslı boyalar tel fırça ile temizlenmelidir. Boya tamamlandıktan sonra en az 48 saat kalorifer yakılmamalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-maximo-sivi-cam-parlak",
+    "name": "Bianca Maximo 2K Sıvı Cam (Parlak)",
+    "badge": "2 Bileşenli Solvent Bazlı Zırh",
+    "tag": "Mutfak Tezgahı, Duşakabin & Islak Zemin Zırhı",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-cam",
+    "thumb": "assets/bianca-official/bianca-maximo-sivi-cam-packshot.png",
+    "desc": "Mutfak tezgahları, duş içi fayanslar ve ağır zemin trafiği için kimyasal maddelere, çizilmeye ve sıcak tava/tencere ısısına karşı aşırı dirençli çift bileşenli solvent bazlı sıvı cam.",
+    "meta": [
+      "2 Bileşenli (A Komponent Boya + B Komponent Sertleştirici)",
+      "Sıcak Tencere ve Çizilmeye Karşı Üstün Mukavemet",
+      "Duş İçi ve Sürekli Su Gören Alanlarda %100 Su Geçirimsizlik",
+      "Kristal Berraklığında Cam Parlaklığı"
+    ],
+    "coverage": "6 – 8 m² / 1.00 kg Set (Çift Kat)",
+    "sizes": [
+      "0.50 kg Set (A+B)",
+      "1.00 kg Set (A+B)"
+    ],
+    "specs": {
+      "standard": "2K Solvent Based Polyurethane Glass",
+      "packaging": "0.50 kg (A+B) · 1.00 kg (A+B) Teneke Set",
+      "consumption": "120 – 150 gr / m² (çift kat)",
+      "mixingRatio": "A ve B bileşenleri kutu üzerindeki tam oranda karıştırılır",
+      "potLife": "Karışım ömrü: 45 dk · Katlar arası: 2–3 saat · Su teması: 48 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mutfak Tezgahında Sıcak Tencere ve Bıçak Dayanımı",
+        "body": "Bianca Maximo, kürlendikten sonra sert cam polimer yapısına ulaşır. Limon, sirke, çamaşır suyu, kahve ve yağ lekelerini gözeneklerine geçirmez; nemli bezle silindiğinde anında temizlenir."
+      },
+      {
+        "title": "2K Karışım Hazırlama ve Uygulama Kuralı",
+        "body": "A ve B bileşenleri temiz bir kapta 2-3 dakika yavaş devirde karıştırılmalıdır. Karışım hazırlandıktan sonra 45 dakika içerisinde kadife vernik rulo ile tek yönde uygulanmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-maximo-sivi-cam-mat",
+    "name": "Bianca Maximo 2K Sıvı Cam (İpeksi Mat)",
+    "badge": "2 Bileşenli İpeksi Mat Koruma",
+    "tag": "Parlama İstemeyen Tezgah & Zeminler İçin",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-cam",
+    "thumb": "assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png",
+    "desc": "Mutfak tezgahı ve seramik zeminlerde parlak yansıma istemeyen kullanıcılar için aynı üstün 2K çizilmezlik direncini ipeksi mat dokuyla sunan koruyucu sıvı cam.",
+    "meta": [
+      "Zarif İpeksi Mat Cam Bitişi",
+      "2 Bileşenli Solvent Bazlı Zırh Koruması",
+      "Kimyasal ve Su Lekelerine Karşı Tam Kalkan",
+      "Kaydırmazlık Hissi Veren Mat Yüzey"
+    ],
+    "coverage": "6 – 8 m² / 1.00 kg Set",
+    "sizes": [
+      "0.50 kg Set (A+B)",
+      "1.00 kg Set (A+B)"
+    ],
+    "specs": {
+      "standard": "2K Polyurethane Silk-Mat",
+      "packaging": "0.50 kg · 1.00 kg Teneke Set",
+      "consumption": "120 – 150 gr / m²",
+      "mixingRatio": "A + B tam oranlı karışım",
+      "potLife": "Karışım ömrü: 45 dk · Katlar arası: 2–3 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mat Seramik ve Tezgah Uyumunun Avantajı",
+        "body": "Göz alıcı parlamayı önler, özellikle beton veya mermer desenli mat yüzeylerde doğal taş hissini korurken leke tutmazlık kalkanı sağlar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-liquid-diamond-parlak",
+    "name": "Bianca Liquid Diamond Sıvı Elmas (Parlak)",
+    "badge": "Su Bazlı Kokusuz Elmas Koruması",
+    "tag": "Mobilya, Duvar Fayansı & Kapılar İçin Vernik",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-elmas",
+    "thumb": "assets/bianca-official/bianca-diamond-parlak-2.png",
+    "desc": "Su bazlı, kokusuz, tek bileşenli, sararma yapmayan ve boyanın çizilme ömrünü 2 katına çıkaran berrak sıvı elmas koruyucu cila.",
+    "meta": [
+      "Su Bazlı & Tamamen Kokusuz",
+      "Sararma Yapmayan UV Dirençli Şeffaf Tabaka",
+      "Tek Bileşenli Kolay Uygulama (Karışım Gerektirmez)",
+      "Mutfak Dolabı, Kapı ve Banyo Duvarlarında İdeal"
+    ],
+    "coverage": "10 – 12 m² / Litre (Çift Kat)",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Water-based Liquid Diamond Gloss",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 2 saat · Dokunma: 1 saat · Tam mukavemet: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Liquid Diamond Tercih Edilmeli?",
+        "body": "Mutfak dolapları, iç kapılar, masa ve komodin gibi su altında kalmayan ancak sık temas edilen yüzeylerde solvent kokusu olmadan maksimum koruma sağlar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-liquid-diamond-mat",
+    "name": "Bianca Liquid Diamond Sıvı Elmas (Mat)",
+    "badge": "Su Bazlı Kokusuz İpeksi Mat",
+    "tag": "Mobilya ve Ahşap Yüzeyler İçin Mat Cila",
+    "deptId": "biancaProtectionSection",
+    "category": "sivi-elmas",
+    "thumb": "assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png",
+    "desc": "Stella boya ile boyanmış mobilya ve ahşap yüzeylerin mat dokusunu bozmadan parlamayan elmas koruma katmanı oluşturan su bazlı cila.",
+    "meta": [
+      "Parlamayan Doğal Mat Bitiş",
+      "Parmak İzi ve Toz Tutmayan Doku",
+      "Su Bazlı, Çevre Dostu ve Kokusuz",
+      "Kolay Silinebilir Pürüzsüz Katman"
+    ],
+    "coverage": "10 – 12 m² / Litre",
+    "sizes": [
+      "0.50 Litre Kutu",
+      "1.00 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Water-based Liquid Diamond Matte",
+      "packaging": "0.5 L · 1.0 L Kutu",
+      "consumption": "10 – 12 m² / L",
+      "mixingRatio": "İnceltilmez",
+      "potLife": "Katlar arası: 2 saat · Kürlenme: 7 gün",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Mat Mobilyalarda Kalıcı Temizlik Kolaylığı",
+        "body": "Mat boyalı yüzeylerin temizlenirken parlamasını veya yağ lekelerinin gözeneklere işlemesini engeller."
+      }
+    ]
+  },
+  {
+    "id": "bianca-silfex-silikon-sokucu",
+    "name": "Bianca Silfex Çok Amaçlı Silikon Sökücü",
+    "badge": "Boya Öncesi Silikon & Mastik Çözücü",
+    "tag": "Lavabo, Küvet & Tezgah Kenarı Temizliği",
+    "deptId": "biancaPrepSection",
+    "category": "temizleyici-sokucu",
+    "thumb": "assets/bianca-official/bianca-silfex-silikon-sokucu.png",
+    "desc": "Boya tutunmasını engelleyen eski silikon, akrilik mastik ve tutkal artıklarını yüzeyi çizmeden 10 dakikada jelleştirerek söken güçlü solüsyon.",
+    "meta": [
+      "Eski ve Küflü Silikonları Anında Yumuşatır",
+      "Seramik, Akrilik Küvet ve Cama Zarar Vermez",
+      "Boya Öncesi Silikonsuz Kusursuz Kenarlar",
+      "Spatula ile Zahmetsiz Temizlik"
+    ],
+    "coverage": "1 Şişe (500 ml) / Yaklaşık 20–30 metre derz",
+    "sizes": [
+      "500 ml Şişe"
+    ],
+    "specs": {
+      "standard": "Özel Silikon & Mastik Çözücü",
+      "packaging": "500 ml Şişe",
+      "consumption": "1 Şişe / 20–30 metre derz hattı",
+      "mixingRatio": "Kullanıma hazır",
+      "potLife": "Etki süresi: 10–15 dakika",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Boya Öncesi Silikon Neden Mutlaka Sökülmelidir?",
+        "body": "Silikon üzerine hiçbir boya tutunamaz, boya çekilme (balıkgözü) yapar. Bianca Silfex ile eski silikon tamamen temizlenmeli, boya ve sıvı cam işlemi bittikten sonra yeni silikon çekilmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ozel-temizleyici",
+    "name": "Bianca Stella Özel Yüzey Temizleyici",
+    "badge": "Yağ, Kireç & Wax Arındırıcı",
+    "tag": "Boya Öncesi Yüzey Yağsızlaştırma",
+    "deptId": "biancaPrepSection",
+    "category": "temizleyici-sokucu",
+    "thumb": "assets/bianca-official/silfex-1.jpg",
+    "desc": "Mutfak fayanslarındaki yanmış yağları, banyodaki sabun ve kireç kalıntılarını sıfırlayarak Bianca Stella boyanın yüzeye %100 yapışmasını sağlayan profesyonel hazırlık solüsyonu.",
+    "meta": [
+      "Ağır Mutfak Yağı ve Kireç Sökücü",
+      "Durulama Sonrası Kalıntı Bırakmaz",
+      "Boya Tutunmasını %40 Artırır",
+      "Fayans, Granit, Mobilya ve Cam Uyumlu"
+    ],
+    "coverage": "1 Şişe (750 ml) / 30 – 40 m² Alan",
+    "sizes": [
+      "750 ml Sprey Şişe"
+    ],
+    "specs": {
+      "standard": "Endüstriyel Yüzey Yağsızlaştırıcı",
+      "packaging": "750 ml Sprey Şişe",
+      "consumption": "1 Şişe / 30–40 m²",
+      "mixingRatio": "Püskürtülüp süngerle ovulur, durulanır",
+      "potLife": "Bekleme: 2–3 dk ardından durulama",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Dönüşüm Boyasında Başarının 1 Numaralı Sırrı",
+        "body": "Gözle görülmeyen yağ ve kireç tabakası temizlenmezse boya altındaki kire yapışır. Bianca Özel Temizleyici ile yıkanıp durulanan zeminlerde boya ömrü 10+ yıla çıkar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-akrilik-macun",
+    "name": "Bianca Stella Dolgu & Çatlak Macunu",
+    "badge": "Esnek Su Bazlı Tamir Macunu",
+    "tag": "Mobilya Delik & Derz Kırık Dolgusu",
+    "deptId": "biancaPrepSection",
+    "category": "tamir-macun",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "desc": "Mutfak dolaplarında yer değiştiren kulp delikleri, vida boşlukları, kırık seramik kenarları ve derz çatlaklarını pürüzsüzce dolduran zımparalanabilir esnek macun.",
+    "meta": [
+      "Çökme ve Çatlama Yapmayan Dolgu",
+      "Kolay Zımparalanır ve Sıfır Kot Oluşturur",
+      "Stella Boya ile Birebir Uyumlu",
+      "İç ve Dış Mekan Ahşap & Seramik Uyumlu"
+    ],
+    "coverage": "Derz ve boşluk büyüklüğüne göre",
+    "sizes": [
+      "250 gr Tüp",
+      "500 gr Kutu"
+    ],
+    "specs": {
+      "standard": "Akrilik Tamir Macunu",
+      "packaging": "250 gr Tüp · 500 gr Kutu",
+      "consumption": "Boşluk hacmine bağlı",
+      "mixingRatio": "Kullanıma hazır spatula ile",
+      "potLife": "Kuruma: 2–3 saat · Zımparalama: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kulp Değişimi ve Vida Boşluğu Kapatma",
+        "body": "Eski kulpların deliklerine macun spatula ile bastırılarak doldurulur, 4 saat sonra ince diş zımpara ile sıfırlanıp üzerine doğrudan Stella boyanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-rutubetkes-boya",
+    "name": "Bianca Rutubetkes Nem & Rutubet Boyası",
+    "badge": "Termal İzolasyonlu Nem Bariyeri",
+    "tag": "Banyo, Bodrum & Nemli Duvar Koruması",
+    "deptId": "biancaPrepSection",
+    "category": "tamir-macun",
+    "thumb": "assets/bianca-official/bianca-rutubetkes-packshot.png",
+    "desc": "İç cephelerde nem, rutubet ve küf oluşumunu kökten engelleyen, mikro cam kürecikli yapısıyla ısı yalıtımı sağlayıp terlemeyi önleyen özel yalıtım boyası.",
+    "meta": [
+      "Nem, Rutubet ve Küfe Karşı Kesin Çözüm",
+      "Mikro Cam Kürecikli Termal Yalıtım",
+      "Duvar Terlemesini ve Kararmayı Önler",
+      "Banyo, Bodrum ve Soğuk Duvarlarda Etkili"
+    ],
+    "coverage": "3 – 4 m² / Litre (Çift Kat)",
+    "sizes": [
+      "1.00 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "Anti-Moisture Thermal Barrier",
+      "packaging": "1.0 L · 2.5 L Kutu",
+      "consumption": "250 – 300 ml / m² (çift kat)",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 6 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Rutubetli ve Küflü Duvarlarda Uygulama",
+        "body": "Kabarmış eski boyalar kazınır, zemin zımparalanıp kurulanır. Bianca Rutubetkes rulo ile 2 kat uygulanır. Üzerine istenirse Bianca Stella veya iç cephe boyası sürülebilir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-kadife-rulo-seti",
+    "name": "Bianca Stella Kadife Vernik Rulo Seti",
+    "badge": "İz Bırakmayan Kadife Doku",
+    "tag": "10 cm Saplı Rulo + 2 Adet Yedek Başlık",
+    "deptId": "biancaToolsSection",
+    "category": "rulo-firca",
+    "thumb": "assets/bianca-official/firca-1-1024x759.png",
+    "desc": "Stella boya ve Maximo sıvı cam uygulamalarında hava kabarcığı ve portakal kabuğu dokusu yapmayan, ultra pürüzsüz finiş sağlayan kısa tüylü kadife rulo seti.",
+    "meta": [
+      "Tüy Dökmeyen Özel Dokuma Kadife Kumaş",
+      "Boya ve Sıvı Camda Sıfır Rulo İzi",
+      "10 cm Genişlik ile Dolap ve Fayans Boyama Konforu",
+      "Ergonomik Sap ve Değiştirilebilir Rulo Başlıkları"
+    ],
+    "coverage": "1 Set (Sap + 2 Rulo)",
+    "sizes": [
+      "10 cm Saplı Set (Sap + 2 Rulo Başlığı)",
+      "Yedek 5'li Rulo Paketi"
+    ],
+    "specs": {
+      "standard": "Profesyonel Vernik & Akrilik Rulosu",
+      "packaging": "10 cm Sap + 2 Yedek Rulo",
+      "consumption": "1 Rulo ile ortalama 10–15 m²",
+      "mixingRatio": "Kullanım öncesi yıkanıp kurulanır (tüy sıfırlama)",
+      "potLife": "Yıkanabilir ve tekrar kullanılabilir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusursuz Sonuç İçin Rulo Kullanım Kuralı",
+        "body": "Rulo ilk kullanılmadan önce koli bandına sarılıp çekilerek üretim tozu arındırılmalı, boyaya batırıldıktan sonra tavada taranarak fazla boya bırakılmalıdır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-ipek-kestirme-fircasi",
+    "name": "Bianca Stella Saf İpek Kestirme Fırçası",
+    "badge": "Çizgi Bırakmayan Saf Kıl",
+    "tag": "Köşe, Kenar & Detay Boyama Fırçası",
+    "deptId": "biancaToolsSection",
+    "category": "rulo-firca",
+    "thumb": "assets/bianca-official/firca-2.png",
+    "desc": "Dolap kapak çıtaları, fayans derz dipleri, priz kenarları ve süpürgeliklerde fırça izi bırakmayan konik uçlu profesyonel ipek fırça.",
+    "meta": [
+      "Saf İpek Yumuşak Kıl Yapısı",
+      "Paslanmaz Çelik Yüksük & Ahşap Sap",
+      "Derz Dipleri ve Detaylarda Kusursuz Kestirme",
+      "Su Bazlı ve Solvent Boya Uyumlu"
+    ],
+    "coverage": "Detay kestirme uygulamaları",
+    "sizes": [
+      "No: 2 (40 mm)",
+      "No: 2.5 (50 mm)",
+      "No: 3 (60 mm)"
+    ],
+    "specs": {
+      "standard": "Ultra Fine Filament",
+      "packaging": "No: 2 / 2.5 / 3 Tekli Ambalaj",
+      "consumption": "Çok kullanımlık",
+      "mixingRatio": "Doğrudan kullanılır",
+      "potLife": "Su ile yıkanarak defalarca kullanılır",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kestirme Yaparken Dikkat Edilecekler",
+        "body": "Fırça ile köşeler boyanır boyanmaz üzerinden kadife rulo ile hafifçe geçilirse fırça izi tamamen kaybolur ve tek parça yüzey görünümü sağlanır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-budak-damar-aparati",
+    "name": "Bianca Stella Ahşap Budak & Damar Aparatı",
+    "badge": "Doğal Ağaç Damar Deseni",
+    "tag": "Ahşap Efekt Uygulama Tarağı",
+    "deptId": "biancaToolsSection",
+    "category": "efekt-aparatlari",
+    "thumb": "assets/bianca-official/bianca-stella-yardimci-urunler.png",
+    "desc": "Stella Ahşap Desen Boyası yaşken çekilerek masif ağaç gövdesi, meşe ve ceviz damarları ile doğal budak halkaları çıkaran esnek kauçuk aparat.",
+    "meta": [
+      "Ergonomik Tutma Kulplu Kauçuk Doku",
+      "Hafif Bilek Hareketi ile Sonsuz Ahşap Deseni",
+      "Masa, Sehpa, Kapı ve Fayans Uyumlu",
+      "Su ile Kolay Temizlenir"
+    ],
+    "coverage": "Sınırsız kullanım",
+    "sizes": [
+      "Standart 10 cm & 15 cm Çiftli Set"
+    ],
+    "specs": {
+      "standard": "Esnek Kauçuk Budak Tarağı",
+      "packaging": "1 Adet Damar Tarağı",
+      "consumption": "Ömür boyu kullanım",
+      "mixingRatio": "Doğrudan kullanılır",
+      "potLife": "Her kullanım sonrası nemli bezle silinir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Budak Deseni Nasıl Çıkarılır?",
+        "body": "Aparatı yüzeye 45 derece açıyla koyup aşağı doğru çekerken bileğinizi öne ve arkaya hafifçe yuvarladığınızda her salınımda bir budak halkası oluşur."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-maskeleme-bandi",
+    "name": "Bianca Stella Hassas Maskeleme Bandı",
+    "badge": "Boya Sızdırmayan Wash Tape",
+    "tag": "Sıfır İnce Çizgi & Kalıntı Bırakmayan Bant",
+    "deptId": "biancaToolsSection",
+    "category": "yardimci-setler",
+    "thumb": "assets/bianca-official/bianca-maskeleme-bandi-packshot.png",
+    "desc": "Tezgah kenarları, süpürgelikler, cam fitilleri ve priz çevrelerinde boyanın altına sızmasını engelleyen ve söküldüğünde alt boyayı kaldırmayan Japon pirinç kağıdı maskeleme bandı.",
+    "meta": [
+      "Boya Sızdırmaz Keskin Çizgi Teknolojisi",
+      "60 Güne Kadar İzsiz ve Kalıntısız Söküm",
+      "Hassas Yüzeyleri ve Mobilya Kaplamasını Koparmaz",
+      "Nem ve Solvent Dirençli"
+    ],
+    "coverage": "25 mm × 50 metre / Rulo",
+    "sizes": [
+      "25 mm × 50 m",
+      "38 mm × 50 m"
+    ],
+    "specs": {
+      "standard": "Precision Washi Masking Tape",
+      "packaging": "50 Metre Rulo",
+      "consumption": "1 Rulo = 50 Metre",
+      "mixingRatio": "Kendinden yapışkanlı",
+      "potLife": "Boya kurumadan hemen önce sökülmelidir",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Bant Ne Zaman Sökülmelidir?",
+        "body": "Bant boyanın son katı atıldıktan sonra boya henüz tamamen kurumadan (hafif yaşken) 45 derecelik açıyla çekilerek sökülmelidir. Bu sayede keskin ve jilet gibi kenar çizgisi elde edilir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-stella-komple-donusum-seti",
+    "name": "Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti",
+    "badge": "Eksiksiz Uygulama Kiti",
+    "tag": "Boya + Sıvı Cam + Temizleyici + Rulo + Fırça + Bant",
+    "deptId": "biancaToolsSection",
+    "category": "yardimci-setler",
+    "thumb": "assets/bianca-official/her-seyi-ambalaj.png",
+    "desc": "Mutfak dolabı, tezgah ve banyo fayanslarını baştan sona dönüştürmek için gereken tüm ürünlerin (Boya, Maximo Sıvı Cam, Özel Temizleyici, Kadife Rulo, İpek Fırça, Bant, Tava ve Zımpara) bir arada bulunduğu profesyonel paket.",
+    "meta": [
+      "İhtiyacınız Olan Her Şey Tek Kutuda",
+      "Renk ve Mat/Parlak Seçenekleriyle Özelleştirilebilir",
+      "Balçova Showroom Renk Danışmanlığı",
+      "Bireysel Uygulayıcılar İçin %100 Başarı Garantili Set"
+    ],
+    "coverage": "1 Mutfak veya 1 Banyo Dönüşüm Paketi (10 – 15 m²)",
+    "sizes": [
+      "Standart Mutfak Paketi (1L Boya + 0.5kg Maximo + Set)",
+      "Büyük Banyo Paketi (2.5L Boya + 1kg Maximo + Set)"
+    ],
+    "specs": {
+      "standard": "Full Conversion Kit",
+      "packaging": "Özel Koli Seti",
+      "consumption": "1 Set / 1 Komple Mekan",
+      "mixingRatio": "Tüm parçalar kullanıma hazır",
+      "potLife": "Uygulama kılavuzu kutu içinde",
+      "logistics": "Balçova Showroom & Adrese Aynı Gün Kargo"
+    },
+    "accordions": [
+      {
+        "title": "Set İçeriğinde Neler Var?",
+        "body": "• Bianca Stella Boya (İstediğiniz Renk)\n• Bianca Maximo 2K Sıvı Cam (Parlak veya Mat)\n• Bianca Özel Yüzey Temizleyici Sprey\n• 10 cm Kadife Vernik Rulo & Sapı\n• 2 Adet Yedek Kadife Rulo\n• No: 2.5 Saf İpek Kestirme Fırçası\n• 25 mm Hassas Maskeleme Bandı\n• Boya Tavası & Karıştırma Çubuğu\n• P220 Zımpara Süngeri & Uygulama Kılavuzu"
+      }
+    ]
+  },
+  {
+    "id": "bianca-vals-ipek-mat",
+    "name": "Bianca Vals İpek Mat Silinebilir İç Cephe Boyası",
+    "badge": "Leke Tutmaz Teflon Katkılı",
+    "tag": "Tam Silinebilir Lüks İç Cephe Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-vals-ipek-mat-packshot.png",
+    "desc": "Duvarlarda ipeksi mat zarafet sunan, kahve, çay, ketçap ve çocuk kalemi lekelerinin ıslak bezle kolayca silindiği, nefes alan lüks iç cephe boyası.",
+    "meta": [
+      "Teflon Katkılı Üstün Silinebilirlik",
+      "Yüksek Örtücülük ve Kolay Yayılma",
+      "Colorate Renklendirme ile 10.000+ Renk Formülü",
+      "Antibakteriyel & Küf Dirençli"
+    ],
+    "coverage": "14 – 16 m² / Litre (Tek Kat)",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 / TS EN 13300 Sınıf 1",
+      "packaging": "2.5 L · 7.5 L · 15 L Plastik Kova",
+      "consumption": "70 – 90 ml / m² (tek kat)",
+      "mixingRatio": "%10 – 15 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Teflon Koruma ve Silinebilirlik Avantajı",
+        "body": "Duvar yüzeyinde oluşturduğu mikro film sayesinde sıvı lekelerin sıvanın içine işlemesini engeller; mikrofiber bezle silindiğinde parlamaz ve renk atmaz."
+      }
+    ]
+  },
+  {
+    "id": "bianca-vals-mat",
+    "name": "Bianca Vals Mat İç Cephe Boyası",
+    "badge": "Kusur Kapatıcı Mat Bitiş",
+    "tag": "Silinebilir Mat İç Cephe Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-vals-mat-packshot.png",
+    "desc": "Işık yansımasını önleyerek yüzeydeki sıva ve alçı kusurlarını gizleyen, kadife mat dokusu ve yüksek nefes alma özelliğiyle ferah iç mekanlar yaratan boya.",
+    "meta": [
+      "Kusur Gizleyen Kadife Mat Optik Doku",
+      "Kolay Silinebilir ve Leke Tutmaz",
+      "Yüksek Örtücülük & Düşük Sarfiyat",
+      "VOC Uyumlu Kokusuz Formül"
+    ],
+    "coverage": "13 – 15 m² / Litre (Tek Kat)",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 / TS EN 13300 Mat",
+      "packaging": "2.5 L · 7.5 L · 15 L Plastik Kova",
+      "consumption": "75 – 95 ml / m² (tek kat)",
+      "mixingRatio": "%10 – 15 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Mat İç Cephe Boyası?",
+        "body": "Geniş salon ve koridorlarda tavan ve duvar ışık kırılmalarını emerek homojen, dingin ve modern bir mimari zemin sağlar."
+      }
+    ]
+  },
+  {
+    "id": "bianca-artistico-sedef-boya",
+    "name": "Bianca Madreperla İtalyan Sedef Efekt Boyası",
+    "badge": "İtalyan Efekt Işıltısı",
+    "tag": "Dekoratif Duvar & Tavan Sedef Kaplaması",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-madreperla-sedef-packshot.png",
+    "desc": "Işığın geliş açısına göre farklı ışıltılar ve renk tonları sergileyen, salon ve yatak odası vurgu duvarları için İtalyan sedef efekt boyası.",
+    "meta": [
+      "Göz Alıcı İnci & Sedef Dokusu",
+      "Mala, Sünger veya Fırça ile Farklı Desenler",
+      "Kokusuz ve Çevre Dostu Su Bazlı Formül",
+      "Gümüş, Altın ve Şampanya Baz Seçenekleri"
+    ],
+    "coverage": "8 – 10 m² / Litre",
+    "sizes": [
+      "1.00 Litre Kutu",
+      "2.50 Litre Kova"
+    ],
+    "specs": {
+      "standard": "Dekoratif Efekt Boya",
+      "packaging": "1.0 L · 2.5 L Ambalaj",
+      "consumption": "100 – 120 ml / m²",
+      "mixingRatio": "İnceltilmez · Kullanıma hazır",
+      "potLife": "Katlar arası: 4 saat · Tam kuruma: 24 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Efekt Uygulama Teknikleri",
+        "body": "Zemin uygun renkle boyandıktan sonra Madreperla özel sünger veya plastik mala ile dairesel hareketlerle uygulanarak ışık saçan gölgeli derinlik yaratılır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-panel-kapi-boyasi",
+    "name": "Bianca Panel Kapı Boyası (Su Bazlı)",
+    "badge": "Sararmaz Yarı Mat Bitiş",
+    "tag": "Amerikan Panel & Ahşap Kapı Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "ic-cephe",
+    "thumb": "assets/bianca-official/bianca-panel-kapi-packshot.png",
+    "desc": "Amerikan panel kapılar, masif kapılar ve ahşap doğramalar için zamanla sararmayan, çizilme direnci yüksek ve su bazlı kokusuz kapı boyası.",
+    "meta": [
+      "Zamanla Sararmayan UV Dirençli Formül",
+      "Ahşap Dokusunu Korumalı İpeksi Bitiş",
+      "Kokusuz ve Hızlı Kuruyan Su Bazlı Yapı",
+      "Kolay Silinebilir ve Darbeye Dayanıklı"
+    ],
+    "coverage": "12 – 14 m² / Litre (Tek Kat)",
+    "sizes": [
+      "0.75 Litre Kutu",
+      "2.50 Litre Kutu"
+    ],
+    "specs": {
+      "standard": "TS EN ISO 2813",
+      "packaging": "0.75 L · 2.5 L Kutu",
+      "consumption": "75 – 90 ml / m² (tek kat)",
+      "mixingRatio": "%5 temiz su ile inceltilir",
+      "potLife": "Katlar arası: 3–4 saat · Dokunma: 1 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Panel Kapı Boyama Yöntemi",
+        "body": "Kapı kolları ve menteşeler maskelenir. Girintili panel çizgileri ipek kestirme fırçası ile boyandıktan sonra düz yüzeyler kadife rulo ile taranır."
+      }
+    ]
+  },
+  {
+    "id": "bianca-profesyonel-tavan",
+    "name": "Bianca Profesyonel Tavan Boyası",
+    "badge": "Ekstra Beyaz Mat",
+    "tag": "Damlatmayan & Örtücü Tavan Boyası",
+    "deptId": "biancaArchitecturalSection",
+    "category": "tavan-astar",
+    "thumb": "assets/bianca-official/bianca-tavan-plastik-packshot.png",
+    "desc": "Tavanlarda sıfır parlama, yüksek matlık, ekstra beyazlık ve rulo uygulamasında damlama yapmayan yüksek nefes alma kabiliyetli tavan boyası.",
+    "meta": [
+      "Ekstra Kar Beyazı Görünüm",
+      "Işık Yansıtmayan Mat Bitiş",
+      "Damlama ve Sıçrama Yapmayan Viskozite",
+      "Yüksek Buhar Geçirgenliği ile Küf Önleyici"
+    ],
+    "coverage": "10 – 12 m² / kg",
+    "sizes": [
+      "3.5 kg Kova",
+      "10 kg Kova",
+      "17.5 kg Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 Tavan Standardı",
+      "packaging": "3.5 kg · 10 kg · 17.5 kg Kova",
+      "consumption": "150 – 200 gr / m² (çift kat)",
+      "mixingRatio": "%15 – 20 su ile inceltilir",
+      "potLife": "Katlar arası: 2 saat · Kuruma: 4 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Kusursuz Tavan Boyama İpucu",
+        "body": "Tavanlar odadaki ana ışık (pencere) yönüne dik taranmalı, son kat pencereye paralel çekilerek ışık gölgeleri tamamen yok edilmelidir."
+      }
+    ]
+  },
+  {
+    "id": "bianca-universal-donusum-astari",
+    "name": "Bianca Universal Dönüşüm Astarı",
+    "badge": "Güçlü Tutunma Köprüsü",
+    "tag": "Sentetikten Su Bazlıya Geçiş Astarı",
+    "deptId": "biancaArchitecturalSection",
+    "category": "tavan-astar",
+    "thumb": "assets/bianca-official/aile_2024.png",
+    "desc": "Daha önce yağlı boya veya saten boya yapılmış duvarların su bazlı boyaya dönüştürülmesinde zemin ile yeni boya arasında güçlü tutunma köprüsü oluşturan örtücü astar.",
+    "meta": [
+      "Sentetik Boyadan Su Bazlıya Güvenli Geçiş",
+      "Eski Koyu Renkleri Kapatarak Boya Tasarrufu Sağlar",
+      "Yüzey Emiciliğini Dengeler",
+      "Duvar, Alçı ve Sıva Uyumlu"
+    ],
+    "coverage": "12 – 15 m² / Litre",
+    "sizes": [
+      "2.50 Litre Kova",
+      "7.50 Litre Kova",
+      "15.00 Litre Kova"
+    ],
+    "specs": {
+      "standard": "TS 5808 Astar",
+      "packaging": "2.5 L · 7.5 L · 15 L Kova",
+      "consumption": "80 – 100 ml / m²",
+      "mixingRatio": "%10 su ile inceltilir",
+      "potLife": "Katlar arası: 4 saat · Kuruma: 12 saat",
+      "logistics": "Balçova Showroom & Urla Depo Stok"
+    },
+    "accordions": [
+      {
+        "title": "Neden Dönüşüm Astarı Kullanılmalıdır?",
+        "body": "Eski yağlı boya üzerine doğrudan su bazlı boya sürülürse soyulma yapar. Bianca Universal Astar yüzeyi mikro düzeyde pürüzlendirerek yeni boyanın kopmasını engeller."
+      }
+    ]
+  }
+];
+
+  var DEPARTMENTS_DATA = [
+    { 
+      id: "biancaTransformSection", 
+      short: "Dönüşüm Boyaları", 
+      full: "Dönüşüm Boyaları & Efektler", 
+      sub: "Saf akrilik boya, ahşap desen, metalik ve mermer sprey",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/><path d="m5 2 5 5"/><path d="M2 13h15"/><path d="M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z"/></svg>',
+      pillsId: "transformMenuPills" 
+    },
+    { 
+      id: "biancaProtectionSection", 
+      short: "Sıvı Cam & Elmas", 
+      full: "Sıvı Cam & Sıvı Elmas Zırh", 
+      sub: "2K Maximo solvent bazlı cam ve su bazlı elmas koruma",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>',
+      pillsId: "protectionMenuPills" 
+    },
+    { 
+      id: "biancaPrepSection", 
+      short: "Yüzey Hazırlık", 
+      full: "Yüzey Hazırlık & Kimyasallar", 
+      sub: "Silfex silikon sökücü, yağ arındırıcı ve tamir macunu",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+      pillsId: "prepMenuPills" 
+    },
+    { 
+      id: "biancaToolsSection", 
+      short: "Uygulama Setleri", 
+      full: "Uygulama Ekipmanları & Setler", 
+      sub: "Kadife vernik rulo, ipek fırça, budak tarağı ve bant",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 3.26-1.25-1.25a2.1 2.1 0 0 0-3 0l-4.5 4.5 4.25 4.25 4.5-4.5c.83-.83.83-2.17 0-3Z"/></svg>',
+      pillsId: "toolsMenuPills" 
+    },
+    { 
+      id: "biancaArchitecturalSection", 
+      short: "Mimari Boyalar", 
+      full: "Mimari & İç Cephe Boyaları", 
+      sub: "Vals ipek mat silinebilir boya, tavan ve geçiş astarı",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+      pillsId: "architecturalMenuPills" 
+    }
+  ];
+
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
+  var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
+  var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
+  var deptDrawer = document.getElementById("pvDeptDrawer");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
+
+  var currentActiveTab = "biancaTransformSection";
+  var currentProduct = null;
+  var selectedSize = "";
+
+  var panels = {
+    "biancaTransformSection": document.getElementById("biancaTransformSection"),
+    "biancaProtectionSection": document.getElementById("biancaProtectionSection"),
+    "biancaPrepSection": document.getElementById("biancaPrepSection"),
+    "biancaToolsSection": document.getElementById("biancaToolsSection"),
+    "biancaArchitecturalSection": document.getElementById("biancaArchitecturalSection")
+  };
+
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+  }
+
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  function switchTab(tabId) {
+    if (!panels[tabId]) return;
+    currentActiveTab = tabId;
+
+    subnavLinks.forEach(function(link) {
+      var match = (link.getAttribute("data-target") === tabId);
+      link.classList.toggle("active", match);
+      link.setAttribute("aria-selected", match ? "true" : "false");
+    });
+
+    Object.keys(panels).forEach(function(k) {
+      if (panels[k]) {
+        if (k === tabId) {
+          panels[k].style.display = "";
+          panels[k].classList.add("active");
+        } else {
+          panels[k].style.display = "none";
+          panels[k].classList.remove("active");
+        }
+      }
+    });
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === tabId; });
+    if (dept && deptTriggerLabel) {
+      deptTriggerLabel.textContent = dept.short;
+    }
+
+    renderDeptDrawer(tabId);
+    syncMobileFilterRail(tabId);
+  }
+
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var target = link.getAttribute("data-target");
+      switchTab(target);
+      var origin = getSubnavOrigin();
+      if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+        window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+      }
+    });
+  });
+
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
+    DEPARTMENTS_DATA.forEach(function(d) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      var isSelected = (d.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + d.full + '</span>' +
+            '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
+
+      btn.addEventListener("click", function() {
+        switchTab(d.id);
+        closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      });
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
+        e.preventDefault();
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      });
+
+      filterRail.appendChild(chip);
+    });
+  }
+
+  function openDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.add("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    deptTrigger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDeptDrawer() {
+    if (!deptDrawerBackdrop || !deptTrigger) return;
+    deptDrawerBackdrop.classList.remove("is-open");
+    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    deptTrigger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      openDeptDrawer();
+    });
+  }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", closeDeptDrawer);
+  }
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("click", function(e) {
+      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
+    });
+  }
+
+  function setupCategoryFiltering(pillsContainerId, listContainerId) {
+    var container = document.getElementById(pillsContainerId);
+    var list = document.getElementById(listContainerId);
+    if (!container || !list) return;
+
+    var pills = container.querySelectorAll(".pv-menu-pill");
+    var rows = list.querySelectorAll(".pv-menu-row");
+
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        var filter = pill.getAttribute("data-filter");
+        pills.forEach(function(p) {
+          p.classList.remove("active");
+          p.setAttribute("aria-selected", "false");
+        });
+        pill.classList.add("active");
+        pill.setAttribute("aria-selected", "true");
+
+        rows.forEach(function(row) {
+          var cat = row.getAttribute("data-category");
+          if (cat === filter) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      });
+    });
+
+    var activePill = container.querySelector(".pv-menu-pill.active") || pills[0];
+    if (activePill) {
+      var initialFilter = activePill.getAttribute("data-filter");
+      rows.forEach(function(row) {
+        if (row.getAttribute("data-category") !== initialFilter) {
+          row.style.display = "none";
+        }
+      });
+    }
+  }
+
+  setupCategoryFiltering("transformMenuPills", "transformMenuList");
+  setupCategoryFiltering("protectionMenuPills", "protectionMenuList");
+  setupCategoryFiltering("prepMenuPills", "prepMenuList");
+  setupCategoryFiltering("toolsMenuPills", "toolsMenuList");
+  setupCategoryFiltering("architecturalMenuPills", "architecturalMenuList");
+
+  // MODAL ENGINE
+  var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCard = document.getElementById("pvModalCard");
+  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+
+  var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
+  var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductDesc = document.getElementById("modalProductDesc");
+  var modalSizeTrack = document.getElementById("modalSizeTrack");
+  var modalSpecStandard = document.getElementById("modalSpecStandard");
+  var modalGaugeStandardCaption = document.getElementById("modalGaugeStandardCaption");
+  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
+  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
+  var modalSpecMixing = document.getElementById("modalSpecMixing");
+  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
+  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
+  var modalWABtn = document.getElementById("modalWABtn");
+  var modalAccordions = document.getElementById("modalAccordions");
+
+  var isSheetDragging = false;
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var canDragFromScroll = false;
+
+  function openModal(productId) {
+    var p = BIANCA_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
+    if (!p) return;
+    currentProduct = p;
+    selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
+
+    modalProductImg.src = p.thumb;
+    modalProductImg.alt = p.name;
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "BİANCA STELLA · DÖNÜŞÜM SİSTEMLERİ";
+    modalProductTitle.textContent = p.name;
+    modalProductDesc.textContent = p.desc;
+
+    if (modalSpecStandard) modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
+    if (modalGaugeStandardCaption) modalGaugeStandardCaption.textContent = p.badge || "EN 71-3 Gıda & Oyuncak";
+    if (modalSpecConsumption) modalSpecConsumption.textContent = p.specs.consumption || p.coverage || "-";
+    if (modalSpecPackaging) modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
+    if (modalSpecMixing) modalSpecMixing.textContent = p.specs.mixingRatio || "İnceltilmez · Kullanıma hazır";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = p.specs.potLife || "Katlar arası: 2–3 saat";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
+
+    modalSizeTrack.innerHTML = "";
+    if (p.sizes && p.sizes.length > 0) {
+      p.sizes.forEach(function(size, idx) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+        btn.textContent = size;
+        btn.addEventListener("click", function() {
+          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          selectedSize = size;
+          updateWhatsAppUrl();
+        });
+        modalSizeTrack.appendChild(btn);
+      });
+    }
+
+    modalAccordions.innerHTML = "";
+    if (p.accordions && p.accordions.length > 0) {
+      p.accordions.forEach(function(acc, idx) {
+        var item = document.createElement("div");
+        item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
+        item.innerHTML = 
+          '<button type="button" class="pv-acc-header">' +
+          '  <span>' + acc.title + '</span>' +
+          '  <span class="pv-acc-icon">+</span>' +
+          '</button>' +
+          '<div class="pv-acc-body">' + acc.body + '</div>';
+
+        item.querySelector(".pv-acc-header").addEventListener("click", function() {
+          item.classList.toggle("active");
+        });
+        modalAccordions.appendChild(item);
+      });
+    }
+
+    updateWhatsAppUrl();
+
+    modalBackdrop.classList.add("open");
+    modalBackdrop.classList.add("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    try {
+      history.replaceState(null, "", "#urun-" + p.id);
+    } catch(e) {}
+  }
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove("open");
+    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    currentProduct = null;
+    resetSheetStyles();
+    try {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch(e) {}
+  }
+
+  function updateWhatsAppUrl() {
+    if (!currentProduct || !modalWABtn) return;
+    var text = "Merhaba, Bianca Stella " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    text += " için Balçova Yapı Market / Urla depo stok ve güncel fiyat bilgisi almak istiyorum.";
+    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      if (e.target === modalBackdrop) closeModal();
+    });
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && (modalBackdrop.classList.contains("is-open") || modalBackdrop.classList.contains("open"))) {
+      closeModal();
+    }
+  });
+
+  // Touch gesture physics for mobile bottom sheet dismissal
+  function onDragStart(e) {
+    if (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
+
+  function onDragMove(e) {
+    if ((!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
+
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+        modalCard.style.transition = "none";
+        modalCard.style.transform = "translateY(" + deltaY + "px)";
+        var progress = Math.min(1, deltaY / 360);
+        modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
+      }
+    }
+  }
+
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+    dragStartY = 0;
+
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      modalBackdrop.style.transition = "opacity 0.24s ease";
+      modalBackdrop.style.opacity = "0";
+      setTimeout(function() {
+        closeModal();
+      }, 240);
+    } else {
+      modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(0)";
+      modalBackdrop.style.transition = "opacity 0.25s ease";
+      modalBackdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
+    }
+  }
+
+  [modalHandleZone, modalTopBar, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    row.addEventListener("click", function() {
+      var pid = row.getAttribute("data-product-id");
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var pid = row.getAttribute("data-product-id");
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
+  function checkDeepLink() {
+    var hash = window.location.hash;
+    if (hash && hash.indexOf("#urun-") === 0) {
+      var pid = hash.replace("#urun-", "");
+      var p = BIANCA_PRODUCTS_DATA.find(function(item) { return item.id === pid; });
+      if (p) {
+        if (p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      }
+    }
+  }
+
+  switchTab("biancaTransformSection");
+  checkDeepLink();
+  window.addEventListener("popstate", checkDeepLink);
+
+})();
