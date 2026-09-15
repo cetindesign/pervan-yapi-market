@@ -1356,7 +1356,7 @@
         '<div class="pv-drawer-item-left">' +
           '<div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
           '<div class="pv-drawer-text-stack">' +
-            '<span class="pv-drawer-item-title">' + dept.full + '</span>' +
+            '<span class="pv-drawer-item-title">' + dept.short + '</span>' +
             '<span class="pv-drawer-item-sub">' + dept.sub + '</span>' +
           '</div>' +
         '</div>' +

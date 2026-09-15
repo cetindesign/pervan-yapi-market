@@ -102,7 +102,7 @@
     "id": "kaleLocksPanel",
     "short": "Kale Kilit & Barel",
     "full": "Kale Kilit & Çelik Kapı Barel Sistemleri",
-    "sub": "164 GNC tuzaklı barel, 157 EL tirajlı kilit, gömme kilitler",
+    "sub": "Tuzaklı bareller, tirajlı ve gömme kilit sistemleri",
     "pillsId": "kaleLocksMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>"
   },
@@ -110,7 +110,7 @@
     "id": "volkanOtomatsanPanel",
     "short": "Volkan & Otomatsan",
     "full": "Volkan, Otomatsan & Barel Sistemleri",
-    "sub": "Volkan 501 tirajlı, Otomatsan 8-12V, YMK bareller, asma kilitler",
+    "sub": "Tirajlı kilitler, elektrikli otomatlar ve bareller",
     "pillsId": "volkanOtomatsanMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>"
   },
@@ -118,7 +118,7 @@
     "id": "doorHandlesPanel",
     "short": "Nobel Kapı Kolları",
     "full": "Nobel & Lüks Kapı Kolları Koleksiyonu",
-    "sub": "Nobel Bravo aynalı/rozetli, Omega, Elif, Şahin VET-75 çekme kol",
+    "sub": "Aynalı, rozetli lüks kollar ve çekme kollar",
     "pillsId": "doorHandlesMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"7\" cy=\"12\" r=\"3\"/><path d=\"M10 12h11\"/></svg>"
   },
@@ -126,7 +126,7 @@
     "id": "keyDuplicationPanel",
     "short": "Anahtar Kopyalama",
     "full": "İzmir Anahtar Kopyalama Panosu & Ham Anahtar",
-    "sub": "Lazer ve mekanik anahtar çekimi, Kale, DAF, Sebü, TPS, Volkan",
+    "sub": "Lazer ve mekanik ham anahtar kopyalama",
     "pillsId": "keyDuplicationMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 2l-2 2m-1.5 1.5L14 9l-1.5-1.5L11 9l1.5 1.5-5.5 5.5A4.5 4.5 0 1 1 3 12l5.5-5.5L7 5l1.5-1.5L10 5l1.5-1.5L13 5l1.5-1.5\"/></svg>"
   },
@@ -134,7 +134,7 @@
     "id": "hingesHardwarePanel",
     "short": "Menteşe & Donanım",
     "full": "Menteşe, Kapı Yayı & Emniyet Aksesuarları",
-    "sub": "Neks rulmanlı menteşe, Beşel itme yayı, BA-4005T tampon, sürgüler",
+    "sub": "Rulmanlı menteşeler, kapı yayları ve tamponlar",
     "pillsId": "hingesHardwareMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"21\"/></svg>"
   },
@@ -142,7 +142,7 @@
     "id": "furnitureFittingsPanel",
     "short": "Mobilya Hırdavatı",
     "full": "Mobilya Rayları, Piston & Tas Menteşeler",
-    "sub": "Frenli teleskopik çekmece rayları, gazlı piston, tas menteşeler",
+    "sub": "Teleskopik raylar, gazlı pistonlar ve menteşeler",
     "pillsId": "furnitureFittingsMenuPills",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polyline points=\"21 8 21 21 3 21 3 8\"/><rect x=\"1\" y=\"3\" width=\"22\" height=\"5\"/><line x1=\"10\" y1=\"12\" x2=\"14\" y2=\"12\"/></svg>"
   }
@@ -1332,7 +1332,7 @@
         '<div class="pv-drawer-item-left">' +
           '<div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>' +
           '<div class="pv-drawer-text-stack">' +
-            '<span class="pv-drawer-item-title">' + dept.full + '</span>' +
+            '<span class="pv-drawer-item-title">' + dept.short + '</span>' +
             '<span class="pv-drawer-item-sub">' + dept.sub + '</span>' +
           '</div>' +
         '</div>' +

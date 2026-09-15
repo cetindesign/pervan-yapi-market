@@ -1354,7 +1354,7 @@
         '<div class="pv-drawer-item-left">' +
           '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
           '<div class="pv-drawer-text-stack">' +
-            '<span class="pv-drawer-item-title">' + d.full + '</span>' +
+            '<span class="pv-drawer-item-title">' + d.short + '</span>' +
             '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
           '</div>' +
         '</div>' +

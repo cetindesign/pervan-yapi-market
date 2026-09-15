@@ -1117,7 +1117,7 @@
     "id": "fastenerScrewsPanel",
     "short": "Alçıpan & Akıllı Vida",
     "full": "Alçıpan & Matkap Uçlu Akıllı Vidalar",
-    "sub": "Akdeniz sivri/matkap uçlu, Dalsan Gips (500 ₺), EPDM contalı trapez",
+    "sub": "Akdeniz alçıpan ve sac vidaları, Dalsan gips",
     "pillsId": "fastenerScrewsMenuPills",
     "badge": "Alçıpan & Trapez Grubu",
     "summaryTitle": "Akdeniz & Dalsan Orijinal Alçıpan ve Sac Vidaları",
@@ -1145,7 +1145,7 @@
     "id": "fastenerWoodScrewsPanel",
     "short": "Sunta & Ahşap Vidası",
     "full": "DIN 7505 Sarı Sunta & Karkas Vidaları",
-    "sub": "YHB sarı pasivasyon, Torx başlı karkas, Minifix mobilya bağlantıları",
+    "sub": "Sarı sunta vidaları, Torx karkas ve mobilya bağlantıları",
     "pillsId": "fastenerWoodScrewsMenuPills",
     "badge": "Mobilya & Karkas",
     "summaryTitle": "DIN 7505 Sarı Pasivasyonlu Sunta ve Karkas Vidaları",
@@ -1178,7 +1178,7 @@
     "id": "fastenerAnchorsPanel",
     "short": "Çelik Dübel & Ankraj",
     "full": "Çelik Dübel & Mekanik / Kimyasal Ankraj",
-    "sub": "Gömlekli M8-M12, klipsli S tipi Throughbolt, çakmalı, kimyasal kartuş",
+    "sub": "Gömlekli ve klipsli dübeller, kimyasal kartuşlar",
     "pillsId": "fastenerAnchorsMenuPills",
     "badge": "Betonarme Ağır Yük",
     "summaryTitle": "Mekanik ve Kimyasal Beton Ankraj Sistemleri",
@@ -1206,7 +1206,7 @@
     "id": "fastenerPlugsPanel",
     "short": "Plastik Dübel & Kovan",
     "full": "Universal, Alçıpan & Gazbeton Dübelleri",
-    "sub": "Universal No 6-10, burgulu plastik & zamak, helezonik Ytong dübeli",
+    "sub": "Universal plastik, alçıpan ve gazbeton dübelleri",
     "pillsId": "fastenerPlugsMenuPills",
     "badge": "Duvar & Alçıpan Dübelleri",
     "summaryTitle": "Dönmeyen Kanatlı Universal ve Özel Yüzey Dübelleri",
@@ -1239,7 +1239,7 @@
     "id": "fastenerBoltsPanel",
     "short": "Cıvata, Somun & Gijon",
     "full": "DIN 933 8.8 Cıvata, Somun, Pul & Gijon Grubu",
-    "sub": "8.8 tam diş cıvatalar, fiberli somun, DIN 125/127 pul, 1m metrik tij",
+    "sub": "8.8 çelik cıvatalar, somunlar, pullar ve metrik tijler",
     "pillsId": "fastenerBoltsMenuPills",
     "badge": "DIN Metrik Çelik Grubu",
     "summaryTitle": "DIN 933 8.8 Çelik Cıvatalar, Fiberli Somunlar ve Metrik Gijonlar",
@@ -1277,7 +1277,7 @@
     "id": "fastenerClipsNailsPanel",
     "short": "Kroşe, Çivi & Kelepçe",
     "full": "Mutlusan Kroşeler, İnşaat Çivisi & Boru Kelepçesi",
-    "sub": "Mutlusan No:1-8 (No:6 TTR 50 ₺), inşaat çivisi 25kg, EPDM boru kelepçesi",
+    "sub": "Mutlusan çivili kroşeler, tel çiviler ve boru kelepçeleri",
     "pillsId": "fastenerClipsNailsMenuPills",
     "badge": "Kablo & Boru Sabitleme",
     "summaryTitle": "Mutlusan Beton Çivili Kroşeler, İnşaat Çivisi ve EPDM Kelepçeler",
@@ -1478,12 +1478,18 @@
     DEPARTMENTS_DATA.forEach(function(dept) {
       var item = document.createElement("button");
       item.type = "button";
-      item.className = "pv-drawer-item" + (dept.id === activeId ? " active" : "");
+      var isSelected = (dept.id === activeId);
+      item.className = "pv-drawer-item" + (isSelected ? " active" : "");
       item.innerHTML = [
-        '<div class="pv-drawer-item-icon">' + dept.icon + '</div>',
-        '<div class="pv-drawer-item-content">',
-        '  <span class="pv-drawer-item-title">' + dept.full + '</span>',
-        '  <span class="pv-drawer-item-sub">' + dept.sub + '</span>',
+        '<div class="pv-drawer-item-left">',
+        '  <div class="pv-drawer-icon-box" aria-hidden="true">' + (dept.icon || '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>') + '</div>',
+        '  <div class="pv-drawer-text-stack">',
+        '    <span class="pv-drawer-item-title">' + dept.short + '</span>',
+        '    <span class="pv-drawer-item-sub">' + dept.sub + '</span>',
+        '  </div>',
+        '</div>',
+        '<div class="pv-drawer-item-right" aria-hidden="true">',
+        '  <svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>',
         '</div>'
       ].join("");
 
