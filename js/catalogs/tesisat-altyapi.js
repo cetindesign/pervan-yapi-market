@@ -148,7 +148,7 @@
     "tag": "Sukar SB.5200-01 Deluxe",
     "deptId": "wasteWaterPanel",
     "category": "sukar-drenaj",
-    "thumb": "assets/svc-dusakabin.jpg",
+    "thumb": "assets/tesisat/sukar-sb5200-deluxe.jpg",
     "desc": "Modern duşakabinlerde hemzemin duş drenajı için sulu ve susuz koku önleyici çift bariyerli, 360 derece dönebilen S tipi çıkış gövdeli Sukar Deluxe duş kanalı.",
     "meta": [
       "SB.5200-01 Deluxe Seri",
@@ -189,7 +189,7 @@
     "tag": "Sukar Paslanmaz Sifon",
     "deptId": "wasteWaterPanel",
     "category": "yer-sifonu",
-    "thumb": "assets/svc-tesisat.jpg",
+    "thumb": "assets/tesisat/sukar-yer-sifonu.jpg",
     "desc": "Banyo, balkon, çamaşır odası ve teras zeminlerinde su taşkınlarını önleyen, koku ve böcek girişini kapatan paslanmaz çelik çerçeveli Sukar yer sifonu.",
     "meta": [
       "Paslanmaz 304 Izgara",
@@ -224,7 +224,7 @@
     "tag": "PVC Atık Su Borusu",
     "deptId": "wasteWaterPanel",
     "category": "pvc-boru",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/pvc-atik-su-borusu.jpg",
     "desc": "Tuvalet, banyo, mutfak ve lavabo atık sularının ana kanalizasyona sessizce iletilmesini sağlayan contalı PVC atık su boruları.",
     "meta": [
       "Elastomerik Conta Contalı",
@@ -262,7 +262,7 @@
     "tag": "PVC Ek Parça Grubu",
     "deptId": "wasteWaterPanel",
     "category": "pvc-ek-parca",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/pvc-ek-parca-grubu.jpg",
     "desc": "Gider hatlarının dönüş, birleşme ve çap değişim noktalarında tıkanmaları önleyen hidrodinamik eğimli PVC ek parçaları.",
     "meta": [
       "45° & 87° Dirsekler",
@@ -299,7 +299,7 @@
     "tag": "Esnek Körüklü Sifon",
     "deptId": "wasteWaterPanel",
     "category": "koruklu-sifon",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/koruklu-lavabo-sifonu.jpg",
     "desc": "TSA Tekinler, Şimşek (AC-002), DMR, Damlasu ve Akyüz marka pirinç vidalı krom taslı, bükülebilir koku kıvrımlı universal lavabo tahliye sifonu.",
     "meta": [
       "Krom Paslanmaz Süzgeç",
@@ -333,7 +333,7 @@
     "tag": "GPD MTB120 · 4.500 ₺",
     "deptId": "faucetShowerPanel",
     "category": "gpd-evye",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/gpd-mtb120-evye.jpg",
     "desc": "GPD armatür güvencesiyle 360 derece döner yüksek kuğu borulu, kireç kırıcılı özel perlatörlü, sessiz su tasarruflu 35 mm seramik kartuşlu lüks mutfak evye bataryası.",
     "meta": [
       "Raf Fiyatı: 4.500 ₺",
@@ -371,7 +371,7 @@
     "tag": "İtimat Mix Batarya",
     "deptId": "faucetShowerPanel",
     "category": "itimat-banyo",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/itimat-mix-batarya.jpg",
     "desc": "Yerli tesisatın köklü markası İtimat güvencesiyle masif pirinç döküm gövdeli, çizilmeye dayanıklı krom kaplamalı banyo ve lavabo mikser bataryaları.",
     "meta": [
       "Ağır Tip Pirinç Döküm",
@@ -405,7 +405,7 @@
     "tag": "Arteca Lüks Mix",
     "deptId": "faucetShowerPanel",
     "category": "arteca-mix",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/arteca-mix-batarya.jpg",
     "desc": "Zarif tasarımı, ergonomik kumanda kolu ve yumuşak açma-kapama sağlayan seramik kartuşu ile Arteca lavabo ve mutfak armatürleri.",
     "meta": [
       "Ergonomik Kumanda Kolu",
@@ -439,7 +439,7 @@
     "tag": "Sürgülü Duş Seti",
     "deptId": "faucetShowerPanel",
     "category": "surgulu-dus",
-    "thumb": "assets/svc-dusakabin.jpg",
+    "thumb": "assets/tesisat/surgulu-dus-seti.jpg",
     "desc": "Paslanmaz çelik sürgü borusu, 150 cm çift kenetli patlamaz spiral hortumu, silikon kireç temizleme uçlu 3 fonksiyonlu duş elciği içeren komple duş takımı.",
     "meta": [
       "Paslanmaz Çelik Boru",
@@ -474,7 +474,7 @@
     "tag": "Krom Taharet Musluğu",
     "deptId": "faucetShowerPanel",
     "category": "taharet-musluk",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/taharet-muslugu-seramik.jpg",
     "desc": "Klozet ve lavabo altlarında kullanılan, geleneksel contalı musluklar gibi damlatma yapmayan, çeyrek tur çevirmeli paslanmaz pirinç taharet musluğu.",
     "meta": [
       "1/4 Tur Çeyrek Aç-Kapa",
@@ -509,7 +509,7 @@
     "tag": "Visam TEOS · 3/6L",
     "deptId": "vitrifiyePanel",
     "category": "visam-gomme",
-    "thumb": "assets/svc-tesisat.jpg",
+    "thumb": "assets/tesisat/visam-teos-rezervuar.jpg",
     "desc": "8 cm ultra ince gövdesiyle banyolarda yer kazandıran, strafor terleme izolasyonlu, sessiz doldurma mekanizmalı ve çift kademeli Visam TEOS gömme rezervuar.",
     "meta": [
       "Visam TEOS Serisi",
@@ -547,7 +547,7 @@
     "tag": "Visam ASSOS Panel",
     "deptId": "vitrifiyePanel",
     "category": "visam-kumanda",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/visam-assos-panel.jpg",
     "desc": "Visam TEOS gömme rezervuar sistemleriyle tam uyumlu, 3 litre küçük ve 6 litre tam yıkama butonlarına sahip modern minimalist kumanda paneli.",
     "meta": [
       "Mat Krom / Parlak Krom / Beyaz",
@@ -582,7 +582,7 @@
     "tag": "Visam Asma · 1.250 ₺",
     "deptId": "vitrifiyePanel",
     "category": "visam-asma",
-    "thumb": "assets/svc-tesisat.jpg",
+    "thumb": "assets/tesisat/visam-asma-rezervuar.jpg",
     "desc": "Alaturka tuvaletler ve klasik yer tipi klozetler için UV dayanımlı sararmayan beyaz polipropilen gövdeli, iç takımı ve borusu dahil Visam asma rezervuar.",
     "meta": [
       "Raf Fiyatı: 1.250 ₺",
@@ -615,7 +615,7 @@
     "tag": "Visam İç Takım Grubu",
     "deptId": "vitrifiyePanel",
     "category": "visam-ic-takim",
-    "thumb": "assets/svc-tesisat.jpg",
+    "thumb": "assets/tesisat/visam-ic-takim-leylak.jpg",
     "desc": "Tüm yerli ve ithal seramik klozet rezervuarlarıyla uyumlu, basmalı çift kademeli (Leylak), tek basmalı (İris) ve alttan/yandan sessiz şamandıralı (Mimoza) iç takımlar.",
     "meta": [
       "Visam Leylak & İris & Mimoza",
@@ -651,7 +651,7 @@
     "tag": "Creavit BT VG1841",
     "deptId": "vitrifiyePanel",
     "category": "klozet-kapak",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/creavit-vg1841-klozet.jpg",
     "desc": "Kanal altı kir ve kireç birikimini sıfıra indiren yeni nesil Creavit Rimless kanalsız yıkama mimarisi, pürüzsüz antibakteriyel seramik sır kaplama.",
     "meta": [
       "Model: BT VG1841",
@@ -685,7 +685,7 @@
     "tag": "Bien Duroplast Kapak",
     "deptId": "vitrifiyePanel",
     "category": "klozet-kapak",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/bien-duroplast-kapak.jpg",
     "desc": "Paslanmaz çelik üstten sıkmalı menteşeleriyle kolayca sökülüp temizlenebilen (Take-Off), çarpmayı önleyen hidrolik mekanizmalı sert duroplast klozet kapağı.",
     "meta": [
       "Sert Çizilmez Duroplast",
@@ -719,7 +719,7 @@
     "tag": "ALZ Kağıtlık · 200 ₺",
     "deptId": "bathroomAccPanel",
     "category": "alz-kagitlik-havluluk",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/alz-kagitlik.jpg",
     "desc": "Banyo nemine ve suya dayanıklı masif paslanmaz çelik gövdeli, su sıçramasını önleyen yaylı kapaklı ALZ Banyo krom tuvalet kağıtlığı.",
     "meta": [
       "Raf Fiyatı: 200 ₺",
@@ -753,7 +753,7 @@
     "tag": "ALZ Havluluk · 300 ₺",
     "deptId": "bathroomAccPanel",
     "category": "alz-kagitlik-havluluk",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/alz-havluluk.jpg",
     "desc": "El ve banyo havluları için korozyonsuz krom kaplama, gizli vidalı duvara montaj flanşlı sağlam boru gövdeli ALZ banyo havluluk serisi.",
     "meta": [
       "Raf Fiyatı: 300 ₺",
@@ -787,7 +787,7 @@
     "tag": "ALZ Cam Banyo Etajeri",
     "deptId": "bathroomAccPanel",
     "category": "cam-etajer-askilik",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/alz-cam-etajer.jpg",
     "desc": "Ayna altı kozmetik ve kişisel bakım ürünleri için pirinç krom korkuluklu temperli kırılmaz cam raf ve duvara monte sıvı sabunluk donanımları.",
     "meta": [
       "Kırılmaz Temperli Cam",
@@ -822,7 +822,7 @@
     "tag": "Rulopa Tel Şampuanlık",
     "deptId": "bathroomAccPanel",
     "category": "rulopa-sampuanlik",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/rulopa-tel-sampuanlik.jpg",
     "desc": "Duşakabin iç köşelerine monte edilen, suyun üzerinde durmayıp kendiliğinden aktığı çift ve üç katlı paslanmaz tel sepetli şampuanlık.",
     "meta": [
       "Rulopa Kalite Tel Raf",
@@ -857,7 +857,7 @@
     "tag": "BAY-T MK 1424 · 300 ₺",
     "deptId": "bathroomAccPanel",
     "category": "bayt-camasir",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/bay-t-mk1424-camasir.jpg",
     "desc": "Balkon ve banyolarda çamaşır kurutma için paslanmaz alüminyum borulu, elektrostatik fırın boyalı, katlandığında yer kaplamayan BAY-T MK 1424 kurutmalık.",
     "meta": [
       "Raf Fiyatı: 300 ₺",
@@ -890,7 +890,7 @@
     "tag": "Hanex Takoz · 100 ₺",
     "deptId": "bathroomAccPanel",
     "category": "hanex-takoz",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/hanex-titresim-takozu.jpg",
     "desc": "Çamaşır ve kurutma makinelerinin sıkma devrinde çıkardığı gürültüyü, sarsıntıyı ve zeminde yürümesini engelleyen yüksek dansite vakum tabanlı 4'lü kauçuk takoz seti.",
     "meta": [
       "Raf Fiyatı: 100 ₺ (4'lü Paket)",
@@ -923,7 +923,7 @@
     "tag": "Elal Çiftli Bornozluk",
     "deptId": "bathroomAccPanel",
     "category": "cam-etajer-askilik",
-    "thumb": "assets/rf-card-bathroom.jpg",
+    "thumb": "assets/tesisat/elal-bornozluk.jpg",
     "desc": "Banyo kapısı arkası veya duş yanı için masif döküm gövdeli, ağır bornoz ve havluları güvenle tutan çiftli krom askılık.",
     "meta": [
       "Masif Zamak / Pirinç Döküm",
@@ -957,7 +957,7 @@
     "tag": "Pirinç Küresel Vana",
     "deptId": "valvesChemicalsPanel",
     "category": "pirinc-kuresel",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/kas-eca-kuresel-vana.jpg",
     "desc": "Daire girişi, hidrofor, kollektör ve yangın hatlarında basınç kaybı yaratmayan teflon küre yataklı ağır tip pirinç küresel su vanası.",
     "meta": [
       "Tam Geçişli Küre",
@@ -995,7 +995,7 @@
     "tag": "Paslanmaz Fleks Hortum",
     "deptId": "valvesChemicalsPanel",
     "category": "orgulu-fleks",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/paslanmaz-orgulu-fleks.jpg",
     "desc": "Musluk, batarya, şofben ve klozet rezervuarlarına su bağlantısı sağlayan, patlamaya dayanıklı AISI 304 paslanmaz örgülü esnek fleks hortumlar.",
     "meta": [
       "EPDM Hijyenik İç Hortum",
@@ -1031,7 +1031,7 @@
     "tag": "Tesisat Emniyet Grubu",
     "deptId": "valvesChemicalsPanel",
     "category": "cekvalf-filtre",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/su-saati-rekoru-cekvalf.jpg",
     "desc": "Sayacın ters dönmesini ve şebeke suyunun kirlenmesini önleyen yaylı pirinç çekvalf, sayaç rekor takımı ve pirinç y tipi pislik tutucu filtreler.",
     "meta": [
       "Yaylı Sessiz Çekvalf",
@@ -1067,7 +1067,7 @@
     "tag": "Mr. Caustic · 100 ₺ / 200 ₺",
     "deptId": "valvesChemicalsPanel",
     "category": "mr-caustic",
-    "thumb": "assets/rf-card-plumbing.jpg",
+    "thumb": "assets/tesisat/mr-caustic-pul-kostik.jpg",
     "desc": "Tıkanmış lavabo, banyo ve tuvalet pimaş borularında biriken yağ, saç, kıl, yemek artığı ve sabun birikintilerini sıcak suyla temasında anında eriten saf pul kostik.",
     "meta": [
       "450 g: 100 ₺ / 1000 g: 200 ₺",
@@ -1101,7 +1101,7 @@
     "tag": "GTS-35 Derz Temizleyici",
     "deptId": "valvesChemicalsPanel",
     "category": "derz-temizleyici",
-    "thumb": "assets/svc-seramik.jpg",
+    "thumb": "assets/tesisat/gts35-derz-temizleyici.jpg",
     "desc": "Banyo seramikleri, fayans araları ve duş zeminlerindeki kararmış derz dolgularını, inşaat sonrası çimento harç kalıntılarını ilk günkü rengine kavuşturan formül.",
     "meta": [
       "1000 ml Konsantre Şişe",
@@ -1135,7 +1135,7 @@
     "tag": "Porçöz Kireç & Pas",
     "deptId": "valvesChemicalsPanel",
     "category": "derz-temizleyici",
-    "thumb": "assets/svc-tesisat.jpg",
+    "thumb": "assets/tesisat/porcoz-kirec-pas.jpg",
     "desc": "Banyo bataryaları, duş başlıkları, klozet içi ve su tesisatındaki yoğun kireç taşlaşmalarını ve pas birikintilerini saniyeler içinde çözen konsantre formül.",
     "meta": [
       "1000 ml Orijinal Şişe",
