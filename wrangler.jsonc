@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pervan-yapi-market",
+  "compatibility_date": "2024-09-23",
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      ".git/**",
+      "scratch/**",
+      ".gitignore",
+      "wrangler.jsonc",
+      ".assetsignore"
+    ]
+  }
+}
