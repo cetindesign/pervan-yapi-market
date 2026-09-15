@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.pervanyapi.com/sitemap.xml
+Sitemap: https://pervanyapi.com/sitemap.xml
