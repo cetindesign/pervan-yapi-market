@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 01. Yetkili Bayilikler & Marka Dünyaları -->
+  <!-- 01. Yetkili Bayilikler ve Marka Dunyalari -->
   <url>
     <loc>https://www.pervanyapi.com/yetkili-bayilikler.html</loc>
     <lastmod>2026-09-15</lastmod>
@@ -70,7 +70,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- 02. Merkezlerimiz & Şubeler -->
+  <!-- 02. Merkezlerimiz ve Subeler -->
   <url>
     <loc>https://www.pervanyapi.com/balcova-showroom.html</loc>
     <lastmod>2026-09-15</lastmod>
@@ -90,7 +90,7 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- 03. Yapı Market & Hırdavat Grupları -->
+  <!-- 03. Yapi Market ve Hirdavat Gruplari -->
   <url>
     <loc>https://www.pervanyapi.com/malzemeler.html</loc>
     <lastmod>2026-09-15</lastmod>
@@ -134,7 +134,7 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- 04. Mimari Taahhüt & Mühendislik -->
+  <!-- 04. Mimari Taahhut ve Muhendislik -->
   <url>
     <loc>https://www.pervanyapi.com/taahhut.html</loc>
     <lastmod>2026-09-15</lastmod>
