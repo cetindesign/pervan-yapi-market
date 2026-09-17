@@ -944,7 +944,7 @@
     "tag": "Neks & Özsan Menteşe",
     "deptId": "hingesHardwarePanel",
     "category": "mentese-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/neks-ozsan-celik-mentese.jpg",
     "desc": "Ağır ahşap panel ve çelik kapıların sürtünmeden sessizce açılıp kapanmasını sağlayan çift bilyalı rulmanlı Neks ve Özsan kapı menteşeleri.",
     "meta": [
       "10 cm ve 12 cm Boyutlar",
@@ -979,7 +979,7 @@
     "tag": "Emniyet Kelepçesi",
     "deptId": "hingesHardwarePanel",
     "category": "mentese-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/celik-kapi-emniyet-kelepcesi.jpg",
     "desc": "Kapıyı aralık bırakarak dışarıdaki kişiyi görmeyi sağlayan, zorlamalara karşı kapının tamamen açılmasını engelleyen masif çelik emniyet kelepçesi.",
     "meta": [
       "Masif Pirinç / Çelik Döküm",
@@ -1013,7 +1013,7 @@
     "tag": "Demir Kapı Sürgüsü",
     "deptId": "hingesHardwarePanel",
     "category": "mentese-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/agir-demir-kapi-surguleri.jpg",
     "desc": "Bahçe kapıları, ferforje kanatlar ve depo girişleri için kaynaklı veya vidalı masif çelik pimli yaylı otomatik ve kollu sürgüler.",
     "meta": [
       "15 cm – 30 cm Boy Seçenekleri",
@@ -1048,7 +1048,7 @@
     "tag": "BA-4005T Kapı Tamponu",
     "deptId": "hingesHardwarePanel",
     "category": "mentese-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/ba-4005t-kapi-tamponu.jpg",
     "desc": "Kapı kolunun duvara çarpıp alçıyı patlatmasını veya kapı camının kırılmasını engelleyen masif pirinç gövdeli kalın kauçuk başlıklı BA-4005T stoper.",
     "meta": [
       "Model: BA-4005T",
@@ -1083,7 +1083,7 @@
     "tag": "Frenli Tas Menteşe",
     "deptId": "furnitureFittingsPanel",
     "category": "mobilya-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/samet-star-tas-mentese.jpg",
     "desc": "Mutfak, banyo ve giyinme odası dolap kapaklarının çarpmadan sessizce kapanmasını sağlayan entegre hidrolik frenli tas menteşe grubu.",
     "meta": [
       "Entegre Yağlı Piston Freni",
@@ -1118,7 +1118,7 @@
     "tag": "Teleskopik Çekmece Rayı",
     "deptId": "furnitureFittingsPanel",
     "category": "mobilya-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/teleskopik-bilyali-cekmece-rayi.jpg",
     "desc": "Mutfak ve ofis çekmecelerinde çekmecenin sonuna kadar açılmasını (tam açılım) sağlayan çelik bilyalı, ağır yük taşımaya uygun teleskopik raylar.",
     "meta": [
       "35 cm, 40 cm, 45 cm, 50 cm Boylar",
@@ -1155,7 +1155,7 @@
     "tag": "Gazlı Kapak Pistonu",
     "deptId": "furnitureFittingsPanel",
     "category": "mobilya-donanim",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/gazli-piston-kapak-amortsoru.jpg",
     "desc": "Mutfak üst dolaplarında yukarı doğru açılan yatay kapakların havada sabit kalmasını ve yumuşakça açılmasını sağlayan nitrojen gazlı piston.",
     "meta": [
       "80 Newton, 100 Newton, 120 Newton",
