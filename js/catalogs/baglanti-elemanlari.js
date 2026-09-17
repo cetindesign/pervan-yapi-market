@@ -11,7 +11,7 @@
     "tag": "Sivri Uçlu · 3.5x25",
     "deptId": "fastenerScrewsPanel",
     "category": "alcipan-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/akdeniz-alcipan-sivri-35x25.jpg",
     "desc": "Alçıpan levhaların 0.70 mm'ye kadar olan sac veya ahşap karkaslara montajında kullanılan, borazan başlı, derin PH2 yıldız yuvalı ve pas korozyonuna dayanıklı siyah fosfat kaplamalı alçı levha vidası.",
     "meta": [
       "3.5 × 25 mm Ebat",
@@ -50,7 +50,7 @@
     "tag": "Sivri Uçlu · 3.5x35",
     "deptId": "fastenerScrewsPanel",
     "category": "alcipan-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/akdeniz-alcipan-sivri-35x35.jpg",
     "desc": "Çift kat alçı levha kaplamaları, yangına dayanıklı kırmızı alçıpan ve akustik tavan uygulamalarında karkasa derin penetrasyon sağlayan 35 mm fosfat kaplı alçıpan vidası.",
     "meta": [
       "3.5 × 35 mm Ebat",
@@ -85,7 +85,7 @@
     "tag": "Dalsan Gips · 500 ₺",
     "deptId": "fastenerScrewsPanel",
     "category": "alcipan-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/dalsan-gips-vida-kutu.jpg",
     "desc": "Dalsan Alçı ve Alçıtepe bölme duvar sistemlerinin resmi şartnamelerine tam uyumlu, yüksek kaliteli sertleştirilmiş çelik gövdeye sahip fosfat kaplı gips vidası.",
     "meta": [
       "Raf Fiyatı: 500 ₺",
@@ -120,7 +120,7 @@
     "tag": "Matkap Uçlu · 3.5x25",
     "deptId": "fastenerScrewsPanel",
     "category": "akilli-vida",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/akdeniz-matkap-uclu-alcipan-35x25.jpg",
     "desc": "0.70 mm ile 2.25 mm kalınlığındaki ağır çelik karkas profillerine alçı levha vidalanırken ön delme gerektirmeyen kendinden delen matkap uçlu alçıpan vidası.",
     "meta": [
       "3.5 × 25 mm Ebat",
@@ -155,7 +155,7 @@
     "tag": "Trapez Sac · 4.8x25-75",
     "deptId": "fastenerScrewsPanel",
     "category": "akilli-vida",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/akdeniz-trapez-cati-vidasi.jpg",
     "desc": "Sandviç panel, trapez sac ve oluklu çatı kaplamalarının çelik aşık veya ahşap karkaslara sabitlenmesinde %100 su sızdırmazlık sağlayan vulkanize EPDM contalı altıköşe başlı çatı vidası.",
     "meta": [
       "4.8 × 25 – 75 mm Boylar",
@@ -191,7 +191,7 @@
     "tag": "Sunta Vidası · 3.5x25",
     "deptId": "fastenerWoodScrewsPanel",
     "category": "sunta-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/sunta-vidasi-yhb-sari-35x25.jpg",
     "desc": "MDF, sunta, masif ahşap ve kontraplak mobilya imalatında ahşabı yarmayan derin dişli, sarı galvaniz kaplamalı havşa başlı yıldız sunta vidası.",
     "meta": [
       "3.5 × 25 mm Boy",
@@ -226,7 +226,7 @@
     "tag": "Sunta Vidası · 4x40",
     "deptId": "fastenerWoodScrewsPanel",
     "category": "sunta-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/sunta-vidasi-yhb-sari-4x40.jpg",
     "desc": "Kasa birleştirme, süpürgelik montajı, ahşap karkas ve genel marangozluk imalatlarında kullanılan en popüler ölçüye sahip 4x40 mm sarı çinko sunta vidası.",
     "meta": [
       "4.0 × 40 mm Ebat",
@@ -261,7 +261,7 @@
     "tag": "Ağaç Vidası · 5x60",
     "deptId": "fastenerWoodScrewsPanel",
     "category": "sunta-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/sunta-vidasi-yhb-sari-5x60.jpg",
     "desc": "Pergole, ahşap çatı karkası, lambiri altı çıtalama ve ağır ahşap taşıyıcı birleşimlerinde yüksek çekme direnci sunan 5x60 mm kalın gövdeli ahşap vidası.",
     "meta": [
       "5.0 × 60 mm Ebat",
@@ -296,7 +296,7 @@
     "tag": "Minifix Seti · 15mm",
     "deptId": "fastenerWoodScrewsPanel",
     "category": "mobilya-baglanti",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/mobilya-minifix-baglanti-seti.jpg",
     "desc": "Demonte gardırop, mutfak dolabı ve modüler mobilya gövdelerinde gizli, sağlam ve tekrar sökülebilir birleşim sağlayan zamak eksantrik çektirme kamı ve dişli çelik mil.",
     "meta": [
       "Ø15 mm Çinko Kam Gövde",
@@ -331,7 +331,7 @@
     "tag": "Torx Karkas · 6x100",
     "deptId": "fastenerWoodScrewsPanel",
     "category": "ahsap-vidasi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/torx-baskili-ahsap-yapilari-vidasi.jpg",
     "desc": "Ahşap sundurma, veranda, çatı makası ve masif kütük birleştirmelerinde pul gerektirmeyen geniş basma başlı, kaydırmayan TX30 Torx yuvalı ağır hizmet yapı vidası.",
     "meta": [
       "6.0 × 100 mm Boy",
@@ -1567,6 +1567,7 @@
   var modalPackagingSection = document.getElementById("modalPackagingSection");
   var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
   var modalSizeChips = document.getElementById("modalSizeChips");
+  var modalProductImg = document.getElementById("modalProductImg");
   var modalSpecsTable = document.getElementById("modalSpecsTable");
   var modalAccordionsWrap = document.getElementById("modalAccordionsWrap");
   var modalWaBtn = document.getElementById("modalWaBtn");
@@ -1583,6 +1584,10 @@
 
     if (modalProductTitle) modalProductTitle.textContent = product.name;
     if (modalProductDesc) modalProductDesc.textContent = product.desc;
+    if (modalProductImg) {
+      modalProductImg.src = product.thumb || "";
+      modalProductImg.alt = product.name || "";
+    }
     if (modalProductEyebrow) {
       modalProductEyebrow.textContent = "PERVAN · " + product.tag.toUpperCase();
     }
@@ -1718,8 +1723,24 @@
     });
   }
 
+  /* Attach click listeners to static product rows and modal buttons */
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
+    row.addEventListener("click", function(e) {
+      if (e.target.closest(".pv-row-wa-direct") || e.target.closest("a")) return;
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
   document.querySelectorAll(".pv-open-modal-btn").forEach(function(btn) {
-    btn.addEventListener("click", function() {
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation();
       var pid = btn.getAttribute("data-product-id");
       if (pid) openModal(pid);
     });
