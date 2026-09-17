@@ -11,7 +11,7 @@
     "tag": "Bostik NP1 · Gri / Beyaz",
     "deptId": "toolsSealantsPanel",
     "category": "bostik-pu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/bostik-np1-pu-mastik-gri-beyaz.jpg",
     "desc": "Prefabrik yapı elemanları, bina genleşme derzleri, parapet duvarları ve pencere kasalarında kalıcı elastikiyet sağlayan, hava nemiyle kürlenen yüksek modüllü poliüretan mastik.",
     "meta": [
       "415 g / 290 ml Kartuş",
@@ -52,7 +52,7 @@
     "tag": "Dayson Extra · 350 ₺",
     "deptId": "toolsSealantsPanel",
     "category": "dayson-pu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/dayson-extra-pu-mastik-350tl.jpg",
     "desc": "Oto karoseri, tekne donanımları, saç metal birleşimleri ve ağır inşaat dilatasyonlarında mükemmel yapışma ve sızdırmazlık gücü sunan orijinal Dayson Extra poliüretan mastik.",
     "meta": [
       "Raf Fiyatı: 350 ₺",
@@ -88,7 +88,7 @@
     "tag": "Soma Fix PU · Kartuş",
     "deptId": "toolsSealantsPanel",
     "category": "diger-pu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/soma-fix-pu-mastik-tabanca-tipi.jpg",
     "desc": "Bina cephe panelleri, çatı dereleri, sac saçak birleşimleri ve kapı pencere kasaları etrafında ekonomik ve yüksek elastikiyetli sızdırmazlık sağlayan Soma Fix PU mastik.",
     "meta": [
       "280 ml Kartuş",
@@ -124,7 +124,7 @@
     "tag": "Selsil PU Mastik",
     "deptId": "toolsSealantsPanel",
     "category": "diger-pu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/selsil-pu-mastik-dilatasyon-dolgusu.jpg",
     "desc": "Döşeme betonları, su depoları, teras birleşimleri ve dikey yapı derzlerinde kullanılan tek komponentli, tiksotropik poliüretan derz dolgu mastiği.",
     "meta": [
       "280 ml Kartuş",
@@ -159,7 +159,7 @@
     "tag": "Akrilik Mastik · 500g",
     "deptId": "toolsSealantsPanel",
     "category": "diger-pu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/soma-fix-silikonize-akrilik-mastik.jpg",
     "desc": "Kapı ve pencere kasaları, süpürgelik kenarları, alçıpan köşe birleşimleri ve tavan kartonpiyerlerinde çatlamaları kapatan, boyanabilir silikon katkılı akrilik mastik.",
     "meta": [
       "500 g Büyük Gramaj",
@@ -194,7 +194,7 @@
     "tag": "Bostik 007 · 350 ₺",
     "deptId": "toolsSiliconesPanel",
     "category": "high-tack",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/bostik-007-high-tack-hibrit.jpg",
     "desc": "Vidasız ve çivisiz montaj imkanı sağlayan, ağır taş kaplamaları, aynaları, süpürgelikleri ve metal profilleri anında yüzeye kilitleyen ultra yüksek ilk tutunmalı hibrit polimer yapıştırıcı.",
     "meta": [
       "Raf Fiyatı: 350 ₺",
@@ -233,7 +233,7 @@
     "tag": "Würth Banyo · 350 ₺",
     "deptId": "toolsSiliconesPanel",
     "category": "dus-silikonu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/wurth-dusakabin-banyo-silikonu-350tl.jpg",
     "desc": "Duşakabin profilleri, küvet kenarları, lavabo ve evye evyelerinde sürekli ıslak ortamda küf ve siyah leke oluşumunu engelleyen saf asetat bazlı Würth sıhhi tesisat silikonu.",
     "meta": [
       "Raf Fiyatı: 350 ₺",
@@ -268,7 +268,7 @@
     "tag": "Sibax LS66 · 120 ₺",
     "deptId": "toolsSiliconesPanel",
     "category": "notr-silikon",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/sibax-ls66-notr-universal-silikon-120tl.jpg",
     "desc": "Cam montajı, kapı pencere aralıkları, mutfak tezgah arkaları ve genel tamiratlarda yüksek yapışma ve esneklik sağlayan ekonomik Sibax LS66 üniversal silikon.",
     "meta": [
       "Raf Fiyatı: 120 ₺",
@@ -303,7 +303,7 @@
     "tag": "Selsil 101 Silikon",
     "deptId": "toolsSiliconesPanel",
     "category": "notr-silikon",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/selsil-101-universal-silikon-seffaf-beyaz.jpg",
     "desc": "Alüminyum doğramalar, vitrin camları, fayans kenarları ve ahşap fuga izolasyonlarında elastik ve dayanıklı sızdırmazlık sağlayan Selsil 101 üniversal silikon.",
     "meta": [
       "280 g Kartuş",
@@ -339,7 +339,7 @@
     "tag": "Akvaryum Silikonu",
     "deptId": "toolsSiliconesPanel",
     "category": "notr-silikon",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/akfix-akvaryum-silikonu-seffaf.jpg",
     "desc": "Akvaryum imalatı, teraryumlar ve su tankı cam birleşimlerinde balıklara ve su canlılarına zehirli kimyasal salmayan, yüksek çekme dayanımlı saf şeffaf silikon.",
     "meta": [
       "310 ml Kartuş",
@@ -373,7 +373,7 @@
     "tag": "MitreApel Kit · 150-300 ₺",
     "deptId": "toolsAdhesivesPanel",
     "category": "mitreapel",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/mitreapel-hizli-yapistirici-mdf-kit.jpg",
     "desc": "Ahşap süpürgelik köşeleri, MDF profil taçları, mobilya çıtaları ve taş tamiratlarında aktivatör spreyi ile 10 saniyede kemikleşen yüksek viskoziteli MitreApel yapıştırıcı seti.",
     "meta": [
       "Küçük Boy: 150 ₺ (200ml + 50g)",
@@ -408,7 +408,7 @@
     "tag": "Apel Sıvı Çivi · 300 ₺",
     "deptId": "toolsAdhesivesPanel",
     "category": "sivi-civi",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/apel-sivi-civi-montaj-yapistiricisi-300tl.jpg",
     "desc": "Ahşap paneller, süpürgelikler, strafor tavan kaplamaları, seramik fayans ve metal çıtaların duvara delme yapmadan vidalanmış gibi sabitlenmesini sağlayan Apel sıvı çivi.",
     "meta": [
       "Raf Fiyatı: 300 ₺",
@@ -443,7 +443,7 @@
     "tag": "Difix Mermer · 1 kg",
     "deptId": "toolsAdhesivesPanel",
     "category": "mermer-epoksi",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/difix-granit-ve-mermer-yapistiricisi.jpg",
     "desc": "Mutfak tezgahı evye montajları, mermer basamak kırıkları, mezar taşları ve traverten derzlerinde yüksek mekanik mukavemet sağlayan, parlatılabilen çift bileşenli taş yapıştırıcısı.",
     "meta": [
       "1.000 g Kutu + Peroksit Tüp",
@@ -478,7 +478,7 @@
     "tag": "Çelik Epoksi · İkili Tüp",
     "deptId": "toolsAdhesivesPanel",
     "category": "mermer-epoksi",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/celik-epoksi-cift-bilesenli-yapistirici.jpg",
     "desc": "Çatlak döküm kalorifer petekleri, delinen yakıt/su tankları, sıyrılmış cıvata dişleri ve kırık metal parçalarda soğuk kaynak etkisi yaratan çelik tozlu epoksi macun.",
     "meta": [
       "Çelik Tozu Takviyeli",
@@ -513,7 +513,7 @@
     "tag": "Soudal 8in1 · 400 ml",
     "deptId": "toolsAdhesivesPanel",
     "category": "mitreapel",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/soudal-multi-spray-8in1.jpg",
     "desc": "Pas sökme, yağlama, nem uzaklaştırma, kontak temizleme, korozyon önleme ve gıcırtı kesme özelliklerini tek kutuda birleştiren yüksek performanslı Belçika üretimi teknik sprey.",
     "meta": [
       "400 ml Büyük Boy Aerosol",
@@ -547,7 +547,7 @@
     "tag": "Mr. Caustic · 100-200 ₺",
     "deptId": "toolsCleaningPlumbingPanel",
     "category": "gider-acici",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/mr-caustic-lavabo-acici-kostik.jpg",
     "desc": "Balçova mağazamızda tesisatçıların ve ev sahiplerinin en çok tercih ettiği, lavabo, banyo gideri ve ana pimaş hatlarındaki donmuş yağ, saç ve sabun artıklarını kaynar su reaksiyonuyla eriten Mr. Caustic.",
     "meta": [
       "Küçük Boy: 100 ₺ / Büyük Boy: 200 ₺",
@@ -582,7 +582,7 @@
     "tag": "GTS-35 Pas & Kireç",
     "deptId": "toolsCleaningPlumbingPanel",
     "category": "harc-sokucu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/gts-35-agir-hizmet-pas-ve-kirec-cozucu.jpg",
     "desc": "Seramik ve fayans üzerindeki inşaat harç kalıntılarını, derz dolgu artıklarını, pas lekelerini ve kireç taşı bağlamış tesisat borularını asidik formülüyle söken GTS-35.",
     "meta": [
       "1.000 ml Şişe",
@@ -617,7 +617,7 @@
     "tag": "WD-40 · 200/400 ml",
     "deptId": "toolsCleaningPlumbingPanel",
     "category": "pas-sokucu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/wd-40-cok-amacli-pas-sokucu-sprey.jpg",
     "desc": "Paslanmış cıvata ve somunları söken, kilit ve menteşe gıcırtılarını anında kesen, metal aksamları nemden koruyarak paslanmayı önleyen efsanevi WD-40.",
     "meta": [
       "200 ml ve 400 ml Seçenekleri",
@@ -652,7 +652,7 @@
     "tag": "Format Kontak Sprey",
     "deptId": "toolsCleaningPlumbingPanel",
     "category": "pas-sokucu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/format-elektronik-kontak-spreyi-yagsiz.jpg",
     "desc": "Elektrik panoları, otomat sigortalar, anahtar klemensleri, elektronik kartlar ve potansiyometrelerde toz, yağ ve oksit tabakasını tortu bırakmadan temizleyen Format yağsız kontak sprey.",
     "meta": [
       "200 ml Sprey",
@@ -687,7 +687,7 @@
     "tag": "Format Pas Sökücü",
     "deptId": "toolsCleaningPlumbingPanel",
     "category": "pas-sokucu",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/format-pas-sokucu-ve-yaglayici-sprey.jpg",
     "desc": "Korozyona uğramış bahçe kapısı kilitleri, asma kilitler, paslı civatalar ve takım sandığı aletleri için hızlı tesir eden yerli üretim Format pas sökücü yağlayıcı.",
     "meta": [
       "200 ml Kutu",
@@ -721,7 +721,7 @@
     "tag": "SGS 1780 · SK5 Çelik",
     "deptId": "toolsMechanicalPanel",
     "category": "maket-bicagi",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/sgs-1780-metal-kilavuzlu-maket-bicagi.jpg",
     "desc": "Alçıpan levha kesimi, membran ve şıngıl dilimleme, kablo soyma ve ağır şantiye paket açımlarında kırılmayan paslanmaz çelik iç kılavuza ve otomatik vidalı kilit sistemine sahip SGS 1780.",
     "meta": [
       "18 mm SK5 Yüksek Karbon Çelik Bıçak",
@@ -756,7 +756,7 @@
     "tag": "Tursan Zımba Tabancası",
     "deptId": "toolsMechanicalPanel",
     "category": "zimba-tabanca",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/tursan-agir-hizmet-metal-cakma-zimba.jpg",
     "desc": "Buhar dengeleyici çatı örtüleri, yalıtım membranları, mobilya kumaş döşemesi, tel çit ve etiket çakımlarında kullanılan krom kaplı tam çelik gövdeli Tursan çakma zımba makinesi.",
     "meta": [
       "4 – 14 mm Zımba Teli Kapasitesi",
@@ -792,7 +792,7 @@
     "tag": "Mastik Tabancası",
     "deptId": "toolsMechanicalPanel",
     "category": "zimba-tabanca",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/agir-tip-iskelet-silikon-ve-mastik-tabancasi.jpg",
     "desc": "Bostik 007 High Tack ve poliüretan mastik gibi yoğun viskoziteli ağır kimyasalları yorulmadan sıkan, bükülmeyen hekzagonal çelik itme milli profesyonel silikon tabancası.",
     "meta": [
       "18:1 Yüksek İtme Gücü",
@@ -826,7 +826,7 @@
     "tag": "Şerit Metre · 5 Metre",
     "deptId": "toolsMechanicalPanel",
     "category": "olcu-aletleri",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/manyetik-uclu-darbe-korumali-serit-metre.jpg",
     "desc": "Düşmelere karşı kalın darbe emici kauçuk zırhlı, paslanmaz naylon kaplamalı şerit yüzeyi ve metal profillere tek başına tutunan çift mıknatıslı uca sahip şantiye tipi çelik şerit metre.",
     "meta": [
       "3 Metre, 5 Metre, 8 Metre Seçenekleri",
@@ -861,7 +861,7 @@
     "tag": "Topbaş Alyan Seti",
     "deptId": "toolsMechanicalPanel",
     "category": "olcu-aletleri",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/alyan-anahtar-takimi-9-parca-uzun-topbasli.jpg",
     "desc": "25 derece açıyla dar açılı yuvalara girebilen bilyalı topbaşlı ucu, eğilmeyen ve yuva bozmayan ısıl işlem görmüş Krom Vanadyum çeliğiyle 9 parçalı uzun boy profesyonel alyan anahtar seti.",
     "meta": [
       "1.5, 2, 2.5, 3, 4, 5, 6, 8, 10 mm",
@@ -895,7 +895,7 @@
     "tag": "Luna Kestirme · No:1-4",
     "deptId": "toolsPaintingSuppliesPanel",
     "category": "firca",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/luna-standart-kestirme-fircasi-serisi.jpg",
     "desc": "Tavan ve duvar köşelerinde keskin, düzgün ve fırça izi bırakmayan kestirme hatları çekmek için fırınlanmış ahşap saplı ve kıl dökmeyen epoksi yapıştırmalı Luna kestirme fırçası.",
     "meta": [
       "No:1, 1.5, 2, 2.5, 3, 4 Boylar",
@@ -933,7 +933,7 @@
     "tag": "Luna Robot Fırça",
     "deptId": "toolsPaintingSuppliesPanel",
     "category": "firca",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/luna-black-profesyonel-acili-robot-firca.jpg",
     "desc": "Kalorifer petek arkaları, boru aralıkları, çatı altı saçak köşeleri ve merdiven altı gibi düz fırçaların ulaşamadığı dar alanlara rahatça giren uzun saplı açılı Luna robot fırça.",
     "meta": [
       "45 Derece Açılı Özel Kafa",
@@ -969,7 +969,7 @@
     "tag": "Luna Saten Rulo",
     "deptId": "toolsPaintingSuppliesPanel",
     "category": "rulo",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/luna-profesyonel-damlatmaz-saten-rulo-seti.jpg",
     "desc": "Plastik, silikonlu ve ipek mat saten boyalarda portakal kabuğu dokusu bırakmadan cam gibi pürüzsüz yüzey veren, dönerken boya sıçratmayan profesyonel Luna saten rulosu.",
     "meta": [
       "20 cm ve 25 cm Ebat Seçenekleri",
@@ -1005,7 +1005,7 @@
     "tag": "Parmak Rulo Seti",
     "deptId": "toolsPaintingSuppliesPanel",
     "category": "rulo",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/luna-parmak-mini-rulo-seti-10cm.jpg",
     "desc": "Panel kapılar, pencere pervazları, mutfak dolapları ve dar duvar şeritlerinde rulo izi bırakmadan pürüzsüz boya atan 10 cm mini parmak rulo seti.",
     "meta": [
       "10 cm Tel Sap + 5 Adet Yedek Rulo",
@@ -1040,7 +1040,7 @@
     "tag": "Paslanmaz Spatula",
     "deptId": "toolsPaintingSuppliesPanel",
     "category": "spatula",
-    "thumb": "assets/rf-card-tools.jpg",
+    "thumb": "assets/el-aletleri/paslanmaz-celik-egri-boyaci-spatulasi.jpg",
     "desc": "Duvar çatlaklarına saten alçı çekme, eski boya ve kabarmış kireçleri kazıma ve macun tamiratlarında esnekliğiyle yüzeyi çizmeyen paslanmaz yay çeliği boyacı spatulası.",
     "meta": [
       "60 mm, 80 mm, 100 mm, 120 mm Enler",
@@ -1530,6 +1530,7 @@
   var modalPackagingSection = document.getElementById("modalPackagingSection");
   var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
   var modalSizeChips = document.getElementById("modalSizeChips");
+  var modalProductImg = document.getElementById("modalProductImg");
   var modalSpecsTable = document.getElementById("modalSpecsTable");
   var modalAccordionsWrap = document.getElementById("modalAccordionsWrap");
   var modalWaBtn = document.getElementById("modalWaBtn");
@@ -1546,6 +1547,10 @@
 
     if (modalProductTitle) modalProductTitle.textContent = product.name;
     if (modalProductDesc) modalProductDesc.textContent = product.desc;
+    if (modalProductImg) {
+      modalProductImg.src = product.thumb || "";
+      modalProductImg.alt = product.name || "";
+    }
     if (modalProductEyebrow) {
       modalProductEyebrow.textContent = "PERVAN · " + product.tag.toUpperCase();
     }
@@ -1681,8 +1686,24 @@
     });
   }
 
+  /* Attach click listeners to static product rows and modal buttons */
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
+    row.addEventListener("click", function(e) {
+      if (e.target.closest(".pv-row-wa-direct") || e.target.closest("a")) return;
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
   document.querySelectorAll(".pv-open-modal-btn").forEach(function(btn) {
-    btn.addEventListener("click", function() {
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation();
       var pid = btn.getAttribute("data-product-id");
       if (pid) openModal(pid);
     });
