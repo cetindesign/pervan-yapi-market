@@ -1928,6 +1928,16 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   border-bottom: 1px solid var(--pv-border-subtle);
 }
 
+/* Defensive container lock: if .pv-container is omitted inside a panel or menu section, enforce layout bounds */
+.pv-tab-panel:not(:has(> .pv-container)),
+.pv-menu-section:not(:has(> .pv-container)) {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 @media (max-width: 768px) {
   .pv-menu-section,
   .pv-tab-panel {
