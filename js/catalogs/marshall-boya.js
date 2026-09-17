@@ -1952,7 +1952,7 @@
     "tag": "Ahşap Koruma & Vernik",
     "deptId": "marshallWoodMetalPanel",
     "category": "ahsap-cila",
-    "thumb": "assets/rf-card-paint.jpg",
+    "thumb": "assets/marshall-official/marshall-ozel-cam-cila.jpg",
     "desc": "Parke, ahşap merdiven ve mobilyalarda yüksek çizilme direnci sunan, neme ve deterjana dayanıklı parlak poliüretan cila.",
     "meta": [
       "Ahşap & Metal Zırhı",
