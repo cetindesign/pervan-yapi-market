@@ -566,7 +566,7 @@
     "tag": "Nobel Bravo Aynalı",
     "deptId": "doorHandlesPanel",
     "category": "nobel-aynali",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/nobel-bravo-aynali-kapi-kolu.jpg",
     "desc": "Masif döküm gövdeli, ergonomik kavisli tutuşlu, çizilmelere karşı dayanıklı nikel-saten ve antik sarı kaplamalı Nobel Bravo aynalı kapı kolları.",
     "meta": [
       "Model: Nobel Bravo",
@@ -601,7 +601,7 @@
     "tag": "Nobel Rozetli Kol",
     "deptId": "doorHandlesPanel",
     "category": "nobel-rozetli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/nobel-rozetli-kapi-kolu.jpg",
     "desc": "Minimalist iç mekan tasarımları için yuvarlak veya kare rozetli, gizli vidalı kapaklı lüks Nobel kapı kolu koleksiyonu.",
     "meta": [
       "Mat Siyah / Saten Nikel Kaplama",
@@ -635,7 +635,7 @@
     "tag": "Omega Rozetli Kol",
     "deptId": "doorHandlesPanel",
     "category": "nobel-rozetli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/omega-rozetli-kapi-kolu.jpg",
     "desc": "Modern düz hatları, parmak izi tutmayan pürüzsüz saten yüzeyiyle hem konut hem ofis projelerinde tercih edilen Omega rozetli kapı kolu.",
     "meta": [
       "Zamak / Alüminyum Gövde",
@@ -668,7 +668,7 @@
     "tag": "Elif Maydanoz / Hira",
     "deptId": "doorHandlesPanel",
     "category": "nobel-aynali",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/elif-maydanoz-hira-kollari.jpg",
     "desc": "Geleneksel Türk mimarisinde ve klasik ahşap kapılarda nostaljik zarafet sunan Elif Maydanoz ve Hira modeli aynalı pirinç kapı kolları.",
     "meta": [
       "Maydanoz & Hira Desenleri",
@@ -702,7 +702,7 @@
     "tag": "Pole / Vent / Gris",
     "deptId": "doorHandlesPanel",
     "category": "nobel-rozetli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/pole-vent-gris-tasarim-kollar.jpg",
     "desc": "İç mimarların modern projelerde tercih ettiği minimalist kavisli Pole, Vent ve Gris serisi rozetli kapı kolları.",
     "meta": [
       "Pole, Vent ve Gris Modelleri",
@@ -737,7 +737,7 @@
     "tag": "Şahin VET-75 · 224mm",
     "deptId": "doorHandlesPanel",
     "category": "nobel-rozetli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/sahin-vet75-cekme-kapi-kolu.jpg",
     "desc": "Çelik kapı dış yüzeyleri, bina ana girişleri ve ofis cam kapıları için masif alüminyum gövdeli 224 mm Şahin VET-75 çekme kapı kolu.",
     "meta": [
       "Model: VET-75 (224 mm Eksen)",
@@ -771,7 +771,7 @@
     "tag": "İzmir Anahtar Kopyalama",
     "deptId": "keyDuplicationPanel",
     "category": "anahtar-panosu",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/izmir-anahtar-kopyalama-servisi.jpg",
     "desc": "Balçova mağazamızdaki profesyonel lazer ve mekanik anahtar kesim makineleriyle çelik kapı, oda kapısı ve asma kilit anahtarlarının 1 dakikada kusursuz kopyalanması.",
     "meta": [
       "Balçova Mağazamızda Canlı Servis",
@@ -806,7 +806,7 @@
     "tag": "KALE & DAF Ham Anahtar",
     "deptId": "keyDuplicationPanel",
     "category": "anahtar-panosu",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-daf-ham-anahtarlar.jpg",
     "desc": "Kale ve DAF bareller için fabrikasyon kanal ölçülerine sahip, yüksek saflıkta sarı pirinçten üretilmiş orijinal profil ham anahtarlar.",
     "meta": [
       "Kale & DAF Orijinal Kanalları",
@@ -841,7 +841,7 @@
     "tag": "SEBÜ & TPS Ham Anahtar",
     "deptId": "keyDuplicationPanel",
     "category": "anahtar-panosu",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/sebu-tps-ham-anahtarlar.jpg",
     "desc": "Apartman dış kapı otomatikleri, tirajlı kilitler ve asma kilitler için SEBÜ ve TPS markalı universal ham anahtar profilleri.",
     "meta": [
       "SEBÜ & TPS Profil Kodları",
@@ -875,7 +875,7 @@
     "tag": "VOLKAN & OTOMATSAN",
     "deptId": "keyDuplicationPanel",
     "category": "anahtar-panosu",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/volkan-otomatsan-ham-anahtarlar.jpg",
     "desc": "Volkan 501 tirajlı kilitler ve Otomatsan kapı otomatikleri için kalın gövdeli, zorlamaya dayanıklı özel ham anahtar profilleri.",
     "meta": [
       "Volkan 501 Orijinal Kanalı",
@@ -909,7 +909,7 @@
     "tag": "İTO & Kasa Anahtarları",
     "deptId": "keyDuplicationPanel",
     "category": "anahtar-panosu",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/ito-klasik-oda-anahtarlari.jpg",
     "desc": "İç oda kapıları, antika mobilyalar, çelik para kasaları ve asma kilitler için boru anahtarlar, çift taraflı kanatlı kasa anahtarları.",
     "meta": [
       "İTO Oda Kapısı Ham Anahtarı",
