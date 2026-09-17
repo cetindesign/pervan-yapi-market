@@ -247,7 +247,9 @@
 
     Object.keys(panels).forEach(function(key) {
       if (panels[key]) {
-        panels[key].classList.toggle("active", key === targetId);
+        var match = (key === targetId);
+        panels[key].classList.toggle("active", match);
+        panels[key].style.display = match ? "" : "none";
       }
     });
 

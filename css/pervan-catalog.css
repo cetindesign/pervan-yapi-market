@@ -1938,6 +1938,12 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   padding-right: 24px;
 }
 
+/* Canonical Tab & Department Panel Visibility System */
+.pv-tab-panel:not(.active),
+.pv-dept-panel:not(.active) {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .pv-menu-section,
   .pv-tab-panel {

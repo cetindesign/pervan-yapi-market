@@ -1413,7 +1413,9 @@
     });
 
     deptPanels.forEach(function(panel) {
-      panel.classList.toggle("active", panel.id === targetId);
+      var match = (panel.id === targetId);
+      panel.classList.toggle("active", match);
+      panel.style.display = match ? "" : "none";
     });
 
     var activeDept = DEPARTMENTS_DATA.find(function(d) { return d.id === targetId; });
