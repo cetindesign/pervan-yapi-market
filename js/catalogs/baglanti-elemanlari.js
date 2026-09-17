@@ -366,7 +366,7 @@
     "tag": "Gömlekli Dübel · M8-M12",
     "deptId": "fastenerAnchorsPanel",
     "category": "celik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/celik-dubel-gomlekli-m8-m10-m12.jpg",
     "desc": "Beton döşeme, kiriş ve kolonlara çelik konstrüksiyon ayakları, yangın tesisat boruları, makine kaideleri ve korkuluk montajında yüksek kesme ve çekme dayanımı sunan konik açılmalı gömlekli çelik dübel.",
     "meta": [
       "M8 / M10 / M12 Çaplar",
@@ -402,7 +402,7 @@
     "tag": "Klipsli Dübel · M10-M16",
     "deptId": "fastenerAnchorsPanel",
     "category": "celik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/celik-dubel-klipsli-s-tipi.jpg",
     "desc": "Boydan boya dişli yapısıyla montaj parçası üzerinden doğrudan betona delinerek çakılabilen, paslanmaz çelik bilezikli en güvenilir ağır yük ankraj dübeli.",
     "meta": [
       "M10 × 90 mm / M12 × 120 mm",
@@ -437,7 +437,7 @@
     "tag": "Çakmalı Dübel · M8-M12",
     "deptId": "fastenerAnchorsPanel",
     "category": "celik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/cakmali-dubel-drop-in.jpg",
     "desc": "Tavana havalandırma kanalı, kablo tavası, sprinkler yangın borusu ve asma tavan tij askılarının bağlanmasında beton içine gömülen dişi dişli çakmalı çelik dübel.",
     "meta": [
       "M8 / M10 / M12 İç Diş",
@@ -472,7 +472,7 @@
     "tag": "Kancalı Dübel · M6-M10",
     "deptId": "fastenerAnchorsPanel",
     "category": "celik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/kancali-halkali-celik-dubel.jpg",
     "desc": "Avize, tavan salıncağı, asma koltuk, tente germe teli ve emniyet zincirlerinin beton tavana veya duvara güvenle asılmasını sağlayan dövme kancalı çelik dübel.",
     "meta": [
       "M6 / M8 / M10 Boylar",
@@ -508,7 +508,7 @@
     "tag": "Kimyasal Dübel · 410 ml",
     "deptId": "fastenerAnchorsPanel",
     "category": "kimyasal-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/kimyasal-ankraj-kartusu-410ml.jpg",
     "desc": "Tuğla, gazbeton ve donatılı betonda genleşme basıncı oluşturmadan kenara sıfır mesafelerde yüksek taşıma kapasiteli tij ve donatı ekimi sağlayan stirensiz kimyasal harç.",
     "meta": [
       "410 ml Profesyonel Kartuş",
@@ -543,7 +543,7 @@
     "tag": "Universal Dübel · No 6-10",
     "deptId": "fastenerPlugsPanel",
     "category": "plastik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/plastik-dubel-universal-no6-8-10.jpg",
     "desc": "Tuğla, beton, briket ve sıvalı duvarlarda elektrik panosu, tablo, ayna, mutfak dolabı ve raf montajında dönmeyi önleyen kanatçıklı 1. sınıf hammadde plastik dübel.",
     "meta": [
       "No:6 / No:7 / No:8 / No:10",
@@ -580,7 +580,7 @@
     "tag": "Burgulu Dübel · Plastik",
     "deptId": "fastenerPlugsPanel",
     "category": "alcipan-dubeli",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/alcipan-burgulu-dubel-plastik.jpg",
     "desc": "Alçıpan bölme duvar ve tavanlara matkap ile ön delik delmeden, doğrudan PH2 tornavida ile çevrilerek vidalanan yüksek tutunmalı plastik helezon dübel.",
     "meta": [
       "Matkapsız Doğrudan Vidalama",
@@ -615,7 +615,7 @@
     "tag": "Zamak Dübel · 100'lü",
     "deptId": "fastenerPlugsPanel",
     "category": "alcipan-dubeli",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/alcipan-burgulu-dubel-metal-zamak.jpg",
     "desc": "Yangın dayanımı istenen mekanlarda, sert çift kat alçıpanlarda ve daha ağır aksesuarlarda ezilmeden doğrudan vidalanabilen sert çinko döküm metal burgu dübel.",
     "meta": [
       "Zamak Çinko Alaşım Gövde",
@@ -650,7 +650,7 @@
     "tag": "Gazbeton Dübel · 8-10mm",
     "deptId": "fastenerPlugsPanel",
     "category": "gazbeton-dubeli",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/gazbeton-dubeli-helezonik-plastik.jpg",
     "desc": "Gazbeton, pomza ve bims gibi gözenekli ve ufalanabilen yumuşak duvar bloklarında standart dübellerin sıyrılmasını engelleyen spiral kanatlı özel gazbeton dübeli.",
     "meta": [
       "Ø8 mm / Ø10 mm Ebat",
@@ -685,7 +685,7 @@
     "tag": "Roket Dübel · 8-10mm",
     "deptId": "fastenerPlugsPanel",
     "category": "plastik-dubel",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/bosluklu-tugla-roketi-dubel.jpg",
     "desc": "Yatay delikli tuğlalarda vida sıkıldığında tuğla boşluğunda topaklanarak düğüm oluşturan ve tuğla et kalınlığına arkadan tutunan roket tip kilit dübel.",
     "meta": [
       "Ø8 mm / Ø10 mm Boylar",
@@ -719,7 +719,7 @@
     "tag": "DIN 933 Cıvata · 8.8 Kalite",
     "deptId": "fastenerBoltsPanel",
     "category": "civata",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/civata-din933-tam-dis-8-8-celik.jpg",
     "desc": "Makine imalatı, çelik konstrüksiyon, flanş bağlantıları ve ağır mekanik şantiyelerde 800 N/mm² kopma mukavemetine sahip 8.8 kalite tam diş elektro galvanizli altıköşe başlı çelik cıvata.",
     "meta": [
       "8.8 Çelik Sertlik Sınıfı",
@@ -756,7 +756,7 @@
     "tag": "Somun Grubu · M6-M16",
     "deptId": "fastenerBoltsPanel",
     "category": "somun",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/somun-din934-standart-ve-fiberli.jpg",
     "desc": "Titreşimli ortamlarda somunun kendi kendine gevşemesini engelleyen mavi naylon emniyet bilezikli DIN 985 fiberli somunlar ve DIN 934 standart galvanizli metrik altıköşe somunlar.",
     "meta": [
       "DIN 934 Standart / DIN 985 Fiberli",
@@ -793,7 +793,7 @@
     "tag": "Pul & Rondela · M6-M20",
     "deptId": "fastenerBoltsPanel",
     "category": "pul",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/pul-ve-rondela-din125-din127.jpg",
     "desc": "Cıvata sıkma torkunu geniş yüzeye yayarak parçanın ezilmesini önleyen DIN 125 düz pullar ve eksenel baskı kuvvetini sürekli tutarak gevşemeyi kesen DIN 127 yaylı rondelalar.",
     "meta": [
       "DIN 125 Düz Pul / DIN 127 Yaylı Rondela",
@@ -830,7 +830,7 @@
     "tag": "Gijon Tij · 1 Metre M8-M16",
     "deptId": "fastenerBoltsPanel",
     "category": "gijon",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/gijon-tij-1-metre-galvanizli.jpg",
     "desc": "Asma tavan, havalandırma kanalı, tava askılama, flanş birleştirme ve kalıp gerdirmelerinde kullanılan 1 metre boyunda tam dişli galvanizli metrik gijon çubuğu.",
     "meta": [
       "1 Metre Standart Boy",
@@ -866,7 +866,7 @@
     "tag": "İmbus Cıvata · 8.8 Alyan",
     "deptId": "fastenerBoltsPanel",
     "category": "civata",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/imbus-civata-din912-alyan-basli.jpg",
     "desc": "Anahtar ağzının yanaşamadığı dar yuvalarda ve makine montajlarında alyan anahtarı veya bits ucu ile tork uygulanan silindir başlı gömme imbus cıvata.",
     "meta": [
       "DIN 912 / ISO 4762",
@@ -902,7 +902,7 @@
     "tag": "Mutlusan Kroşe No:6 · 50 ₺",
     "deptId": "fastenerClipsNailsPanel",
     "category": "krose",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/mutlusan-beton-civili-krose-no6-ttr.jpg",
     "desc": "Balçova ve Urla şantiyelerinde elektrik kablolarının beton, sıva ve tuğla yüzeylere güvenle sabitlenmesini sağlayan, bükülmeyen sertleştirilmiş çelik beton çivisine sahip Mutlusan No:6 çivili kroşe.",
     "meta": [
       "Raf Fiyatı: 50 ₺ / Kutu",
@@ -937,7 +937,7 @@
     "tag": "Mutlusan Kroşe No:1-8",
     "deptId": "fastenerClipsNailsPanel",
     "category": "krose",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/mutlusan-beton-civili-krose-serisi-no1-8.jpg",
     "desc": "Zil telinden (No:1) kalın NYY ve TTR enerji kablolarına (No:8) kadar tüm kablo çaplarına uygun, darbe dayanımlı beyaz gövdeli orijinal Mutlusan çivili kroşe ailesi.",
     "meta": [
       "No:1, 2, 3, 4, 5, 6, 7, 8 Ebatlar",
@@ -973,7 +973,7 @@
     "tag": "Işıldar Kroşe & Cırt",
     "deptId": "fastenerClipsNailsPanel",
     "category": "krose",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/isildar-plastik-krose-ve-kablo-baglari.jpg",
     "desc": "Pano içi kablo demetleme, alçıpan karkası içi hat sabitleme ve duvar montajında vida veya yapışkan tabanla tutunan Işıldar plastik kablo düzenleme kroşeleri.",
     "meta": [
       "Vidalı Kroşe / Yapışkanlı Kroşe Tabanı",
@@ -1008,7 +1008,7 @@
     "tag": "İnşaat Çivisi · 25 kg Koli",
     "deptId": "fastenerClipsNailsPanel",
     "category": "civi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/insaat-teli-ve-standart-insaat-civisi.jpg",
     "desc": "Ahşap kalıp hazırlığı, kereste çakımı, çatı karkas montajı ve şantiye geçici ahşap imalatlarında yüksek eğilme direncine sahip soğuk çekme inşaat tel çivisi.",
     "meta": [
       "6'lık (6 cm) / 8'lik (8 cm) / 10'luk (10 cm)",
@@ -1044,7 +1044,7 @@
     "tag": "Beton Çivisi · 100'lü Kutu",
     "deptId": "fastenerClipsNailsPanel",
     "category": "civi",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/celik-beton-civisi-sertlestirilmis.jpg",
     "desc": "Sıvalı duvar, brüt betonarme perde ve dolu tuğlaya süpürgelik, çıta, izolasyon sacı veya kablo kanalı çakarken eğilmeyen 55-60 HRC sertleştirilmiş çelik beton çivisi.",
     "meta": [
       "40 mm / 60 mm / 80 mm Boylar",
@@ -1079,7 +1079,7 @@
     "tag": "Boru Kelepçesi · 1/2-4\"",
     "deptId": "fastenerClipsNailsPanel",
     "category": "kelepce",
-    "thumb": "assets/rf-card-fasteners.jpg",
+    "thumb": "assets/baglanti/epdm-lastikli-somunlu-boru-kelepcesi.jpg",
     "desc": "PPRC temiz su, galvaniz yangın borusu ve PVC atık su borularının tavan veya duvara tij/gijon ile askılanmasında su koçu darbe sesini ve titreşimi emen EPDM kauçuk lastikli çelik boru kelepçesi.",
     "meta": [
       "1/2\" – 4\" Tüm Tesisat Çapları",
