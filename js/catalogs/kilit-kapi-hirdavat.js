@@ -155,7 +155,7 @@
     "tag": "Kale 164 GNC Tuzaklı",
     "deptId": "kaleLocksPanel",
     "category": "kale-barel",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-164-gnc-tuzakli-barel.jpg",
     "desc": "Hırsızların bareli kırarak kapıyı açma girişimlerine karşı ön kısmı kırılarak gövdeyi kilitleyen, 5 bilyalı anahtarlı orijinal Kale 164 GNC tuzaklı güvenlik bareli.",
     "meta": [
       "Model: 164 GNC Tuzaklı",
@@ -194,7 +194,7 @@
     "tag": "Kale 157 EL Elektrikli",
     "deptId": "kaleLocksPanel",
     "category": "kale-tirajli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-157-el-elektrikli-tirajli.jpg",
     "desc": "Apartman ana giriş kapıları, bina dış demir kapıları ve site girişlerinde diafon sisteminden gelen 12V tetikle otomatik açılan butonlu elektrikli tirajlı kilit.",
     "meta": [
       "Model: 157 EL Elektrikli",
@@ -228,7 +228,7 @@
     "tag": "Kale 157 A ECO",
     "deptId": "kaleLocksPanel",
     "category": "kale-tirajli",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-157-a-eco-mekanik-tirajli.jpg",
     "desc": "Bahçe kapıları, depo, atölye ve apartman dış kapıları için mandallı ve pirinç dilli mekanik Kale tirajlı kilit.",
     "meta": [
       "Model: 157 A ECO",
@@ -261,7 +261,7 @@
     "tag": "Kale 151R / 152R",
     "deptId": "kaleLocksPanel",
     "category": "kale-gomme",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-151r-152r-gomme-kilit.jpg",
     "desc": "Ahşap panel iç oda kapıları ve banyo/WC kapıları için pirinç rulmanlı diliyle sessizce kapanan Kale gömme kilit serisi.",
     "meta": [
       "151R Oda / 152R WC Modelleri",
@@ -295,7 +295,7 @@
     "tag": "Kale 153U / 153P",
     "deptId": "kaleLocksPanel",
     "category": "kale-gomme",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-153u-153p-dar-profil-kilit.jpg",
     "desc": "Balkon camlama sistemleri, alüminyum doğramalar ve dar demir kutu profiller içine gömülebilen 20-25-30-35 mm eksen mesafeli dar profil kilitleri.",
     "meta": [
       "153U Makaralı / 153P Dilli",
@@ -329,7 +329,7 @@
     "tag": "Kale 141R Demir Kilit",
     "deptId": "kaleLocksPanel",
     "category": "kale-gomme",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/kale-141r-demir-kapi-kilidi.jpg",
     "desc": "Bahçe giriş demir kapıları, bina yangın kapıları ve ağır sac kapılar için kaynak ve cıvataya uygun takviyeli Kale 141R gömme kilit.",
     "meta": [
       "Model: 141R",
@@ -362,7 +362,7 @@
     "tag": "Volkan 501 / No: 14",
     "deptId": "volkanOtomatsanPanel",
     "category": "volkan-kilit",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/volkan-501-tirajli-kilit.jpg",
     "desc": "İzmir genelinde demirci ustalarının ve apartman yönetimlerinin bir numaralı tercihi, kırılmaz döküm mandallı masif 140 mm Volkan tirajlı kilit.",
     "meta": [
       "Ürün Kodu: 501 (No: 14)",
@@ -395,7 +395,7 @@
     "tag": "Otomatsan 8-12V",
     "deptId": "volkanOtomatsanPanel",
     "category": "otomatsan-otomat",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/otomatsan-kapi-otomatigi.jpg",
     "desc": "Apartman ve site giriş kapılarında elektrikli kilit mekanizmasını çeken, ayarlanabilir yay tansiyonlu dayanıklı Otomatsan kapı otomatiği.",
     "meta": [
       "8-12 Volt AC Çalışma",
@@ -428,7 +428,7 @@
     "tag": "YMK 868HBM / 868HBS",
     "deptId": "volkanOtomatsanPanel",
     "category": "barel-asma-kilit",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/ymk-mandalli-hybrid-barel.jpg",
     "desc": "İçeriden anahtar aramadan topuzlu mandalla kilitlenen, dışarıdan yüksek güvenlikli bilyalı anahtarla açılan YMK 868HBM ve 868HBS hybrid bareller.",
     "meta": [
       "Kod: 868HBM & 868HBS",
@@ -463,7 +463,7 @@
     "tag": "Tursan 935R",
     "deptId": "volkanOtomatsanPanel",
     "category": "volkan-kilit",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/tursan-935r-tirajli-kilit.jpg",
     "desc": "Demir ve ahşap bahçe kapıları için sessiz çarpmalı makara sistemine sahip, dayanıklı gövdeli Tursan 935R tirajlı kilit.",
     "meta": [
       "Model: 935R",
@@ -496,7 +496,7 @@
     "tag": "Beşel İtme Yayı",
     "deptId": "volkanOtomatsanPanel",
     "category": "volkan-kilit",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/besel-kapi-itme-yayi.jpg",
     "desc": "Apartman dış kapıları ve bahçe demir kapılarının açık kalmasını önleyen, ayarlanabilir kuvvetli ağır çelik kapı kapatıcı itme yayı.",
     "meta": [
       "No: 14 & No: 16 Boyutları",
@@ -530,7 +530,7 @@
     "tag": "Asma Kilit Grubu",
     "deptId": "volkanOtomatsanPanel",
     "category": "barel-asma-kilit",
-    "thumb": "assets/rf-card-locks.jpg",
+    "thumb": "assets/kilit/gk-kale-asma-kilit-grubu.jpg",
     "desc": "Depo, kepenk, bahçe kapısı, dolap ve alet sandıkları için kesilmeye dayanıklı sertleştirilmiş çelik kancalı masif asma kilitler.",
     "meta": [
       "Masif Pirinç & Gri Döküm",
