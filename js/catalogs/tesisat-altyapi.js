@@ -1481,7 +1481,7 @@
       }
 
       var filter = pill.getAttribute("data-filter");
-      var panel = pill.closest(".pv-tab-panel");
+      var panel = pill.closest(".pv-tab-panel") || pill.closest(".pv-dept-panel");
       if (!panel) return;
 
       panel.querySelectorAll(".pv-menu-row").forEach(function(row) {
@@ -1526,12 +1526,65 @@
     if (modalProductTitle) modalProductTitle.textContent = p.name;
     if (modalProductEyebrow) modalProductEyebrow.textContent = p.badge ? ("PERVAN · " + p.badge) : "PERVAN · SIHHİ TESİSAT & ALTYAPI";
     if (modalProductDesc) modalProductDesc.textContent = p.desc;
+
+    /* Badges */
+    var modalProductBadges = document.getElementById("modalProductBadges");
+    if (modalProductBadges) {
+      modalProductBadges.innerHTML = "";
+      if (p.badge) {
+        var b = document.createElement("span");
+        b.className = "pv-specimen-badge";
+        b.textContent = p.badge;
+        modalProductBadges.appendChild(b);
+      }
+      if (p.meta && p.meta.length) {
+        p.meta.forEach(function(m) {
+          var mb = document.createElement("span");
+          mb.className = "pv-specimen-badge-sub";
+          mb.textContent = m;
+          modalProductBadges.appendChild(mb);
+        });
+      }
+    }
     if (modalProductImg) {
       modalProductImg.src = p.thumb;
       modalProductImg.alt = p.name;
     }
 
-    /* Sizes */
+    /* Size Chips */
+    var modalPackagingSection = document.getElementById("modalPackagingSection");
+    var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
+    var modalSizeChips = document.getElementById("modalSizeChips");
+    if (modalSizeChips) {
+      modalSizeChips.innerHTML = "";
+      var sizes = p.sizes || ["Standart Model"];
+      selectedSize = sizes[0];
+      if (modalPackagingSection) modalPackagingSection.style.display = "";
+
+      sizes.forEach(function(size, idx) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
+        chip.textContent = size;
+        chip.setAttribute("role", "radio");
+        chip.setAttribute("aria-checked", idx === 0 ? "true" : "false");
+        chip.addEventListener("click", function() {
+          modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) {
+            c.classList.remove("active");
+            c.setAttribute("aria-checked", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-checked", "true");
+          selectedSize = size;
+          updateWhatsAppUrl();
+          if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = size;
+        });
+        modalSizeChips.appendChild(chip);
+      });
+      if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = sizes[0];
+    }
+
+    /* Fallback Segmented Track */
     if (modalSizeTrack) {
       modalSizeTrack.innerHTML = "";
       var sizes = p.sizes || ["Standart Model"];
@@ -1616,7 +1669,11 @@
   }
 
   function updateWhatsAppUrl() {
-    if (!modalWABtn || !currentProduct) return;
+    var waTarget = document.getElementById("modalWaBtn") || document.getElementById("modalWABtn");
+    if (!waTarget || !currentProduct) return;
+    var rawText = "Merhaba, Sıhhi Tesisat & Altyapı kataloğunuzdan '" + currentProduct.name + "' (" + selectedSize + ") ürünü için Balçova/Urla stok durumu ve proje fiyatı öğrenmek istiyorum.";
+    waTarget.href = "https://wa.me/905323844497?text=" + encodeURIComponent(rawText);
+    return;
     var rawText = "Merhaba, Sıhhi Tesisat & Altyapı kataloğunuzdan '" + currentProduct.name + "' (" + selectedSize + ") ürünü için Balçova/Urla stok durumu ve proje fiyatı öğrenmek istiyorum.";
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(rawText);
   }
