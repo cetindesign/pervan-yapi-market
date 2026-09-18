@@ -47,9 +47,15 @@
   </url>
   <url>
     <loc>https://pervanyapi.com/marshall-boya.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pervanyapi.com/fawori-boya.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://pervanyapi.com/capatect-dalmacyali-mantolama.html</loc>

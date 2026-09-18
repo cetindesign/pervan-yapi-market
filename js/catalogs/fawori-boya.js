@@ -1,117 +1,36 @@
-/* 1. HERO STAGE SLIDER & TRANSPARENT HEADER OBSERVER */
+/* ==========================================================================
+   PERVAN FAWORİ BOYA & ISI YALITIM INTERACTIVE ARCHITECTURAL CATALOG
+   Betek Kimya / Fawori Boya Yetkili Bayi Dağıtım Sistemi
+   ========================================================================== */
+
+/* 1. CINEMATIC HERO SLIDER CONTROLLER */
 (function() {
-  var stage = document.getElementById("pvStageHero");
-  var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
+  var stage = document.getElementById("pvHeroStage");
+  var bulletsContainer = document.getElementById("pvHeroBullets");
+  if (!stage || !bulletsContainer) return;
 
-  if (header) {
-    function checkHeaderSolid() {
-      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollY > 120) {
-        header.classList.add("header--solid");
-      } else {
-        header.classList.remove("header--solid");
-      }
-    }
-    window.addEventListener("scroll", checkHeaderSolid, { passive: true });
-    checkHeaderSolid();
-  }
-
-  if (!stage) return;
-  var track = document.getElementById("pvStageTrack");
-  if (!track) return;
-
-  var slides = stage.querySelectorAll(".pv-stage-slide");
-  var prevBtn = document.getElementById("pvStagePrev");
-  var nextBtn = document.getElementById("pvStageNext");
+  var slides = stage.querySelectorAll(".pv-hero-slide");
+  var bullets = bulletsContainer.querySelectorAll(".pv-bullet");
   var currentIndex = 0;
   var totalSlides = slides.length;
   var autoPlayTimer = null;
 
-  function hexToRgb(hex) {
-    hex = hex.replace('#', '');
-    if (hex.length === 3) {
-      hex = hex.split('').map(function(c) { return c + c; }).join('');
-    }
-    var num = parseInt(hex, 16);
-    return [(num >> 16) & 255, (num >> 8) & 255, num & 255].join(', ');
-  }
-
-  function syncActiveState(index) {
-    if (index < 0) index = 0;
-    if (index >= totalSlides) index = totalSlides - 1;
+  function goToSlide(index, manual) {
+    if (index < 0 || index >= totalSlides) return;
+    slides.forEach(function(slide, i) {
+      slide.classList.toggle("active", i === index);
+    });
+    bullets.forEach(function(bullet, i) {
+      bullet.classList.toggle("active", i === index);
+    });
     currentIndex = index;
-
-    var activeHex = slides[index].getAttribute("data-code") || '#DB2777';
-
-    slides.forEach(function(slide, idx) {
-      slide.classList.toggle("active", idx === index);
-    });
-
-    stage.style.setProperty('--pv-chroma-hex', activeHex);
-    stage.style.setProperty('--pv-chroma-rgb', hexToRgb(activeHex));
-
-    var barWidth = 140 / totalSlides;
-    var translateX = index * barWidth;
-    stage.querySelectorAll(".pv-stage-progress-bar").forEach(function(bar) {
-      bar.style.width = barWidth + "px";
-      bar.style.transform = "translateX(" + translateX + "px)";
-    });
+    if (manual) restartAutoPlay();
   }
 
-  function goToSlide(index, smooth) {
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-    currentIndex = index;
-
-    var slideWidth = track.clientWidth;
-    var targetLeft = index * slideWidth;
-
-    track.scrollTo({
-      left: targetLeft,
-      behavior: smooth !== false ? "smooth" : "auto"
+  bullets.forEach(function(bullet, i) {
+    bullet.addEventListener("click", function() {
+      goToSlide(i, true);
     });
-
-    syncActiveState(index);
-  }
-
-  // Native Kinetic Scroll
-  track.addEventListener("scroll", function() {
-    var slideWidth = track.clientWidth;
-    if (!slideWidth) return;
-
-    var nearestIndex = Math.round(track.scrollLeft / slideWidth);
-    if (nearestIndex !== currentIndex && nearestIndex >= 0 && nearestIndex < totalSlides) {
-      syncActiveState(nearestIndex);
-    }
-  }, { passive: true });
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      goToSlide(currentIndex - 1);
-      restartAutoPlay();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", function(e) {
-      e.preventDefault();
-      goToSlide(currentIndex + 1);
-      restartAutoPlay();
-    });
-  }
-
-  window.addEventListener("keydown", function(e) {
-    var stageRect = stage.getBoundingClientRect();
-    if (stageRect.bottom > 100 && stageRect.top < window.innerHeight) {
-      if (e.key === "ArrowLeft") {
-        goToSlide(currentIndex - 1, true);
-        restartAutoPlay();
-      } else if (e.key === "ArrowRight") {
-        goToSlide(currentIndex + 1, true);
-        restartAutoPlay();
-      }
-    }
   });
 
   function startAutoPlay() {
@@ -152,8 +71,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/dis-cephe-rulosu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770878224/FAWORI/dis_cephe_rulo_f9cdf91f9d.jpg",
-    "desc": "» İlk defa boyanacak yüzeylerde kullanılması önerilir. » Sarı-yeşil çizgilidir. » %100 polyamid kumaşdır. » Su bazlı ve sentetik boyalarda kullanılır.",
-    "meta": [],
+    "desc": "İlk defa boyanacak veya pürüzlü dış cephe yüzeylerinde yüksek emiş gücü sağlayan %100 polyamid rulo.",
+    "meta": [
+      "Uygulama Rulosu",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -187,22 +110,21 @@
     "tag": "Boya ile yüzey arasında bağlayıcı köprü kurar",
     "thumb": "assets/fawori/fawori-premium-dis-cephe-astari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774350512/FAWORI/premium_astar_d6d221d6cf.jpg",
-    "desc": "Silikonlu, akrilik kopolimer emülsiyon esaslı dış cephe astarıdır. Brüt beton, düz veya pürüzlü her cins sıvalı, mineral esaslı yüzeylerde, rengini kaybetmiş kendini taşıyabilen silikon veya akrilik esaslı boyalı yüzeylerde astar olarak kullanılır.",
+    "desc": "Silikonlu ve akrilik dış cephe boyaları öncesinde yüzey aderansını artıran ve boya sarfiyatını azaltan astar.",
     "meta": [
-      "Boya ile yüzey arasında bağlayıcı köprü kurar",
-      "Aderansı arttırır",
-      "Boya sarfiyatını azaltır"
+      "Dış Cephe Astarı",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "4,5 – 7,7 m²/kg",
     "sizes": [
-      "20kg",
-      "10kg",
-      "3",
-      "5kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20kg-10kg-3,5kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "4,5 – 7,7 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -229,23 +151,21 @@
     "tag": "Silikonlu",
     "thumb": "assets/fawori/fawori-premium-silikonlu--dis-cephe-boyasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774350710/FAWORI/premium_078c270f6e.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı mat görünümlü son kat dış cephe boyasıdır. Sıva, serpme sıva, tarak mozaik, beton, brüt beton, betopan, mdf, OSB, rengini kaybetmiş kendini taşıyabilen eski boyalı, terasit tipi yüzeylerde uygulanır.",
+    "desc": "Mat görünümlü, canlı renklere sahip, yüksek örtücülük ve su iticilik sağlayan son kat silikonlu dış cephe boyası.",
     "meta": [
-      "Silikonlu",
-      "Mat görünümlü",
-      "Canlı renklere sahip"
+      "Silikonlu Dış Cephe",
+      "Ambalaj: 15 L / 7,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "7-11 m²/L",
     "sizes": [
-      "15L",
-      "7",
-      "5L",
-      "2",
-      "5L"
+      "15 L",
+      "7,5 L",
+      "2,5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L – 7,5L – 2,5L",
+      "packaging": "15 L - 7,5 L - 2,5 L",
       "consumption": "7-11 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -272,19 +192,19 @@
     "tag": "Silikonlu",
     "thumb": "assets/fawori/fawori-silikonlu-grenli-kaplama.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774350476/FAWORI/silikonlu_grenli_83d8891aa6.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, silikon katkılı, rulo ile uygulanan ve mercan rulo ile desen verilen son kat grenli dış cephe kaplamasıdır. Sıva, beton, brüt beton, betopan, MDF, OSB, rengini kaybetmiş kendini taşıyabilen eski boyalı yüzeylerde uygulanır.",
+    "desc": "Silikon katkılı, mercan rulo ile desen verilebilen, cephe kusurlarını kamufle eden elastik grenli dış kaplama.",
     "meta": [
-      "Silikonlu",
-      "Mat görünümlü",
-      "Su itici"
+      "Grenli Dış Kaplama",
+      "Ambalaj: 25 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "0,75 – 1,1 m²/kg",
     "sizes": [
-      "25kg"
+      "25 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25kg",
+      "packaging": "25 KG",
       "consumption": "0,75 – 1,1 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -311,11 +231,11 @@
     "tag": "%100 Saf Akrilik",
     "thumb": "assets/fawori/fenomen-saf-akrilik-dis-cephe-boyasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774350997/FAWORI/fenomen_9912708d5b.jpg",
-    "desc": "%100 saf akrilik, esnek yapıda (elastomerik), ipeksi mat dokuda, extra su itici dış cephe boyasıdır. Sıva, serpme sıva, tarak moza­k, s­ilme moza­k, beton, brüt beton, betopan, MDF, OSB, mineral esaslı son kat dekoratif kaplamalar, son kat silikonlu dekoratif kaplamalar, reng­ini­ kaybetmi­ş, kendini­ taşıyabi­len eski­ boyalı, terasi­t ti­pi­ yüzeylere uygulanabi­li­r.",
+    "desc": "%100 saf akrilik bağlayıcılı, esnek elastomerik yapıda, sahil iklimi ve ağır hava koşullarına dayanıklı dış cephe boyası.",
     "meta": [
-      "%100 Saf Akrilik",
-      "İpek mat görünümlü",
-      "Göz alıcı, parlak renklere sahip"
+      "Saf Akrilik Zırh",
+      "Ambalaj: 15 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "7-12 m²/L",
     "sizes": [
@@ -350,19 +270,19 @@
     "tag": "Yüksek aderans gücü sayesinde yüzeylere maksimum tutunma sağlar.",
     "thumb": "assets/fawori/tempo-akrilik-dis-cephe-boyasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774349297/FAWORI/akrilik_dis_cephe_3dfa606960.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, mat görünümlü, UV ısınlarına dayanıklı, dekoratif, son kat dış cephe boyasıdır. Sıva, beton, serpme sıva, brüt beton, betopan, OSB, MDF ve mineral yüzeylerde, ayrıca yenileme için rengini kaybetmiş, kendini taşıyabilen silikon veya akrilik esaslı boyaların üzerine uygulanabilir.",
+    "desc": "Akrilik kopolimer emülsiyon esaslı, mat görünümlü, UV ışınlarına ve iklim koşullarına dayanıklı son kat boya.",
     "meta": [
-      "Yüksek aderans gücü sayesinde yüzeylere maksimum tutunma sağlar.",
-      "UV direnci ve iklim koşullarına dayanım sağlar.",
-      "Nefes alma kabiliyeti sayesinde yüzeyde oluşan nemin dışarı atılmasını sağlar."
+      "Silikonlu Dış Cephe",
+      "Ambalaj: 20 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "6,5 m²/kg",
     "sizes": [
-      "20 kg"
+      "20 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 kg",
+      "packaging": "20 KG",
       "consumption": "6,5 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -389,19 +309,19 @@
     "tag": "Brüt beton duvar, kolon, tavan gibi yüzeylerde aderans arttırıcı olarak kullanılır.",
     "thumb": "assets/fawori/tempo-brut-beton-astari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774349504/FAWORI/brut_beton_astari_7e00825e6d.jpg",
-    "desc": "Brüt beton üzerine yapılacak alçı ve çimento esaslı sıva uygulamalarından önce yüzey aderansını artırmak amacıyla kullanılan polimer modifiye reçine esaslı iç/dış cephe astarıdır. Brüt beton yüzeylere alçı ve çimento esaslı harç uygulanmasından önce uygulanır.",
+    "desc": "Brüt beton yüzeylerde sıva ve alçı uygulamaları öncesi tutunmayı artıran polimer modifiye aderans astarı.",
     "meta": [
-      "Brüt beton duvar, kolon, tavan gibi yüzeylerde aderans arttırıcı olarak kullanılır.",
-      "Üzerine uygulanacak ürünün performansını olumlu yönde etkiler.",
-      "Brüt beton üzerine yapılacak alçı ve çimento esaslı sıva uygulamalarından önce yüzey aderansını artırmak amacıyla kullanılmaktadır."
+      "Dış Cephe Astarı",
+      "Ambalaj: 12 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "4 – 4,5 m²/kg",
     "sizes": [
-      "12 kg"
+      "12 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "12 kg",
+      "packaging": "12 KG",
       "consumption": "4 – 4,5 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -428,19 +348,19 @@
     "tag": "İçerdiği özel elyaf sayesinde atmosfer koşullarına, kirliliğe, U.V. ışınlarına dayanıklıdır.",
     "thumb": "assets/fawori/tempo-ozel-teksturlu-dis-cephe-kaplamasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774349444/FAWORI/ozel_tekstur_dis_cephe_kaplamasi_d19cf36ec0.jpg",
-    "desc": "Akrilik kopolimer esaslı, elyaf katkılı ve silikonlu, dekoratif, tekstürlü dış cephe kaplamasıdır. Kendini taşıyabilen sıva, beton , OSB, MDF , ve diğer mineral yüzeylere, eski boyalı yüzeylere desen vermek amacıyla veya dekoratif amaçla uygulanır.",
+    "desc": "Elyaf katkılı ve silikonlu formülüyle kılcal çatlakları köprüleyen dekoratif tekstürlü dış cephe kaplaması.",
     "meta": [
-      "İçerdiği özel elyaf sayesinde atmosfer koşullarına, kirliliğe, U.V. ışınlarına dayanıklıdır.",
-      "Nefes alma yeteneğine sahip olup, duvardaki nemin dışarı atılmasına yardımcı olur.",
-      "Su itici özelliği sayesinde suya karşı dirençlidir."
+      "Grenli Dış Kaplama",
+      "Ambalaj: 20 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "0,7 – 1,1 m²/kg",
     "sizes": [
-      "20 kg"
+      "20 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 kg",
+      "packaging": "20 KG",
       "consumption": "0,7 – 1,1 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -467,19 +387,19 @@
     "tag": "Aderans gücü yüksektir, boya ile yüzey arasında bağlayıcı köprü kurar.",
     "thumb": "assets/fawori/tempo-silikonlu-dis-cephe-astari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774349473/FAWORI/silikonlu_dis_cephe_astari_22edb0937a.jpg",
-    "desc": "Silikon ve akrilik emülsiyon esaslı, pigmentli, aderans gücü yüksek, yapı son kat dış cephe astarıdır. Düz veya pürüzlü her cins sıvalı, mineral esaslı yüzeylerde, brüt beton üzerine, rengini kaybetmiş kendini taşıyabilen silikon veya akrilik esaslı eski boyalı yüzeylerde astar olarak kullanılır.",
+    "desc": "Yüksek aderans gücüyle boya ile yüzey arasında bağlayıcı köprü kuran nefes alabilen silikonlu dış cephe astarı.",
     "meta": [
-      "Aderans gücü yüksektir, boya ile yüzey arasında bağlayıcı köprü kurar.",
-      "Boya sarfiyatını azaltır.",
-      "Nefes alma kabiliyeti sayesinde yüzeyde oluşan nemin dışarı atılmasını sağlar."
+      "Dış Cephe Astarı",
+      "Ambalaj: 20 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "7,5 m²/kg",
     "sizes": [
-      "20 kg"
+      "20 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 kg",
+      "packaging": "20 KG",
       "consumption": "7,5 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -506,11 +426,11 @@
     "tag": "Isı iletkenlik katsayısı (λD = 0,035 W/mK)",
     "thumb": "assets/fawori/fawori-optimix-035-beyaz-eps-isi-yalitim-levhasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770985892/FAWORI/035_Beyaz_EPS_879cddec5b.jpg",
-    "desc": "Fawori 035 Beyaz EPS Isı Yalıtım Levhası, 20-22 kg/m3 yoğunluklu TS EN 13163 – EPS Ürün Üretim ve TS EN 13499 Isı Yalıtım Sistem standartlarına uygun olarak üretilen polistiren esaslı bir ısı yalıtım levhasıdır.",
+    "desc": "20-22 kg/m³ yoğunluklu, TS EN 13163 standartlarında yüksek ısı yalıtım performansı sunan beyaz EPS levha.",
     "meta": [
-      "Isı iletkenlik katsayısı (λD = 0,035 W/mK)",
-      "Yüksek su buharı geçirgenliğine (μ=30-70) sahiptir. Yapılarda nem, rutubet ve küf oluşumunu büyük ölçüde azaltır.",
-      "Yüzeylere dik çekme dayanımının yüksek olması sayesinde, rüzgar yüklerine karşı daha dayanıklıdır."
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -545,11 +465,11 @@
     "tag": "Tutunma derinliği : ≥ 6,45 cm",
     "thumb": "assets/fawori/fawori-optimix-beton-dubeli-celik-civili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771307673/FAWORI/beton_dubeli_973ad2d1fc.jpg",
-    "desc": "Taşyünü levha uygulamalarında 9 cm’lik geniş kafa çapıyla basma alanını genişleterek mükemmel bir tutunma sağlar. Beton, dolu tuğla, delikli tuğla, gaz beton, hafif betondan mamul dolu ve boşluklu bloklarda kullanılır.",
+    "desc": "Betonarme yüzeylerde yüksek çekme ve rüzgar vakum yüklerine karşı maksimum tutunma sağlayan çelik çivili dübel.",
     "meta": [
-      "Tutunma derinliği : ≥ 6,45 cm",
-      "Delik derinliği : ≥ 7,45 cm",
-      "Matkap çapı : 8,0 mm (Boşluklu Yüzeyde) - 9,0 mm (Dolu Yüzeyde)"
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -584,19 +504,19 @@
     "tag": "Çimento esaslı, yüksek buhar geçirgenliğine sahip dış cephe kaplamasıdır.",
     "thumb": "assets/fawori/fawori-optimix-dekoratif-kaplama-cizgi-dokulu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719991884/FAWORI/Fawori_Optimix_Dekoratif_Kaplama_Cizgi_Dokulu_a2e9b2639f.png",
-    "desc": "Çimento esaslı, hafif, yüzeyde doğal bir doku oluşturan, son kat iç ve dış yüzey kaplamasıdır.",
+    "desc": "Çimento esaslı, hafif, yüzeyde dekoratif çizgi dokusu oluşturan nefes alan son kat mineral sıva kaplaması.",
     "meta": [
-      "Çimento esaslı, yüksek buhar geçirgenliğine sahip dış cephe kaplamasıdır.",
-      "Dış hava şartlarına dayanıklı ve su iticidir. Rutubet birikimini önler.",
-      "Hafif olması sayesinde uygulaması ve desen verilmesi kolaydır."
+      "Optimix® Yalıtım",
+      "Ambalaj: 25 KG Kraft Torba",
+      "TS EN Standart"
     ],
     "coverage": "2,0 – 2,5 kg/m²",
     "sizes": [
-      "25 kg Kraft Torba"
+      "25 KG Kraft Torba"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25 kg Kraft Torba",
+      "packaging": "25 KG Kraft Torba",
       "consumption": "2,0 – 2,5 kg/m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -619,19 +539,19 @@
     "tag": "Çimento esaslı, yüksek buhar geçirgenliğine sahip dış cephe kaplamasıdır.",
     "thumb": "assets/fawori/fawori-optimix-dekoratif-kaplama-ince-tane-dokulu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719991725/FAWORI/Fawori_Optimix_Dekoratif_Kaplama_Ince_Tane_Dokulu_0e515dd9ea.png",
-    "desc": "Çimento esaslı, hafif, yüzeyde doğal bir doku oluşturan, son kat iç ve dış yüzey kaplamasıdır.",
+    "desc": "Çimento esaslı, su itici, ince tane dokulu cephe görünümü kazandıran dayanıklı dekoratif mineral kaplama.",
     "meta": [
-      "Çimento esaslı, yüksek buhar geçirgenliğine sahip dış cephe kaplamasıdır.",
-      "Dış hava şartlarına dayanıklı ve su iticidir. Rutubet birikimini önler.",
-      "Hafif olması sayesinde uygulaması ve desen verilmesi kolaydır."
+      "Optimix® Yalıtım",
+      "Ambalaj: 25 KG Kraft Torba",
+      "TS EN Standart"
     ],
     "coverage": "2,0 – 2,5 kg/m²",
     "sizes": [
-      "25 kg Kraft Torba"
+      "25 KG Kraft Torba"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25 kg Kraft Torba",
+      "packaging": "25 KG Kraft Torba",
       "consumption": "2,0 – 2,5 kg/m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -654,19 +574,19 @@
     "tag": "Çimento bazlı olması ve özel formülü sayesinde mükemmel bir buhar geçirgenliğine sahip olup ısı yalıtım sistemleri için ideal bir dış cephe kaplamasıdır.",
     "thumb": "assets/fawori/fawori-optimix-dekoratif-kaplama-tane-dokulu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771239009/FAWORI/tane_doku_3bb44639bf.jpg",
-    "desc": "Çimento esaslı, hafif, yüzeyde doğal bir doku oluşturan, son kat iç ve dış yüzey kaplamasıdır.",
+    "desc": "Isı yalıtım sistemleri için özel formüle edilmiş, tane dokulu homojen son kat dekoratif mineral sıva.",
     "meta": [
-      "Çimento bazlı olması ve özel formülü sayesinde mükemmel bir buhar geçirgenliğine sahip olup ısı yalıtım sistemleri için ideal bir dış cephe kaplamasıdır.",
-      "Dış hava şartlarına dayanıklı ve su iticidir. Rutubet birikimini önler.",
-      "Hafif olması sayesinde uygulaması ve desen verilmesi kolaydır."
+      "Optimix® Yalıtım",
+      "Ambalaj: 25 KG Kraft Torba",
+      "TS EN Standart"
     ],
     "coverage": "2,0 – 2,5 kg/m²",
     "sizes": [
-      "25 kg Kraft Torba"
+      "25 KG Kraft Torba"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25 kg Kraft Torba",
+      "packaging": "25 KG Kraft Torba",
       "consumption": "2,0 – 2,5 kg/m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -689,11 +609,11 @@
     "tag": "Yüksek aderans gücü vardır.",
     "thumb": "assets/fawori/dekoratif-mineral-kaplama-astari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1718199411/FAWORI/dekoratif_mineral_kaplama_astari_f16bdbe26b.png",
-    "desc": "Fawori Optimix Dekoratif Mineral Kaplama Astarı yüksek aderans gücüne sahip, akrilik kopolimer emülsiyon esaslı, beyaz renkte özel bir astardır.",
+    "desc": "Mineral kaplama öncesi yüzey emiciliğini dengeleyen ve aderansı artıran akrilik kopolimer pigmentli astar.",
     "meta": [
-      "Yüksek aderans gücü vardır.",
-      "Uygulama yüzeyi ile Fawori Optimix Dekoratif Mineral Kaplama Astarı arasında özel bir tutunma oluşturur.",
-      "Eski yüzeydeki kir ve lekelerin Fawori Optimix Dekoratif Mineral Kaplama Astarının üzerine çıkmasını engeller."
+      "Dekoratif Mineral Sıva",
+      "Ambalaj: 25 KG PE Kova",
+      "TS EN Standart"
     ],
     "coverage": "0,25 – 0,40 kg / m²",
     "sizes": [
@@ -724,11 +644,11 @@
     "tag": "Tutunma derinliği : ≥ 3 cm",
     "thumb": "assets/fawori/fawori-optimix-dubel-plastik-civili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771307447/FAWORI/dubel_plastik_civili_efd0331a3b.jpg",
-    "desc": "Optimix Isı Yalıtım Levhalarının yüzeylere sabitlenmesi ve rüzgar vakumlama yüklerine karşı sistemin korunması amacı ile kullanılır. Delikli tuğla, gaz beton ve dolu tuğlada kullanılabilir.",
+    "desc": "Tuğla ve gazbeton duvarlarda EPS ısı yalıtım levhalarının güvenli montajını sağlayan plastik çivili dübel.",
     "meta": [
-      "Tutunma derinliği : ≥ 3 cm",
-      "Delik derinliği : ≥ 4 cm",
-      "Matkap çapı : 10 mm (Boşluklu Yüzeyde) - 12mm (Dolu Yüzeyde)"
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -763,11 +683,11 @@
     "tag": "Isı iletkenlik katsayısı, λD = 0,040 W/mK’dir.",
     "thumb": "assets/fawori/fawori-optimix-eps-isi-yalitim-levhasi-beyaz.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770985811/FAWORI/beyaz_EPS_3ead3fc50f.jpg",
-    "desc": "Fawori Optimix Beyaz EPS Isı Yalıtım Levhası, TS EN 13163 – EPS Ürün Üretim Standardı'na uygun olarak üretilen polistiren esaslı bir ısı yalıtım levhasıdır.",
+    "desc": "TS EN 13163 standartlarına uygun, boyutsal kararlılığı ve buhar geçirgenliği yüksek beyaz EPS levha.",
     "meta": [
-      "Isı iletkenlik katsayısı, λD = 0,040 W/mK’dir.",
-      "Yüksek su buharı geçirgenliğine sahiptir.(μ=20-40) Yapılarda nem, rutubet ve küf oluşumunu engeller.",
-      "Yapılarda tüm mekanik yüklemelere dayanabilecek yeterliliktedir. Genleşme, büzülme ve duvarların çalışmasından kaynaklanan sıva, boya ve kaplama çatlaklarının oluşmasını önler."
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -802,11 +722,11 @@
     "tag": "Isı iletkenlik katsayısı, λD = 0,034 W/mK’dir.",
     "thumb": "assets/fawori/fawori-optimix-eps-isi-yalitim-levhasi-karbonlu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770985750/FAWORI/karbonlu_EPS_03805e22ab.jpg",
-    "desc": "Fawori Optimix Karbonlu EPS Isı Yalıtım Levhası, TS EN 13163 – EPS Ürün Üretim Standardı'na uygun olarak üretilen polistiren esaslı bir ısı yalıtım levhasıdır.",
+    "desc": "Grafit katkısıyla λ = 0,031-0,032 W/mK seviyesinde üstün enerji tasarrufu sağlayan karbonlu EPS levha.",
     "meta": [
-      "Isı iletkenlik katsayısı, λD = 0,034 W/mK’dir.",
-      "Yüksek su buharı geçirgenliğine sahiptir.(µ=20-40) Yapılarda nem, rutubet ve küf oluşumunu engeller.",
-      "Yapılarda tüm mekanik yüklemelere dayanabilecek yeterliliktedir. Genleşme, büzülme ve duvarların çalışmasından kaynaklanan sıva, boya ve kaplama çatlaklarının oluşmasını önler."
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -841,10 +761,11 @@
     "tag": "Mekanik mukavemet : Alkali şartlandırma sonrası mukavemet kaybı max. % 50 (atkı ve çözgüde)",
     "thumb": "assets/fawori/fawori-optimix-f160-donati-filesi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1716990164/FAWORI/e8193cd1_b228_4fcb_ae86_2c0d091afd5d_1d602e261a.png",
-    "desc": "4x4 elek aralığında, alkali dayanımlı, özel kaplamalı cam iplik dokuma filesidir.",
+    "desc": "Alkali ortamlara dirençli, 160 g/m² ağırlığında, çatlama önleyici yüksek mukavemetli cam iplik donatı filesi.",
     "meta": [
-      "Mekanik mukavemet : Alkali şartlandırma sonrası mukavemet kaybı max. % 50 (atkı ve çözgüde)",
-      "Alkali şartlandırma sonrası çekme mukavemeti: ≥ 20 N/mm ve mukavemet kaybı ≤ %50 (atkı ve çözgüde)"
+      "Optimix® Yalıtım",
+      "Ambalaj: 50m2 (1m x 50m)",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -879,8 +800,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-optimix-fileli-fuga-profili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771411047/FAWORI/fileli_fuga_profil_71172c09aa.jpg",
-    "desc": "3 m uzunluğunda PVC’den imal edilmiş fuga profillerdir. Isı yalıtım levhaları üzerinde açılmış olan fuga bölümlerinin geçişlerinde kullanılır. Profil üzerine yapıştırılmış donatı filesi ile işçilik ve zamandan tasarruf edilmesini sağlar, işçilik hatalarını önler. 1,6 cm derinlik ile 3 cm ve 5 cm olmak üzere iki farklı modeli mevcuttur.",
-    "meta": [],
+    "desc": "Dış cephe ısı yalıtım sistemlerinde dekoratif fuga hatları oluşturan su tahliye kanallı PVC profil.",
+    "meta": [
+      "Optimix® Yalıtım",
+      "Ambalaj: 10 adet / 30 m",
+      "TS EN Standart"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "10 adet",
@@ -915,19 +840,19 @@
     "tag": "Polistren esaslı ve taşyünü levhalara güçlü bir tutunma sağlar.",
     "thumb": "assets/fawori/fawori-optimix-isi-yalitim-siva-harci.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1716989872/FAWORI/e76f7ab6_ffe8_46cf_9c1a_37dcad6381d9_75b62494c6.png",
-    "desc": "Optimix Isı Yalıtım Sıva Harcı, iç ve dış mekanlarda polistren esaslı ve taşyünü levhalar gibi ısı ve ses yalıtım malzemelerinin üzerine perdah sıvası yapılmasında kullanılan, file uygulamasıyla yüzeyin mukavemetini arttıran, çimento esaslı bir sıvadır.",
+    "desc": "EPS ve taşyünü levhalar üzerine fileyle birlikte uygulanan, çatlamaya dirençli esnek çimento esaslı sıva harcı.",
     "meta": [
-      "Polistren esaslı ve taşyünü levhalara güçlü bir tutunma sağlar.",
-      "İçerdiği optimum polimer oranı ile ideal darbe dayanımı ve tutunma performansı sağlar.",
-      "Yapısında bulunan katkılar sayesinde sıcaklık farklılıklarından doğan gerilmeleri ve titreşimleri absorbe eder, çatlama riskini en aza indirir."
+      "Optimix® Yalıtım",
+      "Ambalaj: 25 KG kraft torba",
+      "TS EN Standart"
     ],
     "coverage": "Polistren levha için : 4,0-4,5 kg/m² Taşyünü levha için : 5,5-6,5 kg/m² Belirtilen sarfiyat miktarlarının yüzey ve uygulama şartlarına göre farklılık gösterebileceği dikkate alınmalıdır. Kesin sarfiyat için kontrollü numune yapılmalıdır.",
     "sizes": [
-      "25 kg kraft torba"
+      "25 KG kraft torba"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25 kg kraft torba",
+      "packaging": "25 KG kraft torba",
       "consumption": "Polistren levha için : 4,0-4,5 kg/m² Taşyünü levha için : 5,5-6,5 kg/m² Belirtilen sarfiyat miktarlarının yüzey ve uygulama şartlarına göre farklılık gösterebileceği dikkate alınmalıdır. Kesin sarfiyat için kontrollü numune yapılmalıdır.",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -950,19 +875,19 @@
     "tag": "Polistren esaslı ve taşyünü levhaların mineral yüzeylere güçlü olarak yapışmasını sağlar.",
     "thumb": "assets/fawori/fawori-optimix-isi-yalitim-yapistirma-harci.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1716989872/FAWORI/8983fe8e_6edc_4320_bf53_d179171194df_9c1af539be.png",
-    "desc": "Optimix Isı Yalıtım Yapıştırma Harcı, iç ve dış mekanlarda beton, sıva, tuğla, gazbeton panel vb. mineral esaslı yüzeylerde, polistren esaslı ve taşyünü levhalar gibi ısı ve ses yalıtım malzemelerinin yapıştırılmasında kullanılan çimento esaslı özel yapıştırıcıdır.",
+    "desc": "Isı yalıtım levhalarını mineral yüzeylere güçlü bir şekilde tutturan, kayma dirençli çimento esaslı yapıştırıcı.",
     "meta": [
-      "Polistren esaslı ve taşyünü levhaların mineral yüzeylere güçlü olarak yapışmasını sağlar.",
-      "İçerdiği optimum polimer oranı ile yüksek yapışma performansına sahiptir.",
-      "Su buharı geçirgenliğine sahiptir."
+      "Optimix® Yalıtım",
+      "Ambalaj: 25 KG kraft torba",
+      "TS EN Standart"
     ],
     "coverage": "Polistren levha için : 4,0-4,5 kg/m² Taşyünü levha için : 5,5-6,5 kg/m² Belirtilen sarfiyat miktarlarının yüzey ve uygulama şartlarına göre farklılık gösterebileceği dikkate alınmalıdır. Kesin sarfiyat için kontrollü numune yapılmalıdır.",
     "sizes": [
-      "25 kg kraft torba"
+      "25 KG kraft torba"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25 kg kraft torba",
+      "packaging": "25 KG kraft torba",
       "consumption": "Polistren levha için : 4,0-4,5 kg/m² Taşyünü levha için : 5,5-6,5 kg/m² Belirtilen sarfiyat miktarlarının yüzey ve uygulama şartlarına göre farklılık gösterebileceği dikkate alınmalıdır. Kesin sarfiyat için kontrollü numune yapılmalıdır.",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -985,8 +910,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-optimix-PVC-denizlik-uzatma-profili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771411116/FAWORI/pvc_denizlik_uzatma_profili_bde99753c4.jpg",
-    "desc": "Isı yalıtım uygulamalarında mevcut pencere denizliklerinin yeterli olmadığı yerlerde bu kısımları uzatarak yalıtım detaylarının uygulanabilmesine imkan veren profillerdir. Damlalıklı, UV dayanımlı ve antistatik (toz tutmaz) özelliktedir. 3 m boyda, 5cm ve 8cm genişlikte olmak üzere 2 ayrı ebadı mevcuttur.",
-    "meta": [],
+    "desc": "Pencere denizliklerinin yetersiz kaldığı mantolama cephelerinde su tahliyesini uzatan kendinden fileli profil.",
+    "meta": [
+      "Optimix® Yalıtım",
+      "Ambalaj: 5 cm’lik : 25 adet / 75 m 8 cm’lik : 20 adet",
+      "TS EN Standart"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "5 cm’lik : 25 adet",
@@ -1022,8 +951,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-optimix-PVC-fileli-kose-profili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771410977/FAWORI/fileli_kose_profili_22bd821048.jpg",
-    "desc": "2,5 m uzunluğunda, PVC fileli köşe profilidir. Bina köşeleri, pencere, kapı kenarlarının olası mekanik hasarlara karşı korunması ve sıva katında düzgünlük sağlama amacıyla kullanılan profillerdir. 160 gr/m² yüksek alkali dayanımlı donatı filesi ile imal edilmektedir.",
-    "meta": [],
+    "desc": "Bina köşe ve pencere kenarlarını darbelere karşı koruyan, düzgün hat sağlayan 2,5 m fileli PVC köşe profili.",
+    "meta": [
+      "Optimix® Yalıtım",
+      "Ambalaj: 50 adet / 125 m",
+      "TS EN Standart"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "50 adet",
@@ -1058,10 +991,11 @@
     "tag": "Kafa çapı : 9 cm",
     "thumb": "assets/fawori/fawori-optimix-tasyunu-dubel-pulu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771307839/FAWORI/dubel_pulu_33d4345927.jpg",
-    "desc": "Dış cephe ısı yalıtım sistemlerinde, taşyünü levha uygulamalarında tüm dübellere uygun olarak kullanılabilir. Dübellerin basma alanını genişleterek mükemmel bir tutunma sağlar.",
+    "desc": "Taşyünü levha mantolamasında basma alanını 9 cm çapa genişleterek liflerin ezilmesini önleyen dübel pulu.",
     "meta": [
-      "Kafa çapı : 9 cm",
-      "Ambalaj : 200 adet"
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -1096,11 +1030,11 @@
     "tag": "Tutunma derinliği : ≥ 3 cm",
     "thumb": "assets/fawori/fawori-optimix-tasyunu-dubeli-celik-civili.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1771307579/FAWORI/tasyunu_dubeli_celik_civili_47420e858b.jpg",
-    "desc": "Beton, brüt beton, tünel beton, dolu tuğla, hafif betondan mamul dolu ve boşluklu bloklarda kullanılabilir.",
+    "desc": "Taşyünü yalıtım sistemlerinde yangın güvenliği ve ağır yük dayanımı sağlayan çelik çivili montaj dübeli.",
     "meta": [
-      "Tutunma derinliği : ≥ 3 cm",
-      "Delik derinliği : ≥ 4 cm",
-      "Matkap çapı : 8,0 mm (Boşluklu Yüzeyde) - 9,0 mm (Dolu Yüzeyde)"
+      "Optimix® Yalıtım",
+      "Ambalaj: Standart Ambalaj",
+      "TS EN Standart"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
@@ -1135,20 +1069,21 @@
     "tag": "Kumlu yapısıyla, boya ve yüzey arasında bağlayıcı köprü kurar, aderansı arttırır, boya sarfiyatını azaltır. Beyaz pigmentli, yüksek örtme ve aderans (yapışma) özelliği sayesinde boya ve zaman tasarrufu sağlar.",
     "thumb": "assets/fawori/fawori-donusum-astari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/fawori_donusum_astari_34229f94d6.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, beyaz pigmentli iç cephe astar boyasıdır. Brüt beton, düz veya pürüzlü her cins sıvalı, mineral esaslı yüzeylerde, rengini kaybetmiş kendini taşıyabilen silikon veya akrilik eski boyalı yüzeylerde astar olarak uygulanır. Eski boyalı yüzeylerde özellikle sentetik boyadan su bazlı boyaya geçişlerde kullanılır",
+    "desc": "Sentetik boyalı yüzeylerden su bazlı boyalara geçişte tutunmayı sağlayan beyaz pigmentli dönüşüm astarı.",
     "meta": [
-      "Kumlu yapısıyla, boya ve yüzey arasında bağlayıcı köprü kurar, aderansı arttırır, boya sarfiyatını azaltır. Beyaz pigmentli, yüksek örtme ve aderans (yapışma) özelliği sayesinde boya ve zaman tasarrufu sağlar."
+      "İç Cephe Astarı",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 kg ile tek katta 5-9,6 m²",
     "sizes": [
-      "20kg",
-      "10kg",
-      "3",
-      "5kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20kg-10kg-3,5kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 kg ile tek katta 5-9,6 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1175,23 +1110,22 @@
     "tag": "Boya ile yüzey arasında bağlayıcı köprü kurarak boyanın yüzeye daha iyi tutunmasını sağlar. Uygulandığı yüzeyin emiciliğini azaltır, boyanın erken kurumasını engeller ve farklı emiciliğe sahip yüzeylerde son kat boyada oluşabilecek renk dalgalanmalarını önler. Boya sarfiyatını azaltarak ekonomi sağlar.",
     "thumb": "assets/fawori/konsantre-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/konsantre_astar_3c06a82174.jpg",
-    "desc": "Su bazlı, yüksek penetrasyon ve aderansa sahip, konsantre astardır. İpek ve Yarı Mat boyalarda 1/7 , Mat ve Plastik boyalarda 1/10 oranında inceltilerek kullanılır. Alçı, kireç badana, özelliğini yitirmiş düşük kaliteli emici plastik boyalı yüzeyler, gaz beton vb. çok emici ve/veya tozuma karakterli yüzeylerde uygulanır.",
+    "desc": "Alçı, kireç badana ve gazbeton gibi yüksek emici yüzeylerde boya sarfiyatını azaltan su bazlı konsantre astar.",
     "meta": [
-      "Boya ile yüzey arasında bağlayıcı köprü kurarak boyanın yüzeye daha iyi tutunmasını sağlar. Uygulandığı yüzeyin emiciliğini azaltır, boyanın erken kurumasını engeller ve farklı emiciliğe sahip yüzeylerde son kat boyada oluşabilecek renk dalgalanmalarını önler. Boya sarfiyatını azaltarak ekonomi sağlar."
+      "İç Cephe Astarı",
+      "Ambalaj: 15 L / 7,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "95-160 m²/L 1/7 130-220 m²/L 1/10",
     "sizes": [
-      "15L",
-      "7",
-      "5L",
-      "2",
-      "5L",
-      "0",
-      "75L"
+      "15 L",
+      "7,5 L",
+      "2,5 L",
+      "0,75 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L-7,5L-2,5L-0,75L",
+      "packaging": "15 L - 7,5 L - 2,5 L - 0,75 L",
       "consumption": "95-160 m²/L 1/7 130-220 m²/L 1/10",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1218,23 +1152,21 @@
     "tag": "Su bazlı, silikon esaslı",
     "thumb": "assets/fawori/fawori-kozmik-ipek.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526359/FAWORI/kozmik_546458e634.jpg",
-    "desc": "Silikon esaslı, ipeksi bir dokuya sahip, tam silinebilir dekoratif su bazlı iç cephe boyasıdır. İç cephe eski-yeni boyalı/sıvalı tavan-duvar, alçı, macun, alçıpan, betopan, OSB, cam tekstili yüzeyler üzerine uygun astarlama işlemi tamamlandıktan sonra uygulanır. Yapı malzeme standartlarına uygun uygulama yapıldığında çatlama, kabarma ve dökülme yapmaz. Su bazlı olması nedeni ile rahatsız edici bir kokusu yoktur, çevre dostudur.",
+    "desc": "Silikon esaslı, ipeksi mat dokuya sahip, leke tutmayan ve tam silinebilir birinci sınıf iç cephe boyası.",
     "meta": [
-      "Su bazlı, silikon esaslı",
-      "İpeksi dokuya sahip",
-      "Tam silinebilen"
+      "İpek Mat Doku",
+      "Ambalaj: 15 L / 7,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "13-25,3 m²/L",
     "sizes": [
-      "15L",
-      "7",
-      "5L",
-      "2",
-      "5L"
+      "15 L",
+      "7,5 L",
+      "2,5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L-7,5L-2,5L",
+      "packaging": "15 L - 7,5 L - 2,5 L",
       "consumption": "13-25,3 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1261,18 +1193,19 @@
     "tag": "Yüksek dolgu gücüne sahiptir, yüzeye iyi tutunur, zımparalama kolaylığı sunar ve çabuk kurur.",
     "thumb": "assets/fawori/fawori-macun.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/fw_macun_acaafa8e9c.jpg",
-    "desc": "Akrilik kopolimer esaslı, yüksek doldurma gücüne sahip, beyaz renkli ahşap macunudur. Özellikle ahşap yüzeyler için formüle edilmiş olup yeni boyanacak yüzeylerde, eski boyalı ve/veya sıvalı yüzeylere boya uygulamalarında dolgu ve yüzey düzeltme macunu olarak kullanılır.",
+    "desc": "İç mekan duvar ve tavanlardaki pürüzleri gideren, kolay zımparalanan ve çatlamayan dolgu macunu.",
     "meta": [
-      "Yüksek dolgu gücüne sahiptir, yüzeye iyi tutunur, zımparalama kolaylığı sunar ve çabuk kurur."
+      "Pürüzsüz Dolgu",
+      "Ambalaj: 1,1 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
-      "1",
-      "1kg"
+      "1,1 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "1,1kg",
+      "packaging": "1,1 KG",
       "consumption": "Uygulama yüzeyi ve kat sayısına bağlıdır",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1299,22 +1232,20 @@
     "tag": "Su bazlı, çevre dostu",
     "thumb": "assets/fawori/fawori-panel-kapi-boyasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526358/FAWORI/panel_kapi_5de7e4019d.jpg",
-    "desc": "Akrilik reçine esaslı, örtücü ve koruyucu su bazlı son kat panel kapı boyasıdır. Amerikan panel, masif ahşap ve kaplamalı ahşap kapılar üzerine uygulanabilir. Ham yüzeyin boyanmasında ya da boya üstü boya uygulamasında kullanılır. Boya üstü boya uygulamalarında, su/solvent bazlı boya ve vernikler üzerine uygulanabilir. Yatay ahşap zemin ve yaya trafiği olan yüzeylerde kullanılmamalıdır.",
+    "desc": "Amerikan panel kapılar ve ahşap doğramalar için sararmayan, su bazlı ve silinebilir yarı mat kapı boyası.",
     "meta": [
-      "Su bazlı, çevre dostu",
-      "Yarı mat parlaklıkta",
-      "Sararmaya dirençli"
+      "Su Bazlı Yarı Mat",
+      "Ambalaj: 2,5 L / 0,75 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "13-23 m²/L",
     "sizes": [
-      "2",
-      "5L",
-      "0",
-      "75L"
+      "2,5 L",
+      "0,75 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "2,5L-0,75L",
+      "packaging": "2,5 L - 0,75 L",
       "consumption": "13-23 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1341,18 +1272,21 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-plastik.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/plastik_fd4c488b26.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, dekoratif iç yüzey plastik boyasıdır. İç cephe eski-yeni boyalı/sıvalı tavan-duvar, alçı, macun, alçıpan, betopan, OSB, cam tekstili yüzeyler üzerine uygun astarlama işlemi tamamlandıktan sonra uygulanır.",
-    "meta": [],
+    "desc": "Mat görünümlü, yüksek örtücülüğe sahip, kolay uygulanan ekonomik emülsiyon esaslı iç cephe plastik boyası.",
+    "meta": [
+      "Silikonlu & Plastik",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
+    ],
     "coverage": "Sarfiyat kısmını 1 kg ile tek katta 8-16 m²",
     "sizes": [
-      "20kg",
-      "10kg",
-      "3",
-      "5kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20kg-10kg-3,5kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "Sarfiyat kısmını 1 kg ile tek katta 8-16 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1379,20 +1313,21 @@
     "tag": "Son kat boyanın örtücülüğünü arttırır ve yüzeye daha iyi yapışmasını sağlar. İnce dokusu sayesinde üzerine uygulanacak Fawori Fenomen İç Cephe, Master İpek, Silikonlu İpek gibi parlaklık ve dokunun önemli olduğu su bazlı boyalar için ideal bir yüzey oluşturur. Yüzeyin emiş gücünü dengeler, boyanın eşit dağılımını sağlar.",
     "thumb": "assets/fawori/fawori-pro-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/pro_astar_ef96039fd9.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, beyaz pigmentli, ince dokulu iç cephe astar boyasıdır. Beton, brüt beton, ham sıvalı yüzeyler, mdf, betopan, OSB, tuğla, kendini taşıyabilen eski boyalı (su-solvent bazlı)ve macun uygulanmış yüzeylerde uygulanır. Eski boyalı yüzeylerde özellikle su bazlı boya üzerine yine su bazlı boya uygulanacaksa kullanılır.",
+    "desc": "Yeni mineral yüzeylerde son kat boyanın örtücülüğünü artıran beyaz pigmentli ince dokulu iç cephe astarı.",
     "meta": [
-      "Son kat boyanın örtücülüğünü arttırır ve yüzeye daha iyi yapışmasını sağlar. İnce dokusu sayesinde üzerine uygulanacak Fawori Fenomen İç Cephe, Master İpek, Silikonlu İpek gibi parlaklık ve dokunun önemli olduğu su bazlı boyalar için ideal bir yüzey oluşturur. Yüzeyin emiş gücünü dengeler, boyanın eşit dağılımını sağlar."
+      "İç Cephe Astarı",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 kg ile tek katta 7,8-11 m²",
     "sizes": [
-      "20kg",
-      "10kg",
-      "3",
-      "5kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20kg-10kg-3,5kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 kg ile tek katta 7,8-11 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1419,20 +1354,19 @@
     "tag": "Pürüzlü bir yüzey oluşturur",
     "thumb": "assets/fawori/Fawori-seramik-ustu-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526358/FAWORI/seramik_ustu_astar_af0fc288c7.jpg",
-    "desc": "Polimer modifiye reçine esaslı seramik üzeri seramik uygulamalarında kullanılabilecek astar malzemesidir.",
+    "desc": "Mevcut seramik ve fayans yüzeyler kırılmadan üzerine kaplama yapılmasını sağlayan yüksek aderanslı astar.",
     "meta": [
-      "Pürüzlü bir yüzey oluşturur",
-      "Yapışma mukavemetini arttırır",
-      "Daha iyi tutunma sağlar"
+      "İç Cephe Astarı",
+      "Ambalaj: 3,5 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 Kg ile tek katta 10-16 m²",
     "sizes": [
-      "3",
-      "5 Kg"
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "3,5 Kg",
+      "packaging": "3,5 KG",
       "consumption": "1 Kg ile tek katta 10-16 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1459,22 +1393,21 @@
     "tag": "Su bazlı, silikon esaslı",
     "thumb": "assets/fawori/fawori-silikonlu-mat.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/sil_mat_b40e84b5e0.jpg",
-    "desc": "Silikonlu akrilik kopolimer esaslı, dekoratif birinci sınıf son kat emülsiyon boyasıdır. İç cephe eski-yeni boyalı/sıvalı tavan-duvar, alçı, macun, alçıpan, betopan, OSB, cam tekstili yüzeyler üzerine uygun astarlama işlemi tamamlandıktan sonra uygulanır.",
+    "desc": "Silikon katkısı sayesinde yüksek nefes alma ve silinme direnci sunan dekoratif mat iç cephe boyası.",
     "meta": [
-      "Su bazlı, silikon esaslı",
-      "Mat görünümlü",
-      "Nefes alabilen"
+      "Silikonlu & Plastik",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 kg ile tek katta 8-11 m²",
     "sizes": [
-      "20 Kg",
-      "10 Kg",
-      "3",
-      "5 Kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 Kg - 10 Kg - 3,5 Kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 kg ile tek katta 8-11 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1501,18 +1434,20 @@
     "tag": "Boya ile yüzey arasında köprü kurar. Penetrasyon özelliğinden dolayı uygulama yüzeyinin iç derinliklerine kadar nüfuz ederek üzerine gelecek boya tabakasının uygulama yüzeyi ile bütünleşmesini sağlar. Yüzey emiciliğini önlediği için, özellikle sıcak havalarda boyanın erken kurumasını önler ve boya sarfiyatını azaltır.",
     "thumb": "assets/fawori/seffaf-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526359/FAWORI/seffaf_astar_74cd50c37c.jpg",
-    "desc": "Kullanıma hazır, özel emülsiyon reçine esaslı, şeffaf iç cephe astarıdır. Alçı, kireç badana, özelliğini yitirmiş düşük kaliteli emici plastik boyalı yüzeyler, gaz beton vb. çok emici ve/veya tozuma karakterli yüzeylerde uygulanır.",
+    "desc": "Alçılı ve tozuyan yüzeyleri bağlayarak boya sarfiyatını düşüren kullanıma hazır şeffaf iç cephe astarı.",
     "meta": [
-      "Boya ile yüzey arasında köprü kurar. Penetrasyon özelliğinden dolayı uygulama yüzeyinin iç derinliklerine kadar nüfuz ederek üzerine gelecek boya tabakasının uygulama yüzeyi ile bütünleşmesini sağlar. Yüzey emiciliğini önlediği için, özellikle sıcak havalarda boyanın erken kurumasını önler ve boya sarfiyatını azaltır."
+      "İç Cephe Astarı",
+      "Ambalaj: 20 L / 5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 L ile tek katta 8-12,5 m²",
     "sizes": [
-      "20L",
-      "5L"
+      "20 L",
+      "5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20L-5L",
+      "packaging": "20 L - 5 L",
       "consumption": "1 L ile tek katta 8-12,5 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1539,21 +1474,21 @@
     "tag": "Su bazlı - Mat görünümlü - Extra beyaz - Extra örtücü - Kolay uygulanabilen - Nefes alabilen",
     "thumb": "assets/fawori/fawori-tavan-extra.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/tav_extra_fdee334414.jpg",
-    "desc": "Akrilik kopolimer emülsiyon esaslı, dekoratif iç yüzey beyaz tavan boyasıdır. Saten alçılı, macunlu, alçıpan yüzeyler ve tozuma karakterli olmayan eski boyalı veya sıvalı iç cephe tavan yüzeyler üzerine kullanılır.",
+    "desc": "Rulo ve fırça izi bırakmayan, ekstra beyaz ve mat dokulu, yüksek kapatıcılığa sahip tavan boyası.",
     "meta": [
-      "Su bazlı - Mat görünümlü - Extra beyaz - Extra örtücü - Kolay uygulanabilen - Nefes alabilen"
+      "Tam Mat Beyaz",
+      "Ambalaj: 17,5 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "5,5 - 9,5 m²/kg",
     "sizes": [
-      "17",
-      "5kg",
-      "10kg",
-      "3",
-      "5kg"
+      "17,5 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "17,5kg-10kg-3,5kg",
+      "packaging": "17,5 KG - 10 KG - 3,5 KG",
       "consumption": "5,5 - 9,5 m²/kg",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1580,23 +1515,21 @@
     "tag": "Su bazlı, silikon esaslı",
     "thumb": "assets/fawori/fawori-ultra-soft-mat.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526358/FAWORI/ultra_343e915959.jpg",
-    "desc": "Silikon esaslı, soft mat parlaklığa sahip, tam silinebilir dekoratif su bazlı iç cephe boyasıdır. İç cephe eski-yeni boyalı/sıvalı tavan-duvar, alçı, macun, alçıpan, betopan, OSB, cam tekstili yüzeyler üzerine uygun astarlama işlemi tamamlandıktan sonra uygulanır. Yapı malzeme standartlarına uygun uygulama yapıldığında çatlama, kabarma ve dökülme yapmaz. Su bazlı olması nedeni ile rahatsız edici bir kokusu yoktur, çevre dostudur.",
+    "desc": "Işığı mükemmel dağıtan soft mat dokulu, parlama yapmayan, tam silinebilir lüks su bazlı iç cephe boyası.",
     "meta": [
-      "Su bazlı, silikon esaslı",
-      "Soft mat parlaklığa sahip",
-      "Pürüzsüz görünümlü"
+      "Ultra Soft Mat",
+      "Ambalaj: 15 L / 7,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "13-24 m²/L",
     "sizes": [
-      "15L",
-      "7",
-      "5L",
-      "2",
-      "5L"
+      "15 L",
+      "7,5 L",
+      "2,5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L-7,5L-2,5L",
+      "packaging": "15 L - 7,5 L - 2,5 L",
       "consumption": "13-24 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1623,21 +1556,20 @@
     "tag": "Yüksek penetrasyon",
     "thumb": "assets/fawori/tempo-binder-konsantre-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/tempo_binder_396b369632.jpg",
-    "desc": "İpek parlaklığında ve daha parlak boyalarda 1 ölçek astar, 7 ölçek su ile inceltilir. Mat/Plastik boyalarda sulandırma oranının 1/10’a çıkartılmalıdır.",
+    "desc": "Gözenekli yüzeylerde boya emilimini dengeleyen, tozuma önleyici ekonomik konsantre astar.",
     "meta": [
-      "Yüksek penetrasyon",
-      "Boya ile yüzey arasında köprü görevi görür",
-      "Tutunmayı arttırır"
+      "İç Cephe Astarı",
+      "Ambalaj: 15 L / 2,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
-      "15L",
-      "2",
-      "5L"
+      "15 L",
+      "2,5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L-2,5L",
+      "packaging": "15 L - 2,5 L",
       "consumption": "Uygulama yüzeyi ve kat sayısına bağlıdır",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1660,22 +1592,21 @@
     "tag": "Su bazlı, silikon esaslı",
     "thumb": "assets/fawori/tempo-ozel-ipek-silikonlu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/tempo_ozel_ipek_sil_00d6630435.jpg",
-    "desc": "Silikonlu, silinebilme özelliği olan, ipek mat dokuda dekoratif son kat su bazlı iç cephe boyasıdır.",
+    "desc": "Silikonlu, silinebilme özelliği olan, ipek mat dokuda dekoratif son kat su bazlı iç cephe boyası.",
     "meta": [
-      "Su bazlı, silikon esaslı",
-      "Silinebilir",
-      "Yüksek örtücülük"
+      "Silikonlu & Plastik",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 L ile tek katta 13-20 m²",
     "sizes": [
-      "20 Kg",
-      "10 Kg",
-      "3",
-      "5 Kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 Kg, 10 Kg, 3,5 Kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 L ile tek katta 13-20 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1702,22 +1633,21 @@
     "tag": "Su bazlı, akrilik esaslı",
     "thumb": "assets/fawori/tempo-ozel-plastik.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774526358/FAWORI/tempo_ozel_plastik_6d9ff84572.jpg",
-    "desc": "Akrilik esaslı, mat görünümlü, dekoratif iç yüzey plastik boyadır.",
+    "desc": "Dekoratif mat bitişli, kokusuz, kolay uygulanan ekonomik iç cephe plastik duvar boyası.",
     "meta": [
-      "Su bazlı, akrilik esaslı",
-      "Mat görünüm",
-      "Su kaldırır yapıda"
+      "Silikonlu & Plastik",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 L ile tek katta 10,5 m²",
     "sizes": [
-      "20 Kg",
-      "10 Kg",
-      "3",
-      "5 Kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 Kg, 10 Kg, 3,5 Kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 L ile tek katta 10,5 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1744,23 +1674,21 @@
     "tag": "Su bazlı akrilik esaslı",
     "thumb": "assets/fawori/tempo-ozel-tavan.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/tempo_ozel_tavan_63b455a956.jpg",
-    "desc": "Akrilik esaslı, yüksek beyazlığa sahip, dekoratif beyaz tavan boyasıdır.",
+    "desc": "Ekstra örtücü, mat beyaz dokulu, nefes alma kabiliyeti yüksek ekonomik tavan boyası.",
     "meta": [
-      "Su bazlı akrilik esaslı",
-      "Yüksek nefes alma özelliği",
-      "Mat görünüm"
+      "Tam Mat Beyaz",
+      "Ambalaj: 17,5 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 L ile tek katta 5-9 m²",
     "sizes": [
-      "17",
-      "5 Kg",
-      "10 Kg",
-      "3",
-      "5 Kg"
+      "17,5 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "17,5 Kg - 10 Kg - 3,5 Kg",
+      "packaging": "17,5 KG - 10 KG - 3,5 KG",
       "consumption": "1 L ile tek katta 5-9 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1787,22 +1715,21 @@
     "tag": "Su bazlı, silikon esaslı",
     "thumb": "assets/fawori/tempo-silikonlu-mat.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524648/FAWORI/tempo_sil_mat_ic_cephe_2d6c798783.jpg",
-    "desc": "Akrilik esaslı, silikon katkılı, mat görünümlü, dekoratif iç cephe son kat duvar boyasıdır.",
+    "desc": "Silikonlu yapısıyla nem direnci sağlayan, fırça izi bırakmayan mat dekoratif iç cephe boyası.",
     "meta": [
-      "Su bazlı, silikon esaslı",
-      "Mat görünümlü",
-      "Yüksek örtücülük"
+      "Silikonlu & Plastik",
+      "Ambalaj: 20 KG / 10 KG",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "1 L ile tek katta 13-20 m²",
     "sizes": [
-      "20 Kg",
-      "10 Kg",
-      "3",
-      "5 Kg"
+      "20 KG",
+      "10 KG",
+      "3,5 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "20 Kg, 10 Kg, 3,5 Kg",
+      "packaging": "20 KG - 10 KG - 3,5 KG",
       "consumption": "1 L ile tek katta 13-20 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1829,23 +1756,21 @@
     "tag": "Boya ile yüzey arasında köprü görevi görür",
     "thumb": "assets/fawori/tempo-universal-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1774524649/FAWORI/universal_astar_9cfbad91a2.jpg",
-    "desc": "Akrilik kopolimer esaslı beyaz pigmentli astar boyadır. Çok iyi örtme ve aderans gücüne sahiptir.",
+    "desc": "İç cephede son kat boyanın yüzeye homojen tutunmasını sağlayan örtücü beyaz astar.",
     "meta": [
-      "Boya ile yüzey arasında köprü görevi görür",
-      "Tutunmayı arttırır",
-      "Boya sarfiyatını azaltrı"
+      "İç Cephe Astarı",
+      "Ambalaj: 15 L / 7,5 L",
+      "Betek Kimya Güvencesi"
     ],
     "coverage": "14-20 m²/L",
     "sizes": [
-      "15L",
-      "7",
-      "5L",
-      "2",
-      "5L"
+      "15 L",
+      "7,5 L",
+      "2,5 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L-7,5L-2,5L",
+      "packaging": "15 L - 7,5 L - 2,5 L",
       "consumption": "14-20 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -1872,8 +1797,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/akrilik-sprey-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881189/FAWORI/akrilik_sprey_boya_73cc5d3725.jpg",
-    "desc": "» İç ve dış alanlarda ahşap, sunta/MDF, metal, cam, seramik, karton, plastik vb. gibi yüzeylerde kullanılabilen akrilik esaslı sprey boyadır. » Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Ahşap, metal, cam ve sert plastik yüzeylerde hızlı kuruyan parlak ve mat renkli akrilik sprey boya.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -1907,8 +1836,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/akrilik-sprey-vernik.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881227/FAWORI/akrilik_sprey_vernik_0acf363951.jpg",
-    "desc": "İç ve dış alanlarda ahşap, sunta/MDF vb. yüzeylerde kullanılabilen parlak ve mat görünümlü akrilik sprey verniktir. Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Hobi ve dekorasyon projelerinde yüzeyi sararmadan koruyan, çizilmeye dayanıklı akrilik sprey vernik.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -1942,8 +1875,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/ekstra-plastik-rulo.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770878201/FAWORI/ekstra_plastik_rulo_818e4252b2.jpg",
-    "desc": "» Yarı pürüzlü, pürüzlü yüzeylerde kullanılması önerilir. » Sarı-yeşil çizgilidir. » %100 polyamid kumaşdır. » Su bazlı ve sentetik boyalarda kullanılır.",
-    "meta": [],
+    "desc": "İç cephe plastik ve akrilik boyalarında damlatma yapmayan, homojen dağılım sağlayan polyamid rulo.",
+    "meta": [
+      "Uygulama Rulosu",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -1977,8 +1914,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/floresan-sprey-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881282/FAWORI/floresan_sprey_boya_482ed0ba1f.jpg",
-    "desc": "» İç ve dış alanlarda ahşap, sunta/MDF, metal, cam, seramik, karton, plastik, ince sıva vb. gibi “Kendin yap” alanındaki genel dekorasyon, el sanatları ve hobi işlerinde, bisiklet/motosiklet boyama ve ağaç/orman, fen işleri, inşaat tesisat ve tamiratında genel işaretleme işlerinde kullanılan sprey boyadır. » Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Güvenlik, işaretleme ve hobi amaçlı projelerde karanlıkta fark edilen canlı neon renkli sprey boya.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -2012,8 +1953,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/nitril-eldiven.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719986648/FAWORI/FWR_5_Nitril_Eldiven_Kirmizi_Siyah_19b7f94d27.png",
-    "desc": "» İmalat, makine ve ekipmanlar, otomotiv, depolama, peyzaj ve bahçe işleri, lojistik, ulaştırma, elektronik, gıda işleme, tarım, paketleme, montaj, altyapı ve bakım, hafif sanayi gibi yoğun emek gereken uygulamalarda kullanılmaktadır. Eldiven, aşınmaya karşı uzun süre dayanıklıdır. » Polyester iplikten örülmüş ve nitril ile yarı kaplanmış, iş eldivenidir. » Kırmızı-Siyah renkde nitril kaplıdır. » Boyut: No: 9-10",
-    "meta": [],
+    "desc": "Boya, tiner ve kimyasal temasında eli tahrişten koruyan esnek, pudrasız mavi nitril iş eldiveni.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2047,8 +1992,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/nitril-eldiven-sari.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1707116925/FAWORI/nitril_eldiven_sarijpg_b1b460103a.jpg",
-    "desc": "» İmalat, makine ve ekipmanlar, otomotiv, depolama, peyzaj ve bahçe işleri, lojistik, ulaştırma, elektronik, gıda işleme, tarım, paketleme, montaj, altyapı ve bakım, hafif sanayi gibi yoğun emek gereken uygulamalarda kullanılmaktadır. Eldiven, aşınmaya karşı uzun süre dayanıklıdır. » Polyester iplikten örülmüş ve nitril ile yarı kaplanmış, iş eldivenidir. » Sarı renkde nitril kaplıdır. » Boyut: No: 9-10",
-    "meta": [],
+    "desc": "Ağır şantiye işlerinde aşınma ve delinmeye karşı üstün koruma sağlayan sarı kaplamalı iş eldiveni.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2082,8 +2031,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/isiya-dayanikli-sprey-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881334/FAWORI/isiya_dayanikli_sprey_boya_e8c8e4fd87.jpg",
-    "desc": "Yüksek ısıya dayanıklı silikonlu sprey boyadır. Makine gövdeleri, egzoz ve boruları, barbekü ve ocaklar gibi yüksek ısıya maruz kalan materyalleri boyamada güvenle kullanılır. Ürün, 500 °C’ye kadar dayanıklıdır. Uygulama sonrası 180 °C ısıya maruz kaldıktan sonra katılaşması tamamlanır. Zaman içerisinde yüksek ısı nedeniyle oluşabilecek renk değişimi ürünün dayanıklılık özelliğini etkilemez.",
-    "meta": [],
+    "desc": "Soba, mangal, egzoz ve kazan yüzeylerinde 600°C ısıya kadar dayanım gösteren silikonlu sprey boya.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 0,9-1,1 m2",
     "sizes": [
       "Standart Ambalaj"
@@ -2117,8 +2070,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/jant-boyasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881299/FAWORI/jant_boyasi_30ecb722d1.jpg",
-    "desc": "» Metal alaşımlı jant yüzeylerinde kullanılan, alüminyum gri görünümlü, koruyucu ve dekoratif jant boyasıdır. » Çelik ve hafif metal jantlar için kalıcı ve yüksek kalitede pigmentli koruyuculuk sağlar. » Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Araç jantlarında taş çarpmalarına ve balata tozuna karşı dirençli metalik alüminyum gri jant boyası.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -2152,8 +2109,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/kestirme-firca.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1706699028/FAWORI/kestirme_firca_0c633b9a4c.jpg",
-    "desc": "» Epoksi Yapıştırıcılı » Solventten etkilenmez. » Kesinlikle kıl vermez. Doğal beyaz kıldan ve plastik sap kullanılarak üretilmiştir.",
-    "meta": [],
+    "desc": "Duvar köşeleri ve tavan birleşimlerinde kıl dökmeyen, epoksi yapıştırıcılı profesyonel kestirme fırçası.",
+    "meta": [
+      "Uygulama Fırçası",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2187,8 +2148,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/koruma-ortusu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1707116925/FAWORI/koruma_ortusu_d284ec751e.jpg",
-    "desc": "Tadilat, temizlik ve boya uygulaması yapılan iç mekanlardaki eşyayı boya, kir ve tozdan korur.",
-    "meta": [],
+    "desc": "Boya ve tadilat sırasında mobilyaları, zeminleri toz ve boya damlalarından koruyan polietilen örtü.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2222,8 +2187,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/kozmik-ipek-rulo.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770878053/FAWORI/kozmik_ipek_rulo_300a267cf3.jpg",
-    "desc": "» Grenli boyalara desen vermek için kullanılır. » Sarı kristalize süngerdir. » Su bazlı boyalarda kullanılır.",
-    "meta": [],
+    "desc": "Kozmik İpek ve soft mat boyaların duvarda pürüzsüz kadife doku oluşturmasını sağlayan mikroelyaf rulo.",
+    "meta": [
+      "İpek Mat Doku",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2257,8 +2226,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/krom-efekt-sprey-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881318/FAWORI/krom_efekt_sprey_boya_f496fd8e9b.jpg",
-    "desc": "İç alanlardaki ahşap, metal, cam, seramik, sert plastik, dekoratif objeler, çerçeve gibi süslemeler vb. pürüzsüz yüzeylere krom efektli parlak dekoratif altın, gümüş, bakır efekti vermek için kullanılır. Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Dekoratif objelerde, metal ve ahşap detaylarda parlak ayna krom efekti oluşturan estetik sprey boya.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -2292,8 +2265,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/maskeleme-bandi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1707116924/FAWORI/maskeleme_bandi_820db34d13.jpg",
-    "desc": "» Duvar, tavan, pencere ve kapı yenilerken veya dekore ederken profesyonel sonuçlar elde etmek için kullanılır. » Kaygan ve zorlu yüzeylerde, düz kenarlarda veya kavislerde, iç ve dış mekanda kullanıma uygundur. Kullanımları hızlı, kolay ve güvenlidir. » Birçok yüzeyden kalıntı bırakmadan ve tek parça halinde çıkarırken yırtılmadan sökülebilirler. » Geniş yüzeylerin maskelenmesini ve bandın tek bir harekette temiz bir şekilde çıkarılabilmesine imkan verir, çalışırken zamandan tasarruf sağlar.",
-    "meta": [],
+    "desc": "Boya uygulamalarında keskin hatlar sağlayan, söküldüğünde iz ve yapışkan bırakmayan kağıt bant.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2323,8 +2300,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/mercan-rulo.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770878244/FAWORI/mercan_rulo_faf5b46148.jpg",
-    "desc": "» Grenli boyalara desen vermek için kullanılır. » Sarı kristalize süngerdir. » Su bazlı boyalarda kullanılır.",
-    "meta": [],
+    "desc": "Grenli dış cephe boyaları ve dekoratif kaplamalarda homojen gözenekli desen oluşturan mercan rulo.",
+    "meta": [
+      "Uygulama Rulosu",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2358,8 +2339,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/metal-teleskopik-sap.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1718097954/FAWORI/metal_teleskopik_sap_6a731d078d.jpg",
-    "desc": "» Rulo standartlarına uygun olarak tasarlanmıştır. » Pratik uzatma/kısaltma sistemi sayesinde kolayca istenen boya ayarlanabilir. İçe geçen boru ortaya doğru çevrilerek gevşetilir, yukarı çekerek uzatılır, istenilen boy elde edilince sola veya sağa çevrilerek kilitlenir. » Daha hafif, daha uzun ömürlü, daha dayanıklı olması için tam sert çelikten üretilmiştir.",
-    "meta": [],
+    "desc": "Tavan ve yüksek cephe boyamalarında 2-3 metreye kadar kilitlenebilen hafif alüminyum teleskopik sırık.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2393,8 +2378,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/metalik-sprey-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881262/FAWORI/metalik_sprey_boya_d116e73e58.jpg",
-    "desc": "» İç alanlardaki ahşap, metal, cam, seramik, sert plastik, dekoratif eşya, ayna ve resim çerçevesi vb. dekoratif eskitme efekti vermek için gümüş, alüminyum, altın yaldız , » Makineler, yedek parçalar, çelik eşya, ahşap mobilya, plastik aksam, hobi ve el sanatları, motosiklet / bisiklet/oto vb. metalik gri ve siyah renk seçenekleri olan spreydir. Kurşunsuzdur, atmosferi kirletici ve ozon tabakasına zararlı CFC gazları içermez. Sprey püskürtme çıkışı kendi kendini temizler özelliktedir.",
-    "meta": [],
+    "desc": "Ahşap, metal ve dekoratif aksesuarlara göz alıcı simli metalik ışıltı veren hızlı kuruyan sprey boya.",
+    "meta": [
+      "Akrilik Hızlı Kuruma",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Yüzey cinsine, uygulama kalınlığına ve renge göre değişken, tek katta yaklaşık 2-2,5 m²/400 ml",
     "sizes": [
       "Standart Ambalaj"
@@ -2428,8 +2417,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/mini-rulo.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770878174/FAWORI/mini_rulo_4811223225.jpg",
-    "desc": "» Duvar, ahşap ve metal yüzeylerin dar alanlarını daha rahat boyamak için kullanılır. » Sarı çizgilidir. » %100 polyamid kumaşdır. » Su bazlı ve sentetik boyalarda kullanılır.",
-    "meta": [],
+    "desc": "Radyatör arkaları, kapı pervazları ve dar yüzeylerde pürüzsüz boyama sağlayan pratik mini parmak rulo.",
+    "meta": [
+      "Uygulama Rulosu",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2463,8 +2456,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/pas-sokucu.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1770881352/FAWORI/pas_sokucu_5475583fc0.jpg",
-    "desc": "» Metal parçaları ve yüzeyleri, pastan ve dış etkilerden koruma amaçlı kullanılan sprey boyadır. » İyi nüfuz etme ve nem itici özellikleri bulunmaktadır. » Çözücü buharlaştıktan sonra optimum yağlama sağlar. » Zincir, dişli, kilit vb. yerlerde yağlayıcı olarak kullanıma uygundur. » Dayanıklı ve su itici özelliği sayesinde paslanmaya karşı korur ve korozyonu önler. » Sürtünmeyi azaltır ve yerine sıkıca oturan vidalı bağlantıların veya paslanmış parçaların sökülmesini kolaylaştırır. » Ürün hızlı etki eder, etkilidir.",
-    "meta": [],
+    "desc": "Paslanmış cıvata ve mekanik parçaları çözen, yağlayarak pas oluşumunu geciktiren teknik sprey.",
+    "meta": [
+      "Pas Sökücü Sprey",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2498,8 +2495,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/pratik-branda.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1707116925/FAWORI/pratik_branda_c4cdc48ecf.jpg",
-    "desc": "» Tadilat, temizlik ve boya uygulaması yapılan alanların yer zeminini korur. » Çeşitli malzemelerin üstünü kaplayarak korumak için kullanılır. » Pratik branda geri dönüşümlü pe (polietienden) üretilmektedir.",
-    "meta": [],
+    "desc": "Şantiye zeminlerini boya damlaları, harç ve darbelerden koruyan ağır hizmet tipi polietilen branda.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2533,8 +2534,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/robot-firca.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719985474/FAWORI/Robot_Firca_a7dfbeb4fb.png",
-    "desc": "» Epoksi Yapıştırıcılı » Solventten etkilenmez. » Kesinlikle kıl vermez. Doğal beyaz kıldan ve plastik sap kullanılarak üretilmiştir. Rulo sırığına takılabilen ve 180 °C dönebilen özel sapı sayesinde kolay uygulama yapılmaya uygundur.",
-    "meta": [],
+    "desc": "Açılı kıl yapısıyla kalorifer petek araları ve kör noktalarda boya yapmayı kolaylaştıran robot fırça.",
+    "meta": [
+      "Uygulama Fırçası",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2568,8 +2573,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/rulo-elegi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1707116925/FAWORI/rulo_elegi_6256cc0f33.jpg",
-    "desc": "» Boyanın ideal bir şekilde ruloya geçişini sağlamak için kullanılır. » Rulonun boyayı homojen olarak yüzeye taşımasını sağlar.",
-    "meta": [],
+    "desc": "Rulodaki fazla boyayı homojen olarak süzerek damlatmayı önleyen mukavemetli plastik boya ızgarası.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2603,8 +2612,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/rulo-sunger-zimpara.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719986575/FAWORI/Rulo_Suenger_Zimpara_36c29e8846.png",
-    "desc": "» Macun dolgu ve astarlı yüzeylerin kuru ortamda zımparalanmasına uygun, uzun ömürlü ve yüksek performanslı bir üründür. » Sünger tabanı sayesinde yüzeyde standart baskı yapıp, çiziklerin asgariye düşmesini sağlar. » Düz ve engebeli yüzeyleri, esnekliği sayesinde mükemmel bir şekilde zımparalayabilir. » Zımpara makinasına veya zımpara malalarına takılabilir.",
-    "meta": [],
+    "desc": "Macunlu ve astarlı yüzeylerin kavislerine uyum sağlayan, tıkanmayan esnek sünger zımpara.",
+    "meta": [
+      "Uygulama & Şantiye Destek",
+      "Ambalaj: Standart Ambalaj",
+      "Şantiye Ekipmanı"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -2638,21 +2651,21 @@
     "tag": "Yapısındaki UV absorbanları sayesinde ahşabı uzun süre korur. Sararmaya karşı dirençlidir. Ahşabın rengini şeffaf yapısından dolayı değiştirmez. Doğal görünümünü atmosfer koşullarına, neme ve suya karşı koruyan, mükemmel yapışan iç ve dış cephe verniğidir. Mükemmel yayılma gücü ile zaman ve işçilikten tasarruf sağlar.",
     "thumb": "assets/fawori/fawori-marin-yat-vernik.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1705474739/FAWORI/sentetik_0005_marinyatvernik_91df7e6a04.png",
-    "desc": "Üretan alkid reçine kombinasyon esaslı, yüksek parlaklıkta mükemmel üst yüzey oluşturan bir yat verniktir. Deniz araçlarının ahşap yüzeylerinde ve binaların her türlü ahşap iç ve dış yüzeylerinde dekoratif ve koruyucu olarak ahşabın doğal görünümünü bozmadan kullanabileceğiniz UV dayanımlı parlak verniktir.",
+    "desc": "Deniz suyu, güneş ışınları ve neme karşı ahşap yüzeylere zırh oluşturan yüksek parlaklıkta marin yat vernik.",
     "meta": [
-      "Yapısındaki UV absorbanları sayesinde ahşabı uzun süre korur. Sararmaya karşı dirençlidir. Ahşabın rengini şeffaf yapısından dolayı değiştirmez. Doğal görünümünü atmosfer koşullarına, neme ve suya karşı koruyan, mükemmel yapışan iç ve dış cephe verniğidir. Mükemmel yayılma gücü ile zaman ve işçilikten tasarruf sağlar."
+      "Marin Ahşap Zırhı",
+      "Ambalaj: 12 L / 2,5 L",
+      "Balçova & Urla Stok"
     ],
     "coverage": "1 kg ile tek katta 14-18 m²",
     "sizes": [
-      "12L",
-      "2",
-      "5L",
-      "0",
-      "75L"
+      "12 L",
+      "2,5 L",
+      "0,75 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "12L-2,5L-0,75L",
+      "packaging": "12 L - 2,5 L - 0,75 L",
       "consumption": "1 kg ile tek katta 14-18 m²",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2679,21 +2692,21 @@
     "tag": "Yüksek ve kalıcı parlaklığa sahiptir. Uygulandığı iç cephe ahşap yüzeylerin doğallığını bozmaz ve renk değişikliği yapmaz (şeffaf renktedir). Sararmaya karşı dirençli olup, sert bir film oluşturur. Evlerde kullanılan sıvı temizlik malzemelerine dayanıklıdır, fırça izi oluşturmaz.",
     "thumb": "assets/fawori/sentetik-parke-cilasi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719581451/FAWORI/sentetik_parke_cilasi_36f7576f0b.png",
-    "desc": "Tek komponentli modifiye üretan alkid esaslı parlak parke verniğidir. Mukavemet gerektiren iç cephe ahşap döşeme, merdiven ve parke yüzeylerde güvenle kullanabileceğiniz bir cam ciladır.",
+    "desc": "Yoğun yaya trafiğine ve çizilmelere karşı ahşap parkeleri koruyan üretan alkid esaslı parlak cila.",
     "meta": [
-      "Yüksek ve kalıcı parlaklığa sahiptir. Uygulandığı iç cephe ahşap yüzeylerin doğallığını bozmaz ve renk değişikliği yapmaz (şeffaf renktedir). Sararmaya karşı dirençli olup, sert bir film oluşturur. Evlerde kullanılan sıvı temizlik malzemelerine dayanıklıdır, fırça izi oluşturmaz."
+      "Yat Vernik & Ahşap",
+      "Ambalaj: 12 L / 2,5 L",
+      "Balçova & Urla Stok"
     ],
     "coverage": "14-16 m²/L",
     "sizes": [
-      "12L",
-      "2",
-      "5L",
-      "0",
-      "75L"
+      "12 L",
+      "2,5 L",
+      "0,75 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "12L-2,5L-0,75L",
+      "packaging": "12 L - 2,5 L - 0,75 L",
       "consumption": "14-16 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2720,23 +2733,21 @@
     "tag": "Parlak görünümlü",
     "thumb": "assets/fawori/fawori-premium-sentetik-boya.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719984733/FAWORI/Premium_Sentetik_Boya_ea6a9a6994.png",
-    "desc": "Modifiye alkid reçine esaslı, yüksek ve kalıcı parlaklıkta, örtme ve yapışması mükemmel son kat parlak sentetik boyadır. İç ve dış mekanlarda ahşap, demir-çelik-sac, beton, brüt beton, sıva, betopan, alçıpan, OSB, mdf yüzeylerde ve mobilyalarda uygun astar ile güvenle kullanılır.",
+    "desc": "Kapı, pencere ve ferforjelerde sararmayan, kalıcı ayna parlaklığında son kat sentetik yağlı boya.",
     "meta": [
-      "Parlak görünümlü",
-      "Silinebilir",
-      "Rahat taranır, fırça ve rulo izi bırakmaz"
+      "Sentetik Yağlı Boya",
+      "Ambalaj: 15 KG / 2,5 KG",
+      "Balçova & Urla Stok"
     ],
     "coverage": "1 kg ile tek katta 7-8 m²",
     "sizes": [
-      "15 Kg",
-      "2",
-      "5 Kg",
-      "0",
-      "75 Kg"
+      "15 KG",
+      "2,5 KG",
+      "0,75 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15 Kg - 2,5 Kg -0,75 Kg",
+      "packaging": "15 KG - 2,5 KG - 0,75 KG",
       "consumption": "1 kg ile tek katta 7-8 m²",
       "mixingRatio": "Fawori Sentetik Tiner ile inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2763,21 +2774,21 @@
     "tag": "Alkid ve pas önleyici antikorozif yapıdaki pigmentlerin özel kombinasyonu ile demir-çelik-sac yüzeyleri paslanmaya karşı korur, uygulanan yüzeyle çok iyi aderans oluşturur.",
     "thumb": "assets/fawori/fawori-sentetik-antipas.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1705474739/FAWORI/sentetik_0007_sentetik_antipas_3607e6099d.png",
-    "desc": "Sentetik alkid reçine kombinasyonlu pas önleyici antikorozif yüzey astarıdır. Her türlü demir-çelik-sac yüzeylerin korozyonuna engel olmak için kullanılır.",
+    "desc": "Demir ve çelik yüzeylerde paslanmayı durduran ve önleyen korozyon dirençli sentetik antipas astar.",
     "meta": [
-      "Alkid ve pas önleyici antikorozif yapıdaki pigmentlerin özel kombinasyonu ile demir-çelik-sac yüzeyleri paslanmaya karşı korur, uygulanan yüzeyle çok iyi aderans oluşturur."
+      "Korozyon Bariyeri",
+      "Ambalaj: 15 KG / 2,5 KG",
+      "Balçova & Urla Stok"
     ],
     "coverage": "1 kg ile tek katta 7-8 m²",
     "sizes": [
-      "15 kg",
-      "2",
-      "5 Kg",
-      "0",
-      "75 kg"
+      "15 KG",
+      "2,5 KG",
+      "0,75 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15 kg - 2,5 Kg - 0,75 kg",
+      "packaging": "15 KG - 2,5 KG - 0,75 KG",
       "consumption": "1 kg ile tek katta 7-8 m²",
       "mixingRatio": "Fawori Sentetik Tiner ile inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2804,21 +2815,21 @@
     "tag": "Rahat tarama ve örtme gücü sayesinde işçilikten tasarruf sağlar. Düzgün bir üst yüzey oluşturur, yüzeyi son kat uygulamaya hazır hale getirir.",
     "thumb": "assets/fawori/fawori-sentetik-astar.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1705474739/FAWORI/sentetik_0008_sentetik_astar_6d3315bc1c.png",
-    "desc": "Modifiye alkid reçine esaslı astar boyasıdır. İçeride ve dışarıda her cins ahşap, beton, brüt beton, sıva, betopan, alçıpan, OSB, mdf, demir-çelik-sac yüzeylerde son kat boya uygulamasından önce güvenle kullanılır.",
+    "desc": "Sentetik son kat boyalar öncesinde ahşap ve metalde pürüzsüz yapışma tabakası kuran astar.",
     "meta": [
-      "Rahat tarama ve örtme gücü sayesinde işçilikten tasarruf sağlar. Düzgün bir üst yüzey oluşturur, yüzeyi son kat uygulamaya hazır hale getirir."
+      "Sentetik Yağlı Boya",
+      "Ambalaj: 15 KG / 2,5 KG",
+      "Balçova & Urla Stok"
     ],
     "coverage": "1 kg ile tek katta 7-8 m²",
     "sizes": [
-      "15 kg",
-      "2",
-      "5 Kg",
-      "0",
-      "75 kg"
+      "15 KG",
+      "2,5 KG",
+      "0,75 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15 kg - 2,5 Kg - 0,75 kg",
+      "packaging": "15 KG - 2,5 KG - 0,75 KG",
       "consumption": "1 kg ile tek katta 7-8 m²",
       "mixingRatio": "Fawori Sentetik Tiner ile inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2845,23 +2856,23 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-sentetik-tiner.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719984817/FAWORI/Sentetik_Tiner_253400f661.png",
-    "desc": "Solvent bazlı ürünlerde kullanılan incelticidir. Sentetik esaslı tüm boya, vernik ve astarların uygulamalarında inceltici olarak güvenle kullanılır. Ayrıca sentetik esaslı boya uygulama araç ve gereçlerinin (fırça, rulo, uygulama tabancası, spatül vb.) temizlik işlerinde kullanıldığı gibi yeni boyanacak demir-çelik yüzeylerin boya öncesi mevcut yağ, pas tozları gibi kirliliklerin temizlenmesinde kullanılır.",
-    "meta": [],
+    "desc": "Sentetik boya, vernik ve antipas uygulamalarında kıvam ayarlayıcı kokusuz sentetik inceltici.",
+    "meta": [
+      "Sentetik Tiner",
+      "Ambalaj: 10 L / 2,5 L",
+      "Balçova & Urla Stok"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
-      "10L",
-      "2",
-      "5L",
-      "1",
-      "5L",
-      "0",
-      "5L",
-      "0",
-      "3L"
+      "10 L",
+      "2,5 L",
+      "1,5 L",
+      "0,5 L",
+      "0,3 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "10L-2,5L-1,5L-0,5L-0,3L",
+      "packaging": "10 L - 2,5 L - 1,5 L - 0,5 L - 0,3 L",
       "consumption": "Uygulama yüzeyi ve kat sayısına bağlıdır",
       "mixingRatio": "Fawori Sentetik Tiner ile inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2888,19 +2899,19 @@
     "tag": "» Solvent bazlı",
     "thumb": "assets/fawori/soguk-yol-cizgi-boyasi-sentetik.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719985084/FAWORI/Soguk_Yol_Cizgi_Boyasi_f72a81626e.png",
-    "desc": "Yol ve kaldırım işaretlemeleri için kullanılan yüksek performanslı yol çizgi boyasıdır. Yol çizgilerinin işaretlenmesinde asfalt yüzeylerde, kaldırım taşlarının boyanmasında ve otopark işaretlemelerinde kullanılır. Beton yüzeylerde kullanılacaksa, betonun uygulamadan en az 1 ay önce dökülmüş olması yüzeyinin çentiklenerek pürüzlendirilmesi ve uygulamanın mutlaka havasız püskürtme (airless) ile yapılması gereklidir. Eski boyalı yüzey (su bazlı yol çizgi boyası vb.) üstüne uygulamalarda mutlaka bir miktar deneme yapılması tavsiye edilir. UYARI: Helikopter perdah makinesi ile yüzeyi düzeltilmiş parlak betonda ve daha önce epoksi kaplama bulunan yüzeylerde kullanılmamalıdır.",
+    "desc": "Otopark, şantiye ve asfalt yollarda aşınmaya dayanıklı yüksek görünürlüklü soğuk yol çizgi boyası.",
     "meta": [
-      "» Solvent bazlı",
-      "» Mat görünümlü",
-      "» Yüksek yapışma gücünde"
+      "Yol Çizgi Boyası",
+      "Ambalaj: 25 KG",
+      "Balçova & Urla Stok"
     ],
     "coverage": "3m²/kg(150 µ film kalınlığı)",
     "sizes": [
-      "25kg"
+      "25 KG"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "25kg",
+      "packaging": "25 KG",
       "consumption": "3m²/kg(150 µ film kalınlığı)",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2927,21 +2938,21 @@
     "tag": "Özel katkı maddeleri sayesinde yüzeyde mantarlara karşı koruyucudur. Ahşabı suya ve UV ışınlarına karşı korur. Ahşaba penetrasyonu kolaydır. Aşınmaya karşı dirençlidir. Yüzey üzerinde film tabakası oluşturur.",
     "thumb": "assets/fawori/wood-stain-dekoratif-ahsap-vernigi.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719984774/FAWORI/Wood_Stain_Dekoratif_Ahsap_Vernigi_af326ae191.png",
-    "desc": "Ahşap yüzeyler için geliştirilmiş alkid bağlayıcı esaslı, şeffaf yapıda, parlak görünümlü dekoratif ve koruyucu amaçlı kullanılan bir son kat ahşap verniğidir. Her türlü ahşap doğrama cephe kaplaması ve ahşap bahçe mobilyasının boyanmasında kullanılır. Arı kovanları, saunalardaki ahşap yüzeylerde, ambalajsız gıda maddelerinin barındırıldığı ahşaplar üzerinde, yatay ahşap zemin ve yaya trafiği olan yüzeylerde kullanılmamalıdır. Ayrıca bünyesinde yüksek miktarda doğal yağ içeren teak, iroko vb. ahşap yüzeyler üzerine uygulanmamalıdır.",
+    "desc": "Ahşabın doğal nefes almasını sağlayan, çürümeye ve hava koşullarına dayanıklı dekoratif ahşap verniği.",
     "meta": [
-      "Özel katkı maddeleri sayesinde yüzeyde mantarlara karşı koruyucudur. Ahşabı suya ve UV ışınlarına karşı korur. Ahşaba penetrasyonu kolaydır. Aşınmaya karşı dirençlidir. Yüzey üzerinde film tabakası oluşturur."
+      "Sentetik Yağlı Boya",
+      "Ambalaj: 12 L / 2,5 L",
+      "Balçova & Urla Stok"
     ],
     "coverage": "11-13 m²/L",
     "sizes": [
-      "12L",
-      "2",
-      "5L",
-      "0",
-      "75L"
+      "12 L",
+      "2,5 L",
+      "0,75 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "12L-2,5L-0,75L",
+      "packaging": "12 L - 2,5 L - 0,75 L",
       "consumption": "11-13 m²/L",
       "mixingRatio": "Su ile hacimce %10-15 inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -2968,15 +2979,19 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/fawori-yol-cizgi-boyasi-tineri.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719581702/FAWORI/Fawori_Yol_Cizgi_Boyasi_Tineri_55de10a889.png",
-    "desc": "Yüksek çözme gücüne sahip, yol çizgi boyası tineridir. Fawori Soğuk Yol Çizgi Boyası’nın inceltilmesinde, boya uygulama araç ve gereçlerinin temizlik işlerinde kullanılır.",
-    "meta": [],
+    "desc": "Yol çizgi boyasının hızlı kurumasını ve tabanca memesini tıkamadan püskürtülmesini sağlayan özel tiner.",
+    "meta": [
+      "Sentetik Tiner",
+      "Ambalaj: 15 L",
+      "Balçova & Urla Stok"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
-      "15L"
+      "15 L"
     ],
     "specs": {
       "standard": "TS EN Standartları & Betek Kimya Güvencesi",
-      "packaging": "15L",
+      "packaging": "15 L",
       "consumption": "Uygulama yüzeyi ve kat sayısına bağlıdır",
       "mixingRatio": "Fawori Sentetik Tiner ile inceltilir",
       "potLife": "Orijinal ambalajında kuru ortamda 2 yıl",
@@ -3003,8 +3018,12 @@
     "tag": "Betek & Fawori Kalite Standartları",
     "thumb": "assets/fawori/klasik-firca.webp",
     "remoteImageUrl": "https://res.cloudinary.com/filli-boya-kurumsal-web-sitesi/image/upload/v1719985521/FAWORI/Klasik_Firca_88dd413651.png",
-    "desc": "» Epoksi Yapıştırıcılı » Solventten etkilenmez. » Kesinlikle kıl vermez. Doğal siyah kıldan ve plastik sap kullanılarak üretilmiştir.",
-    "meta": [],
+    "desc": "Solvent bazlı boya ve verniklerde kıl bırakmayan, yüksek tutuşlu epoksi yapıştırıcılı yağlı boya fırçası.",
+    "meta": [
+      "Sentetik Yağlı Boya",
+      "Ambalaj: Standart Ambalaj",
+      "Balçova & Urla Stok"
+    ],
     "coverage": "Standart Sarfiyat",
     "sizes": [
       "Standart Ambalaj"
@@ -3032,9 +3051,10 @@
 
   var DEPARTMENTS_DATA = {
   "faworiInteriorPanel": {
-    "title": "İç Cephe Boyaları, Tavan & Astarlar",
+    "badge": "Departman 01 · Kozmik İpek & Ultra Soft",
+    "title": "Fawori İpek Mat & Üstün Silinebilir İç Cephe Boyaları",
     "shortTitle": "İç Cephe & Astarlar",
-    "desc": "Betek Kimya teknolojisiyle geliştirilen Fawori Kozmik İpek, Ultra Soft Mat, silikonlu ve tavan boyaları.",
+    "desc": "Betek Kimya teknolojisiyle yüksek örtücülük, leke direnci ve kadifemsi doku sunan Kozmik İpek, Ultra Soft Mat ve tavan boyaları.",
     "pills": [
       {
         "id": "all",
@@ -3059,9 +3079,10 @@
     ]
   },
   "faworiExteriorPanel": {
-    "title": "Dış Cephe Boyaları & Kaplamaları",
+    "badge": "Departman 02 · Fenomen & Silikonlu Sistemler",
+    "title": "Fawori Fenomen Saf Akrilik & Dış Cephe Kaplamaları",
     "shortTitle": "Dış Cephe & Kaplama",
-    "desc": "Fenomen Saf Akrilik dış cephe boyası, silikonlu kaplamalar ve ağır sahil iklimine dayanıklı tekstürlü sistemler.",
+    "desc": "Ege sahil iklimine, UV ışınlarına ve tuz serpintisine karşı maksimum koruma sağlayan Fenomen Saf Akrilik ve silikonlu sistemler.",
     "pills": [
       {
         "id": "all",
@@ -3086,9 +3107,10 @@
     ]
   },
   "faworiSyntheticPanel": {
-    "title": "Sentetik Boya, Vernik & Tinerler",
+    "badge": "Departman 03 · Ahşap Koruma & Metal Zırhı",
+    "title": "Fawori Sentetik Boya, Marin Vernik & Tinerler",
     "shortTitle": "Sentetik, Vernik & Tiner",
-    "desc": "Marin yat verniği, parke cilası, dekoratif ahşap vernikleri, antipas ve sentetik son kat boyalar.",
+    "desc": "Amerikan panel kapı boyası, marin yat verniği, parke cilası, antipas ve sentetik son kat parlak yağlı boyalar.",
     "pills": [
       {
         "id": "all",
@@ -3109,9 +3131,10 @@
     ]
   },
   "faworiInsulationPanel": {
-    "title": "Fawori Optimix® Isı Yalıtım Sistemleri",
+    "badge": "Departman 04 · Betek Optimix® Mantolama",
+    "title": "Fawori Optimix® Komple Dış Cephe Isı Yalıtım Sistemleri",
     "shortTitle": "Fawori Optimix® Yalıtım",
-    "desc": "Betek güvenceli komple mantolama paketi: EPS levhalar, yapıştırma ve sıva harçları, donatı filesi ve mineral kaplamalar.",
+    "desc": "Karbonlu ve beyaz EPS levhalar, elastik yapıştırma ve sıva harçları, donatı filesi ve dekoratif mineral sıvalar.",
     "pills": [
       {
         "id": "all",
@@ -3136,9 +3159,10 @@
     ]
   },
   "faworiSupportPanel": {
-    "title": "Sprey Boyalar & Uygulama Ekipmanları",
+    "badge": "Departman 05 · Şantiye & Uygulama Donanımı",
+    "title": "Fawori Profesyonel Sprey Boyalar & Uygulama Ekipmanları",
     "shortTitle": "Sprey, Rulo & Fırça",
-    "desc": "Akrilik sprey boyalar, iç/dış cephe ruloları, profesyonel kestirme fırçaları ve şantiye koruma örtüleri.",
+    "desc": "Hızlı kuruyan akrilik sprey serisi, iç-dış cephe profesyonel ruloları, kestirme fırçaları ve şantiye koruma örtüleri.",
     "pills": [
       {
         "id": "all",
@@ -3165,18 +3189,11 @@
 };
 
   var currentActiveTab = "faworiInteriorPanel";
-  var activeFilters = {
-    faworiInteriorPanel: "all",
-    faworiExteriorPanel: "all",
-    faworiSyntheticPanel: "all",
-    faworiInsulationPanel: "all",
-    faworiSupportPanel: "all"
-  };
+  var currentProduct = null;
+  var selectedSize = null;
 
   // DOM Elements
-  var subnav = document.getElementById("pvSubnav");
   var subnavTabs = document.querySelectorAll(".pv-subnav-tab");
-  var tabPanels = document.querySelectorAll(".pv-tab-panel");
   var deptDrawerTrigger = document.getElementById("pvDeptDrawerTrigger");
   var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
   var deptDrawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
@@ -3184,22 +3201,23 @@
   var mobileFilterRail = document.getElementById("pvMobileFilterRail");
   var mobileFilterRailWrap = document.getElementById("pvMobileFilterRailWrap");
 
-  // Modal Elements
-  var modalBackdrop = document.getElementById("modalBackdrop");
-  var modalSheet = document.getElementById("modalSheet");
-  var modalCloseBtn = document.getElementById("modalCloseBtn");
-  var modalDragHandle = document.getElementById("modalDragHandle");
-  var modalBadge = document.getElementById("modalBadge");
-  var modalTag = document.getElementById("modalTag");
-  var modalImg = document.getElementById("modalImg");
-  var modalTitle = document.getElementById("modalTitle");
-  var modalDesc = document.getElementById("modalDesc");
-  var modalPackagingPills = document.getElementById("modalPackagingPills");
-  var modalCoverageVal = document.getElementById("modalCoverageVal");
-  var modalCoverageMeta = document.getElementById("modalCoverageMeta");
+  // Modal Elements (Matching pervan-catalog.css & marshall-boya standard)
+  var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCard = document.getElementById("pvModalCard");
+  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+  var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductDesc = document.getElementById("modalProductDesc");
+  var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
+  var modalSizeTrack = document.getElementById("modalSizeTrack");
   var modalSpecStandard = document.getElementById("modalSpecStandard");
-  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
   var modalSpecConsumption = document.getElementById("modalSpecConsumption");
+  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
+  var modalSpecStandardRow = document.getElementById("modalSpecStandardRow");
+  var modalSpecPackagingRow = document.getElementById("modalSpecPackagingRow");
   var modalSpecMixing = document.getElementById("modalSpecMixing");
   var modalSpecPotLife = document.getElementById("modalSpecPotLife");
   var modalSpecLogistics = document.getElementById("modalSpecLogistics");
@@ -3229,74 +3247,85 @@
       }
     });
 
-    tabPanels.forEach(function(panel) {
-      panel.classList.toggle("active", panel.id === targetDeptId);
+    document.querySelectorAll(".pv-tab-panel").forEach(function(panel) {
+      var matches = panel.id === targetDeptId;
+      panel.classList.toggle("active", matches);
     });
 
-    syncMobileFilterRail(targetDeptId);
     renderDeptDrawer(targetDeptId);
+    syncMobileFilterRail(targetDeptId);
   }
 
   subnavTabs.forEach(function(tab) {
     tab.addEventListener("click", function() {
       var target = this.getAttribute("data-tab");
-      switchTab(target);
+      if (target) switchTab(target);
     });
   });
 
   // FILTER PILLS
-  function applyFilter(deptId, filterId) {
-    activeFilters[deptId] = filterId;
+  document.querySelectorAll(".pv-menu-pills").forEach(function(pillsWrap) {
+    pillsWrap.querySelectorAll(".pv-menu-pill").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var filterVal = this.getAttribute("data-filter");
+        var panel = this.closest(".pv-tab-panel");
+        if (!panel) return;
+
+        panel.querySelectorAll(".pv-menu-pill").forEach(function(b) {
+          b.classList.remove("active");
+        });
+        this.classList.add("active");
+
+        applyFilter(panel.id, filterVal);
+      });
+    });
+  });
+
+  function applyFilter(deptId, filterVal) {
     var panel = document.getElementById(deptId);
     if (!panel) return;
-
-    var pills = panel.querySelectorAll(".pv-menu-pill");
-    pills.forEach(function(p) {
-      p.classList.toggle("active", p.getAttribute("data-filter") === filterId);
-    });
-
-    if (mobileFilterRailWrap) {
-      var railPills = mobileFilterRailWrap.querySelectorAll(".pv-mobile-pill");
-      railPills.forEach(function(rp) {
-        rp.classList.toggle("active", rp.getAttribute("data-filter") === filterId);
-      });
-    }
-
     var rows = panel.querySelectorAll(".pv-menu-row");
     rows.forEach(function(row) {
-      var rowCat = row.getAttribute("data-category");
-      if (filterId === "all" || rowCat === filterId) {
+      if (filterVal === "all" || row.getAttribute("data-category") === filterVal) {
         row.style.display = "";
       } else {
         row.style.display = "none";
       }
     });
-  }
 
-  // Bind desktop pills
-  tabPanels.forEach(function(panel) {
-    var pills = panel.querySelectorAll(".pv-menu-pill");
-    pills.forEach(function(pill) {
-      pill.addEventListener("click", function() {
-        var f = this.getAttribute("data-filter");
-        applyFilter(panel.id, f);
+    if (mobileFilterRail) {
+      mobileFilterRail.querySelectorAll(".pv-mobile-pill").forEach(function(b) {
+        b.classList.toggle("active", b.getAttribute("data-filter") === filterVal);
       });
-    });
-  });
+    }
+  }
 
   // MOBILE FILTER RAIL
   function syncMobileFilterRail(deptId) {
-    if (!mobileFilterRail || !DEPARTMENTS_DATA[deptId]) return;
+    if (!mobileFilterRail) return;
     var dept = DEPARTMENTS_DATA[deptId];
+    if (!dept || !dept.pills || dept.pills.length <= 1) {
+      if (mobileFilterRailWrap) mobileFilterRailWrap.style.display = "none";
+      return;
+    }
+    if (mobileFilterRailWrap) mobileFilterRailWrap.style.display = "";
     mobileFilterRail.innerHTML = "";
 
-    dept.pills.forEach(function(p) {
+    dept.pills.forEach(function(p, idx) {
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "pv-mobile-pill" + (activeFilters[deptId] === p.id ? " active" : "");
+      btn.className = "pv-mobile-pill" + (idx === 0 ? " active" : "");
       btn.setAttribute("data-filter", p.id);
       btn.textContent = p.label;
       btn.addEventListener("click", function() {
+        mobileFilterRail.querySelectorAll(".pv-mobile-pill").forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var panel = document.getElementById(deptId);
+        if (panel) {
+          panel.querySelectorAll(".pv-menu-pill").forEach(function(dp) {
+            dp.classList.toggle("active", dp.getAttribute("data-filter") === p.id);
+          });
+        }
         applyFilter(deptId, p.id);
       });
       mobileFilterRail.appendChild(btn);
@@ -3334,7 +3363,7 @@
     deptDrawerBackdrop.classList.add("open");
     deptDrawerBackdrop.classList.add("is-open");
     deptDrawerBackdrop.setAttribute("aria-hidden", "false");
-    document.body.classList.add("pv-modal-open");
+    document.body.style.overflow = "hidden";
   }
 
   function closeDeptDrawer() {
@@ -3342,7 +3371,7 @@
     deptDrawerBackdrop.classList.remove("open");
     deptDrawerBackdrop.classList.remove("is-open");
     deptDrawerBackdrop.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("pv-modal-open");
+    document.body.style.overflow = "";
   }
 
   if (deptDrawerTrigger) deptDrawerTrigger.addEventListener("click", openDeptDrawer);
@@ -3353,108 +3382,136 @@
     });
   }
 
-  // SPECIMEN MODAL LOGIC (DUAL .open / .is-open)
+  // SPECIMEN ARCHITECTURAL MODAL CONTROLLER
   function openModal(productId) {
     var p = FAWORI_PRODUCTS_DATA.find(function(it) { return it.id === productId; });
-    if (!p || !modalBackdrop || !modalSheet) return;
+    if (!p || !modalBackdrop) return;
+    currentProduct = p;
 
-    if (modalBadge) modalBadge.textContent = p.badge;
-    if (modalTag) modalTag.textContent = p.tag;
-    if (modalImg) {
-      modalImg.src = p.thumb;
-      modalImg.alt = p.name;
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "PERVAN · FAWORİ YETKİLİ BAYİ";
+    if (modalProductTitle) modalProductTitle.textContent = p.name;
+    if (modalProductDesc) modalProductDesc.textContent = p.desc;
+    if (modalProductImg) {
+      modalProductImg.src = p.thumb;
+      modalProductImg.alt = p.name;
     }
-    if (modalTitle) modalTitle.textContent = p.name;
-    if (modalDesc) modalDesc.textContent = p.desc;
 
-    // Packaging Pills
-    if (modalPackagingPills) {
-      modalPackagingPills.innerHTML = "";
-      var sizes = (p.sizes && p.sizes.length > 0) ? p.sizes : ["Standart Ambalaj"];
+    // Packaging Segmented Buttons
+    var sizes = (p.sizes && p.sizes.length > 0) ? p.sizes : ["Standart Ambalaj"];
+    selectedSize = sizes[0];
+
+    if (modalSizeTrack) {
+      modalSizeTrack.innerHTML = "";
       sizes.forEach(function(size, idx) {
         var btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "pv-pkg-pill" + (idx === 0 ? " active" : "");
+        btn.className = "pv-segmented-item" + (idx === 0 ? " active" : "");
+        btn.setAttribute("role", "radio");
+        btn.setAttribute("aria-checked", idx === 0 ? "true" : "false");
         btn.textContent = size;
         btn.addEventListener("click", function() {
-          modalPackagingPills.querySelectorAll(".pv-pkg-pill").forEach(function(b) { b.classList.remove("active"); });
+          modalSizeTrack.querySelectorAll(".pv-segmented-item").forEach(function(b) {
+            b.classList.remove("active");
+            b.setAttribute("aria-checked", "false");
+          });
           btn.classList.add("active");
-          updateWAInquiry(p, size);
+          btn.setAttribute("aria-checked", "true");
+          selectedSize = size;
+          updateWhatsAppUrl();
         });
-        modalPackagingPills.appendChild(btn);
+        modalSizeTrack.appendChild(btn);
       });
     }
 
-    if (modalCoverageVal) modalCoverageVal.textContent = p.coverage || "Standart";
-    if (modalCoverageMeta) modalCoverageMeta.textContent = "Teknik şartnameye uygun yüzey sarfiyatı";
+    // Spec Gauges
+    if (modalSpecStandard) modalSpecStandard.textContent = (p.specs && p.specs.standard) ? p.specs.standard.split("&")[0].trim() : "TS EN & Betek";
+    if (modalSpecConsumption) modalSpecConsumption.textContent = p.coverage || (p.specs && p.specs.consumption) || "Standart";
+    if (modalSpecPackaging) modalSpecPackaging.textContent = sizes.join(" / ");
 
-    if (p.specs) {
-      if (modalSpecStandard) modalSpecStandard.textContent = p.specs.standard || "TS EN & Betek Kimya Güvencesi";
-      if (modalSpecPackaging) modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes.join(", ") : "-");
-      if (modalSpecConsumption) modalSpecConsumption.textContent = p.specs.consumption || p.coverage || "-";
-      if (modalSpecMixing) modalSpecMixing.textContent = p.specs.mixingRatio || "Orijinal ambalajında kullanıma hazır";
-      if (modalSpecPotLife) modalSpecPotLife.textContent = p.specs.potLife || "2 Yıl";
-      if (modalSpecLogistics) modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Ana Depo Stok";
-    }
+    // Specs Table
+    if (modalSpecStandardRow) modalSpecStandardRow.textContent = (p.specs && p.specs.standard) || "TS EN Standartları & Betek Kimya Güvencesi";
+    if (modalSpecPackagingRow) modalSpecPackagingRow.textContent = (p.specs && p.specs.packaging) || sizes.join(" - ");
+    if (modalSpecMixing) modalSpecMixing.textContent = (p.specs && p.specs.mixingRatio) || "Su ile hacimce %10 inceltilir";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = (p.specs && p.specs.potLife) || "2 Yıl (Ağzı açılmamış orijinal ambalajında)";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = (p.specs && p.specs.logistics) || "Balçova Showroom & Urla Ana Depo Stoktan Teslim";
 
+    // Accordions
     if (modalAccordions) {
       modalAccordions.innerHTML = "";
-      var accs = p.accordions || [];
+      var accs = p.accordions || [
+        {
+          title: "Uygulama ve Yüzey Hazırlığı",
+          body: "Uygulama yapılacak yüzeylerin toz, kir, gevşek tabakalardan arındırılmış olması gerekir. Yüzey durumuna göre uygun Fawori astarı uygulanması tavsiye edilir."
+        },
+        {
+          title: "Saklama ve Güvenlik Koşulları",
+          body: "Ağzı açılmamış orijinal ambalajında, +5°C ile +35°C arasında doğrudan güneş ışığından ve dondan korunarak depolanmalıdır."
+        }
+      ];
+
       accs.forEach(function(acc, idx) {
         var item = document.createElement("div");
-        item.className = "pv-accordion-item" + (idx === 0 ? " open" : "");
+        item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
         item.innerHTML = [
-          '<button type="button" class="pv-accordion-header" aria-expanded="' + (idx === 0 ? "true" : "false") + '">',
+          '<button type="button" class="pv-acc-header" aria-expanded="' + (idx === 0 ? "true" : "false") + '">',
           '  <span>' + acc.title + '</span>',
-          '  <svg class="pv-accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>',
+          '  <svg class="pv-acc-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>',
           '</button>',
-          '<div class="pv-accordion-body" style="' + (idx === 0 ? "display:block;" : "display:none;") + '">',
+          '<div class="pv-acc-body">',
           '  <p>' + acc.body + '</p>',
           '</div>'
         ].join("");
 
-        var header = item.querySelector(".pv-accordion-header");
-        var body = item.querySelector(".pv-accordion-body");
-        header.addEventListener("click", function() {
-          var isOpen = item.classList.contains("open");
-          item.classList.toggle("open", !isOpen);
-          header.setAttribute("aria-expanded", !isOpen ? "true" : "false");
-          body.style.display = !isOpen ? "block" : "none";
+        var btn = item.querySelector(".pv-acc-header");
+        btn.addEventListener("click", function() {
+          var isAct = item.classList.contains("active");
+          item.classList.toggle("active");
+          btn.setAttribute("aria-expanded", isAct ? "false" : "true");
         });
 
         modalAccordions.appendChild(item);
       });
     }
 
-    var defaultSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "Standart";
-    updateWAInquiry(p, defaultSize);
+    updateWhatsAppUrl();
 
-    // DUAL OPEN CLASSES & RESET INLINE STYLES
-    modalSheet.style.transform = "";
-    modalSheet.style.transition = "";
-    modalBackdrop.style.opacity = "";
-    modalBackdrop.classList.add("open");
-    modalBackdrop.classList.add("is-open");
-    modalBackdrop.setAttribute("aria-hidden", "false");
-    document.body.classList.add("pv-modal-open");
+    if (modalBackdrop) {
+      modalBackdrop.classList.add("open");
+      modalBackdrop.classList.add("is-open");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      resetSheetStyles();
+    }
   }
 
   function closeModal() {
-    if (!modalBackdrop || !modalSheet) return;
-    modalSheet.style.transform = "";
-    modalSheet.style.transition = "";
-    modalBackdrop.style.opacity = "";
+    if (!modalBackdrop) return;
     modalBackdrop.classList.remove("open");
     modalBackdrop.classList.remove("is-open");
     modalBackdrop.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("pv-modal-open");
+    document.body.style.overflow = "";
+    resetSheetStyles();
   }
 
-  function updateWAInquiry(product, size) {
-    if (!modalWABtn) return;
-    var text = "Merhaba, Fawori Boya yetkili bayisi Pervan Yapı üzerinden " + product.name + " (" + size + ") hakkında güncel fiyat ve stok durumu teklifi almak istiyorum.";
+  function updateWhatsAppUrl() {
+    if (!currentProduct || !modalWABtn) return;
+    var text = "Merhaba, Pervan Fawori Yetkili Bayi çıkışlı " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    text += " için güncel şantiye liste fiyatı ve stok durumu hakkında bilgi almak istiyorum.";
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      if (e.target === modalBackdrop) closeModal();
+    });
+  }
+  window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeModal();
+  });
 
   // Row Event Binding
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
@@ -3471,45 +3528,92 @@
     });
   });
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener("click", function(e) {
-      if (e.target === modalBackdrop) closeModal();
-    });
+  // Touch gesture physics for mobile bottom sheet dismissal
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var isSheetDragging = false;
+  var canDragFromScroll = false;
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
   }
 
-  // Touch drag-to-dismiss
-  var startY = 0;
-  var currentY = 0;
-  var isDragging = false;
+  function onDragStart(e) {
+    if (!modalBackdrop.classList.contains("is-open")) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
 
-  if (modalDragHandle && modalSheet) {
-    modalDragHandle.addEventListener("touchstart", function(e) {
-      startY = e.touches[0].clientY;
-      isDragging = true;
-      modalSheet.style.transition = "none";
-    }, { passive: true });
+  function onDragMove(e) {
+    if (!modalBackdrop.classList.contains("is-open") || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
 
-    window.addEventListener("touchmove", function(e) {
-      if (!isDragging) return;
-      currentY = e.touches[0].clientY;
-      var diff = currentY - startY;
-      if (diff > 0) {
-        modalSheet.style.transform = "translateY(" + diff + "px)";
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+        if (modalCard) {
+          modalCard.style.transition = "none";
+          modalCard.style.transform = "translateY(" + deltaY + "px)";
+        }
+        if (modalBackdrop) {
+          var opacity = Math.max(0, 1 - (deltaY / 420));
+          modalBackdrop.style.opacity = opacity.toString();
+        }
       }
-    }, { passive: true });
+    }
+  }
 
-    window.addEventListener("touchend", function() {
-      if (!isDragging) return;
-      isDragging = false;
-      var diff = currentY - startY;
-      modalSheet.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
-      if (diff > 120) {
+  function onDragEnd() {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var duration = Date.now() - dragStartTime;
+    var velocity = deltaY / Math.max(duration, 1);
+
+    if (deltaY > 110 || velocity > 0.45) {
+      if (modalCard) {
+        modalCard.style.transition = "transform 0.22s cubic-bezier(0.4, 0, 1, 1)";
+        modalCard.style.transform = "translateY(100%)";
+      }
+      if (modalBackdrop) {
+        modalBackdrop.style.transition = "opacity 0.22s ease";
+        modalBackdrop.style.opacity = "0";
+      }
+      setTimeout(function() {
         closeModal();
-      } else {
-        modalSheet.style.transform = "";
-      }
-    });
+      }, 220);
+    } else {
+      resetSheetStyles();
+    }
+    dragStartY = 0;
+  }
+
+  if (modalCard) {
+    modalCard.addEventListener("touchstart", onDragStart, { passive: true });
+    modalCard.addEventListener("touchmove", onDragMove, { passive: false });
+    modalCard.addEventListener("touchend", onDragEnd, { passive: true });
+    modalCard.addEventListener("touchcancel", onDragEnd, { passive: true });
   }
 
   // SPOTLIGHT COMMAND PALETTE
@@ -3545,7 +3649,7 @@
     spotlightBackdrop.classList.add("open");
     spotlightBackdrop.classList.add("is-open");
     spotlightBackdrop.setAttribute("aria-hidden", "false");
-    document.body.classList.add("pv-modal-open");
+    document.body.style.overflow = "hidden";
     if (spotlightInput) {
       spotlightInput.value = "";
       setTimeout(function() { spotlightInput.focus(); }, 60);
@@ -3558,7 +3662,7 @@
     spotlightBackdrop.classList.remove("open");
     spotlightBackdrop.classList.remove("is-open");
     spotlightBackdrop.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("pv-modal-open");
+    document.body.style.overflow = "";
   }
 
   function renderSpotlightInitial() {
