@@ -6462,3 +6462,77 @@ body.pv-transparent-header-page #pvTransparentHeader.header--menu-open .navbar-s
   flex-shrink: 0;
 }
 
+/* ==========================================================================
+   PERVAN SUBPAGE & CONTRACTING COMPONENT POLISH
+   ========================================================================== */
+.rf-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  font-family: var(--font-display, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.rf-btn-primary {
+  background-color: #1C1917 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #1C1917 !important;
+  box-shadow: 0 4px 14px rgba(28, 25, 23, 0.16);
+}
+
+.rf-btn-primary:hover {
+  background-color: #292524 !important;
+  border-color: #292524 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(28, 25, 23, 0.24);
+}
+
+.rf-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.rf-btn-secondary {
+  background-color: #FFFFFF !important;
+  color: #1C1917 !important;
+  border: 1px solid rgba(0, 0, 0, 0.16) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.rf-btn-secondary:hover {
+  background-color: #F9F9F8 !important;
+  border-color: #1C1917 !important;
+  color: #000000 !important;
+  transform: translateY(-1px);
+}
+
+.rf-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Accordion fix: Hide body by default, reveal when active */
+.rf-acc-body {
+  display: none;
+  padding: 12px 0 16px;
+}
+
+.rf-acc-item.active .rf-acc-body {
+  display: block;
+}
+
+.rf-subpage-section {
+  padding: 40px 0 64px;
+  background: var(--bg-white, #FFFFFF);
+}
+
