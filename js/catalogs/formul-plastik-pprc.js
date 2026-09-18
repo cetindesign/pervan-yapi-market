@@ -2746,6 +2746,80 @@ var FORMUL_PRODUCTS_DATA = [
   var currentProduct = null;
   var selectedSize = null;
 
+  // Canonical Sticky Subnav Engine & Header Pin Observer
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
+  var initialSubnavTop = 0;
+
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+  }
+
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
   // Tab switching logic
   var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
   var tabPanels = document.querySelectorAll(".pv-catalog-body .pv-tab-panel");
@@ -2774,15 +2848,18 @@ var FORMUL_PRODUCTS_DATA = [
     renderDeptDrawer(targetId);
     syncMobileFilterRail(targetId);
 
-    // Scroll to catalog top smoothly if needed
-    var subnav = document.getElementById("pvSubnav");
-    if (subnav && window.pageYOffset > subnav.offsetTop + 100) {
+    // Scroll to catalog top smoothly respecting header offset
+    if (subnav && window.pageYOffset > (initialSubnavTop || 600) - 80) {
+      var hHeight = getHeaderHeight();
+      var targetScroll = (initialSubnavTop || subnav.offsetTop) - hHeight - 12;
       window.scrollTo({
-        top: subnav.offsetTop - 10,
+        top: Math.max(0, targetScroll),
         behavior: "smooth"
       });
     }
   }
+
+  window.pvCatalogSwitchTab = switchTab;
 
   subnavLinks.forEach(function(btn) {
     btn.addEventListener("click", function() {
