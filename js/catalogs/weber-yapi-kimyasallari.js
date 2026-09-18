@@ -183,7 +183,7 @@
     "tag": "Yüzme Havuzu & Su Deposu · Klor Dirençli",
     "deptId": "weberProductCatalog",
     "category": "havuz-su",
-    "thumb": "assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg",
+    "thumb": "assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg",
     "desc": "Yüzme havuzları, termal kaplıcalar, su depoları ve ıslak hacimlerde klorlu su basıncına ve sıcaklık şoklarına dayanıklı havuz yapıştırıcısı.",
     "meta": [
       "Havuz & Su Deposu Uyumu",
@@ -323,7 +323,7 @@
     "tag": "Kullanıma Hazır Pasta · Alçıpan Uyumlu",
     "deptId": "weberProductCatalog",
     "category": "kullanima-hazir",
-    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "thumb": "assets/weber-official/weber-prim-bt-max-12-kg.jpg",
     "desc": "Alçıpan, betopan, boyalı yüzey ve eski seramik üzerine su katılmadan doğrudan uygulanan kullanıma hazır macun kıvamında esnek yapıştırıcı.",
     "meta": [
       "D2TE Macun Tipi",
@@ -427,7 +427,7 @@
     "tag": "Silikon Katkılı Su İtici Derz",
     "deptId": "weberJointSection",
     "category": "silikonlu-derz",
-    "thumb": "assets/weber-official/weber-joint-sil-20-kg.png",
+    "thumb": "assets/weber-official/weber-joint-sil-granit-gri-20-kg.png",
     "desc": "Silikon katkılı formülü ile duş kabinleri, banyo zeminleri ve balkonlar için su kaydırıcı pürüzsüz yüzey oluşturan renkli derz dolgu.",
     "meta": [
       "Silikon Katkılı Su Kaydırıcı",
@@ -462,7 +462,7 @@
     "tag": "2–20 mm Geniş Derz & Rustik Taş",
     "deptId": "weberJointSection",
     "category": "genis-derz",
-    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "thumb": "assets/weber-official/weber-joint-hr-flex-beyaz-5-kg.jpg",
     "desc": "2–20 mm geniş derz aralıkları, doğal taş, traverten, cotto ve klinker tuğla kaplamalar için çatlamayan iri agregalı derz dolgusu.",
     "meta": [
       "2–20 mm Geniş Aralık",
@@ -530,7 +530,7 @@
     "tag": "Poliüretan Dilatasyon Mastiği",
     "deptId": "weberJointSection",
     "category": "pu-mastik",
-    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "thumb": "assets/weber-official/weber-silikon-banyo-beyaz-280-ml.png",
     "desc": "Bina dilatasyonları, prekast panel derzleri, parapet ve pencere kenarları için yüksek elastikiyete sahip poliüretan sızdırmazlık mastiği.",
     "meta": [
       "ISO 11600 F 25 LM Sınıfı",
@@ -565,7 +565,7 @@
     "tag": "Tam Elastik 2K Çimento Yalıtım",
     "deptId": "weberDrySection",
     "category": "cimento-esasli",
-    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "thumb": "assets/weber-official/weber-dry-ss-10-set-sivi-10-kg-toz-20-kg.jpg",
     "desc": "Teraslar, yüzme havuzları, balkonlar ve su depoları için çatlak köprüleme kabiliyetine sahip 2 komponentli tam elastik su yalıtım harcı.",
     "meta": [
       "CM O2P Tam Elastik Sınıf",
@@ -604,7 +604,7 @@
     "tag": "Yarı Elastik 2K Banyo Yalıtımı",
     "deptId": "weberDrySection",
     "category": "cimento-esasli",
-    "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
+    "thumb": "assets/weber-official/weber-dry-ss-7-easy-set-sivi-6-kg-toz-20-kg.jpg",
     "desc": "Banyo, duş, mutfak ve tuvalet gibi iç mekan ıslak hacimler için seramik altı yarı elastik 2 komponentli su yalıtım harcı.",
     "meta": [
       "CM O1P Yarı Elastik",
@@ -639,7 +639,7 @@
     "tag": "Bitüm-Kauçuk Temel & Perde Yalıtımı",
     "deptId": "weberDrySection",
     "category": "bitum-esasli",
-    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "thumb": "assets/weber-official/weber-dry-706-plus-32-kg.jpg",
     "desc": "Temel, perde duvar, bodrum dış duvarları ve istinat yapıları için polimer modifiyeli 2 komponentli kalın bitüm-kauçuk kaplama.",
     "meta": [
       "TS EN 15814 Standardı",
@@ -673,7 +673,7 @@
     "tag": "Kristalize Su Yalıtımı · Negatif/Pozitif",
     "deptId": "weberDrySection",
     "category": "kristalize",
-    "thumb": "assets/weber-official/weber-dry-ss-7-25-kg.png",
+    "thumb": "assets/weber-official/weber-dry-uv-coat-set-sivi-10-kg-toz-20-kg.jpg",
     "desc": "Bodrum iç duvarları, asansör kuyuları ve su depolarında betonun kapiler boşluklarına kristal üreterek su geçişini durduran harç.",
     "meta": [
       "Negatif & Pozitif Çift Yönlü",
@@ -707,7 +707,7 @@
     "tag": "Şok Aktif Su Tıkacı · 1–2 Dakikada Priz",
     "deptId": "weberDrySection",
     "category": "sok-tikama",
-    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "thumb": "assets/weber-official/weber-dry-rapid-stop-5-kg.jpg",
     "desc": "Basınçlı fışkıran su kaçaklarını, boru geçiş deliklerini ve beton çatlaklarını 60–120 saniyede sertleşerek anında durduran şok tıkama harcı.",
     "meta": [
       "60–120 Saniyede Şok Priz",
@@ -741,7 +741,7 @@
     "tag": "Saf Poliüretan Likit Membran",
     "deptId": "weberDrySection",
     "category": "likit-poliuretan",
-    "thumb": "assets/weber-official/weber-dry-ss-10-33-kg.png",
+    "thumb": "assets/weber-official/weberdry-706-plus.jpg",
     "desc": "Açık teraslar, çatılar ve UV ışınlarına maruz kalan zeminler için eksiz, yüksek elastikiyete sahip saf poliüretan likit su yalıtım membranı.",
     "meta": [
       "ETAG 005 W3 Sertifikalı",
@@ -776,7 +776,7 @@
     "tag": "Elastik Köşe Pah Bandı · 120 mm",
     "deptId": "weberDrySection",
     "category": "aksesuar-pah",
-    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "thumb": "assets/weber-official/weber-kosebant-100-50-mt.jpg",
     "desc": "Teras, balkon ve banyolarda zemin-duvar birleşim noktalarında su sızıntılarını önlemek için kullanılan termoplastik elastomer pah bandı.",
     "meta": [
       "120 mm Toplam Genişlik",
@@ -811,7 +811,7 @@
     "tag": "Yapısal Kalın Tamir Harcı · R4 Sınıfı",
     "deptId": "weberRepSection",
     "category": "yapisal-tamir",
-    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "thumb": "assets/weber-official/weber-therm-sv-25-kg.jpg",
     "desc": "Kolon, kiriş, perde duvar ve köprü gibi taşıyıcı betonarme elemanlarda 10–40 mm kalınlıkta uygulanan R4 sınıfı yüksek mukavemetli yapısal tamir harcı.",
     "meta": [
       "TS EN 1504-3 R4 Sınıfı",
@@ -850,7 +850,7 @@
     "tag": "Elyaf Takviyeli İnce Tamir Harcı · R3 Sınıfı",
     "deptId": "weberRepSection",
     "category": "ince-tamir",
-    "thumb": "assets/weber-official/weber-kol-flex-porselen-gri-25-kg.jpg",
+    "thumb": "assets/weber-official/weber-rep-m352-25-kg.jpg",
     "desc": "Brüt beton, prefabrik elemanlar ve sıva yüzeylerde 2–10 mm kalınlıkta pürüzsüz kozmetik yüzey tamiri sağlayan polimer ve elyaf katkılı harç.",
     "meta": [
       "TS EN 1504-3 R3 Sınıfı",
@@ -885,7 +885,7 @@
     "tag": "Sülfat Dirençli R4 Tamir Harcı",
     "deptId": "weberRepSection",
     "category": "yapisal-tamir",
-    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "thumb": "assets/weber-official/weber-rep-grout-25-kg.jpg",
     "desc": "Deniz yapıları, sahil şantiyeleri, atıksu arıtma tesisleri ve sülfatlı yeraltı sularına maruz kalan betonarme elemanlar için sülfata dayanıklı R4 harç.",
     "meta": [
       "Sülfat ve Deniz Suyu Direnci",
@@ -919,7 +919,7 @@
     "tag": "Rötresiz Akıcı Grout & Ankraj",
     "deptId": "weberRepSection",
     "category": "grout-ankraj",
-    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "thumb": "assets/weber-official/weber-rep-grout-25-kg.jpg",
     "desc": "Çelik kolon taban plakaları, makine temelleri, vinç rayları ve filiz ekme delikleri için büzülme yapmayan kendiliğinden yerleşen akıcı harç.",
     "meta": [
       "TS EN 1504-6 Ankraj Standardı",
@@ -954,7 +954,7 @@
     "tag": "Konsantre Aderans Astarı",
     "deptId": "weberRepSection",
     "category": "astar-aderans",
-    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "thumb": "assets/weber-official/weber-prim-art-1-kg.jpg",
     "desc": "Emici zeminler, şaplar, alçıpan ve gazbeton yüzeylerde yapıştırıcı ve tamir harçlarının suyunu kaybetmesini önleyen derin penetrasyon astarı.",
     "meta": [
       "Derin Yüzey Penetrasyonu",
@@ -989,7 +989,7 @@
     "tag": "2K Epoksi Nem Bariyeri & Astar",
     "deptId": "weberRepSection",
     "category": "astar-aderans",
-    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "thumb": "assets/weber-official/weber-prim-bt-max-12-kg.jpg",
     "desc": "Nemli beton zeminlerde nem bariyeri oluşturan, metal ve parlak yüzeylerde mükemmel aderans köprüsü kuran solventsiz 2K epoksi astar.",
     "meta": [
       "Solventsiz 2K Epoksi Reçine",
@@ -1023,7 +1023,7 @@
     "tag": "Kendiliğinden Yayılan Tesviye Şapı · 2–10 mm",
     "deptId": "weberFloorSection",
     "category": "tesviye-selfleveling",
-    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "thumb": "assets/weber-official/weber-latex-20-kg.jpg",
     "desc": "Seramik, parke, vinil ve lamine kaplamalar öncesinde zemin bozukluklarını kendiliğinden teraziye alarak düzelten pürüzsüz tesviye şapı.",
     "meta": [
       "CT-C25-F6 Dayanım Sınıfı",
@@ -1062,7 +1062,7 @@
     "tag": "Esnek Yerden Isıtma Şapı · 3–30 mm",
     "deptId": "weberFloorSection",
     "category": "tesviye-selfleveling",
-    "thumb": "assets/weber-official/weber-joint-hr-flex-20-kg.png",
+    "thumb": "assets/weber-official/weber-latex-5-kg.jpg",
     "desc": "Sulu ve elektrikli yerden ısıtma sistemlerinde boru üzerini kaplamak ve geniş kot farklarını doldurmak için tasarlanmış fiber katkılı esnek şap.",
     "meta": [
       "CT-C30-F7 Yüksek Esneklik",
@@ -1097,7 +1097,7 @@
     "tag": "Ağır Trafik Endüstriyel Zemin Şapı",
     "deptId": "weberFloorSection",
     "category": "endustriyel-zemin",
-    "thumb": "assets/weber-official/weber-ep-800-beyaz-5-kg.jpg",
+    "thumb": "assets/weber-official/weber-min-deko-25-kg-2-mm.jpg",
     "desc": "Fabrikalar, otoparklar, depolar ve forklift trafiğinin olduğu endüstriyel sahalar için 40 MPa basınç dayanımlı aşınmaz zemin kaplama şapı.",
     "meta": [
       "CT-C40-F10 Ağır Hizmet Sınıfı",
@@ -1132,7 +1132,7 @@
     "tag": "Tozuma Önleyici Şeffaf Zemin Koruyucu",
     "deptId": "weberFloorSection",
     "category": "koruyucu-kaplama",
-    "thumb": "assets/weber-official/weber-kol-standart-gri-25-kg.png",
+    "thumb": "assets/weber-official/weber-min-duo-25-kg-3-5-mm-cizgi-dokulu.png",
     "desc": "Beton zeminler, şaplar ve teras kaplamaları üzerinde tozuma yapmayan, yağ ve leke tutmayan şeffaf emprenye yüzey koruyucu cila.",
     "meta": [
       "Tozuma Önleyici Sıvı Cila",
@@ -1461,7 +1461,7 @@
 
         rows.forEach(function(row) {
           var cat = row.getAttribute("data-category");
-          if (cat === filter) {
+          if (filter === "all" || cat === filter) {
             row.style.display = "";
           } else {
             row.style.display = "none";
@@ -1474,8 +1474,10 @@
     if (activePill) {
       var initialFilter = activePill.getAttribute("data-filter");
       rows.forEach(function(row) {
-        if (row.getAttribute("data-category") !== initialFilter) {
+        if (initialFilter !== "all" && row.getAttribute("data-category") !== initialFilter) {
           row.style.display = "none";
+        } else {
+          row.style.display = "";
         }
       });
     }
@@ -1487,7 +1489,9 @@
   setupCategoryFiltering("repMenuPills", "repMenuList");
   setupCategoryFiltering("floorMenuPills", "floorMenuList");
 
-  // MODAL ENGINE
+  // ==========================================================================
+  // ARCHITECTURAL PRODUCT DETAIL MODAL
+  // ==========================================================================
   var modalBackdrop = document.getElementById("pvModalBackdrop");
   var modalCard = document.getElementById("pvModalCard");
   var modalCloseBtn = document.getElementById("pvModalCloseBtn");
@@ -1496,20 +1500,30 @@
   var modalScrollArea = document.getElementById("modalScrollArea");
 
   var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductBadges = document.getElementById("modalProductBadges");
   var modalProductBadge = document.getElementById("modalProductBadge");
   var modalProductTag = document.getElementById("modalProductTag");
   var modalProductEyebrow = document.getElementById("modalProductEyebrow");
   var modalProductTitle = document.getElementById("modalProductTitle");
   var modalProductDesc = document.getElementById("modalProductDesc");
+
+  var modalPackagingSection = document.getElementById("modalPackagingSection");
+  var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
+  var modalSizeChips = document.getElementById("modalSizeChips");
   var modalSizeTrack = document.getElementById("modalSizeTrack");
+
   var modalSpecStandard = document.getElementById("modalSpecStandard");
   var modalSpecPackaging = document.getElementById("modalSpecPackaging");
   var modalSpecConsumption = document.getElementById("modalSpecConsumption");
   var modalSpecMixing = document.getElementById("modalSpecMixing");
   var modalSpecPotLife = document.getElementById("modalSpecPotLife");
   var modalSpecLogistics = document.getElementById("modalSpecLogistics");
-  var modalWABtn = document.getElementById("modalWABtn");
-  var modalAccordions = document.getElementById("modalAccordions");
+  var modalSpecsTable = document.getElementById("modalSpecsTable");
+
+  var modalWABtn = document.getElementById("modalWABtn") || document.getElementById("modalWaBtn");
+  var modalWaBtn = document.getElementById("modalWaBtn") || document.getElementById("modalWABtn");
+  var modalAccordions = document.getElementById("modalAccordions") || document.getElementById("modalAccordionsWrap");
+  var modalAccordionsWrap = document.getElementById("modalAccordionsWrap") || document.getElementById("modalAccordions");
 
   var isSheetDragging = false;
   var dragStartY = 0;
@@ -1523,61 +1537,161 @@
     currentProduct = p;
     selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
 
-    modalProductImg.src = p.thumb;
-    modalProductImg.alt = p.name;
-    if (modalProductEyebrow) modalProductEyebrow.textContent = "SAINT-GOBAIN WEBER · YAPI KİMYASALLARI";
-    modalProductTitle.textContent = p.name;
-    modalProductDesc.textContent = p.desc;
-
-    modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
-    modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
-    modalSpecConsumption.textContent = p.specs.consumption || "-";
-    modalSpecMixing.textContent = p.specs.mixingRatio || "-";
-    modalSpecPotLife.textContent = p.specs.potLife || "-";
-    modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
-
-    modalSizeTrack.innerHTML = "";
-    if (p.sizes && p.sizes.length > 0) {
-      p.sizes.forEach(function(size, idx) {
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
-        btn.textContent = size;
-        btn.addEventListener("click", function() {
-          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
-          btn.classList.add("active");
-          selectedSize = size;
-          updateWhatsAppUrl();
-        });
-        modalSizeTrack.appendChild(btn);
-      });
+    if (modalProductImg) {
+      modalProductImg.src = p.thumb;
+      modalProductImg.alt = p.name;
+    }
+    if (modalProductEyebrow) {
+      modalProductEyebrow.textContent = "SAINT-GOBAIN WEBER · YAPI KİMYASALLARI";
+    }
+    if (modalProductTitle) {
+      modalProductTitle.textContent = p.name;
+    }
+    if (modalProductDesc) {
+      modalProductDesc.textContent = p.desc;
     }
 
-    modalAccordions.innerHTML = "";
-    if (p.accordions && p.accordions.length > 0) {
-      p.accordions.forEach(function(acc, idx) {
-        var item = document.createElement("div");
-        item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
-        item.innerHTML = 
-          '<button type="button" class="pv-acc-header">' +
-          '  <span>' + acc.title + '</span>' +
-          '  <span class="pv-acc-icon">+</span>' +
-          '</button>' +
-          '<div class="pv-acc-body">' + acc.body + '</div>';
-
-        item.querySelector(".pv-acc-header").addEventListener("click", function() {
-          item.classList.toggle("active");
+    // Dynamic Badges
+    if (modalProductBadges) {
+      modalProductBadges.innerHTML = "";
+      if (p.badge) {
+        var b = document.createElement("span");
+        b.className = "pv-specimen-badge";
+        b.textContent = p.badge;
+        modalProductBadges.appendChild(b);
+      }
+      if (p.meta && p.meta.length) {
+        p.meta.forEach(function(m) {
+          var mb = document.createElement("span");
+          mb.className = "pv-specimen-badge-sub";
+          mb.textContent = m;
+          modalProductBadges.appendChild(mb);
         });
-        modalAccordions.appendChild(item);
-      });
+      }
+    } else if (modalProductBadge) {
+      modalProductBadge.textContent = p.badge || "";
+    }
+
+    // Gauge Fallbacks
+    if (modalSpecStandard) modalSpecStandard.textContent = p.specs.standard || p.badge || "-";
+    if (modalSpecPackaging) modalSpecPackaging.textContent = p.specs.packaging || (p.sizes ? p.sizes[0] : "-");
+    if (modalSpecConsumption) modalSpecConsumption.textContent = p.specs.consumption || "-";
+    if (modalSpecMixing) modalSpecMixing.textContent = p.specs.mixingRatio || "-";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = p.specs.potLife || "-";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = p.specs.logistics || "Balçova Showroom & Urla Depo";
+
+    // Dynamic Specs Table
+    if (modalSpecsTable) {
+      modalSpecsTable.innerHTML = "";
+      var specLabels = {
+        standard: "Kalite & Standardı",
+        packaging: "Ambalaj & Satış Birimi",
+        consumption: "Sarfiyat Miktarı",
+        mixingRatio: "Karışım Oranı",
+        potLife: "Kap Ömrü & Priz",
+        logistics: "Lojistik & Sevk"
+      };
+      if (p.specs) {
+        for (var key in p.specs) {
+          if (p.specs.hasOwnProperty(key)) {
+            var rowEl = document.createElement("div");
+            rowEl.className = "pv-spec-row";
+            var kEl = document.createElement("span");
+            kEl.className = "pv-spec-k";
+            kEl.textContent = (specLabels[key] || key) + ":";
+            var vEl = document.createElement("span");
+            vEl.className = "pv-spec-v";
+            vEl.textContent = p.specs[key];
+            rowEl.appendChild(kEl);
+            rowEl.appendChild(vEl);
+            modalSpecsTable.appendChild(rowEl);
+          }
+        }
+      }
+    }
+
+    // Size / Packaging chips
+    if (modalSizeChips) {
+      modalSizeChips.innerHTML = "";
+      if (p.sizes && p.sizes.length > 0) {
+        if (modalPackagingSection) modalPackagingSection.style.display = "";
+        p.sizes.forEach(function(size, idx) {
+          var chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
+          chip.textContent = size;
+          chip.setAttribute("role", "radio");
+          chip.setAttribute("aria-checked", idx === 0 ? "true" : "false");
+          chip.addEventListener("click", function() {
+            modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) {
+              c.classList.remove("active");
+              c.setAttribute("aria-checked", "false");
+            });
+            chip.classList.add("active");
+            chip.setAttribute("aria-checked", "true");
+            selectedSize = size;
+            updateWhatsAppUrl();
+            if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = size;
+          });
+          modalSizeChips.appendChild(chip);
+        });
+        if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = p.sizes[0];
+      } else {
+        if (modalPackagingSection) modalPackagingSection.style.display = "none";
+      }
+    }
+
+    // Fallback Segmented Track
+    if (modalSizeTrack) {
+      modalSizeTrack.innerHTML = "";
+      if (p.sizes && p.sizes.length > 0) {
+        p.sizes.forEach(function(size, idx) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+          btn.textContent = size;
+          btn.addEventListener("click", function() {
+            modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            selectedSize = size;
+            updateWhatsAppUrl();
+          });
+          modalSizeTrack.appendChild(btn);
+        });
+      }
+    }
+
+    // Dynamic Accordions
+    var accTarget = modalAccordions || modalAccordionsWrap;
+    if (accTarget) {
+      accTarget.innerHTML = "";
+      if (p.accordions && p.accordions.length > 0) {
+        p.accordions.forEach(function(acc, idx) {
+          var item = document.createElement("div");
+          item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
+          item.innerHTML = 
+            '<button type="button" class="pv-acc-header">' +
+            '  <span>' + acc.title + '</span>' +
+            '  <span class="pv-acc-icon">+</span>' +
+            '</button>' +
+            '<div class="pv-acc-body">' + acc.body + '</div>';
+
+          item.querySelector(".pv-acc-header").addEventListener("click", function() {
+            item.classList.toggle("active");
+          });
+          accTarget.appendChild(item);
+        });
+      }
     }
 
     updateWhatsAppUrl();
 
-    modalBackdrop.classList.add("open");
-    modalBackdrop.classList.add("is-open");
-    modalBackdrop.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    if (modalBackdrop) {
+      modalBackdrop.classList.add("open");
+      modalBackdrop.classList.add("is-open");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
 
     try {
       history.replaceState(null, "", "#urun-" + p.id);
@@ -1596,6 +1710,7 @@
   }
 
   function closeModal() {
+    if (!modalBackdrop) return;
     modalBackdrop.classList.remove("open");
     modalBackdrop.classList.remove("is-open");
     modalBackdrop.setAttribute("aria-hidden", "true");
@@ -1614,7 +1729,9 @@
       text += " (" + selectedSize + ")";
     }
     text += " için Urla / Balçova depo şantiye teslimat ve güncel palet fiyat bilgisi almak istiyorum.";
-    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+    var waHref = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+    if (modalWABtn) modalWABtn.href = waHref;
+    if (modalWaBtn) modalWaBtn.href = waHref;
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
@@ -1626,7 +1743,7 @@
 
   // Touch gesture physics for mobile bottom sheet dismissal
   function onDragStart(e) {
-    if (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) return;
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open"))) return;
     var touch = e.touches ? e.touches[0] : e;
     dragStartY = touch.clientY;
     dragCurrentY = touch.clientY;
@@ -1636,7 +1753,7 @@
   }
 
   function onDragMove(e) {
-    if ((!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
     var touch = e.touches ? e.touches[0] : e;
     var deltaY = touch.clientY - dragStartY;
     dragCurrentY = touch.clientY;
@@ -1692,17 +1809,235 @@
   });
 
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
-    row.addEventListener("click", function() {
-      var pid = row.getAttribute("data-product-id");
+    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
+    row.addEventListener("click", function(e) {
+      if (e.target.closest("a")) return;
       if (pid) openModal(pid);
     });
     row.addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        var pid = row.getAttribute("data-product-id");
         if (pid) openModal(pid);
       }
     });
+  });
+
+  // ==========================================================================
+  // SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 30 Weber Ürünü)
+  // ==========================================================================
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightTrigger = document.getElementById("pvSubnavSearchBtn");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
+  var spotlightInput = document.getElementById("pvSpotlightInput");
+  var spotlightResults = document.getElementById("pvSpotlightResults");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
+  var spotlightSelectedIdx = -1;
+
+  function normalizeTr(str) {
+    if (!str) return "";
+    return str
+      .toString()
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/i̇/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getProductDomain(deptId) {
+    var d = DEPARTMENTS_DATA.find(function(item) { return item.id === deptId; });
+    return d ? d.short : "Weber";
+  }
+
+  function openSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (spotlightInput) {
+      spotlightInput.value = "";
+      renderSpotlightInitial();
+      setTimeout(function() { spotlightInput.focus(); }, 60);
+    }
+  }
+
+  function closeSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function renderSpotlightInitial() {
+    if (!spotlightResults) return;
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    var featured = WEBER_PRODUCTS_DATA.slice(0, 8);
+    var heading = document.createElement("div");
+    heading.className = "pv-spotlight-group-title";
+    heading.textContent = "Öne Çıkan Weber Harç, Derz & İzolasyon Ürünleri";
+    spotlightResults.appendChild(heading);
+
+    featured.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = WEBER_PRODUCTS_DATA.length + " Ürün Kataloğu";
+    }
+    attachSpotlightItemEvents();
+  }
+
+  function createSpotlightItemEl(item) {
+    var div = document.createElement("div");
+    div.className = "pv-spotlight-item";
+    div.setAttribute("data-product-id", item.id);
+    div.innerHTML = [
+      '<div class="pv-spotlight-item-main">',
+      '  <div class="pv-spotlight-item-badge">' + (item.badge || "Weber Standart") + '</div>',
+      '  <div class="pv-spotlight-item-title">' + item.name + '</div>',
+      '  <div class="pv-spotlight-item-desc">' + item.desc + '</div>',
+      '</div>',
+      '<div class="pv-spotlight-item-meta">',
+      '  <span class="pv-spotlight-tag">' + getProductDomain(item.deptId) + '</span>',
+      '  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+      '</div>'
+    ].join("");
+    return div;
+  }
+
+  function performSpotlightSearch(query) {
+    if (!spotlightResults) return;
+    var normQ = normalizeTr(query);
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    if (!normQ) {
+      renderSpotlightInitial();
+      return;
+    }
+
+    var tokens = normQ.split(" ").filter(Boolean);
+    var matches = WEBER_PRODUCTS_DATA.filter(function(item) {
+      var target = normalizeTr(item.name + " " + item.desc + " " + item.badge + " " + item.tag + " " + (item.meta ? item.meta.join(" ") : ""));
+      return tokens.every(function(t) { return target.indexOf(t) !== -1; });
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Sonuç Bulundu";
+    }
+
+    if (!matches.length) {
+      var empty = document.createElement("div");
+      empty.className = "pv-spotlight-empty";
+      empty.innerHTML = [
+        '<div class="pv-spotlight-empty-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>',
+        '<p class="pv-spotlight-empty-title">"' + query + '" için eşleşen Weber ürünü bulunamadı</p>',
+        '<p class="pv-spotlight-empty-sub">Farklı bir arama terimi deneyin veya WhatsApp hattımızdan direkt sorun.</p>'
+      ].join("");
+      spotlightResults.appendChild(empty);
+      return;
+    }
+
+    matches.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+    attachSpotlightItemEvents();
+  }
+
+  function highlightSpotlightItem(items, idx) {
+    items.forEach(function(it) { it.classList.remove("selected"); });
+    if (idx >= 0 && idx < items.length) {
+      items[idx].classList.add("selected");
+      items[idx].scrollIntoView({ block: "nearest" });
+      spotlightSelectedIdx = idx;
+    } else {
+      spotlightSelectedIdx = -1;
+    }
+  }
+
+  function attachSpotlightItemEvents() {
+    if (!spotlightResults) return;
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
+      });
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-product-id");
+        closeSpotlight();
+        var p = WEBER_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+        if (p && p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      });
+    });
+  }
+
+  if (spotlightTrigger) spotlightTrigger.addEventListener("click", openSpotlight);
+  if (spotlightCloseBtn) spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
+    });
+  }
+
+  if (spotlightInput) {
+    var spotlightDebounce;
+    spotlightInput.addEventListener("input", function() {
+      clearTimeout(spotlightDebounce);
+      spotlightDebounce = setTimeout(function() {
+        performSpotlightSearch(spotlightInput.value);
+      }, 90);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx + 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx - 1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (items.length && spotlightSelectedIdx >= 0 && items[spotlightSelectedIdx]) {
+          items[spotlightSelectedIdx].click();
+        }
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeSpotlight();
+      }
+    });
+  }
+
+  // Global Keydown (Escape & ⌘K)
+  document.addEventListener("keydown", function(e) {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
+      e.preventDefault();
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else {
+        openSpotlight();
+      }
+    }
+    if (e.key === "Escape") {
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else if (modalBackdrop && (modalBackdrop.classList.contains("is-open") || modalBackdrop.classList.contains("open"))) {
+        closeModal();
+      } else if (deptDrawerBackdrop && deptDrawerBackdrop.classList.contains("is-open")) {
+        closeDeptDrawer();
+      }
+    }
   });
 
   function checkDeepLink() {
