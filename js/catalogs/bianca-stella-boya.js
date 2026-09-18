@@ -1547,19 +1547,228 @@
     target.addEventListener("touchcancel", onDragEnd, { passive: true });
   });
 
+  // Row click listeners
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
-      var pid = row.getAttribute("data-product-id");
+      var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
       if (pid) openModal(pid);
     });
     row.addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        var pid = row.getAttribute("data-product-id");
+        var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
         if (pid) openModal(pid);
       }
     });
   });
+
+  // SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 25 Ürün Arama)
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightTrigger = document.getElementById("pvSpotlightTrigger") || document.getElementById("pvSubnavSearchBtn");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
+  var spotlightInput = document.getElementById("pvSpotlightInput");
+  var spotlightResults = document.getElementById("pvSpotlightResults");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
+  var spotlightSelectedIdx = -1;
+
+  function normalizeTr(str) {
+    if (!str) return "";
+    return str
+      .toString()
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/i̇/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getProductDomain(deptId) {
+    var d = DEPARTMENTS_DATA.find(function(item) { return item.id === deptId; });
+    return d ? d.short : "Bianca Stella";
+  }
+
+  function openSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (spotlightInput) {
+      spotlightInput.value = "";
+      renderSpotlightInitial();
+      setTimeout(function() { spotlightInput.focus(); }, 60);
+    }
+  }
+
+  function closeSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function renderSpotlightInitial() {
+    if (!spotlightResults) return;
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    var featured = BIANCA_PRODUCTS_DATA.slice(0, 8);
+    var heading = document.createElement("div");
+    heading.className = "pv-spotlight-group-title";
+    heading.textContent = "Öne Çıkan Bianca Stella Ürünleri";
+    spotlightResults.appendChild(heading);
+
+    featured.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = BIANCA_PRODUCTS_DATA.length + " Ürün Kataloğu";
+    }
+    attachSpotlightItemEvents();
+  }
+
+  function createSpotlightItemEl(item) {
+    var div = document.createElement("div");
+    div.className = "pv-spotlight-item";
+    div.setAttribute("data-id", item.id);
+    div.setAttribute("data-product-id", item.id);
+    div.innerHTML = [
+      '<div class="pv-spotlight-item-main">',
+      '  <div class="pv-spotlight-item-badge">' + (item.badge || "Bianca Stella") + '</div>',
+      '  <div class="pv-spotlight-item-title">' + item.name + '</div>',
+      '  <div class="pv-spotlight-item-desc">' + (item.desc || "") + '</div>',
+      '</div>',
+      '<div class="pv-spotlight-item-meta">',
+      '  <span class="pv-spotlight-tag">' + getProductDomain(item.deptId) + '</span>',
+      '  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+      '</div>'
+    ].join("");
+    return div;
+  }
+
+  function performSpotlightSearch(query) {
+    if (!spotlightResults) return;
+    var normQ = normalizeTr(query);
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    if (!normQ) {
+      renderSpotlightInitial();
+      return;
+    }
+
+    var tokens = normQ.split(" ").filter(Boolean);
+    var matches = BIANCA_PRODUCTS_DATA.filter(function(item) {
+      var target = normalizeTr(item.name + " " + (item.desc || "") + " " + (item.badge || "") + " " + (item.tag || "") + " " + (item.meta ? item.meta.join(" ") : ""));
+      return tokens.every(function(t) { return target.indexOf(t) !== -1; });
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Sonuç Bulundu";
+    }
+
+    if (!matches.length) {
+      var empty = document.createElement("div");
+      empty.className = "pv-spotlight-empty";
+      empty.innerHTML = [
+        '<div class="pv-spotlight-empty-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>',
+        '<p class="pv-spotlight-empty-title">\"' + query + '\" için ürün bulunamadı</p>',
+        '<p class="pv-spotlight-empty-sub">Farklı bir arama terimi deneyin veya WhatsApp hattımızdan direkt bilgi alın.</p>'
+      ].join("");
+      spotlightResults.appendChild(empty);
+      return;
+    }
+
+    matches.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+    attachSpotlightItemEvents();
+  }
+
+  function highlightSpotlightItem(items, idx) {
+    items.forEach(function(it) { it.classList.remove("selected"); });
+    if (idx >= 0 && idx < items.length) {
+      items[idx].classList.add("selected");
+      items[idx].scrollIntoView({ block: "nearest" });
+      spotlightSelectedIdx = idx;
+    } else {
+      spotlightSelectedIdx = -1;
+    }
+  }
+
+  function attachSpotlightItemEvents() {
+    if (!spotlightResults) return;
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
+      });
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-id") || item.getAttribute("data-product-id");
+        closeSpotlight();
+        var p = BIANCA_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+        if (p && p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      });
+    });
+  }
+
+  if (spotlightTrigger) spotlightTrigger.addEventListener("click", openSpotlight);
+  if (spotlightCloseBtn) spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
+    });
+  }
+
+  window.addEventListener("keydown", function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else {
+        openSpotlight();
+      }
+    }
+  });
+
+  if (spotlightInput) {
+    spotlightInput.addEventListener("input", function(e) {
+      performSpotlightSearch(e.target.value);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (!items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        var nextIdx = spotlightSelectedIdx + 1;
+        if (nextIdx >= items.length) nextIdx = 0;
+        highlightSpotlightItem(items, nextIdx);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        var prevIdx = spotlightSelectedIdx - 1;
+        if (prevIdx < 0) prevIdx = items.length - 1;
+        highlightSpotlightItem(items, prevIdx);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (spotlightSelectedIdx >= 0 && spotlightSelectedIdx < items.length) {
+          items[spotlightSelectedIdx].click();
+        } else if (items.length > 0) {
+          items[0].click();
+        }
+      }
+    });
+  }
 
   function checkDeepLink() {
     var hash = window.location.hash;
