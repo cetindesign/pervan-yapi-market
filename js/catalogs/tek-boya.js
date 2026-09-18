@@ -3272,7 +3272,7 @@
   var selectedSize = null;
 
   function getHeaderHeight() {
-    if (!header) return 0;
+    if (!header) return 60;
     return header.offsetHeight || 60;
   }
 
@@ -3284,43 +3284,57 @@
 
   var initialSubnavTop = 0;
   function syncSubnavPin() {
-    if (!subnav || !spacer) return;
-    if (!initialSubnavTop) {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
       initialSubnavTop = getSubnavOrigin();
     }
-    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    var headerH = getHeaderHeight();
-    var threshold = initialSubnavTop - headerH;
 
-    if (scrollY >= threshold && threshold > 0) {
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
       if (!subnav.classList.contains("is-pinned")) {
         subnav.classList.add("is-pinned");
-        subnav.style.position = "fixed";
-        subnav.style.top = headerH + "px";
-        subnav.style.left = "0";
-        subnav.style.right = "0";
-        subnav.style.width = "100%";
-        subnav.style.zIndex = "40";
-        spacer.style.height = subnav.offsetHeight + "px";
-        spacer.style.display = "block";
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
       }
     } else {
       if (subnav.classList.contains("is-pinned")) {
         subnav.classList.remove("is-pinned");
-        subnav.style.position = "";
+        subnav.classList.remove("header-hidden");
         subnav.style.top = "";
-        subnav.style.left = "";
-        subnav.style.right = "";
-        subnav.style.width = "";
-        subnav.style.zIndex = "";
-        spacer.style.height = "0";
-        spacer.style.display = "none";
+        if (spacer) spacer.classList.remove("is-active");
       }
     }
   }
 
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
   window.addEventListener("scroll", syncSubnavPin, { passive: true });
   window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
     initialSubnavTop = getSubnavOrigin();
     syncSubnavPin();
   });
@@ -3641,13 +3655,13 @@
   // Row click listeners
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
-      var pid = row.getAttribute("data-product-id");
+      var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
       if (pid) openModal(pid);
     });
     row.addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        var pid = row.getAttribute("data-product-id");
+        var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
         if (pid) openModal(pid);
       }
     });
@@ -3808,6 +3822,7 @@
   function createSpotlightItemEl(item) {
     var div = document.createElement("div");
     div.className = "pv-spotlight-item";
+    div.setAttribute("data-id", item.id);
     div.setAttribute("data-product-id", item.id);
     div.innerHTML = [
       '<div class="pv-spotlight-item-main">',
@@ -3881,7 +3896,7 @@
         highlightSpotlightItem(items, idx);
       });
       item.addEventListener("click", function() {
-        var pid = item.getAttribute("data-product-id");
+        var pid = item.getAttribute("data-id") || item.getAttribute("data-product-id");
         closeSpotlight();
         var p = TEK_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
         if (p && p.deptId && p.deptId !== currentActiveTab) {
