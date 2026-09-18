@@ -1942,7 +1942,7 @@
         var filter = btn.getAttribute("data-filter");
         rows.forEach(function(row) {
           var cat = row.getAttribute("data-category");
-          if (filter === "all" || cat === filter) {
+          if (cat === filter) {
             row.classList.remove("hidden");
           } else {
             row.classList.add("hidden");
