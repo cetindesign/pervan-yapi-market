@@ -1183,77 +1183,9 @@
     valvesChemicalsPanel: document.getElementById("valvesChemicalsPanel")
   };
 
-  var lists = {
-    wasteWaterPanel: document.getElementById("listWasteWater"),
-    faucetShowerPanel: document.getElementById("listFaucetShower"),
-    vitrifiyePanel: document.getElementById("listVitrifiye"),
-    bathroomAccPanel: document.getElementById("listBathroomAcc"),
-    valvesChemicalsPanel: document.getElementById("listValvesChemicals")
-  };
-
   var currentActiveTab = "wasteWaterPanel";
   var currentProduct = null;
   var selectedSize = "";
-
-  /* HYDRATE PRODUCT ROWS */
-  function renderProductsList() {
-    Object.keys(lists).forEach(function(deptKey) {
-      var container = lists[deptKey];
-      if (!container) return;
-      container.innerHTML = "";
-
-      var prods = TESISAT_PRODUCTS_DATA.filter(function(p) { return p.deptId === deptKey; });
-      prods.forEach(function(p) {
-        var row = document.createElement("div");
-        row.className = "pv-menu-row";
-        row.setAttribute("data-category", p.category);
-        row.setAttribute("data-product-id", p.id);
-        row.setAttribute("role", "button");
-        row.setAttribute("tabindex", "0");
-
-        var metaChipsHtml = (p.meta || []).map(function(m, idx) {
-          return '<span>' + m + '</span>' + (idx < p.meta.length - 1 ? '<span>&bull;</span>' : '');
-        }).join('');
-
-        row.innerHTML = 
-          '<div class="pv-menu-thumb">' +
-            '<img src="' + p.thumb + '" alt="' + p.name + '" loading="lazy" decoding="async" />' +
-          '</div>' +
-          '<div class="pv-menu-main">' +
-            '<div class="pv-menu-title-row">' +
-              '<span class="pv-menu-name">' + p.name + '</span>' +
-              '<span class="pv-menu-dots">........................................</span>' +
-              '<span class="pv-menu-tag tag-amber">' + p.tag + '</span>' +
-            '</div>' +
-            '<div class="pv-menu-desc-line">' + p.desc + '</div>' +
-            '<div class="pv-menu-meta-chips">' + metaChipsHtml + '</div>' +
-          '</div>' +
-          '<div class="pv-menu-aside">' +
-            '<span class="pv-menu-action-label">Teknik Detay</span>' +
-            '<div class="pv-menu-arrow" aria-hidden="true">' +
-              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
-                '<line x1="5" y1="12" x2="19" y2="12"></line>' +
-                '<polyline points="12 5 19 12 12 19"></polyline>' +
-              '</svg>' +
-            '</div>' +
-          '</div>';
-
-        row.addEventListener("click", function() {
-          openModal(p.id);
-        });
-        row.addEventListener("keydown", function(e) {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            openModal(p.id);
-          }
-        });
-
-        container.appendChild(row);
-      });
-    });
-  }
-
-  renderProductsList();
 
   /* STICKY ARCHITECTURAL PINNING */
   var initialSubnavTop = 0;
@@ -1661,8 +1593,9 @@
 
     updateWhatsAppUrl();
 
+    resetSheetStyles();
     if (modalBackdrop) {
-      modalBackdrop.classList.add("is-open");
+      modalBackdrop.classList.add("is-open", "open");
       modalBackdrop.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
@@ -1673,16 +1606,14 @@
     if (!waTarget || !currentProduct) return;
     var rawText = "Merhaba, Sıhhi Tesisat & Altyapı kataloğunuzdan '" + currentProduct.name + "' (" + selectedSize + ") ürünü için Balçova/Urla stok durumu ve proje fiyatı öğrenmek istiyorum.";
     waTarget.href = "https://wa.me/905323844497?text=" + encodeURIComponent(rawText);
-    return;
-    var rawText = "Merhaba, Sıhhi Tesisat & Altyapı kataloğunuzdan '" + currentProduct.name + "' (" + selectedSize + ") ürünü için Balçova/Urla stok durumu ve proje fiyatı öğrenmek istiyorum.";
-    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(rawText);
   }
 
   function closeModal() {
     if (!modalBackdrop) return;
-    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.classList.remove("is-open", "open");
     modalBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    resetSheetStyles();
   }
 
   if (modalCloseBtn) {
@@ -1693,6 +1624,29 @@
       if (e.target === modalBackdrop) closeModal();
     });
   }
+
+  /* Attach click listeners to static product rows and modal buttons */
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
+    row.addEventListener("click", function(e) {
+      if (e.target.closest(".pv-row-wa-direct") || e.target.closest("a")) return;
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
+  document.querySelectorAll(".pv-open-modal-btn").forEach(function(btn) {
+    btn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      var pid = btn.getAttribute("data-product-id");
+      if (pid) openModal(pid);
+    });
+  });
 
   // Mobile Bottom Sheet Drag to Dismiss
   var startY = 0;
@@ -1977,7 +1931,7 @@
     if (e.key === "Escape") {
       if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
         closeSpotlight();
-      } else if (modalBackdrop && modalBackdrop.classList.contains("is-open")) {
+      } else if (modalBackdrop && (modalBackdrop.classList.contains("is-open") || modalBackdrop.classList.contains("open"))) {
         closeModal();
       } else if (deptDrawerBackdrop && deptDrawerBackdrop.classList.contains("is-open")) {
         closeDeptDrawer();
