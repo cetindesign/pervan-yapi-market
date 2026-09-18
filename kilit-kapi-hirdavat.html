@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=34.5.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.0" />
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -378,8 +378,15 @@
   <div class="pv-catalog-body" id="pvCatalogBody">
 
     <!-- PANEL 1: KALE KİLİT & ÇELİK BAREL -->
-    <div class="pv-tab-panel active" id="kaleLocksPanel" role="tabpanel">
+    <section class="pv-tab-panel pv-dept-panel active" id="kaleLocksPanel" role="tabpanel">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 01 · Kale Kilit &amp; Güvenlik Sistemleri</div>
+      <h2 class="pv-dept-title">Kale Kilit Orijinal Tuzaklı Barel, Tirajlı &amp; Gömme Kilit Serisi</h2>
+      <p class="pv-dept-desc">Dış kapı, çelik kapı ve dar profil alüminyum/demir doğramalar için delinmeye karşı çelik pimli 164 GNC tuzaklı silindirler ve 157 EL elektrikli tirajlı kilitler.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="kaleLocksMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Kale Kilit Grubu</button>
@@ -390,7 +397,7 @@
         </div>
 
         <div class="pv-menu-list" id="listKaleLocks">
-      <div class="pv-menu-row" data-category="kale-barel" data-product-id="kale-164-gnc-tuzakli-barel" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-barel" data-id="kale-164-gnc-tuzakli-barel" data-product-id="kale-164-gnc-tuzakli-barel" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-164-gnc-tuzakli-barel.jpg" alt="Kale 164 GNC Bilyalı Tuzaklı Çelik Kapı Bareli (Silindir)" loading="lazy" decoding="async" />
         </div>
@@ -413,7 +420,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="kale-tirajli" data-product-id="kale-157-el-elektrikli-tirajli" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-tirajli" data-id="kale-157-el-elektrikli-tirajli" data-product-id="kale-157-el-elektrikli-tirajli" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-157-el-elektrikli-tirajli.jpg" alt="Kale 157 EL Elektrikli Tirajlı Dış Kapı Kilidi" loading="lazy" decoding="async" />
         </div>
@@ -436,7 +443,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="kale-tirajli" data-product-id="kale-157-a-eco-mekanik-tirajli" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-tirajli" data-id="kale-157-a-eco-mekanik-tirajli" data-product-id="kale-157-a-eco-mekanik-tirajli" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-157-a-eco-mekanik-tirajli.jpg" alt="Kale 157 A ECO Mekanik Tirajlı Dış Demir Kapı Kilidi" loading="lazy" decoding="async" />
         </div>
@@ -459,7 +466,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="kale-gomme" data-product-id="kale-151r-152r-gomme-kilit" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-gomme" data-id="kale-151r-152r-gomme-kilit" data-product-id="kale-151r-152r-gomme-kilit" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-151r-152r-gomme-kilit.jpg" alt="Kale 151R & 152R Rulmanlı İç Oda ve WC Gömme Kilitleri" loading="lazy" decoding="async" />
         </div>
@@ -482,7 +489,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="kale-gomme" data-product-id="kale-153u-153p-dar-profil-kilit" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-gomme" data-id="kale-153u-153p-dar-profil-kilit" data-product-id="kale-153u-153p-dar-profil-kilit" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-153u-153p-dar-profil-kilit.jpg" alt="Kale 153U & 153P Dar Tip Alüminyum & Demir Profil Kilidi" loading="lazy" decoding="async" />
         </div>
@@ -505,7 +512,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="kale-gomme" data-product-id="kale-141r-demir-kapi-kilidi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="kale-gomme" data-id="kale-141r-demir-kapi-kilidi" data-product-id="kale-141r-demir-kapi-kilidi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-141r-demir-kapi-kilidi.jpg" alt="Kale 141R Ağır Tip Demir Kapı Gömme Kilidi" loading="lazy" decoding="async" />
         </div>
@@ -530,11 +537,18 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- PANEL 2: VOLKAN, OTOMATSAN & BAREL -->
-    <div class="pv-tab-panel" id="volkanOtomatsanPanel" role="tabpanel" style="display: none;">
+    <section class="pv-tab-panel pv-dept-panel" id="volkanOtomatsanPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 02 · Volkan &amp; Otomatsan Apartman Sistemleri</div>
+      <h2 class="pv-dept-title">Volkan Tirajlı Kilitler, Otomatsan Otomatları &amp; Kapı Yayları</h2>
+      <p class="pv-dept-desc">Apartman ana giriş kapıları, bina otomatikleri, zincirli kapı itme yayları, YMK mandallı bareller ve döküm pirinç asma kilitler.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="volkanOtomatsanMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Volkan &amp; Otomatsan</button>
@@ -545,7 +559,7 @@
         </div>
 
         <div class="pv-menu-list" id="listVolkanOtomatsan">
-      <div class="pv-menu-row" data-category="volkan-kilit" data-product-id="volkan-501-tirajli-kilit" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="volkan-kilit" data-id="volkan-501-tirajli-kilit" data-product-id="volkan-501-tirajli-kilit" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/volkan-501-tirajli-kilit.jpg" alt="Volkan Kilit 140 mm Tirajlı Dış Demir Kapı Kilidi (Kod: 501 / No: 14)" loading="lazy" decoding="async" />
         </div>
@@ -568,7 +582,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="otomatsan-otomat" data-product-id="otomatsan-kapi-otomatigi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="otomatsan-otomat" data-id="otomatsan-kapi-otomatigi" data-product-id="otomatsan-kapi-otomatigi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/otomatsan-kapi-otomatigi.jpg" alt="Otomatsan 8-12V Akıllı Zincirli Dış Kapı Otomatiği" loading="lazy" decoding="async" />
         </div>
@@ -591,7 +605,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="barel-asma-kilit" data-product-id="ymk-mandalli-hybrid-barel" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="barel-asma-kilit" data-id="ymk-mandalli-hybrid-barel" data-product-id="ymk-mandalli-hybrid-barel" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/ymk-mandalli-hybrid-barel.jpg" alt="YMK 868HBM Mandallı & 868HBS Hybrid Çelik Kapı Barelleri" loading="lazy" decoding="async" />
         </div>
@@ -614,7 +628,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="volkan-kilit" data-product-id="tursan-935r-tirajli-kilit" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="volkan-kilit" data-id="tursan-935r-tirajli-kilit" data-product-id="tursan-935r-tirajli-kilit" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/tursan-935r-tirajli-kilit.jpg" alt="Tursan 935R Dış Kapı Makaralı Tirajlı Kilit" loading="lazy" decoding="async" />
         </div>
@@ -637,7 +651,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="volkan-kilit" data-product-id="besel-kapi-itme-yayi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="volkan-kilit" data-id="besel-kapi-itme-yayi" data-product-id="besel-kapi-itme-yayi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/besel-kapi-itme-yayi.jpg" alt="Beşel No: 14 ve No: 16 Ağır Tip Kapı İtme Yayı" loading="lazy" decoding="async" />
         </div>
@@ -660,7 +674,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="barel-asma-kilit" data-product-id="gk-kale-asma-kilit-grubu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="barel-asma-kilit" data-id="gk-kale-asma-kilit-grubu" data-product-id="gk-kale-asma-kilit-grubu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/gk-kale-asma-kilit-grubu.jpg" alt="GK & Kale Masif Pirinç ve Gri Döküm Asma Kilitler" loading="lazy" decoding="async" />
         </div>
@@ -685,11 +699,18 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- PANEL 3: NOBEL & LÜKS KAPI KOLLARI -->
-    <div class="pv-tab-panel" id="doorHandlesPanel" role="tabpanel" style="display: none;">
+    <section class="pv-tab-panel pv-dept-panel" id="doorHandlesPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 03 · Nobel &amp; Omega Mimari Kapı Kolları</div>
+      <h2 class="pv-dept-title">Nobel Bravo, Rozetli Kollar &amp; Şahin Çekme Kapı Donanımları</h2>
+      <p class="pv-dept-desc">Modern konut ve ofis iç mekan kapıları için paslanmaz saten nikel aynalı kapı kolları, kare rozetli minimalist mekanizmalar ve ağır tip çekme kollar.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="doorHandlesMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Kapı Kolları</button>
@@ -699,7 +720,7 @@
         </div>
 
         <div class="pv-menu-list" id="listDoorHandles">
-      <div class="pv-menu-row" data-category="nobel-aynali" data-product-id="nobel-bravo-aynali-kapi-kolu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-aynali" data-id="nobel-bravo-aynali-kapi-kolu" data-product-id="nobel-bravo-aynali-kapi-kolu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/nobel-bravo-aynali-kapi-kolu.jpg" alt="Nobel Bravo Aynalı Kapı Kolu Serisi (Oda / WC / Dış Kapı)" loading="lazy" decoding="async" />
         </div>
@@ -722,7 +743,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="nobel-rozetli" data-product-id="nobel-rozetli-kapi-kolu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-rozetli" data-id="nobel-rozetli-kapi-kolu" data-product-id="nobel-rozetli-kapi-kolu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/nobel-rozetli-kapi-kolu.jpg" alt="Nobel Rozetli Modern Kapı Kolu (Saten Nikel & Mat Siyah)" loading="lazy" decoding="async" />
         </div>
@@ -745,7 +766,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="nobel-rozetli" data-product-id="omega-rozetli-kapi-kolu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-rozetli" data-id="omega-rozetli-kapi-kolu" data-product-id="omega-rozetli-kapi-kolu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/omega-rozetli-kapi-kolu.jpg" alt="Omega Rozetli Alüminyum & Zamak Kapı Kolu" loading="lazy" decoding="async" />
         </div>
@@ -768,7 +789,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="nobel-aynali" data-product-id="elif-maydanoz-hira-kollari" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-aynali" data-id="elif-maydanoz-hira-kollari" data-product-id="elif-maydanoz-hira-kollari" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/elif-maydanoz-hira-kollari.jpg" alt="Elif (Maydanoz & Hira Modelleri) Aynalı Kapı Kolları" loading="lazy" decoding="async" />
         </div>
@@ -791,7 +812,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="nobel-rozetli" data-product-id="pole-vent-gris-tasarim-kollar" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-rozetli" data-id="pole-vent-gris-tasarim-kollar" data-product-id="pole-vent-gris-tasarim-kollar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/pole-vent-gris-tasarim-kollar.jpg" alt="Pole, Vent & Gris Tasarım Rozetli Kapı Kolları" loading="lazy" decoding="async" />
         </div>
@@ -814,7 +835,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="nobel-rozetli" data-product-id="sahin-vet75-cekme-kapi-kolu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="nobel-rozetli" data-id="sahin-vet75-cekme-kapi-kolu" data-product-id="sahin-vet75-cekme-kapi-kolu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/sahin-vet75-cekme-kapi-kolu.jpg" alt="Şahin VET-75 224 mm Modern Çekme Kapı Kolu" loading="lazy" decoding="async" />
         </div>
@@ -839,11 +860,18 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- PANEL 4: İZMİR ANAHTAR KOPYALAMA PANOSU -->
-    <div class="pv-tab-panel" id="keyDuplicationPanel" role="tabpanel" style="display: none;">
+    <section class="pv-tab-panel pv-dept-panel" id="keyDuplicationPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 04 · Profesyonel Anahtar Kopyalama</div>
+      <h2 class="pv-dept-title">Balçova &amp; Urla Mağazalarımızda Lazer ve Mekanik Anahtar Çekimi</h2>
+      <p class="pv-dept-desc">Kale, DAF, SEBU, İTO ve Keso sistem anahtarlar için mikrometrik hassasiyette orijinal pirinç ham anahtar kopyalama ve çelik kasa anahtarı kesimi.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="keyDuplicationMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Anahtar Çekimi</button>
@@ -852,7 +880,7 @@
         </div>
 
         <div class="pv-menu-list" id="listKeyDuplication">
-      <div class="pv-menu-row" data-category="anahtar-panosu" data-product-id="izmir-anahtar-kopyalama-servisi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="anahtar-panosu" data-id="izmir-anahtar-kopyalama-servisi" data-product-id="izmir-anahtar-kopyalama-servisi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/izmir-anahtar-kopyalama-servisi.jpg" alt="İzmir Anahtar Kopyalama Servisi & Bilyalı Çelik Kapı Anahtar Çekimi" loading="lazy" decoding="async" />
         </div>
@@ -875,7 +903,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="anahtar-panosu" data-product-id="kale-daf-ham-anahtarlar" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="anahtar-panosu" data-id="kale-daf-ham-anahtarlar" data-product-id="kale-daf-ham-anahtarlar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/kale-daf-ham-anahtarlar.jpg" alt="KALE & DAF Profil Orijinal Ham Anahtar Serisi" loading="lazy" decoding="async" />
         </div>
@@ -898,7 +926,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="anahtar-panosu" data-product-id="sebu-tps-ham-anahtarlar" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="anahtar-panosu" data-id="sebu-tps-ham-anahtarlar" data-product-id="sebu-tps-ham-anahtarlar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/sebu-tps-ham-anahtarlar.jpg" alt="SEBÜ & TPS Profil Ham Anahtar Çeşitleri" loading="lazy" decoding="async" />
         </div>
@@ -921,7 +949,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="anahtar-panosu" data-product-id="volkan-otomatsan-ham-anahtarlar" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="anahtar-panosu" data-id="volkan-otomatsan-ham-anahtarlar" data-product-id="volkan-otomatsan-ham-anahtarlar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/volkan-otomatsan-ham-anahtarlar.jpg" alt="VOLKAN & OTOMATSAN Profil Ham Anahtarlar" loading="lazy" decoding="async" />
         </div>
@@ -944,7 +972,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="anahtar-panosu" data-product-id="ito-klasik-oda-anahtarlari" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="anahtar-panosu" data-id="ito-klasik-oda-anahtarlari" data-product-id="ito-klasik-oda-anahtarlari" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/ito-klasik-oda-anahtarlari.jpg" alt="İTO & Klasik Oda / Kasa Anahtarı Ham Profilleri" loading="lazy" decoding="async" />
         </div>
@@ -969,11 +997,18 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- PANEL 5: MENTEŞE, SÜRGÜ & KAPI AKSESUARI -->
-    <div class="pv-tab-panel" id="hingesHardwarePanel" role="tabpanel" style="display: none;">
+    <section class="pv-tab-panel pv-dept-panel" id="hingesHardwarePanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 05 · Menteşe, Sürgü &amp; Emniyet Donanımları</div>
+      <h2 class="pv-dept-title">Neks Rulmanlı Çelik Menteşeler, Emniyet Kelepçeleri &amp; Tamponlar</h2>
+      <p class="pv-dept-desc">Ağır çelik kapı ve oda kapısı menteşeleri, zemin/duvar tipi kapı stoperleri, çelik kapı emniyet kelepçeleri ve sürgülü kilit donanımları.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="hingesHardwareMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Menteşe &amp; Donanım</button>
@@ -982,7 +1017,7 @@
         </div>
 
         <div class="pv-menu-list" id="listHingesHardware">
-      <div class="pv-menu-row" data-category="mentese-donanim" data-product-id="neks-ozsan-celik-mentese" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mentese-donanim" data-id="neks-ozsan-celik-mentese" data-product-id="neks-ozsan-celik-mentese" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/neks-ozsan-celik-mentese.jpg" alt="Neks & Özsan Rulmanlı Çelik ve Ahşap Kapı Menteşeleri (10-12 cm)" loading="lazy" decoding="async" />
         </div>
@@ -1005,7 +1040,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="mentese-donanim" data-product-id="celik-kapi-emniyet-kelepcesi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mentese-donanim" data-id="celik-kapi-emniyet-kelepcesi" data-product-id="celik-kapi-emniyet-kelepcesi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/celik-kapi-emniyet-kelepcesi.jpg" alt="Çelik Kapı Gizli Emniyet Kelepçesi ve Paslanmaz Güvenlik Zinciri" loading="lazy" decoding="async" />
         </div>
@@ -1028,7 +1063,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="mentese-donanim" data-product-id="agir-demir-kapi-surguleri" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mentese-donanim" data-id="agir-demir-kapi-surguleri" data-product-id="agir-demir-kapi-surguleri" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/agir-demir-kapi-surguleri.jpg" alt="Ağır Tip Demir Kapı Sürgüleri (Döküm & Yaylı)" loading="lazy" decoding="async" />
         </div>
@@ -1051,7 +1086,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="mentese-donanim" data-product-id="ba-4005t-kapi-tamponu" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mentese-donanim" data-id="ba-4005t-kapi-tamponu" data-product-id="ba-4005t-kapi-tamponu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/ba-4005t-kapi-tamponu.jpg" alt="BA-4005T Vidalı & Yapışkanlı Kauçuk Kapı Tamponu (Stoper)" loading="lazy" decoding="async" />
         </div>
@@ -1076,11 +1111,18 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- PANEL 6: MOBİLYA & DOLAP DONANIMI -->
-    <div class="pv-tab-panel" id="furnitureFittingsPanel" role="tabpanel" style="display: none;">
+    <section class="pv-tab-panel pv-dept-panel" id="furnitureFittingsPanel" role="tabpanel" style="display: none;">
       <div class="pv-container">
+    <!-- Department Editorial Header -->
+    <div class="pv-dept-header">
+      <div class="pv-dept-badge">Departman 06 · Mobilya Donanım &amp; Ray Sistemleri</div>
+      <h2 class="pv-dept-title">Samet Frenli Menteşeler, Teleskopik Çekmece Rayları &amp; Pistonlar</h2>
+      <p class="pv-dept-desc">Mutfak dolapları, vestiyer ve gardıroplar için Samet Star frenli tas menteşeler, tam açılımlı bilyalı teleskopik çekmece rayları ve gazlı amortisörler.</p>
+    </div>
+
         <div class="pv-menu-pills-wrap">
           <div class="pv-menu-pills" id="furnitureFittingsMenuPills" role="tablist">
             <button type="button" class="pv-menu-pill active" data-filter="all" role="tab" aria-selected="true">Tüm Mobilya Hırdavatı</button>
@@ -1089,7 +1131,7 @@
         </div>
 
         <div class="pv-menu-list" id="listFurnitureFittings">
-      <div class="pv-menu-row" data-category="mobilya-donanim" data-product-id="samet-star-tas-mentese" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mobilya-donanim" data-id="samet-star-tas-mentese" data-product-id="samet-star-tas-mentese" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/samet-star-tas-mentese.jpg" alt="Samet / Star Frenli Kapak Tas Menteşeleri (Düz, Deveboynu, Süper Deveboynu)" loading="lazy" decoding="async" />
         </div>
@@ -1112,7 +1154,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="mobilya-donanim" data-product-id="teleskopik-bilyali-cekmece-rayi" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mobilya-donanim" data-id="teleskopik-bilyali-cekmece-rayi" data-product-id="teleskopik-bilyali-cekmece-rayi" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/teleskopik-bilyali-cekmece-rayi.jpg" alt="Teleskopik Bilyalı Çekmece Rayları (Frenli & Düz - 35-50 cm)" loading="lazy" decoding="async" />
         </div>
@@ -1135,7 +1177,7 @@
           </div>
         </div>
       </div>
-      <div class="pv-menu-row" data-category="mobilya-donanim" data-product-id="gazli-piston-kapak-amortsoru" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="mobilya-donanim" data-id="gazli-piston-kapak-amortsoru" data-product-id="gazli-piston-kapak-amortsoru" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/kilit/gazli-piston-kapak-amortsoru.jpg" alt="Gazlı Piston Yukarı Açılır Kapak Amortisörü (80N / 100N / 120N)" loading="lazy" decoding="async" />
         </div>
@@ -1160,7 +1202,7 @@
       </div>
         </div>
       </div>
-    </div>
+    </section>
 
   </div>
 
@@ -1300,6 +1342,9 @@
         <div class="pv-specimen-meta">
           <div class="pv-specimen-eyebrow" id="modalProductEyebrow">PERVAN · KİLİT &amp; KAPI DONANIMI</div>
           <h3 class="pv-specimen-title" id="modalProductTitle">Ürün Adı</h3>
+          <div class="pv-specimen-badges" id="modalProductBadges">
+            <span class="pv-specimen-badge" id="modalProductBadge">Kilit &amp; Kapı Donanımı</span>
+          </div>
         </div>
 
         <div class="pv-specimen-can-stage">
@@ -1313,11 +1358,15 @@
       </div>
 
       <!-- 2. Packaging / Size Segmented Track -->
-      <div class="pv-modal-select-group">
+      <div class="pv-modal-select-group" id="modalPackagingSection">
         <div class="pv-modal-select-header">
           <span class="pv-modal-select-title" id="modalSelectTitle">Model / Ebat Seçimi</span>
+          <span class="pv-config-hint" id="modalSelectedSizeHint">1 Seçenek Seçili</span>
         </div>
-        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Model / Ebat Seçimi">
+        <div class="pv-size-chips" id="modalSizeChips" role="radiogroup">
+          <!-- Dynamic Size Chips -->
+        </div>
+        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Model / Ebat Seçimi" style="display:none;">
           <!-- Injected dynamically -->
         </div>
       </div>
@@ -1369,7 +1418,7 @@
 
     <!-- STICKY FOOTER ACTION BAR -->
     <div class="pv-modal-footer-sticky" id="modalFooterSticky">
-      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+      <a href="#" id="modalWaBtn" data-legacy-id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
         </svg>
@@ -1408,7 +1457,7 @@
 </footer>
 
 <script src="js/pervan.js?v=33.0.0" defer></script>
-<script src="js/catalogs/kilit-kapi-hirdavat.js?v=34.3.0" defer></script>
+<script src="js/catalogs/kilit-kapi-hirdavat.js?v=35.0.0" defer></script>
 
 </body>
 </html>
