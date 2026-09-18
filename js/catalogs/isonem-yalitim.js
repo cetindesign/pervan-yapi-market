@@ -228,11 +228,22 @@
     }
   }
 
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
+  }
+
   window.addEventListener("scroll", syncSubnavPin, { passive: true });
   window.addEventListener("resize", function() {
     initialSubnavTop = 0;
     syncSubnavPin();
   }, { passive: true });
+  window.addEventListener("load", function() {
+    initialSubnavTop = 0;
+    syncSubnavPin();
+  });
   syncSubnavPin();
 
   function switchTab(targetId) {
@@ -406,99 +417,213 @@
   });
 
 
-  /* 3. INSTANT SEARCH MODAL (⌘K) */
-  var searchBtn = document.getElementById("pvSubnavSearchBtn");
-  var searchBackdrop = document.getElementById("pvSearchBackdrop");
-  var searchInput = document.getElementById("pvGlobalSearchInput");
-  var searchResults = document.getElementById("pvSearchResults");
+  /* 3. SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 36 Ürün Arama) */
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightTrigger = document.getElementById("pvSpotlightTrigger") || document.getElementById("pvSubnavSearchBtn");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
+  var spotlightInput = document.getElementById("pvSpotlightInput");
+  var spotlightResults = document.getElementById("pvSpotlightResults");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
+  var spotlightSelectedIdx = -1;
 
-  function openSearch() {
-    if (!searchBackdrop) return;
-    searchBackdrop.style.display = "flex";
-    searchBackdrop.setAttribute("aria-hidden", "false");
+  function normalizeTr(str) {
+    if (!str) return "";
+    return str
+      .toString()
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/i̇/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getProductDomain(deptId) {
+    var d = DEPARTMENTS_DATA.find(function(item) { return item.id === deptId; });
+    return d ? d.short : "İsonem Yalıtım";
+  }
+
+  function openSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    if (searchInput) {
-      searchInput.value = "";
-      renderSearchResults("");
-      setTimeout(function() { searchInput.focus(); }, 50);
+    if (spotlightInput) {
+      spotlightInput.value = "";
+      renderSpotlightInitial();
+      setTimeout(function() { spotlightInput.focus(); }, 60);
     }
   }
 
-  function closeSearch() {
-    if (!searchBackdrop) return;
-    searchBackdrop.style.display = "none";
-    searchBackdrop.setAttribute("aria-hidden", "true");
+  function closeSpotlight() {
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
-  function renderSearchResults(query) {
-    if (!searchResults) return;
-    var q = query.toLowerCase().trim();
-    var matches = ISONEM_PRODUCTS_DATA.filter(function(item) {
-      if (!q) return true;
-      var matchName = item.name.toLowerCase().indexOf(q) !== -1;
-      var matchDesc = (item.desc || "").toLowerCase().indexOf(q) !== -1;
-      var matchTag = (item.tag || "").toLowerCase().indexOf(q) !== -1;
-      return matchName || matchDesc || matchTag;
+  function renderSpotlightInitial() {
+    if (!spotlightResults) return;
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    var featured = ISONEM_PRODUCTS_DATA.slice(0, 8);
+    var heading = document.createElement("div");
+    heading.className = "pv-spotlight-group-title";
+    heading.textContent = "Öne Çıkan İsonem Yalıtım Ürünleri";
+    spotlightResults.appendChild(heading);
+
+    featured.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
     });
 
-    if (matches.length === 0) {
-      searchResults.innerHTML = '<div style="padding:24px; text-align:center; color:#888; font-size:14px;">Sonuç bulunamadı.</div>';
+    if (spotlightCount) {
+      spotlightCount.textContent = ISONEM_PRODUCTS_DATA.length + " Ürün Kataloğu";
+    }
+    attachSpotlightItemEvents();
+  }
+
+  function createSpotlightItemEl(item) {
+    var div = document.createElement("div");
+    div.className = "pv-spotlight-item";
+    div.setAttribute("data-id", item.id);
+    div.setAttribute("data-product-id", item.id);
+    div.innerHTML = [
+      '<div class="pv-spotlight-item-main">',
+      '  <div class="pv-spotlight-item-badge">' + (item.badge || "İsonem") + '</div>',
+      '  <div class="pv-spotlight-item-title">' + item.name + '</div>',
+      '  <div class="pv-spotlight-item-desc">' + (item.desc || "") + '</div>',
+      '</div>',
+      '<div class="pv-spotlight-item-meta">',
+      '  <span class="pv-spotlight-tag">' + getProductDomain(item.deptId) + '</span>',
+      '  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+      '</div>'
+    ].join("");
+    return div;
+  }
+
+  function performSpotlightSearch(query) {
+    if (!spotlightResults) return;
+    var normQ = normalizeTr(query);
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    if (!normQ) {
+      renderSpotlightInitial();
       return;
     }
 
-    var html = "";
-    matches.forEach(function(item) {
-      html += '<div class="pv-search-result-row" data-id="' + item.id + '" style="display:flex; align-items:center; gap:14px; padding:10px 12px; border-radius:10px; cursor:pointer; transition:background 0.15s ease;">' +
-        '<img src="' + item.thumb + '" alt="' + item.name + '" style="width:40px; height:40px; object-fit:contain; background:#F8FAFC; border-radius:6px; padding:2px;" />' +
-        '<div style="flex:1;">' +
-          '<div style="font-size:14px; font-weight:700; color:#111215;">' + item.name + ' <span style="font-size:11px; font-weight:600; color:#004895; background:rgba(0,72,149,0.08); padding:2px 6px; border-radius:4px; margin-left:6px;">' + item.tag + '</span></div>' +
-          '<div style="font-size:12px; color:#6B7280; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:440px;">' + item.desc + '</div>' +
-        '</div>' +
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#9CA3AF;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
-      '</div>';
+    var tokens = normQ.split(" ").filter(Boolean);
+    var matches = ISONEM_PRODUCTS_DATA.filter(function(item) {
+      var target = normalizeTr(item.name + " " + (item.desc || "") + " " + (item.badge || "") + " " + (item.tag || "") + " " + (item.meta ? item.meta.join(" ") : ""));
+      return tokens.every(function(t) { return target.indexOf(t) !== -1; });
     });
 
-    searchResults.innerHTML = html;
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Sonuç Bulundu";
+    }
 
-    searchResults.querySelectorAll(".pv-search-result-row").forEach(function(row) {
-      row.addEventListener("mouseenter", function() { row.style.background = "#F3F4F6"; });
-      row.addEventListener("mouseleave", function() { row.style.background = "transparent"; });
-      row.addEventListener("click", function() {
-        var pid = row.getAttribute("data-id");
-        var p = ISONEM_PRODUCTS_DATA.find(function(item) { return item.id === pid; });
-        closeSearch();
-        if (p) {
-          if (p.deptId && p.deptId !== currentActiveTab) {
-            switchTab(p.deptId);
-          }
-          openModal(pid);
+    if (!matches.length) {
+      var empty = document.createElement("div");
+      empty.className = "pv-spotlight-empty";
+      empty.innerHTML = [
+        '<div class="pv-spotlight-empty-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>',
+        '<p class="pv-spotlight-empty-title">\"' + query + '\" için ürün bulunamadı</p>',
+        '<p class="pv-spotlight-empty-sub">Farklı bir arama terimi deneyin veya WhatsApp hattımızdan direkt bilgi alın.</p>'
+      ].join("");
+      spotlightResults.appendChild(empty);
+      return;
+    }
+
+    matches.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+    attachSpotlightItemEvents();
+  }
+
+  function highlightSpotlightItem(items, idx) {
+    items.forEach(function(it) { it.classList.remove("selected"); });
+    if (idx >= 0 && idx < items.length) {
+      items[idx].classList.add("selected");
+      items[idx].scrollIntoView({ block: "nearest" });
+      spotlightSelectedIdx = idx;
+    } else {
+      spotlightSelectedIdx = -1;
+    }
+  }
+
+  function attachSpotlightItemEvents() {
+    if (!spotlightResults) return;
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
+      });
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-id") || item.getAttribute("data-product-id");
+        closeSpotlight();
+        var p = ISONEM_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+        if (p && p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
         }
+        openModal(pid);
       });
     });
   }
 
-  if (searchBtn) searchBtn.addEventListener("click", openSearch);
-  if (searchInput) {
-    searchInput.addEventListener("input", function() {
-      renderSearchResults(searchInput.value);
-    });
-  }
-  if (searchBackdrop) {
-    searchBackdrop.addEventListener("click", function(e) {
-      if (e.target === searchBackdrop) closeSearch();
+  if (spotlightTrigger) spotlightTrigger.addEventListener("click", openSpotlight);
+  if (spotlightCloseBtn) spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
     });
   }
 
-  document.addEventListener("keydown", function(e) {
-    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
+  window.addEventListener("keydown", function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
       e.preventDefault();
-      openSearch();
-    }
-    if (e.key === "Escape" && searchBackdrop && searchBackdrop.style.display !== "none") {
-      closeSearch();
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else {
+        openSpotlight();
+      }
     }
   });
+
+  if (spotlightInput) {
+    spotlightInput.addEventListener("input", function(e) {
+      performSpotlightSearch(e.target.value);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (!items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        var nextIdx = spotlightSelectedIdx + 1;
+        if (nextIdx >= items.length) nextIdx = 0;
+        highlightSpotlightItem(items, nextIdx);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        var prevIdx = spotlightSelectedIdx - 1;
+        if (prevIdx < 0) prevIdx = items.length - 1;
+        highlightSpotlightItem(items, prevIdx);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (spotlightSelectedIdx >= 0 && spotlightSelectedIdx < items.length) {
+          items[spotlightSelectedIdx].click();
+        } else if (items.length > 0) {
+          items[0].click();
+        }
+      }
+    });
+  }
 
 
   /* 4. PRODUCT DETAIL MODAL & CONFIGURATOR */
@@ -715,13 +840,13 @@
 
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
-      var pid = row.getAttribute("data-product-id");
+      var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
       if (pid) openModal(pid);
     });
     row.addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        var pid = row.getAttribute("data-product-id");
+        var pid = row.getAttribute("data-id") || row.getAttribute("data-product-id");
         if (pid) openModal(pid);
       }
     });
