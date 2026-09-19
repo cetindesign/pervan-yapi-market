@@ -210,14 +210,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Cam Elyaf Kompozit",
         "cam-elyaf",
-        false
+        true
       ],
       [
         "Düz PPRC Boru",
@@ -243,14 +238,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Dirsekler 90°/45°",
         "dirsek",
-        false
+        true
       ],
       [
         "Te Grubu",
@@ -281,14 +271,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"3\"/><path d=\"M7 2v20M17 2v20M2 12h20\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "İç Dişli Rakor & Nipel",
         "ic-dis",
-        false
+        true
       ],
       [
         "Dış Dişli Rakor & Nipel",
@@ -319,14 +304,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "PPRC Küresel Vana",
         "kuresel-vana",
-        false
+        true
       ],
       [
         "Gizli Krom Ankastre Vana",
@@ -357,14 +337,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Contalı PVC Boru",
         "pvc-boru",
-        false
+        true
       ],
       [
         "Çatallar & Dirsekler",
@@ -390,14 +365,9 @@ var DEPARTMENTS_DATA = [
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"22 12 18 12 15 21 9 3 6 12 2 12\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "PE-RT Oksijen Bariyerli",
         "pe-rt-boru",
-        false
+        true
       ],
       [
         "Pirinç Kollektör & Debi Ayarlı",

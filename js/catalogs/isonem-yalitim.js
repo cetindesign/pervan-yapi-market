@@ -410,6 +410,16 @@
         });
       });
     });
+
+    var activePill = container.querySelector(".pv-menu-pill.active") || pills[0];
+    if (activePill) {
+      var initialFilter = activePill.getAttribute("data-filter");
+      rows.forEach(function(row) {
+        var rowCat = row.getAttribute("data-category");
+        var match = (initialFilter.indexOf("tum-") === 0) || (rowCat === initialFilter);
+        row.style.display = match ? "" : "none";
+      });
+    }
   }
 
   DEPARTMENTS_DATA.forEach(function(d) {

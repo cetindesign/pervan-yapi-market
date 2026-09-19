@@ -1084,14 +1084,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M8 5l8 4M8 11l8 4M8 17l8 4\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Bostik Mastikler",
         "bostik-pu",
-        false
+        true
       ],
       [
         "Dayson Mastikler",
@@ -1117,14 +1112,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "High Tack & Montaj",
         "high-tack",
-        false
+        true
       ],
       [
         "Duş & Banyo Silikonu",
@@ -1150,14 +1140,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "MitreApel Hızlı Kit",
         "mitreapel",
-        false
+        true
       ],
       [
         "Sıvı Çivi & Ahşap",
@@ -1183,14 +1168,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M5 12h14M5 19l7 3 7-3\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Gider Açıcı & Kostik",
         "gider-acici",
-        false
+        true
       ],
       [
         "Pas Sökücü & Yağlayıcı",
@@ -1216,14 +1196,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Maket Bıçağı & Falçata",
         "maket-bicagi",
-        false
+        true
       ],
       [
         "Zımba & Tabancalar",
@@ -1249,14 +1224,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 6.99l9.01 9.01 1.58-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z\"/><path d=\"M9 8c-2 0-4 1.5-4 3.5 0 1.5 1 2.5 1 3.5 0 1-1 1.5-1 2.5 0 1.5 1.5 2.5 3 2.5 2 0 2.5-1 3.5-1s2 1 3.5 1c1.5 0 2.5-1 2.5-2.5 0-1-.5-1.5-1-2.5 0-1 1-2 1-3.5 0-2-1.5-3.5-3.5-3.5\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Kestirme & Robot Fırça",
         "firca",
-        false
+        true
       ],
       [
         "Rulo & Ekipman",
