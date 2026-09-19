@@ -3,30 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#FFFFFF" />
+<title>Pervan × Reform CPH — İskandinav Editoryal Mimari Standart</title>
 
-<title>Pervan — Yapı Malzemeleri & Anahtar Teslim Mimari Taahhüt | Balçova, Urla, İzmir</title>
-<meta name="description" content="1998'den beri Filli Boya Ana Bayi, Weber, Bianca Stella, İsonem ve Bayer K-Othrine yetkili ürün merkezi. Balçova Yapı Market ve Urla Şantiye Deposu ile tüm Yarımada'da hizmetinizde." />
-<meta name="keywords" content="Pervan Yapı Market, Balçova nalbur, Filli Boya Ana Bayi Balçova, Weber seramik yapıştırıcısı İzmir, Bianca Stella Balçova, İsonem su yalıtımı, Bayer K-Othrine Balçova, RenXMatik renk hazırlama" />
-<meta name="author" content="Pervan Yapı Market & Taahhüt" />
-<link rel="canonical" href="https://pervanyapi.com/" />
-
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="tr_TR" />
-<meta property="og:site_name" content="Pervan" />
-<meta property="og:title" content="Pervan — Yapı Malzemeleri & Anahtar Teslim Mimari Taahhüt | Balçova, Urla, İzmir" />
-<meta property="og:description" content="1998'den beri Filli Boya Ana Bayi, Weber, Bianca Stella, İsonem ve Bayer K-Othrine yetkili ürün merkezi. Balçova Yapı Market ve Urla Şantiye Deposu ile tüm Yarımada'da hizmetinizde." />
-<meta property="og:url" content="https://pervanyapi.com/" />
-<meta property="og:image" content="https://pervanyapi.com/assets/rf-hero-authentic-supply-macro.jpg" />
-
-<!-- Google Fonts & System Engine -->
+<!-- GOOGLE FONTS + LOCAL CALIBRE ENGINE -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
-
-<!-- Pervan Core Stylesheet (Live Header, Nav & Location System) -->
-<link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
 <style>
   @font-face {
@@ -57,13 +39,6 @@
     font-style: normal;
     font-display: swap;
   }
-  @font-face {
-    font-family: 'Calibre';
-    src: url('assets/fonts/CalibreWeb-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
 
   :root {
     --font-editorial: 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -74,9 +49,16 @@
     --color-muted: #888888;
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   /* REFORM SCALING ENGINE: 62.5% -> 1rem = 10px */
   html {
-    font-size: 62.5% !important;
+    font-size: 62.5%;
     scroll-behavior: smooth;
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
@@ -85,7 +67,7 @@
   }
 
   body {
-    font-family: var(--font-editorial) !important;
+    font-family: var(--font-editorial);
     font-size: 1.6rem;
     line-height: 1.4;
     font-weight: 400;
@@ -93,6 +75,69 @@
     background-color: #FFFFFF;
     letter-spacing: -0.01em;
     overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 1. NAVBAR (REFORM EXACT 70px, CALIBRE, SHARP RECTANGULAR BUTTONS) */
+  .navbar-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.9rem;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #000000;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+    height: 100%;
+  }
+
+  .navbar-item {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: color 0.15s linear;
+  }
+  .navbar-item:hover {
+    color: var(--color-muted);
+  }
+
+  .navbar-sticky {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   /* REFORM EXACT RECTANGULAR BUTTON (ZERO BORDER RADIUS, SHARP & CLEAN) */
@@ -142,7 +187,17 @@
     backdrop-filter: none;
   }
 
-  /* WIDE TWO MEDIA (HERO SPLIT 112.5% PADDING BOTTOM, CALM ARCHITECTURAL TONE) */
+  @media (max-width: 900px) {
+    .navbar-top {
+      padding: 0 20px;
+      height: 60px;
+    }
+    .navbar-menu {
+      display: none;
+    }
+  }
+
+  /* 2. WIDE TWO MEDIA (HERO SPLIT 112.5% PADDING BOTTOM, CALM ARCHITECTURAL TONE) */
   .wide-two-media {
     display: flex;
     width: 100%;
@@ -255,6 +310,16 @@
     gap: 4px;
   }
 
+  .media-meta {
+    font-family: var(--font-editorial);
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.90);
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  }
+
   .media-headline {
     font-size: 2.6rem;
     line-height: 2.9rem;
@@ -279,7 +344,7 @@
     pointer-events: auto;
   }
 
-  /* SITE-LINKS ("Vizyonunuzu hayata geçirelim") */
+  /* 3. SITE-LINKS ("Let's bring your vision to life" — 2.6rem TITLE) */
   .block-site-links {
     padding: 56px 30px 64px;
     text-align: center;
@@ -310,7 +375,7 @@
     font-size: 1.45rem;
   }
 
-  /* OVERVIEW / COLLECTIONS GRID (EXACT REFORM CPH TYPOGRAPHY & RATIO) */
+  /* 4. OVERVIEW / COLLECTIONS GRID (EXACT REFORM CPH TYPOGRAPHY & RATIO) */
   .block-overview-wrap {
     background-color: var(--color-grey-bg);
     padding: 3.2vw 7.2vw 4.8vw;
@@ -432,7 +497,7 @@
     color: #666666;
   }
 
-  /* ACTIVATION MODULE (CAD BLUEPRINT) */
+  /* 5. ACTIVATION (CAD BLUEPRINT — 26px TITLE, SHARP BUTTON) */
   .block-activation {
     position: relative;
     background-color: #FFFFFF;
@@ -467,7 +532,7 @@
     border-color: #000000;
   }
 
-  /* STATEMENT YELLOW BAND (REFORM EXACT #EDEDC4) */
+  /* 6. STATEMENT YELLOW BAND (REFORM EXACT #EDEDC4, 26px TITLE) */
   .block-statement-band {
     background-color: var(--color-yellow);
     padding: 80px 30px;
@@ -490,7 +555,9 @@
     font-size: 1.5rem;
   }
 
-  /* STORIES / MİMARİ TAAHHÜT (5-COLUMN REFORM GRID) */
+
+
+  /* 8. STORIES / PROJELER (5-COLUMN REFORM GRID) */
   .block-stories-wrap {
     padding: 50px 36px 70px;
     background: #FFFFFF;
@@ -564,7 +631,7 @@
     color: var(--color-muted);
   }
 
-  /* REFORM FOOTER */
+  /* 9. REFORM FOOTER */
   footer.reform-footer {
     background-color: #FFFFFF;
     border-top: 1px solid var(--color-border);
@@ -699,171 +766,29 @@
     color: #999999;
   }
 </style>
-
-<!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "HardwareStore",
-      "@id": "https://pervanyapi.com/#store-balcova",
-      "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı",
-      "image": "https://pervanyapi.com/assets/rf-showroom-monograph-2026.jpg",
-      "url": "https://pervanyapi.com/balcova-showroom.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
-        "addressLocality": "Balçova",
-        "addressRegion": "İzmir",
-        "postalCode": "35330",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3887,
-        "longitude": 27.0425
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "08:30",
-          "closes": "19:30"
-        }
-      ]
-    },
-    {
-      "@type": "GeneralContractor",
-      "@id": "https://pervanyapi.com/#taahhut",
-      "name": "Pervan Mimari Taahhüt & Renovasyon",
-      "image": "https://pervanyapi.com/assets/rf-villa-aegean-terrace-2026.jpg",
-      "url": "https://pervanyapi.com/taahhut.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺₺",
-      "areaServed": ["Balçova", "Narlıdere", "Güzelbahçe", "Urla", "Çeşme", "Alaçatı", "Seferihisar", "İzmir"]
-    },
-    {
-      "@type": "WarehouseOrDistributionCenter",
-      "@id": "https://pervanyapi.com/#depo-urla",
-      "name": "Pervan Yapı Urla Ana Lojistik Deposu",
-      "image": "https://pervanyapi.com/assets/rf-urla-depot-monolith-2026.jpg",
-      "url": "https://pervanyapi.com/urla-lojistik-depo.html",
-      "telephone": "+905323318763",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Urla",
-        "addressRegion": "İzmir",
-        "addressCountry": "TR"
-      },
-      "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
-    }
-  ]
-}
-</script>
 </head>
+
 <body>
 
-<!-- PERVAN NAVBAR (CANLI MENÜ) -->
-<header>
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- ROW 1 ON MOBILE (SPLIT 50/50 ACTION BAR) / RIGHT SIDE ON DESKTOP -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat & Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="kesif-randevusu.html" class="navbar-item menu-item">
-          <span class="navbar-title">Keşif Randevusu Al</span>
-          <div class="arrow"></div>
-        </a>
-      </div>
+<!-- 01. REFORM NAVBAR -->
+<header class="navbar-top">
+  <a href="pervan-reform-preview.html" class="navbar-logo">Pervan</a>
 
-      <!-- ROW 2 ON MOBILE (LEFT HAMBURGER, RIGHT LOGO) / LEFT SIDE ON DESKTOP -->
-      <div class="navbar-top-row2">
-        <div id="mobile-menu" class="closed">
-          <div class="bar bar1"></div>
-          <div class="bar bar2"></div>
-          <div class="bar bar3"></div>
-        </div>
-        <a class="navbar-logo" href="index.html">Pervan</a>
-      </div>
+  <ul class="navbar-menu">
+    <li><a href="malzemeler.html" class="navbar-item">Malzemeler</a></li>
+    <li><a href="filli-boya-renxmatik.html" class="navbar-item">Yetkili Bayilikler</a></li>
+    <li><a href="anahtar-teslim-insaat.html" class="navbar-item">Mimari Taahhüt</a></li>
+    <li><a href="nasil-calisiriz.html" class="navbar-item">Nasıl Çalışırız</a></li>
+  </ul>
 
-      <!-- DESKTOP MENU & MOBILE DRAWER -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          <div class="navbar-menu">
-            <!-- 01: Yetkili Bayilikler -->
-            <div data-link="yetkili-bayilikler.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div data-link="taahhut.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-                <a href="kesif-randevusu.html" class="navbar-item">Ücretsiz Keşif Randevusu</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div data-link="showroom.html" class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tümünü gör</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div class="navbar-sticky">
+    <a href="kesif-randevusu.html" class="rf-btn">Fiyat Hesapla</a>
+    <a href="kesif-randevusu.html" class="rf-btn">Keşif Randevusu</a>
+  </div>
 </header>
 
 <main>
-  <!-- 01. WIDE TWO MEDIA BLOCK 1 (HERO) -->
+  <!-- 02. WIDE TWO MEDIA BLOCK 1 -->
   <section class="wide-two-media">
     <a href="malzemeler.html" class="media-container">
       <div class="responsive-background"></div>
@@ -900,22 +825,22 @@
     </a>
   </section>
 
-  <!-- 02. SITE-LINKS ACTION ROW -->
+  <!-- 03. SITE-LINKS FILTER ROW -->
   <section class="block-site-links">
     <div class="site-text">Vizyonunuzu hayata geçirelim</div>
     <div class="button-group">
       <a href="kesif-randevusu.html" class="rf-btn">Fiyat Teklifi Alın</a>
-      <a href="balcova-showroom.html" class="rf-btn">Showroom Ziyareti</a>
+      <a href="balcova-magaza.html" class="rf-btn">Showroom Ziyareti</a>
       <a href="kesif-randevusu.html" class="rf-btn">Keşif Randevusu</a>
       <a href="filli-boya-renxmatik.html" class="rf-btn">Numune &amp; Renk Kartı</a>
     </div>
   </section>
 
-  <!-- 03. OVERVIEW / COLLECTIONS GRID (YETKİLİ BAYİLİKLER) -->
+  <!-- 04. OVERVIEW / COLLECTIONS GRID -->
   <section class="block-overview-wrap">
     <div class="simple-header">
       <h2>Yetkili bayilikler</h2>
-      <a href="yetkili-bayilikler.html" class="header-link">Tümünü gör</a>
+      <a href="malzemeler.html" class="header-link">Tümünü gör</a>
     </div>
 
     <div class="overview-list">
@@ -943,7 +868,7 @@
         <div class="list-item-title">Bianca Stella Dönüşüm Boyası</div>
       </a>
 
-      <a href="isonem-yalitim.html" class="overview-item">
+      <a href="isonem-yalitim-teknolojileri.html" class="overview-item">
         <div class="overview-card-media">
           <img src="assets/rf-col-isonem.jpg?v=exact_isonem_closer_v2" alt="ISONEM Yalıtım Teknolojileri" loading="lazy">
           <img src="assets/rf-col-isonem-hover.jpg?v=terrace_v1" class="image-over" alt="Isonem Teras Su Yalıtım Uygulaması" loading="lazy">
@@ -953,7 +878,7 @@
     </div>
   </section>
 
-  <!-- 04. ACTIVATION MODULE (CAD BLUEPRINT) -->
+  <!-- 05. ACTIVATION MODULE -->
   <section class="block-activation">
     <div class="activation-text">
       Şantiyeniz için keşif, metraj ve net maliyet tablosu çıkaralım
@@ -963,9 +888,9 @@
     </div>
   </section>
 
-  <!-- 05. WIDE TWO MEDIA BLOCK 2 (CAPABILITIES & LOGISTICS) -->
+  <!-- 06. WIDE TWO MEDIA BLOCK 2 (CAPABILITIES & LOGISTICS) -->
   <section class="wide-two-media">
-    <a href="balcova-showroom.html" class="media-container">
+    <a href="balcova-magaza.html" class="media-container">
       <div class="responsive-background"></div>
       <div class="responsive-image-container">
         <img src="assets/rf-showroom-monograph-2026.jpg" alt="Balçova Showroom &amp; Renk Laboratuvarı" loading="lazy">
@@ -1000,7 +925,7 @@
     </a>
   </section>
 
-  <!-- 06. WIDE TWO MEDIA BLOCK 3 (HARDWARE & CONTRACTING) -->
+  <!-- 07. WIDE TWO MEDIA BLOCK 3 (HARDWARE & CONTRACTING) -->
   <section class="wide-two-media">
     <a href="malzemeler.html" class="media-container">
       <div class="responsive-background"></div>
@@ -1037,7 +962,7 @@
     </a>
   </section>
 
-  <!-- 07. STATEMENT YELLOW BAND -->
+  <!-- 08. STATEMENT YELLOW BAND -->
   <section class="block-statement-band">
     <div class="statement-text">
       Fikirden anahtar teslime: 1998'den beri Yarımada standardı
@@ -1047,7 +972,7 @@
     </div>
   </section>
 
-  <!-- 08. MİMARİ TAAHHÜT HİZMETLERİ (5-COLUMN REFORM GRID) -->
+  <!-- 09. MİMARİ TAAHHÜT HİZMETLERİ (5-COLUMN REFORM GRID) -->
   <section class="block-stories-wrap">
     <div class="simple-header">
       <h2>Mimari taahhüt hizmetleri</h2>
@@ -1098,7 +1023,7 @@
   </section>
 </main>
 
-<!-- 09. REFORM FOOTER -->
+<!-- 11. REFORM FOOTER -->
 <footer class="reform-footer">
   <div class="newsletter-container">
     <h2>E-Bültenimize Kaydolun</h2>
@@ -1155,7 +1080,7 @@
     <div class="footer-col">
       <div class="footer-col-title">Lokasyon &amp; İletişim</div>
       <ul>
-        <li><a href="balcova-showroom.html">Balçova Showroom</a></li>
+        <li><a href="balcova-magaza.html">Balçova Showroom</a></li>
         <li><a href="urla-lojistik-depo.html">Urla Lojistik Depo</a></li>
         <li><a href="tel:+905322760840">+90 532 276 08 40</a></li>
         <li><a href="kesif-randevusu.html">Randevu Talep Formu</a></li>
@@ -1168,64 +1093,6 @@
     <div>Tüm hakları saklıdır.</div>
   </div>
 </footer>
-
-<!-- PERVAN LOCATION NAVIGATION MODAL (BOTTOM SHEET) -->
-<div id="pvLocationModal" class="pv-location-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pvLocationTitle">
-  <div class="pv-location-sheet">
-    <div class="pv-location-handle-zone" id="pvLocationHandle">
-      <div class="pv-location-handle"></div>
-    </div>
-    <div class="pv-location-header">
-      <div>
-        <span class="pv-location-eyebrow">Pervan Yapı &amp; Mimarlık Lokasyonları</span>
-        <h3 id="pvLocationTitle" class="pv-location-title">Hangi mağazamıza gelmek istersiniz?</h3>
-        <p class="pv-location-subtitle">Seçtiğiniz lokasyon için anlık konumunuzdan direkt Google Haritalar navigasyonu başlatılır.</p>
-      </div>
-      <button type="button" class="pv-location-close" id="pvLocationCloseBtn" aria-label="Kapat">
-        &times;
-      </button>
-    </div>
-    <div class="pv-location-grid">
-      <!-- 1. Balçova Yapı Market & RenXMatik -->
-      <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-location-card">
-        <div class="pv-location-card-top">
-          <span class="pv-location-tag tag-balcova">Yapı Market &amp; RenXMatik</span>
-          <span class="pv-location-status">Haftanın 7 Günü Açık</span>
-        </div>
-        <div class="pv-location-card-name">Balçova Yapı Market &amp; RenXMatik</div>
-        <div class="pv-location-card-desc">Filli Boya RenXMatik renk makineleri, hırdavat, el aletleri, Bianca Stella dönüşüm stantları ve perakende satış.</div>
-        <div class="pv-location-card-address">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span>Eğitim Mah. Balçova / İzmir · 0232 278 43 40</span>
-        </div>
-        <div class="pv-location-card-cta">
-          <span>Yol Tarifi Al</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </div>
-      </a>
-
-      <!-- 2. Urla Lojistik & Kaba Yapı Depo -->
-      <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-location-card">
-        <div class="pv-location-card-top">
-          <span class="pv-location-tag tag-urla">Ana Depo &amp; Şantiye Sevkiyat</span>
-          <span class="pv-location-status">Açık · Pz: Dinlenme</span>
-        </div>
-        <div class="pv-location-card-name">Urla Ana Depo</div>
-        <div class="pv-location-card-desc">Çimento, kaba yapı, Saint-Gobain Weber kimyasalları, tesisat ve vinçli şantiye sevkiyat merkezi.</div>
-        <div class="pv-location-card-address">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span>Kalabak Mah. 3004 Sk. No:2 Urla / İzmir · 0532 331 87 63</span>
-        </div>
-        <div class="pv-location-card-cta">
-          <span>Yol Tarifi Al</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<script src="js/pervan.js?v=33.0.0" defer></script>
 
 </body>
 </html>
