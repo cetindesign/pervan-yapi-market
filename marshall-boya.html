@@ -364,24 +364,24 @@
   <!-- ==========================================================================
        4. CATALOG BODY: DEPARTMENTS & 47 PRODUCT ROWS
        ========================================================================== -->
-  <div class="pv-catalog-body" id="pvCatalogBody">
-    <!-- DEPARTMENT PANEL: İç Cephe Boyaları, SİL-PAK Plus & Maximum -->
-    <div class="pv-tab-panel active" id="marshallInteriorPanel" role="tabpanel">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+  <!-- ==========================================================================
+       İÇ CEPHE BOYALARI SECTION (18 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallInteriorPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallInteriorPills" role="toolbar" aria-label="İç Cephe Boyaları, SİL-PAK Plus & Maximum Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="sil-pak">SİL-PAK & Maximum</button>
-          <button type="button" class="pv-menu-pill" data-filter="silikonlu">Silikonlu & Mat</button>
-          <button type="button" class="pv-menu-pill" data-filter="fit-ic">Fit Serisi</button>
+        <div class="pv-menu-pills" id="marshallInteriorPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="sil-pak" role="tab" aria-selected="true">SİL-PAK &amp; Maximum</button>
+          <button type="button" class="pv-menu-pill" data-filter="silikonlu" role="tab" aria-selected="false">Silikonlu &amp; Mat</button>
+          <button type="button" class="pv-menu-pill" data-filter="fit-ic" role="tab" aria-selected="false">Fit Serisi</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallInterior">
       <!-- Item: Marshall Antibakteriyel Hijyen -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="antibakteriyel-hijyen" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="antibakteriyel-hijyen" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/antibakteriyel-hijyen.png" alt="Marshall Antibakteriyel Hijyen" loading="lazy" decoding="async" />
         </div>
@@ -397,17 +397,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Plastik -->
-      <div class="pv-menu-row" data-category="fit-ic" data-product-id="fit-plastik" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="fit-ic" data-product-id="fit-plastik" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-plastik.jpg" alt="Marshall Fit Plastik" loading="lazy" decoding="async" />
         </div>
@@ -423,17 +420,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Silikonlu Flat -->
-      <div class="pv-menu-row" data-category="fit-ic" data-product-id="fit-silikonlu-flat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="fit-ic" data-product-id="fit-silikonlu-flat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-silikonlu-flat.png" alt="Marshall Fit Silikonlu Flat" loading="lazy" decoding="async" />
         </div>
@@ -449,17 +443,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Silikonlu İpek Mat -->
-      <div class="pv-menu-row" data-category="fit-ic" data-product-id="fit-silikonlu-i̇pek-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="fit-ic" data-product-id="fit-silikonlu-i̇pek-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-silikonlu-i̇pek-mat.jpg" alt="Marshall Fit Silikonlu İpek Mat" loading="lazy" decoding="async" />
         </div>
@@ -475,17 +466,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Silikonlu -->
-      <div class="pv-menu-row" data-category="fit-ic" data-product-id="fit-silikonlu" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="fit-ic" data-product-id="fit-silikonlu" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-silikonlu.jpg" alt="Marshall Fit Silikonlu" loading="lazy" decoding="async" />
         </div>
@@ -501,17 +489,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Luksima Silikonlu Özel Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="luksima-silikonlu-özel-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="luksima-silikonlu-özel-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/luksima-silikonlu-özel-mat.png" alt="Marshall Luksima Silikonlu Özel Mat" loading="lazy" decoding="async" />
         </div>
@@ -527,17 +512,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Macun Dış Cephe -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="macun-dış-cephe" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="macun-dış-cephe" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/macun-dış-cephe.png" alt="Marshall Macun Dış Cephe" loading="lazy" decoding="async" />
         </div>
@@ -553,17 +535,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Macun İç Cephe -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="macun-i̇ç-cephe" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="macun-i̇ç-cephe" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/macun-i̇ç-cephe.png" alt="Marshall Macun İç Cephe" loading="lazy" decoding="async" />
         </div>
@@ -579,12 +558,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -605,12 +581,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -631,17 +604,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Pastel Yarı Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="pastel-yarı-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="pastel-yarı-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/pastel-yarı-mat.png" alt="Marshall Pastel Yarı Mat" loading="lazy" decoding="async" />
         </div>
@@ -657,17 +627,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Plastik Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="plastik-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="plastik-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/plastik-mat.png" alt="Marshall Plastik Mat" loading="lazy" decoding="async" />
         </div>
@@ -683,17 +650,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Protect Silikonlu Flat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="protect-silikonlu-flat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="protect-silikonlu-flat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/protect-silikonlu-flat.png" alt="Marshall Protect Silikonlu Flat" loading="lazy" decoding="async" />
         </div>
@@ -709,17 +673,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Silikonlu İpek Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="silikonlu-i̇pek-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="silikonlu-i̇pek-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/silikonlu-i̇pek-mat.png" alt="Marshall Silikonlu İpek Mat" loading="lazy" decoding="async" />
         </div>
@@ -735,17 +696,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Silikonlu Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="silikonlu-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="silikonlu-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/silikonlu-mat.png" alt="Marshall Silikonlu Mat" loading="lazy" decoding="async" />
         </div>
@@ -761,17 +719,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Silikonlu Özel Mat -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="silikonlu-özel-mat" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="silikonlu" data-product-id="silikonlu-özel-mat" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/silikonlu-özel-mat.png" alt="Marshall Silikonlu Özel Mat" loading="lazy" decoding="async" />
         </div>
@@ -787,17 +742,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall SİL-PAK Plus -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="si̇l-pak-plus" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="sil-pak" data-product-id="si̇l-pak-plus" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/si̇l-pak-plus.png" alt="Marshall SİL-PAK Plus" loading="lazy" decoding="async" />
         </div>
@@ -813,17 +765,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall SİL-PAK -->
-      <div class="pv-menu-row" data-category="silikonlu" data-product-id="si̇l-pak" role="button" tabindex="0">
+      <div class="pv-menu-row" data-category="sil-pak" data-product-id="si̇l-pak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/si̇l-pak.png" alt="Marshall SİL-PAK" loading="lazy" decoding="async" />
         </div>
@@ -839,33 +788,32 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
-      </div>
     </div>
-      </div>
-    <!-- DEPARTMENT PANEL: Akrikor Dış Cephe, Su Kalkanı & Grenli Kaplama -->
-    <div class="pv-tab-panel" id="marshallExteriorPanel" role="tabpanel" style="display: none;">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       AKRİKOR DIŞ CEPHE BOYALARI SECTION (5 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallExteriorPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallExteriorPills" role="toolbar" aria-label="Akrikor Dış Cephe, Su Kalkanı & Grenli Kaplama Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="akrikor-akrilik">Saf Akrilik & Silikonlu</button>
-          <button type="button" class="pv-menu-pill" data-filter="akrikor-kalkan">Su Kalkanı Elyaflı</button>
-          <button type="button" class="pv-menu-pill" data-filter="akrikor-grenli">Grenli Kaplama</button>
+        <div class="pv-menu-pills" id="marshallExteriorPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="akrikor-akrilik" role="tab" aria-selected="true">Saf Akrilik &amp; Silikonlu</button>
+          <button type="button" class="pv-menu-pill" data-filter="akrikor-kalkan" role="tab" aria-selected="false">Su Kalkanı Elyaflı</button>
+          <button type="button" class="pv-menu-pill" data-filter="akrikor-grenli" role="tab" aria-selected="false">Grenli Kaplama</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallExterior">
       <!-- Item: Marshall Akrikor Saf Akrilik -->
       <div class="pv-menu-row" data-category="akrikor-akrilik" data-product-id="akrikor-saf-akrilik" role="button" tabindex="0">
         <div class="pv-menu-thumb">
@@ -883,17 +831,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Akrikor Silikonlu+Akrilik Grenli -->
-      <div class="pv-menu-row" data-category="akrikor-grenli" data-product-id="akrikor-silikonlu-akrilik-grenli" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="akrikor-grenli" data-product-id="akrikor-silikonlu-akrilik-grenli" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/akrikor-silikonlu-akrilik-grenli.png" alt="Marshall Akrikor Silikonlu+Akrilik Grenli" loading="lazy" decoding="async" />
         </div>
@@ -909,12 +854,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -935,17 +877,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Akrikor Su Kalkanı Elyaflı -->
-      <div class="pv-menu-row" data-category="akrikor-kalkan" data-product-id="akrikor-su-kalkanı-elyaflı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="akrikor-kalkan" data-product-id="akrikor-su-kalkanı-elyaflı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/akrikor-su-kalkanı-elyaflı.png" alt="Marshall Akrikor Su Kalkanı Elyaflı" loading="lazy" decoding="async" />
         </div>
@@ -961,17 +900,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Akrikor Su Kalkanı -->
-      <div class="pv-menu-row" data-category="akrikor-kalkan" data-product-id="akrikor-su-kalkanı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="akrikor-kalkan" data-product-id="akrikor-su-kalkanı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/akrikor-su-kalkanı.jpg" alt="Marshall Akrikor Su Kalkanı" loading="lazy" decoding="async" />
         </div>
@@ -987,35 +923,34 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
-      </div>
     </div>
-      </div>
-    <!-- DEPARTMENT PANEL: Cuprinol Ahşap Koruma, Hammerite & Sentetik Metal -->
-    <div class="pv-tab-panel" id="marshallWoodMetalPanel" role="tabpanel" style="display: none;">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       AHŞAP & HAMMERITE METAL BOYALARI SECTION (9 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallWoodMetalPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallWoodMetalPills" role="toolbar" aria-label="Cuprinol Ahşap Koruma, Hammerite & Sentetik Metal Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="hammerite">Hammerite Metal</button>
-          <button type="button" class="pv-menu-pill" data-filter="ahsap-cila">Ahşap Koruyucu & Cila</button>
-          <button type="button" class="pv-menu-pill" data-filter="sentetik-metal">Sentetik Yağlı Boya</button>
+        <div class="pv-menu-pills" id="marshallWoodMetalPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="hammerite" role="tab" aria-selected="true">Hammerite Metal</button>
+          <button type="button" class="pv-menu-pill" data-filter="ahsap-cila" role="tab" aria-selected="false">Ahşap Koruyucu &amp; Cila</button>
+          <button type="button" class="pv-menu-pill" data-filter="sentetik-metal" role="tab" aria-selected="false">Sentetik Yağlı Boya</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallWoodMetal">
       <!-- Item: Marshall Cuprinol Ultra Vernikli Ahşap Bakım -->
-      <div class="pv-menu-row" data-category="ahsap-cila" data-product-id="cuprinol-ultra-vernikli-ahşap-bakım" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="ahsap-cila" data-product-id="cuprinol-ultra-vernikli-ahşap-bakım" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/cuprinol-ultra-vernikli-ahşap-bakım.png" alt="Marshall Cuprinol Ultra Vernikli Ahşap Bakım" loading="lazy" decoding="async" />
         </div>
@@ -1031,17 +966,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall CW Krom Efektli Sprey -->
-      <div class="pv-menu-row" data-category="sentetik-metal" data-product-id="cw-krom-efektli-sprey" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="sentetik-metal" data-product-id="cw-krom-efektli-sprey" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/cw-krom-efektli-sprey.png" alt="Marshall CW Krom Efektli Sprey" loading="lazy" decoding="async" />
         </div>
@@ -1057,17 +989,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall CW Vernik Sprey (Parlak) -->
-      <div class="pv-menu-row" data-category="ahsap-cila" data-product-id="cw-vernik-sprey-parlak" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="ahsap-cila" data-product-id="cw-vernik-sprey-parlak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/cw-vernik-sprey-parlak.png" alt="Marshall CW Vernik Sprey (Parlak)" loading="lazy" decoding="async" />
         </div>
@@ -1083,17 +1012,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Enamel Antipas -->
-      <div class="pv-menu-row" data-category="sentetik-metal" data-product-id="enamel-antipas" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="sentetik-metal" data-product-id="enamel-antipas" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/enamel-antipas.png" alt="Marshall Enamel Antipas" loading="lazy" decoding="async" />
         </div>
@@ -1109,17 +1035,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Parlak -->
-      <div class="pv-menu-row" data-category="ahsap-cila" data-product-id="fit-parlak" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="ahsap-cila" data-product-id="fit-parlak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-parlak.jpg" alt="Marshall Fit Parlak" loading="lazy" decoding="async" />
         </div>
@@ -1135,12 +1058,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1161,12 +1081,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1187,17 +1104,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Luxe Parlak -->
-      <div class="pv-menu-row" data-category="sentetik-metal" data-product-id="luxe-parlak" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="sentetik-metal" data-product-id="luxe-parlak" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/luxe-parlak.png" alt="Marshall Luxe Parlak" loading="lazy" decoding="async" />
         </div>
@@ -1213,17 +1127,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Özel Cam Cila (Sararmayan Parlak) -->
-      <div class="pv-menu-row" data-category="ahsap-cila" data-product-id="marshall-ozel-cam-cila" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="ahsap-cila" data-product-id="marshall-ozel-cam-cila" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/marshall-ozel-cam-cila.jpg" alt="Marshall Özel Cam Cila (Sararmayan Parlak)" loading="lazy" decoding="async" />
         </div>
@@ -1239,35 +1150,33 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    </div>
+  </section>
 
-    <!-- DEPARTMENT PANEL: Marshall Profesyonel & Fit Extra Tavan Boyaları -->
-    <div class="pv-tab-panel" id="marshallCeilingPanel" role="tabpanel" style="display: none;">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+  <!-- ==========================================================================
+       TAVAN BOYALARI SECTION (2 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallCeilingPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallCeilingPills" role="toolbar" aria-label="Marshall Profesyonel & Fit Extra Tavan Boyaları Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="tavan-std">Marshall Standart Tavan</button>
-          <button type="button" class="pv-menu-pill" data-filter="tavan-fit">Fit Extra Tavan</button>
+        <div class="pv-menu-pills" id="marshallCeilingPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tavan-std" role="tab" aria-selected="true">Marshall Standart Tavan</button>
+          <button type="button" class="pv-menu-pill" data-filter="tavan-fit" role="tab" aria-selected="false">Fit Extra Tavan</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallCeiling">
       <!-- Item: Marshall Fit  Extra Tavan Boyası -->
-      <div class="pv-menu-row" data-category="tavan-fit" data-product-id="fit-extra-tavan-boyası" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="tavan-fit" data-product-id="fit-extra-tavan-boyası" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-extra-tavan-boyası.jpg" alt="Marshall Fit  Extra Tavan Boyası" loading="lazy" decoding="async" />
         </div>
@@ -1283,12 +1192,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1309,34 +1215,31 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    </div>
+  </section>
 
-    <!-- DEPARTMENT PANEL: Akrikor Astar, Geçiş Astarı, İzolasyon & Macun -->
-    <div class="pv-tab-panel" id="marshallPrimersPanel" role="tabpanel" style="display: none;">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+  <!-- ==========================================================================
+       ASTARLAR & MACUNLAR SECTION (10 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallPrimersPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallPrimersPills" role="toolbar" aria-label="Akrikor Astar, Geçiş Astarı, İzolasyon & Macun Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="astar-dis">Dış Cephe Astarları</button>
-          <button type="button" class="pv-menu-pill" data-filter="astar-ic">İç Cephe & Geçiş Astarı</button>
-          <button type="button" class="pv-menu-pill" data-filter="macun">Macun & Dolgular</button>
+        <div class="pv-menu-pills" id="marshallPrimersPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="astar-dis" role="tab" aria-selected="true">Dış Cephe Astarları</button>
+          <button type="button" class="pv-menu-pill" data-filter="astar-ic" role="tab" aria-selected="false">İç Cephe &amp; Geçiş Astarı</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallPrimers">
       <!-- Item: Marshall Akrikor Anti Alkali+Örtücü Astar -->
       <div class="pv-menu-row" data-category="astar-dis" data-product-id="akrikor-anti-alkali-örtücü-astar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
@@ -1354,12 +1257,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1380,12 +1280,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1406,12 +1303,9 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
@@ -1432,17 +1326,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Sentetik Astar -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="fit-sentetik-astar" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="fit-sentetik-astar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-sentetik-astar.jpg" alt="Marshall Fit Sentetik Astar" loading="lazy" decoding="async" />
         </div>
@@ -1458,17 +1349,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Fit Örtücü İç Cephe Astarı -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="fit-örtücü-i̇ç-cephe-astarı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="fit-örtücü-i̇ç-cephe-astarı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/fit-örtücü-i̇ç-cephe-astarı.png" alt="Marshall Fit Örtücü İç Cephe Astarı" loading="lazy" decoding="async" />
         </div>
@@ -1484,17 +1372,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Geçiş Astarı -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="geçiş-astarı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="geçiş-astarı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/geçiş-astarı.png" alt="Marshall Geçiş Astarı" loading="lazy" decoding="async" />
         </div>
@@ -1510,17 +1395,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall İzolasyon Astarı -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="i̇zolasyon-astarı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="i̇zolasyon-astarı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/i̇zolasyon-astarı.png" alt="Marshall İzolasyon Astarı" loading="lazy" decoding="async" />
         </div>
@@ -1536,17 +1418,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Konsantre Astar -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="konsantre-astar" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="konsantre-astar" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/konsantre-astar.png" alt="Marshall Konsantre Astar" loading="lazy" decoding="async" />
         </div>
@@ -1562,17 +1441,14 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
       <!-- Item: Marshall Saten Alçı Astarı -->
-      <div class="pv-menu-row" data-category="astar-ic" data-product-id="saten-alçı-astarı" role="button" tabindex="0">
+      <div class="pv-menu-row hidden" data-category="astar-ic" data-product-id="saten-alçı-astarı" role="button" tabindex="0">
         <div class="pv-menu-thumb">
           <img src="assets/marshall-official/saten-alçı-astarı.png" alt="Marshall Saten Alçı Astarı" loading="lazy" decoding="async" />
         </div>
@@ -1588,32 +1464,30 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-    <!-- DEPARTMENT PANEL: Sentetik & Selülozik Tinerler, Temizleyiciler -->
-    <div class="pv-tab-panel" id="marshallChemicalsPanel" role="tabpanel" style="display: none;">
-      <div class="pv-container">
-        <!-- Filter Pills -->
+  <!-- ==========================================================================
+       TİNERLER & ÇÖZÜCÜLER SECTION (1 Ürün)
+       ========================================================================== -->
+  <section class="pv-menu-section" id="marshallChemicalsPanel">
+    <div class="pv-container">
+      <!-- Filter Pills -->
       <div class="pv-menu-pills-wrap">
-        <div class="pv-menu-pills" id="marshallChemicalsPills" role="toolbar" aria-label="Sentetik & Selülozik Tinerler, Temizleyiciler Filtreleri">
-          <button type="button" class="pv-menu-pill active" data-filter="all">Tümü</button>
-          <button type="button" class="pv-menu-pill" data-filter="tiner-sentetik">Sentetik Tiner</button>
+        <div class="pv-menu-pills" id="marshallChemicalsPills" role="tablist">
+          <button type="button" class="pv-menu-pill active" data-filter="tiner-sentetik" role="tab" aria-selected="true">Sentetik Tiner</button>
         </div>
       </div>
 
-      <!-- Product Rows List -->
-      <div class="pv-menu-list">
+      <!-- Line-Item Menu List -->
+      <div class="pv-menu-list" id="listMarshallChemicals">
       <!-- Item: Marshall Tiner Sentetik -->
       <div class="pv-menu-row" data-category="tiner-sentetik" data-product-id="tiner-sentetik" role="button" tabindex="0">
         <div class="pv-menu-thumb">
@@ -1631,19 +1505,15 @@
           </div>
         </div>
         <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
+          <span class="pv-menu-action-label">Ürün Detayı</span>
           <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </div>
         </div>
       </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
+  </section>
 
   <!-- ==========================================================================
        5. HUBS SECTION: BALÇOVA SHOWROOM & URLA ANA DEPO
@@ -1730,92 +1600,76 @@
 </main>
 
 <!-- ==========================================================================
-     6. ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
+     PERVAN ATELIER / MODAL SPEC SHEET
      ========================================================================== -->
-<div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
-  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+<div class="pv-modal-backdrop" id="paintModalBackdrop" aria-hidden="true">
+  <div class="pv-modal-card" id="paintModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
     <!-- Top Gesture Bar & Absolute Close Action -->
     <div class="pv-modal-top-bar" id="modalTopBar">
       <div class="pv-modal-handle-zone" id="modalHandleZone">
         <div class="pv-modal-handle"></div>
       </div>
-      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+      <button type="button" class="pv-modal-close-btn" id="modalCloseBtn" aria-label="Kapat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
     <!-- Scrollable Modal Content Area -->
     <div class="pv-modal-scroll" id="modalScrollArea">
-      <!-- 1. Specimen Header -->
+      <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
       <div class="pv-specimen-hero">
         <div class="pv-specimen-meta">
-          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">PERVAN · MARSHALL YETKİLİ BAYİ</div>
-          <h3 class="pv-specimen-title" id="modalProductTitle">Ürün Adı</h3>
+          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">İç Cephe &amp; SİL-PAK</div>
+          <h3 class="pv-specimen-title" id="modalProductTitle">Marshall SİL-PAK Plus</h3>
         </div>
 
         <div class="pv-specimen-can-stage">
           <div class="pv-specimen-glow" id="modalChromaGlow"></div>
-          <img id="modalProductImg" src="assets/rf-card-paint.jpg" alt="Ürün Görseli" />
+          <img id="modalProductImg" src="assets/marshall-official/si̇l-pak-plus.png" alt="Ürün Görseli" />
           <div class="pv-can-shadow" id="modalCanShadow"></div>
         </div>
 
-        <p class="pv-specimen-desc" id="modalProductDesc">Ürün açıklaması burada yer alacaktır.</p>
+        <p class="pv-specimen-desc" id="modalProductSub">Leke tutmayan, silinebilen, su bazlı ipek mat son kat iç cephe boyası.</p>
         <span id="modalProductTag" style="display:none;"></span>
       </div>
 
       <!-- 2. Packaging / Size Segmented Track -->
       <div class="pv-modal-select-group">
         <div class="pv-modal-select-header">
-          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Seçeneği</span>
+          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj Hacmi</span>
         </div>
-        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Seçeneği">
-          <!-- Injected dynamically -->
+        <div class="pv-segmented-track" id="modalSizesContainer" role="radiogroup" aria-label="Ambalaj Hacmi">
+          <!-- Dynamically populated via JS -->
         </div>
       </div>
 
-      <!-- 3. Dual Spec Gauges -->
+      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
       <div class="pv-spec-gauges" id="modalSpecGauges">
-        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
-          <div class="pv-gauge-eyebrow">STANDART &amp; SERTİFİKA</div>
-          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">AkzoNobel ISO</div>
-          <div class="pv-gauge-caption" id="modalGaugeStandardCaption">Orijinal Fabrika Üretimi</div>
+        <!-- Left Gauge: Coverage Area -->
+        <div class="pv-gauge-card pv-gauge-primary" id="modalAreaRow">
+          <div class="pv-gauge-eyebrow" id="modalGaugeAreaEyebrow">BOYANABİLİR ALAN</div>
+          <div class="pv-gauge-metric">
+            <span class="pv-gauge-num font-mono-data" id="modalGaugeNum">142</span>
+            <span class="pv-gauge-unit" id="modalGaugeUnit">m²</span>
+          </div>
+          <div class="pv-gauge-caption" id="modalGaugeSub">98 – 190 m² Çift Kat Kaplama</div>
+          <span id="modalSpecArea" style="display:none;"></span>
         </div>
 
-        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
-          <div class="pv-gauge-eyebrow">SARFİYAT MİKTARI</div>
-          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">~12-16 m²/L</div>
-          <div class="pv-gauge-caption" id="modalSpecPackaging">Standart Ambalaj</div>
+        <!-- Right Gauge: Finish & Drying -->
+        <div class="pv-gauge-card" id="modalSpecRightCard">
+          <div class="pv-gauge-eyebrow" id="modalGaugeSheenEyebrow">DOKU &amp; KURUMA</div>
+          <div class="pv-gauge-metric-text" id="modalGaugeSheen">İpeksi Mat</div>
+          <div class="pv-gauge-caption pv-gauge-drying" id="modalGaugeDrying">
+            <span id="modalGaugeDryingIcon" style="display:inline-flex;align-items:center;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <span id="modalGaugeDryingText">2 – 4 Saat Kuruma</span>
+          </div>
         </div>
       </div>
 
-      <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
-      <div class="pv-specs-table" id="modalSpecsTable">
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Teknik Standart:</span>
-          <span class="pv-spec-v" id="modalSpecStandardRow">-</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Ambalaj Tipi:</span>
-          <span class="pv-spec-v" id="modalSpecPackagingRow">-</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Uygulama Oranı:</span>
-          <span class="pv-spec-v" id="modalSpecMixing">-</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Kuruma Süresi:</span>
-          <span class="pv-spec-v" id="modalSpecPotLife">-</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Lojistik Dağıtım:</span>
-          <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Ana Depo Stok</span>
-        </div>
-      </div>
-
-      <!-- TDS Document Link Section (If available) -->
+      <!-- TDS Link (If available) -->
       <div id="modalTdsWrap" style="margin-top: 14px; display: none;">
         <a href="#" id="modalTdsBtn" target="_blank" rel="noopener" class="pv-modal-tds-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -1824,30 +1678,42 @@
         </a>
       </div>
 
-      <!-- 5. Technical Accordions -->
-      <div class="pv-modal-accordions" id="modalAccordions">
-        <!-- Injected dynamically -->
+      <!-- 4. Pervan Depot & Brand Service Guarantee Note -->
+      <div class="pv-atelier-service-note" id="modalServiceNote">
+        <span class="pv-spectrum-badge" aria-hidden="true">
+          <span class="pv-spectrum-dot"></span>
+        </span>
+        <span class="pv-service-note-title" id="modalServiceTitle" style="display:none;"></span>
+        <p class="pv-service-note-desc" id="modalServiceDesc">
+          <strong>AkzoNobel &amp; Pervan Güvencesi:</strong> Balçova Showroom ve Urla Ana Depomuzdan orijinal fabrika ambalajında şantiyenize aynı gün sevk edilir.
+        </p>
       </div>
     </div>
 
     <!-- STICKY FOOTER ACTION BAR -->
     <div class="pv-modal-footer-sticky" id="modalFooterSticky">
-      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-        <span>WhatsApp ile Stok &amp; Fiyat Teklifi Al</span>
+      <span id="modalSelectionSummary" style="display:none;"></span>
+
+      <a href="#" id="modalWhatsAppBtn" target="_blank" rel="noopener" class="pv-btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416C6.574 4 2.172 8.402 2.172 13.829c0 1.996.584 3.901 1.691 5.534L2 25l5.808-1.809c1.57.887 3.364 1.365 5.223 1.365 5.457 0 9.859-4.402 9.859-9.827C22.89 8.402 18.488 4 12.031 4z"/></svg>
+        <span id="modalCtaText">WhatsApp ile Fiyat Al</span>
       </a>
+
       <div class="pv-modal-footer-aux">
         <span class="pv-modal-delivery-chip">
           <span class="pv-chip-pulse"></span>
-          <span>Balçova &amp; Urla Depo Çıkışlı Aynı Gün Sevk</span>
+          <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
         </span>
+
+        <button type="button" id="modalShareBtn" class="pv-modal-share-link" aria-label="Ürün Bağlantısını Kopyala">
+          <svg class="pv-share-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+          <svg class="pv-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span id="modalShareText">Paylaş</span>
+        </button>
       </div>
     </div>
   </div>
 </div>
-
 <!-- ==========================================================================
      7. SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 47 Ürün Arama)
      ========================================================================== -->
@@ -1943,7 +1809,7 @@
 <script src="js/pervan.js?v=33.0.0" defer></script>
 
 <!-- SCRIPTS & INTERACTIVE ENGINE (100% CANONICAL PERVAN HUB STANDARD) -->
-<script src="js/catalogs/marshall-boya.js?v=34.0.0" defer></script>
+<script src="js/catalogs/marshall-boya.js?v=35.0.0" defer></script>
 
 </body>
 </html>

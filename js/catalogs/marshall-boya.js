@@ -1998,14 +1998,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "SİL-PAK & Maximum",
         "sil-pak",
-        false
+        true
       ],
       [
         "Silikonlu & Mat",
@@ -2031,14 +2026,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18M9 21V9\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Saf Akrilik & Silikonlu",
         "akrikor-akrilik",
-        false
+        true
       ],
       [
         "Su Kalkanı Elyaflı",
@@ -2064,14 +2054,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Hammerite Metal",
         "hammerite",
-        false
+        true
       ],
       [
         "Ahşap Koruyucu & Cila",
@@ -2097,14 +2082,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Marshall Standart Tavan",
         "tavan-std",
-        false
+        true
       ],
       [
         "Fit Extra Tavan",
@@ -2125,23 +2105,13 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Dış Cephe Astarları",
         "astar-dis",
-        false
+        true
       ],
       [
         "İç Cephe & Geçiş Astarı",
         "astar-ic",
-        false
-      ],
-      [
-        "Macun & Dolgular",
-        "macun",
         false
       ]
     ]
@@ -2158,14 +2128,9 @@
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/></svg>",
     "pills": [
       [
-        "Tümü",
-        "all",
-        true
-      ],
-      [
         "Sentetik Tiner",
         "tiner-sentetik",
-        false
+        true
       ]
     ]
   }
@@ -2428,7 +2393,7 @@
       }
 
       var filter = pill.getAttribute("data-filter");
-      var panel = pill.closest(".pv-tab-panel");
+      var panel = pill.closest(".pv-menu-section") || pill.closest(".pv-tab-panel");
       if (!panel) return;
 
       panel.querySelectorAll(".pv-menu-row").forEach(function(row) {
@@ -2442,30 +2407,120 @@
     });
   });
 
-  // Specimen Detail Modal Logic
-  var modalBackdrop = document.getElementById("pvModalBackdrop");
-  var modalCard = document.getElementById("pvModalCard");
-  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  // Specimen Detail Modal Logic (Canonical Dual-Gauge Pervan Standard)
+  var modalBackdrop = document.getElementById("paintModalBackdrop");
+  var modalCard = document.getElementById("paintModalCard");
+  var modalCloseBtn = document.getElementById("modalCloseBtn");
   var modalHandleZone = document.getElementById("modalHandleZone");
   var modalTopBar = document.getElementById("modalTopBar");
   var modalScrollArea = document.getElementById("modalScrollArea");
   var modalProductEyebrow = document.getElementById("modalProductEyebrow");
   var modalProductTitle = document.getElementById("modalProductTitle");
   var modalProductImg = document.getElementById("modalProductImg");
-  var modalProductDesc = document.getElementById("modalProductDesc");
-  var modalSizeTrack = document.getElementById("modalSizeTrack");
-  var modalSpecStandard = document.getElementById("modalSpecStandard");
-  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
-  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
-  var modalSpecStandardRow = document.getElementById("modalSpecStandardRow");
-  var modalSpecPackagingRow = document.getElementById("modalSpecPackagingRow");
-  var modalSpecMixing = document.getElementById("modalSpecMixing");
-  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
-  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
-  var modalAccordions = document.getElementById("modalAccordions");
-  var modalWABtn = document.getElementById("modalWABtn");
+  var modalProductSub = document.getElementById("modalProductSub");
+  var modalProductTag = document.getElementById("modalProductTag");
+  var modalChromaGlow = document.getElementById("modalChromaGlow");
+  var modalSizesContainer = document.getElementById("modalSizesContainer");
+  var modalAreaRow = document.getElementById("modalAreaRow");
+  var modalGaugeNum = document.getElementById("modalGaugeNum");
+  var modalGaugeUnit = document.getElementById("modalGaugeUnit");
+  var modalGaugeSub = document.getElementById("modalGaugeSub");
+  var modalSpecArea = document.getElementById("modalSpecArea");
+  var modalSpecRightCard = document.getElementById("modalSpecRightCard");
+  var modalGaugeSheen = document.getElementById("modalGaugeSheen");
+  var modalGaugeDrying = document.getElementById("modalGaugeDrying");
+  var modalGaugeDryingText = document.getElementById("modalGaugeDryingText");
   var modalTdsWrap = document.getElementById("modalTdsWrap");
   var modalTdsBtn = document.getElementById("modalTdsBtn");
+  var modalWhatsAppBtn = document.getElementById("modalWhatsAppBtn");
+  var modalCtaText = document.getElementById("modalCtaText");
+  var modalShareBtn = document.getElementById("modalShareBtn");
+  var modalShareText = document.getElementById("modalShareText");
+  var modalServiceDesc = document.getElementById("modalServiceDesc");
+
+  var categoryDisplayNames = {
+    "sil-pak": "İç Cephe · SİL-PAK Plus & Maximum",
+    "silikonlu": "İç Cephe · Silikonlu & Mat",
+    "fit-ic": "İç Cephe · Fit Serisi",
+    "akrikor-akrilik": "Dış Cephe · Akrikor Saf Akrilik",
+    "akrikor-kalkan": "Dış Cephe · Su Kalkanı Elyaflı",
+    "akrikor-grenli": "Dış Cephe · Grenli Kaplama",
+    "hammerite": "Metal · Hammerite Pas Üstü",
+    "ahsap-cila": "Ahşap · Cuprinol & Özel Cam Cila",
+    "sentetik-metal": "Metal & Sentetik Yağlı Boya",
+    "tavan-std": "Tavan · Marshall Standart Tavan",
+    "tavan-fit": "Tavan · Fit Extra Tavan",
+    "astar-dis": "Astar · Akrikor Dış Cephe Astarı",
+    "astar-ic": "Astar · İç Cephe Geçiş & İzolasyon",
+    "tiner-sentetik": "İnceltici · Sentetik Tiner"
+  };
+
+  function calculateCoverageEstimate(sizeStr, coverageStr) {
+    if (!sizeStr) return null;
+    var rawSize = (sizeStr + "").toLowerCase().replace(",", ".").trim();
+    var numMatch = rawSize.match(/([0-9]+(?:\.[0-9]+)?)/);
+    if (!numMatch) return null;
+    var vol = parseFloat(numMatch[1]);
+    if (!vol || isNaN(vol)) return null;
+
+    var cov = 15;
+    if (coverageStr) {
+      var covMatch = (coverageStr + "").replace(",", ".").match(/([0-9]+(?:\.[0-9]+)?)/);
+      if (covMatch) {
+        cov = parseFloat(covMatch[1]) || 15;
+      }
+    }
+
+    var avgArea = Math.round(vol * cov);
+    var minArea = Math.round(avgArea * 0.75);
+    var maxArea = Math.round(avgArea * 1.35);
+
+    return {
+      avgArea: avgArea,
+      rangeLabel: minArea + " – " + maxArea + " m² Çift Kat Kaplama",
+      summaryLabel: avgArea + " m² kaplama"
+    };
+  }
+
+  function updateAreaCoverage(size, product) {
+    if (!product) return;
+    var est = calculateCoverageEstimate(size, product.coverage);
+    if (est) {
+      if (modalGaugeNum) modalGaugeNum.textContent = est.avgArea;
+      if (modalGaugeUnit) modalGaugeUnit.style.display = "inline";
+      if (modalGaugeSub) modalGaugeSub.textContent = est.rangeLabel;
+      if (modalSpecArea) modalSpecArea.textContent = est.rangeLabel;
+      if (modalAreaRow) modalAreaRow.style.display = "flex";
+    } else {
+      if (modalGaugeNum) modalGaugeNum.textContent = "—";
+      if (modalGaugeUnit) modalGaugeUnit.style.display = "none";
+      if (modalGaugeSub) modalGaugeSub.textContent = product.coverage || "Standart Sarfiyat";
+      if (modalSpecArea) modalSpecArea.textContent = product.coverage || "—";
+    }
+  }
+
+  function updateCanScale(size) {
+    var modalShadow = document.getElementById("modalCanShadow");
+    var s = (size || "").toLowerCase();
+    var scale = 1;
+    if (s.indexOf("15") !== -1 || s.indexOf("20") !== -1 || s.indexOf("25") !== -1) {
+      scale = 1.04;
+    } else if (s.indexOf("7.5") !== -1 || s.indexOf("7,5") !== -1 || s.indexOf("10") !== -1 || s.indexOf("12.5") !== -1 || s.indexOf("12,5") !== -1) {
+      scale = 0.98;
+    } else if (s.indexOf("2.5") !== -1 || s.indexOf("2,5") !== -1 || s.indexOf("3.5") !== -1 || s.indexOf("3,5") !== -1 || s.indexOf("4") !== -1) {
+      scale = 0.92;
+    } else if (s.indexOf("0.75") !== -1 || s.indexOf("0,75") !== -1 || s.indexOf("1") !== -1 || s.indexOf("500") !== -1) {
+      scale = 0.86;
+    }
+    if (modalProductImg) {
+      modalProductImg.style.transform = "scale(" + scale + ")";
+      modalProductImg.style.transition = "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)";
+    }
+    if (modalShadow) {
+      modalShadow.style.transform = "scale(" + (scale * 0.96) + ")";
+      modalShadow.style.transition = "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)";
+    }
+  }
 
   function openModal(productId) {
     var p = MARSHALL_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
@@ -2473,52 +2528,72 @@
     currentProduct = p;
 
     if (modalProductTitle) modalProductTitle.textContent = p.name;
-    if (modalProductEyebrow) modalProductEyebrow.textContent = p.badge ? ("PERVAN · " + p.badge) : "PERVAN · MARSHALL YETKİLİ BAYİ";
-    if (modalProductDesc) modalProductDesc.textContent = p.desc;
+    if (modalProductEyebrow) {
+      modalProductEyebrow.textContent = (categoryDisplayNames && categoryDisplayNames[p.category]) ? categoryDisplayNames[p.category] : "Marshall Boya & AkzoNobel";
+    }
+    if (modalProductSub) modalProductSub.textContent = p.desc;
+    if (modalProductTag) modalProductTag.textContent = p.tag || p.badge || "";
     if (modalProductImg) {
       modalProductImg.src = p.thumb;
       modalProductImg.alt = p.name;
     }
 
-    // Sizes
-    if (modalSizeTrack) {
-      modalSizeTrack.innerHTML = "";
+    // Atmospheric Chroma Glow Sync
+    if (modalChromaGlow) {
+      var glowColor = (p.category === "sil-pak") ? "rgba(217, 119, 6, 0.26)" :
+                      (p.category === "akrikor-akrilik" || p.category === "akrikor-kalkan" || p.category === "akrikor-grenli") ? "rgba(37, 99, 235, 0.24)" :
+                      (p.category === "hammerite" || p.category === "ahsap-cila") ? "rgba(5, 150, 105, 0.24)" :
+                      (p.category === "sentetik-metal") ? "rgba(124, 58, 237, 0.24)" :
+                      (p.category === "tavan-std" || p.category === "tavan-fit") ? "rgba(71, 85, 105, 0.24)" :
+                      (p.category === "astar-dis" || p.category === "astar-ic") ? "rgba(147, 51, 234, 0.24)" :
+                      "rgba(225, 29, 72, 0.24)";
+      modalChromaGlow.style.background = "radial-gradient(circle at 50% 50%, " + glowColor + " 0%, rgba(255, 255, 255, 0) 72%)";
+    }
+
+    // Right Gauge (Sheen & Drying)
+    if (modalGaugeSheen) modalGaugeSheen.textContent = p.tag || p.badge || "İpeksi Mat";
+    if (modalGaugeDryingText) {
+      var pot = (p.specs && p.specs.potLife) ? p.specs.potLife : "2 – 4 Saat Kuruma";
+      if (pot.indexOf("Tam kuruma süresi min 12") !== -1) pot = "12 Saat Kuruma";
+      else if (pot.indexOf("4-8 saat") !== -1 || pot.indexOf("4 ile 8") !== -1) pot = "4 – 8 Saat Katlar Arası";
+      else if (pot.indexOf("2-3 sa") !== -1) pot = "2 – 3 Saat Kuruma";
+      else if (pot.indexOf("12 saat") !== -1) pot = "12 Saat Son Kat";
+      else if (pot.length > 25) pot = "2 – 4 Saat Kuruma";
+      modalGaugeDryingText.textContent = pot;
+    }
+
+    // Sizes Segmented Track
+    if (modalSizesContainer) {
+      modalSizesContainer.innerHTML = "";
       var sizes = p.sizes || ["Standart Ambalaj"];
       selectedSize = sizes[0];
 
       sizes.forEach(function(size, idx) {
         var btn = document.createElement("button");
         btn.type = "button";
-        btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+        btn.className = "pv-size-pill" + (idx === 0 ? " active" : "");
         btn.textContent = size;
         btn.setAttribute("role", "radio");
         btn.setAttribute("aria-checked", idx === 0 ? "true" : "false");
         btn.addEventListener("click", function() {
-          modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) {
+          modalSizesContainer.querySelectorAll(".pv-size-pill").forEach(function(b) {
             b.classList.remove("active");
             b.setAttribute("aria-checked", "false");
           });
           btn.classList.add("active");
           btn.setAttribute("aria-checked", "true");
           selectedSize = size;
+          updateAreaCoverage(selectedSize, p);
+          updateCanScale(selectedSize);
           updateWhatsAppUrl();
         });
-        modalSizeTrack.appendChild(btn);
+        modalSizesContainer.appendChild(btn);
       });
     }
 
-    // Gauges
-    if (modalSpecStandard) modalSpecStandard.textContent = p.badge || "AkzoNobel ISO";
-    if (modalSpecConsumption) modalSpecConsumption.textContent = p.coverage || "~12-16 m²/L";
-    if (modalSpecPackaging) modalSpecPackaging.textContent = (p.sizes && p.sizes[0]) ? p.sizes[0] : "Orijinal Ambalaj";
-
-    // Specs Table
-    var sp = p.specs || {};
-    if (modalSpecStandardRow) modalSpecStandardRow.textContent = sp.standard || p.badge || "-";
-    if (modalSpecPackagingRow) modalSpecPackagingRow.textContent = sp.packaging || (p.sizes ? p.sizes.join(", ") : "-");
-    if (modalSpecMixing) modalSpecMixing.textContent = sp.mixingRatio || "%5-10 inceltme";
-    if (modalSpecPotLife) modalSpecPotLife.textContent = sp.potLife || "Dokunma: 2 sa · Tam Kuruma: 24 sa";
-    if (modalSpecLogistics) modalSpecLogistics.textContent = sp.logistics || "Balçova Showroom & Urla Ana Depo Stok";
+    // Initial Area calculation & can scale
+    updateAreaCoverage(selectedSize, p);
+    updateCanScale(selectedSize);
 
     // TDS link
     if (modalTdsWrap && modalTdsBtn) {
@@ -2530,37 +2605,15 @@
       }
     }
 
-    // Accordions
-    if (modalAccordions) {
-      modalAccordions.innerHTML = "";
-      if (p.accordions && p.accordions.length) {
-        p.accordions.forEach(function(acc, idx) {
-          var item = document.createElement("div");
-          item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
-          item.innerHTML =
-            '<button type="button" class="pv-acc-header" aria-expanded="' + (idx === 0 ? "true" : "false") + '">' +
-              '<span class="pv-acc-title">' + acc.title + '</span>' +
-              '<span class="pv-acc-icon">+</span>' +
-            '</button>' +
-            '<div class="pv-acc-body">' + acc.body + '</div>';
-
-          var btn = item.querySelector(".pv-acc-header");
-          btn.addEventListener("click", function() {
-            var isAct = item.classList.contains("active");
-            item.classList.toggle("active");
-            btn.setAttribute("aria-expanded", isAct ? "false" : "true");
-          });
-
-          modalAccordions.appendChild(item);
-        });
-      }
-    }
-
     updateWhatsAppUrl();
 
     if (modalBackdrop) {
+      modalBackdrop.classList.add("open");
       modalBackdrop.classList.add("is-open");
       modalBackdrop.setAttribute("aria-hidden", "false");
+      if (modalCard) {
+        modalCard.classList.add("open");
+      }
       document.body.style.overflow = "hidden";
       resetSheetStyles();
     }
@@ -2568,20 +2621,54 @@
 
   function closeModal() {
     if (!modalBackdrop) return;
+    modalBackdrop.classList.remove("open");
     modalBackdrop.classList.remove("is-open");
     modalBackdrop.setAttribute("aria-hidden", "true");
+    if (modalCard) {
+      modalCard.classList.remove("open");
+    }
     document.body.style.overflow = "";
     resetSheetStyles();
   }
 
   function updateWhatsAppUrl() {
-    if (!currentProduct || !modalWABtn) return;
-    var text = "Merhaba, Pervan Marshall Yetkili Bayi çıkışlı " + currentProduct.name;
+    if (!currentProduct || !modalWhatsAppBtn) return;
+    var text = "Merhaba, Marshall " + currentProduct.name;
     if (selectedSize) {
       text += " (" + selectedSize + ")";
     }
-    text += " için güncel şantiye liste fiyatı ve stok durumu hakkında bilgi almak istiyorum.";
-    modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+    text += " hakkında güncel şantiye liste fiyatı ve stok bilgisi almak istiyorum.";
+    modalWhatsAppBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+  }
+
+  // Share button
+  if (modalShareBtn) {
+    modalShareBtn.addEventListener("click", function() {
+      if (!currentProduct) return;
+      var shareUrl = window.location.origin + window.location.pathname + "?product=" + currentProduct.id;
+      var shareData = {
+        title: "Marshall " + currentProduct.name + " | Pervan Yapı Market",
+        text: currentProduct.name + " - " + (currentProduct.desc || ""),
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          var shareIcon = modalShareBtn.querySelector(".pv-share-icon");
+          var checkIcon = modalShareBtn.querySelector(".pv-check-icon");
+          if (shareIcon) shareIcon.style.display = "none";
+          if (checkIcon) checkIcon.style.display = "inline-block";
+          if (modalShareText) modalShareText.textContent = "✓ Bağlantı Kopyalandı";
+          setTimeout(function() {
+            if (shareIcon) shareIcon.style.display = "inline-block";
+            if (checkIcon) checkIcon.style.display = "none";
+            if (modalShareText) modalShareText.textContent = "Paylaş";
+          }, 2500);
+        }).catch(function() {});
+      }
+    });
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
@@ -2594,7 +2681,7 @@
     if (e.key === "Escape") closeModal();
   });
 
-  // Row click listeners
+  // Row click listeners across all sections
   document.querySelectorAll(".pv-menu-row").forEach(function(row) {
     row.addEventListener("click", function() {
       var pid = row.getAttribute("data-product-id");
@@ -2609,7 +2696,7 @@
     });
   });
 
-  // Touch gesture physics for mobile bottom sheet dismissal
+  // Touch & Mouse gesture physics for mobile bottom sheet dismissal
   var dragStartY = 0;
   var dragCurrentY = 0;
   var dragStartTime = 0;
@@ -2628,7 +2715,9 @@
   }
 
   function onDragStart(e) {
-    if (!modalBackdrop.classList.contains("is-open")) return;
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("open") && !modalBackdrop.classList.contains("is-open"))) return;
+    if (e.target.closest("button, a, input, select, textarea, .pv-size-pill")) return;
+
     var touch = e.touches ? e.touches[0] : e;
     dragStartY = touch.clientY;
     dragCurrentY = touch.clientY;
@@ -2638,7 +2727,7 @@
   }
 
   function onDragMove(e) {
-    if (!modalBackdrop.classList.contains("is-open") || !dragStartY) return;
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("open") && !modalBackdrop.classList.contains("is-open")) || !dragStartY) return;
     var touch = e.touches ? e.touches[0] : e;
     var deltaY = touch.clientY - dragStartY;
     dragCurrentY = touch.clientY;
@@ -2650,11 +2739,19 @@
       if (isFromHeader || isFromTopScroll) {
         isSheetDragging = true;
         if (e.cancelable) e.preventDefault();
+
         modalCard.style.transition = "none";
         modalCard.style.transform = "translateY(" + deltaY + "px)";
+
         var progress = Math.min(1, deltaY / 360);
         modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
       }
+    } else if (deltaY < -4 && e.target.closest("#modalTopBar, #modalHandleZone")) {
+      isSheetDragging = true;
+      if (e.cancelable) e.preventDefault();
+      var resisted = deltaY * 0.18;
+      modalCard.style.transition = "none";
+      modalCard.style.transform = "translateY(" + resisted + "px)";
     }
   }
 
@@ -2664,9 +2761,11 @@
       return;
     }
     isSheetDragging = false;
+
     var deltaY = dragCurrentY - dragStartY;
     var elapsed = Math.max(1, Date.now() - dragStartTime);
     var velocity = deltaY / elapsed;
+
     dragStartY = 0;
 
     if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
@@ -2676,21 +2775,35 @@
       modalBackdrop.style.opacity = "0";
       setTimeout(function() {
         closeModal();
+        resetSheetStyles();
       }, 240);
     } else {
       modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
       modalCard.style.transform = "translateY(0)";
-      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "opacity 0.25s ease";
+      modalBackdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
     }
   }
 
-  if (modalCard) {
-    modalCard.addEventListener("touchstart", onDragStart, { passive: true });
-    modalCard.addEventListener("touchmove", onDragMove, { passive: false });
-    modalCard.addEventListener("touchend", onDragEnd, { passive: true });
+  [modalHandleZone, modalTopBar, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  if (modalTopBar) {
+    modalTopBar.addEventListener("mousedown", onDragStart);
+    window.addEventListener("mousemove", function(e) {
+      if (dragStartY && isSheetDragging) onDragMove(e);
+    });
+    window.addEventListener("mouseup", function(e) {
+      if (dragStartY && isSheetDragging) onDragEnd(e);
+    });
   }
 
-  // 3. SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 47 Ürün Arama)
+  // 3. SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 45 Ürün Arama)
   var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
   var spotlightTrigger = document.getElementById("pvSubnavSearchBtn");
   var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
