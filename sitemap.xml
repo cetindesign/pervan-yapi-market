@@ -11,9 +11,15 @@
   <!-- 01. Yetkili Bayilikler ve Marka Dunyalari -->
   <url>
     <loc>https://pervanyapi.com/yetkili-bayilikler.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://pervanyapi.com/boya-bulucu.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://pervanyapi.com/filli-boya-renxmatik.html</loc>
