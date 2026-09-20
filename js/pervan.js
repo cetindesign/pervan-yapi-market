@@ -8,61 +8,8 @@
 
   function initPervan() {
 
-    // REFORM CPH EXACT MOBILE DRAWER TOGGLE
-    var rfMobileToggle = document.getElementById("rfMobileToggle");
-    var rfMobileDrawer = document.getElementById("rfMobileDrawer");
-    var rfDrawerCloseBtn = document.getElementById("rfDrawerCloseBtn");
-
-    if (rfMobileToggle && rfMobileDrawer) {
-      rfMobileToggle.addEventListener("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        rfMobileDrawer.classList.add("is-open");
-        rfMobileDrawer.setAttribute("aria-hidden", "false");
-        rfMobileToggle.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      });
-    }
-
-    if (rfDrawerCloseBtn && rfMobileDrawer) {
-      rfDrawerCloseBtn.addEventListener("click", function(e) {
-        e.preventDefault();
-        rfMobileDrawer.classList.remove("is-open");
-        rfMobileDrawer.setAttribute("aria-hidden", "true");
-        if (rfMobileToggle) rfMobileToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
-    }
-
-    // Accordion toggles inside Reform drawer
-    document.querySelectorAll(".rf-drawer-accordion-btn, .rf-drawer-item-title").forEach(function(trigger) {
-      trigger.addEventListener("click", function(e) {
-        var parentItem = trigger.closest(".rf-drawer-item");
-        if (parentItem) {
-          // If title clicked and has sublinks, toggle accordion
-          var sublinks = parentItem.querySelector(".rf-drawer-sublinks");
-          if (sublinks) {
-            e.preventDefault();
-            parentItem.classList.toggle("is-open");
-          }
-        }
-      });
-    });
-
-    // Close drawer on clicking any link inside drawer
-    if (rfMobileDrawer) {
-      rfMobileDrawer.querySelectorAll(".rf-drawer-sublink, .rf-drawer-actions a").forEach(function(link) {
-        link.addEventListener("click", function() {
-          rfMobileDrawer.classList.remove("is-open");
-          rfMobileDrawer.setAttribute("aria-hidden", "true");
-          if (rfMobileToggle) rfMobileToggle.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
-        });
-      });
-    }
-
-    // LEGACY PERVAN MOBILE NAVBAR TOGGLE
-    var headerEl = document.querySelector("header");
+    // REFORM CPH EXACT HEADER & MOBILE DRAWER TOGGLE
+    var headerEl = document.querySelector("header") || document.getElementById("pvHeader");
     var mobileBtn = document.getElementById("mobile-menu");
     var navbarContents = document.querySelector(".navbar-contents");
     if (mobileBtn && navbarContents) {

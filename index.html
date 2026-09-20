@@ -113,378 +113,527 @@
   /* ==========================================================================
      01. REFORM CPH EXACT NAVBAR & FULL-WIDTH SEAMLESS DROPDOWN
      ========================================================================== */
-  .rf-navbar {
-    width: 100%;
-    background: #FFFFFF;
+  /* ==========================================================================
+     01. REFORM CPH EXACT HEADER & NAVBAR DESIGN SYSTEM
+     ========================================================================== */
+  header {
+    opacity: 1;
+    background-color: #FFFFFF;
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), top 0.2s linear;
   }
 
-  .rf-navbar-container {
+  header.header--hidden {
+    transform: translateY(-100%);
+  }
+
+  .navbar {
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+
+  .navbar-top {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
-    padding: 0 36px;
     width: 100%;
+    height: 74px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    padding: 0 32px;
     box-sizing: border-box;
-    background: #FFFFFF;
-    position: relative;
+    background-color: #FFFFFF;
   }
 
   /* BRAND LOGO */
-  .rf-navbar-logo {
-    font-family: var(--font-editorial);
-    font-size: 2.0rem;
-    font-weight: 500;
-    color: #000000 !important;
-    letter-spacing: -0.03em;
-    text-decoration: none;
-    line-height: 1;
+  .navbar-logo {
     display: flex;
     align-items: center;
+    height: 100%;
+    z-index: 100;
+    padding: 0;
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #000000 !important;
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.15s linear;
     flex-shrink: 0;
   }
 
-  /* DESKTOP MENU (CENTER / CENTER-LEFT) */
-  .rf-navbar-menu {
+  .navbar-logo:hover {
+    color: #999999 !important;
+  }
+
+  /* CONTENTS CONTAINER */
+  .navbar-contents {
     display: flex;
     align-items: center;
-    gap: 40px;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    flex-grow: 1;
+    position: static;
+  }
+
+  .navbar-contents .navbar-contents-overflow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* DESKTOP MENU (CENTERED) */
+  .navbar-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-  }
-
-  .rf-nav-item {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .rf-nav-link {
-    font-family: var(--font-editorial);
-    font-size: 1.45rem;
-    font-weight: 400;
-    color: #000000 !important;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    height: 100%;
     padding: 0;
+    pointer-events: none;
+  }
+
+  .navbar-menu .menu-item {
     position: relative;
-    transition: color 0.15s ease;
+    font-family: var(--font-editorial);
+    font-size: 1.6rem;
+    line-height: 74px;
+    height: 74px;
+    letter-spacing: 0.2px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #000000;
+    pointer-events: auto;
   }
 
-  .rf-nav-item:hover .rf-nav-link {
-    color: #888888 !important;
+  .navbar-menu .menu-item .navbar-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15px;
+    opacity: 1;
+    transition: color 0.15s linear, opacity 0.15s linear;
+    cursor: pointer;
+    color: #000000;
   }
 
-  .rf-nav-item:hover .rf-nav-link::after {
+  .navbar-menu .menu-item:hover .navbar-title,
+  .navbar-menu .menu-item .navbar-title:hover {
+    color: #999999 !important;
+  }
+
+  .navbar-menu .menu-item .arrow {
+    display: none;
+  }
+
+  /* DESKTOP HOVER UNDERLINE */
+  .navbar-menu .menu-item:hover:after,
+  .navbar-menu .menu-item.is-active:after {
     content: "";
     position: absolute;
     bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background: #888888;
+    left: 24px;
+    width: calc(100% - 48px);
+    border-bottom: 1.5px solid #000000;
     z-index: 1001;
   }
 
-  /* REFORM EXACT ARCHITECTURAL DROPDOWN PANE (SEAMLESS FULL-WIDTH STRIP) */
-  .rf-dropdown-pane {
-    display: none;
+  /* DESKTOP EXACT REFORM FULL-WIDTH DROPDOWN */
+  .navbar-menu .menu-item .navbar-dropdown {
     position: absolute;
-    top: 64px;
+    top: 100%;
     left: 0;
-    min-width: 260px;
-    padding: 24px 0 32px 0;
+    min-width: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0 30px;
+    background-color: #FFFFFF;
     z-index: 1000;
-    box-sizing: border-box;
   }
 
-  .rf-dropdown-pane::before {
+  .navbar-menu .menu-item:hover .navbar-dropdown {
+    display: flex;
+  }
+
+  .navbar-menu .menu-item .navbar-dropdown:before {
     content: "";
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100vw;
-    height: var(--dropdown-h, 360px);
-    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 200vw;
+    height: 100%;
+    background-color: #FFFFFF;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
     z-index: -1;
     pointer-events: none;
   }
 
-  .pane-bayilikler { --dropdown-h: 380px; }
-  .pane-malzemeler { --dropdown-h: 340px; }
-  .pane-taahhut { --dropdown-h: 280px; }
-  .pane-merkezler { --dropdown-h: 200px; }
-
-  .rf-nav-item:hover .rf-dropdown-pane {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .rf-sublink {
+  .navbar-menu .menu-item .navbar-dropdown .navbar-item {
+    position: relative;
+    padding: 0 24px;
+    display: block;
+    line-height: 3.6rem;
     font-family: var(--font-editorial);
-    font-size: 1.45rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    letter-spacing: 0.15px;
+    white-space: nowrap;
     color: #000000 !important;
     text-decoration: none;
-    line-height: 1.4;
-    white-space: nowrap;
-    transition: color 0.15s ease;
+    opacity: 1;
+    transition: color 0.15s linear;
+    cursor: pointer;
   }
 
-  .rf-sublink:hover {
-    color: #888888 !important;
+  .navbar-menu .menu-item .navbar-dropdown .navbar-item:hover {
+    color: #999999 !important;
   }
 
-  .rf-sublink.highlight {
+  .navbar-menu .menu-item .navbar-dropdown .navbar-item.highlight {
     color: #C8461E !important;
     font-weight: 600;
   }
 
-  .rf-sublink.highlight:hover {
+  .navbar-menu .menu-item .navbar-dropdown .navbar-item.highlight:hover {
     color: #A33513 !important;
   }
 
-  .rf-sublink.view-all {
-    color: #000000 !important;
-    font-weight: 500;
-    margin-top: 4px;
+  .navbar-menu .menu-item .navbar-dropdown .navbar-item.mobile-only {
+    display: none;
   }
 
-  .rf-sublink.view-all:hover {
-    color: #888888 !important;
-  }
-
-  /* RIGHT ACTIONS */
-  .rf-navbar-actions {
+  /* RIGHT STICKY ACTION BUTTONS */
+  .navbar-sticky {
     display: flex;
     align-items: center;
+    height: 100%;
     gap: 12px;
+    z-index: 100;
     flex-shrink: 0;
   }
 
-  /* HAMBURGER (MOBILE ONLY) */
-  .rf-hamburger {
-    display: none;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+  .navbar-sticky .navbar-item {
+    position: relative;
+    height: 38px;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6px;
+    padding: 0 20px;
+    font-family: var(--font-editorial);
+    font-size: 1.5rem;
+    line-height: 38px;
+    letter-spacing: 0.2px;
+    border: 1px solid #000000;
+    color: #000000 !important;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 0.2s linear, color 0.2s linear;
+    white-space: nowrap;
+    box-sizing: border-box;
   }
 
-  .rf-hamburger-line {
-    width: 22px;
-    height: 1.5px;
-    background: #000000;
-    transition: transform 0.25s var(--ease-reform), opacity 0.25s ease;
+  .navbar-sticky .navbar-item:hover {
+    background-color: #000000;
+    color: #FFFFFF !important;
   }
 
-  /* MOBILE RESPONSIVE (<= 991px) */
-  @media (max-width: 991px) {
-    .rf-navbar-container {
-      height: 60px;
-      padding: 0 20px;
-    }
-    .rf-navbar-menu {
-      display: none;
-    }
-    .rf-navbar-actions .rf-btn {
-      display: none;
-    }
-    .rf-hamburger {
-      display: flex;
-    }
+  /* REFORM MINIMAL ARROW */
+  .navbar-sticky .navbar-item .arrow {
+    margin-left: 10px;
+    position: relative;
+    background: currentColor;
+    width: 11px;
+    height: 1px;
+    display: inline-block;
+  }
+
+  .navbar-sticky .navbar-item .arrow:after,
+  .navbar-sticky .navbar-item .arrow:before {
+    content: "";
+    background: currentColor;
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    right: -1px;
+  }
+
+  .navbar-sticky .navbar-item .arrow:before {
+    top: 2px;
+    transform: rotate(-45deg);
+  }
+
+  .navbar-sticky .navbar-item .arrow:after {
+    top: -2px;
+    transform: rotate(45deg);
+  }
+
+  /* HAMBURGER TOGGLE (DESKTOP HIDDEN) */
+  #mobile-menu {
+    display: none;
   }
 
   /* ==========================================================================
-     FULL-SCREEN MOBILE REFORM DRAWER
+     RESPONSIVE MOBILE STYLING (max-width: 1259px)
      ========================================================================== */
-  .rf-mobile-drawer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    background: #FFFFFF;
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 24px 32px;
-    box-sizing: border-box;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 0.25s var(--ease-reform), visibility 0.25s var(--ease-reform), transform 0.25s var(--ease-reform);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+  @media screen and (max-width: 1259px) {
+    .navbar-top {
+      height: 60px;
+      padding: 0 20px;
+      justify-content: space-between;
+    }
 
-  .rf-mobile-drawer.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+    .navbar-logo {
+      font-size: 2.0rem;
+      padding: 0;
+    }
 
-  .rf-drawer-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
+    /* HAMBURGER TOGGLE */
+    #mobile-menu {
+      display: block;
+      position: relative;
+      width: 36px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 1002;
+      padding: 0;
+      margin: 0;
+    }
 
-  .rf-drawer-logo {
-    font-family: var(--font-editorial);
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: #000000 !important;
-    letter-spacing: -0.03em;
-    text-decoration: none;
-  }
+    #mobile-menu .bar {
+      width: 24px;
+      height: 1.5px;
+      background-color: #000000;
+      position: absolute;
+      left: 6px;
+      transform-origin: center;
+      -webkit-transform-origin: center;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, top 0.25s ease;
+    }
 
-  .rf-drawer-close {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #000000;
-    padding: 0;
-  }
+    #mobile-menu.closed .bar1 {
+      top: 8px;
+      opacity: 1;
+      transform: none;
+    }
 
-  .rf-drawer-body {
-    flex: 1;
-    padding: 16px 0;
-  }
+    #mobile-menu.closed .bar2 {
+      top: 14px;
+      transform: none;
+    }
 
-  .rf-drawer-nav {
-    display: flex;
-    flex-direction: column;
-  }
+    #mobile-menu.closed .bar3 {
+      top: 20px;
+      transform: none;
+    }
 
-  .rf-drawer-item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
+    #mobile-menu:not(.closed) .bar1 {
+      opacity: 0;
+      top: 14px;
+    }
 
-  .rf-drawer-item-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-  }
+    #mobile-menu:not(.closed) .bar2 {
+      transform: rotate(45deg);
+      top: 14px;
+    }
 
-  .rf-drawer-item-title {
-    font-family: var(--font-editorial);
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #000000 !important;
-    letter-spacing: -0.02em;
-    text-decoration: none;
-    flex: 1;
-  }
+    #mobile-menu:not(.closed) .bar3 {
+      transform: rotate(-45deg);
+      top: 14px;
+    }
 
-  .rf-drawer-accordion-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    color: #000000;
-  }
+    /* DRAWER OVERLAY */
+    .navbar-contents {
+      display: none;
+    }
 
-  .rf-drawer-accordion-btn .rf-chevron {
-    transition: transform 0.25s var(--ease-reform);
-  }
+    .navbar-contents.opened {
+      display: block;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 60px);
+      height: calc(100dvh - 60px);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #FFFFFF;
+      z-index: 1001;
+      -webkit-overflow-scrolling: touch;
+    }
 
-  .rf-drawer-item.is-open .rf-chevron {
-    transform: rotate(180deg);
-  }
+    .navbar-contents .navbar-contents-overflow {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      height: auto;
+      background-color: #FFFFFF;
+    }
 
-  .rf-drawer-sublinks {
-    display: none;
-    flex-direction: column;
-    padding: 0 0 16px 8px;
-    gap: 12px;
-  }
+    /* MOBILE TOP STICKY SPLIT BUTTONS */
+    .navbar-sticky {
+      position: relative;
+      height: 56px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      gap: 0;
+    }
 
-  .rf-drawer-item.is-open .rf-drawer-sublinks {
-    display: flex;
-  }
+    .navbar-sticky .navbar-item {
+      width: 50%;
+      height: 100%;
+      border: none;
+      margin: 0 !important;
+      padding: 0 20px;
+      font-size: 1.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+      color: #000000 !important;
+    }
 
-  .rf-drawer-sublink {
-    font-family: var(--font-editorial);
-    font-size: 1.55rem;
-    color: #555555 !important;
-    text-decoration: none;
-    line-height: 1.4;
-    padding: 3px 0;
-  }
+    .navbar-sticky .navbar-item:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
-  .rf-drawer-sublink.view-all {
-    font-weight: 500;
-    color: #000000 !important;
-    padding-top: 6px;
-  }
+    .navbar-sticky .navbar-item:hover {
+      background-color: transparent;
+      color: #999999 !important;
+    }
 
-  .rf-drawer-footer {
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+    /* MOBILE MENU LIST */
+    .navbar-menu {
+      position: relative;
+      left: auto;
+      right: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      pointer-events: auto;
+    }
 
-  .rf-drawer-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+    .navbar-menu .menu-item {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 0;
+      display: block;
+    }
 
-  .rf-drawer-actions .rf-btn {
-    width: 100%;
-    height: 44px;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .navbar-menu .menu-item:after {
+      display: none !important;
+    }
 
-  .rf-btn.rf-btn-dark {
-    background: #000000;
-    color: #FFFFFF !important;
-    border-color: #000000;
-  }
+    .navbar-menu .menu-item .navbar-title {
+      height: auto;
+      line-height: 5.6rem;
+      padding: 0 20px;
+      font-size: 2.0rem;
+      font-weight: 400;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
 
-  .rf-drawer-location-info {
-    font-size: 1.25rem;
-    color: #888888;
-    text-align: center;
+    /* MOBILE ARROW / ACCORDION CHEVRON */
+    .navbar-menu .menu-item .arrow {
+      display: block;
+      position: absolute;
+      background: #000000;
+      top: 28px;
+      right: 25px;
+      margin: auto;
+      width: 8px;
+      height: 1px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navbar-menu .menu-item .arrow:after,
+    .navbar-menu .menu-item .arrow:before {
+      content: "";
+      background: #000000;
+      position: absolute;
+      width: 6px;
+      height: 1px;
+      right: -1px;
+    }
+
+    .navbar-menu .menu-item .arrow:before {
+      top: 2px;
+      transform: rotate(-45deg);
+    }
+
+    .navbar-menu .menu-item .arrow:after {
+      top: -2px;
+      transform: rotate(45deg);
+    }
+
+    .navbar-menu .menu-item.is-open .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* MOBILE ACCORDION DROPDOWN */
+    .navbar-menu .menu-item .navbar-dropdown {
+      display: none;
+      position: relative;
+      top: 0;
+      padding: 6px 0 18px 0;
+      background-color: #FAFAFA;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      width: 100%;
+      min-height: auto !important;
+    }
+
+    .navbar-menu .menu-item .navbar-dropdown:before {
+      display: none;
+    }
+
+    .navbar-menu .menu-item.is-open .navbar-dropdown {
+      display: flex;
+    }
+
+    .navbar-menu .menu-item .navbar-dropdown .navbar-item {
+      padding: 0 24px;
+      line-height: 4rem;
+      font-size: 1.55rem;
+      display: block;
+      color: #222222 !important;
+    }
+
+    .navbar-menu .menu-item .navbar-dropdown .navbar-item.mobile-only {
+      display: block;
+      font-weight: 500;
+      color: #000000 !important;
+    }
   }
 
   /* ==========================================================================
@@ -1618,187 +1767,104 @@
 </head>
 <body>
 
-<!-- 01. REFORM CPH EXACT NAVBAR -->
-<header class="rf-navbar" id="rfNavbar">
-  <div class="rf-navbar-container">
-    <!-- LEFT: BRAND LOGO -->
-    <a href="index.html" class="rf-navbar-logo">Pervan</a>
+<!-- 01. REFORM CPH EXACT HEADER & NAVBAR -->
+<header id="pvHeader">
+  <nav class="navbar">
+    <div class="navbar-top">
+      <!-- LOGO -->
+      <a class="navbar-logo" href="index.html">Pervan</a>
 
-    <!-- CENTER: DESKTOP EDITORIAL NAVIGATION -->
-    <nav class="rf-navbar-menu" aria-label="Ana Menü">
-      <!-- 01: Yetkili Bayilikler -->
-      <div class="rf-nav-item">
-        <a href="yetkili-bayilikler.html" class="rf-nav-link">Yetkili Bayilikler</a>
-        <div class="rf-dropdown-pane pane-bayilikler">
-          <a href="boya-bulucu.html" class="rf-sublink highlight">🎯 Akıllı Boya Bulucu</a>
-          <a href="filli-boya-renxmatik.html" class="rf-sublink">Filli Boya &amp; RenXMatik</a>
-          <a href="fawori-boya.html" class="rf-sublink">Fawori Boya &amp; Yalıtım</a>
-          <a href="tek-boya.html" class="rf-sublink">TEK Boya</a>
-          <a href="marshall-boya.html" class="rf-sublink">Marshall Boya</a>
-          <a href="weber-yapi-kimyasallari.html" class="rf-sublink">Saint-Gobain Weber</a>
-          <a href="bianca-stella-boya.html" class="rf-sublink">Bianca Stella</a>
-          <a href="isonem-yalitim.html" class="rf-sublink">İsonem Su Yalıtımı</a>
-          <a href="formul-plastik-pprc.html" class="rf-sublink">Formül Plastik PPRC</a>
-          <a href="yetkili-bayilikler.html" class="rf-sublink view-all">Tüm Bayilikleri Gör &rarr;</a>
+      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+      <div class="navbar-contents">
+        <div class="navbar-contents-overflow">
+          <div class="navbar-menu">
+            
+            <!-- 01: Yetkili Bayilikler -->
+            <div class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Yetkili Bayilikler</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
+                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
+                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+              </div>
+            </div>
+
+            <!-- 02: Yapı Market & Hırdavat -->
+            <div class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+              </div>
+            </div>
+
+            <!-- 03: Mimari Taahhüt -->
+            <div class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Mimari Taahhüt</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
+                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+              </div>
+            </div>
+
+            <!-- 04: Merkezlerimiz -->
+            <div class="navbar-item has-dropdown menu-item">
+              <div class="navbar-title">Merkezlerimiz</div>
+              <div class="arrow"></div>
+              <div class="navbar-dropdown">
+                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
+                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
+                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <!-- 02: Yapı Market & Hırdavat -->
-      <div class="rf-nav-item">
-        <a href="malzemeler.html" class="rf-nav-link">Yapı Market &amp; Hırdavat</a>
-        <div class="rf-dropdown-pane pane-malzemeler">
-          <a href="kaba-yapi-cimento.html" class="rf-sublink">Kaba Yapı &amp; Çimento</a>
-          <a href="tesisat-altyapi.html" class="rf-sublink">Sıhhi Tesisat &amp; Altyapı</a>
-          <a href="elektrik-aydinlatma.html" class="rf-sublink">Elektrik &amp; Aydınlatma</a>
-          <a href="kilit-kapi-hirdavat.html" class="rf-sublink">Kilit &amp; Kapı Donanımı</a>
-          <a href="baglanti-elemanlari.html" class="rf-sublink">Vida &amp; Bağlantı Elemanları</a>
-          <a href="el-aletleri.html" class="rf-sublink">El Aletleri</a>
-          <a href="k-othrine-hasere.html" class="rf-sublink">Haşere &amp; Çevre Sağlığı</a>
-          <a href="malzemeler.html" class="rf-sublink view-all">Tüm Malzemeleri Gör &rarr;</a>
-        </div>
+      <!-- RIGHT STICKY ACTION BUTTONS -->
+      <div class="navbar-sticky">
+        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+          <div class="arrow"></div>
+        </a>
+        <a href="tel:+902322784340" class="navbar-item menu-item">
+          <span class="navbar-title">Bizi Arayın</span>
+          <div class="arrow"></div>
+        </a>
       </div>
 
-      <!-- 03: Mimari Taahhüt -->
-      <div class="rf-nav-item">
-        <a href="taahhut.html" class="rf-nav-link">Mimari Taahhüt</a>
-        <div class="rf-dropdown-pane pane-taahhut">
-          <a href="anahtar-teslim-insaat.html" class="rf-sublink">Sıfırdan Villa &amp; Konut İnşaatı</a>
-          <a href="komple-villa-tadilat.html" class="rf-sublink">Komple Villa &amp; Konut Tadilatı</a>
-          <a href="banyo-dusakabin.html" class="rf-sublink">Banyo &amp; Duşakabin</a>
-          <a href="teras-cati-yalitim.html" class="rf-sublink">Teras &amp; Çatı Su İzolasyonu</a>
-          <a href="nasil-calisiriz.html" class="rf-sublink">4 Adımlı Çalışma Süreci</a>
-          <a href="taahhut.html" class="rf-sublink view-all">Tüm Projeleri Gör &rarr;</a>
-        </div>
+      <!-- HAMBURGER (MOBILE) -->
+      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
       </div>
 
-      <!-- 04: Merkezlerimiz -->
-      <div class="rf-nav-item">
-        <a href="showroom.html" class="rf-nav-link">Merkezlerimiz</a>
-        <div class="rf-dropdown-pane pane-merkezler">
-          <a href="balcova-showroom.html" class="rf-sublink">Balçova Yapı Market &amp; RenXMatik</a>
-          <a href="urla-lojistik-depo.html" class="rf-sublink">Urla Ana Lojistik Deposu</a>
-          <a href="hakkimizda.html" class="rf-sublink">Hakkımızda &amp; Kurumsal</a>
-          <a href="showroom.html" class="rf-sublink view-all">Tüm Merkezleri Gör &rarr;</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- RIGHT: EXACT REFORM OUTLINE ACTION BUTTONS & HAMBURGER -->
-    <div class="rf-navbar-actions">
-      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-btn">Fiyat &amp; Stok Sor</a>
-      <a href="tel:+902322784340" class="rf-btn">Bizi Arayın</a>
-      
-      <!-- MOBILE HAMBURGER TOGGLE (<= 991px) -->
-      <button type="button" class="rf-hamburger" id="rfMobileToggle" aria-label="Menüyü Aç" aria-expanded="false">
-        <span class="rf-hamburger-line"></span>
-        <span class="rf-hamburger-line"></span>
-      </button>
     </div>
-  </div>
+  </nav>
 </header>
-
-<!-- MOBILE FULL-PAGE REFORM DRAWER OVERLAY -->
-<div id="rfMobileDrawer" class="rf-mobile-drawer" aria-hidden="true">
-  <div class="rf-drawer-top">
-    <a href="index.html" class="rf-drawer-logo">Pervan</a>
-    <button type="button" class="rf-drawer-close" id="rfDrawerCloseBtn" aria-label="Menüyü Kapat">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-
-  <div class="rf-drawer-body">
-    <nav class="rf-drawer-nav">
-      <!-- 01: Yetkili Bayilikler Accordion -->
-      <div class="rf-drawer-item">
-        <div class="rf-drawer-item-head">
-          <a href="yetkili-bayilikler.html" class="rf-drawer-item-title">Yetkili Bayilikler</a>
-          <button type="button" class="rf-drawer-accordion-btn" aria-label="Yetkili Bayilikler Alt Menü">
-            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-        <div class="rf-drawer-sublinks">
-          <a href="boya-bulucu.html" class="rf-drawer-sublink highlight" style="color: #C8461E; font-weight: 600;">🎯 Akıllı Boya Bulucu</a>
-          <a href="filli-boya-renxmatik.html" class="rf-drawer-sublink">Filli Boya &amp; RenXMatik</a>
-          <a href="fawori-boya.html" class="rf-drawer-sublink">Fawori Boya &amp; Yalıtım</a>
-          <a href="tek-boya.html" class="rf-drawer-sublink">TEK Boya</a>
-          <a href="marshall-boya.html" class="rf-drawer-sublink">Marshall Boya</a>
-          <a href="weber-yapi-kimyasallari.html" class="rf-drawer-sublink">Saint-Gobain Weber</a>
-          <a href="bianca-stella-boya.html" class="rf-drawer-sublink">Bianca Stella</a>
-          <a href="isonem-yalitim.html" class="rf-drawer-sublink">İsonem Su Yalıtımı</a>
-          <a href="formul-plastik-pprc.html" class="rf-drawer-sublink">Formül Plastik PPRC</a>
-          <a href="yetkili-bayilikler.html" class="rf-drawer-sublink view-all">Tüm Bayilikleri Gör &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 02: Yapı Market & Hırdavat Accordion -->
-      <div class="rf-drawer-item">
-        <div class="rf-drawer-item-head">
-          <a href="malzemeler.html" class="rf-drawer-item-title">Yapı Market &amp; Hırdavat</a>
-          <button type="button" class="rf-drawer-accordion-btn" aria-label="Yapı Market & Hırdavat Alt Menü">
-            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-        <div class="rf-drawer-sublinks">
-          <a href="kaba-yapi-cimento.html" class="rf-drawer-sublink">Kaba Yapı &amp; Çimento</a>
-          <a href="tesisat-altyapi.html" class="rf-drawer-sublink">Sıhhi Tesisat &amp; Altyapı</a>
-          <a href="elektrik-aydinlatma.html" class="rf-drawer-sublink">Elektrik &amp; Aydınlatma</a>
-          <a href="kilit-kapi-hirdavat.html" class="rf-drawer-sublink">Kilit &amp; Kapı Donanımı</a>
-          <a href="baglanti-elemanlari.html" class="rf-drawer-sublink">Vida &amp; Bağlantı Elemanları</a>
-          <a href="el-aletleri.html" class="rf-drawer-sublink">El Aletleri</a>
-          <a href="k-othrine-hasere.html" class="rf-drawer-sublink">Haşere &amp; Çevre Sağlığı</a>
-          <a href="malzemeler.html" class="rf-drawer-sublink view-all">Tüm Malzemeleri Gör &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 03: Mimari Taahhüt Accordion -->
-      <div class="rf-drawer-item">
-        <div class="rf-drawer-item-head">
-          <a href="taahhut.html" class="rf-drawer-item-title">Mimari Taahhüt</a>
-          <button type="button" class="rf-drawer-accordion-btn" aria-label="Mimari Taahhüt Alt Menü">
-            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-        <div class="rf-drawer-sublinks">
-          <a href="anahtar-teslim-insaat.html" class="rf-drawer-sublink">Sıfırdan Villa &amp; Konut İnşaatı</a>
-          <a href="komple-villa-tadilat.html" class="rf-drawer-sublink">Komple Villa &amp; Konut Tadilatı</a>
-          <a href="banyo-dusakabin.html" class="rf-drawer-sublink">Banyo &amp; Duşakabin</a>
-          <a href="teras-cati-yalitim.html" class="rf-drawer-sublink">Teras &amp; Çatı Su İzolasyonu</a>
-          <a href="nasil-calisiriz.html" class="rf-drawer-sublink">4 Adımlı Çalışma Süreci</a>
-          <a href="taahhut.html" class="rf-drawer-sublink view-all">Tüm Projeleri Gör &rarr;</a>
-        </div>
-      </div>
-
-      <!-- 04: Merkezlerimiz Accordion -->
-      <div class="rf-drawer-item">
-        <div class="rf-drawer-item-head">
-          <a href="showroom.html" class="rf-drawer-item-title">Merkezlerimiz</a>
-          <button type="button" class="rf-drawer-accordion-btn" aria-label="Merkezlerimiz Alt Menü">
-            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-        </div>
-        <div class="rf-drawer-sublinks">
-          <a href="balcova-showroom.html" class="rf-drawer-sublink">Balçova Yapı Market &amp; RenXMatik</a>
-          <a href="urla-lojistik-depo.html" class="rf-drawer-sublink">Urla Ana Lojistik Deposu</a>
-          <a href="hakkimizda.html" class="rf-drawer-sublink">Hakkımızda &amp; Kurumsal</a>
-          <a href="showroom.html" class="rf-drawer-sublink view-all">Tüm Merkezleri Gör &rarr;</a>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <div class="rf-drawer-footer">
-    <div class="rf-drawer-actions">
-      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-btn rf-btn-dark">Fiyat &amp; Stok Sor</a>
-      <a href="tel:+902322784340" class="rf-btn">Bizi Arayın</a>
-    </div>
-    <div class="rf-drawer-location-info">
-      <span>Balçova Showroom · Urla Lojistik Depo</span>
-    </div>
-  </div>
-</div>
 
 <main>
   <!-- 01. WIDE TWO MEDIA BLOCK 1 (HERO) -->
