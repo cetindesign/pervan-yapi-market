@@ -557,11 +557,16 @@
   var selectedAreaM2 = 120;
 
   // DOM Elements
-  var progFill = document.getElementById("psProgFill");
+  var quizIntro = document.getElementById("quiz-intro");
+  var quizContainer = document.getElementById("quiz-container");
+  var startQuizBtn = document.getElementById("start-quiz-btn");
+  var quizBackBtn = document.getElementById("quiz-back-btn");
+  var quizCloseBtn = document.getElementById("quiz-close-btn");
+  var progFill = document.getElementById("progress-fill") || document.getElementById("psProgFill");
   var stepTracker = document.getElementById("psStepTracker");
   var wizardBackBtn = document.getElementById("psWizardBackBtn");
 
-  var step1View = document.getElementById("psStep1View");
+  var step1View = document.getElementById("quiz-step-1") || document.getElementById("psStep1View");
   var step2View = document.getElementById("psStep2View");
   var step3View = document.getElementById("psStep3View");
   var stepAnalyzingView = document.getElementById("psStepAnalyzingView");
@@ -592,19 +597,19 @@
   }
 
   function getRecipesForSpace(space) {
-    if (space === "living-room") {
+    if (space === "living-room" || space === "lounge") {
       var lrIds = ["rec-03-cocuklu-ev-silinebilir", "rec-04-yangin-is-su-lekesi", "rec-05-hizli-teslim-tavan", "rec-13-yagli-boyadan-su-bazliya"];
       return recipes.filter(function(r) { return lrIds.indexOf(r.id) !== -1; });
-    } else if (space === "bedroom") {
+    } else if (space === "bedroom" || space === "kids") {
       var brIds = ["rec-02-kapali-yazlik-kuf", "rec-03-cocuklu-ev-silinebilir", "rec-05-hizli-teslim-tavan", "rec-01-zemin-nem-tuz"];
       return recipes.filter(function(r) { return brIds.indexOf(r.id) !== -1; });
-    } else if (space === "kitchen") {
+    } else if (space === "kitchen" || space === "dining") {
       var ktIds = ["rec-03-cocuklu-ev-silinebilir", "rec-12-mutfak-dolabi-lake", "rec-11-banyo-fayans-dusakabin", "rec-04-yangin-is-su-lekesi"];
       return recipes.filter(function(r) { return ktIds.indexOf(r.id) !== -1; });
     } else if (space === "bathroom") {
       var btIds = ["rec-11-banyo-fayans-dusakabin", "rec-01-zemin-nem-tuz", "rec-02-kapali-yazlik-kuf", "rec-15-seffaf-teras-sivi-cam"];
       return recipes.filter(function(r) { return btIds.indexOf(r.id) !== -1; });
-    } else if (space === "hallway") {
+    } else if (space === "hallway" || space === "office") {
       var hwIds = ["rec-03-cocuklu-ev-silinebilir", "rec-04-yangin-is-su-lekesi", "rec-24-mahzen-garaj-epoksi-zemin", "rec-13-yagli-boyadan-su-bazliya"];
       return recipes.filter(function(r) { return hwIds.indexOf(r.id) !== -1; });
     } else if (space === "exterior") {
@@ -615,10 +620,13 @@
   }
 
   function syncSpaceCardsHighlight() {
-    var spaceCards = document.querySelectorAll(".ps-card[data-space]");
-    spaceCards.forEach(function(card) {
-      var spc = card.getAttribute("data-space");
-      card.classList.toggle("active", spc === selectedSpace);
+    var quizOptions = document.querySelectorAll(".quiz-option[data-space]");
+    quizOptions.forEach(function(opt) {
+      var spc = opt.getAttribute("data-space");
+      var isMatch = (spc === selectedSpace || (selectedSpace === "living-room" && spc === "lounge"));
+      opt.classList.toggle("is-selected", isMatch);
+      var radio = opt.querySelector("input[type='radio']");
+      if (radio) radio.checked = isMatch;
     });
   }
 
@@ -845,29 +853,46 @@
 
   // Event Listeners Initialization
   function initListeners() {
-    // Step 1: Space Cards
-    var spaceCards = document.querySelectorAll(".ps-card[data-space]");
-    spaceCards.forEach(function(card) {
-      card.addEventListener("click", function() {
-        spaceCards.forEach(function(c) { c.classList.remove("active"); });
-        card.classList.add("active");
-        selectedSpace = card.getAttribute("data-space") || "living-room";
-        selectedGroup = card.getAttribute("data-group") || "ic-mekan";
+    // Intro Hero CTA Button
+    if (startQuizBtn) {
+      startQuizBtn.addEventListener("click", function() {
+        if (quizContainer) {
+          quizContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }
+
+    // Step 1: Coat Paints Photo Options
+    var quizOptions = document.querySelectorAll(".quiz-option[data-space]");
+    quizOptions.forEach(function(opt) {
+      opt.addEventListener("click", function() {
+        quizOptions.forEach(function(o) { o.classList.remove("is-selected"); });
+        opt.classList.add("is-selected");
+        var radio = opt.querySelector("input[type='radio']");
+        if (radio) radio.checked = true;
+        selectedSpace = opt.getAttribute("data-space") || "living-room";
+        selectedGroup = "ic-mekan";
         var filtered = getRecipesForSpace(selectedSpace);
         if (filtered.length > 0) {
           selectedRecipeId = filtered[0].id;
         }
-        setTimeout(function() {
-          goToStep(2);
-        }, 180);
       });
     });
 
-    // Subnav Back Button
-    if (wizardBackBtn) {
-      wizardBackBtn.addEventListener("click", function() {
-        if (currentStep > 1) {
-          goToStep(currentStep - 1);
+    // Quiz Close / Top Button
+    if (quizCloseBtn) {
+      quizCloseBtn.addEventListener("click", function() {
+        if (quizIntro) {
+          quizIntro.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }
+
+    // Quiz Back Button
+    if (quizBackBtn) {
+      quizBackBtn.addEventListener("click", function() {
+        if (quizIntro) {
+          quizIntro.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
     }

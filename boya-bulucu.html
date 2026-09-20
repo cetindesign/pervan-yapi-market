@@ -47,10 +47,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=37.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=43.0.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=44.0.0" />
 </head>
 <body class="pv-scope pv-cur-body">
 
@@ -167,162 +167,158 @@
 </header>
 
 <!-- PROSE 1:1 CONSULTATION ENGINE -->
-<div class="ps-consultation-app">
-  
-  <!-- PROSE FIXED TOP PROGRESS BAR -->
-  <div class="ps-linear-progress" id="psTopProgressWrap">
-    <div class="ps-linear-progress-fill" id="psProgFill"></div>
+<!-- COAT PAINTS 1:1 ARCHITECTURAL CONSULTATION ENGINE -->
+<div class="coat-app-wrap">
+
+  <!-- 1. INTRO HERO (COAT PAINTS 1:1) -->
+  <div id="quiz-intro" class="hero_header">
+    <div class="intro-container">
+      <div class="intro-image">
+        <img src="assets/quiz/intro-hero.jpg" alt="Pervan Boya &amp; Renk Reçetesi" loading="eager" />
+      </div>
+      <div class="intro-content">
+        <h1 class="intro-heading">
+          <span>Doğru Rengi</span>
+          <span>&amp; Reçeteyi Bul</span>
+        </h1>
+        <p class="intro-subheading">Mekanınız için birkaç kısa soruyu yanıtlayın; yüzeye, neme ve ışığa özel kişiselleştirilmiş boya reçetenizi anında çıkaralım.</p>
+        <div class="slide-btn">
+          <button type="button" id="start-quiz-btn" class="intro-cta">
+            <span>Teste Başla</span>
+            <span class="slide-btn-svg">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.23 3.15649L15.2431 7.16963L15.7734 7.69996L15.2431 8.23029L11.23 12.2434L10.1693 11.1828L12.902 8.45005H0.666862V6.95005H12.9022L10.1693 4.21715L11.23 3.15649Z" fill="currentColor"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- PROSE SUBNAV (STEP TRACKER & BACK NAV) -->
-  <div class="ps-subnav" id="psSubNav">
-    <div class="ps-subnav-inner">
-      <button type="button" class="ps-back-btn" id="psWizardBackBtn" aria-label="Geri">
+  <!-- 2. QUIZ CONTAINER (COAT PAINTS 1:1) -->
+  <div id="quiz-container" class="quiz-container">
+    
+    <!-- PROGRESS HEADER -->
+    <div class="quiz-progress-wrapper">
+      <button type="button" class="quiz-back-button" id="quiz-back-btn" aria-label="Geri">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
         <span>Geri</span>
       </button>
 
-      <div class="ps-step-tracker" id="psStepTracker">ADIM 1 / 4</div>
+      <div class="quiz-progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
 
-      <a href="https://wa.me/905323844497?text=Merhaba%20Pervan%2C%20boya%20ve%20yal%C4%B1t%C4%B1m%20re%C3%A7etesi%20hakk%C4%B1nda%20dan%C4%B1%C5%9Fmak%20istiyorum." target="_blank" rel="noopener" class="ps-help-link">
-        Danışman
-      </a>
+      <button type="button" class="quiz-close-button" id="quiz-close-btn" aria-label="Başa Dön">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
-  </div>
 
-  <main class="ps-main-container" id="psMainContainer">
+    <div class="quiz-questions">
 
-    <!-- ====================================================================
-         STEP 1: THE SPACE (COAT PAINTS 1:1)
-         ==================================================================== -->
-    <section class="ps-step-view active" id="psStep1View">
-      <div class="ps-step-header">
-        <span class="ps-step-eyebrow">01 / MEKAN &amp; YÜZEY TÜRÜ</span>
-        <h1 class="ps-step-title">Hangi mekan veya yüzeyi boyuyorsunuz?</h1>
-        <p class="ps-step-subtitle">Dönüştürmek istediğiniz alanı seçin. Formülü, dayanımı ve katman reçetesini yüzeyin ihtiyaçlarına göre optimize edeceğiz.</p>
+      <!-- ====================================================================
+           QUESTION 1: THE ROOM (COAT PAINTS 1:1)
+           ==================================================================== -->
+      <div class="quiz-question grid own-div standard show-question" id="quiz-step-1">
+        <div class="quiz-copy">
+          <h2 class="coat-quiz-title">İlk olarak, hangi mekanı boyuyorsunuz?</h2>
+          <p class="coat-quiz-sub">Farklı mekanlar farklı boya formülleri, dayanım ve ışık katsayısı gerektirir.</p>
+          <p class="coat-small">Birini seçin</p>
+        </div>
+
+        <div class="quiz-options">
+          <!-- 1. Bedroom -->
+          <label class="quiz-option" data-space="bedroom">
+            <input type="radio" name="coat_room" value="bedroom" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-bedroom.jpg" alt="Yatak Odası" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Yatak Odası</div>
+            </div>
+          </label>
+
+          <!-- 2. Lounge -->
+          <label class="quiz-option is-selected" data-space="living-room">
+            <input type="radio" name="coat_room" value="living-room" checked hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-lounge.jpg" alt="Salon &amp; Oturma Odası" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Salon &amp; Oturma Odası</div>
+            </div>
+          </label>
+
+          <!-- 3. Kitchen -->
+          <label class="quiz-option" data-space="kitchen">
+            <input type="radio" name="coat_room" value="kitchen" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-kitchen.jpg" alt="Mutfak" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Mutfak</div>
+            </div>
+          </label>
+
+          <!-- 4. Bathroom -->
+          <label class="quiz-option" data-space="bathroom">
+            <input type="radio" name="coat_room" value="bathroom" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-bathroom.jpg" alt="Banyo &amp; Islak Hacim" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Banyo &amp; Islak Hacim</div>
+            </div>
+          </label>
+
+          <!-- 5. Dining Room -->
+          <label class="quiz-option" data-space="dining">
+            <input type="radio" name="coat_room" value="dining" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-dining.jpg" alt="Yemek Alanı" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Yemek Alanı</div>
+            </div>
+          </label>
+
+          <!-- 6. Hallway -->
+          <label class="quiz-option" data-space="hallway">
+            <input type="radio" name="coat_room" value="hallway" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-hallway.jpg" alt="Antre &amp; Koridor" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Antre &amp; Koridor</div>
+            </div>
+          </label>
+
+          <!-- 7. Office -->
+          <label class="quiz-option" data-space="office">
+            <input type="radio" name="coat_room" value="office" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-office.jpg" alt="Çalışma Odası &amp; Ofis" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Çalışma Odası &amp; Ofis</div>
+            </div>
+          </label>
+
+          <!-- 8. Kids Room -->
+          <label class="quiz-option" data-space="kids">
+            <input type="radio" name="coat_room" value="kids" hidden />
+            <div class="quiz-option-inner">
+              <div class="quiz-option-image">
+                <img src="assets/quiz/room-kids.jpg" alt="Çocuk Odası" loading="lazy" />
+              </div>
+              <div class="quiz-option-text">Çocuk Odası</div>
+            </div>
+          </label>
+        </div>
       </div>
-
-      <div class="ps-coat-grid">
-        <!-- Card 1: Salon & Oturma Odası -->
-        <button type="button" class="ps-card active" data-space="living-room" data-group="ic-mekan">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 9V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"/>
-                <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/>
-                <path d="M4 18v2"/>
-                <path d="M20 18v2"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Salon &amp; Oturma Odası</span>
-            <span class="ps-card-desc">Yüksek konforlu yaşam alanı, pürüzsüz ve defalarca silinebilir ipek mat yüzey</span>
-          </div>
-        </button>
-
-        <!-- Card 2: Yatak Odası & Çocuk Odası -->
-        <button type="button" class="ps-card" data-space="bedroom" data-group="ic-mekan">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 4v16"/>
-                <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
-                <path d="M2 17h20"/>
-                <path d="M6 8v9"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Yatak Odası &amp; Çocuk Odası</span>
-            <span class="ps-card-desc">Sıfır VOC, nefes alan, koku yapmayan ve gümüş iyonlu anti-alerjik yüzey</span>
-          </div>
-        </button>
-
-        <!-- Card 3: Mutfak & Yemek Alanı -->
-        <button type="button" class="ps-card" data-space="kitchen" data-group="ic-mekan">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2v20M6 2v20"/>
-                <path d="M6 12h12"/>
-                <path d="M6 7h12"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Mutfak &amp; Yemek Alanı</span>
-            <span class="ps-card-desc">Buhar, yağ sıçraması ve lekelere karşı ultra dirençli, yıkanabilir koruma</span>
-          </div>
-        </button>
-
-        <!-- Card 4: Banyo & Islak Hacim -->
-        <button type="button" class="ps-card" data-space="bathroom" data-group="ic-mekan">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Banyo, Fayans &amp; Islak Hacim</span>
-            <span class="ps-card-desc">Yoğun nem, direkt su teması, fayans dönüşümü ve küf önleyici kalkan</span>
-          </div>
-        </button>
-
-        <!-- Card 5: Koridor & Yüksek Trafik -->
-        <button type="button" class="ps-card" data-space="hallway" data-group="ic-mekan">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M9 3v18"/>
-                <path d="M15 9h.01"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Antre, Koridor &amp; Merdiven</span>
-            <span class="ps-card-desc">Ayakkabı sürtünmesi, darbe ve yoğun trafiğe dayanıklı çizilmez zırh</span>
-          </div>
-        </button>
-
-        <!-- Card 6: Dış Cephe & Ahşap/Metal -->
-        <button type="button" class="ps-card" data-space="exterior" data-group="dis-cephe">
-          <div class="ps-card-top-row">
-            <div class="ps-card-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <div class="ps-card-radio">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-          </div>
-          <div class="ps-card-text">
-            <span class="ps-card-heading">Dış Cephe, Ahşap &amp; Metal</span>
-            <span class="ps-card-desc">Güneş UV ışınları, yağmur, tuz sisi, taş emprenye ve marin koruma</span>
-          </div>
-        </button>
-      </div>
-    </section>
 
     <!-- ====================================================================
          STEP 2: SURFACE & DISTRESS PROBLEM
