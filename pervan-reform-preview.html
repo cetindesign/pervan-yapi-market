@@ -88,111 +88,332 @@
     max-width: 100%;
   }
 
-  /* 1. NAVBAR (REFORM EXACT 70px, CALIBRE, SHARP RECTANGULAR BUTTONS) */
-  .navbar-top {
+  /* 1. NAVBAR (REFORM CPH EXACT & FULL-PAGE DRAWER) */
+  .rf-navbar {
+    width: 100%;
+    background: #FFFFFF;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #FFFFFF;
-    border-bottom: 1px solid var(--color-border);
-    height: 70px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s var(--ease-reform);
+  }
+
+  .rf-navbar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 64px;
     padding: 0 36px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
   }
 
-  .navbar-logo {
+  .rf-navbar-logo {
+    font-family: var(--font-editorial);
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #000000 !important;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    line-height: 1;
     display: flex;
     align-items: center;
-    font-size: 1.9rem;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    color: #000000;
+    flex-shrink: 0;
   }
 
-  .navbar-menu {
+  .rf-navbar-menu {
     display: flex;
     align-items: center;
     gap: 36px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    height: 100%;
   }
 
-  .navbar-item {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #000000;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    transition: color 0.15s linear;
-  }
-  .navbar-item:hover {
-    color: var(--color-muted);
-  }
-
-  .navbar-sticky {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  /* REFORM EXACT RECTANGULAR BUTTON (ZERO BORDER RADIUS, SHARP & CLEAN) */
-  .rf-btn {
+  .rf-nav-item {
     position: relative;
-    display: inline-flex;
+    height: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 4.0rem;
-    padding: 0 2.2rem;
-    border: 1px solid #000000;
-    border-radius: 0;
+  }
+
+  .rf-nav-link {
     font-family: var(--font-editorial);
     font-size: 1.45rem;
     font-weight: 400;
-    letter-spacing: 0;
-    color: #000000;
-    background: transparent;
-    cursor: pointer;
+    color: #000000 !important;
+    letter-spacing: -0.01em;
     text-decoration: none;
-    white-space: nowrap;
-    transition: background-color 0.2s var(--ease-reform), color 0.2s var(--ease-reform), border-color 0.2s var(--ease-reform);
-  }
-  .rf-btn:hover {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
-
-  /* WHITE OUTLINE BUTTON ON IMAGE (REFORM EXACT) */
-  .rf-btn.btn-white-outline {
-    color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    background-color: rgba(0, 0, 0, 0.20);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    height: 4.4rem;
-    padding: 0 2.6rem;
-    font-size: 1.55rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  }
-  .rf-btn.btn-white-outline:hover,
-  .media-container:hover .rf-btn.btn-white-outline {
-    background-color: #FFFFFF;
-    color: #000000;
-    border-color: #FFFFFF;
-    text-shadow: none;
-    backdrop-filter: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2px;
+    transition: color 0.15s ease;
   }
 
-  @media (max-width: 900px) {
-    .navbar-top {
-      padding: 0 20px;
+  .rf-nav-item:hover .rf-nav-link {
+    color: var(--color-muted) !important;
+  }
+
+  .rf-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 260px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 12px 0;
+    z-index: 1001;
+  }
+
+  .rf-nav-item:hover .rf-dropdown-menu {
+    display: block;
+  }
+
+  .rf-dropdown-link {
+    display: block;
+    padding: 8px 24px;
+    font-family: var(--font-editorial);
+    font-size: 1.4rem;
+    color: #333333 !important;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .rf-dropdown-link:hover {
+    background: var(--color-grey-bg);
+    color: #000000 !important;
+  }
+
+  .rf-dropdown-link.view-all {
+    font-weight: 500;
+    color: #000000 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: 6px;
+    padding-top: 10px;
+  }
+
+  .rf-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .rf-hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rf-hamburger-line {
+    width: 22px;
+    height: 1.5px;
+    background: #000000;
+    transition: transform 0.25s var(--ease-reform), opacity 0.25s ease;
+  }
+
+  @media (max-width: 991px) {
+    .rf-navbar-container {
       height: 60px;
+      padding: 0 20px;
     }
-    .navbar-menu {
+    .rf-navbar-menu {
+      display: none;
+    }
+    .rf-navbar-actions .rf-btn {
+      display: none;
+    }
+    .rf-hamburger {
+      display: flex;
+    }
+  }
+
+  .rf-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #FFFFFF;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 24px 32px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease-reform), visibility 0.25s var(--ease-reform), transform 0.25s var(--ease-reform);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rf-mobile-drawer.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .rf-drawer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .rf-drawer-logo {
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #000000 !important;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+  }
+
+  .rf-drawer-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    padding: 0;
+  }
+
+  .rf-drawer-body {
+    flex: 1;
+    padding: 16px 0;
+  }
+
+  .rf-drawer-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rf-drawer-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .rf-drawer-item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+
+  .rf-drawer-item-title {
+    font-family: var(--font-editorial);
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #000000 !important;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .rf-drawer-accordion-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #000000;
+  }
+
+  .rf-drawer-accordion-btn .rf-chevron {
+    transition: transform 0.25s var(--ease-reform);
+  }
+
+  .rf-drawer-item.is-open .rf-chevron {
+    transform: rotate(180deg);
+  }
+
+  .rf-drawer-sublinks {
+    display: none;
+    flex-direction: column;
+    padding: 0 0 16px 8px;
+    gap: 12px;
+  }
+
+  .rf-drawer-item.is-open .rf-drawer-sublinks {
+    display: flex;
+  }
+
+  .rf-drawer-sublink {
+    font-family: var(--font-editorial);
+    font-size: 1.55rem;
+    color: #555555 !important;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 3px 0;
+  }
+
+  .rf-drawer-sublink.view-all {
+    font-weight: 500;
+    color: #000000 !important;
+    padding-top: 6px;
+  }
+
+  .rf-drawer-footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .rf-drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rf-drawer-actions .rf-btn {
+    width: 100%;
+    height: 44px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rf-btn.rf-btn-dark {
+    background: #000000;
+    color: #FFFFFF !important;
+    border-color: #000000;
+  }
+
+  .rf-drawer-location-info {
+    font-size: 1.25rem;
+    color: #888888;
+    text-align: center;
+  }
       display: none;
     }
   }
@@ -770,22 +991,195 @@
 
 <body>
 
-<!-- 01. REFORM NAVBAR -->
-<header class="navbar-top">
-  <a href="pervan-reform-preview.html" class="navbar-logo">Pervan</a>
+<!-- 01. REFORM CPH EXACT NAVBAR -->
+<header class="rf-navbar" id="rfNavbar">
+  <div class="rf-navbar-container">
+    <!-- LEFT: BRAND LOGO -->
+    <a href="pervan-reform-preview.html" class="rf-navbar-logo">Pervan</a>
 
-  <ul class="navbar-menu">
-    <li><a href="malzemeler.html" class="navbar-item">Malzemeler</a></li>
-    <li><a href="filli-boya-renxmatik.html" class="navbar-item">Yetkili Bayilikler</a></li>
-    <li><a href="anahtar-teslim-insaat.html" class="navbar-item">Mimari Taahhüt</a></li>
-    <li><a href="nasil-calisiriz.html" class="navbar-item">Nasıl Çalışırız</a></li>
-  </ul>
+    <!-- CENTER: DESKTOP EDITORIAL NAVIGATION -->
+    <nav class="rf-navbar-menu" aria-label="Ana Menü">
+      <!-- 01: Yetkili Bayilikler -->
+      <div class="rf-nav-item has-dropdown">
+        <a href="yetkili-bayilikler.html" class="rf-nav-link">Yetkili Bayilikler</a>
+        <div class="rf-dropdown-menu">
+          <div class="rf-dropdown-inner">
+            <a href="boya-bulucu.html" class="rf-dropdown-link feature-highlight" style="color: #C8461E; font-weight: 700;">🎯 Akıllı Boya Bulucu</a>
+            <a href="filli-boya-renxmatik.html" class="rf-dropdown-link">Filli Boya &amp; RenXMatik</a>
+            <a href="fawori-boya.html" class="rf-dropdown-link">Fawori Boya &amp; Yalıtım</a>
+            <a href="tek-boya.html" class="rf-dropdown-link">TEK Boya</a>
+            <a href="marshall-boya.html" class="rf-dropdown-link">Marshall Boya</a>
+            <a href="weber-yapi-kimyasallari.html" class="rf-dropdown-link">Saint-Gobain Weber</a>
+            <a href="bianca-stella-boya.html" class="rf-dropdown-link">Bianca Stella</a>
+            <a href="isonem-yalitim.html" class="rf-dropdown-link">İsonem Su Yalıtımı</a>
+            <a href="formul-plastik-pprc.html" class="rf-dropdown-link">Formül Plastik PPRC</a>
+            <a href="yetkili-bayilikler.html" class="rf-dropdown-link view-all">Tüm Bayilikleri Gör &rarr;</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="navbar-sticky">
-    <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-btn">Fiyat &amp; Stok Sor</a>
-    <a href="tel:+902322784340" class="rf-btn">Bizi Arayın</a>
+      <!-- 02: Yapı Market & Hırdavat -->
+      <div class="rf-nav-item has-dropdown">
+        <a href="malzemeler.html" class="rf-nav-link">Yapı Market &amp; Hırdavat</a>
+        <div class="rf-dropdown-menu">
+          <div class="rf-dropdown-inner">
+            <a href="kaba-yapi-cimento.html" class="rf-dropdown-link">Kaba Yapı &amp; Çimento</a>
+            <a href="tesisat-altyapi.html" class="rf-dropdown-link">Sıhhi Tesisat &amp; Altyapı</a>
+            <a href="elektrik-aydinlatma.html" class="rf-dropdown-link">Elektrik &amp; Aydınlatma</a>
+            <a href="kilit-kapi-hirdavat.html" class="rf-dropdown-link">Kilit &amp; Kapı Donanımı</a>
+            <a href="baglanti-elemanlari.html" class="rf-dropdown-link">Vida &amp; Bağlantı Elemanları</a>
+            <a href="el-aletleri.html" class="rf-dropdown-link">El Aletleri</a>
+            <a href="k-othrine-hasere.html" class="rf-dropdown-link">Haşere &amp; Çevre Sağlığı</a>
+            <a href="malzemeler.html" class="rf-dropdown-link view-all">Tüm Malzemeleri Gör &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03: Mimari Taahhüt -->
+      <div class="rf-nav-item has-dropdown">
+        <a href="taahhut.html" class="rf-nav-link">Mimari Taahhüt</a>
+        <div class="rf-dropdown-menu">
+          <div class="rf-dropdown-inner">
+            <a href="anahtar-teslim-insaat.html" class="rf-dropdown-link">Sıfırdan Villa &amp; Konut İnşaatı</a>
+            <a href="komple-villa-tadilat.html" class="rf-dropdown-link">Komple Villa &amp; Konut Tadilatı</a>
+            <a href="banyo-dusakabin.html" class="rf-dropdown-link">Banyo &amp; Duşakabin</a>
+            <a href="teras-cati-yalitim.html" class="rf-dropdown-link">Teras &amp; Çatı Su İzolasyonu</a>
+            <a href="nasil-calisiriz.html" class="rf-dropdown-link">4 Adımlı Çalışma Süreci</a>
+            <a href="https://wa.me/905323844497?text=Merhaba,%20mimari%20keşif%20ve%20taahhüt%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="rf-dropdown-link view-all">WhatsApp ile Keşif Hattı &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04: Merkezlerimiz -->
+      <div class="rf-nav-item has-dropdown">
+        <a href="showroom.html" class="rf-nav-link">Merkezlerimiz</a>
+        <div class="rf-dropdown-menu">
+          <div class="rf-dropdown-inner">
+            <a href="balcova-showroom.html" class="rf-dropdown-link">Balçova Yapı Market &amp; RenXMatik</a>
+            <a href="urla-lojistik-depo.html" class="rf-dropdown-link">Urla Ana Lojistik Deposu</a>
+            <a href="hakkimizda.html" class="rf-dropdown-link">Hakkımızda &amp; Kurumsal</a>
+            <a href="showroom.html" class="rf-dropdown-link view-all">Tüm Merkezleri Gör &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- RIGHT: EXACT REFORM OUTLINE ACTION BUTTONS & HAMBURGER -->
+    <div class="rf-navbar-actions">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-btn">Fiyat &amp; Stok Sor</a>
+      <a href="tel:+902322784340" class="rf-btn">Bizi Arayın</a>
+      
+      <!-- MOBILE HAMBURGER TOGGLE (<= 991px) -->
+      <button type="button" class="rf-hamburger" id="rfMobileToggle" aria-label="Menüyü Aç" aria-expanded="false">
+        <span class="rf-hamburger-line"></span>
+        <span class="rf-hamburger-line"></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- MOBILE FULL-PAGE REFORM DRAWER OVERLAY -->
+<div id="rfMobileDrawer" class="rf-mobile-drawer" aria-hidden="true">
+  <div class="rf-drawer-top">
+    <a href="pervan-reform-preview.html" class="rf-drawer-logo">Pervan</a>
+    <button type="button" class="rf-drawer-close" id="rfDrawerCloseBtn" aria-label="Menüyü Kapat">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="rf-drawer-body">
+    <nav class="rf-drawer-nav">
+      <!-- 01: Yetkili Bayilikler Accordion -->
+      <div class="rf-drawer-item">
+        <div class="rf-drawer-item-head">
+          <a href="yetkili-bayilikler.html" class="rf-drawer-item-title">Yetkili Bayilikler</a>
+          <button type="button" class="rf-drawer-accordion-btn" aria-label="Yetkili Bayilikler Alt Menü">
+            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+        <div class="rf-drawer-sublinks">
+          <a href="boya-bulucu.html" class="rf-drawer-sublink highlight" style="color: #C8461E; font-weight: 600;">🎯 Akıllı Boya Bulucu</a>
+          <a href="filli-boya-renxmatik.html" class="rf-drawer-sublink">Filli Boya &amp; RenXMatik</a>
+          <a href="fawori-boya.html" class="rf-drawer-sublink">Fawori Boya &amp; Yalıtım</a>
+          <a href="tek-boya.html" class="rf-drawer-sublink">TEK Boya</a>
+          <a href="marshall-boya.html" class="rf-drawer-sublink">Marshall Boya</a>
+          <a href="weber-yapi-kimyasallari.html" class="rf-drawer-sublink">Saint-Gobain Weber</a>
+          <a href="bianca-stella-boya.html" class="rf-drawer-sublink">Bianca Stella</a>
+          <a href="isonem-yalitim.html" class="rf-drawer-sublink">İsonem Su Yalıtımı</a>
+          <a href="formul-plastik-pprc.html" class="rf-drawer-sublink">Formül Plastik PPRC</a>
+          <a href="yetkili-bayilikler.html" class="rf-drawer-sublink view-all">Tüm Bayilikleri Gör &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 02: Yapı Market & Hırdavat Accordion -->
+      <div class="rf-drawer-item">
+        <div class="rf-drawer-item-head">
+          <a href="malzemeler.html" class="rf-drawer-item-title">Yapı Market &amp; Hırdavat</a>
+          <button type="button" class="rf-drawer-accordion-btn" aria-label="Yapı Market & Hırdavat Alt Menü">
+            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+        <div class="rf-drawer-sublinks">
+          <a href="kaba-yapi-cimento.html" class="rf-drawer-sublink">Kaba Yapı &amp; Çimento</a>
+          <a href="tesisat-altyapi.html" class="rf-drawer-sublink">Sıhhi Tesisat &amp; Altyapı</a>
+          <a href="elektrik-aydinlatma.html" class="rf-drawer-sublink">Elektrik &amp; Aydınlatma</a>
+          <a href="kilit-kapi-hirdavat.html" class="rf-drawer-sublink">Kilit &amp; Kapı Donanımı</a>
+          <a href="baglanti-elemanlari.html" class="rf-drawer-sublink">Vida &amp; Bağlantı Elemanları</a>
+          <a href="el-aletleri.html" class="rf-drawer-sublink">El Aletleri</a>
+          <a href="k-othrine-hasere.html" class="rf-drawer-sublink">Haşere &amp; Çevre Sağlığı</a>
+          <a href="malzemeler.html" class="rf-drawer-sublink view-all">Tüm Malzemeleri Gör &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 03: Mimari Taahhüt Accordion -->
+      <div class="rf-drawer-item">
+        <div class="rf-drawer-item-head">
+          <a href="taahhut.html" class="rf-drawer-item-title">Mimari Taahhüt</a>
+          <button type="button" class="rf-drawer-accordion-btn" aria-label="Mimari Taahhüt Alt Menü">
+            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+        <div class="rf-drawer-sublinks">
+          <a href="anahtar-teslim-insaat.html" class="rf-drawer-sublink">Sıfırdan Villa &amp; Konut İnşaatı</a>
+          <a href="komple-villa-tadilat.html" class="rf-drawer-sublink">Komple Villa &amp; Konut Tadilatı</a>
+          <a href="banyo-dusakabin.html" class="rf-drawer-sublink">Banyo &amp; Duşakabin</a>
+          <a href="teras-cati-yalitim.html" class="rf-drawer-sublink">Teras &amp; Çatı Su İzolasyonu</a>
+          <a href="nasil-calisiriz.html" class="rf-drawer-sublink">4 Adımlı Çalışma Süreci</a>
+          <a href="taahhut.html" class="rf-drawer-sublink view-all">Tüm Projeleri Gör &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 04: Merkezlerimiz Accordion -->
+      <div class="rf-drawer-item">
+        <div class="rf-drawer-item-head">
+          <a href="showroom.html" class="rf-drawer-item-title">Merkezlerimiz</a>
+          <button type="button" class="rf-drawer-accordion-btn" aria-label="Merkezlerimiz Alt Menü">
+            <svg class="rf-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+        <div class="rf-drawer-sublinks">
+          <a href="balcova-showroom.html" class="rf-drawer-sublink">Balçova Yapı Market &amp; RenXMatik</a>
+          <a href="urla-lojistik-depo.html" class="rf-drawer-sublink">Urla Ana Lojistik Deposu</a>
+          <a href="hakkimizda.html" class="rf-drawer-sublink">Hakkımızda &amp; Kurumsal</a>
+          <a href="showroom.html" class="rf-drawer-sublink view-all">Tüm Merkezleri Gör &rarr;</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="rf-drawer-footer">
+    <div class="rf-drawer-actions">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="rf-btn rf-btn-dark">Fiyat &amp; Stok Sor</a>
+      <a href="tel:+902322784340" class="rf-btn">Bizi Arayın</a>
+    </div>
+    <div class="rf-drawer-location-info">
+      <span>Balçova Showroom · Urla Lojistik Depo</span>
+    </div>
+  </div>
+</div>
 
 <main>
   <!-- 02. WIDE TWO MEDIA BLOCK 1 -->
@@ -1086,5 +1480,6 @@
   </div>
 </footer>
 
+<script src="js/pervan.js?v=33.0.0" defer></script>
 </body>
 </html>
