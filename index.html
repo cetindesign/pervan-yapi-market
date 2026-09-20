@@ -393,158 +393,176 @@
     display: none;
   }
 
+  .navbar-sticky-mobile {
+    display: none;
+  }
+
   /* ==========================================================================
      RESPONSIVE MOBILE STYLING (max-width: 1259px)
      ========================================================================== */
   @media screen and (max-width: 1259px) {
     .navbar-top {
-      height: 60px;
-      padding: 0 20px;
-      justify-content: space-between;
+      height: 60px !important;
+      padding: 0 20px !important;
+      justify-content: space-between !important;
     }
 
     .navbar-logo {
-      font-size: 2.0rem;
-      padding: 0;
+      font-size: 2.0rem !important;
+      padding: 0 !important;
+    }
+
+    /* HIDE DESKTOP STICKY BUTTONS FROM 60PX TOP BAR */
+    .navbar-sticky {
+      display: none !important;
     }
 
     /* HAMBURGER TOGGLE */
     #mobile-menu {
-      display: block;
-      position: relative;
-      width: 36px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 1002;
-      padding: 0;
-      margin: 0;
+      display: block !important;
+      position: relative !important;
+      width: 36px !important;
+      height: 30px !important;
+      cursor: pointer !important;
+      z-index: 1002 !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
     #mobile-menu .bar {
-      width: 24px;
-      height: 1.5px;
-      background-color: #000000;
-      position: absolute;
-      left: 6px;
-      transform-origin: center;
-      -webkit-transform-origin: center;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, top 0.25s ease;
+      width: 24px !important;
+      height: 1.5px !important;
+      background-color: #000000 !important;
+      position: absolute !important;
+      left: 6px !important;
+      transform-origin: center !important;
+      -webkit-transform-origin: center !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, top 0.25s ease !important;
     }
 
     #mobile-menu.closed .bar1 {
-      top: 8px;
-      opacity: 1;
-      transform: none;
+      top: 8px !important;
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     #mobile-menu.closed .bar2 {
-      top: 14px;
-      transform: none;
+      top: 14px !important;
+      transform: none !important;
     }
 
     #mobile-menu.closed .bar3 {
-      top: 20px;
-      transform: none;
+      top: 20px !important;
+      transform: none !important;
     }
 
     #mobile-menu:not(.closed) .bar1 {
-      opacity: 0;
-      top: 14px;
+      opacity: 0 !important;
+      top: 14px !important;
     }
 
     #mobile-menu:not(.closed) .bar2 {
-      transform: rotate(45deg);
-      top: 14px;
+      transform: rotate(45deg) !important;
+      top: 14px !important;
     }
 
     #mobile-menu:not(.closed) .bar3 {
-      transform: rotate(-45deg);
-      top: 14px;
+      transform: rotate(-45deg) !important;
+      top: 14px !important;
     }
 
     /* DRAWER OVERLAY */
     .navbar-contents {
-      display: none;
+      display: none !important;
     }
 
     .navbar-contents.opened {
-      display: block;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100vw;
-      height: calc(100vh - 60px);
-      height: calc(100dvh - 60px);
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      overflow-y: auto;
-      overflow-x: hidden;
-      background-color: #FFFFFF;
-      z-index: 1001;
-      -webkit-overflow-scrolling: touch;
+      display: block !important;
+      position: fixed !important;
+      top: 60px !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: calc(100vh - 60px) !important;
+      height: calc(100dvh - 60px) !important;
+      border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      background-color: #FFFFFF !important;
+      z-index: 1001 !important;
+      -webkit-overflow-scrolling: touch !important;
+      padding-bottom: 60px !important;
     }
 
     .navbar-contents .navbar-contents-overflow {
-      display: flex;
-      flex-direction: column-reverse;
-      width: 100%;
-      height: auto;
-      background-color: #FFFFFF;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      height: auto !important;
+      background-color: #FFFFFF !important;
     }
 
-    /* MOBILE TOP STICKY SPLIT BUTTONS */
-    .navbar-sticky {
-      position: relative;
-      height: 56px;
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      padding: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      gap: 0;
+    /* MOBILE TOP STICKY SPLIT BUTTONS INSIDE DRAWER */
+    .navbar-sticky-mobile {
+      position: relative !important;
+      height: 56px !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+      padding: 0 !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      gap: 0 !important;
+      background-color: #FFFFFF !important;
+      box-sizing: border-box !important;
     }
 
-    .navbar-sticky .navbar-item {
-      width: 50%;
-      height: 100%;
-      border: none;
+    .navbar-sticky-mobile .navbar-item {
+      width: 50% !important;
+      height: 100% !important;
+      border: none !important;
       margin: 0 !important;
-      padding: 0 20px;
-      font-size: 1.45rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: transparent;
+      padding: 0 20px !important;
+      font-size: 1.45rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      background-color: transparent !important;
       color: #000000 !important;
+      text-decoration: none !important;
+      box-sizing: border-box !important;
     }
 
-    .navbar-sticky .navbar-item:first-child {
-      border-right: 1px solid rgba(0, 0, 0, 0.08);
+    .navbar-sticky-mobile .navbar-item:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
     }
 
-    .navbar-sticky .navbar-item:hover {
-      background-color: transparent;
-      color: #999999 !important;
+    .navbar-sticky-mobile .navbar-item:hover {
+      background-color: #F7F7F7 !important;
+      color: #000000 !important;
     }
 
     /* MOBILE MENU LIST */
     .navbar-menu {
-      position: relative;
-      left: auto;
-      right: auto;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      pointer-events: auto;
+      position: relative !important;
+      top: 0 !important;
+      left: auto !important;
+      right: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      pointer-events: auto !important;
+      background-color: #FFFFFF !important;
     }
 
     .navbar-menu .menu-item {
-      width: 100%;
-      height: auto;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 0;
-      display: block;
+      width: 100% !important;
+      height: auto !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      padding: 0 !important;
+      display: block !important;
+      background-color: #FFFFFF !important;
     }
 
     .navbar-menu .menu-item:after {
@@ -552,86 +570,87 @@
     }
 
     .navbar-menu .menu-item .navbar-title {
-      height: auto;
-      line-height: 5.6rem;
-      padding: 0 20px;
-      font-size: 2.0rem;
-      font-weight: 400;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-sizing: border-box;
+      height: auto !important;
+      line-height: 5.6rem !important;
+      padding: 0 20px !important;
+      font-size: 2.0rem !important;
+      font-weight: 400 !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+      color: #000000 !important;
     }
 
     /* MOBILE ARROW / ACCORDION CHEVRON */
     .navbar-menu .menu-item .arrow {
-      display: block;
-      position: absolute;
-      background: #000000;
-      top: 28px;
-      right: 25px;
-      margin: auto;
-      width: 8px;
-      height: 1px;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block !important;
+      position: absolute !important;
+      background: #000000 !important;
+      top: 28px !important;
+      right: 25px !important;
+      margin: auto !important;
+      width: 8px !important;
+      height: 1px !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     .navbar-menu .menu-item .arrow:after,
     .navbar-menu .menu-item .arrow:before {
-      content: "";
-      background: #000000;
-      position: absolute;
-      width: 6px;
-      height: 1px;
-      right: -1px;
+      content: "" !important;
+      background: #000000 !important;
+      position: absolute !important;
+      width: 6px !important;
+      height: 1px !important;
+      right: -1px !important;
     }
 
     .navbar-menu .menu-item .arrow:before {
-      top: 2px;
-      transform: rotate(-45deg);
+      top: 2px !important;
+      transform: rotate(-45deg) !important;
     }
 
     .navbar-menu .menu-item .arrow:after {
-      top: -2px;
-      transform: rotate(45deg);
+      top: -2px !important;
+      transform: rotate(45deg) !important;
     }
 
     .navbar-menu .menu-item.is-open .arrow {
-      transform: rotate(90deg);
+      transform: rotate(90deg) !important;
     }
 
     /* MOBILE ACCORDION DROPDOWN */
     .navbar-menu .menu-item .navbar-dropdown {
-      display: none;
-      position: relative;
-      top: 0;
-      padding: 6px 0 18px 0;
-      background-color: #FAFAFA;
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-      width: 100%;
+      display: none !important;
+      position: relative !important;
+      top: 0 !important;
+      padding: 6px 0 18px 0 !important;
+      background-color: #FAFAFA !important;
+      border-top: 1px solid rgba(0, 0, 0, 0.04) !important;
+      width: 100% !important;
       min-height: auto !important;
     }
 
     .navbar-menu .menu-item .navbar-dropdown:before {
-      display: none;
+      display: none !important;
     }
 
     .navbar-menu .menu-item.is-open .navbar-dropdown {
-      display: flex;
+      display: flex !important;
     }
 
     .navbar-menu .menu-item .navbar-dropdown .navbar-item {
-      padding: 0 24px;
-      line-height: 4rem;
-      font-size: 1.55rem;
-      display: block;
+      padding: 0 24px !important;
+      line-height: 4rem !important;
+      font-size: 1.55rem !important;
+      display: block !important;
       color: #222222 !important;
     }
 
     .navbar-menu .menu-item .navbar-dropdown .navbar-item.mobile-only {
-      display: block;
-      font-weight: 500;
+      display: block !important;
+      font-weight: 500 !important;
       color: #000000 !important;
     }
   }
@@ -1777,6 +1796,20 @@
       <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
       <div class="navbar-contents">
         <div class="navbar-contents-overflow">
+          
+          <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+          <div class="navbar-sticky-mobile">
+            <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+              <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+              <div class="arrow"></div>
+            </a>
+            <a href="tel:+902322784340" class="navbar-item menu-item">
+              <span class="navbar-title">Bizi Arayın</span>
+              <div class="arrow"></div>
+            </a>
+          </div>
+
+          <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
           <div class="navbar-menu">
             
             <!-- 01: Yetkili Bayilikler -->
@@ -1843,7 +1876,7 @@
         </div>
       </div>
 
-      <!-- RIGHT STICKY ACTION BUTTONS -->
+      <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
       <div class="navbar-sticky">
         <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
           <span class="navbar-title">Fiyat &amp; Stok Sor</span>
@@ -1855,7 +1888,7 @@
         </a>
       </div>
 
-      <!-- HAMBURGER (MOBILE) -->
+      <!-- HAMBURGER (MOBILE ONLY) -->
       <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
         <div class="bar bar1"></div>
         <div class="bar bar2"></div>
