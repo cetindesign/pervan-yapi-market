@@ -3071,7 +3071,7 @@ img, svg {
 }
 
 /* Oval (Capsule) Standard across all buttons in the platform */
-button:not(.pv-drawer-item):not(.rf-mob-accordion-btn),
+button:not(.pv-drawer-item):not(.rf-mob-accordion-btn):not(.pv-surface-tile):not(.pv-problem-card):not(.pv-preset-card):not(.pv-stepper-big-btn):not(.pv-matrix-card):not(.pv-stepper-back-btn):not(.pv-stepper-reset-btn):not(.pv-brands-nav-btn),
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
