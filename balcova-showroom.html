@@ -22,354 +22,354 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.0" />
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HardwareStore",
+   "@id": "https://pervanyapi.com/#store-balcova",
+   "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı",
+   "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
+   "url": "https://pervanyapi.com/balcova-showroom.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
+    "addressLocality": "Balçova",
+    "addressRegion": "İzmir",
+    "postalCode": "35330",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3887,
+    "longitude": 27.0425
+   },
+   "openingHoursSpecification": [
     {
-      "@type": "HardwareStore",
-      "@id": "https://pervanyapi.com/#store-balcova",
-      "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı",
-      "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
-      "url": "https://pervanyapi.com/balcova-showroom.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
-        "addressLocality": "Balçova",
-        "addressRegion": "İzmir",
-        "postalCode": "35330",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3887,
-        "longitude": 27.0425
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "08:30",
-          "closes": "19:30"
-        }
-      ]
-    },
-    {
-      "@type": "GeneralContractor",
-      "@id": "https://pervanyapi.com/#taahhut",
-      "name": "Pervan Mimari Taahhüt & Renovasyon",
-      "image": "https://pervanyapi.com/assets/rf-hero-renovation.jpg",
-      "url": "https://pervanyapi.com/taahhut.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺₺",
-      "areaServed": ["Balçova", "Narlıdere", "Güzelbahçe", "Urla", "Çeşme", "Alaçatı", "Seferihisar", "İzmir"]
-    },
-    {
-      "@type": "WarehouseOrDistributionCenter",
-      "@id": "https://pervanyapi.com/#depo-urla",
-      "name": "Pervan Yapı Urla Ana Lojistik Deposu",
-      "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
-      "url": "https://pervanyapi.com/urla-lojistik-depo.html",
-      "telephone": "+905323318763",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Urla",
-        "addressRegion": "İzmir",
-        "addressCountry": "TR"
-      },
-      "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+     "opens": "08:30",
+     "closes": "19:30"
     }
-  ]
+   ]
+  },
+  {
+   "@type": "GeneralContractor",
+   "@id": "https://pervanyapi.com/#taahhut",
+   "name": "Pervan Mimari Taahhüt & Renovasyon",
+   "image": "https://pervanyapi.com/assets/rf-hero-renovation.jpg",
+   "url": "https://pervanyapi.com/taahhut.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺₺",
+   "areaServed": ["Balçova", "Narlıdere", "Güzelbahçe", "Urla", "Çeşme", "Alaçatı", "Seferihisar", "İzmir"]
+  },
+  {
+   "@type": "WarehouseOrDistributionCenter",
+   "@id": "https://pervanyapi.com/#depo-urla",
+   "name": "Pervan Yapı Urla Ana Lojistik Deposu",
+   "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
+   "url": "https://pervanyapi.com/urla-lojistik-depo.html",
+   "telephone": "+905323318763",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Urla",
+    "addressRegion": "İzmir",
+    "addressCountry": "TR"
+   },
+   "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
+  }
+ ]
 }
 </script>
 </head>
 <body>
 <!-- PERVAN NAVBAR -->
 <header id="pvHeader">
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- LOGO -->
-      <a class="navbar-logo" href="index.html">Pervan</a>
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
+   <a class="navbar-logo" href="index.html">Pervan</a>
 
-      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          
-          <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
-          <div class="navbar-sticky-mobile">
-            <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-              <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-              <div class="arrow"></div>
-            </a>
-            <a href="tel:+902322784340" class="navbar-item menu-item">
-              <span class="navbar-title">Bizi Arayın</span>
-              <div class="arrow"></div>
-            </a>
-          </div>
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
+    <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+902322784340" class="navbar-item menu-item">
+       <span class="navbar-title">Bizi Arayın</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
 
-          <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
-          <div class="navbar-menu">
-            
-            <!-- 01: Yetkili Bayilikler -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
-                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
+     <div class="navbar-menu">
+      
+      <!-- 01: Yetkili Bayilikler -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yetkili Bayilikler</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+        <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
+        <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+        <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+        <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+        <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+        <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
+        <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+        <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+       </div>
       </div>
 
-      <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="tel:+902322784340" class="navbar-item menu-item">
-          <span class="navbar-title">Bizi Arayın</span>
-          <div class="arrow"></div>
-        </a>
+      <!-- 02: Yapı Market & Hırdavat -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+        <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+        <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+        <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+        <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+        <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+        <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+        <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+       </div>
       </div>
 
-      <!-- HAMBURGER (MOBILE ONLY) -->
-      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+      <!-- 03: Mimari Taahhüt -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Mimari Taahhüt</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
+        <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+        <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+        <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+        <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+        <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+       </div>
       </div>
 
+      <!-- 04: Merkezlerimiz -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Merkezlerimiz</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
+        <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
+        <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+        <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+       </div>
+      </div>
+
+     </div>
     </div>
-  </nav>
+   </div>
+
+   <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
+   <div class="navbar-sticky">
+    <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+     <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+     <div class="arrow"></div>
+    </a>
+    <a href="tel:+902322784340" class="navbar-item menu-item">
+     <span class="navbar-title">Bizi Arayın</span>
+     <div class="arrow"></div>
+    </a>
+   </div>
+
+   <!-- HAMBURGER (MOBILE ONLY) -->
+   <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+   </div>
+
+  </div>
+ </nav>
 </header>
 
 <main>
 <!-- BALÇOVA SHOWROOM HERO & DETAILS -->
 <section class="rf-subpage-section" style="padding: 40px 0 72px; background: var(--bg-white);">
-  <div class="rf-wrapper">
-    <!-- Breadcrumb -->
-    <div class="rf-breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="sep">/</span>
-      <a href="showroom.html">Merkezlerimiz</a>
-      <span class="sep">/</span>
-      <span>Balçova Yapı Market &amp; RenXMatik</span>
-    </div>
-
-    <!-- Responsive Split -->
-    <div class="rf-subpage-split">
-      <div class="rf-subpage-media">
-        <img src="assets/rf-showroom-desk.jpg" alt="Pervan Balçova Yapı Market ve RenXMatik Laboratuvarı" fetchpriority="high" decoding="async">
-      </div>
-
-      <div class="rf-subpage-content">
-        <div>
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-            <span class="rf-card-tag" style="margin: 0; background: var(--bg-black); color: #FFF;">Merkez 01</span>
-            <span class="rf-card-tag" style="margin: 0;">Yapı Market & RenXMatik</span>
-          </div>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
-            Balçova Yapı Market & RenXMatik Renk Laboratuvarı
-          </h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-            İzmir Balçova merkezimizde; profesyonel hırdavat, el aletleri, Bianca Stella dönüşüm boyaları ve bilgisayarlı Filli Boya RenXMatik renk üretim ünitemizle anında 10.000+ renk hazırlıyoruz.
-          </p>
-        </div>
-
-        <div class="rf-stock-bar">
-          <span class="rf-stock-dot"></span>
-          <span>Haftanın 7 Günü Açık (08:30 – 19:30) · Balçova Eğitim Mahallesi</span>
-        </div>
-
-        <div class="rf-spec-grid">
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Açık Adres</span>
-            <span class="rf-spec-val">Eğitim Mah. Dalya 1 Sk. No:5/A Balçova / İzmir</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Çalışma Saatleri</span>
-            <span class="rf-spec-val">Pazar Dahil Her Gün (08:30 – 19:30)</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Uzmanlık Alanı</span>
-            <span class="rf-spec-val">Filli Boya, RenXMatik, Bianca Stella, Banyo</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Perakende Sevkiyat</span>
-            <span class="rf-spec-val">Balçova, Narlıdere, Güzelbahçe, Konak</span>
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
-          <a href="https://maps.app.goo.gl/kzQmwcW6uG4f1mGN6" target="_blank" rel="noopener" class="rf-btn rf-btn-primary" style="flex: 1; min-width: 200px; text-align: center;">
-            Google Haritalar'da Yol Tarifi Al →
-          </a>
-          <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            0232 278 43 40
-          </a>
-        </div>
-
-        <div class="rf-acc-group">
-          <div class="rf-acc-item active">
-            <button type="button" class="rf-acc-header">
-              <span>01. Bilgisayarlı RenXMatik Renk Üretim Ünitesi</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Balçova mağazamızda getirdiğiniz renk numunesini veya karteladan seçtiğiniz kodu spektrometre ile tarayıp orijinal Filli Boya Momento Max bazına mikron hassasiyetinde hazırlıyoruz. Ton farkı sıfırdır.
-            </div>
-          </div>
-          <div class="rf-acc-item">
-            <button type="button" class="rf-acc-header">
-              <span>02. Bianca Stella Dönüşüm Danışma Noktası</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Eski banyo fayansı, mutfak dolabı ve tezgah dönüşümleriniz için saf akrilik Bianca Stella ve Maximo sıvı cam ürünlerini canlı renk kartelalarıyla inceler, usta uygulama tekniklerini danışabilirsiniz.
-            </div>
-          </div>
-          <div class="rf-acc-item">
-            <button type="button" class="rf-acc-header">
-              <span>03. Banyo & Duşakabin Teşhir Alanı</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Temperli cam siyah çerçeveli duşakabinler, lineer süzgeçler, gömme rezervuarlar ve banyo bataryalarını showroomumuzda birebir görebilirsiniz.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="rf-wrapper">
+  <!-- Breadcrumb -->
+  <div class="rf-breadcrumb">
+   <a href="index.html">Ana Sayfa</a>
+   <span class="sep">/</span>
+   <a href="showroom.html">Merkezlerimiz</a>
+   <span class="sep">/</span>
+   <span>Balçova Yapı Market &amp; RenXMatik</span>
   </div>
+
+  <!-- Responsive Split -->
+  <div class="rf-subpage-split">
+   <div class="rf-subpage-media">
+    <img src="assets/rf-showroom-desk.jpg" alt="Pervan Balçova Yapı Market ve RenXMatik Laboratuvarı" fetchpriority="high" decoding="async">
+   </div>
+
+   <div class="rf-subpage-content">
+    <div>
+     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <span class="rf-card-tag" style="margin: 0; background: var(--bg-black); color: #FFF;">Merkez 01</span>
+      <span class="rf-card-tag" style="margin: 0;">Yapı Market & RenXMatik</span>
+     </div>
+     <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+      Balçova Yapı Market & RenXMatik Renk Laboratuvarı
+     </h1>
+     <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+      İzmir Balçova merkezimizde; profesyonel hırdavat, el aletleri, Bianca Stella dönüşüm boyaları ve bilgisayarlı Filli Boya RenXMatik renk üretim ünitemizle anında 10.000+ renk hazırlıyoruz.
+     </p>
+    </div>
+
+    <div class="rf-stock-bar">
+     <span class="rf-stock-dot"></span>
+     <span>Haftanın 7 Günü Açık (08:30 – 19:30) · Balçova Eğitim Mahallesi</span>
+    </div>
+
+    <div class="rf-spec-grid">
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Açık Adres</span>
+      <span class="rf-spec-val">Eğitim Mah. Dalya 1 Sk. No:5/A Balçova / İzmir</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Çalışma Saatleri</span>
+      <span class="rf-spec-val">Pazar Dahil Her Gün (08:30 – 19:30)</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Uzmanlık Alanı</span>
+      <span class="rf-spec-val">Filli Boya, RenXMatik, Bianca Stella, Banyo</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Perakende Sevkiyat</span>
+      <span class="rf-spec-val">Balçova, Narlıdere, Güzelbahçe, Konak</span>
+     </div>
+    </div>
+
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+     <a href="https://maps.app.goo.gl/kzQmwcW6uG4f1mGN6" target="_blank" rel="noopener" class="rf-btn rf-btn-primary" style="flex: 1; min-width: 200px; text-align: center;">
+      Google Haritalar'da Yol Tarifi Al →
+     </a>
+     <a href="tel:02322784340" class="rf-btn rf-btn-secondary" style="text-align: center;">
+      0232 278 43 40
+     </a>
+    </div>
+
+    <div class="rf-acc-group">
+     <div class="rf-acc-item active">
+      <button type="button" class="rf-acc-header">
+       <span>01. Bilgisayarlı RenXMatik Renk Üretim Ünitesi</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Balçova mağazamızda getirdiğiniz renk numunesini veya karteladan seçtiğiniz kodu spektrometre ile tarayıp orijinal Filli Boya Momento Max bazına mikron hassasiyetinde hazırlıyoruz. Ton farkı sıfırdır.
+      </div>
+     </div>
+     <div class="rf-acc-item">
+      <button type="button" class="rf-acc-header">
+       <span>02. Bianca Stella Dönüşüm Danışma Noktası</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Eski banyo fayansı, mutfak dolabı ve tezgah dönüşümleriniz için saf akrilik Bianca Stella ve Maximo sıvı cam ürünlerini canlı renk kartelalarıyla inceler, usta uygulama tekniklerini danışabilirsiniz.
+      </div>
+     </div>
+     <div class="rf-acc-item">
+      <button type="button" class="rf-acc-header">
+       <span>03. Banyo & Duşakabin Teşhir Alanı</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Temperli cam siyah çerçeveli duşakabinler, lineer süzgeçler, gömme rezervuarlar ve banyo bataryalarını showroomumuzda birebir görebilirsiniz.
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 </main>
 
 <footer class="footer">
-  <!-- Main Footer Navigation -->
-  <div class="footer-container">
-    <div class="footer-sizer">
-      <div>
-        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market & Taahhüt. Balçova / İzmir</div>
+ <!-- Main Footer Navigation -->
+ <div class="footer-container">
+  <div class="footer-sizer">
+   <div>
+    <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
+    <div class="copyright">© 1998 – 2026 Pervan Yapı Market & Taahhüt. Balçova / İzmir</div>
+   </div>
+   
+   <div class="menu-container">
+    <nav class="navbar" role="navigation">
+     
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yetkili Bayilikler</span>
+      <div class="navbar-dropdown">
+       <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya & RenXMatik</a>
+       <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+       <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+       <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+       <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+       <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
+       <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+       <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
       </div>
-      
-      <div class="menu-container">
-        <nav class="navbar" role="navigation">
-          
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yetkili Bayilikler</span>
-            <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya & RenXMatik</a>
-              <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-              <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-              <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-              <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-              <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
-              <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-              <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-            </div>
-          </div>
+     </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
-            <div class="navbar-dropdown">
-              <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-              <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
-              <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-              <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
-              <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
-              <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-              <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Mimari Taahhüt</span>
-            <div class="navbar-dropdown">
-              <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
-              <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
-              <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
-              <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
-              <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Merkezlerimiz</span>
-            <div class="navbar-dropdown">
-              <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
-              <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
-              <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
-              <a href="tel:+902322784340" class="navbar-item">0232 278 43 40</a>
-            </div>
-          </div>
-
-        </nav>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
+      <div class="navbar-dropdown">
+       <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+       <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
+       <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+       <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
+       <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
+       <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+       <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
       </div>
-    </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Mimari Taahhüt</span>
+      <div class="navbar-dropdown">
+       <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
+       <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+       <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
+       <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
+       <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
+       <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
+      </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Merkezlerimiz</span>
+      <div class="navbar-dropdown">
+       <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
+       <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
+       <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
+       <a href="tel:+902322784340" class="navbar-item">0232 278 43 40</a>
+      </div>
+     </div>
+
+    </nav>
+   </div>
   </div>
+ </div>
 </footer>
 
 <script src="js/pervan.js?v=33.0.0" defer></script>

@@ -22,516 +22,516 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.0" />
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HardwareStore",
+   "@id": "https://pervanyapi.com/#store-balcova",
+   "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı",
+   "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
+   "url": "https://pervanyapi.com/balcova-showroom.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
+    "addressLocality": "Balçova",
+    "addressRegion": "İzmir",
+    "postalCode": "35330",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3887,
+    "longitude": 27.0425
+   },
+   "openingHoursSpecification": [
     {
-      "@type": "HardwareStore",
-      "@id": "https://pervanyapi.com/#store-balcova",
-      "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı",
-      "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
-      "url": "https://pervanyapi.com/balcova-showroom.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
-        "addressLocality": "Balçova",
-        "addressRegion": "İzmir",
-        "postalCode": "35330",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3887,
-        "longitude": 27.0425
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "08:30",
-          "closes": "19:30"
-        }
-      ]
-    },
-    {
-      "@type": "GeneralContractor",
-      "@id": "https://pervanyapi.com/#taahhut",
-      "name": "Pervan Mimari Taahhüt & Renovasyon",
-      "image": "https://pervanyapi.com/assets/rf-hero-renovation.jpg",
-      "url": "https://pervanyapi.com/taahhut.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺₺",
-      "areaServed": ["Balçova", "Narlıdere", "Güzelbahçe", "Urla", "Çeşme", "Alaçatı", "Seferihisar", "İzmir"]
-    },
-    {
-      "@type": "WarehouseOrDistributionCenter",
-      "@id": "https://pervanyapi.com/#depo-urla",
-      "name": "Pervan Yapı Urla Ana Lojistik Deposu",
-      "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
-      "url": "https://pervanyapi.com/urla-lojistik-depo.html",
-      "telephone": "+905323318763",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Urla",
-        "addressRegion": "İzmir",
-        "addressCountry": "TR"
-      },
-      "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+     "opens": "08:30",
+     "closes": "19:30"
     }
-  ]
+   ]
+  },
+  {
+   "@type": "GeneralContractor",
+   "@id": "https://pervanyapi.com/#taahhut",
+   "name": "Pervan Mimari Taahhüt & Renovasyon",
+   "image": "https://pervanyapi.com/assets/rf-hero-renovation.jpg",
+   "url": "https://pervanyapi.com/taahhut.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺₺",
+   "areaServed": ["Balçova", "Narlıdere", "Güzelbahçe", "Urla", "Çeşme", "Alaçatı", "Seferihisar", "İzmir"]
+  },
+  {
+   "@type": "WarehouseOrDistributionCenter",
+   "@id": "https://pervanyapi.com/#depo-urla",
+   "name": "Pervan Yapı Urla Ana Lojistik Deposu",
+   "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
+   "url": "https://pervanyapi.com/urla-lojistik-depo.html",
+   "telephone": "+905323318763",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Urla",
+    "addressRegion": "İzmir",
+    "addressCountry": "TR"
+   },
+   "areaServed": ["Urla", "Çeşme", "Alaçatı", "Güzelbahçe", "Seferihisar"]
+  }
+ ]
 }
 </script>
 </head>
 <body>
 <!-- PERVAN NAVBAR -->
 <header id="pvHeader">
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- LOGO -->
-      <a class="navbar-logo" href="index.html">Pervan</a>
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
+   <a class="navbar-logo" href="index.html">Pervan</a>
 
-      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          
-          <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
-          <div class="navbar-sticky-mobile">
-            <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-              <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-              <div class="arrow"></div>
-            </a>
-            <a href="tel:+902322784340" class="navbar-item menu-item">
-              <span class="navbar-title">Bizi Arayın</span>
-              <div class="arrow"></div>
-            </a>
-          </div>
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
+    <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+902322784340" class="navbar-item menu-item">
+       <span class="navbar-title">Bizi Arayın</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
 
-          <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
-          <div class="navbar-menu">
-            
-            <!-- 01: Yetkili Bayilikler -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
-                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
+     <div class="navbar-menu">
+      
+      <!-- 01: Yetkili Bayilikler -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yetkili Bayilikler</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+        <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
+        <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+        <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+        <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+        <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+        <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
+        <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+        <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+       </div>
       </div>
 
-      <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="tel:+902322784340" class="navbar-item menu-item">
-          <span class="navbar-title">Bizi Arayın</span>
-          <div class="arrow"></div>
-        </a>
+      <!-- 02: Yapı Market & Hırdavat -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+        <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+        <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+        <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+        <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+        <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+        <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+        <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+       </div>
       </div>
 
-      <!-- HAMBURGER (MOBILE ONLY) -->
-      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+      <!-- 03: Mimari Taahhüt -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Mimari Taahhüt</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
+        <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+        <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+        <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+        <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+        <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+       </div>
       </div>
 
+      <!-- 04: Merkezlerimiz -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Merkezlerimiz</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
+        <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
+        <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+        <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+       </div>
+      </div>
+
+     </div>
     </div>
-  </nav>
+   </div>
+
+   <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
+   <div class="navbar-sticky">
+    <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+     <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+     <div class="arrow"></div>
+    </a>
+    <a href="tel:+902322784340" class="navbar-item menu-item">
+     <span class="navbar-title">Bizi Arayın</span>
+     <div class="arrow"></div>
+    </a>
+   </div>
+
+   <!-- HAMBURGER (MOBILE ONLY) -->
+   <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+   </div>
+
+  </div>
+ </nav>
 </header>
 
 <main>
 <!-- PERVAN CONTRACTING DETAIL HERO & CONFIGURATOR -->
 <section class="rf-subpage-section" style="padding: 40px 0 64px; background: var(--bg-white);">
-  <div class="rf-wrapper">
-    
-    <!-- Breadcrumb -->
-    <div class="rf-breadcrumb">
-      <a href="index.html">Ana Sayfa</a>
-      <span class="sep">/</span>
-      <a href="taahhut.html">Mimari Taahhüt</a>
-      <span class="sep">/</span>
-      <span>Teras &amp; Çatı Su İzolasyonu</span>
-    </div>
-
-    <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
-    <div class="rf-subpage-split">
-      
-      <!-- Media Box -->
-      <div class="rf-subpage-media">
-        <img src="assets/rf-card-roof.jpg" alt="Teras ve Çatı Su İzolasyonu" fetchpriority="high" decoding="async">
-      </div>
-
-      <!-- Content & Configurator Box -->
-      <div class="rf-subpage-content">
-        <div>
-          <span class="rf-card-tag" style="margin-bottom: 8px;">Garantili İzolasyon Hizmeti</span>
-          <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
-            Teras, Balkon & Çatı Su İzolasyonu Uygulaması
-          </h1>
-          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-            İzmir ve Ege bölgesinin kavurucu güneşi ve şiddetli yağmurlarına maruz kalan açık teras, parapet ve çatılarınızı garantili sıvı membran sistemleriyle yalıtıyoruz.
-          </p>
-        </div>
-
-        <!-- Live Stock & Guarantee Bar -->
-        <div class="rf-stock-bar">
-          <span class="rf-stock-dot"></span>
-          <span>İzmir Genelinde Ücretsiz Teras Keşfi · 5 Yıl Resmi Sızdırmazlık Garantisi · Yazılı Test Raporu</span>
-        </div>
-
-        <!-- Size / Property Configurator -->
-        <div class="rf-config-group">
-          <div class="rf-config-label">
-            <span>Uygulama Alanı Seçin:</span>
-            <span class="rf-config-selected" id="rfSelectedSizeLabel">Açık Teras (30 - 60 m²)</span>
-          </div>
-          <div class="rf-size-pills">
-            <button type="button" class="rf-size-pill active" data-size="Açık Teras (30 - 60 m²)">
-              Açık Teras
-              <span>Uygulama: 2 Gün</span>
-            </button>
-            <button type="button" class="rf-size-pill" data-size="Geniş Çatı Terası (70 - 120 m²)">
-              Geniş Çatı Terası
-              <span>Uygulama: 3 Gün</span>
-            </button>
-            <button type="button" class="rf-size-pill" data-size="Kiremit Kırma Çatı Tamiri">
-              Kiremit Kırma Çatı Tamiri
-              <span>Karkas & Membran</span>
-            </button>
-            <button type="button" class="rf-size-pill" data-size="Balkon & Gizli Dere İzolasyonu">
-              Balkon & Gizli Dere İzolasyonu
-              <span>Hızlı Müdahale</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Scope Swatch Configurator -->
-        <div class="rf-config-group">
-          <div class="rf-config-label">
-            <span>Yalıtım Teknolojisi:</span>
-            <span class="rf-config-selected" id="rfSelectedColorLabel">İsonem SB Super Elastik Hibrit Membran</span>
-          </div>
-          <div class="rf-swatch-grid">
-            <button type="button" class="rf-swatch-btn active" style="background-color: #1976D2;" data-color-name="İsonem SB Super Elastik Hibrit Membran" data-color-code="SBSuper" title="İsonem SB Super Elastik Hibrit Membran (SBSuper)"></button>
-            <button type="button" class="rf-swatch-btn" style="background-color: #00897B;" data-color-name="Liquid Glass (Kırmadan Şeffaf Sıvı Cam)" data-color-code="LiquidGlass" title="Liquid Glass (Kırmadan Şeffaf Sıvı Cam) (LiquidGlass)"></button>
-            <button type="button" class="rf-swatch-btn" style="background-color: #E65100;" data-color-name="Weber Dry UV Dayanımlı Sürme Harç" data-color-code="WeberDry" title="Weber Dry UV Dayanımlı Sürme Harç (WeberDry)"></button>
-            <button type="button" class="rf-swatch-btn" style="background-color: #212121;" data-color-name="Bitümlü Membran & Kiremit Altı Örtü" data-color-code="Bitumen" title="Bitümlü Membran & Kiremit Altı Örtü (Bitumen)"></button>
-          </div>
-        </div>
-
-        <!-- Commercial Specs Table -->
-        <div class="rf-spec-grid">
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Uygulama Süresi</span>
-            <span class="rf-spec-val">2 - 4 İş Günü</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Malzeme</span>
-            <span class="rf-spec-val">İsonem SB Super / Liquid Glass / Weber</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Garanti Süresi</span>
-            <span class="rf-spec-val">5 Yıl Yazılı Akma & Sızdırma Garantisi</span>
-          </div>
-          <div class="rf-spec-item">
-            <span class="rf-spec-label">Sızdırmazlık Testi</span>
-            <span class="rf-spec-val">24 Saat Su Göllendirme Raporu</span>
-          </div>
-        </div>
-
-        <!-- Direct WhatsApp CTA Action -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
-          <a href="https://wa.me/905323844497?text=Merhaba%20teras/çatı%20su%20izolasyonu%20için%20yerinde%20ücretsiz%20keşif%20randevusu%20almak%20istiyorum.%0AAlan:%20Açık%20Teras%20(30%20-%2060%20m²)%0AYöntem:%20İsonem%20SB%20Super%20Elastik%20Hibrit%20Membran%0AKeşif%20için%20müsait%20günleri%20öğrenebilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
-            WhatsApp ile Keşif & Teklif İste →
-          </a>
-          <a href="kesif-randevusu.html" class="rf-btn rf-btn-secondary" style="text-align: center;">
-            Online Randevu Al
-          </a>
-        </div>
-
-        <!-- Pervan Minimalist Accordions -->
-        <div class="rf-acc-group">
-          <div class="rf-acc-item active">
-            <button type="button" class="rf-acc-header">
-              <span>01. Teraslarda Su Sızıntısının Temel Sebepleri</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Güneşin UV ışınları ve mevsimsel sıcaklık farkları teras şapını ve derz dolgularını çatlatır. Seramik altından yürüyen su, alt kattaki dairenin tavanında sararma, kabarma ve küf oluşturur.
-            </div>
-          </div>
-          <div class="rf-acc-item">
-            <button type="button" class="rf-acc-header">
-              <span>02. İsonem SB Super Hibrit Membran Uygulaması</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Teras zeminine zımpara ve astar atıldıktan sonra köşe pah bantları çekilir. Üzerine 3 kat çapraz eksiz hibrit likit membran sürülerek havuz izolasyonu seviyesinde monolitik su geçirimsizlik sağlanır.
-            </div>
-          </div>
-          <div class="rf-acc-item">
-            <button type="button" class="rf-acc-header">
-              <span>03. Kırmadan Liquid Glass Şeffaf Yalıtım Çözümü</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Mevcut seramiklerin sökülmesini istemeyen müşterilerimiz için cam şeffaflığında Liquid Glass uygulanır. Derz aralarını mühürler, seramik görüntüsünü parlatır ve üzerinde rahatça yürünür.
-            </div>
-          </div>
-          <div class="rf-acc-item">
-            <button type="button" class="rf-acc-header">
-              <span>04. 5 Yıl Yazılı Sızdırmazlık Garantisi & Su Testi Raporu</span>
-              <span class="rf-acc-icon">+</span>
-            </button>
-            <div class="rf-acc-body">
-              Uygulama tamamlandıktan sonra terasın su giderleri tıkaçla kapatılır, zemin 5 cm su ile doldurularak 24 saat beklenir. Sızdırmazlık test raporu düzenlenerek iş teslim edilir.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
+ <div class="rf-wrapper">
+  
+  <!-- Breadcrumb -->
+  <div class="rf-breadcrumb">
+   <a href="index.html">Ana Sayfa</a>
+   <span class="sep">/</span>
+   <a href="taahhut.html">Mimari Taahhüt</a>
+   <span class="sep">/</span>
+   <span>Teras &amp; Çatı Su İzolasyonu</span>
   </div>
+
+  <!-- Responsive Split (Sticky Media Left / Configurator & Specs Right) -->
+  <div class="rf-subpage-split">
+   
+   <!-- Media Box -->
+   <div class="rf-subpage-media">
+    <img src="assets/rf-card-roof.jpg" alt="Teras ve Çatı Su İzolasyonu" fetchpriority="high" decoding="async">
+   </div>
+
+   <!-- Content & Configurator Box -->
+   <div class="rf-subpage-content">
+    <div>
+     <span class="rf-card-tag" style="margin-bottom: 8px;">Garantili İzolasyon Hizmeti</span>
+     <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.2vw, 36px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 14px; color: var(--text-main);">
+      Teras, Balkon & Çatı Su İzolasyonu Uygulaması
+     </h1>
+     <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+      İzmir ve Ege bölgesinin kavurucu güneşi ve şiddetli yağmurlarına maruz kalan açık teras, parapet ve çatılarınızı garantili sıvı membran sistemleriyle yalıtıyoruz.
+     </p>
+    </div>
+
+    <!-- Live Stock & Guarantee Bar -->
+    <div class="rf-stock-bar">
+     <span class="rf-stock-dot"></span>
+     <span>İzmir Genelinde Ücretsiz Teras Keşfi · 5 Yıl Resmi Sızdırmazlık Garantisi · Yazılı Test Raporu</span>
+    </div>
+
+    <!-- Size / Property Configurator -->
+    <div class="rf-config-group">
+     <div class="rf-config-label">
+      <span>Uygulama Alanı Seçin:</span>
+      <span class="rf-config-selected" id="rfSelectedSizeLabel">Açık Teras (30 - 60 m²)</span>
+     </div>
+     <div class="rf-size-pills">
+      <button type="button" class="rf-size-pill active" data-size="Açık Teras (30 - 60 m²)">
+       Açık Teras
+       <span>Uygulama: 2 Gün</span>
+      </button>
+      <button type="button" class="rf-size-pill" data-size="Geniş Çatı Terası (70 - 120 m²)">
+       Geniş Çatı Terası
+       <span>Uygulama: 3 Gün</span>
+      </button>
+      <button type="button" class="rf-size-pill" data-size="Kiremit Kırma Çatı Tamiri">
+       Kiremit Kırma Çatı Tamiri
+       <span>Karkas & Membran</span>
+      </button>
+      <button type="button" class="rf-size-pill" data-size="Balkon & Gizli Dere İzolasyonu">
+       Balkon & Gizli Dere İzolasyonu
+       <span>Hızlı Müdahale</span>
+      </button>
+     </div>
+    </div>
+
+    <!-- Scope Swatch Configurator -->
+    <div class="rf-config-group">
+     <div class="rf-config-label">
+      <span>Yalıtım Teknolojisi:</span>
+      <span class="rf-config-selected" id="rfSelectedColorLabel">İsonem SB Super Elastik Hibrit Membran</span>
+     </div>
+     <div class="rf-swatch-grid">
+      <button type="button" class="rf-swatch-btn active" style="background-color: #1976D2;" data-color-name="İsonem SB Super Elastik Hibrit Membran" data-color-code="SBSuper" title="İsonem SB Super Elastik Hibrit Membran (SBSuper)"></button>
+      <button type="button" class="rf-swatch-btn" style="background-color: #00897B;" data-color-name="Liquid Glass (Kırmadan Şeffaf Sıvı Cam)" data-color-code="LiquidGlass" title="Liquid Glass (Kırmadan Şeffaf Sıvı Cam) (LiquidGlass)"></button>
+      <button type="button" class="rf-swatch-btn" style="background-color: #E65100;" data-color-name="Weber Dry UV Dayanımlı Sürme Harç" data-color-code="WeberDry" title="Weber Dry UV Dayanımlı Sürme Harç (WeberDry)"></button>
+      <button type="button" class="rf-swatch-btn" style="background-color: #212121;" data-color-name="Bitümlü Membran & Kiremit Altı Örtü" data-color-code="Bitumen" title="Bitümlü Membran & Kiremit Altı Örtü (Bitumen)"></button>
+     </div>
+    </div>
+
+    <!-- Commercial Specs Table -->
+    <div class="rf-spec-grid">
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Uygulama Süresi</span>
+      <span class="rf-spec-val">2 - 4 İş Günü</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Malzeme</span>
+      <span class="rf-spec-val">İsonem SB Super / Liquid Glass / Weber</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Garanti Süresi</span>
+      <span class="rf-spec-val">5 Yıl Yazılı Akma & Sızdırma Garantisi</span>
+     </div>
+     <div class="rf-spec-item">
+      <span class="rf-spec-label">Sızdırmazlık Testi</span>
+      <span class="rf-spec-val">24 Saat Su Göllendirme Raporu</span>
+     </div>
+    </div>
+
+    <!-- Direct WhatsApp CTA Action -->
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+     <a href="https://wa.me/905323844497?text=Merhaba%20teras/çatı%20su%20izolasyonu%20için%20yerinde%20ücretsiz%20keşif%20randevusu%20almak%20istiyorum.%0AAlan:%20Açık%20Teras%20(30%20-%2060%20m²)%0AYöntem:%20İsonem%20SB%20Super%20Elastik%20Hibrit%20Membran%0AKeşif%20için%20müsait%20günleri%20öğrenebilir%20miyim?" id="rfDetailWaBtn" class="rf-btn rf-btn-primary" target="_blank" rel="noopener" style="flex: 1; min-width: 240px; text-align: center;">
+      WhatsApp ile Keşif & Teklif İste →
+     </a>
+     <a href="kesif-randevusu.html" class="rf-btn rf-btn-secondary" style="text-align: center;">
+      Online Randevu Al
+     </a>
+    </div>
+
+    <!-- Pervan Minimalist Accordions -->
+    <div class="rf-acc-group">
+     <div class="rf-acc-item active">
+      <button type="button" class="rf-acc-header">
+       <span>01. Teraslarda Su Sızıntısının Temel Sebepleri</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Güneşin UV ışınları ve mevsimsel sıcaklık farkları teras şapını ve derz dolgularını çatlatır. Seramik altından yürüyen su, alt kattaki dairenin tavanında sararma, kabarma ve küf oluşturur.
+      </div>
+     </div>
+     <div class="rf-acc-item">
+      <button type="button" class="rf-acc-header">
+       <span>02. İsonem SB Super Hibrit Membran Uygulaması</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Teras zeminine zımpara ve astar atıldıktan sonra köşe pah bantları çekilir. Üzerine 3 kat çapraz eksiz hibrit likit membran sürülerek havuz izolasyonu seviyesinde monolitik su geçirimsizlik sağlanır.
+      </div>
+     </div>
+     <div class="rf-acc-item">
+      <button type="button" class="rf-acc-header">
+       <span>03. Kırmadan Liquid Glass Şeffaf Yalıtım Çözümü</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Mevcut seramiklerin sökülmesini istemeyen müşterilerimiz için cam şeffaflığında Liquid Glass uygulanır. Derz aralarını mühürler, seramik görüntüsünü parlatır ve üzerinde rahatça yürünür.
+      </div>
+     </div>
+     <div class="rf-acc-item">
+      <button type="button" class="rf-acc-header">
+       <span>04. 5 Yıl Yazılı Sızdırmazlık Garantisi & Su Testi Raporu</span>
+       <span class="rf-acc-icon">+</span>
+      </button>
+      <div class="rf-acc-body">
+       Uygulama tamamlandıktan sonra terasın su giderleri tıkaçla kapatılır, zemin 5 cm su ile doldurularak 24 saat beklenir. Sızdırmazlık test raporu düzenlenerek iş teslim edilir.
+      </div>
+     </div>
+    </div>
+
+   </div>
+
+  </div>
+ </div>
 </section>
 
 <!-- PERVAN CROSS-LINKED ESSENTIALS (BU PROJEDE KULLANILAN YETKİLİ MALZEMELER) -->
 <section class="rf-essentials-section">
-  <div class="rf-wrapper">
-    <div class="rf-simple-header" style="margin-bottom: 32px;">
-      <div>
-        <span class="rf-card-tag" style="margin-bottom: 6px;">Malzeme Güvencesi</span>
-        <h2 style="font-size: 24px; font-weight: 500; color: var(--text-main); margin: 0;">Bu Projede Kullandığımız Yetkili Malzemeler</h2>
-      </div>
-      <a href="malzemeler.html" class="rf-header-link">Tüm Malzemeleri Gör →</a>
-    </div>
-
-    <div class="rf-essentials-grid">
-      <a href="isonem-yalitim.html" class="rf-essential-card">
-        <div class="rf-essential-media">
-          <img src="assets/rf-brand-isonem.jpg" alt="İsonem SB Super Hibrit Sıvı Membran" loading="lazy" decoding="async">
-        </div>
-        <div>
-          <div class="rf-essential-title">İsonem SB Super Hibrit Sıvı Membran</div>
-          <div class="rf-essential-desc">Güneşe ve dona %100 dayanıklı eksiz teras su yalıtımı.</div>
-        </div>
-      </a>
-      <a href="isonem-yalitim.html" class="rf-essential-card">
-        <div class="rf-essential-media">
-          <img src="assets/rf-brand-isonem.jpg" alt="İsonem Liquid Glass Şeffaf Sıvı Cam" loading="lazy" decoding="async">
-        </div>
-        <div>
-          <div class="rf-essential-title">İsonem Liquid Glass Şeffaf Sıvı Cam</div>
-          <div class="rf-essential-desc">Fayansları kırmadan derz sızıntılarını kesen şeffaf izolasyon.</div>
-        </div>
-      </a>
-      <a href="weber-yapi-kimyasallari.html" class="rf-essential-card">
-        <div class="rf-essential-media">
-          <img src="assets/rf-brand-weber.jpg" alt="Weber.rep Yapısal Tamir Harçları" loading="lazy" decoding="async">
-        </div>
-        <div>
-          <div class="rf-essential-title">Weber.rep Yapısal Tamir Harçları</div>
-          <div class="rf-essential-desc">Teras parapet ve beton çatlaklarını dolduran yüksek mukavemetli harç.</div>
-        </div>
-      </a>
-      <a href="kaba-yapi-cimento.html" class="rf-essential-card">
-        <div class="rf-essential-media">
-          <img src="assets/rf-card-cement.jpg" alt="Pervan Şantiye Çimento & Şap Kumu" loading="lazy" decoding="async">
-        </div>
-        <div>
-          <div class="rf-essential-title">Pervan Şantiye Çimento & Şap Kumu</div>
-          <div class="rf-essential-desc">Teras eğim şapı ve tesviye imalatlarında kullanılan elenmiş malzeme.</div>
-        </div>
-      </a>
-    </div>
+ <div class="rf-wrapper">
+  <div class="rf-simple-header" style="margin-bottom: 32px;">
+   <div>
+    <span class="rf-card-tag" style="margin-bottom: 6px;">Malzeme Güvencesi</span>
+    <h2 style="font-size: 24px; font-weight: 500; color: var(--text-main); margin: 0;">Bu Projede Kullandığımız Yetkili Malzemeler</h2>
+   </div>
+   <a href="malzemeler.html" class="rf-header-link">Tüm Malzemeleri Gör →</a>
   </div>
+
+  <div class="rf-essentials-grid">
+   <a href="isonem-yalitim.html" class="rf-essential-card">
+    <div class="rf-essential-media">
+     <img src="assets/rf-brand-isonem.jpg" alt="İsonem SB Super Hibrit Sıvı Membran" loading="lazy" decoding="async">
+    </div>
+    <div>
+     <div class="rf-essential-title">İsonem SB Super Hibrit Sıvı Membran</div>
+     <div class="rf-essential-desc">Güneşe ve dona %100 dayanıklı eksiz teras su yalıtımı.</div>
+    </div>
+   </a>
+   <a href="isonem-yalitim.html" class="rf-essential-card">
+    <div class="rf-essential-media">
+     <img src="assets/rf-brand-isonem.jpg" alt="İsonem Liquid Glass Şeffaf Sıvı Cam" loading="lazy" decoding="async">
+    </div>
+    <div>
+     <div class="rf-essential-title">İsonem Liquid Glass Şeffaf Sıvı Cam</div>
+     <div class="rf-essential-desc">Fayansları kırmadan derz sızıntılarını kesen şeffaf izolasyon.</div>
+    </div>
+   </a>
+   <a href="weber-yapi-kimyasallari.html" class="rf-essential-card">
+    <div class="rf-essential-media">
+     <img src="assets/rf-brand-weber.jpg" alt="Weber.rep Yapısal Tamir Harçları" loading="lazy" decoding="async">
+    </div>
+    <div>
+     <div class="rf-essential-title">Weber.rep Yapısal Tamir Harçları</div>
+     <div class="rf-essential-desc">Teras parapet ve beton çatlaklarını dolduran yüksek mukavemetli harç.</div>
+    </div>
+   </a>
+   <a href="kaba-yapi-cimento.html" class="rf-essential-card">
+    <div class="rf-essential-media">
+     <img src="assets/rf-card-cement.jpg" alt="Pervan Şantiye Çimento & Şap Kumu" loading="lazy" decoding="async">
+    </div>
+    <div>
+     <div class="rf-essential-title">Pervan Şantiye Çimento & Şap Kumu</div>
+     <div class="rf-essential-desc">Teras eğim şapı ve tesviye imalatlarında kullanılan elenmiş malzeme.</div>
+    </div>
+   </a>
+  </div>
+ </div>
 </section>
 </main>
 
 <footer class="footer">
-  <!-- Main Footer Navigation -->
-  <div class="footer-container">
-    <div class="footer-sizer">
-      <div>
-        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market & Taahhüt. Balçova / İzmir</div>
+ <!-- Main Footer Navigation -->
+ <div class="footer-container">
+  <div class="footer-sizer">
+   <div>
+    <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
+    <div class="copyright">© 1998 – 2026 Pervan Yapı Market & Taahhüt. Balçova / İzmir</div>
+   </div>
+   
+   <div class="menu-container">
+    <nav class="navbar" role="navigation">
+     
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yetkili Bayilikler</span>
+      <div class="navbar-dropdown">
+       <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya & RenXMatik</a>
+       <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+       <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+       <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+       <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+       <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
+       <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+       <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
       </div>
-      
-      <div class="menu-container">
-        <nav class="navbar" role="navigation">
-          
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yetkili Bayilikler</span>
-            <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya & RenXMatik</a>
-              <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-              <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-              <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-              <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-              <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
-              <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-              <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-            </div>
-          </div>
+     </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
-            <div class="navbar-dropdown">
-              <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-              <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
-              <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-              <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
-              <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
-              <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-              <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Mimari Taahhüt</span>
-            <div class="navbar-dropdown">
-              <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
-              <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
-              <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
-              <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
-              <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Merkezlerimiz</span>
-            <div class="navbar-dropdown">
-              <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
-              <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
-              <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
-              <a href="tel:+902322784340" class="navbar-item">0232 278 43 40</a>
-            </div>
-          </div>
-
-        </nav>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
+      <div class="navbar-dropdown">
+       <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+       <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
+       <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+       <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
+       <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
+       <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+       <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
       </div>
-    </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Mimari Taahhüt</span>
+      <div class="navbar-dropdown">
+       <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
+       <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+       <a href="banyo-dusakabin.html" class="navbar-item">Banyo & Duşakabin</a>
+       <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
+       <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
+       <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
+      </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Merkezlerimiz</span>
+      <div class="navbar-dropdown">
+       <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
+       <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
+       <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
+       <a href="tel:+902322784340" class="navbar-item">0232 278 43 40</a>
+      </div>
+     </div>
+
+    </nav>
+   </div>
   </div>
+ </div>
 </footer>
 
 <!-- CONSULTATION MODAL -->
 <div class="rf-modal-overlay" id="consultationModal">
-  <div class="rf-modal-drawer">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <span style="font-family: var(--font-primary); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-terracotta);">Danışmanlık // Form</span>
-        <button class="rf-modal-close" id="closeModalBtn" aria-label="Kapat">✕</button>
-      </div>
+ <div class="rf-modal-drawer">
+  <div>
+   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+    <span style="font-family: var(--font-primary); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-terracotta);">Danışmanlık // Form</span>
+    <button class="rf-modal-close" id="closeModalBtn" aria-label="Kapat">✕</button>
+   </div>
 
-      <h3 style="font-size: 24px; font-weight: 500; text-transform: uppercase; margin-bottom: 8px;">Proje & Malzeme Danışmanlığı</h3>
-      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 32px;">
-        İhtiyacınızı belirtin; uzman kadromuz stok veya ücretsiz keşif randevusu için sizinle doğrudan iletişime geçsin.
-      </p>
+   <h3 style="font-size: 24px; font-weight: 500; text-transform: uppercase; margin-bottom: 8px;">Proje & Malzeme Danışmanlığı</h3>
+   <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 32px;">
+    İhtiyacınızı belirtin; uzman kadromuz stok veya ücretsiz keşif randevusu için sizinle doğrudan iletişime geçsin.
+   </p>
 
-      <form id="consultationForm">
-        <div class="rf-form-group">
-          <label class="rf-form-label">İhtiyaç / Proje Türü</label>
-          <select class="rf-form-select" id="formServiceSelect">
-            <option value="Toptan/Perakende Malzeme Siparişi">Toptan / Perakende Malzeme Siparişi</option>
-            <option value="Boya & RenXMatik Renk Hazırlama">Boya & RenXMatik Renk Hazırlama</option>
-            <option value="İsonem Su Yalıtımı">İsonem Su Yalıtımı & İzolasyon</option>
-            <option value="Komple Daire Tadilatı Keşfi">Komple Daire Tadilatı Keşfi</option>
-            <option value="Banyo & Duşakabin Yenileme">Banyo & Duşakabin Yenileme</option>
-            <option value="Çatı Tamiri & Kiremit Aktarma">Çatı Tamiri & Kiremit Aktarma</option>
-          </select>
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Adınız Soyadınız</label>
-          <input type="text" class="rf-form-input" id="formName" placeholder="Örn. Murat Çetin" required />
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Telefon Numaranız</label>
-          <input type="tel" class="rf-form-input" id="formPhone" placeholder="Örn. 0532 000 00 00" required />
-        </div>
-
-        <div class="rf-form-group">
-          <label class="rf-form-label">Proje Detayları (Opsiyonel)</label>
-          <textarea class="rf-form-textarea" id="formNotes" rows="3" placeholder="Adres veya malzeme listesini buraya yazabilirsiniz..."></textarea>
-        </div>
-
-        <button type="submit" class="rf-site-btn primary" style="width: 100%;">
-          WhatsApp ile Doğrudan İlet
-        </button>
-      </form>
+   <form id="consultationForm">
+    <div class="rf-form-group">
+     <label class="rf-form-label">İhtiyaç / Proje Türü</label>
+     <select class="rf-form-select" id="formServiceSelect">
+      <option value="Toptan/Perakende Malzeme Siparişi">Toptan / Perakende Malzeme Siparişi</option>
+      <option value="Boya & RenXMatik Renk Hazırlama">Boya & RenXMatik Renk Hazırlama</option>
+      <option value="İsonem Su Yalıtımı">İsonem Su Yalıtımı & İzolasyon</option>
+      <option value="Komple Daire Tadilatı Keşfi">Komple Daire Tadilatı Keşfi</option>
+      <option value="Banyo & Duşakabin Yenileme">Banyo & Duşakabin Yenileme</option>
+      <option value="Çatı Tamiri & Kiremit Aktarma">Çatı Tamiri & Kiremit Aktarma</option>
+     </select>
     </div>
 
-    <div style="font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 20px; margin-top: 24px;">
-      Doğrudan aramak için: <a href="tel:+902322784340" style="color: var(--text-main); font-weight: 500;">0232 278 43 40</a> (Haftanın 7 Günü Açık)
+    <div class="rf-form-group">
+     <label class="rf-form-label">Adınız Soyadınız</label>
+     <input type="text" class="rf-form-input" id="formName" placeholder="Örn. Murat Çetin" required />
     </div>
+
+    <div class="rf-form-group">
+     <label class="rf-form-label">Telefon Numaranız</label>
+     <input type="tel" class="rf-form-input" id="formPhone" placeholder="Örn. 0532 000 00 00" required />
+    </div>
+
+    <div class="rf-form-group">
+     <label class="rf-form-label">Proje Detayları (Opsiyonel)</label>
+     <textarea class="rf-form-textarea" id="formNotes" rows="3" placeholder="Adres veya malzeme listesini buraya yazabilirsiniz..."></textarea>
+    </div>
+
+    <button type="submit" class="rf-site-btn primary" style="width: 100%;">
+     WhatsApp ile Doğrudan İlet
+    </button>
+   </form>
   </div>
+
+  <div style="font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 20px; margin-top: 24px;">
+   Doğrudan aramak için: <a href="tel:+902322784340" style="color: var(--text-main); font-weight: 500;">0232 278 43 40</a> (Haftanın 7 Günü Açık)
+  </div>
+ </div>
 </div>
 
 <script src="js/pervan.js?v=33.0.0" defer></script>

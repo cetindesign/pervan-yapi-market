@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=33.3.0" />
@@ -30,163 +30,163 @@
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HardwareStore",
+   "@id": "https://pervanyapi.com/#store-balcova",
+   "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı (Bianca Stella Yetkili Bayi)",
+   "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
+   "url": "https://pervanyapi.com/balcova-showroom.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
+    "addressLocality": "Balçova",
+    "addressRegion": "İzmir",
+    "postalCode": "35330",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3887,
+    "longitude": 27.0425
+   },
+   "openingHoursSpecification": [
     {
-      "@type": "HardwareStore",
-      "@id": "https://pervanyapi.com/#store-balcova",
-      "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı (Bianca Stella Yetkili Bayi)",
-      "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
-      "url": "https://pervanyapi.com/balcova-showroom.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
-        "addressLocality": "Balçova",
-        "addressRegion": "İzmir",
-        "postalCode": "35330",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3887,
-        "longitude": 27.0425
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "08:30",
-          "closes": "19:30"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "City", "name": "Konak" },
-        { "@type": "City", "name": "Karabağlar" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": [
-        "https://schema.org/OnSitePickup",
-        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-      ],
-      "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
-      "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
-    },
-    {
-      "@type": "WarehouseOrDistributionCenter",
-      "@id": "https://pervanyapi.com/#depo-urla",
-      "name": "Pervan Yapı Market & Urla Ana Lojistik Depo",
-      "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
-      "url": "https://pervanyapi.com/urla-lojistik-depo.html",
-      "telephone": "+905323318763",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kalabak",
-        "addressLocality": "Urla",
-        "addressRegion": "İzmir",
-        "postalCode": "35430",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3540547,
-        "longitude": 26.8064487
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:30"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Urla" },
-        { "@type": "City", "name": "Çeşme" },
-        { "@type": "City", "name": "Alaçatı" },
-        { "@type": "City", "name": "Seferihisar" },
-        { "@type": "City", "name": "Güzelbahçe" },
-        { "@type": "City", "name": "Karaburun" },
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": [
-        "https://schema.org/OnSitePickup",
-        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-      ],
-      "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
-      "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
-    },
-    {
-      "@type": "DeliveryService",
-      "@id": "https://pervanyapi.com/bianca-stella-boya.html#delivery-service",
-      "name": "Pervan Bianca Stella Dönüşüm Boyaları Bölgesel Dağıtımı",
-      "provider": { "@id": "https://pervanyapi.com/#store-balcova" },
-      "serviceType": "Dönüşüm Boyası & Sıvı Cam Şantiye ve Adrese Teslimat",
-      "areaServed": [
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "City", "name": "Urla" },
-        { "@type": "City", "name": "Çeşme" },
-        { "@type": "City", "name": "Alaçatı" },
-        { "@type": "City", "name": "Güzelbahçe" },
-        { "@type": "City", "name": "Seferihisar" },
-        { "@type": "City", "name": "Karaburun" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
-      "description": "Balçova Showroom ve Urla Depo çıkışlı orijinal Bianca Stella su bazlı saf akrilik boya ve Maximo sıvı cam serisinin İzmir geneli ve Yarımada villalarına hızlı teslimatı."
-    },
-    {
-      "@type": "MerchantReturnPolicy",
-      "@id": "https://pervanyapi.com/#merchant-return-policy",
-      "name": "Pervan Mağaza ve Şantiye İade Şartnamesi",
-      "applicableCountry": "TR",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-      "merchantReturnDays": 14,
-      "returnMethod": "https://schema.org/ReturnInStore",
-      "returnFees": "https://schema.org/FreeReturn",
-      "inStoreReturnsOffered": true,
-      "url": "https://pervanyapi.com/hakkimizda.html"
-    },
-    {
-      "@type": "OfferShippingDetails",
-      "@id": "https://pervanyapi.com/#shipping-policy-izmir",
-      "name": "İzmir ve Yarımada Şantiye Sevkiyat Şartnamesi",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "TRY"
-      },
-      "shippingDestination": [
-        {
-          "@type": "DefinedRegion",
-          "addressCountry": "TR",
-          "addressRegion": "İzmir"
-        }
-      ],
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "DAY"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "DAY"
-        }
-      }
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+     "opens": "08:30",
+     "closes": "19:30"
     }
-  ]
+   ],
+   "areaServed": [
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "City", "name": "Konak" },
+    { "@type": "City", "name": "Karabağlar" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": [
+    "https://schema.org/OnSitePickup",
+    "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+   ],
+   "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
+   "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
+  },
+  {
+   "@type": "WarehouseOrDistributionCenter",
+   "@id": "https://pervanyapi.com/#depo-urla",
+   "name": "Pervan Yapı Market & Urla Ana Lojistik Depo",
+   "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
+   "url": "https://pervanyapi.com/urla-lojistik-depo.html",
+   "telephone": "+905323318763",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kalabak",
+    "addressLocality": "Urla",
+    "addressRegion": "İzmir",
+    "postalCode": "35430",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3540547,
+    "longitude": 26.8064487
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+     "opens": "08:00",
+     "closes": "18:30"
+    }
+   ],
+   "areaServed": [
+    { "@type": "City", "name": "Urla" },
+    { "@type": "City", "name": "Çeşme" },
+    { "@type": "City", "name": "Alaçatı" },
+    { "@type": "City", "name": "Seferihisar" },
+    { "@type": "City", "name": "Güzelbahçe" },
+    { "@type": "City", "name": "Karaburun" },
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": [
+    "https://schema.org/OnSitePickup",
+    "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+   ],
+   "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
+   "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
+  },
+  {
+   "@type": "DeliveryService",
+   "@id": "https://pervanyapi.com/bianca-stella-boya.html#delivery-service",
+   "name": "Pervan Bianca Stella Dönüşüm Boyaları Bölgesel Dağıtımı",
+   "provider": { "@id": "https://pervanyapi.com/#store-balcova" },
+   "serviceType": "Dönüşüm Boyası & Sıvı Cam Şantiye ve Adrese Teslimat",
+   "areaServed": [
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "City", "name": "Urla" },
+    { "@type": "City", "name": "Çeşme" },
+    { "@type": "City", "name": "Alaçatı" },
+    { "@type": "City", "name": "Güzelbahçe" },
+    { "@type": "City", "name": "Seferihisar" },
+    { "@type": "City", "name": "Karaburun" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+   "description": "Balçova Showroom ve Urla Depo çıkışlı orijinal Bianca Stella su bazlı saf akrilik boya ve Maximo sıvı cam serisinin İzmir geneli ve Yarımada villalarına hızlı teslimatı."
+  },
+  {
+   "@type": "MerchantReturnPolicy",
+   "@id": "https://pervanyapi.com/#merchant-return-policy",
+   "name": "Pervan Mağaza ve Şantiye İade Şartnamesi",
+   "applicableCountry": "TR",
+   "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+   "merchantReturnDays": 14,
+   "returnMethod": "https://schema.org/ReturnInStore",
+   "returnFees": "https://schema.org/FreeReturn",
+   "inStoreReturnsOffered": true,
+   "url": "https://pervanyapi.com/hakkimizda.html"
+  },
+  {
+   "@type": "OfferShippingDetails",
+   "@id": "https://pervanyapi.com/#shipping-policy-izmir",
+   "name": "İzmir ve Yarımada Şantiye Sevkiyat Şartnamesi",
+   "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": "0",
+    "currency": "TRY"
+   },
+   "shippingDestination": [
+    {
+     "@type": "DefinedRegion",
+     "addressCountry": "TR",
+     "addressRegion": "İzmir"
+    }
+   ],
+   "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+     "@type": "QuantitativeValue",
+     "minValue": 0,
+     "maxValue": 1,
+     "unitCode": "DAY"
+    },
+    "transitTime": {
+     "@type": "QuantitativeValue",
+     "minValue": 0,
+     "maxValue": 1,
+     "unitCode": "DAY"
+    }
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -194,1575 +194,1575 @@
 
 <!-- PERVAN NAVBAR -->
 <header id="pvHeader">
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- LOGO -->
-      <a class="navbar-logo" href="index.html">Pervan</a>
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
+   <a class="navbar-logo" href="index.html">Pervan</a>
 
-      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          
-          <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
-          <div class="navbar-sticky-mobile">
-            <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-              <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-              <div class="arrow"></div>
-            </a>
-            <a href="tel:+902322784340" class="navbar-item menu-item">
-              <span class="navbar-title">Bizi Arayın</span>
-              <div class="arrow"></div>
-            </a>
-          </div>
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
+    <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+902322784340" class="navbar-item menu-item">
+       <span class="navbar-title">Bizi Arayın</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
 
-          <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
-          <div class="navbar-menu">
-            
-            <!-- 01: Yetkili Bayilikler -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
-                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
+     <div class="navbar-menu">
+      
+      <!-- 01: Yetkili Bayilikler -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yetkili Bayilikler</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+        <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
+        <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+        <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+        <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+        <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+        <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
+        <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+        <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+       </div>
       </div>
 
-      <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="tel:+902322784340" class="navbar-item menu-item">
-          <span class="navbar-title">Bizi Arayın</span>
-          <div class="arrow"></div>
-        </a>
+      <!-- 02: Yapı Market & Hırdavat -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+        <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+        <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+        <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+        <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+        <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+        <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+        <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+       </div>
       </div>
 
-      <!-- HAMBURGER (MOBILE ONLY) -->
-      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+      <!-- 03: Mimari Taahhüt -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Mimari Taahhüt</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
+        <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+        <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+        <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+        <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+        <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+       </div>
       </div>
 
+      <!-- 04: Merkezlerimiz -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Merkezlerimiz</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
+        <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
+        <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+        <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+       </div>
+      </div>
+
+     </div>
     </div>
-  </nav>
+   </div>
+
+   <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
+   <div class="navbar-sticky">
+    <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+     <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+     <div class="arrow"></div>
+    </a>
+    <a href="tel:+902322784340" class="navbar-item menu-item">
+     <span class="navbar-title">Bizi Arayın</span>
+     <div class="arrow"></div>
+    </a>
+   </div>
+
+   <!-- HAMBURGER (MOBILE ONLY) -->
+   <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+   </div>
+
+  </div>
+ </nav>
 </header>
 
 <main class="pv-scope pv-page-main">
 
 <!-- ==========================================================================
-     1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE (Official Bianca Stella Media)
-     ========================================================================== -->
+   1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE (Official Bianca Stella Media)
+   ========================================================================== -->
 <section class="pv-stage-hero" id="pvStageHero" aria-label="Bianca Stella Dönüşüm Boyaları ve Sıvı Cam">
-  
-  <!-- Slide Stage Track -->
-  <div class="pv-stage-track" id="pvStageTrack">
-    <!-- Slide 0: Bianca Stella Brand Opening -->
-    <div class="pv-stage-slide active" data-index="0" data-color="Bianca Stella" data-code="#1E293B">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-stella-mobil_1-min.png" />
-        <img src="assets/bianca-official/bianca-stella_1-scaled.png" alt="Bianca Stella Dönüşüm Boyası Resmi Logo ve Ürün Ailesi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
-      </picture>
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h1 class="pv-stage-title">Bianca Stella</h1>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Yetkili Bayi Dağıtım</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>EN 71-3 Oyuncak &amp; Gıda Güvenliği</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Balçova &amp; Urla Stok</span>
-          </div>
-          <a href="#biancaTransformSection" class="pv-stage-text-link pv-stage-nudge" id="pvStageExploreBtn">
-            <span>Kataloğu İncele</span>
-            <svg class="pv-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
+ 
+ <!-- Slide Stage Track -->
+ <div class="pv-stage-track" id="pvStageTrack">
+  <!-- Slide 0: Bianca Stella Brand Opening -->
+  <div class="pv-stage-slide active" data-index="0" data-color="Bianca Stella" data-code="#1E293B">
+   <picture>
+    <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-stella-mobil_1-min.png" />
+    <img src="assets/bianca-official/bianca-stella_1-scaled.png" alt="Bianca Stella Dönüşüm Boyası Resmi Logo ve Ürün Ailesi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
+   </picture>
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h1 class="pv-stage-title">Bianca Stella</h1>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Yetkili Bayi Dağıtım</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>EN 71-3 Oyuncak &amp; Gıda Güvenliği</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Balçova &amp; Urla Stok</span>
+     </div>
+     <a href="#biancaTransformSection" class="pv-stage-text-link pv-stage-nudge" id="pvStageExploreBtn">
+      <span>Kataloğu İncele</span>
+      <svg class="pv-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
     </div>
-
-    <!-- Slide 1: Mutfak & Dolap Dönüşümü -->
-    <div class="pv-stage-slide" data-index="1" data-color="Mutfak Dönüşümü" data-code="#0F766E">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/rf-transform-bianca-after.jpg" />
-        <img src="assets/rf-transform-bianca-after.jpg" alt="Bianca Stella Mutfak Dolabı ve Fayans Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
-      </picture>
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Mutfak &amp; Dolap Dönüşümü</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Astar &amp; Zımparasız</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>İpeksi Mat &amp; Parlak</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>10–12 m² / Litre</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20mutfak%20dolab%C4%B1%20ve%20fayans%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20boyas%C4%B1%20fiyat%20ve%20renk%20kartelas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Renk &amp; Fiyat Danış</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2: Maximo 2K Sıvı Cam (Tezgah & Islak Zemin Zırhı) -->
-    <div class="pv-stage-slide" data-index="2" data-color="Maximo Sıvı Cam" data-code="#D97706">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-diamond-uygulama-1.jpg" />
-        <img src="assets/bianca-official/bianca-diamond-uygulama-1.jpg" alt="Mutfak Tezgahı Maximo 2K Sıvı Cam Zırhı" class="pv-stage-img" style="object-position: center center;" decoding="async" />
-      </picture>
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Maximo 2K Sıvı Cam</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Solvent Bazlı Çift Bileşen</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Sıcak Tencere &amp; Çizilmezlik Zırhı</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Su Geçirimsiz</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Maximo%202K%20s%C4%B1v%C4%B1%20cam%20tezgah%20z%C4%B1rh%C4%B1%20hakk%C4%B1nda%20fiyat%20ve%20uygulama%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Tezgah Zırhı İste</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3: Banyo & Zemin Dönüşümü (Kırmadan Dökmeden) -->
-    <div class="pv-stage-slide" data-index="3" data-color="Banyo & Zemin" data-code="#2563EB">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/rf-transform-bath-after.jpg" />
-        <img src="assets/rf-transform-bath-after.jpg" alt="Banyo Fayansı ve Duş İçi Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
-      </picture>
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Banyo &amp; Zemin Dönüşümü</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Kırmadan Dökmeden Yenileme</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Liquid Diamond Koruma</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Su &amp; Sabun Direnci</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20banyo%20ve%20du%C5%9Fakabin%20i%C3%A7i%20fayans%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20seti%20hakk%C4%B1nda%20bilgi%20ve%20teklif%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Banyo Paketi Sor</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 4: Stella Ahşap Desen Efekti (Doğal Budak & Masif Doku) -->
-    <div class="pv-stage-slide" data-index="4" data-color="Ahşap Desen" data-code="#92400E">
-      <picture>
-        <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-stella-ahsap-desen-3.jpg" />
-        <img src="assets/bianca-official/bianca-stella-ahsap-desen-1-1024x390.jpg" alt="Stella Ahşap Efekt Budak Deseni Uygulaması" class="pv-stage-img" style="object-position: center center;" decoding="async" />
-      </picture>
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Stella Ahşap Efekt</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Meşe, Ceviz, Kestane Tonları</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Damar Tarağı ile Budak Deseni</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Mobilya &amp; Kapı</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20ah%C5%9Fap%20desen%20g%C3%B6r%C3%BCn%C3%BCm%20boyas%C4%B1%20ve%20budak%20aparat%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Ahşap Seti Al</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+   </div>
   </div>
 
-  <!-- Stage Left / Right Floating Arrow Navigation -->
-  <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
+  <!-- Slide 1: Mutfak & Dolap Dönüşümü -->
+  <div class="pv-stage-slide" data-index="1" data-color="Mutfak Dönüşümü" data-code="#0F766E">
+   <picture>
+    <source media="(max-width: 768px)" srcset="assets/rf-transform-bianca-after.jpg" />
+    <img src="assets/rf-transform-bianca-after.jpg" alt="Bianca Stella Mutfak Dolabı ve Fayans Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+   </picture>
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Mutfak &amp; Dolap Dönüşümü</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Astar &amp; Zımparasız</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>İpeksi Mat &amp; Parlak</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>10–12 m² / Litre</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20mutfak%20dolab%C4%B1%20ve%20fayans%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20boyas%C4%B1%20fiyat%20ve%20renk%20kartelas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Renk &amp; Fiyat Danış</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-  <!-- Stage Bottom Scroll Prompt -->
-  <a href="#biancaTransformSection" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Bianca Stella Kataloğuna Kaydır">
-    <span>Bianca Stella Kataloğunu Keşfet</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-  </a>
+  <!-- Slide 2: Maximo 2K Sıvı Cam (Tezgah & Islak Zemin Zırhı) -->
+  <div class="pv-stage-slide" data-index="2" data-color="Maximo Sıvı Cam" data-code="#D97706">
+   <picture>
+    <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-diamond-uygulama-1.jpg" />
+    <img src="assets/bianca-official/bianca-diamond-uygulama-1.jpg" alt="Mutfak Tezgahı Maximo 2K Sıvı Cam Zırhı" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+   </picture>
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Maximo 2K Sıvı Cam</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Solvent Bazlı Çift Bileşen</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Sıcak Tencere &amp; Çizilmezlik Zırhı</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Su Geçirimsiz</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Maximo%202K%20s%C4%B1v%C4%B1%20cam%20tezgah%20z%C4%B1rh%C4%B1%20hakk%C4%B1nda%20fiyat%20ve%20uygulama%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Tezgah Zırhı İste</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Slide 3: Banyo & Zemin Dönüşümü (Kırmadan Dökmeden) -->
+  <div class="pv-stage-slide" data-index="3" data-color="Banyo & Zemin" data-code="#2563EB">
+   <picture>
+    <source media="(max-width: 768px)" srcset="assets/rf-transform-bath-after.jpg" />
+    <img src="assets/rf-transform-bath-after.jpg" alt="Banyo Fayansı ve Duş İçi Dönüşümü" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+   </picture>
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Banyo &amp; Zemin Dönüşümü</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Kırmadan Dökmeden Yenileme</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Liquid Diamond Koruma</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Su &amp; Sabun Direnci</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20banyo%20ve%20du%C5%9Fakabin%20i%C3%A7i%20fayans%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20seti%20hakk%C4%B1nda%20bilgi%20ve%20teklif%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Banyo Paketi Sor</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Slide 4: Stella Ahşap Desen Efekti (Doğal Budak & Masif Doku) -->
+  <div class="pv-stage-slide" data-index="4" data-color="Ahşap Desen" data-code="#92400E">
+   <picture>
+    <source media="(max-width: 768px)" srcset="assets/bianca-official/bianca-stella-ahsap-desen-3.jpg" />
+    <img src="assets/bianca-official/bianca-stella-ahsap-desen-1-1024x390.jpg" alt="Stella Ahşap Efekt Budak Deseni Uygulaması" class="pv-stage-img" style="object-position: center center;" decoding="async" />
+   </picture>
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Stella Ahşap Efekt</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Meşe, Ceviz, Kestane Tonları</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Damar Tarağı ile Budak Deseni</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Mobilya &amp; Kapı</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20ah%C5%9Fap%20desen%20g%C3%B6r%C3%BCn%C3%BCm%20boyas%C4%B1%20ve%20budak%20aparat%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Ahşap Seti Al</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ </div>
+
+ <!-- Stage Left / Right Floating Arrow Navigation -->
+ <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+ </button>
+ <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+ </button>
+
+ <!-- Stage Bottom Scroll Prompt -->
+ <a href="#biancaTransformSection" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Bianca Stella Kataloğuna Kaydır">
+  <span>Bianca Stella Kataloğunu Keşfet</span>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+ </a>
 
 </section>
 
 <!-- ==========================================================================
-     2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
-     ========================================================================== -->
+   2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
+   ========================================================================== -->
 <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Bianca Stella Ürün Departmanları">
-  <div class="pv-container pv-subnav-inner">
-    <div class="pv-subnav-brand">
-      <img src="assets/bianca-official/bianca-stella-logo.svg" alt="Bianca Stella" class="pv-subnav-logo" width="120" height="22" loading="lazy" decoding="async" />
-      <span class="pv-subnav-tag">Dönüşüm Sistemleri</span>
-    </div>
-    
-    <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
-      <button type="button" class="pv-subnav-link active" data-target="biancaTransformSection" role="tab" aria-selected="true">
-        Dönüşüm Boyaları
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="biancaProtectionSection" role="tab" aria-selected="false">
-        Sıvı Cam &amp; Elmas
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="biancaPrepSection" role="tab" aria-selected="false">
-        Yüzey Hazırlık
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="biancaToolsSection" role="tab" aria-selected="false">
-        Uygulama Setleri
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="biancaArchitecturalSection" role="tab" aria-selected="false">
-        Mimari Boyalar
-      </button>
-    </div>
-
-    <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
-    <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
-      <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
-        <span class="pv-dept-label" id="pvDeptTriggerLabel">Dönüşüm Boyaları</span>
-        <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-
-      <div class="pv-filter-rail" id="pvFilterRail">
-        <!-- Injected dynamically based on active department -->
-      </div>
-    </div>
-
-    <div class="pv-subnav-actions">
-      <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <span>Ara</span>
-        <kbd class="pv-subnav-search-kbd">⌘K</kbd>
-      </button>
-      <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20boyas%C4%B1%20ve%20Maximo%20s%C4%B1v%C4%B1%20cam%20hakk%C4%B1nda%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn">
-        <span>Fiyat &amp; Stok Sor</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-    </div>
+ <div class="pv-container pv-subnav-inner">
+  <div class="pv-subnav-brand">
+   <img src="assets/bianca-official/bianca-stella-logo.svg" alt="Bianca Stella" class="pv-subnav-logo" width="120" height="22" loading="lazy" decoding="async" />
+   <span class="pv-subnav-tag">Dönüşüm Sistemleri</span>
   </div>
+  
+  <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
+   <button type="button" class="pv-subnav-link active" data-target="biancaTransformSection" role="tab" aria-selected="true">
+    Dönüşüm Boyaları
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="biancaProtectionSection" role="tab" aria-selected="false">
+    Sıvı Cam &amp; Elmas
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="biancaPrepSection" role="tab" aria-selected="false">
+    Yüzey Hazırlık
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="biancaToolsSection" role="tab" aria-selected="false">
+    Uygulama Setleri
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="biancaArchitecturalSection" role="tab" aria-selected="false">
+    Mimari Boyalar
+   </button>
+  </div>
+
+  <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
+  <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
+   <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
+    <span class="pv-dept-label" id="pvDeptTriggerLabel">Dönüşüm Boyaları</span>
+    <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+   </button>
+
+   <div class="pv-filter-rail" id="pvFilterRail">
+    <!-- Injected dynamically based on active department -->
+   </div>
+  </div>
+
+  <div class="pv-subnav-actions">
+   <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <circle cx="11" cy="11" r="8"></circle>
+     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <span>Ara</span>
+    <kbd class="pv-subnav-search-kbd">⌘K</kbd>
+   </button>
+   <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bianca%20Stella%20d%C3%B6n%C3%BC%C5%9F%C3%BCm%20boyas%C4%B1%20ve%20Maximo%20s%C4%B1v%C4%B1%20cam%20hakk%C4%B1nda%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn">
+    <span>Fiyat &amp; Stok Sor</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+   </a>
+  </div>
+ </div>
 </nav>
 <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
 
 <!-- ==========================================================================
-     PANEL 1: DÖNÜŞÜM BOYALARI & EFEKTLER
-     ========================================================================== -->
+   PANEL 1: DÖNÜŞÜM BOYALARI & EFEKTLER
+   ========================================================================== -->
 <section class="pv-tab-panel pv-dept-panel active" id="biancaTransformSection" role="tabpanel">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 01 · Yüzey Yenileme Zırhı</div>
-      <h2 class="pv-dept-title">Dönüşüm Boyaları &amp; Dekoratif Efektler</h2>
-      <p class="pv-dept-desc">Kırmadan, dökmeden seramik, fayans, mutfak tezgahı, mobilya, lake dolap, PVC ve beyaz eşya yüzeylerinde astar ve zımpara gerektirmeden nano tutunma sağlayan EN 71-3 sertifikalı kokusuz saf akrilik boyalar.</p>
-    </div>
-
-    <!-- AKILLI BOYA BULUCU INTENT PROMO CARD -->
-    <div class="pv-diagnostic-promo-card">
-      <div>
-        <div class="pv-promo-eyebrow">
-          <span>🎯 İzmir &amp; Ege 24 Master Reçete Motoru</span>
-        </div>
-        <h3 class="pv-promo-title">Fayans, tezgah veya mobilya dönüşümü mü planlıyorsunuz?</h3>
-        <p class="pv-promo-desc">Islak hacimlerde Maximo Sıvı Cam zorunluluğu, katman sıralaması ve alanınıza göre Stella sarfiyatını 3 adımda hesaplayın.</p>
-      </div>
-      <a href="boya-bulucu.html" class="pv-promo-cta">
-        <span>Akıllı Teşhis'i Başlat</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </a>
-    </div>
-
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="transformMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="tum-yuzeyler" role="tab" aria-selected="true">
-          Tüm Yüzeyler
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="ahsap-efekt" role="tab" aria-selected="false">
-          Ahşap Görünüm
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="metalik-efekt" role="tab" aria-selected="false">
-          Metalik Renkler
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="mermer-efekt" role="tab" aria-selected="false">
-          Mermer Efekt
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="transformMenuList">
-      <!-- Item: Bianca Stella Su Bazlı Saf Akrilik Boya -->
-      <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-saf-akrilik" data-product-id="bianca-stella-saf-akrilik" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Su Bazlı Saf Akrilik Boya" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Saf Akrilik</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Tüm Yüzeyler</span>
-          </div>
-          <div class="pv-menu-desc-line">Astar ve zımpara istemeyen su bazlı dönüşüm boyası · İpeksi Mat & Parlak</div>
-          <div class="pv-menu-meta-chips">
-            <span>İpeksi Mat & Parlak</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/L</span>
-            <span>&bull;</span>
-            <span>2 – 3 Saat (Kat arası)</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Mat Saf Akrilik Boya -->
-      <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-mat-seri" data-product-id="bianca-stella-mat-seri" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-2024.jpg" alt="Bianca Stella Mat Saf Akrilik Boya" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Mat Seri</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Kusur Kapatıcı</span>
-          </div>
-          <div class="pv-menu-desc-line">Mobilya ve dolaplar için parlamayan dönüşüm boyası · Tam Mat</div>
-          <div class="pv-menu-meta-chips">
-            <span>Tam Mat Bitiş</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/L</span>
-            <span>&bull;</span>
-            <span>2 – 3 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Ahşap Desen Görünüm Boyası -->
-      <div class="pv-menu-row" data-category="ahsap-efekt" data-id="bianca-stella-ahsap-desen" data-product-id="bianca-stella-ahsap-desen" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png" alt="Bianca Stella Ahşap Desen Görünüm Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Ahşap Efekt</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Budak Dokusu</span>
-          </div>
-          <div class="pv-menu-desc-line">Damar aparatı ile masif ahşap ve budak görünüm boyası · Yarı Şeffaf</div>
-          <div class="pv-menu-meta-chips">
-            <span>Doğal Ağaç Dokusu</span>
-            <span>&bull;</span>
-            <span>6 – 8 m² / 0.25L</span>
-            <span>&bull;</span>
-            <span>10 – 15 Dk (Desen)</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Metalik Efekt Boyası -->
-      <div class="pv-menu-row" data-category="metalik-efekt" data-id="bianca-stella-metal-renkler" data-product-id="bianca-stella-metal-renkler" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-metal-renkler-packshot.png" alt="Bianca Stella Metalik Efekt Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Metalik Efekt</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Metalik Vurgu</span>
-          </div>
-          <div class="pv-menu-desc-line">Kulp, batarya ve aksamlar için parlak metalik sedef boyası · Metalik</div>
-          <div class="pv-menu-meta-chips">
-            <span>Altın / Bronz / Gümüş</span>
-            <span>&bull;</span>
-            <span>4 – 5 m² / 0.25L</span>
-            <span>&bull;</span>
-            <span>2 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Mermer Efekt Spreyi -->
-      <div class="pv-menu-row" data-category="mermer-efekt" data-id="bianca-stella-mermer-efekt-spreyi" data-product-id="bianca-stella-mermer-efekt-spreyi" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-mermer-efekt-spreyi.png" alt="Bianca Stella Mermer Efekt Spreyi" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Mermer Spreyi</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Damar Efekti</span>
-          </div>
-          <div class="pv-menu-desc-line">Tezgah ve sehpalarda mermer lif damarı oluşturan özel sprey · Aerosol</div>
-          <div class="pv-menu-meta-chips">
-            <span>Calacatta & Nero Damar</span>
-            <span>&bull;</span>
-            <span>2 – 3 m² / Kutu</span>
-            <span>&bull;</span>
-            <span>15 Dk (Hızlı)</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Beyaz Eşya & Radyatör Boyası -->
-      <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-beyaz-esya" data-product-id="bianca-stella-beyaz-esya" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Beyaz Eşya & Radyatör Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Beyaz Eşya & Radyatör</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Isı & Nem Dayanımlı</span>
-          </div>
-          <div class="pv-menu-desc-line">Buzdolabı, emaye ve radyatör petekleri için termal boya · Parlak</div>
-          <div class="pv-menu-meta-chips">
-            <span>80°C Isı Dayanımı</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/L</span>
-            <span>&bull;</span>
-            <span>3 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 01 · Yüzey Yenileme Zırhı</div>
+   <h2 class="pv-dept-title">Dönüşüm Boyaları &amp; Dekoratif Efektler</h2>
+   <p class="pv-dept-desc">Kırmadan, dökmeden seramik, fayans, mutfak tezgahı, mobilya, lake dolap, PVC ve beyaz eşya yüzeylerinde astar ve zımpara gerektirmeden nano tutunma sağlayan EN 71-3 sertifikalı kokusuz saf akrilik boyalar.</p>
   </div>
+
+  <!-- AKILLI BOYA BULUCU INTENT PROMO CARD -->
+  <div class="pv-diagnostic-promo-card">
+   <div>
+    <div class="pv-promo-eyebrow">
+     <span>🎯 İzmir &amp; Ege 24 Master Reçete Motoru</span>
+    </div>
+    <h3 class="pv-promo-title">Fayans, tezgah veya mobilya dönüşümü mü planlıyorsunuz?</h3>
+    <p class="pv-promo-desc">Islak hacimlerde Maximo Sıvı Cam zorunluluğu, katman sıralaması ve alanınıza göre Stella sarfiyatını 3 adımda hesaplayın.</p>
+   </div>
+   <a href="boya-bulucu.html" class="pv-promo-cta">
+    <span>Akıllı Teşhis'i Başlat</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+   </a>
+  </div>
+
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="transformMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="tum-yuzeyler" role="tab" aria-selected="true">
+     Tüm Yüzeyler
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="ahsap-efekt" role="tab" aria-selected="false">
+     Ahşap Görünüm
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="metalik-efekt" role="tab" aria-selected="false">
+     Metalik Renkler
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="mermer-efekt" role="tab" aria-selected="false">
+     Mermer Efekt
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="transformMenuList">
+   <!-- Item: Bianca Stella Su Bazlı Saf Akrilik Boya -->
+   <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-saf-akrilik" data-product-id="bianca-stella-saf-akrilik" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Su Bazlı Saf Akrilik Boya" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Saf Akrilik</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Tüm Yüzeyler</span>
+     </div>
+     <div class="pv-menu-desc-line">Astar ve zımpara istemeyen su bazlı dönüşüm boyası · İpeksi Mat & Parlak</div>
+     <div class="pv-menu-meta-chips">
+      <span>İpeksi Mat & Parlak</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/L</span>
+      <span>&bull;</span>
+      <span>2 – 3 Saat (Kat arası)</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Mat Saf Akrilik Boya -->
+   <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-mat-seri" data-product-id="bianca-stella-mat-seri" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/stella-2024.jpg" alt="Bianca Stella Mat Saf Akrilik Boya" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Mat Seri</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Kusur Kapatıcı</span>
+     </div>
+     <div class="pv-menu-desc-line">Mobilya ve dolaplar için parlamayan dönüşüm boyası · Tam Mat</div>
+     <div class="pv-menu-meta-chips">
+      <span>Tam Mat Bitiş</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/L</span>
+      <span>&bull;</span>
+      <span>2 – 3 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Ahşap Desen Görünüm Boyası -->
+   <div class="pv-menu-row" data-category="ahsap-efekt" data-id="bianca-stella-ahsap-desen" data-product-id="bianca-stella-ahsap-desen" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-stella-ahsap-renkler-packshot.png" alt="Bianca Stella Ahşap Desen Görünüm Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Ahşap Efekt</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Budak Dokusu</span>
+     </div>
+     <div class="pv-menu-desc-line">Damar aparatı ile masif ahşap ve budak görünüm boyası · Yarı Şeffaf</div>
+     <div class="pv-menu-meta-chips">
+      <span>Doğal Ağaç Dokusu</span>
+      <span>&bull;</span>
+      <span>6 – 8 m² / 0.25L</span>
+      <span>&bull;</span>
+      <span>10 – 15 Dk (Desen)</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Metalik Efekt Boyası -->
+   <div class="pv-menu-row" data-category="metalik-efekt" data-id="bianca-stella-metal-renkler" data-product-id="bianca-stella-metal-renkler" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-stella-metal-renkler-packshot.png" alt="Bianca Stella Metalik Efekt Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Metalik Efekt</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Metalik Vurgu</span>
+     </div>
+     <div class="pv-menu-desc-line">Kulp, batarya ve aksamlar için parlak metalik sedef boyası · Metalik</div>
+     <div class="pv-menu-meta-chips">
+      <span>Altın / Bronz / Gümüş</span>
+      <span>&bull;</span>
+      <span>4 – 5 m² / 0.25L</span>
+      <span>&bull;</span>
+      <span>2 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Mermer Efekt Spreyi -->
+   <div class="pv-menu-row" data-category="mermer-efekt" data-id="bianca-stella-mermer-efekt-spreyi" data-product-id="bianca-stella-mermer-efekt-spreyi" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-stella-mermer-efekt-spreyi.png" alt="Bianca Stella Mermer Efekt Spreyi" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Mermer Spreyi</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Damar Efekti</span>
+     </div>
+     <div class="pv-menu-desc-line">Tezgah ve sehpalarda mermer lif damarı oluşturan özel sprey · Aerosol</div>
+     <div class="pv-menu-meta-chips">
+      <span>Calacatta & Nero Damar</span>
+      <span>&bull;</span>
+      <span>2 – 3 m² / Kutu</span>
+      <span>&bull;</span>
+      <span>15 Dk (Hızlı)</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Beyaz Eşya & Radyatör Boyası -->
+   <div class="pv-menu-row" data-category="tum-yuzeyler" data-id="bianca-stella-beyaz-esya" data-product-id="bianca-stella-beyaz-esya" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Bianca Stella Beyaz Eşya & Radyatör Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Beyaz Eşya & Radyatör</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Isı & Nem Dayanımlı</span>
+     </div>
+     <div class="pv-menu-desc-line">Buzdolabı, emaye ve radyatör petekleri için termal boya · Parlak</div>
+     <div class="pv-menu-meta-chips">
+      <span>80°C Isı Dayanımı</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/L</span>
+      <span>&bull;</span>
+      <span>3 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 2: SIVI CAM & SIVI ELMAS ZIRH
-     ========================================================================== -->
+   PANEL 2: SIVI CAM & SIVI ELMAS ZIRH
+   ========================================================================== -->
 <section class="pv-tab-panel pv-dept-panel" id="biancaProtectionSection" role="tabpanel" style="display: none;">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 02 · Islak Zemin &amp; Tezgah Zırhı</div>
-      <h2 class="pv-dept-title">Maximo Sıvı Cam &amp; Liquid Diamond Koruyucular</h2>
-      <p class="pv-dept-desc">Mutfak tezgahları, duş içi fayanslar ve zemin seramikleri için sıcak tencereye, kimyasallara ve çizilmeye karşı %100 su geçirimsiz çift bileşenli koruma zırhı.</p>
-    </div>
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="protectionMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="sivi-cam" role="tab" aria-selected="true">
-          Sıvı Cam (2K Solvent)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="sivi-elmas" role="tab" aria-selected="false">
-          Sıvı Elmas (Su Bazlı)
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="protectionMenuList">
-      <!-- Item: Bianca Maximo 2K Sıvı Cam (Parlak) -->
-      <div class="pv-menu-row" data-category="sivi-cam" data-id="bianca-maximo-sivi-cam-parlak" data-product-id="bianca-maximo-sivi-cam-parlak" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-maximo-sivi-cam-packshot.png" alt="Bianca Maximo 2K Sıvı Cam (Parlak)" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Maximo 2K Sıvı Cam (Parlak)</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Solvent 2K Zırh</span>
-          </div>
-          <div class="pv-menu-desc-line">Tezgah, duş ve zemin için sıcak tencere ve çizilmezlik zırhı · Kristal Cam</div>
-          <div class="pv-menu-meta-chips">
-            <span>2 Bileşenli Solvent 2K</span>
-            <span>&bull;</span>
-            <span>6 – 8 m² / kg</span>
-            <span>&bull;</span>
-            <span>Su Teması: 48 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Maximo 2K Sıvı Cam (İpeksi Mat) -->
-      <div class="pv-menu-row" data-category="sivi-cam" data-id="bianca-maximo-sivi-cam-mat" data-product-id="bianca-maximo-sivi-cam-mat" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png" alt="Bianca Maximo 2K Sıvı Cam (İpeksi Mat)" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Maximo 2K Sıvı Cam (İpeksi Mat)</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Mat Tezgah Zırhı</span>
-          </div>
-          <div class="pv-menu-desc-line">Parlama yapmayan mat tezgah ve zeminler için 2K koruyucu zırh · İpeksi Mat</div>
-          <div class="pv-menu-meta-chips">
-            <span>2 Bileşenli Solvent 2K</span>
-            <span>&bull;</span>
-            <span>6 – 8 m² / kg</span>
-            <span>&bull;</span>
-            <span>Su Teması: 48 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Liquid Diamond Sıvı Elmas (Parlak) -->
-      <div class="pv-menu-row" data-category="sivi-elmas" data-id="bianca-liquid-diamond-parlak" data-product-id="bianca-liquid-diamond-parlak" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-diamond-parlak-2.png" alt="Bianca Liquid Diamond Sıvı Elmas (Parlak)" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Liquid Diamond (Parlak)</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Kokusuz Elmas</span>
-          </div>
-          <div class="pv-menu-desc-line">Mobilya, kapı ve duvar fayansları için su bazlı koruyucu cila · Parlak</div>
-          <div class="pv-menu-meta-chips">
-            <span>Su Bazlı Kokusuz</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/L</span>
-            <span>&bull;</span>
-            <span>1 – 2 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Liquid Diamond Sıvı Elmas (Mat) -->
-      <div class="pv-menu-row" data-category="sivi-elmas" data-id="bianca-liquid-diamond-mat" data-product-id="bianca-liquid-diamond-mat" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png" alt="Bianca Liquid Diamond Sıvı Elmas (Mat)" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Liquid Diamond (Mat)</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Mat Ahşap Cilası</span>
-          </div>
-          <div class="pv-menu-desc-line">Mobilyaların matlığını koruyan su bazlı elmas koruma cilası · Mat</div>
-          <div class="pv-menu-meta-chips">
-            <span>Su Bazlı Kokusuz</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/L</span>
-            <span>&bull;</span>
-            <span>1 – 2 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 02 · Islak Zemin &amp; Tezgah Zırhı</div>
+   <h2 class="pv-dept-title">Maximo Sıvı Cam &amp; Liquid Diamond Koruyucular</h2>
+   <p class="pv-dept-desc">Mutfak tezgahları, duş içi fayanslar ve zemin seramikleri için sıcak tencereye, kimyasallara ve çizilmeye karşı %100 su geçirimsiz çift bileşenli koruma zırhı.</p>
   </div>
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="protectionMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="sivi-cam" role="tab" aria-selected="true">
+     Sıvı Cam (2K Solvent)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="sivi-elmas" role="tab" aria-selected="false">
+     Sıvı Elmas (Su Bazlı)
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="protectionMenuList">
+   <!-- Item: Bianca Maximo 2K Sıvı Cam (Parlak) -->
+   <div class="pv-menu-row" data-category="sivi-cam" data-id="bianca-maximo-sivi-cam-parlak" data-product-id="bianca-maximo-sivi-cam-parlak" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-maximo-sivi-cam-packshot.png" alt="Bianca Maximo 2K Sıvı Cam (Parlak)" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Maximo 2K Sıvı Cam (Parlak)</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Solvent 2K Zırh</span>
+     </div>
+     <div class="pv-menu-desc-line">Tezgah, duş ve zemin için sıcak tencere ve çizilmezlik zırhı · Kristal Cam</div>
+     <div class="pv-menu-meta-chips">
+      <span>2 Bileşenli Solvent 2K</span>
+      <span>&bull;</span>
+      <span>6 – 8 m² / kg</span>
+      <span>&bull;</span>
+      <span>Su Teması: 48 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Maximo 2K Sıvı Cam (İpeksi Mat) -->
+   <div class="pv-menu-row" data-category="sivi-cam" data-id="bianca-maximo-sivi-cam-mat" data-product-id="bianca-maximo-sivi-cam-mat" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-maximo-solvent-bazli-sivi-elmas.png" alt="Bianca Maximo 2K Sıvı Cam (İpeksi Mat)" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Maximo 2K Sıvı Cam (İpeksi Mat)</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Mat Tezgah Zırhı</span>
+     </div>
+     <div class="pv-menu-desc-line">Parlama yapmayan mat tezgah ve zeminler için 2K koruyucu zırh · İpeksi Mat</div>
+     <div class="pv-menu-meta-chips">
+      <span>2 Bileşenli Solvent 2K</span>
+      <span>&bull;</span>
+      <span>6 – 8 m² / kg</span>
+      <span>&bull;</span>
+      <span>Su Teması: 48 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Liquid Diamond Sıvı Elmas (Parlak) -->
+   <div class="pv-menu-row" data-category="sivi-elmas" data-id="bianca-liquid-diamond-parlak" data-product-id="bianca-liquid-diamond-parlak" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-diamond-parlak-2.png" alt="Bianca Liquid Diamond Sıvı Elmas (Parlak)" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Liquid Diamond (Parlak)</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Kokusuz Elmas</span>
+     </div>
+     <div class="pv-menu-desc-line">Mobilya, kapı ve duvar fayansları için su bazlı koruyucu cila · Parlak</div>
+     <div class="pv-menu-meta-chips">
+      <span>Su Bazlı Kokusuz</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/L</span>
+      <span>&bull;</span>
+      <span>1 – 2 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Liquid Diamond Sıvı Elmas (Mat) -->
+   <div class="pv-menu-row" data-category="sivi-elmas" data-id="bianca-liquid-diamond-mat" data-product-id="bianca-liquid-diamond-mat" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-liquid-diamond-sivi-emlas.png" alt="Bianca Liquid Diamond Sıvı Elmas (Mat)" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Liquid Diamond (Mat)</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Mat Ahşap Cilası</span>
+     </div>
+     <div class="pv-menu-desc-line">Mobilyaların matlığını koruyan su bazlı elmas koruma cilası · Mat</div>
+     <div class="pv-menu-meta-chips">
+      <span>Su Bazlı Kokusuz</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/L</span>
+      <span>&bull;</span>
+      <span>1 – 2 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 3: YÜZEY HAZIRLIK & KIMYASALLAR
-     ========================================================================== -->
+   PANEL 3: YÜZEY HAZIRLIK & KIMYASALLAR
+   ========================================================================== -->
 <section class="pv-tab-panel pv-dept-panel" id="biancaPrepSection" role="tabpanel" style="display: none;">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 03 · Yüzey Hazırlık &amp; Onarım</div>
-      <h2 class="pv-dept-title">Yüzey Temizleyiciler, Silikon Sökücüler &amp; Macunlar</h2>
-      <p class="pv-dept-desc">Boya öncesi kusursuz tutunma için silikon, yağ ve kireç kalıntılarını sıfırlayan özel çözücüler, akrilik macunlar ve rutubet önleyici astarlar.</p>
-    </div>
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="prepMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="temizleyici-sokucu" role="tab" aria-selected="true">
-          Temizleyici & Sökücü
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="tamir-macun" role="tab" aria-selected="false">
-          Tamir & Macun
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="prepMenuList">
-      <!-- Item: Bianca Silfex Çok Amaçlı Silikon Sökücü -->
-      <div class="pv-menu-row" data-category="temizleyici-sokucu" data-id="bianca-silfex-silikon-sokucu" data-product-id="bianca-silfex-silikon-sokucu" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-silfex-silikon-sokucu.png" alt="Bianca Silfex Çok Amaçlı Silikon Sökücü" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Silfex Silikon Sökücü</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Yüzey Hazırlık</span>
-          </div>
-          <div class="pv-menu-desc-line">Boya tutunmasını engelleyen eski silikon ve mastikleri çözen jel solüsyon</div>
-          <div class="pv-menu-meta-chips">
-            <span>10 Dk Hızlı Çözücü</span>
-            <span>&bull;</span>
-            <span>20 – 30 m Derz</span>
-            <span>&bull;</span>
-            <span>Yüzeyi Çizmez</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Özel Yüzey Temizleyici -->
-      <div class="pv-menu-row" data-category="temizleyici-sokucu" data-id="bianca-stella-ozel-temizleyici" data-product-id="bianca-stella-ozel-temizleyici" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/silfex-1.jpg" alt="Bianca Stella Özel Yüzey Temizleyici" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Özel Yüzey Temizleyici</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Yağ & Kireç Sökücü</span>
-          </div>
-          <div class="pv-menu-desc-line">Fayans ve tezgahtaki yanmış yağ ve kireci sıfırlayan hazırlık spreyi</div>
-          <div class="pv-menu-meta-chips">
-            <span>Yağsızlaştırma Spreyi</span>
-            <span>&bull;</span>
-            <span>30 – 40 m² / Şişe</span>
-            <span>&bull;</span>
-            <span>Durulama: 3 Dk</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Dolgu & Çatlak Macunu -->
-      <div class="pv-menu-row" data-category="tamir-macun" data-id="bianca-stella-akrilik-macun" data-product-id="bianca-stella-akrilik-macun" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Dolgu & Çatlak Macunu" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Dolgu & Çatlak Macunu</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Tamir Macunu</span>
-          </div>
-          <div class="pv-menu-desc-line">Kulp delikleri ve derz çatlaklarını sıfırlayan esnek tamir macunu</div>
-          <div class="pv-menu-meta-chips">
-            <span>Zımparalanabilir</span>
-            <span>&bull;</span>
-            <span>250 gr / 500 gr</span>
-            <span>&bull;</span>
-            <span>Zımpara: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Rutubetkes Nem & Rutubet Boyası -->
-      <div class="pv-menu-row" data-category="tamir-macun" data-id="bianca-rutubetkes-boya" data-product-id="bianca-rutubetkes-boya" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-rutubetkes-packshot.png" alt="Bianca Rutubetkes Nem & Rutubet Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Rutubetkes Nem Bariyeri</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Termal Yalıtım</span>
-          </div>
-          <div class="pv-menu-desc-line">Duvar terlemesi, rutubet ve küfü engelleyen mikro kürecikli astar boya</div>
-          <div class="pv-menu-meta-chips">
-            <span>Mikro Cam Kürecikli</span>
-            <span>&bull;</span>
-            <span>3 – 4 m²/L (Çift Kat)</span>
-            <span>&bull;</span>
-            <span>Kat Arası: 6 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 03 · Yüzey Hazırlık &amp; Onarım</div>
+   <h2 class="pv-dept-title">Yüzey Temizleyiciler, Silikon Sökücüler &amp; Macunlar</h2>
+   <p class="pv-dept-desc">Boya öncesi kusursuz tutunma için silikon, yağ ve kireç kalıntılarını sıfırlayan özel çözücüler, akrilik macunlar ve rutubet önleyici astarlar.</p>
   </div>
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="prepMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="temizleyici-sokucu" role="tab" aria-selected="true">
+     Temizleyici & Sökücü
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="tamir-macun" role="tab" aria-selected="false">
+     Tamir & Macun
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="prepMenuList">
+   <!-- Item: Bianca Silfex Çok Amaçlı Silikon Sökücü -->
+   <div class="pv-menu-row" data-category="temizleyici-sokucu" data-id="bianca-silfex-silikon-sokucu" data-product-id="bianca-silfex-silikon-sokucu" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-silfex-silikon-sokucu.png" alt="Bianca Silfex Çok Amaçlı Silikon Sökücü" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Silfex Silikon Sökücü</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Yüzey Hazırlık</span>
+     </div>
+     <div class="pv-menu-desc-line">Boya tutunmasını engelleyen eski silikon ve mastikleri çözen jel solüsyon</div>
+     <div class="pv-menu-meta-chips">
+      <span>10 Dk Hızlı Çözücü</span>
+      <span>&bull;</span>
+      <span>20 – 30 m Derz</span>
+      <span>&bull;</span>
+      <span>Yüzeyi Çizmez</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Özel Yüzey Temizleyici -->
+   <div class="pv-menu-row" data-category="temizleyici-sokucu" data-id="bianca-stella-ozel-temizleyici" data-product-id="bianca-stella-ozel-temizleyici" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/silfex-1.jpg" alt="Bianca Stella Özel Yüzey Temizleyici" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Özel Yüzey Temizleyici</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Yağ & Kireç Sökücü</span>
+     </div>
+     <div class="pv-menu-desc-line">Fayans ve tezgahtaki yanmış yağ ve kireci sıfırlayan hazırlık spreyi</div>
+     <div class="pv-menu-meta-chips">
+      <span>Yağsızlaştırma Spreyi</span>
+      <span>&bull;</span>
+      <span>30 – 40 m² / Şişe</span>
+      <span>&bull;</span>
+      <span>Durulama: 3 Dk</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Dolgu & Çatlak Macunu -->
+   <div class="pv-menu-row" data-category="tamir-macun" data-id="bianca-stella-akrilik-macun" data-product-id="bianca-stella-akrilik-macun" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Dolgu & Çatlak Macunu" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Dolgu & Çatlak Macunu</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Tamir Macunu</span>
+     </div>
+     <div class="pv-menu-desc-line">Kulp delikleri ve derz çatlaklarını sıfırlayan esnek tamir macunu</div>
+     <div class="pv-menu-meta-chips">
+      <span>Zımparalanabilir</span>
+      <span>&bull;</span>
+      <span>250 gr / 500 gr</span>
+      <span>&bull;</span>
+      <span>Zımpara: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Rutubetkes Nem & Rutubet Boyası -->
+   <div class="pv-menu-row" data-category="tamir-macun" data-id="bianca-rutubetkes-boya" data-product-id="bianca-rutubetkes-boya" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-rutubetkes-packshot.png" alt="Bianca Rutubetkes Nem & Rutubet Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Rutubetkes Nem Bariyeri</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Termal Yalıtım</span>
+     </div>
+     <div class="pv-menu-desc-line">Duvar terlemesi, rutubet ve küfü engelleyen mikro kürecikli astar boya</div>
+     <div class="pv-menu-meta-chips">
+      <span>Mikro Cam Kürecikli</span>
+      <span>&bull;</span>
+      <span>3 – 4 m²/L (Çift Kat)</span>
+      <span>&bull;</span>
+      <span>Kat Arası: 6 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 4: UYGULAMA EKIPMANLARI & SETLER
-     ========================================================================== -->
+   PANEL 4: UYGULAMA EKIPMANLARI & SETLER
+   ========================================================================== -->
 <section class="pv-tab-panel pv-dept-panel" id="biancaToolsSection" role="tabpanel" style="display: none;">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 04 · Profesyonel Ekipmanlar</div>
-      <h2 class="pv-dept-title">Uygulama Setleri, Kadife Rulolar &amp; Efekt Aparatları</h2>
-      <p class="pv-dept-desc">İzsiz son kat uygulaması için özel kadife vernik rulolar, ipek kestirme fırçaları, doğal ahşap dokusu veren budak damar tarakları ve maskeleme bantları.</p>
-    </div>
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="toolsMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="rulo-firca" role="tab" aria-selected="true">
-          Rulo & Fırçalar
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="efekt-aparatlari" role="tab" aria-selected="false">
-          Efekt Aparatları
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="yardimci-setler" role="tab" aria-selected="false">
-          Yardımcı Setler
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="toolsMenuList">
-      <!-- Item: Bianca Stella Kadife Vernik Rulo Seti -->
-      <div class="pv-menu-row" data-category="rulo-firca" data-id="bianca-stella-kadife-rulo-seti" data-product-id="bianca-stella-kadife-rulo-seti" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/firca-1-1024x759.png" alt="Bianca Stella Kadife Vernik Rulo Seti" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Kadife Rulo Seti</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Tüy Bırakmaz</span>
-          </div>
-          <div class="pv-menu-desc-line">Boya ve sıvı camda portakal kabuğu yapmayan kısa tüylü vernik rulosu</div>
-          <div class="pv-menu-meta-chips">
-            <span>10 cm Kadife Başlık</span>
-            <span>&bull;</span>
-            <span>1 Sap + 2 Yedek</span>
-            <span>&bull;</span>
-            <span>Sıfır Rulo İzi</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Saf İpek Kestirme Fırçası -->
-      <div class="pv-menu-row" data-category="rulo-firca" data-id="bianca-stella-ipek-kestirme-fircasi" data-product-id="bianca-stella-ipek-kestirme-fircasi" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/firca-2.png" alt="Bianca Stella Saf İpek Kestirme Fırçası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella İpek Kestirme Fırçası</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">İz Bırakmaz</span>
-          </div>
-          <div class="pv-menu-desc-line">Derz dipleri, çıtalar ve köşeler için saf kıllı profesyonel kestirme fırçası</div>
-          <div class="pv-menu-meta-chips">
-            <span>Saf İpek Kıl</span>
-            <span>&bull;</span>
-            <span>No: 2 / 2.5 / 3</span>
-            <span>&bull;</span>
-            <span>Köşe & Kenar</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Ahşap Budak & Damar Aparatı -->
-      <div class="pv-menu-row" data-category="efekt-aparatlari" data-id="bianca-stella-budak-damar-aparati" data-product-id="bianca-stella-budak-damar-aparati" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Ahşap Budak & Damar Aparatı" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Budak Damar Tarağı</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Ahşap Deseni</span>
-          </div>
-          <div class="pv-menu-desc-line">Ahşap efekt boyasına doğal meşe/ceviz budak halkaları veren kauçuk aparat</div>
-          <div class="pv-menu-meta-chips">
-            <span>Esnek Kauçuk Gövde</span>
-            <span>&bull;</span>
-            <span>10 cm / 15 cm Set</span>
-            <span>&bull;</span>
-            <span>Kolay Yıkanır</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Hassas Maskeleme Bandı -->
-      <div class="pv-menu-row" data-category="yardimci-setler" data-id="bianca-stella-maskeleme-bandi" data-product-id="bianca-stella-maskeleme-bandi" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-maskeleme-bandi-packshot.png" alt="Bianca Stella Hassas Maskeleme Bandı" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Hassas Washi Bant</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">İzsiz Söküm</span>
-          </div>
-          <div class="pv-menu-desc-line">Boya sızdırmayan ve 60 güne kadar alt zemini kaldırmadan sökülen pirinç bant</div>
-          <div class="pv-menu-meta-chips">
-            <span>Japon Washi Kağıdı</span>
-            <span>&bull;</span>
-            <span>25 mm × 50 m</span>
-            <span>&bull;</span>
-            <span>Keskin Kenar</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti -->
-      <div class="pv-menu-row" data-category="yardimci-setler" data-id="bianca-stella-komple-donusum-seti" data-product-id="bianca-stella-komple-donusum-seti" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/her-seyi-ambalaj.png" alt="Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Stella Komple Dönüşüm Kiti</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Eksiksiz Kutu</span>
-          </div>
-          <div class="pv-menu-desc-line">Boya + Sıvı Cam + Temizleyici + Rulo + Fırça + Bant tam uygulama kiti</div>
-          <div class="pv-menu-meta-chips">
-            <span>Mutfak / Banyo Paketi</span>
-            <span>&bull;</span>
-            <span>10 – 15 m² Dönüşüm</span>
-            <span>&bull;</span>
-            <span>Tüm Sarf Malzeme</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 04 · Profesyonel Ekipmanlar</div>
+   <h2 class="pv-dept-title">Uygulama Setleri, Kadife Rulolar &amp; Efekt Aparatları</h2>
+   <p class="pv-dept-desc">İzsiz son kat uygulaması için özel kadife vernik rulolar, ipek kestirme fırçaları, doğal ahşap dokusu veren budak damar tarakları ve maskeleme bantları.</p>
   </div>
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="toolsMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="rulo-firca" role="tab" aria-selected="true">
+     Rulo & Fırçalar
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="efekt-aparatlari" role="tab" aria-selected="false">
+     Efekt Aparatları
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="yardimci-setler" role="tab" aria-selected="false">
+     Yardımcı Setler
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="toolsMenuList">
+   <!-- Item: Bianca Stella Kadife Vernik Rulo Seti -->
+   <div class="pv-menu-row" data-category="rulo-firca" data-id="bianca-stella-kadife-rulo-seti" data-product-id="bianca-stella-kadife-rulo-seti" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/firca-1-1024x759.png" alt="Bianca Stella Kadife Vernik Rulo Seti" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Kadife Rulo Seti</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Tüy Bırakmaz</span>
+     </div>
+     <div class="pv-menu-desc-line">Boya ve sıvı camda portakal kabuğu yapmayan kısa tüylü vernik rulosu</div>
+     <div class="pv-menu-meta-chips">
+      <span>10 cm Kadife Başlık</span>
+      <span>&bull;</span>
+      <span>1 Sap + 2 Yedek</span>
+      <span>&bull;</span>
+      <span>Sıfır Rulo İzi</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Saf İpek Kestirme Fırçası -->
+   <div class="pv-menu-row" data-category="rulo-firca" data-id="bianca-stella-ipek-kestirme-fircasi" data-product-id="bianca-stella-ipek-kestirme-fircasi" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/firca-2.png" alt="Bianca Stella Saf İpek Kestirme Fırçası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella İpek Kestirme Fırçası</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">İz Bırakmaz</span>
+     </div>
+     <div class="pv-menu-desc-line">Derz dipleri, çıtalar ve köşeler için saf kıllı profesyonel kestirme fırçası</div>
+     <div class="pv-menu-meta-chips">
+      <span>Saf İpek Kıl</span>
+      <span>&bull;</span>
+      <span>No: 2 / 2.5 / 3</span>
+      <span>&bull;</span>
+      <span>Köşe & Kenar</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Ahşap Budak & Damar Aparatı -->
+   <div class="pv-menu-row" data-category="efekt-aparatlari" data-id="bianca-stella-budak-damar-aparati" data-product-id="bianca-stella-budak-damar-aparati" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-stella-yardimci-urunler.png" alt="Bianca Stella Ahşap Budak & Damar Aparatı" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Budak Damar Tarağı</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Ahşap Deseni</span>
+     </div>
+     <div class="pv-menu-desc-line">Ahşap efekt boyasına doğal meşe/ceviz budak halkaları veren kauçuk aparat</div>
+     <div class="pv-menu-meta-chips">
+      <span>Esnek Kauçuk Gövde</span>
+      <span>&bull;</span>
+      <span>10 cm / 15 cm Set</span>
+      <span>&bull;</span>
+      <span>Kolay Yıkanır</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Hassas Maskeleme Bandı -->
+   <div class="pv-menu-row" data-category="yardimci-setler" data-id="bianca-stella-maskeleme-bandi" data-product-id="bianca-stella-maskeleme-bandi" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-maskeleme-bandi-packshot.png" alt="Bianca Stella Hassas Maskeleme Bandı" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Hassas Washi Bant</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">İzsiz Söküm</span>
+     </div>
+     <div class="pv-menu-desc-line">Boya sızdırmayan ve 60 güne kadar alt zemini kaldırmadan sökülen pirinç bant</div>
+     <div class="pv-menu-meta-chips">
+      <span>Japon Washi Kağıdı</span>
+      <span>&bull;</span>
+      <span>25 mm × 50 m</span>
+      <span>&bull;</span>
+      <span>Keskin Kenar</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti -->
+   <div class="pv-menu-row" data-category="yardimci-setler" data-id="bianca-stella-komple-donusum-seti" data-product-id="bianca-stella-komple-donusum-seti" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/her-seyi-ambalaj.png" alt="Bianca Stella Mutfak & Banyo Komple Dönüşüm Seti" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Stella Komple Dönüşüm Kiti</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Eksiksiz Kutu</span>
+     </div>
+     <div class="pv-menu-desc-line">Boya + Sıvı Cam + Temizleyici + Rulo + Fırça + Bant tam uygulama kiti</div>
+     <div class="pv-menu-meta-chips">
+      <span>Mutfak / Banyo Paketi</span>
+      <span>&bull;</span>
+      <span>10 – 15 m² Dönüşüm</span>
+      <span>&bull;</span>
+      <span>Tüm Sarf Malzeme</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 5: MIMARI & İÇ CEPHE BOYALARI
-     ========================================================================== -->
+   PANEL 5: MIMARI & İÇ CEPHE BOYALARI
+   ========================================================================== -->
 <section class="pv-tab-panel pv-dept-panel" id="biancaArchitecturalSection" role="tabpanel" style="display: none;">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 05 · İç Mekan &amp; Tavan Boyaları</div>
-      <h2 class="pv-dept-title">Mimari İç Cephe Boyaları &amp; Dönüşüm Astarları</h2>
-      <p class="pv-dept-desc">Yüksek örtücülük ve tam silinebilirlik sunan Vals ipek mat iç cephe boyaları, profesyonel tavan boyası ve universal geçiş astarları.</p>
-    </div>
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="architecturalMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="ic-cephe" role="tab" aria-selected="true">
-          İç Cephe Boyaları
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="tavan-astar" role="tab" aria-selected="false">
-          Tavan & Astarlar
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="architecturalMenuList">
-      <!-- Item: Bianca Vals İpek Mat Silinebilir İç Cephe Boyası -->
-      <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-vals-ipek-mat" data-product-id="bianca-vals-ipek-mat" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-vals-ipek-mat-packshot.png" alt="Bianca Vals İpek Mat Silinebilir İç Cephe Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Vals İpek Mat</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Teflon Silinebilir</span>
-          </div>
-          <div class="pv-menu-desc-line">Leke tutmayan, tam silinebilir ve yıkanabilir lüks iç cephe boyası</div>
-          <div class="pv-menu-meta-chips">
-            <span>İpeksi Mat (Teflonlu)</span>
-            <span>&bull;</span>
-            <span>14 – 16 m²/L</span>
-            <span>&bull;</span>
-            <span>Kat Arası: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Vals Mat İç Cephe Boyası -->
-      <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-vals-mat" data-product-id="bianca-vals-mat" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-vals-mat-packshot.png" alt="Bianca Vals Mat İç Cephe Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Vals Mat</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Kusur Kapatıcı</span>
-          </div>
-          <div class="pv-menu-desc-line">Işık kırılmasını önleyen, sıva kusurlarını gizleyen kadife mat boya</div>
-          <div class="pv-menu-meta-chips">
-            <span>Kadife Mat Bitiş</span>
-            <span>&bull;</span>
-            <span>13 – 15 m²/L</span>
-            <span>&bull;</span>
-            <span>Kat Arası: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Madreperla İtalyan Sedef Efekt Boyası -->
-      <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-artistico-sedef-boya" data-product-id="bianca-artistico-sedef-boya" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-madreperla-sedef-packshot.png" alt="Bianca Madreperla İtalyan Sedef Efekt Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Madreperla İtalyan Sedef</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Sedef Işıltısı</span>
-          </div>
-          <div class="pv-menu-desc-line">Işık açısına göre parıldayan dekoratif duvar ve tavan sedef kaplaması</div>
-          <div class="pv-menu-meta-chips">
-            <span>İnci & Sedef Dokusu</span>
-            <span>&bull;</span>
-            <span>8 – 10 m²/L</span>
-            <span>&bull;</span>
-            <span>Özel Efekt</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Panel Kapı Boyası (Su Bazlı) -->
-      <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-panel-kapi-boyasi" data-product-id="bianca-panel-kapi-boyasi" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-panel-kapi-packshot.png" alt="Bianca Panel Kapı Boyası (Su Bazlı)" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Panel Kapı Boyası</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Sararmaz Su Bazlı</span>
-          </div>
-          <div class="pv-menu-desc-line">Amerikan panel ve ahşap kapılar için kokusuz, sararmayan su bazlı boya</div>
-          <div class="pv-menu-meta-chips">
-            <span>Yarı Mat Kokusuz</span>
-            <span>&bull;</span>
-            <span>12 – 14 m²/L</span>
-            <span>&bull;</span>
-            <span>Kat Arası: 3 – 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Profesyonel Tavan Boyası -->
-      <div class="pv-menu-row" data-category="tavan-astar" data-id="bianca-profesyonel-tavan" data-product-id="bianca-profesyonel-tavan" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/bianca-tavan-plastik-packshot.png" alt="Bianca Profesyonel Tavan Boyası" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Profesyonel Tavan Boyası</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Ekstra Beyaz</span>
-          </div>
-          <div class="pv-menu-desc-line">Tavanlarda sıfır parlama, yüksek matlık ve damlatmayan ekstra beyaz boya</div>
-          <div class="pv-menu-meta-chips">
-            <span>Tam Mat Kar Beyaz</span>
-            <span>&bull;</span>
-            <span>10 – 12 m²/kg</span>
-            <span>&bull;</span>
-            <span>Kat Arası: 2 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- Item: Bianca Universal Dönüşüm Astarı -->
-      <div class="pv-menu-row" data-category="tavan-astar" data-id="bianca-universal-donusum-astari" data-product-id="bianca-universal-donusum-astari" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/bianca-official/aile_2024.png" alt="Bianca Universal Dönüşüm Astarı" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Universal Dönüşüm Astarı</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Geçiş Astarı</span>
-          </div>
-          <div class="pv-menu-desc-line">Sentetik ve yağlı boyadan su bazlı boyaya güvenli tutunma köprüsü</div>
-          <div class="pv-menu-meta-chips">
-            <span>Örtücü Tutunma Astarı</span>
-            <span>&bull;</span>
-            <span>12 – 15 m²/L</span>
-            <span>&bull;</span>
-            <span>Kuruma: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 05 · İç Mekan &amp; Tavan Boyaları</div>
+   <h2 class="pv-dept-title">Mimari İç Cephe Boyaları &amp; Dönüşüm Astarları</h2>
+   <p class="pv-dept-desc">Yüksek örtücülük ve tam silinebilirlik sunan Vals ipek mat iç cephe boyaları, profesyonel tavan boyası ve universal geçiş astarları.</p>
   </div>
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="architecturalMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="ic-cephe" role="tab" aria-selected="true">
+     İç Cephe Boyaları
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="tavan-astar" role="tab" aria-selected="false">
+     Tavan & Astarlar
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="architecturalMenuList">
+   <!-- Item: Bianca Vals İpek Mat Silinebilir İç Cephe Boyası -->
+   <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-vals-ipek-mat" data-product-id="bianca-vals-ipek-mat" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-vals-ipek-mat-packshot.png" alt="Bianca Vals İpek Mat Silinebilir İç Cephe Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Vals İpek Mat</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Teflon Silinebilir</span>
+     </div>
+     <div class="pv-menu-desc-line">Leke tutmayan, tam silinebilir ve yıkanabilir lüks iç cephe boyası</div>
+     <div class="pv-menu-meta-chips">
+      <span>İpeksi Mat (Teflonlu)</span>
+      <span>&bull;</span>
+      <span>14 – 16 m²/L</span>
+      <span>&bull;</span>
+      <span>Kat Arası: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Vals Mat İç Cephe Boyası -->
+   <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-vals-mat" data-product-id="bianca-vals-mat" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-vals-mat-packshot.png" alt="Bianca Vals Mat İç Cephe Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Vals Mat</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Kusur Kapatıcı</span>
+     </div>
+     <div class="pv-menu-desc-line">Işık kırılmasını önleyen, sıva kusurlarını gizleyen kadife mat boya</div>
+     <div class="pv-menu-meta-chips">
+      <span>Kadife Mat Bitiş</span>
+      <span>&bull;</span>
+      <span>13 – 15 m²/L</span>
+      <span>&bull;</span>
+      <span>Kat Arası: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Madreperla İtalyan Sedef Efekt Boyası -->
+   <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-artistico-sedef-boya" data-product-id="bianca-artistico-sedef-boya" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-madreperla-sedef-packshot.png" alt="Bianca Madreperla İtalyan Sedef Efekt Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Madreperla İtalyan Sedef</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Sedef Işıltısı</span>
+     </div>
+     <div class="pv-menu-desc-line">Işık açısına göre parıldayan dekoratif duvar ve tavan sedef kaplaması</div>
+     <div class="pv-menu-meta-chips">
+      <span>İnci & Sedef Dokusu</span>
+      <span>&bull;</span>
+      <span>8 – 10 m²/L</span>
+      <span>&bull;</span>
+      <span>Özel Efekt</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Panel Kapı Boyası (Su Bazlı) -->
+   <div class="pv-menu-row" data-category="ic-cephe" data-id="bianca-panel-kapi-boyasi" data-product-id="bianca-panel-kapi-boyasi" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-panel-kapi-packshot.png" alt="Bianca Panel Kapı Boyası (Su Bazlı)" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Panel Kapı Boyası</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Sararmaz Su Bazlı</span>
+     </div>
+     <div class="pv-menu-desc-line">Amerikan panel ve ahşap kapılar için kokusuz, sararmayan su bazlı boya</div>
+     <div class="pv-menu-meta-chips">
+      <span>Yarı Mat Kokusuz</span>
+      <span>&bull;</span>
+      <span>12 – 14 m²/L</span>
+      <span>&bull;</span>
+      <span>Kat Arası: 3 – 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Profesyonel Tavan Boyası -->
+   <div class="pv-menu-row" data-category="tavan-astar" data-id="bianca-profesyonel-tavan" data-product-id="bianca-profesyonel-tavan" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/bianca-tavan-plastik-packshot.png" alt="Bianca Profesyonel Tavan Boyası" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Profesyonel Tavan Boyası</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Ekstra Beyaz</span>
+     </div>
+     <div class="pv-menu-desc-line">Tavanlarda sıfır parlama, yüksek matlık ve damlatmayan ekstra beyaz boya</div>
+     <div class="pv-menu-meta-chips">
+      <span>Tam Mat Kar Beyaz</span>
+      <span>&bull;</span>
+      <span>10 – 12 m²/kg</span>
+      <span>&bull;</span>
+      <span>Kat Arası: 2 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+   <!-- Item: Bianca Universal Dönüşüm Astarı -->
+   <div class="pv-menu-row" data-category="tavan-astar" data-id="bianca-universal-donusum-astari" data-product-id="bianca-universal-donusum-astari" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/bianca-official/aile_2024.png" alt="Bianca Universal Dönüşüm Astarı" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Universal Dönüşüm Astarı</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Geçiş Astarı</span>
+     </div>
+     <div class="pv-menu-desc-line">Sentetik ve yağlı boyadan su bazlı boyaya güvenli tutunma köprüsü</div>
+     <div class="pv-menu-meta-chips">
+      <span>Örtücü Tutunma Astarı</span>
+      <span>&bull;</span>
+      <span>12 – 15 m²/L</span>
+      <span>&bull;</span>
+      <span>Kuruma: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 
 
 <!-- ==========================================================================
-     MERKEZLER & YOL TARİFİ (Showroom & Logistics GPS Hubs)
-     ========================================================================== -->
+   MERKEZLER & YOL TARİFİ (Showroom & Logistics GPS Hubs)
+   ========================================================================== -->
 <section class="pv-hubs-section" aria-label="Pervan Merkezleri ve Yol Tarifi">
-  <div class="pv-container">
-    
-    <div class="pv-hubs-header">
-      <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
-      <h2 class="pv-hubs-title">Daha Fazlası, Özel Renk &amp; Hızlı Tedarik İçin</h2>
-      <p class="pv-hubs-desc">Katalogda yer almayan özel seriler, anında bilgisayarlı renk üretimi veya doğrudan şantiyenize paletli sevkiyat için merkezlerimize ulaşın.</p>
-    </div>
-
-    <div class="pv-hubs-grid">
-      
-      <!-- Card 1: Balçova Showroom -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
-        <p class="pv-hub-desc">Bilgisayarlı RenXMatik™ renk üretimi, Bianca Stella dönüşüm stantları, numune renk dolumu ve perakende hırdavat satışı.</p>
-        
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
-          </div>
-        </div>
-
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ve%20RenXMatik%20Merkezinizden%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2: Urla Lojistik Depo -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Urla Ana Lojistik Deposu</h3>
-        <p class="pv-hub-desc">Paletli malzeme teslimatı, tır ve kamyonet yükleme sahası, Yarımada (Urla, Çeşme, Seferihisar, Karaburun) şantiye sevkiyatı.</p>
-        
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Kalabak, 35430 Urla / İzmir</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
-          </div>
-        </div>
-
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323318763?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20malzeme%20al%C4%B1m%C4%B1%20ve%20palet%20y%C3%BCkleme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
+ <div class="pv-container">
+  
+  <div class="pv-hubs-header">
+   <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
+   <h2 class="pv-hubs-title">Daha Fazlası, Özel Renk &amp; Hızlı Tedarik İçin</h2>
+   <p class="pv-hubs-desc">Katalogda yer almayan özel seriler, anında bilgisayarlı renk üretimi veya doğrudan şantiyenize paletli sevkiyat için merkezlerimize ulaşın.</p>
   </div>
+
+  <div class="pv-hubs-grid">
+   
+   <!-- Card 1: Balçova Showroom -->
+   <div class="pv-hub-card">
+    <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
+    <p class="pv-hub-desc">Bilgisayarlı RenXMatik™ renk üretimi, Bianca Stella dönüşüm stantları, numune renk dolumu ve perakende hırdavat satışı.</p>
+    
+    <div class="pv-hub-details">
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
+     </div>
+    </div>
+
+    <div class="pv-hub-actions">
+     <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <span>Yol Tarifi Al (Haritalar)</span>
+     </a>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ve%20RenXMatik%20Merkezinizden%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>WhatsApp ile Danış</span>
+     </a>
+    </div>
+   </div>
+
+   <!-- Card 2: Urla Lojistik Depo -->
+   <div class="pv-hub-card">
+    <h3 class="pv-hub-title">Urla Ana Lojistik Deposu</h3>
+    <p class="pv-hub-desc">Paletli malzeme teslimatı, tır ve kamyonet yükleme sahası, Yarımada (Urla, Çeşme, Seferihisar, Karaburun) şantiye sevkiyatı.</p>
+    
+    <div class="pv-hub-details">
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>Kalabak, 35430 Urla / İzmir</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
+     </div>
+    </div>
+
+    <div class="pv-hub-actions">
+     <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <span>Yol Tarifi Al (Haritalar)</span>
+     </a>
+     <a href="https://wa.me/905323318763?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20malzeme%20al%C4%B1m%C4%B1%20ve%20palet%20y%C3%BCkleme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>WhatsApp ile Danış</span>
+     </a>
+    </div>
+   </div>
+
+  </div>
+ </div>
 </section>
 
 </main>
 
 <!-- ==========================================================================
-     ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
-     ========================================================================== -->
+   ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
+   ========================================================================== -->
 <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
-  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-    <!-- Top Gesture Bar & Absolute Close Action -->
-    <div class="pv-modal-top-bar" id="modalTopBar">
-      <div class="pv-modal-handle-zone" id="modalHandleZone">
-        <div class="pv-modal-handle"></div>
-      </div>
-      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Scrollable Modal Content Area -->
-    <div class="pv-modal-scroll" id="modalScrollArea">
-      <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
-      <div class="pv-specimen-hero">
-        <div class="pv-specimen-meta">
-          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">BİANCA STELLA · DÖNÜŞÜM SİSTEMLERİ</div>
-          <h3 class="pv-specimen-title" id="modalProductTitle">Bianca Stella Su Bazlı Saf Akrilik Boya</h3>
-        </div>
-
-        <div class="pv-specimen-can-stage">
-          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
-          <img id="modalProductImg" src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Ürün Görseli" />
-          <div class="pv-can-shadow" id="modalCanShadow"></div>
-        </div>
-
-        <p class="pv-specimen-desc" id="modalProductDesc">Fayans, seramik, tezgah, mobilya, lake dolap ve cam yüzeylerde astar gerektirmeden üstün tutunma sağlayan kokusuz saf akrilik dönüşüm boyası.</p>
-        <span id="modalProductTag" style="display:none;"></span>
-      </div>
-
-      <!-- 2. Packaging / Size Segmented Track -->
-      <div class="pv-modal-select-group">
-        <div class="pv-modal-select-header">
-          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
-        </div>
-        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-
-      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
-      <div class="pv-spec-gauges" id="modalSpecGauges">
-        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
-          <div class="pv-gauge-eyebrow">STANDART &amp; SERTİFİKA</div>
-          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 71-3 / CE</div>
-          <div class="pv-gauge-caption" id="modalGaugeStandardCaption">EN 71-3 Gıda &amp; Oyuncak</div>
-        </div>
-
-        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
-          <div class="pv-gauge-eyebrow">SARFİYAT &amp; KAPLAMA</div>
-          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">10 – 12 m² / L</div>
-          <div class="pv-gauge-caption" id="modalSpecPackaging">1.0 Litre Kutu</div>
-        </div>
-      </div>
-
-      <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
-      <div class="pv-specs-table" id="modalSpecsTable">
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">İnceltme / Karışım:</span>
-          <span class="pv-spec-v" id="modalSpecMixing">İnceltilmez · Kullanıma hazır</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Kuruma &amp; Kürlenme:</span>
-          <span class="pv-spec-v" id="modalSpecPotLife">Katlar arası: 2–3 saat · Kürlenme: 7 gün</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Lojistik Dağıtım:</span>
-          <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Depo</span>
-        </div>
-      </div>
-
-      <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
-      <div class="pv-modal-accordions" id="modalAccordions">
-        <!-- Injected dynamically -->
-      </div>
-    </div>
-
-    <!-- STICKY FOOTER ACTION BAR -->
-    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
-      <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-        <span>WhatsApp ile Fiyat &amp; Stok Teklifi Al</span>
-      </a>
-      <div class="pv-modal-footer-aux">
-        <span class="pv-modal-delivery-chip">
-          <span class="pv-chip-pulse"></span>
-          <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
-        </span>
-      </div>
-    </div>
+ <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+  <!-- Top Gesture Bar & Absolute Close Action -->
+  <div class="pv-modal-top-bar" id="modalTopBar">
+   <div class="pv-modal-handle-zone" id="modalHandleZone">
+    <div class="pv-modal-handle"></div>
+   </div>
+   <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <line x1="18" y1="6" x2="6" y2="18"></line>
+     <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+   </button>
   </div>
+
+  <!-- Scrollable Modal Content Area -->
+  <div class="pv-modal-scroll" id="modalScrollArea">
+   <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
+   <div class="pv-specimen-hero">
+    <div class="pv-specimen-meta">
+     <div class="pv-specimen-eyebrow" id="modalProductEyebrow">BİANCA STELLA · DÖNÜŞÜM SİSTEMLERİ</div>
+     <h3 class="pv-specimen-title" id="modalProductTitle">Bianca Stella Su Bazlı Saf Akrilik Boya</h3>
+    </div>
+
+    <div class="pv-specimen-can-stage">
+     <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+     <img id="modalProductImg" src="assets/bianca-official/stella-1-litre_2025-7.png" alt="Ürün Görseli" />
+     <div class="pv-can-shadow" id="modalCanShadow"></div>
+    </div>
+
+    <p class="pv-specimen-desc" id="modalProductDesc">Fayans, seramik, tezgah, mobilya, lake dolap ve cam yüzeylerde astar gerektirmeden üstün tutunma sağlayan kokusuz saf akrilik dönüşüm boyası.</p>
+    <span id="modalProductTag" style="display:none;"></span>
+   </div>
+
+   <!-- 2. Packaging / Size Segmented Track -->
+   <div class="pv-modal-select-group">
+    <div class="pv-modal-select-header">
+     <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
+    </div>
+    <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi">
+     <!-- Dynamically populated -->
+    </div>
+   </div>
+
+   <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
+   <div class="pv-spec-gauges" id="modalSpecGauges">
+    <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
+     <div class="pv-gauge-eyebrow">STANDART &amp; SERTİFİKA</div>
+     <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 71-3 / CE</div>
+     <div class="pv-gauge-caption" id="modalGaugeStandardCaption">EN 71-3 Gıda &amp; Oyuncak</div>
+    </div>
+
+    <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
+     <div class="pv-gauge-eyebrow">SARFİYAT &amp; KAPLAMA</div>
+     <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">10 – 12 m² / L</div>
+     <div class="pv-gauge-caption" id="modalSpecPackaging">1.0 Litre Kutu</div>
+    </div>
+   </div>
+
+   <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
+   <div class="pv-specs-table" id="modalSpecsTable">
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">İnceltme / Karışım:</span>
+     <span class="pv-spec-v" id="modalSpecMixing">İnceltilmez · Kullanıma hazır</span>
+    </div>
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">Kuruma &amp; Kürlenme:</span>
+     <span class="pv-spec-v" id="modalSpecPotLife">Katlar arası: 2–3 saat · Kürlenme: 7 gün</span>
+    </div>
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">Lojistik Dağıtım:</span>
+     <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Depo</span>
+    </div>
+   </div>
+
+   <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
+   <div class="pv-modal-accordions" id="modalAccordions">
+    <!-- Injected dynamically -->
+   </div>
+  </div>
+
+  <!-- STICKY FOOTER ACTION BAR -->
+  <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+   <a href="#" id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span>WhatsApp ile Fiyat &amp; Stok Teklifi Al</span>
+   </a>
+   <div class="pv-modal-footer-aux">
+    <span class="pv-modal-delivery-chip">
+     <span class="pv-chip-pulse"></span>
+     <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
+    </span>
+   </div>
+  </div>
+ </div>
 </div>
 
 <!-- ==========================================================================
-     MOBILE iOS 18 BOTTOM SHEET DRAWER (Department Switcher)
-     ========================================================================== -->
+   MOBILE iOS 18 BOTTOM SHEET DRAWER (Department Switcher)
+   ========================================================================== -->
 <div class="pv-drawer-backdrop" id="pvDeptDrawerBackdrop" aria-hidden="true">
-  <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
-    <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
-      <div class="pv-drawer-handle"></div>
-    </div>
-    
-    <div class="pv-drawer-header">
-      <div>
-        <h3 class="pv-drawer-title" id="drawerTitle">Bianca Stella Departmanları</h3>
-        <div class="pv-drawer-subtitle">İncelemek istediğiniz ürün grubunu seçin</div>
-      </div>
-      <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
-    </div>
-
-    <div class="pv-drawer-list" id="pvDeptList">
-      <!-- Injected dynamically -->
-    </div>
+ <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
+   <div class="pv-drawer-handle"></div>
   </div>
+  
+  <div class="pv-drawer-header">
+   <div>
+    <h3 class="pv-drawer-title" id="drawerTitle">Bianca Stella Departmanları</h3>
+    <div class="pv-drawer-subtitle">İncelemek istediğiniz ürün grubunu seçin</div>
+   </div>
+   <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
+  </div>
+
+  <div class="pv-drawer-list" id="pvDeptList">
+   <!-- Injected dynamically -->
+  </div>
+ </div>
 </div>
 
 <!-- PERVAN FOOTER (NEWSLETTER + REGIONS + 4-COLUMN NAV) -->
 <footer class="footer">
-  <!-- Main Footer Navigation -->
-  <div class="footer-container">
-    <div class="footer-sizer">
-      <div>
-        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
+ <!-- Main Footer Navigation -->
+ <div class="footer-container">
+  <div class="footer-sizer">
+   <div>
+    <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
+    <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
+   </div>
+   
+   <div class="menu-container">
+    <nav class="navbar" role="navigation">
+     
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yetkili Bayilikler</span>
+      <div class="navbar-dropdown">
+       <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+       <a href="tek-boya.html" class="navbar-item">TEK Boya Yetkili Bayi</a>
+       <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+       <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+       <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
+       <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+       <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
       </div>
-      
-      <div class="menu-container">
-        <nav class="navbar" role="navigation">
-          
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yetkili Bayilikler</span>
-            <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-              <a href="tek-boya.html" class="navbar-item">TEK Boya Yetkili Bayi</a>
-              <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-              <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-              <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
-              <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-              <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-            </div>
-          </div>
+     </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
-            <div class="navbar-dropdown">
-              <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-              <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
-              <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-              <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
-              <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
-              <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-              <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Mimari Taahhüt</span>
-            <div class="navbar-dropdown">
-              <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
-              <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-              <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
-              <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
-              <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Merkezlerimiz</span>
-            <div class="navbar-dropdown">
-              <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
-              <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
-              <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
-              <a href="tel:+902322784340" class="navbar-item">0 (232) 278 43 40</a>
-            </div>
-          </div>
-
-        </nav>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
+      <div class="navbar-dropdown">
+       <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+       <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
+       <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+       <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
+       <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
+       <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+       <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
       </div>
-    </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Mimari Taahhüt</span>
+      <div class="navbar-dropdown">
+       <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
+       <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+       <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+       <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
+       <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
+       <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
+      </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Merkezlerimiz</span>
+      <div class="navbar-dropdown">
+       <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
+       <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
+       <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
+       <a href="tel:+902322784340" class="navbar-item">0 (232) 278 43 40</a>
+      </div>
+     </div>
+
+    </nav>
+   </div>
   </div>
+ </div>
 </footer>
 
 <!-- ==========================================================================
-     SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 25 Ürün Arama)
-     ========================================================================== -->
+   SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 25 Ürün Arama)
+   ========================================================================== -->
 <div class="pv-spotlight-backdrop" id="pvSpotlightBackdrop" aria-hidden="true">
-  <div class="pv-spotlight-dialog" role="dialog" aria-modal="true" aria-labelledby="pvSpotlightTitle">
-    <div class="pv-spotlight-header">
-      <svg class="pv-spotlight-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="search" class="pv-spotlight-input" id="pvSpotlightInput" placeholder="Bianca Stella boya, sıvı cam, rulo veya ürün kodu arayın... (örn: Maximo, Akrilik, Kadife)" autocomplete="off" spellcheck="false" />
-      <button type="button" class="pv-spotlight-close-btn" id="pvSpotlightCloseBtn" aria-label="Aramayı Kapat">ESC</button>
-    </div>
-    <div class="pv-spotlight-results" id="pvSpotlightResults">
-      <!-- Search items rendered via JS -->
-    </div>
-    <div class="pv-spotlight-footer">
-      <span class="pv-spotlight-hint"><kbd>↑</kbd> <kbd>↓</kbd> Gezin &bull; <kbd>↵</kbd> Seç &bull; <kbd>ESC</kbd> Kapat</span>
-      <span class="pv-spotlight-count" id="pvSpotlightCount">25 Ürün Kataloğu</span>
-    </div>
+ <div class="pv-spotlight-dialog" role="dialog" aria-modal="true" aria-labelledby="pvSpotlightTitle">
+  <div class="pv-spotlight-header">
+   <svg class="pv-spotlight-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+   </svg>
+   <input type="search" class="pv-spotlight-input" id="pvSpotlightInput" placeholder="Bianca Stella boya, sıvı cam, rulo veya ürün kodu arayın... (örn: Maximo, Akrilik, Kadife)" autocomplete="off" spellcheck="false" />
+   <button type="button" class="pv-spotlight-close-btn" id="pvSpotlightCloseBtn" aria-label="Aramayı Kapat">ESC</button>
   </div>
+  <div class="pv-spotlight-results" id="pvSpotlightResults">
+   <!-- Search items rendered via JS -->
+  </div>
+  <div class="pv-spotlight-footer">
+   <span class="pv-spotlight-hint"><kbd>↑</kbd> <kbd>↓</kbd> Gezin &bull; <kbd>↵</kbd> Seç &bull; <kbd>ESC</kbd> Kapat</span>
+   <span class="pv-spotlight-count" id="pvSpotlightCount">25 Ürün Kataloğu</span>
+  </div>
+ </div>
 </div>
 
 <script src="js/pervan.js?v=33.0.0" defer></script>

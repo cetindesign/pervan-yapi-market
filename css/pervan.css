@@ -3,6 +3,47 @@
    Mobile-First Scandinavian Architectural Standard
    ========================================================================== */
 
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreWeb-Light.woff2') format('woff2'),
+       url('/assets/fonts/CalibreWeb-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreWeb-Regular.woff2') format('woff2'),
+       url('/assets/fonts/CalibreWeb-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreWeb-Medium.woff2') format('woff2'),
+       url('/assets/fonts/CalibreWeb-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreWeb-Semibold.woff2') format('woff2'),
+       url('/assets/fonts/CalibreWeb-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Calibre';
+  src: url('../assets/fonts/CalibreWeb-Bold.woff2') format('woff2'),
+       url('/assets/fonts/CalibreWeb-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg-white: #FFFFFF;
   --bg-offwhite: #F8F8F7;
@@ -22,12 +63,14 @@
   --border-light: rgba(0, 0, 0, 0.08);
   --border-dark: rgba(255, 255, 255, 0.12);
   
-  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-editorial: 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   --max-width: 1440px;
-  --header-height: 64px;
+  --header-height: 74px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-reform: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after {
@@ -42,21 +85,26 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg-white);
-  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
   max-width: 100%;
   width: 100%;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: 15px;
+  font-family: var(--font-editorial);
+  font-size: 16px;
+  line-height: 1.4;
   font-weight: 400;
-  line-height: 1.5;
-  color: var(--text-main);
-  background-color: var(--bg-white);
+  color: #000000;
+  background-color: #FFFFFF;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
   max-width: 100%;
   width: 100%;
   position: relative;
@@ -64,17 +112,12 @@ body {
 
 @media (min-width: 769px) {
   body {
-    font-family: var(--font-body);
-    font-size: 15px;
+    font-family: var(--font-editorial);
+    font-size: 16px;
+    line-height: 1.4;
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--text-main);
-    background-color: var(--bg-white);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
-    max-width: 100%;
-    width: 100%;
+    color: #000000;
+    background-color: #FFFFFF;
   }
 }
 

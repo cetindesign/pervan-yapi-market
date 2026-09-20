@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-  --pv-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --pv-font: var(--font-editorial, 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
   --pv-btn-primary-bg: #C8461E;
   --pv-btn-primary-hover-bg: #A83614;
   --pv-btn-primary-text: #FFFFFF;
@@ -6302,7 +6302,7 @@ html, body {
   --rf-text-primary:    #1C1917; /* Deep Slate Charcoal */
   --rf-text-secondary:  #78716C; /* Warm Gray */
   --rf-text-tertiary:   #A8A29E; /* Subtle Caption */
-  --rf-font-display:    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  --rf-font-display:    var(--font-editorial, 'Calibre', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif);
   --rf-font-mono:       "JetBrains Mono", monospace;
 }
 

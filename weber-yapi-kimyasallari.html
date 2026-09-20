@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.0" />
@@ -30,163 +30,163 @@
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HardwareStore",
+   "@id": "https://pervanyapi.com/#store-balcova",
+   "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı (Saint-Gobain Weber Yetkili Bayi)",
+   "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
+   "url": "https://pervanyapi.com/balcova-showroom.html",
+   "telephone": "+902322784340",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
+    "addressLocality": "Balçova",
+    "addressRegion": "İzmir",
+    "postalCode": "35330",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3887,
+    "longitude": 27.0425
+   },
+   "openingHoursSpecification": [
     {
-      "@type": "HardwareStore",
-      "@id": "https://pervanyapi.com/#store-balcova",
-      "name": "Pervan Balçova Yapı Market & RenXMatik Renk Laboratuvarı (Saint-Gobain Weber Yetkili Bayi)",
-      "image": "https://pervanyapi.com/assets/rf-showroom-desk.jpg",
-      "url": "https://pervanyapi.com/balcova-showroom.html",
-      "telephone": "+902322784340",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eğitim Mah. Dalya 1 Sk. No:5/A",
-        "addressLocality": "Balçova",
-        "addressRegion": "İzmir",
-        "postalCode": "35330",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3887,
-        "longitude": 27.0425
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "08:30",
-          "closes": "19:30"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "City", "name": "Konak" },
-        { "@type": "City", "name": "Karabağlar" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": [
-        "https://schema.org/OnSitePickup",
-        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-      ],
-      "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
-      "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
-    },
-    {
-      "@type": "WarehouseOrDistributionCenter",
-      "@id": "https://pervanyapi.com/#depo-urla",
-      "name": "Pervan Yapı Market & Urla Ana Lojistik Depo",
-      "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
-      "url": "https://pervanyapi.com/urla-lojistik-depo.html",
-      "telephone": "+905323318763",
-      "priceRange": "₺₺",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kalabak",
-        "addressLocality": "Urla",
-        "addressRegion": "İzmir",
-        "postalCode": "35430",
-        "addressCountry": "TR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 38.3540547,
-        "longitude": 26.8064487
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:30"
-        }
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Urla" },
-        { "@type": "City", "name": "Çeşme" },
-        { "@type": "City", "name": "Alaçatı" },
-        { "@type": "City", "name": "Seferihisar" },
-        { "@type": "City", "name": "Güzelbahçe" },
-        { "@type": "City", "name": "Karaburun" },
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": [
-        "https://schema.org/OnSitePickup",
-        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-      ],
-      "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
-      "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
-    },
-    {
-      "@type": "DeliveryService",
-      "@id": "https://pervanyapi.com/weber-yapi-kimyasallari.html#delivery-service",
-      "name": "Pervan Saint-Gobain Weber Paletli Şantiye Lojistiği",
-      "provider": { "@id": "https://pervanyapi.com/#depo-urla" },
-      "serviceType": "Yapı Kimyasalları & Şantiye Palet Sevkiyatı",
-      "areaServed": [
-        { "@type": "City", "name": "Urla" },
-        { "@type": "City", "name": "Çeşme" },
-        { "@type": "City", "name": "Alaçatı" },
-        { "@type": "City", "name": "Seferihisar" },
-        { "@type": "City", "name": "Güzelbahçe" },
-        { "@type": "City", "name": "Karaburun" },
-        { "@type": "City", "name": "Balçova" },
-        { "@type": "City", "name": "Narlıdere" },
-        { "@type": "AdministrativeArea", "name": "İzmir" }
-      ],
-      "hasDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
-      "description": "Urla Ana Lojistik Depo çıkışlı Saint-Gobain Weber seramik yapıştırıcıları, weberdry su yalıtımı ve şapların Çeşme, Urla ve Yarımada şantiyelerine paletli vinçli sevkiyatı."
-    },
-    {
-      "@type": "MerchantReturnPolicy",
-      "@id": "https://pervanyapi.com/#merchant-return-policy",
-      "name": "Pervan Mağaza ve Şantiye İade Şartnamesi",
-      "applicableCountry": "TR",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-      "merchantReturnDays": 14,
-      "returnMethod": "https://schema.org/ReturnInStore",
-      "returnFees": "https://schema.org/FreeReturn",
-      "inStoreReturnsOffered": true,
-      "url": "https://pervanyapi.com/hakkimizda.html"
-    },
-    {
-      "@type": "OfferShippingDetails",
-      "@id": "https://pervanyapi.com/#shipping-policy-izmir",
-      "name": "İzmir ve Yarımada Şantiye Sevkiyat Şartnamesi",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "TRY"
-      },
-      "shippingDestination": [
-        {
-          "@type": "DefinedRegion",
-          "addressCountry": "TR",
-          "addressRegion": "İzmir"
-        }
-      ],
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "DAY"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "DAY"
-        }
-      }
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+     "opens": "08:30",
+     "closes": "19:30"
     }
-  ]
+   ],
+   "areaServed": [
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "City", "name": "Konak" },
+    { "@type": "City", "name": "Karabağlar" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": [
+    "https://schema.org/OnSitePickup",
+    "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+   ],
+   "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
+   "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
+  },
+  {
+   "@type": "WarehouseOrDistributionCenter",
+   "@id": "https://pervanyapi.com/#depo-urla",
+   "name": "Pervan Yapı Market & Urla Ana Lojistik Depo",
+   "image": "https://pervanyapi.com/assets/rf-urla-depot.jpg",
+   "url": "https://pervanyapi.com/urla-lojistik-depo.html",
+   "telephone": "+905323318763",
+   "priceRange": "₺₺",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kalabak",
+    "addressLocality": "Urla",
+    "addressRegion": "İzmir",
+    "postalCode": "35430",
+    "addressCountry": "TR"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.3540547,
+    "longitude": 26.8064487
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+     "opens": "08:00",
+     "closes": "18:30"
+    }
+   ],
+   "areaServed": [
+    { "@type": "City", "name": "Urla" },
+    { "@type": "City", "name": "Çeşme" },
+    { "@type": "City", "name": "Alaçatı" },
+    { "@type": "City", "name": "Seferihisar" },
+    { "@type": "City", "name": "Güzelbahçe" },
+    { "@type": "City", "name": "Karaburun" },
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": [
+    "https://schema.org/OnSitePickup",
+    "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+   ],
+   "hasMerchantReturnPolicy": { "@id": "https://pervanyapi.com/#merchant-return-policy" },
+   "shippingDetails": { "@id": "https://pervanyapi.com/#shipping-policy-izmir" }
+  },
+  {
+   "@type": "DeliveryService",
+   "@id": "https://pervanyapi.com/weber-yapi-kimyasallari.html#delivery-service",
+   "name": "Pervan Saint-Gobain Weber Paletli Şantiye Lojistiği",
+   "provider": { "@id": "https://pervanyapi.com/#depo-urla" },
+   "serviceType": "Yapı Kimyasalları & Şantiye Palet Sevkiyatı",
+   "areaServed": [
+    { "@type": "City", "name": "Urla" },
+    { "@type": "City", "name": "Çeşme" },
+    { "@type": "City", "name": "Alaçatı" },
+    { "@type": "City", "name": "Seferihisar" },
+    { "@type": "City", "name": "Güzelbahçe" },
+    { "@type": "City", "name": "Karaburun" },
+    { "@type": "City", "name": "Balçova" },
+    { "@type": "City", "name": "Narlıdere" },
+    { "@type": "AdministrativeArea", "name": "İzmir" }
+   ],
+   "hasDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+   "description": "Urla Ana Lojistik Depo çıkışlı Saint-Gobain Weber seramik yapıştırıcıları, weberdry su yalıtımı ve şapların Çeşme, Urla ve Yarımada şantiyelerine paletli vinçli sevkiyatı."
+  },
+  {
+   "@type": "MerchantReturnPolicy",
+   "@id": "https://pervanyapi.com/#merchant-return-policy",
+   "name": "Pervan Mağaza ve Şantiye İade Şartnamesi",
+   "applicableCountry": "TR",
+   "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+   "merchantReturnDays": 14,
+   "returnMethod": "https://schema.org/ReturnInStore",
+   "returnFees": "https://schema.org/FreeReturn",
+   "inStoreReturnsOffered": true,
+   "url": "https://pervanyapi.com/hakkimizda.html"
+  },
+  {
+   "@type": "OfferShippingDetails",
+   "@id": "https://pervanyapi.com/#shipping-policy-izmir",
+   "name": "İzmir ve Yarımada Şantiye Sevkiyat Şartnamesi",
+   "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": "0",
+    "currency": "TRY"
+   },
+   "shippingDestination": [
+    {
+     "@type": "DefinedRegion",
+     "addressCountry": "TR",
+     "addressRegion": "İzmir"
+    }
+   ],
+   "deliveryTime": {
+    "@type": "ShippingDeliveryTime",
+    "handlingTime": {
+     "@type": "QuantitativeValue",
+     "minValue": 0,
+     "maxValue": 1,
+     "unitCode": "DAY"
+    },
+    "transitTime": {
+     "@type": "QuantitativeValue",
+     "minValue": 0,
+     "maxValue": 1,
+     "unitCode": "DAY"
+    }
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -194,1707 +194,1707 @@
 
 <!-- PERVAN NAVBAR -->
 <header id="pvHeader">
-  <nav class="navbar">
-    <div class="navbar-top">
-      <!-- LOGO -->
-      <a class="navbar-logo" href="index.html">Pervan</a>
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
+   <a class="navbar-logo" href="index.html">Pervan</a>
 
-      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
-      <div class="navbar-contents">
-        <div class="navbar-contents-overflow">
-          
-          <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
-          <div class="navbar-sticky-mobile">
-            <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-              <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-              <div class="arrow"></div>
-            </a>
-            <a href="tel:+902322784340" class="navbar-item menu-item">
-              <span class="navbar-title">Bizi Arayın</span>
-              <div class="arrow"></div>
-            </a>
-          </div>
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
+    <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+902322784340" class="navbar-item menu-item">
+       <span class="navbar-title">Bizi Arayın</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
 
-          <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
-          <div class="navbar-menu">
-            
-            <!-- 01: Yetkili Bayilikler -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yetkili Bayilikler</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
-                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
-                <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-                <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
-                <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-                <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-                <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
-                <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-                <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-              </div>
-            </div>
-
-            <!-- 02: Yapı Market & Hırdavat -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
-                <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-                <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
-                <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-                <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
-                <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
-                <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-                <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-              </div>
-            </div>
-
-            <!-- 03: Mimari Taahhüt -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Mimari Taahhüt</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
-                <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
-                <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-                <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-                <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
-                <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-              </div>
-            </div>
-
-            <!-- 04: Merkezlerimiz -->
-            <div class="navbar-item has-dropdown menu-item">
-              <div class="navbar-title">Merkezlerimiz</div>
-              <div class="arrow"></div>
-              <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
-                <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
-                <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
-                <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
+     <div class="navbar-menu">
+      
+      <!-- 01: Yetkili Bayilikler -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yetkili Bayilikler</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+        <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
+        <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+        <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
+        <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+        <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+        <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella</a>
+        <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+        <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+       </div>
       </div>
 
-      <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
-      <div class="navbar-sticky">
-        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
-          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
-          <div class="arrow"></div>
-        </a>
-        <a href="tel:+902322784340" class="navbar-item menu-item">
-          <span class="navbar-title">Bizi Arayın</span>
-          <div class="arrow"></div>
-        </a>
+      <!-- 02: Yapı Market & Hırdavat -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+        <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+        <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
+        <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+        <a href="kilit-kapi-hirdavat.html" class="navbar-item">Kilit &amp; Kapı Donanımı</a>
+        <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı Elemanları</a>
+        <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+        <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+       </div>
       </div>
 
-      <!-- HAMBURGER (MOBILE ONLY) -->
-      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+      <!-- 03: Mimari Taahhüt -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Mimari Taahhüt</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
+        <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
+        <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+        <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+        <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
+        <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
+       </div>
       </div>
 
+      <!-- 04: Merkezlerimiz -->
+      <div class="navbar-item has-dropdown menu-item">
+       <div class="navbar-title">Merkezlerimiz</div>
+       <div class="arrow"></div>
+       <div class="navbar-dropdown">
+        <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
+        <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
+        <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
+        <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
+       </div>
+      </div>
+
+     </div>
     </div>
-  </nav>
+   </div>
+
+   <!-- DESKTOP RIGHT STICKY ACTION BUTTONS (HIDDEN ON MOBILE) -->
+   <div class="navbar-sticky">
+    <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+     <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+     <div class="arrow"></div>
+    </a>
+    <a href="tel:+902322784340" class="navbar-item menu-item">
+     <span class="navbar-title">Bizi Arayın</span>
+     <div class="arrow"></div>
+    </a>
+   </div>
+
+   <!-- HAMBURGER (MOBILE ONLY) -->
+   <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+   </div>
+
+  </div>
+ </nav>
 </header>
 
 <main class="pv-scope pv-page-main">
 
 <!-- ==========================================================================
-     1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE
-     ========================================================================== -->
+   1. PERVAN IMMERSIVE ARCHITECTURAL HERO STAGE
+   ========================================================================== -->
 <section class="pv-stage-hero" id="pvStageHero" aria-label="Saint-Gobain Weber Yapı Kimyasalları">
-  
-  <!-- Slide Stage Track -->
-  <div class="pv-stage-track" id="pvStageTrack">
-    <!-- Slide 0: Weber Brand Opening -->
-    <div class="pv-stage-slide active" data-index="0" data-color="Saint-Gobain Weber" data-code="#FEE000">
-      <img src="assets/rf-brand-weber.jpg" alt="Saint-Gobain Weber Yapı Kimyasalları Yetkili Bayi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h1 class="pv-stage-title">Saint-Gobain Weber</h1>
-          </div>
-          <div class="pv-stage-spec">
-            <span>Yetkili Bayi Dağıtım</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>TS EN 12004 C2TE S1</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Urla &amp; Balçova Depo</span>
-          </div>
-          <a href="#weberProductCatalog" class="pv-stage-text-link pv-stage-nudge" id="pvStageExploreBtn">
-            <span>Kataloğu İncele</span>
-            <svg class="pv-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
+ 
+ <!-- Slide Stage Track -->
+ <div class="pv-stage-track" id="pvStageTrack">
+  <!-- Slide 0: Weber Brand Opening -->
+  <div class="pv-stage-slide active" data-index="0" data-color="Saint-Gobain Weber" data-code="#FEE000">
+   <img src="assets/rf-brand-weber.jpg" alt="Saint-Gobain Weber Yapı Kimyasalları Yetkili Bayi" class="pv-stage-img" style="object-position: center center;" fetchpriority="high" decoding="async" />
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h1 class="pv-stage-title">Saint-Gobain Weber</h1>
+     </div>
+     <div class="pv-stage-spec">
+      <span>Yetkili Bayi Dağıtım</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>TS EN 12004 C2TE S1</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Urla &amp; Balçova Depo</span>
+     </div>
+     <a href="#weberProductCatalog" class="pv-stage-text-link pv-stage-nudge" id="pvStageExploreBtn">
+      <span>Kataloğu İncele</span>
+      <svg class="pv-nudge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
     </div>
-
-    <!-- Slide 1: Weberkol Flex Konfor -->
-    <div class="pv-stage-slide" data-index="1" data-color="Weberkol Flex Konfor" data-code="#C8461E">
-      <img src="assets/svc-seramik.jpg" alt="Büyük Ebat Porselen Granit Seramik Yapıştırıcısı" class="pv-stage-img" decoding="async" />
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Weberkol Flex Konfor</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>60x120 &amp; 120x240 Granit</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>C2TE S1 Flex</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Toz Çıkarmaz</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberkol%20Flex%20Konfor%20(25%20kg)%20palet%20fiyat%C4%B1%20ve%20%C5%9Fantiye%20teslimat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Palet Fiyatı Sor</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 2: Weberdry SS-10 Su Yalıtımı -->
-    <div class="pv-stage-slide" data-index="2" data-color="Weberdry SS-10" data-code="#0072CE">
-      <img src="assets/rf-card-waterproof.jpg" alt="Teras ve Havuz Tam Elastik Su Yalıtımı" class="pv-stage-img" decoding="async" />
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Weberdry SS-10</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>CM O2P Tam Elastik</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Teras &amp; Yüzme Havuzu</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>33 kg Set</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberdry%20SS-10%20tam%20elastik%20su%20yal%C4%B1t%C4%B1m%C4%B1%20hakk%C4%B1nda%20fiyat%20ve%20sarfiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Teknik Şartname Al</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 3: Weberep MA 200 Yapısal Tamir Harcı -->
-    <div class="pv-stage-slide" data-index="3" data-color="Weberep MA 200" data-code="#EF4444">
-      <img src="assets/rf-hero-materials.jpg" alt="Yapısal Beton Onarımı ve Grout Harçları" class="pv-stage-img" decoding="async" />
-      <div class="pv-stage-overlay"></div>
-      <div class="pv-container pv-stage-content-wrap">
-        <div class="pv-stage-info">
-          <div class="pv-stage-title-wrap">
-            <h2 class="pv-stage-title">Weberep MA 200</h2>
-          </div>
-          <div class="pv-stage-spec">
-            <span>TS EN 1504-3 R4</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>50+ MPa Mukavemet</span>
-            <span class="pv-spec-sep">&bull;</span>
-            <span>Kolon &amp; Kiriş Onarım</span>
-          </div>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberep%20MA%20200%20R4%20yap%C4%B1sal%20tamir%20harc%C4%B1%20stok%20ve%20palet%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-            <span>Şantiye Teklifi İste</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-            <div class="pv-stage-progress-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+   </div>
   </div>
 
-  <!-- Stage Left / Right Floating Arrow Navigation -->
-  <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
+  <!-- Slide 1: Weberkol Flex Konfor -->
+  <div class="pv-stage-slide" data-index="1" data-color="Weberkol Flex Konfor" data-code="#C8461E">
+   <img src="assets/svc-seramik.jpg" alt="Büyük Ebat Porselen Granit Seramik Yapıştırıcısı" class="pv-stage-img" decoding="async" />
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Weberkol Flex Konfor</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>60x120 &amp; 120x240 Granit</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>C2TE S1 Flex</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Toz Çıkarmaz</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberkol%20Flex%20Konfor%20(25%20kg)%20palet%20fiyat%C4%B1%20ve%20%C5%9Fantiye%20teslimat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Palet Fiyatı Sor</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-  <!-- Stage Bottom Scroll Prompt -->
-  <a href="#weberProductCatalog" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Weber Kataloğuna Kaydır">
-    <span>Weber Kataloğunu Keşfet</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-  </a>
+  <!-- Slide 2: Weberdry SS-10 Su Yalıtımı -->
+  <div class="pv-stage-slide" data-index="2" data-color="Weberdry SS-10" data-code="#0072CE">
+   <img src="assets/rf-card-waterproof.jpg" alt="Teras ve Havuz Tam Elastik Su Yalıtımı" class="pv-stage-img" decoding="async" />
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Weberdry SS-10</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>CM O2P Tam Elastik</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Teras &amp; Yüzme Havuzu</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>33 kg Set</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberdry%20SS-10%20tam%20elastik%20su%20yal%C4%B1t%C4%B1m%C4%B1%20hakk%C4%B1nda%20fiyat%20ve%20sarfiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Teknik Şartname Al</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Slide 3: Weberep MA 200 Yapısal Tamir Harcı -->
+  <div class="pv-stage-slide" data-index="3" data-color="Weberep MA 200" data-code="#EF4444">
+   <img src="assets/rf-hero-materials.jpg" alt="Yapısal Beton Onarımı ve Grout Harçları" class="pv-stage-img" decoding="async" />
+   <div class="pv-stage-overlay"></div>
+   <div class="pv-container pv-stage-content-wrap">
+    <div class="pv-stage-info">
+     <div class="pv-stage-title-wrap">
+      <h2 class="pv-stage-title">Weberep MA 200</h2>
+     </div>
+     <div class="pv-stage-spec">
+      <span>TS EN 1504-3 R4</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>50+ MPa Mukavemet</span>
+      <span class="pv-spec-sep">&bull;</span>
+      <span>Kolon &amp; Kiriş Onarım</span>
+     </div>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weberep%20MA%20200%20R4%20yap%C4%B1sal%20tamir%20harc%C4%B1%20stok%20ve%20palet%20fiyat%C4%B1%20%C3%B6%C4%9Frenmek%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
+      <span>Şantiye Teklifi İste</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+     </a>
+     <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
+      <div class="pv-stage-progress-bar"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- Stage Left / Right Floating Arrow Navigation -->
+ <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+ </button>
+ <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+ </button>
+
+ <!-- Stage Bottom Scroll Prompt -->
+ <a href="#weberProductCatalog" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Weber Kataloğuna Kaydır">
+  <span>Weber Kataloğunu Keşfet</span>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+ </a>
 
 </section>
 
 <!-- ==========================================================================
-     2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
-     ========================================================================== -->
+   2. STICKY ARCHITECTURAL SUB-NAV (Pervan Hub Standard)
+   ========================================================================== -->
 <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Weber Ürün Departmanları">
-  <div class="pv-container pv-subnav-inner">
-    <div class="pv-subnav-brand">
-      <img src="assets/weber-logo.svg" alt="Weber" class="pv-subnav-logo" width="100" height="26" loading="lazy" decoding="async" />
-      <span class="pv-subnav-tag">Yapı Kimyasalları</span>
-    </div>
-    
-    <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
-      <button type="button" class="pv-subnav-link active" data-target="weberProductCatalog" role="tab" aria-selected="true">
-        Seramik Harçları
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="weberJointSection" role="tab" aria-selected="false">
-        Derz &amp; Mastik
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="weberDrySection" role="tab" aria-selected="false">
-        Su Yalıtımı
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="weberRepSection" role="tab" aria-selected="false">
-        Tamir &amp; Grout
-      </button>
-      <button type="button" class="pv-subnav-link" data-target="weberFloorSection" role="tab" aria-selected="false">
-        Zemin Şapları
-      </button>
-    </div>
-
-    <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
-    <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
-      <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
-        <span class="pv-dept-label" id="pvDeptTriggerLabel">Seramik Harçları</span>
-        <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-
-      <div class="pv-filter-rail" id="pvFilterRail">
-        <!-- Injected dynamically based on active department -->
-      </div>
-    </div>
-
-    <div class="pv-subnav-actions">
-      <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <span>Ara</span>
-        <kbd class="pv-subnav-search-kbd">⌘K</kbd>
-      </button>
-      <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weber%20yap%C4%B1%20kimyasallar%C4%B1%20palet%20fiyat%C4%B1%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn">
-        <span>Palet Fiyatı Al</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-    </div>
+ <div class="pv-container pv-subnav-inner">
+  <div class="pv-subnav-brand">
+   <img src="assets/weber-logo.svg" alt="Weber" class="pv-subnav-logo" width="100" height="26" loading="lazy" decoding="async" />
+   <span class="pv-subnav-tag">Yapı Kimyasalları</span>
   </div>
+  
+  <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
+   <button type="button" class="pv-subnav-link active" data-target="weberProductCatalog" role="tab" aria-selected="true">
+    Seramik Harçları
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="weberJointSection" role="tab" aria-selected="false">
+    Derz &amp; Mastik
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="weberDrySection" role="tab" aria-selected="false">
+    Su Yalıtımı
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="weberRepSection" role="tab" aria-selected="false">
+    Tamir &amp; Grout
+   </button>
+   <button type="button" class="pv-subnav-link" data-target="weberFloorSection" role="tab" aria-selected="false">
+    Zemin Şapları
+   </button>
+  </div>
+
+  <!-- Mobile Contextual Single-Line Bar (Visible <= 768px) -->
+  <div class="pv-mobile-bar-wrap" id="pvMobileBarWrap">
+   <button type="button" class="pv-dept-trigger" id="pvDeptTrigger" aria-expanded="false" aria-controls="pvDeptDrawer" aria-label="Departman Değiştir">
+    <span class="pv-dept-label" id="pvDeptTriggerLabel">Seramik Harçları</span>
+    <svg class="pv-dept-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+   </button>
+
+   <div class="pv-filter-rail" id="pvFilterRail">
+    <!-- Injected dynamically based on active department -->
+   </div>
+  </div>
+
+  <div class="pv-subnav-actions">
+   <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <circle cx="11" cy="11" r="8"></circle>
+     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <span>Ara</span>
+    <kbd class="pv-subnav-search-kbd">⌘K</kbd>
+   </button>
+   <a href="https://wa.me/905323844497?text=Merhaba%2C%20Weber%20yap%C4%B1%20kimyasallar%C4%B1%20palet%20fiyat%C4%B1%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn">
+    <span>Palet Fiyatı Al</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+   </a>
+  </div>
+ </div>
 </nav>
 <div class="pv-subnav-spacer" id="pvSubnavSpacer"></div>
 
 <!-- ==========================================================================
-     PANEL 1: SERAMİK YAPIŞTIRICILARI & HARÇLAR
-     ========================================================================== -->
+   PANEL 1: SERAMİK YAPIŞTIRICILARI & HARÇLAR
+   ========================================================================== -->
 <section class="pv-dept-panel active" id="weberProductCatalog">
-  <div class="pv-container">
-    <!-- Department Editorial Header -->
-    <div class="pv-dept-header">
-      <div class="pv-dept-badge">Departman 01 · Seramik &amp; Fayans Yapıştırıcıları</div>
-      <h2 class="pv-dept-title">Saint-Gobain Weber Yüksek Performanslı Seramik &amp; Porselen Harçları</h2>
-      <p class="pv-dept-desc">Büyük ebat porselen karolar, granit, cam mozaik, havuz ve ıslak hacimler için TS EN 12004 C2TE S1 sınıfı elastik, kayma dirençli toz çıkarmayan yapıştırma harçları.</p>
-    </div>
-
-    <!-- Category Filter Pills -->
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="weberMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="porselen-granit" role="tab" aria-selected="true">
-          Porselen &amp; Granit
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="standart-seramik" role="tab" aria-selected="false">
-          Standart Seramik
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="havuz-su" role="tab" aria-selected="false">
-          Havuz &amp; Su Deposu
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="hizli-priz" role="tab" aria-selected="false">
-          Hızlı Priz Harçlar
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="kullanima-hazir" role="tab" aria-selected="false">
-          Kullanıma Hazır Pasta
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="epoksi-harc" role="tab" aria-selected="false">
-          Epoksi Harçlar
-        </button>
-      </div>
-    </div>
-
-    <!-- Product Line-Item List -->
-    <div class="pv-menu-list" id="weberMenuList">
-      <!-- Item: Weberkol Flex Konfor -->
-      <div class="pv-menu-row" data-category="porselen-granit" data-id="weberkol-flex-konfor" data-product-id="weberkol-flex-konfor" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg" alt="Weberkol Flex Konfor" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Flex Konfor</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">S1 Flex Granit</span>
-          </div>
-          <div class="pv-menu-desc-line">60×120 ve 120×240 cm büyük ebat granit ve porselen için tozsuz harç · S1</div>
-          <div class="pv-menu-meta-chips">
-            <span>C2TE S1 Esnek</span>
-            <span>&bull;</span>
-            <span>4.5 – 5.5 kg/m²</span>
-            <span>&bull;</span>
-            <span>Kap Ömrü: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Flex Ekstra -->
-      <div class="pv-menu-row" data-category="porselen-granit" data-id="weberkol-flex-ekstra" data-product-id="weberkol-flex-ekstra" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-flex-extra-beyaz-25-kg.jpg" alt="Weberkol Flex Ekstra" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Flex Ekstra</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">S2 Mega Plaka</span>
-          </div>
-          <div class="pv-menu-desc-line">120×280 cm mega porselen ve dış cephe için ultra esnek yapıştırıcı · S2</div>
-          <div class="pv-menu-meta-chips">
-            <span>C2TE S2 Ultra Flex</span>
-            <span>&bull;</span>
-            <span>5.0 – 6.0 kg/m²</span>
-            <span>&bull;</span>
-            <span>Kap Ömrü: 4 Saat</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Flex Pool -->
-      <div class="pv-menu-row" data-category="havuz-su" data-id="weberkol-flex-pool" data-product-id="weberkol-flex-pool" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg" alt="Weberkol Flex Pool" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Flex Pool</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Yüzme Havuzu & Su Deposu · Klor Dirençli</span>
-          </div>
-          <div class="pv-menu-desc-line">Yüzme havuzları, termal kaplıcalar, su depoları ve ıslak hacimlerde klorlu su basıncına ve sıcaklık şoklarına dayanıklı havuz yapıştırıcısı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>Havuz & Su Deposu Uyumu</span>
-            <span>&bull;</span>
-            <span>Klor ve Kimyasal Dayanımlı</span>
-            <span>&bull;</span>
-            <span>C2TE S1 Standart Güvencesi</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Standart -->
-      <div class="pv-menu-row" data-category="standart-seramik" data-id="weberkol-standart" data-product-id="weberkol-standart" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-standart-gri-25-kg.png" alt="Weberkol Standart" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Standart</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">İç Mekan Seramik & Fayans</span>
-          </div>
-          <div class="pv-menu-desc-line">İç mekan duvar ve zeminlerde küçük ve orta ebatlı seramik, karo ve fayans uygulamaları için kayma özelliği azaltılmış çimento harcı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>C1T Standart Sınıf</span>
-            <span>&bull;</span>
-            <span>İç Duvar & Zemin Uyumu</span>
-            <span>&bull;</span>
-            <span>Küçük ve Orta Ebat Karolar</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Serakol Konfor -->
-      <div class="pv-menu-row" data-category="standart-seramik" data-id="weberkol-serakol-konfor" data-product-id="weberkol-serakol-konfor" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-flex-porselen-gri-25-kg.jpg" alt="Weberkol Serakol Konfor" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Serakol Konfor</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Uzatılmış Çalışma Süresi · Tozsuz</span>
-          </div>
-          <div class="pv-menu-desc-line">Uzatılmış açık bekletme süresi (E) ve azaltılmış toz emisyonu ile iç mekanlarda ustaya geniş uygulama esnekliği sunan seramik harcı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>C1TE Uzatılmış Süre</span>
-            <span>&bull;</span>
-            <span>Tozsuz Konfor Formülü</span>
-            <span>&bull;</span>
-            <span>30 dk Açık Bekletme</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Rapid -->
-      <div class="pv-menu-row" data-category="hizli-priz" data-id="weberkol-rapid" data-product-id="weberkol-rapid" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg" alt="Weberkol Rapid" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Rapid</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Hızlı Priz · 3 Saatte Derzleme</span>
-          </div>
-          <div class="pv-menu-desc-line">3 saat içinde yaya trafiğine ve derz dolgusuna açılması gereken mağaza, restoran, otel ve acil ticari tadilat projeleri için hızlı sertleşen flex harç.</div>
-          <div class="pv-menu-meta-chips">
-            <span>3 Saatte Kullanıma Açılış</span>
-            <span>&bull;</span>
-            <span>C2FTS1 Hızlı Priz Sınıfı</span>
-            <span>&bull;</span>
-            <span>Yüksek Mekanik Mukavemet</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Fermafix -->
-      <div class="pv-menu-row" data-category="kullanima-hazir" data-id="weberkol-fermafix" data-product-id="weberkol-fermafix" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-prim-bt-max-12-kg.jpg" alt="Weberkol Fermafix" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Fermafix</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Kullanıma Hazır Pasta · Alçıpan Uyumlu</span>
-          </div>
-          <div class="pv-menu-desc-line">Alçıpan, betopan, boyalı yüzey ve eski seramik üzerine su katılmadan doğrudan uygulanan kullanıma hazır macun kıvamında esnek yapıştırıcı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>D2TE Macun Tipi</span>
-            <span>&bull;</span>
-            <span>Kullanıma Hazır Kova</span>
-            <span>&bull;</span>
-            <span>Alçıpan & Betopan Uyumu</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberkol Epox Easy -->
-      <div class="pv-menu-row" data-category="epoksi-harc" data-id="weberkol-epox" data-product-id="weberkol-epox" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-ep-800-beyaz-5-kg.jpg" alt="Weberkol Epox Easy" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberkol Epox Easy</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Kimyasal Dirençli Epoksi Harç</span>
-          </div>
-          <div class="pv-menu-desc-line">Asit, yağ, alkali ve ağır kimyasallara maruz kalan gıda tesisleri, laboratuvarlar, endüstriyel mutfaklar ve oto yıkama alanları için epoksi yapıştırıcı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>R2T Reçine Esaslı</span>
-            <span>&bull;</span>
-            <span>Ağır Kimyasal Dayanımı</span>
-            <span>&bull;</span>
-            <span>2 Komponentli Reaktif Set</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <!-- Department Editorial Header -->
+  <div class="pv-dept-header">
+   <div class="pv-dept-badge">Departman 01 · Seramik &amp; Fayans Yapıştırıcıları</div>
+   <h2 class="pv-dept-title">Saint-Gobain Weber Yüksek Performanslı Seramik &amp; Porselen Harçları</h2>
+   <p class="pv-dept-desc">Büyük ebat porselen karolar, granit, cam mozaik, havuz ve ıslak hacimler için TS EN 12004 C2TE S1 sınıfı elastik, kayma dirençli toz çıkarmayan yapıştırma harçları.</p>
   </div>
+
+  <!-- Category Filter Pills -->
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="weberMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="porselen-granit" role="tab" aria-selected="true">
+     Porselen &amp; Granit
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="standart-seramik" role="tab" aria-selected="false">
+     Standart Seramik
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="havuz-su" role="tab" aria-selected="false">
+     Havuz &amp; Su Deposu
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="hizli-priz" role="tab" aria-selected="false">
+     Hızlı Priz Harçlar
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="kullanima-hazir" role="tab" aria-selected="false">
+     Kullanıma Hazır Pasta
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="epoksi-harc" role="tab" aria-selected="false">
+     Epoksi Harçlar
+    </button>
+   </div>
+  </div>
+
+  <!-- Product Line-Item List -->
+  <div class="pv-menu-list" id="weberMenuList">
+   <!-- Item: Weberkol Flex Konfor -->
+   <div class="pv-menu-row" data-category="porselen-granit" data-id="weberkol-flex-konfor" data-product-id="weberkol-flex-konfor" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-flex-extra-gri-25-kg.jpg" alt="Weberkol Flex Konfor" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Flex Konfor</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">S1 Flex Granit</span>
+     </div>
+     <div class="pv-menu-desc-line">60×120 ve 120×240 cm büyük ebat granit ve porselen için tozsuz harç · S1</div>
+     <div class="pv-menu-meta-chips">
+      <span>C2TE S1 Esnek</span>
+      <span>&bull;</span>
+      <span>4.5 – 5.5 kg/m²</span>
+      <span>&bull;</span>
+      <span>Kap Ömrü: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Flex Ekstra -->
+   <div class="pv-menu-row" data-category="porselen-granit" data-id="weberkol-flex-ekstra" data-product-id="weberkol-flex-ekstra" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-flex-extra-beyaz-25-kg.jpg" alt="Weberkol Flex Ekstra" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Flex Ekstra</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">S2 Mega Plaka</span>
+     </div>
+     <div class="pv-menu-desc-line">120×280 cm mega porselen ve dış cephe için ultra esnek yapıştırıcı · S2</div>
+     <div class="pv-menu-meta-chips">
+      <span>C2TE S2 Ultra Flex</span>
+      <span>&bull;</span>
+      <span>5.0 – 6.0 kg/m²</span>
+      <span>&bull;</span>
+      <span>Kap Ömrü: 4 Saat</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Flex Pool -->
+   <div class="pv-menu-row" data-category="havuz-su" data-id="weberkol-flex-pool" data-product-id="weberkol-flex-pool" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg" alt="Weberkol Flex Pool" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Flex Pool</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Yüzme Havuzu & Su Deposu · Klor Dirençli</span>
+     </div>
+     <div class="pv-menu-desc-line">Yüzme havuzları, termal kaplıcalar, su depoları ve ıslak hacimlerde klorlu su basıncına ve sıcaklık şoklarına dayanıklı havuz yapıştırıcısı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>Havuz & Su Deposu Uyumu</span>
+      <span>&bull;</span>
+      <span>Klor ve Kimyasal Dayanımlı</span>
+      <span>&bull;</span>
+      <span>C2TE S1 Standart Güvencesi</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Standart -->
+   <div class="pv-menu-row" data-category="standart-seramik" data-id="weberkol-standart" data-product-id="weberkol-standart" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-standart-gri-25-kg.png" alt="Weberkol Standart" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Standart</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">İç Mekan Seramik & Fayans</span>
+     </div>
+     <div class="pv-menu-desc-line">İç mekan duvar ve zeminlerde küçük ve orta ebatlı seramik, karo ve fayans uygulamaları için kayma özelliği azaltılmış çimento harcı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>C1T Standart Sınıf</span>
+      <span>&bull;</span>
+      <span>İç Duvar & Zemin Uyumu</span>
+      <span>&bull;</span>
+      <span>Küçük ve Orta Ebat Karolar</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Serakol Konfor -->
+   <div class="pv-menu-row" data-category="standart-seramik" data-id="weberkol-serakol-konfor" data-product-id="weberkol-serakol-konfor" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-flex-porselen-gri-25-kg.jpg" alt="Weberkol Serakol Konfor" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Serakol Konfor</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Uzatılmış Çalışma Süresi · Tozsuz</span>
+     </div>
+     <div class="pv-menu-desc-line">Uzatılmış açık bekletme süresi (E) ve azaltılmış toz emisyonu ile iç mekanlarda ustaya geniş uygulama esnekliği sunan seramik harcı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>C1TE Uzatılmış Süre</span>
+      <span>&bull;</span>
+      <span>Tozsuz Konfor Formülü</span>
+      <span>&bull;</span>
+      <span>30 dk Açık Bekletme</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Rapid -->
+   <div class="pv-menu-row" data-category="hizli-priz" data-id="weberkol-rapid" data-product-id="weberkol-rapid" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kol-flex-porselen-beyaz-25-kg.jpg" alt="Weberkol Rapid" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Rapid</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Hızlı Priz · 3 Saatte Derzleme</span>
+     </div>
+     <div class="pv-menu-desc-line">3 saat içinde yaya trafiğine ve derz dolgusuna açılması gereken mağaza, restoran, otel ve acil ticari tadilat projeleri için hızlı sertleşen flex harç.</div>
+     <div class="pv-menu-meta-chips">
+      <span>3 Saatte Kullanıma Açılış</span>
+      <span>&bull;</span>
+      <span>C2FTS1 Hızlı Priz Sınıfı</span>
+      <span>&bull;</span>
+      <span>Yüksek Mekanik Mukavemet</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Fermafix -->
+   <div class="pv-menu-row" data-category="kullanima-hazir" data-id="weberkol-fermafix" data-product-id="weberkol-fermafix" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-prim-bt-max-12-kg.jpg" alt="Weberkol Fermafix" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Fermafix</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Kullanıma Hazır Pasta · Alçıpan Uyumlu</span>
+     </div>
+     <div class="pv-menu-desc-line">Alçıpan, betopan, boyalı yüzey ve eski seramik üzerine su katılmadan doğrudan uygulanan kullanıma hazır macun kıvamında esnek yapıştırıcı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>D2TE Macun Tipi</span>
+      <span>&bull;</span>
+      <span>Kullanıma Hazır Kova</span>
+      <span>&bull;</span>
+      <span>Alçıpan & Betopan Uyumu</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberkol Epox Easy -->
+   <div class="pv-menu-row" data-category="epoksi-harc" data-id="weberkol-epox" data-product-id="weberkol-epox" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-ep-800-beyaz-5-kg.jpg" alt="Weberkol Epox Easy" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberkol Epox Easy</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Kimyasal Dirençli Epoksi Harç</span>
+     </div>
+     <div class="pv-menu-desc-line">Asit, yağ, alkali ve ağır kimyasallara maruz kalan gıda tesisleri, laboratuvarlar, endüstriyel mutfaklar ve oto yıkama alanları için epoksi yapıştırıcı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>R2T Reçine Esaslı</span>
+      <span>&bull;</span>
+      <span>Ağır Kimyasal Dayanımı</span>
+      <span>&bull;</span>
+      <span>2 Komponentli Reaktif Set</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 2: DERZ DOLGULARI & MASTİKLER
-     ========================================================================== -->
+   PANEL 2: DERZ DOLGULARI & MASTİKLER
+   ========================================================================== -->
 <section class="pv-dept-panel" id="weberJointSection" style="display: none;">
-  <div class="pv-container">
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="jointMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="flex-derz" role="tab" aria-selected="true">
-          Flex Derz (1–6 mm)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="silikonlu-derz" role="tab" aria-selected="false">
-          Silikonlu Derz
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="genis-derz" role="tab" aria-selected="false">
-          Geniş Derz (2–20 mm)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="epoksi-derz" role="tab" aria-selected="false">
-          Epoksi Derz Dolgusu
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="pu-mastik" role="tab" aria-selected="false">
-          Poliüretan Mastik
-        </button>
-      </div>
-    </div>
-
-    <div class="pv-menu-list" id="jointMenuList">
-      <!-- Item: Weberjoint Flex -->
-      <div class="pv-menu-row" data-category="flex-derz" data-id="weberjoint-flex" data-product-id="weberjoint-flex" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-joint-hr-flex-20-kg.png" alt="Weberjoint Flex" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberjoint Flex</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">1–6 mm Esnek & Su İtici Derz</span>
-          </div>
-          <div class="pv-menu-desc-line">1–6 mm derz aralıkları için yüksek aşınma dirençli, düşük su emme oranına sahip, antibakteriyel küf dirençli renkli derz dolgusu.</div>
-          <div class="pv-menu-meta-chips">
-            <span>CG2 WA Yüksek Performans</span>
-            <span>&bull;</span>
-            <span>1–6 mm Derz Genişliği</span>
-            <span>&bull;</span>
-            <span>Küf ve Leke Dirençli</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberjoint Silikonlu -->
-      <div class="pv-menu-row" data-category="silikonlu-derz" data-id="weberjoint-sil" data-product-id="weberjoint-sil" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-joint-sil-granit-gri-20-kg.png" alt="Weberjoint Silikonlu" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberjoint Silikonlu</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Silikon Katkılı Su İtici Derz</span>
-          </div>
-          <div class="pv-menu-desc-line">Silikon katkılı formülü ile duş kabinleri, banyo zeminleri ve balkonlar için su kaydırıcı pürüzsüz yüzey oluşturan renkli derz dolgu.</div>
-          <div class="pv-menu-meta-chips">
-            <span>Silikon Katkılı Su Kaydırıcı</span>
-            <span>&bull;</span>
-            <span>CG2 WA Standart Sınıfı</span>
-            <span>&bull;</span>
-            <span>İpeksi Pürüzsüz Doku</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberjoint DZR Max -->
-      <div class="pv-menu-row" data-category="genis-derz" data-id="weberjoint-dzr-max" data-product-id="weberjoint-dzr-max" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-joint-hr-flex-beyaz-5-kg.jpg" alt="Weberjoint DZR Max" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberjoint DZR Max</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">2–20 mm Geniş Derz & Rustik Taş</span>
-          </div>
-          <div class="pv-menu-desc-line">2–20 mm geniş derz aralıkları, doğal taş, traverten, cotto ve klinker tuğla kaplamalar için çatlamayan iri agregalı derz dolgusu.</div>
-          <div class="pv-menu-meta-chips">
-            <span>2–20 mm Geniş Aralık</span>
-            <span>&bull;</span>
-            <span>Çatlamaz İri Agrega Yapısı</span>
-            <span>&bull;</span>
-            <span>Doğal Taş & Traverten</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weber EP Easy -->
-      <div class="pv-menu-row" data-category="epoksi-derz" data-id="weber-ep-easy" data-product-id="weber-ep-easy" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-ep-800-beyaz-5-kg.jpg" alt="Weber EP Easy" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weber EP Easy Epoksi</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Asit Dirençli 2K</span>
-          </div>
-          <div class="pv-menu-desc-line">Kimyasallara ve asitlere tam dirençli epoksi yapıştırıcı ve derz dolgusu · R2T</div>
-          <div class="pv-menu-meta-chips">
-            <span>R2T / RG Asit Kalkanı</span>
-            <span>&bull;</span>
-            <span>Suyla Kolay Temizlik</span>
-            <span>&bull;</span>
-            <span>2 Bileşenli</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weber PU 2A -->
-      <div class="pv-menu-row" data-category="pu-mastik" data-id="weber-pu-2a" data-product-id="weber-pu-2a" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-silikon-banyo-beyaz-280-ml.png" alt="Weber PU 2A" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weber PU 2A Mastik</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Poliüretan Derz Mastiği</span>
-          </div>
-          <div class="pv-menu-desc-line">Bina dilatasyonları ve cephe derzleri için UV dayanımlı poliüretan mastik · 600 ml</div>
-          <div class="pv-menu-meta-chips">
-            <span>%25 Hareket Kabiliyeti</span>
-            <span>&bull;</span>
-            <span>600 ml Sosis Ambalaj</span>
-            <span>&bull;</span>
-            <span>UV & Hava Şartları</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="jointMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="flex-derz" role="tab" aria-selected="true">
+     Flex Derz (1–6 mm)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="silikonlu-derz" role="tab" aria-selected="false">
+     Silikonlu Derz
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="genis-derz" role="tab" aria-selected="false">
+     Geniş Derz (2–20 mm)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="epoksi-derz" role="tab" aria-selected="false">
+     Epoksi Derz Dolgusu
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="pu-mastik" role="tab" aria-selected="false">
+     Poliüretan Mastik
+    </button>
+   </div>
   </div>
+
+  <div class="pv-menu-list" id="jointMenuList">
+   <!-- Item: Weberjoint Flex -->
+   <div class="pv-menu-row" data-category="flex-derz" data-id="weberjoint-flex" data-product-id="weberjoint-flex" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-joint-hr-flex-20-kg.png" alt="Weberjoint Flex" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberjoint Flex</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">1–6 mm Esnek & Su İtici Derz</span>
+     </div>
+     <div class="pv-menu-desc-line">1–6 mm derz aralıkları için yüksek aşınma dirençli, düşük su emme oranına sahip, antibakteriyel küf dirençli renkli derz dolgusu.</div>
+     <div class="pv-menu-meta-chips">
+      <span>CG2 WA Yüksek Performans</span>
+      <span>&bull;</span>
+      <span>1–6 mm Derz Genişliği</span>
+      <span>&bull;</span>
+      <span>Küf ve Leke Dirençli</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberjoint Silikonlu -->
+   <div class="pv-menu-row" data-category="silikonlu-derz" data-id="weberjoint-sil" data-product-id="weberjoint-sil" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-joint-sil-granit-gri-20-kg.png" alt="Weberjoint Silikonlu" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberjoint Silikonlu</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Silikon Katkılı Su İtici Derz</span>
+     </div>
+     <div class="pv-menu-desc-line">Silikon katkılı formülü ile duş kabinleri, banyo zeminleri ve balkonlar için su kaydırıcı pürüzsüz yüzey oluşturan renkli derz dolgu.</div>
+     <div class="pv-menu-meta-chips">
+      <span>Silikon Katkılı Su Kaydırıcı</span>
+      <span>&bull;</span>
+      <span>CG2 WA Standart Sınıfı</span>
+      <span>&bull;</span>
+      <span>İpeksi Pürüzsüz Doku</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberjoint DZR Max -->
+   <div class="pv-menu-row" data-category="genis-derz" data-id="weberjoint-dzr-max" data-product-id="weberjoint-dzr-max" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-joint-hr-flex-beyaz-5-kg.jpg" alt="Weberjoint DZR Max" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberjoint DZR Max</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">2–20 mm Geniş Derz & Rustik Taş</span>
+     </div>
+     <div class="pv-menu-desc-line">2–20 mm geniş derz aralıkları, doğal taş, traverten, cotto ve klinker tuğla kaplamalar için çatlamayan iri agregalı derz dolgusu.</div>
+     <div class="pv-menu-meta-chips">
+      <span>2–20 mm Geniş Aralık</span>
+      <span>&bull;</span>
+      <span>Çatlamaz İri Agrega Yapısı</span>
+      <span>&bull;</span>
+      <span>Doğal Taş & Traverten</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weber EP Easy -->
+   <div class="pv-menu-row" data-category="epoksi-derz" data-id="weber-ep-easy" data-product-id="weber-ep-easy" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-ep-800-beyaz-5-kg.jpg" alt="Weber EP Easy" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weber EP Easy Epoksi</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Asit Dirençli 2K</span>
+     </div>
+     <div class="pv-menu-desc-line">Kimyasallara ve asitlere tam dirençli epoksi yapıştırıcı ve derz dolgusu · R2T</div>
+     <div class="pv-menu-meta-chips">
+      <span>R2T / RG Asit Kalkanı</span>
+      <span>&bull;</span>
+      <span>Suyla Kolay Temizlik</span>
+      <span>&bull;</span>
+      <span>2 Bileşenli</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weber PU 2A -->
+   <div class="pv-menu-row" data-category="pu-mastik" data-id="weber-pu-2a" data-product-id="weber-pu-2a" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-silikon-banyo-beyaz-280-ml.png" alt="Weber PU 2A" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weber PU 2A Mastik</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Poliüretan Derz Mastiği</span>
+     </div>
+     <div class="pv-menu-desc-line">Bina dilatasyonları ve cephe derzleri için UV dayanımlı poliüretan mastik · 600 ml</div>
+     <div class="pv-menu-meta-chips">
+      <span>%25 Hareket Kabiliyeti</span>
+      <span>&bull;</span>
+      <span>600 ml Sosis Ambalaj</span>
+      <span>&bull;</span>
+      <span>UV & Hava Şartları</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 3: SU YALITIM SİSTEMLERİ
-     ========================================================================== -->
+   PANEL 3: SU YALITIM SİSTEMLERİ
+   ========================================================================== -->
 <section class="pv-dept-panel" id="weberDrySection" style="display: none;">
-  <div class="pv-container">
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="dryMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="cimento-esasli" role="tab" aria-selected="true">
-          Çimento Esaslı (2K)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="bitum-esasli" role="tab" aria-selected="false">
-          Bitüm-Kauçuk Yalıtım
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="kristalize" role="tab" aria-selected="false">
-          Kristalize Yalıtım
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="sok-tikama" role="tab" aria-selected="false">
-          Şok Su Tıkacı
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="likit-poliuretan" role="tab" aria-selected="false">
-          Poliüretan Membran
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="aksesuar-pah" role="tab" aria-selected="false">
-          Pah Bandı &amp; Aksesuar
-        </button>
-      </div>
-    </div>
-
-    <div class="pv-menu-list" id="dryMenuList">
-      <!-- Item: Weberdry SS-10 -->
-      <div class="pv-menu-row" data-category="cimento-esasli" data-id="weberdry-ss-10" data-product-id="weberdry-ss-10" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-dry-ss-10-set-sivi-10-kg-toz-20-kg.jpg" alt="Weberdry SS-10" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry SS-10</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Tam Elastik 2K</span>
-          </div>
-          <div class="pv-menu-desc-line">Teras, balkon ve havuzlar için çift bileşenli tam elastik su yalıtımı · CM O2P</div>
-          <div class="pv-menu-meta-chips">
-            <span>CM O2P Tam Elastik</span>
-            <span>&bull;</span>
-            <span>3.0 – 3.5 kg/m² (2 Kat)</span>
-            <span>&bull;</span>
-            <span>Basınçlı Su Direnci</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry SS-7 Easy -->
-      <div class="pv-menu-row" data-category="cimento-esasli" data-id="weberdry-ss-7-easy" data-product-id="weberdry-ss-7-easy" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-dry-ss-7-easy-set-sivi-6-kg-toz-20-kg.jpg" alt="Weberdry SS-7 Easy" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry SS-7 Easy</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Yarı Elastik 2K</span>
-          </div>
-          <div class="pv-menu-desc-line">Banyo, mutfak ve ıslak hacimler için çift bileşenli yarı elastik su yalıtımı · CM O1P</div>
-          <div class="pv-menu-meta-chips">
-            <span>CM O1P Yarı Elastik</span>
-            <span>&bull;</span>
-            <span>3.0 – 3.5 kg/m²</span>
-            <span>&bull;</span>
-            <span>Fayans Altı Zırh</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry 706 Plus -->
-      <div class="pv-menu-row" data-category="bitum-esasli" data-id="weberdry-706-plus" data-product-id="weberdry-706-plus" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-dry-706-plus-32-kg.jpg" alt="Weberdry 706 Plus" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry 706 Plus</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Bitüm-Kauçuk Temel & Perde Yalıtımı</span>
-          </div>
-          <div class="pv-menu-desc-line">Temel, perde duvar, bodrum dış duvarları ve istinat yapıları için polimer modifiyeli 2 komponentli kalın bitüm-kauçuk kaplama.</div>
-          <div class="pv-menu-meta-chips">
-            <span>TS EN 15814 Standardı</span>
-            <span>&bull;</span>
-            <span>Temel & Perde Duvar Zırhı</span>
-            <span>&bull;</span>
-            <span>Yeraltı Sularına Tam Dayanım</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry DS -->
-      <div class="pv-menu-row" data-category="kristalize" data-id="weberdry-ds" data-product-id="weberdry-ds" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-dry-uv-coat-set-sivi-10-kg-toz-20-kg.jpg" alt="Weberdry DS" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry DS Kristalize</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Negatif & Pozitif Su</span>
-          </div>
-          <div class="pv-menu-desc-line">Bodrum ve perde duvarlarda betona işleyen kristalize kapiler su yalıtımı</div>
-          <div class="pv-menu-meta-chips">
-            <span>Kapiler Kristalize</span>
-            <span>&bull;</span>
-            <span>2.0 – 3.0 kg/m²</span>
-            <span>&bull;</span>
-            <span>Negatif Basınç Uyumlu</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry Rapid Stop -->
-      <div class="pv-menu-row" data-category="sok-tikama" data-id="weberdry-rapid-stop" data-product-id="weberdry-rapid-stop" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-dry-rapid-stop-5-kg.jpg" alt="Weberdry Rapid Stop" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry Rapid Stop</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">2 Dk Şok Tıkaç</span>
-          </div>
-          <div class="pv-menu-desc-line">Basınçlı su kaçaklarını ve delikleri 2 dakikada donduran şok su tıkacı harcı</div>
-          <div class="pv-menu-meta-chips">
-            <span>2 Dk Priz Hızı</span>
-            <span>&bull;</span>
-            <span>Anında Su Kesici</span>
-            <span>&bull;</span>
-            <span>Priz: 120 Saniye</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry PUR Seal -->
-      <div class="pv-menu-row" data-category="likit-poliuretan" data-id="weberdry-pur-seal" data-product-id="weberdry-pur-seal" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weberdry-706-plus.jpg" alt="Weberdry PUR Seal" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry PUR Seal</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Poliüretan Membran</span>
-          </div>
-          <div class="pv-menu-desc-line">Teras ve çatılarda eksiz monolitik kalkan oluşturan likit poliüretan membran</div>
-          <div class="pv-menu-meta-chips">
-            <span>%100 Poliüretan Likit</span>
-            <span>&bull;</span>
-            <span>1.5 – 2.0 kg/m²</span>
-            <span>&bull;</span>
-            <span>Eksiz Monolitik</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberdry Pah Bandı -->
-      <div class="pv-menu-row" data-category="aksesuar-pah" data-id="weberdry-pah-bandi" data-product-id="weberdry-pah-bandi" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-kosebant-100-50-mt.jpg" alt="Weberdry Pah Bandı" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberdry Pah Bandı</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Elastik Köşe Pah Bandı · 120 mm</span>
-          </div>
-          <div class="pv-menu-desc-line">Teras, balkon ve banyolarda zemin-duvar birleşim noktalarında su sızıntılarını önlemek için kullanılan termoplastik elastomer pah bandı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>120 mm Toplam Genişlik</span>
-            <span>&bull;</span>
-            <span>Alkaliye Dayanıklı Fileli Kenar</span>
-            <span>&bull;</span>
-            <span>Yüksek Elastikiyet</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="dryMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="cimento-esasli" role="tab" aria-selected="true">
+     Çimento Esaslı (2K)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="bitum-esasli" role="tab" aria-selected="false">
+     Bitüm-Kauçuk Yalıtım
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="kristalize" role="tab" aria-selected="false">
+     Kristalize Yalıtım
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="sok-tikama" role="tab" aria-selected="false">
+     Şok Su Tıkacı
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="likit-poliuretan" role="tab" aria-selected="false">
+     Poliüretan Membran
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="aksesuar-pah" role="tab" aria-selected="false">
+     Pah Bandı &amp; Aksesuar
+    </button>
+   </div>
   </div>
+
+  <div class="pv-menu-list" id="dryMenuList">
+   <!-- Item: Weberdry SS-10 -->
+   <div class="pv-menu-row" data-category="cimento-esasli" data-id="weberdry-ss-10" data-product-id="weberdry-ss-10" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-dry-ss-10-set-sivi-10-kg-toz-20-kg.jpg" alt="Weberdry SS-10" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry SS-10</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Tam Elastik 2K</span>
+     </div>
+     <div class="pv-menu-desc-line">Teras, balkon ve havuzlar için çift bileşenli tam elastik su yalıtımı · CM O2P</div>
+     <div class="pv-menu-meta-chips">
+      <span>CM O2P Tam Elastik</span>
+      <span>&bull;</span>
+      <span>3.0 – 3.5 kg/m² (2 Kat)</span>
+      <span>&bull;</span>
+      <span>Basınçlı Su Direnci</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry SS-7 Easy -->
+   <div class="pv-menu-row" data-category="cimento-esasli" data-id="weberdry-ss-7-easy" data-product-id="weberdry-ss-7-easy" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-dry-ss-7-easy-set-sivi-6-kg-toz-20-kg.jpg" alt="Weberdry SS-7 Easy" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry SS-7 Easy</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Yarı Elastik 2K</span>
+     </div>
+     <div class="pv-menu-desc-line">Banyo, mutfak ve ıslak hacimler için çift bileşenli yarı elastik su yalıtımı · CM O1P</div>
+     <div class="pv-menu-meta-chips">
+      <span>CM O1P Yarı Elastik</span>
+      <span>&bull;</span>
+      <span>3.0 – 3.5 kg/m²</span>
+      <span>&bull;</span>
+      <span>Fayans Altı Zırh</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry 706 Plus -->
+   <div class="pv-menu-row" data-category="bitum-esasli" data-id="weberdry-706-plus" data-product-id="weberdry-706-plus" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-dry-706-plus-32-kg.jpg" alt="Weberdry 706 Plus" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry 706 Plus</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Bitüm-Kauçuk Temel & Perde Yalıtımı</span>
+     </div>
+     <div class="pv-menu-desc-line">Temel, perde duvar, bodrum dış duvarları ve istinat yapıları için polimer modifiyeli 2 komponentli kalın bitüm-kauçuk kaplama.</div>
+     <div class="pv-menu-meta-chips">
+      <span>TS EN 15814 Standardı</span>
+      <span>&bull;</span>
+      <span>Temel & Perde Duvar Zırhı</span>
+      <span>&bull;</span>
+      <span>Yeraltı Sularına Tam Dayanım</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry DS -->
+   <div class="pv-menu-row" data-category="kristalize" data-id="weberdry-ds" data-product-id="weberdry-ds" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-dry-uv-coat-set-sivi-10-kg-toz-20-kg.jpg" alt="Weberdry DS" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry DS Kristalize</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Negatif & Pozitif Su</span>
+     </div>
+     <div class="pv-menu-desc-line">Bodrum ve perde duvarlarda betona işleyen kristalize kapiler su yalıtımı</div>
+     <div class="pv-menu-meta-chips">
+      <span>Kapiler Kristalize</span>
+      <span>&bull;</span>
+      <span>2.0 – 3.0 kg/m²</span>
+      <span>&bull;</span>
+      <span>Negatif Basınç Uyumlu</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry Rapid Stop -->
+   <div class="pv-menu-row" data-category="sok-tikama" data-id="weberdry-rapid-stop" data-product-id="weberdry-rapid-stop" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-dry-rapid-stop-5-kg.jpg" alt="Weberdry Rapid Stop" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry Rapid Stop</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">2 Dk Şok Tıkaç</span>
+     </div>
+     <div class="pv-menu-desc-line">Basınçlı su kaçaklarını ve delikleri 2 dakikada donduran şok su tıkacı harcı</div>
+     <div class="pv-menu-meta-chips">
+      <span>2 Dk Priz Hızı</span>
+      <span>&bull;</span>
+      <span>Anında Su Kesici</span>
+      <span>&bull;</span>
+      <span>Priz: 120 Saniye</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry PUR Seal -->
+   <div class="pv-menu-row" data-category="likit-poliuretan" data-id="weberdry-pur-seal" data-product-id="weberdry-pur-seal" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weberdry-706-plus.jpg" alt="Weberdry PUR Seal" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry PUR Seal</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Poliüretan Membran</span>
+     </div>
+     <div class="pv-menu-desc-line">Teras ve çatılarda eksiz monolitik kalkan oluşturan likit poliüretan membran</div>
+     <div class="pv-menu-meta-chips">
+      <span>%100 Poliüretan Likit</span>
+      <span>&bull;</span>
+      <span>1.5 – 2.0 kg/m²</span>
+      <span>&bull;</span>
+      <span>Eksiz Monolitik</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberdry Pah Bandı -->
+   <div class="pv-menu-row" data-category="aksesuar-pah" data-id="weberdry-pah-bandi" data-product-id="weberdry-pah-bandi" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-kosebant-100-50-mt.jpg" alt="Weberdry Pah Bandı" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberdry Pah Bandı</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Elastik Köşe Pah Bandı · 120 mm</span>
+     </div>
+     <div class="pv-menu-desc-line">Teras, balkon ve banyolarda zemin-duvar birleşim noktalarında su sızıntılarını önlemek için kullanılan termoplastik elastomer pah bandı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>120 mm Toplam Genişlik</span>
+      <span>&bull;</span>
+      <span>Alkaliye Dayanıklı Fileli Kenar</span>
+      <span>&bull;</span>
+      <span>Yüksek Elastikiyet</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 4: TAMİR, GROUT & GÜÇLENDİRME
-     ========================================================================== -->
+   PANEL 4: TAMİR, GROUT & GÜÇLENDİRME
+   ========================================================================== -->
 <section class="pv-dept-panel" id="weberRepSection" style="display: none;">
-  <div class="pv-container">
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="repMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="yapisal-tamir" role="tab" aria-selected="true">
-          Yapısal Tamir (R4)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="ince-tamir" role="tab" aria-selected="false">
-          İnce Tamir (R3)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="grout-ankraj" role="tab" aria-selected="false">
-          Akıcı Grout &amp; Ankraj
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="astar-aderans" role="tab" aria-selected="false">
-          Astar &amp; Aderans
-        </button>
-      </div>
-    </div>
-
-    <div class="pv-menu-list" id="repMenuList">
-      <!-- Item: Weberep MA 200 -->
-      <div class="pv-menu-row" data-category="yapisal-tamir" data-id="weberep-ma-200" data-product-id="weberep-ma-200" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-therm-sv-25-kg.jpg" alt="Weberep MA 200" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberep MA 200</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Yapısal Kalın Tamir Harcı · R4 Sınıfı</span>
-          </div>
-          <div class="pv-menu-desc-line">Kolon, kiriş, perde duvar ve köprü gibi taşıyıcı betonarme elemanlarda 10–40 mm kalınlıkta uygulanan R4 sınıfı yüksek mukavemetli yapısal tamir harcı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>TS EN 1504-3 R4 Sınıfı</span>
-            <span>&bull;</span>
-            <span>50+ MPa Basınç Dayanımı</span>
-            <span>&bull;</span>
-            <span>Tiksotropik · Tavanda Sarkma Yapmaz</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberep M352 -->
-      <div class="pv-menu-row" data-category="ince-tamir" data-id="weberep-m352" data-product-id="weberep-m352" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-rep-m352-25-kg.jpg" alt="Weberep M352" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberep M352</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">R3 İnce Tamir</span>
-          </div>
-          <div class="pv-menu-desc-line">2–10 mm pürüzsüz yüzey tamiri sağlayan polimer ve elyaf katkılı harç</div>
-          <div class="pv-menu-meta-chips">
-            <span>R3 Kozmetik Finiş</span>
-            <span>&bull;</span>
-            <span>2 – 10 mm Kalınlık</span>
-            <span>&bull;</span>
-            <span>Kaplama Öncesi</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberep HKS -->
-      <div class="pv-menu-row" data-category="yapisal-tamir" data-id="weberep-hks" data-product-id="weberep-hks" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-rep-grout-25-kg.jpg" alt="Weberep HKS" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberep HKS</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">R4 Sülfat Direnci</span>
-          </div>
-          <div class="pv-menu-desc-line">Deniz yapıları ve arıtma tesisleri için sülfata dayanıklı yapısal tamir harcı</div>
-          <div class="pv-menu-meta-chips">
-            <span>R4 Yapısal Standart</span>
-            <span>&bull;</span>
-            <span>Sülfat ve Tuz Direnci</span>
-            <span>&bull;</span>
-            <span>Kıyı Yapıları</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Webergrout Dry -->
-      <div class="pv-menu-row" data-category="grout-ankraj" data-id="webergrout-dry" data-product-id="webergrout-dry" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-rep-grout-25-kg.jpg" alt="Webergrout Dry" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Webergrout Dry</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Rötresiz Grout</span>
-          </div>
-          <div class="pv-menu-desc-line">Çelik kolon tabanları ve makineler için büzülme yapmayan akıcı harç</div>
-          <div class="pv-menu-meta-chips">
-            <span>65+ MPa Mukavemet</span>
-            <span>&bull;</span>
-            <span>10 – 50 mm Döküm</span>
-            <span>&bull;</span>
-            <span>Akıcı Kendinden Yerleşen</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberprim TG 5 -->
-      <div class="pv-menu-row" data-category="astar-aderans" data-id="weberprim-tg-5" data-product-id="weberprim-tg-5" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-prim-art-1-kg.jpg" alt="Weberprim TG 5" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberprim TG 5</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Konsantre Aderans Astarı</span>
-          </div>
-          <div class="pv-menu-desc-line">Emici zeminler, şaplar, alçıpan ve gazbeton yüzeylerde yapıştırıcı ve tamir harçlarının suyunu kaybetmesini önleyen derin penetrasyon astarı.</div>
-          <div class="pv-menu-meta-chips">
-            <span>Derin Yüzey Penetrasyonu</span>
-            <span>&bull;</span>
-            <span>Tozuma Önleyici ve Bağlayıcı</span>
-            <span>&bull;</span>
-            <span>Su Emme Oranını Dengeler</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberprim Epox -->
-      <div class="pv-menu-row" data-category="astar-aderans" data-id="weberprim-epox" data-product-id="weberprim-epox" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-prim-bt-max-12-kg.jpg" alt="Weberprim Epox" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberprim Epox</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">2K Nem Bariyeri</span>
-          </div>
-          <div class="pv-menu-desc-line">Nemli beton zeminlerde nem bariyeri oluşturan solventsiz 2K epoksi astar</div>
-          <div class="pv-menu-meta-chips">
-            <span>Solventsiz 2K Epoksi</span>
-            <span>&bull;</span>
-            <span>10 kg Set (A+B)</span>
-            <span>&bull;</span>
-            <span>Zorlu Yüzey Aderansı</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="repMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="yapisal-tamir" role="tab" aria-selected="true">
+     Yapısal Tamir (R4)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="ince-tamir" role="tab" aria-selected="false">
+     İnce Tamir (R3)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="grout-ankraj" role="tab" aria-selected="false">
+     Akıcı Grout &amp; Ankraj
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="astar-aderans" role="tab" aria-selected="false">
+     Astar &amp; Aderans
+    </button>
+   </div>
   </div>
+
+  <div class="pv-menu-list" id="repMenuList">
+   <!-- Item: Weberep MA 200 -->
+   <div class="pv-menu-row" data-category="yapisal-tamir" data-id="weberep-ma-200" data-product-id="weberep-ma-200" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-therm-sv-25-kg.jpg" alt="Weberep MA 200" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberep MA 200</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Yapısal Kalın Tamir Harcı · R4 Sınıfı</span>
+     </div>
+     <div class="pv-menu-desc-line">Kolon, kiriş, perde duvar ve köprü gibi taşıyıcı betonarme elemanlarda 10–40 mm kalınlıkta uygulanan R4 sınıfı yüksek mukavemetli yapısal tamir harcı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>TS EN 1504-3 R4 Sınıfı</span>
+      <span>&bull;</span>
+      <span>50+ MPa Basınç Dayanımı</span>
+      <span>&bull;</span>
+      <span>Tiksotropik · Tavanda Sarkma Yapmaz</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberep M352 -->
+   <div class="pv-menu-row" data-category="ince-tamir" data-id="weberep-m352" data-product-id="weberep-m352" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-rep-m352-25-kg.jpg" alt="Weberep M352" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberep M352</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">R3 İnce Tamir</span>
+     </div>
+     <div class="pv-menu-desc-line">2–10 mm pürüzsüz yüzey tamiri sağlayan polimer ve elyaf katkılı harç</div>
+     <div class="pv-menu-meta-chips">
+      <span>R3 Kozmetik Finiş</span>
+      <span>&bull;</span>
+      <span>2 – 10 mm Kalınlık</span>
+      <span>&bull;</span>
+      <span>Kaplama Öncesi</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberep HKS -->
+   <div class="pv-menu-row" data-category="yapisal-tamir" data-id="weberep-hks" data-product-id="weberep-hks" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-rep-grout-25-kg.jpg" alt="Weberep HKS" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberep HKS</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">R4 Sülfat Direnci</span>
+     </div>
+     <div class="pv-menu-desc-line">Deniz yapıları ve arıtma tesisleri için sülfata dayanıklı yapısal tamir harcı</div>
+     <div class="pv-menu-meta-chips">
+      <span>R4 Yapısal Standart</span>
+      <span>&bull;</span>
+      <span>Sülfat ve Tuz Direnci</span>
+      <span>&bull;</span>
+      <span>Kıyı Yapıları</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Webergrout Dry -->
+   <div class="pv-menu-row" data-category="grout-ankraj" data-id="webergrout-dry" data-product-id="webergrout-dry" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-rep-grout-25-kg.jpg" alt="Webergrout Dry" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Webergrout Dry</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Rötresiz Grout</span>
+     </div>
+     <div class="pv-menu-desc-line">Çelik kolon tabanları ve makineler için büzülme yapmayan akıcı harç</div>
+     <div class="pv-menu-meta-chips">
+      <span>65+ MPa Mukavemet</span>
+      <span>&bull;</span>
+      <span>10 – 50 mm Döküm</span>
+      <span>&bull;</span>
+      <span>Akıcı Kendinden Yerleşen</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberprim TG 5 -->
+   <div class="pv-menu-row" data-category="astar-aderans" data-id="weberprim-tg-5" data-product-id="weberprim-tg-5" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-prim-art-1-kg.jpg" alt="Weberprim TG 5" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberprim TG 5</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Konsantre Aderans Astarı</span>
+     </div>
+     <div class="pv-menu-desc-line">Emici zeminler, şaplar, alçıpan ve gazbeton yüzeylerde yapıştırıcı ve tamir harçlarının suyunu kaybetmesini önleyen derin penetrasyon astarı.</div>
+     <div class="pv-menu-meta-chips">
+      <span>Derin Yüzey Penetrasyonu</span>
+      <span>&bull;</span>
+      <span>Tozuma Önleyici ve Bağlayıcı</span>
+      <span>&bull;</span>
+      <span>Su Emme Oranını Dengeler</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberprim Epox -->
+   <div class="pv-menu-row" data-category="astar-aderans" data-id="weberprim-epox" data-product-id="weberprim-epox" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-prim-bt-max-12-kg.jpg" alt="Weberprim Epox" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberprim Epox</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">2K Nem Bariyeri</span>
+     </div>
+     <div class="pv-menu-desc-line">Nemli beton zeminlerde nem bariyeri oluşturan solventsiz 2K epoksi astar</div>
+     <div class="pv-menu-meta-chips">
+      <span>Solventsiz 2K Epoksi</span>
+      <span>&bull;</span>
+      <span>10 kg Set (A+B)</span>
+      <span>&bull;</span>
+      <span>Zorlu Yüzey Aderansı</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     PANEL 5: ZEMİN SİSTEMLERİ & ŞAPLAR
-     ========================================================================== -->
+   PANEL 5: ZEMİN SİSTEMLERİ & ŞAPLAR
+   ========================================================================== -->
 <section class="pv-dept-panel" id="weberFloorSection" style="display: none;">
-  <div class="pv-container">
-    <div class="pv-menu-pills-wrap">
-      <div class="pv-menu-pills" id="floorMenuPills" role="tablist">
-        <button type="button" class="pv-menu-pill active" data-filter="tesviye-selfleveling" role="tab" aria-selected="true">
-          Tesviye Şapı (2–10 mm)
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="endustriyel-zemin" role="tab" aria-selected="false">
-          Endüstriyel Zemin Şapı
-        </button>
-        <button type="button" class="pv-menu-pill" data-filter="koruyucu-kaplama" role="tab" aria-selected="false">
-          Yüzey Koruyucu Cila
-        </button>
-      </div>
-    </div>
-
-    <div class="pv-menu-list" id="floorMenuList">
-      <!-- Item: Weberfloor Level -->
-      <div class="pv-menu-row" data-category="tesviye-selfleveling" data-id="weberfloor-level" data-product-id="weberfloor-level" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-latex-20-kg.jpg" alt="Weberfloor Level" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberfloor Level</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-blue">Tesviye Şapı 2-10mm</span>
-          </div>
-          <div class="pv-menu-desc-line">Seramik ve parke öncesi zeminleri teraziye alan kendiliğinden yayılan şap</div>
-          <div class="pv-menu-meta-chips">
-            <span>2 – 10 mm Tesviye</span>
-            <span>&bull;</span>
-            <span>Ayna Gibi Düzlük</span>
-            <span>&bull;</span>
-            <span>4 – 6 Saatte Yaya Trafiği</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberfloor Flex -->
-      <div class="pv-menu-row" data-category="tesviye-selfleveling" data-id="weberfloor-flex" data-product-id="weberfloor-flex" role="button" tabindex="0">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-latex-5-kg.jpg" alt="Weberfloor Flex" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberfloor Flex</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-amber">Yerden Isıtma Şapı</span>
-          </div>
-          <div class="pv-menu-desc-line">Yerden ısıtma borularını kaplayan fiber takviyeli esnek tesviye şapı</div>
-          <div class="pv-menu-meta-chips">
-            <span>3 – 30 mm Kalınlık</span>
-            <span>&bull;</span>
-            <span>Yerden Isıtma Uyumu</span>
-            <span>&bull;</span>
-            <span>Fiber Lif Takviyeli</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberfloor Industri -->
-      <div class="pv-menu-row" data-category="endustriyel-zemin" data-id="weberfloor-industri" data-product-id="weberfloor-industri" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-min-deko-25-kg-2-mm.jpg" alt="Weberfloor Industri" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberfloor Industri</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-purple">Ağır Trafik Şapı</span>
-          </div>
-          <div class="pv-menu-desc-line">Fabrika, otopark ve forklift sahaları için 40 MPa aşınmaz zemin şapı</div>
-          <div class="pv-menu-meta-chips">
-            <span>40 MPa Endüstriyel</span>
-            <span>&bull;</span>
-            <span>Forklift & Ağır Yük</span>
-            <span>&bull;</span>
-            <span>Pompa ile Döküm</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item: Weberfloor Protect -->
-      <div class="pv-menu-row" data-category="koruyucu-kaplama" data-id="weberfloor-protect" data-product-id="weberfloor-protect" role="button" tabindex="0" style="display: none;">
-        <div class="pv-menu-thumb">
-          <img src="assets/weber-official/weber-min-duo-25-kg-3-5-mm-cizgi-dokulu.png" alt="Weberfloor Protect" loading="lazy" decoding="async" />
-        </div>
-        <div class="pv-menu-main">
-          <div class="pv-menu-title-row">
-            <span class="pv-menu-name">Weberfloor Protect</span>
-            <span class="pv-menu-dots">........................................</span>
-            <span class="pv-menu-tag tag-emerald">Tozuma Önleyici Cila</span>
-          </div>
-          <div class="pv-menu-desc-line">Beton zeminler için tozuma ve leke yapmayan şeffaf emprenye yüzey koruyucu</div>
-          <div class="pv-menu-meta-chips">
-            <span>Şeffaf Emprenye</span>
-            <span>&bull;</span>
-            <span>20 L Plastik Bidon</span>
-            <span>&bull;</span>
-            <span>Leke & Toz Kalkanı</span>
-          </div>
-        </div>
-        <div class="pv-menu-aside">
-          <span class="pv-menu-action-label">Teknik Detay</span>
-          <div class="pv-menu-arrow" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="pv-container">
+  <div class="pv-menu-pills-wrap">
+   <div class="pv-menu-pills" id="floorMenuPills" role="tablist">
+    <button type="button" class="pv-menu-pill active" data-filter="tesviye-selfleveling" role="tab" aria-selected="true">
+     Tesviye Şapı (2–10 mm)
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="endustriyel-zemin" role="tab" aria-selected="false">
+     Endüstriyel Zemin Şapı
+    </button>
+    <button type="button" class="pv-menu-pill" data-filter="koruyucu-kaplama" role="tab" aria-selected="false">
+     Yüzey Koruyucu Cila
+    </button>
+   </div>
   </div>
+
+  <div class="pv-menu-list" id="floorMenuList">
+   <!-- Item: Weberfloor Level -->
+   <div class="pv-menu-row" data-category="tesviye-selfleveling" data-id="weberfloor-level" data-product-id="weberfloor-level" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-latex-20-kg.jpg" alt="Weberfloor Level" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberfloor Level</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-blue">Tesviye Şapı 2-10mm</span>
+     </div>
+     <div class="pv-menu-desc-line">Seramik ve parke öncesi zeminleri teraziye alan kendiliğinden yayılan şap</div>
+     <div class="pv-menu-meta-chips">
+      <span>2 – 10 mm Tesviye</span>
+      <span>&bull;</span>
+      <span>Ayna Gibi Düzlük</span>
+      <span>&bull;</span>
+      <span>4 – 6 Saatte Yaya Trafiği</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberfloor Flex -->
+   <div class="pv-menu-row" data-category="tesviye-selfleveling" data-id="weberfloor-flex" data-product-id="weberfloor-flex" role="button" tabindex="0">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-latex-5-kg.jpg" alt="Weberfloor Flex" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberfloor Flex</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-amber">Yerden Isıtma Şapı</span>
+     </div>
+     <div class="pv-menu-desc-line">Yerden ısıtma borularını kaplayan fiber takviyeli esnek tesviye şapı</div>
+     <div class="pv-menu-meta-chips">
+      <span>3 – 30 mm Kalınlık</span>
+      <span>&bull;</span>
+      <span>Yerden Isıtma Uyumu</span>
+      <span>&bull;</span>
+      <span>Fiber Lif Takviyeli</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberfloor Industri -->
+   <div class="pv-menu-row" data-category="endustriyel-zemin" data-id="weberfloor-industri" data-product-id="weberfloor-industri" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-min-deko-25-kg-2-mm.jpg" alt="Weberfloor Industri" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberfloor Industri</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-purple">Ağır Trafik Şapı</span>
+     </div>
+     <div class="pv-menu-desc-line">Fabrika, otopark ve forklift sahaları için 40 MPa aşınmaz zemin şapı</div>
+     <div class="pv-menu-meta-chips">
+      <span>40 MPa Endüstriyel</span>
+      <span>&bull;</span>
+      <span>Forklift & Ağır Yük</span>
+      <span>&bull;</span>
+      <span>Pompa ile Döküm</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+
+   <!-- Item: Weberfloor Protect -->
+   <div class="pv-menu-row" data-category="koruyucu-kaplama" data-id="weberfloor-protect" data-product-id="weberfloor-protect" role="button" tabindex="0" style="display: none;">
+    <div class="pv-menu-thumb">
+     <img src="assets/weber-official/weber-min-duo-25-kg-3-5-mm-cizgi-dokulu.png" alt="Weberfloor Protect" loading="lazy" decoding="async" />
+    </div>
+    <div class="pv-menu-main">
+     <div class="pv-menu-title-row">
+      <span class="pv-menu-name">Weberfloor Protect</span>
+      <span class="pv-menu-dots">........................................</span>
+      <span class="pv-menu-tag tag-emerald">Tozuma Önleyici Cila</span>
+     </div>
+     <div class="pv-menu-desc-line">Beton zeminler için tozuma ve leke yapmayan şeffaf emprenye yüzey koruyucu</div>
+     <div class="pv-menu-meta-chips">
+      <span>Şeffaf Emprenye</span>
+      <span>&bull;</span>
+      <span>20 L Plastik Bidon</span>
+      <span>&bull;</span>
+      <span>Leke & Toz Kalkanı</span>
+     </div>
+    </div>
+    <div class="pv-menu-aside">
+     <span class="pv-menu-action-label">Teknik Detay</span>
+     <div class="pv-menu-arrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       <line x1="5" y1="12" x2="19" y2="12"></line>
+       <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ==========================================================================
-     MERKEZLER & YOL TARİFİ (Showroom & Logistics GPS Hubs)
-     ========================================================================== -->
+   MERKEZLER & YOL TARİFİ (Showroom & Logistics GPS Hubs)
+   ========================================================================== -->
 <section class="pv-hubs-section" aria-label="Pervan Merkezleri ve Yol Tarifi">
-  <div class="pv-container">
-    
-    <div class="pv-hubs-header">
-      <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
-      <h2 class="pv-hubs-title">Daha Fazlası, Özel Renk &amp; Hızlı Tedarik İçin</h2>
-      <p class="pv-hubs-desc">Katalogda yer almayan özel seriler, anında bilgisayarlı renk üretimi veya doğrudan şantiyenize paletli sevkiyat için merkezlerimize ulaşın.</p>
-    </div>
-
-    <div class="pv-hubs-grid">
-      
-      <!-- Card 1: Balçova Showroom -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
-        <p class="pv-hub-desc">Bilgisayarlı RenXMatik™ renk üretimi, Saint-Gobain Weber teknik harç ve su yalıtımı danışmanlığı, perakende satış.</p>
-        
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
-          </div>
-        </div>
-
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ve%20RenXMatik%20Merkezinizden%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2: Urla Lojistik Depo -->
-      <div class="pv-hub-card">
-        <h3 class="pv-hub-title">Urla Ana Lojistik Deposu</h3>
-        <p class="pv-hub-desc">Paletli malzeme teslimatı, tır ve kamyonet yükleme sahası, Yarımada (Urla, Çeşme, Seferihisar, Karaburun) şantiye sevkiyatı.</p>
-        
-        <div class="pv-hub-details">
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Kalabak, 35430 Urla / İzmir</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
-          </div>
-          <div class="pv-hub-detail-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
-          </div>
-        </div>
-
-        <div class="pv-hub-actions">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            <span>Yol Tarifi Al (Haritalar)</span>
-          </a>
-          <a href="https://wa.me/905323318763?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20malzeme%20al%C4%B1m%C4%B1%20ve%20palet%20y%C3%BCkleme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp ile Danış</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
+ <div class="pv-container">
+  
+  <div class="pv-hubs-header">
+   <div class="pv-hubs-pretitle">MERKEZLERİMİZ &amp; DOĞRUDAN TEDARİK</div>
+   <h2 class="pv-hubs-title">Daha Fazlası, Özel Renk &amp; Hızlı Tedarik İçin</h2>
+   <p class="pv-hubs-desc">Katalogda yer almayan özel seriler, anında bilgisayarlı renk üretimi veya doğrudan şantiyenize paletli sevkiyat için merkezlerimize ulaşın.</p>
   </div>
+
+  <div class="pv-hubs-grid">
+   
+   <!-- Card 1: Balçova Showroom -->
+   <div class="pv-hub-card">
+    <h3 class="pv-hub-title">Balçova Yapı Market &amp; RenXMatik Laboratuvarı</h3>
+    <p class="pv-hub-desc">Bilgisayarlı RenXMatik™ renk üretimi, Saint-Gobain Weber teknik harç ve su yalıtımı danışmanlığı, perakende satış.</p>
+    
+    <div class="pv-hub-details">
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Haftanın 7 Günü Açık: 08:30 – 19:30 (Pazar Dahil)</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span><strong>Telefon:</strong> <a href="tel:+902322784340" class="pv-hub-phone-link">0 (232) 278 43 40</a></span>
+     </div>
+    </div>
+
+    <div class="pv-hub-actions">
+     <a href="https://www.google.com/maps/dir/?api=1&destination=38.3887,27.0425" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <span>Yol Tarifi Al (Haritalar)</span>
+     </a>
+     <a href="https://wa.me/905323844497?text=Merhaba%2C%20Bal%C3%A7ova%20Yap%C4%B1%20Market%20ve%20RenXMatik%20Merkezinizden%20bilgi%20ve%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>WhatsApp ile Danış</span>
+     </a>
+    </div>
+   </div>
+
+   <!-- Card 2: Urla Lojistik Depo -->
+   <div class="pv-hub-card">
+    <h3 class="pv-hub-title">Urla Ana Lojistik Deposu</h3>
+    <p class="pv-hub-desc">Paletli malzeme teslimatı, tır ve kamyonet yükleme sahası, Yarımada (Urla, Çeşme, Seferihisar, Karaburun) şantiye sevkiyatı.</p>
+    
+    <div class="pv-hub-details">
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>Kalabak, 35430 Urla / İzmir</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Pazartesi – Cumartesi: 07:30 – 18:30</span>
+     </div>
+     <div class="pv-hub-detail-item">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span><strong>Cep / WhatsApp:</strong> <a href="tel:+905323318763" class="pv-hub-phone-link">0 (532) 331 87 63</a></span>
+     </div>
+    </div>
+
+    <div class="pv-hub-actions">
+     <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-hub-btn-maps">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <span>Yol Tarifi Al (Haritalar)</span>
+     </a>
+     <a href="https://wa.me/905323318763?text=Merhaba%2C%20Urla%20%C5%9Fubenizden%20malzeme%20al%C4%B1m%C4%B1%20ve%20palet%20y%C3%BCkleme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-hub-btn-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span>WhatsApp ile Danış</span>
+     </a>
+    </div>
+   </div>
+
+  </div>
+ </div>
 </section>
 
 </main>
 
 <!-- ==========================================================================
-     ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
-     ========================================================================== -->
+   ARCHITECTURAL PRODUCT DETAIL MODAL & CONFIGURATOR
+   ========================================================================== -->
 <div class="pv-modal-backdrop" id="pvModalBackdrop" aria-hidden="true">
-  <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
-    <!-- Top Gesture Bar & Absolute Close Action -->
-    <div class="pv-modal-top-bar" id="modalTopBar">
-      <div class="pv-modal-handle-zone" id="modalHandleZone">
-        <div class="pv-modal-handle"></div>
-      </div>
-      <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Scrollable Modal Content Area -->
-    <div class="pv-modal-scroll" id="modalScrollArea">
-      <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
-      <div class="pv-specimen-hero">
-        <div class="pv-specimen-meta">
-          <div class="pv-specimen-eyebrow" id="modalProductEyebrow">SAINT-GOBAIN WEBER · YAPI KİMYASALLARI</div>
-          <h3 class="pv-specimen-title" id="modalProductTitle">Weberkol Flex Konfor</h3>
-          <div class="pv-specimen-badges" id="modalProductBadges">
-            <span class="pv-specimen-badge" id="modalProductBadge">TS EN 12004 C2TE S1</span>
-          </div>
-        </div>
-
-        <div class="pv-specimen-can-stage">
-          <div class="pv-specimen-glow" id="modalChromaGlow"></div>
-          <img id="modalProductImg" src="assets/rf-brand-weber.jpg" alt="Ürün Görseli" />
-          <div class="pv-can-shadow" id="modalCanShadow"></div>
-        </div>
-
-        <p class="pv-specimen-desc" id="modalProductDesc">60×120 ve 120×240 cm büyük ebat porselen seramik ve granit karolar için toz çıkarmayan, yüksek polimer katkılı S1 esnek yapıştırma harcı.</p>
-        <span id="modalProductTag" style="display:none;"></span>
-      </div>
-
-      <!-- 2. Packaging / Size Segmented Track -->
-      <div class="pv-modal-select-group" id="modalPackagingSection">
-        <div class="pv-modal-select-header">
-          <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
-          <span class="pv-config-hint" id="modalSelectedSizeHint">1 Seçenek Seçili</span>
-        </div>
-        <div class="pv-size-chips" id="modalSizeChips" role="radiogroup">
-          <!-- Dynamic Size Chips -->
-        </div>
-        <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi" style="display:none;">
-          <!-- Fallback track -->
-        </div>
-      </div>
-
-      <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
-      <div class="pv-spec-gauges" id="modalSpecGauges">
-        <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
-          <div class="pv-gauge-eyebrow">STANDART &amp; SINIF</div>
-          <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 12004 C2TE S1</div>
-          <div class="pv-gauge-caption" id="modalGaugeStandardCaption">CE &amp; TSE Belgeli</div>
-        </div>
-
-        <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
-          <div class="pv-gauge-eyebrow">SARFİYAT MİKTARI</div>
-          <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">4.5 – 5.5 kg/m²</div>
-          <div class="pv-gauge-caption" id="modalSpecPackaging">25 kg Kraft Torba</div>
-        </div>
-      </div>
-
-      <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
-      <div class="pv-specs-table" id="modalSpecsTable">
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Karışım Oranı:</span>
-          <span class="pv-spec-v" id="modalSpecMixing">6.0 – 6.5 lt su / torba</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Kap Ömrü &amp; Priz:</span>
-          <span class="pv-spec-v" id="modalSpecPotLife">Açık bekletme: 30 dk · Kap ömrü: 4 saat</span>
-        </div>
-        <div class="pv-spec-row">
-          <span class="pv-spec-k">Lojistik Dağıtım:</span>
-          <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Depo</span>
-        </div>
-      </div>
-
-      <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
-      <div class="pv-specimen-accordions" id="modalAccordionsWrap">
-        <div class="pv-modal-accordions" id="modalAccordions">
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-    </div>
-
-    <!-- STICKY FOOTER ACTION BAR -->
-    <div class="pv-modal-footer-sticky" id="modalFooterSticky">
-      <a href="#" id="modalWaBtn" data-legacy-id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-        <span>WhatsApp ile Stok &amp; Palet Teklifi Al</span>
-      </a>
-      <div class="pv-modal-footer-aux">
-        <span class="pv-modal-delivery-chip">
-          <span class="pv-chip-pulse"></span>
-          <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
-        </span>
-      </div>
-    </div>
+ <div class="pv-modal-card" id="pvModalCard" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+  <!-- Top Gesture Bar & Absolute Close Action -->
+  <div class="pv-modal-top-bar" id="modalTopBar">
+   <div class="pv-modal-handle-zone" id="modalHandleZone">
+    <div class="pv-modal-handle"></div>
+   </div>
+   <button type="button" class="pv-modal-close-btn" id="pvModalCloseBtn" aria-label="Kapat">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+     <line x1="18" y1="6" x2="6" y2="18"></line>
+     <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+   </button>
   </div>
+
+  <!-- Scrollable Modal Content Area -->
+  <div class="pv-modal-scroll" id="modalScrollArea">
+   <!-- 1. Centered Specimen Header Lockup (110px Pedestal Showcase) -->
+   <div class="pv-specimen-hero">
+    <div class="pv-specimen-meta">
+     <div class="pv-specimen-eyebrow" id="modalProductEyebrow">SAINT-GOBAIN WEBER · YAPI KİMYASALLARI</div>
+     <h3 class="pv-specimen-title" id="modalProductTitle">Weberkol Flex Konfor</h3>
+     <div class="pv-specimen-badges" id="modalProductBadges">
+      <span class="pv-specimen-badge" id="modalProductBadge">TS EN 12004 C2TE S1</span>
+     </div>
+    </div>
+
+    <div class="pv-specimen-can-stage">
+     <div class="pv-specimen-glow" id="modalChromaGlow"></div>
+     <img id="modalProductImg" src="assets/rf-brand-weber.jpg" alt="Ürün Görseli" />
+     <div class="pv-can-shadow" id="modalCanShadow"></div>
+    </div>
+
+    <p class="pv-specimen-desc" id="modalProductDesc">60×120 ve 120×240 cm büyük ebat porselen seramik ve granit karolar için toz çıkarmayan, yüksek polimer katkılı S1 esnek yapıştırma harcı.</p>
+    <span id="modalProductTag" style="display:none;"></span>
+   </div>
+
+   <!-- 2. Packaging / Size Segmented Track -->
+   <div class="pv-modal-select-group" id="modalPackagingSection">
+    <div class="pv-modal-select-header">
+     <span class="pv-modal-select-title" id="modalSelectTitle">Ambalaj &amp; Satış Birimi</span>
+     <span class="pv-config-hint" id="modalSelectedSizeHint">1 Seçenek Seçili</span>
+    </div>
+    <div class="pv-size-chips" id="modalSizeChips" role="radiogroup">
+     <!-- Dynamic Size Chips -->
+    </div>
+    <div class="pv-segmented-track" id="modalSizeTrack" role="radiogroup" aria-label="Ambalaj &amp; Satış Birimi" style="display:none;">
+     <!-- Fallback track -->
+    </div>
+   </div>
+
+   <!-- 3. Dual Spec Gauges (Industrial Data Cartridges) -->
+   <div class="pv-spec-gauges" id="modalSpecGauges">
+    <div class="pv-gauge-card pv-gauge-primary" id="modalGaugeStandardCard">
+     <div class="pv-gauge-eyebrow">STANDART &amp; SINIF</div>
+     <div class="pv-gauge-metric-text" id="modalSpecStandard" style="font-size: 14.5px; font-weight: 800; color: #111215;">TS EN 12004 C2TE S1</div>
+     <div class="pv-gauge-caption" id="modalGaugeStandardCaption">CE &amp; TSE Belgeli</div>
+    </div>
+
+    <div class="pv-gauge-card" id="modalGaugeConsumptionCard">
+     <div class="pv-gauge-eyebrow">SARFİYAT MİKTARI</div>
+     <div class="pv-gauge-metric-text" id="modalSpecConsumption" style="font-size: 14.5px; font-weight: 800; color: #111215;">4.5 – 5.5 kg/m²</div>
+     <div class="pv-gauge-caption" id="modalSpecPackaging">25 kg Kraft Torba</div>
+    </div>
+   </div>
+
+   <!-- 4. Detailed Technical Parameters Grid / Specs Table -->
+   <div class="pv-specs-table" id="modalSpecsTable">
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">Karışım Oranı:</span>
+     <span class="pv-spec-v" id="modalSpecMixing">6.0 – 6.5 lt su / torba</span>
+    </div>
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">Kap Ömrü &amp; Priz:</span>
+     <span class="pv-spec-v" id="modalSpecPotLife">Açık bekletme: 30 dk · Kap ömrü: 4 saat</span>
+    </div>
+    <div class="pv-spec-row">
+     <span class="pv-spec-k">Lojistik Dağıtım:</span>
+     <span class="pv-spec-v" id="modalSpecLogistics">Balçova Showroom &amp; Urla Depo</span>
+    </div>
+   </div>
+
+   <!-- 5. Technical Accordions (Placed ABOVE CTA) -->
+   <div class="pv-specimen-accordions" id="modalAccordionsWrap">
+    <div class="pv-modal-accordions" id="modalAccordions">
+     <!-- Injected dynamically -->
+    </div>
+   </div>
+  </div>
+
+  <!-- STICKY FOOTER ACTION BAR -->
+  <div class="pv-modal-footer-sticky" id="modalFooterSticky">
+   <a href="#" id="modalWaBtn" data-legacy-id="modalWABtn" class="pv-btn-primary" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span>WhatsApp ile Stok &amp; Palet Teklifi Al</span>
+   </a>
+   <div class="pv-modal-footer-aux">
+    <span class="pv-modal-delivery-chip">
+     <span class="pv-chip-pulse"></span>
+     <span>Balçova &amp; Urla Aynı Gün Şantiye Teslim</span>
+    </span>
+   </div>
+  </div>
+ </div>
 </div>
 
 <!-- ==========================================================================
-     MOBILE iOS 18 BOTTOM SHEET DRAWER (Department Switcher)
-     ========================================================================== -->
+   MOBILE iOS 18 BOTTOM SHEET DRAWER (Department Switcher)
+   ========================================================================== -->
 <div class="pv-drawer-backdrop" id="pvDeptDrawerBackdrop" aria-hidden="true">
-  <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
-    <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
-      <div class="pv-drawer-handle"></div>
-    </div>
-    
-    <div class="pv-drawer-header">
-      <div>
-        <h3 class="pv-drawer-title" id="drawerTitle">Saint-Gobain Weber Departmanları</h3>
-        <div class="pv-drawer-subtitle">İncelemek istediğiniz ürün grubunu seçin</div>
-      </div>
-      <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
-    </div>
-
-    <div class="pv-drawer-list" id="pvDeptList">
-      <!-- Injected dynamically -->
-    </div>
+ <div class="pv-drawer-sheet" id="pvDeptDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="pv-drawer-handle-zone" id="pvDrawerHandleZone">
+   <div class="pv-drawer-handle"></div>
   </div>
+  
+  <div class="pv-drawer-header">
+   <div>
+    <h3 class="pv-drawer-title" id="drawerTitle">Saint-Gobain Weber Departmanları</h3>
+    <div class="pv-drawer-subtitle">İncelemek istediğiniz ürün grubunu seçin</div>
+   </div>
+   <button type="button" class="pv-drawer-close" id="pvDrawerCloseBtn" aria-label="Kapat">&times;</button>
+  </div>
+
+  <div class="pv-drawer-list" id="pvDeptList">
+   <!-- Injected dynamically -->
+  </div>
+ </div>
 </div>
 
 <!-- ==========================================================================
-     SPOTLIGHT SEARCH COMMAND PALETTE (⌘K / 30 Weber Ürünü)
-     ========================================================================== -->
+   SPOTLIGHT SEARCH COMMAND PALETTE (⌘K / 30 Weber Ürünü)
+   ========================================================================== -->
 <div class="pv-spotlight-backdrop" id="pvSpotlightBackdrop" aria-hidden="true">
-  <div class="pv-spotlight-card" role="dialog" aria-modal="true" aria-labelledby="pvSpotlightInput">
-    <div class="pv-spotlight-input-wrap">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pv-spotlight-search-icon">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" class="pv-spotlight-input" id="pvSpotlightInput" placeholder="Weber yapıştırıcı, derz dolgu, su yalıtımı veya şap ara... (Örn: Weberkol, Weberdry, Weberjoint, M352, Grout)" autocomplete="off" spellcheck="false" />
-      <button type="button" class="pv-spotlight-close" id="pvSpotlightCloseBtn" aria-label="Kapat">
-        <kbd>ESC</kbd>
-      </button>
-    </div>
-    
-    <div class="pv-spotlight-results" id="pvSpotlightResults">
-      <!-- Live Search Results -->
-    </div>
-    
-    <div class="pv-spotlight-footer">
-      <span class="pv-spotlight-count" id="pvSpotlightCount">30 Ürün Kataloğu</span>
-      <div class="pv-spotlight-tips">
-        <span><kbd>↑</kbd><kbd>↓</kbd> Gezin</span>
-        <span><kbd>ENTER</kbd> Seç</span>
-        <span><kbd>ESC</kbd> Çık</span>
-      </div>
-    </div>
+ <div class="pv-spotlight-card" role="dialog" aria-modal="true" aria-labelledby="pvSpotlightInput">
+  <div class="pv-spotlight-input-wrap">
+   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pv-spotlight-search-icon">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+   </svg>
+   <input type="text" class="pv-spotlight-input" id="pvSpotlightInput" placeholder="Weber yapıştırıcı, derz dolgu, su yalıtımı veya şap ara... (Örn: Weberkol, Weberdry, Weberjoint, M352, Grout)" autocomplete="off" spellcheck="false" />
+   <button type="button" class="pv-spotlight-close" id="pvSpotlightCloseBtn" aria-label="Kapat">
+    <kbd>ESC</kbd>
+   </button>
   </div>
+  
+  <div class="pv-spotlight-results" id="pvSpotlightResults">
+   <!-- Live Search Results -->
+  </div>
+  
+  <div class="pv-spotlight-footer">
+   <span class="pv-spotlight-count" id="pvSpotlightCount">30 Ürün Kataloğu</span>
+   <div class="pv-spotlight-tips">
+    <span><kbd>↑</kbd><kbd>↓</kbd> Gezin</span>
+    <span><kbd>ENTER</kbd> Seç</span>
+    <span><kbd>ESC</kbd> Çık</span>
+   </div>
+  </div>
+ </div>
 </div>
 
 <!-- PERVAN FOOTER (NEWSLETTER + REGIONS + 4-COLUMN NAV) -->
 <footer class="footer">
-  <!-- Main Footer Navigation -->
-  <div class="footer-container">
-    <div class="footer-sizer">
-      <div>
-        <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-        <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
+ <!-- Main Footer Navigation -->
+ <div class="footer-container">
+  <div class="footer-sizer">
+   <div>
+    <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
+    <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
+   </div>
+   
+   <div class="menu-container">
+    <nav class="navbar" role="navigation">
+     
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yetkili Bayilikler</span>
+      <div class="navbar-dropdown">
+       <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+        <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+       <a href="tek-boya.html" class="navbar-item">TEK Boya Yetkili Bayi</a>
+       <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+       <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+       <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
+       <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+       <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
       </div>
-      
-      <div class="menu-container">
-        <nav class="navbar" role="navigation">
-          
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yetkili Bayilikler</span>
-            <div class="navbar-dropdown">
-              <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
-                <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
-              <a href="tek-boya.html" class="navbar-item">TEK Boya Yetkili Bayi</a>
-              <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
-              <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
-              <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
-              <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
-              <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
-            </div>
-          </div>
+     </div>
 
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
-            <div class="navbar-dropdown">
-              <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
-              <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
-              <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
-              <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
-              <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
-              <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
-              <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Mimari Taahhüt</span>
-            <div class="navbar-dropdown">
-              <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
-              <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
-              <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
-              <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
-              <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
-              <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
-            </div>
-          </div>
-
-          <div class="navbar-item menu-item">
-            <span class="navbar-title">Merkezlerimiz</span>
-            <div class="navbar-dropdown">
-              <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
-              <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
-              <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
-              <a href="tel:+902322784340" class="navbar-item">0 (232) 278 43 40</a>
-            </div>
-          </div>
-
-        </nav>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
+      <div class="navbar-dropdown">
+       <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+       <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
+       <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+       <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
+       <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
+       <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+       <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
       </div>
-    </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Mimari Taahhüt</span>
+      <div class="navbar-dropdown">
+       <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
+       <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+       <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+       <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
+       <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
+       <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
+      </div>
+     </div>
+
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Merkezlerimiz</span>
+      <div class="navbar-dropdown">
+       <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
+       <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
+       <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
+       <a href="tel:+902322784340" class="navbar-item">0 (232) 278 43 40</a>
+      </div>
+     </div>
+
+    </nav>
+   </div>
   </div>
+ </div>
 </footer>
 
 <script src="js/pervan.js?v=33.0.0" defer></script>
