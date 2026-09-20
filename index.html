@@ -19,6 +19,7 @@
 <meta property="og:description" content="1998'den beri Filli Boya Ana Bayi, Weber, Bianca Stella, İsonem ve Bayer K-Othrine yetkili ürün merkezi. Balçova Yapı Market ve Urla Şantiye Deposu ile tüm Yarımada'da hizmetinizde." />
 <meta property="og:url" content="https://pervanyapi.com/" />
 <meta property="og:image" content="https://pervanyapi.com/assets/rf-hero-authentic-supply-macro.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- Google Fonts & System Engine -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -398,35 +399,79 @@
   }
 
   /* ==========================================================================
-     RESPONSIVE MOBILE STYLING (max-width: 1259px)
-     ========================================================================== */
+   RESPONSIVE MOBILE STYLING (max-width: 1259px) — REFORM CPH EXACT 2-ROW
+   ========================================================================== */
   @media screen and (max-width: 1259px) {
     .navbar-top {
-      height: 60px !important;
-      padding: 0 20px !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
       justify-content: space-between !important;
-    }
-
-    .navbar-logo {
-      font-size: 2.0rem !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 100px !important;
       padding: 0 !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      background-color: #FFFFFF !important;
     }
 
-    /* HIDE DESKTOP STICKY BUTTONS FROM 60PX TOP BAR */
+    /* 1. TOP ROW: 50/50 SPLIT ACTION BAR */
     .navbar-sticky {
-      display: none !important;
+      order: 1 !important;
+      display: flex !important;
+      width: 100% !important;
+      height: 46px !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      gap: 0 !important;
+      padding: 0 !important;
+      background-color: #FFFFFF !important;
+      box-sizing: border-box !important;
+      flex-shrink: 0 !important;
     }
 
-    /* HAMBURGER TOGGLE */
+    .navbar-sticky .navbar-item {
+      width: 50% !important;
+      height: 46px !important;
+      line-height: 46px !important;
+      border: none !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      padding: 0 20px !important;
+      font-size: 1.4rem !important;
+      letter-spacing: 0.2px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      background-color: transparent !important;
+      color: #000000 !important;
+      text-decoration: none !important;
+      box-sizing: border-box !important;
+      font-family: var(--font-editorial) !important;
+      font-weight: 400 !important;
+    }
+
+    .navbar-sticky .navbar-item:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .navbar-sticky .navbar-item:hover {
+      background-color: #F7F7F7 !important;
+      color: #000000 !important;
+    }
+
+    /* 2. SECOND ROW: HAMBURGER (LEFT) & LOGO (RIGHT) */
     #mobile-menu {
-      display: block !important;
+      order: 2 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
       position: relative !important;
-      width: 36px !important;
-      height: 30px !important;
+      width: 44px !important;
+      height: 54px !important;
       cursor: pointer !important;
       z-index: 1002 !important;
       padding: 0 !important;
-      margin: 0 !important;
+      margin: 0 0 0 20px !important;
     }
 
     #mobile-menu .bar {
@@ -434,56 +479,72 @@
       height: 1.5px !important;
       background-color: #000000 !important;
       position: absolute !important;
-      left: 6px !important;
+      left: 0 !important;
       transform-origin: center !important;
       -webkit-transform-origin: center !important;
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, top 0.25s ease !important;
     }
 
     #mobile-menu.closed .bar1 {
-      top: 8px !important;
+      top: 20px !important;
       opacity: 1 !important;
       transform: none !important;
     }
 
     #mobile-menu.closed .bar2 {
-      top: 14px !important;
+      top: 26px !important;
       transform: none !important;
     }
 
     #mobile-menu.closed .bar3 {
-      top: 20px !important;
+      top: 32px !important;
       transform: none !important;
     }
 
     #mobile-menu:not(.closed) .bar1 {
       opacity: 0 !important;
-      top: 14px !important;
+      top: 26px !important;
     }
 
     #mobile-menu:not(.closed) .bar2 {
       transform: rotate(45deg) !important;
-      top: 14px !important;
+      top: 26px !important;
     }
 
     #mobile-menu:not(.closed) .bar3 {
       transform: rotate(-45deg) !important;
-      top: 14px !important;
+      top: 26px !important;
     }
 
-    /* DRAWER OVERLAY */
+    .navbar-logo {
+      order: 3 !important;
+      display: flex !important;
+      align-items: center !important;
+      height: 54px !important;
+      margin-right: 20px !important;
+      margin-left: auto !important;
+      padding: 0 !important;
+      font-size: 2.0rem !important;
+      font-weight: 500 !important;
+      letter-spacing: -0.03em !important;
+      color: #000000 !important;
+    }
+
+    /* 3. DRAWER OVERLAY */
     .navbar-contents {
+      order: 4 !important;
       display: none !important;
+      width: 100% !important;
     }
 
     .navbar-contents.opened {
       display: block !important;
       position: fixed !important;
-      top: 60px !important;
+      top: 100px !important;
       left: 0 !important;
       width: 100vw !important;
-      height: calc(100vh - 60px) !important;
-      height: calc(100dvh - 60px) !important;
+      height: calc(100vh - 100px) !important;
+      height: calc(100dvh - 100px) !important;
       border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
       overflow-y: auto !important;
       overflow-x: hidden !important;
@@ -501,18 +562,8 @@
       background-color: #FFFFFF !important;
     }
 
-    /* MOBILE TOP STICKY SPLIT BUTTONS INSIDE DRAWER */
     .navbar-sticky-mobile {
-      position: relative !important;
-      height: 56px !important;
-      width: 100% !important;
-      display: flex !important;
-      justify-content: flex-start !important;
-      padding: 0 !important;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-      gap: 0 !important;
-      background-color: #FFFFFF !important;
-      box-sizing: border-box !important;
+      display: none !important;
     }
 
     .navbar-sticky-mobile .navbar-item {
@@ -1909,7 +1960,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Malzeme, Kimya &amp; Donanım Tedariği</span>
+          <h1 class="media-headline">Yapı Malzemeleri, Boya Kimyası &amp; Donanım Tedariği</h1>
           <span class="media-sub">Filli Boya RenXMatik · Saint-Gobain Weber · Kale Kilit · Tesisat &amp; Kaba Yapı</span>
         </div>
         <div class="media-button-wrap">
@@ -1926,7 +1977,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Anahtar Teslim İnşaat &amp; Renovasyon</span>
+          <h2 class="media-headline">Anahtar Teslim İnşaat &amp; Renovasyon</h2>
           <span class="media-sub">Urla · Çeşme · Alaçatı · Balçova 1998 — 2026</span>
         </div>
         <div class="media-button-wrap">
@@ -2009,7 +2060,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Balçova Showroom &amp; Renk Laboratuvarı</span>
+          <h2 class="media-headline">Balçova Showroom &amp; Renk Laboratuvarı</h2>
           <span class="media-sub">Doğal malzeme panelleri, taş numuneleri ve RenXMatik renk kartelası</span>
         </div>
         <div class="media-button-wrap">
@@ -2026,7 +2077,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Urla Ana Lojistik Merkezi</span>
+          <h2 class="media-headline">Urla Ana Lojistik Merkezi</h2>
           <span class="media-sub">4000+ m² organize malzeme stoku ve Yarımada şantiyelerine doğrudan sevkiyat</span>
         </div>
         <div class="media-button-wrap">
@@ -2047,7 +2098,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Yapı Malzemeleri &amp; Hırdavat</span>
+          <h2 class="media-headline">Yapı Malzemeleri &amp; Hırdavat</h2>
           <span class="media-sub">Kaba yapıdan ince işlere, 10.000+ kalem profesyonel şantiye ve montaj malzemesi</span>
         </div>
         <div class="media-button-wrap">
@@ -2064,7 +2115,7 @@
       </div>
       <div class="media-contents">
         <div class="media-title">
-          <span class="media-headline">Sıfırdan Villa &amp; Mimari Taahhüt</span>
+          <h2 class="media-headline">Sıfırdan Villa &amp; Mimari Taahhüt</h2>
           <span class="media-sub">Urla taşı, brüt beton ve kaba-inşaattan anahtar teslime Yarımada taahhüdü</span>
         </div>
         <div class="media-button-wrap">

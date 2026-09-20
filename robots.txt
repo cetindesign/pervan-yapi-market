@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /prototype-*.html
+Disallow: /pervan-reform-preview.html
+Disallow: /scratch/
 
 # Sitemap
 Sitemap: https://pervanyapi.com/sitemap.xml

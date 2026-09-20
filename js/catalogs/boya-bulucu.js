@@ -550,10 +550,10 @@
   ];
 
   // Global State
-  var currentStep = 1; // 1: Climate, 2: Problem, 3: Scale/M2, 4: Spec Reveal
-  var selectedClimate = "cesme";
-  var selectedGroup = "dis-cephe";
-  var selectedRecipeId = "rec-06-cesme-sahil-zirhi";
+  var currentStep = 1; // 1: Space, 2: Problem, 3: Scale/M2, 4: Spec Reveal
+  var selectedSpace = "living-room";
+  var selectedGroup = "ic-mekan";
+  var selectedRecipeId = "rec-03-cocuklu-ev-silinebilir";
   var selectedAreaM2 = 120;
 
   // DOM Elements
@@ -591,28 +591,34 @@
     return totalQty + " " + unit + " (" + numPacks + " x " + packSize + " " + unit + " Ambalaj)";
   }
 
-  function getRecipesForClimate(climate) {
-    if (climate === "cesme") {
-      var cesmeIds = ["rec-06-cesme-sahil-zirhi", "rec-07-termal-catlak-kopru", "rec-08-grenli-dokulu-kaplama", "rec-10-kirec-badana-donusum", "rec-14-acik-teras-balkon-yalitim", "rec-16-cool-roof-soguk-cati", "rec-20-pergola-marin-yat-vernigi"];
-      return recipes.filter(function(r) { return cesmeIds.indexOf(r.id) !== -1; });
-    } else if (climate === "balcova") {
-      var balcovaIds = ["rec-01-zemin-nem-tuz", "rec-02-kapali-yazlik-kuf", "rec-04-yangin-is-su-lekesi", "rec-14-acik-teras-balkon-yalitim", "rec-15-seffaf-teras-sivi-cam", "rec-17-havuz-poliuretan-zirh"];
-      return recipes.filter(function(r) { return balcovaIds.indexOf(r.id) !== -1; });
-    } else if (climate === "urla") {
-      var urlaIds = ["rec-19-alacati-tas-emprenye", "rec-20-pergola-marin-yat-vernigi", "rec-21-havuz-kenari-teak-deck-yag", "rec-22-ahsap-panjur-kepenk", "rec-23-ferforje-pas-ustu-metal", "rec-24-mahzen-garaj-epoksi-zemin"];
-      return recipes.filter(function(r) { return urlaIds.indexOf(r.id) !== -1; });
-    } else if (climate === "izmir") {
-      var izmirIds = ["rec-03-cocuklu-ev-silinebilir", "rec-05-hizli-teslim-tavan", "rec-11-banyo-fayans-dusakabin", "rec-12-mutfak-dolabi-lake", "rec-13-yagli-boyadan-su-bazliya", "rec-09-mantolama-mineral-siva"];
-      return recipes.filter(function(r) { return izmirIds.indexOf(r.id) !== -1; });
+  function getRecipesForSpace(space) {
+    if (space === "living-room") {
+      var lrIds = ["rec-03-cocuklu-ev-silinebilir", "rec-04-yangin-is-su-lekesi", "rec-05-hizli-teslim-tavan", "rec-13-yagli-boyadan-su-bazliya"];
+      return recipes.filter(function(r) { return lrIds.indexOf(r.id) !== -1; });
+    } else if (space === "bedroom") {
+      var brIds = ["rec-02-kapali-yazlik-kuf", "rec-03-cocuklu-ev-silinebilir", "rec-05-hizli-teslim-tavan", "rec-01-zemin-nem-tuz"];
+      return recipes.filter(function(r) { return brIds.indexOf(r.id) !== -1; });
+    } else if (space === "kitchen") {
+      var ktIds = ["rec-03-cocuklu-ev-silinebilir", "rec-12-mutfak-dolabi-lake", "rec-11-banyo-fayans-dusakabin", "rec-04-yangin-is-su-lekesi"];
+      return recipes.filter(function(r) { return ktIds.indexOf(r.id) !== -1; });
+    } else if (space === "bathroom") {
+      var btIds = ["rec-11-banyo-fayans-dusakabin", "rec-01-zemin-nem-tuz", "rec-02-kapali-yazlik-kuf", "rec-15-seffaf-teras-sivi-cam"];
+      return recipes.filter(function(r) { return btIds.indexOf(r.id) !== -1; });
+    } else if (space === "hallway") {
+      var hwIds = ["rec-03-cocuklu-ev-silinebilir", "rec-04-yangin-is-su-lekesi", "rec-24-mahzen-garaj-epoksi-zemin", "rec-13-yagli-boyadan-su-bazliya"];
+      return recipes.filter(function(r) { return hwIds.indexOf(r.id) !== -1; });
+    } else if (space === "exterior") {
+      var exIds = ["rec-06-cesme-sahil-zirhi", "rec-07-termal-catlak-kopru", "rec-08-grenli-dokulu-kaplama", "rec-19-alacati-tas-emprenye", "rec-20-pergola-marin-yat-vernigi", "rec-23-ferforje-pas-ustu-metal"];
+      return recipes.filter(function(r) { return exIds.indexOf(r.id) !== -1; });
     }
     return recipes.filter(function(r) { return r.group === selectedGroup; });
   }
 
-  function syncClimateCardsHighlight() {
-    var climateCards = document.querySelectorAll(".ps-card[data-climate]");
-    climateCards.forEach(function(card) {
-      var clm = card.getAttribute("data-climate");
-      card.classList.toggle("active", clm === selectedClimate);
+  function syncSpaceCardsHighlight() {
+    var spaceCards = document.querySelectorAll(".ps-card[data-space]");
+    spaceCards.forEach(function(card) {
+      var spc = card.getAttribute("data-space");
+      card.classList.toggle("active", spc === selectedSpace);
     });
   }
 
@@ -652,7 +658,7 @@
     if (step4View) step4View.classList.toggle("active", step === 4);
 
     // Step-specific renderers
-    if (step === 1) syncClimateCardsHighlight();
+    if (step === 1) syncSpaceCardsHighlight();
     if (step === 2) renderStep2Problems();
     if (step === 3) syncPresetsHighlight();
     if (step === 4) renderStep4Reveal();
@@ -698,7 +704,7 @@
   // STEP 2: Render Problems with Real Product Packshots
   function renderStep2Problems() {
     if (!problemCardList) return;
-    var groupRecipes = getRecipesForClimate(selectedClimate);
+    var groupRecipes = getRecipesForSpace(selectedSpace);
     if (groupRecipes.length === 0) {
       groupRecipes = recipes.slice(0, 6);
     }
@@ -839,15 +845,15 @@
 
   // Event Listeners Initialization
   function initListeners() {
-    // Step 1: Climate Cards
-    var climateCards = document.querySelectorAll(".ps-card[data-climate]");
-    climateCards.forEach(function(card) {
+    // Step 1: Space Cards
+    var spaceCards = document.querySelectorAll(".ps-card[data-space]");
+    spaceCards.forEach(function(card) {
       card.addEventListener("click", function() {
-        climateCards.forEach(function(c) { c.classList.remove("active"); });
+        spaceCards.forEach(function(c) { c.classList.remove("active"); });
         card.classList.add("active");
-        selectedClimate = card.getAttribute("data-climate") || "cesme";
-        selectedGroup = card.getAttribute("data-group") || "dis-cephe";
-        var filtered = getRecipesForClimate(selectedClimate);
+        selectedSpace = card.getAttribute("data-space") || "living-room";
+        selectedGroup = card.getAttribute("data-group") || "ic-mekan";
+        var filtered = getRecipesForSpace(selectedSpace);
         if (filtered.length > 0) {
           selectedRecipeId = filtered[0].id;
         }
