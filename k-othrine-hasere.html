@@ -56,28 +56,24 @@
 <body class="pv-catalog-page">
 
 <!-- PERVAN CANONICAL TRANSPARENT HEADER -->
-<header class="header header--transparent" id="pvTransparentHeader">
-  <nav class="navbar" aria-label="Ana Gezinme">
-    <div class="navbar-container">
-      <div class="navbar-left">
-        <a href="index.html" class="navbar-logo" aria-label="Pervan Anasayfa">
-          <svg class="pv-logo-mark" viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="40" rx="8" fill="#1A1A1A"/>
-            <path d="M12 28V12L28 20L12 28Z" fill="#C8461E"/>
-          </svg>
-          <span class="pv-logo-text">PERVAN</span>
-        </a>
-      </div>
+<header id="pvHeader">
+  <nav class="navbar">
+    <div class="navbar-top">
+      <!-- LOGO -->
+      <a class="navbar-logo" href="index.html">Pervan</a>
 
+      <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
       <div class="navbar-contents">
         <div class="navbar-contents-overflow">
           <div class="navbar-menu">
+            
             <!-- 01: Yetkili Bayilikler -->
-            <div data-link="yetkili-bayilikler.html" class="navbar-item has-dropdown menu-item">
+            <div class="navbar-item has-dropdown menu-item">
               <div class="navbar-title">Yetkili Bayilikler</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
+                <a href="boya-bulucu.html" class="navbar-item highlight">🎯 Akıllı Boya Bulucu</a>
                 <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
                 <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
                 <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
@@ -90,11 +86,11 @@
             </div>
 
             <!-- 02: Yapı Market & Hırdavat -->
-            <div data-link="malzemeler.html" class="navbar-item has-dropdown menu-item">
+            <div class="navbar-item has-dropdown menu-item">
               <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
                 <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
                 <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
                 <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
@@ -106,45 +102,54 @@
             </div>
 
             <!-- 03: Mimari Taahhüt -->
-            <div data-link="taahhut.html" class="navbar-item has-dropdown menu-item">
+            <div class="navbar-item has-dropdown menu-item">
               <div class="navbar-title">Mimari Taahhüt</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="taahhut.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="taahhut.html" class="navbar-item mobile-only">Tüm Projeleri Gör &rarr;</a>
                 <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut İnşaatı</a>
                 <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
                 <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
                 <a href="teras-cati-yalitim.html" class="navbar-item">Teras &amp; Çatı Su İzolasyonu</a>
                 <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Çalışma Süreci</a>
-                <a href="kesif-randevusu.html" class="navbar-item">Ücretsiz Keşif Randevusu</a>
               </div>
             </div>
 
             <!-- 04: Merkezlerimiz -->
-            <div data-link="showroom.html" class="navbar-item has-dropdown menu-item">
+            <div class="navbar-item has-dropdown menu-item">
               <div class="navbar-title">Merkezlerimiz</div>
               <div class="arrow"></div>
               <div class="navbar-dropdown">
-                <a href="showroom.html" class="navbar-item mobile-only">Tümünü gör</a>
+                <a href="showroom.html" class="navbar-item mobile-only">Tüm Merkezleri Gör &rarr;</a>
                 <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market &amp; RenXMatik</a>
                 <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Lojistik Deposu</a>
                 <a href="hakkimizda.html" class="navbar-item">Hakkımızda &amp; Kurumsal</a>
               </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      <div class="navbar-right">
-        <a href="tel:+902322784340" class="pv-header-contact-link" aria-label="Telefon ile Ara">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>0232 278 43 40</span>
+      <!-- RIGHT STICKY ACTION BUTTONS -->
+      <div class="navbar-sticky">
+        <a href="https://wa.me/905323844497?text=Merhaba,%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+          <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+          <div class="arrow"></div>
         </a>
-        <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20haşere%20ilaçları%20ve%20uygulama%20hakkında%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-header-cta-btn" aria-label="WhatsApp İletişim">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.181-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-          <span>WhatsApp Sipariş</span>
+        <a href="tel:+902322784340" class="navbar-item menu-item">
+          <span class="navbar-title">Bizi Arayın</span>
+          <div class="arrow"></div>
         </a>
       </div>
+
+      <!-- HAMBURGER (MOBILE) -->
+      <div id="mobile-menu" class="closed" role="button" aria-label="Menüyü Aç/Kapat" tabindex="0">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+
     </div>
   </nav>
 </header>
