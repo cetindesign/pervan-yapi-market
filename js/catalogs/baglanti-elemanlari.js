@@ -1505,26 +1505,33 @@
   }
 
   function openDeptDrawer() {
-    if (!deptDrawerBackdrop) return;
-    deptDrawerBackdrop.classList.add("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    if (window.PervanSheet) {
+      window.PervanSheet.open(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.add("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    }
+    if (deptDrawerTrigger) deptDrawerTrigger.setAttribute("aria-expanded", "true");
   }
 
   function closeDeptDrawer() {
-    if (!deptDrawerBackdrop) return;
-    deptDrawerBackdrop.classList.remove("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    if (window.PervanSheet) {
+      window.PervanSheet.close(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.remove("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    }
+    if (deptDrawerTrigger) deptDrawerTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("pv:sheet:close", function() {
+      if (deptDrawerTrigger) deptDrawerTrigger.setAttribute("aria-expanded", "false");
+    });
   }
 
   if (deptDrawerTrigger) deptDrawerTrigger.addEventListener("click", openDeptDrawer);
   if (deptDrawerClose) deptDrawerClose.addEventListener("click", closeDeptDrawer);
-  if (deptDrawerBackdrop) {
-    deptDrawerBackdrop.addEventListener("click", function(e) {
-      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
-    });
-  }
 
   // 5. ARCHITECTURAL PRODUCT DETAIL MODAL
   var modalBackdrop = document.getElementById("pvModalBackdrop");

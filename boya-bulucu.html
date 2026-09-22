@@ -166,7 +166,11 @@
   </nav>
 </header>
 
-<!-- PROSE 1:1 CONSULTATION ENGINE -->
+<!-- COAT PAINTS 1:1 ANNOUNCEMENT STRIP -->
+<div class="coat-announcement-bar">
+  <span>Ücretsiz Mimari Renk Numunesi Deneyin &#9662;</span>
+</div>
+
 <!-- COAT PAINTS 1:1 ARCHITECTURAL CONSULTATION ENGINE -->
 <div class="coat-app-wrap">
 
@@ -178,26 +182,130 @@
       </div>
       <div class="intro-content">
         <h1 class="intro-heading">
-          <span>Doğru Rengi</span>
-          <span>&amp; Reçeteyi Bul</span>
+          <em>Mekanınıza Özel</em>
+          <span>Renk &amp; Reçete</span>
         </h1>
-        <p class="intro-subheading">Mekanınız için birkaç kısa soruyu yanıtlayın; yüzeye, neme ve ışığa özel kişiselleştirilmiş boya reçetenizi anında çıkaralım.</p>
-        <div class="slide-btn">
+        <p class="intro-subheading">Mekanınız ve ışık yönünüz için tercihlerinizi belirleyin:</p>
+        <div class="slide-btn-group">
+          <a href="#quiz-container" class="intro-cta-hollow" id="scroll-to-results-btn">
+            <span>Reçetemi Gör</span>
+            <span class="slide-btn-svg">&rarr;</span>
+          </a>
           <button type="button" id="start-quiz-btn" class="intro-cta">
-            <span>Teste Başla</span>
-            <span class="slide-btn-svg">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.23 3.15649L15.2431 7.16963L15.7734 7.69996L15.2431 8.23029L11.23 12.2434L10.1693 11.1828L12.902 8.45005H0.666862V6.95005H12.9022L10.1693 4.21715L11.23 3.15649Z" fill="currentColor"></path>
-              </svg>
-            </span>
+            <span>Sıfırdan Başla</span>
+            <span class="slide-btn-svg">&rarr;</span>
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 2. QUIZ CONTAINER (COAT PAINTS 1:1) -->
-  <div id="quiz-container" class="quiz-container">
+  <!-- 2. VALUE PROP / SAMPLE STRIP (COAT PAINTS 1:1) -->
+  <div class="coat-value-strip">
+    <div class="coat-value-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+    </div>
+    <div class="coat-value-title">Yapışkanlı Renk Numuneleri</div>
+    <p class="coat-value-desc">Gerçek boya ile hazırlanan numuneler lekesiz ve %100 hassastır. Rengin gün ışığında nasıl değiştiğini görmek için odanızda farklı duvarlarda test edin.</p>
+    <div class="coat-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- 3. CURATED COLOURS SECTION (COAT PAINTS 1:1) -->
+  <section class="coat-section-wrap">
+    <h2 class="coat-section-heading">Curated Colours</h2>
+    <p class="coat-section-sub">Nereden başlayacağınızı bilmiyor musunuz? 40 mimari renk paletimizden birini seçin.</p>
+    
+    <div class="coat-curated-grid">
+      <!-- Bento 1: Cosy Neutrals -->
+      <a href="#quiz-container" class="coat-curated-card" data-curated="neutrals">
+        <img src="assets/quiz/curated-neutrals.jpg" alt="Sıcak Nötrler" loading="lazy" />
+        <div class="coat-curated-bar">
+          <span>Cosy Neutrals</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Bento 2: Earthy Greens -->
+      <a href="#quiz-container" class="coat-curated-card" data-curated="greens">
+        <img src="assets/quiz/curated-greens.jpg" alt="Toprak Yeşilleri" loading="lazy" />
+        <div class="coat-curated-bar">
+          <span>Earthy Greens</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Bento 3: Plaster Pinks -->
+      <a href="#quiz-container" class="coat-curated-card" data-curated="plaster">
+        <img src="assets/quiz/curated-plaster.jpg" alt="Pudra &amp; Sıcak Pembe Tonları" loading="lazy" />
+        <div class="coat-curated-bar">
+          <span>Plaster Pinks</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+
+      <!-- Bento 4: All Schemes -->
+      <a href="#quiz-container" class="coat-curated-card" data-curated="all">
+        <img src="assets/quiz/curated-swatches.jpg" alt="Tüm Renk Kartelaları" loading="lazy" />
+        <div class="coat-curated-bar">
+          <span>All Schemes</span>
+          <span>&rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. POPULAR COLOURS SECTION (COAT PAINTS 1:1) -->
+  <section class="coat-section-wrap">
+    <h2 class="coat-section-heading">Popular Colours</h2>
+    <p class="coat-section-sub">En çok tercih edilen tescilli renklerimiz. Yüksek kapatıcılık, düşük VOC ve Ege iklimine tam uyumlu ipek mat / silinebilir mimari bitişler.</p>
+
+    <div class="coat-popular-grid">
+      <!-- Product 1: Mindful -->
+      <div class="coat-product-card">
+        <div class="coat-product-header">
+          <div class="coat-product-name">Mindful</div>
+          <div class="coat-product-tone">Light Taupe Beige</div>
+        </div>
+        <div class="coat-product-image-wrap">
+          <img src="assets/quiz/tin-mindful.jpg" alt="Mindful — Light Taupe Beige" loading="lazy" />
+        </div>
+        <button type="button" class="coat-add-sample-btn" data-product="Mindful">
+          <span>Numune İste</span>
+          <span>+</span>
+        </button>
+      </div>
+
+      <!-- Product 2: Nomad -->
+      <div class="coat-product-card">
+        <div class="coat-product-header">
+          <div class="coat-product-name">Nomad</div>
+          <div class="coat-product-tone">Deep Warm Taupe</div>
+        </div>
+        <div class="coat-product-image-wrap">
+          <img src="assets/quiz/tin-nomad.jpg" alt="Nomad — Deep Warm Taupe" loading="lazy" />
+        </div>
+        <button type="button" class="coat-add-sample-btn" data-product="Nomad">
+          <span>Numune İste</span>
+          <span>+</span>
+        </button>
+      </div>
+    </div>
+
+    <a href="filli-boya-renxmatik.html" class="coat-view-all-btn">
+      <span>En Çok Satanları İncele</span>
+      <span>&rarr;</span>
+    </a>
+  </section>
+
+  <!-- 5. QUIZ CONTAINER (COAT PAINTS 1:1 — OPENS ON START FRESH / SEE RESULTS) -->
+  <div id="quiz-container" class="quiz-container" style="display: none;">
     
     <!-- PROGRESS HEADER -->
     <div class="quiz-progress-wrapper">
@@ -319,108 +427,76 @@
           </label>
         </div>
       </div>
+    </div>
+  </div>
 
-    <!-- ====================================================================
-         STEP 2: SURFACE & DISTRESS PROBLEM
-         ==================================================================== -->
-    <section class="ps-step-view" id="psStep2View">
-      <div class="ps-step-header">
-        <span class="ps-step-eyebrow">02 / YÜZEY VE ARIZA TEŞHİSİ</span>
-        <h2 class="ps-step-title">Yüzeydeki temel arıza veya ihtiyaç nedir?</h2>
-        <p class="ps-step-subtitle">Reçetenizin astar ve son kat polimer bağlayıcısı bu seçime göre kilitlenir.</p>
-      </div>
-
-      <div class="ps-problem-stack" id="psProblemCardList"></div>
-    </section>
-
-    <!-- ====================================================================
-         STEP 3: AREA & QUANTITY CALIBRATION
-         ==================================================================== -->
-    <section class="ps-step-view" id="psStep3View">
-      <div class="ps-step-header">
-        <span class="ps-step-eyebrow">03 / METRAJ VE SARFİYAT</span>
-        <h2 class="ps-step-title">Uygulama alanınız kaç m²?</h2>
-        <p class="ps-step-subtitle">Kova adetleriniz, astar sarfiyatınız ve fire oranınız tam bu metraja göre hesaplanır.</p>
-      </div>
-
-      <div class="ps-scale-box">
-        <div class="ps-scale-readout-row">
-          <button type="button" class="ps-stepper-btn" id="psDecBtn" aria-label="10 m2 Azalt">-10</button>
-          <div class="ps-m2-input-wrap">
-            <input type="number" id="psInputM2" min="1" max="5000" value="120" class="ps-m2-input" />
-            <span class="ps-m2-unit">m²</span>
-          </div>
-          <button type="button" class="ps-stepper-btn" id="psIncBtn" aria-label="10 m2 Arttır">+10</button>
-        </div>
-
-        <div class="ps-scale-slider-wrap">
-          <input type="range" id="psSliderM2" min="10" max="500" step="5" value="120" class="ps-slider" />
-          <div class="ps-slider-marks">
-            <span>10 m²</span>
-            <span>100 m²</span>
-            <span>250 m²</span>
-            <span>500 m²</span>
-          </div>
-        </div>
-
-        <div class="ps-preset-grid" id="psPresets">
-          <button type="button" class="ps-preset-chip" data-m2="25">
-            <span class="ps-preset-val">25 m²</span>
-            <span class="ps-preset-lbl">Tek Oda / Banyo</span>
-          </button>
-          <button type="button" class="ps-preset-chip" data-m2="80">
-            <span class="ps-preset-val">80 m²</span>
-            <span class="ps-preset-lbl">Teras / Balkon</span>
-          </button>
-          <button type="button" class="ps-preset-chip active" data-m2="120">
-            <span class="ps-preset-val">120 m²</span>
-            <span class="ps-preset-lbl">3+1 Daire</span>
-          </button>
-          <button type="button" class="ps-preset-chip" data-m2="350">
-            <span class="ps-preset-val">350 m²</span>
-            <span class="ps-preset-lbl">Müstakil Villa</span>
-          </button>
-        </div>
-
-        <button type="button" class="ps-primary-cta" id="psCalculateBtn">
-          <span>Reçetemi Formüle Et</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         STEP 3.5: PROSE FORMULATION SCANNER
-         ==================================================================== -->
-    <section class="ps-step-view" id="psStepAnalyzingView">
-      <div class="ps-analyzing-wrap">
-        <div class="ps-analyzing-spinner">
-          <div class="ps-spinner-ring"></div>
-        </div>
-        <h3 class="ps-analyzing-title">Reçeteniz formüle ediliyor...</h3>
-        <p class="ps-analyzing-subtitle" id="psAnalyzingStatusText">İzmir &amp; Ege mikroklima verileri taranıyor...</p>
-        <div class="ps-analyzing-meter">
-          <div class="ps-analyzing-meter-fill" id="psAnalyzingMeterFill"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         STEP 4: PROSE 3-PIECE ROUTINE REVEAL
-         ==================================================================== -->
-    <section class="ps-step-view" id="psStep4View">
-      <div class="ps-reveal-wrap" id="psSpecRevealContainer"></div>
-    </section>
-
-  </main>
-
-  <footer class="ps-mini-footer">
-    <span>&copy; 2026 Pervan Yapı Malzemeleri &bull; Balçova &amp; Urla</span>
-  </footer>
 </div>
 
+<!-- PERVAN GLOBAL LIVE FOOTER -->
+<footer class="reform-footer">
+  <div class="footer-markets">
+    <span class="market-item is-selected">İzmir Merkez</span>
+    <span class="market-item">Çeşme</span>
+    <span class="market-item">Urla</span>
+    <span class="market-item">Güzelbahçe</span>
+    <span class="market-item">Karaburun</span>
+  </div>
+
+  <div class="footer-columns">
+    <div class="footer-brand">
+      <h3>Pervan</h3>
+      <p>© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt.<br>Balçova Showroom &amp; Urla Lojistik Merkezi, İzmir.</p>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Yetkili Bayilikler</div>
+      <ul>
+        <li><a href="filli-boya-renxmatik.html">Filli Boya &amp; RenXMatik</a></li>
+        <li><a href="weber-yapi-kimyasallari.html">Saint-Gobain Weber</a></li>
+        <li><a href="bianca-stella-boya.html">Bianca Stella Dönüşüm</a></li>
+        <li><a href="isonem-yalitim.html">İsonem Su Yalıtımı</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Yapı &amp; Malzeme</div>
+      <ul>
+        <li><a href="kaba-yapi-cimento.html">Kaba Yapı &amp; Çimento</a></li>
+        <li><a href="tesisat-altyapi.html">Sıhhi Tesisat &amp; Altyapı</a></li>
+        <li><a href="elektrik-aydinlatma.html">Elektrik &amp; Aydınlatma</a></li>
+        <li><a href="el-aletleri.html">El Aletleri &amp; Hırdavat</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Mimari Taahhüt</div>
+      <ul>
+        <li><a href="anahtar-teslim-insaat.html">Sıfırdan Villa İnşaatı</a></li>
+        <li><a href="komple-villa-tadilat.html">Komple Villa Tadilatı</a></li>
+        <li><a href="banyo-dusakabin.html">Banyo &amp; Islak Hacim</a></li>
+        <li><a href="nasil-calisiriz.html">4 Adımlı Çalışma Süreci</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Lokasyon &amp; İletişim</div>
+      <ul>
+        <li><a href="balcova-showroom.html">Balçova Showroom</a></li>
+        <li><a href="urla-lojistik-depo.html">Urla Lojistik Depo</a></li>
+        <li><a href="tel:+902322784340">Telefonla Danışın</a></li>
+        <li><a href="https://wa.me/905323844497?text=Merhaba,%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp Danışma Hattı</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>İzmir / Çeşme / Urla / Seferihisar / Karaburun</div>
+    <div>Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
 <script src="js/pervan.js?v=37.0.0" defer></script>
-<script src="js/catalogs/boya-bulucu.js?v=16.0.0" defer></script>
+<script src="js/catalogs/boya-bulucu.js?v=17.0.0" defer></script>
 </body>
 </html>
 

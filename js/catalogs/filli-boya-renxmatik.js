@@ -5205,19 +5205,29 @@
   }
 
   function openDeptDrawer() {
-    if (!deptDrawerBackdrop || !deptTrigger) return;
-    deptDrawerBackdrop.classList.add("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
-    deptTrigger.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
+    if (window.PervanSheet) {
+      window.PervanSheet.open(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.add("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "true");
   }
 
   function closeDeptDrawer() {
-    if (!deptDrawerBackdrop || !deptTrigger) return;
-    deptDrawerBackdrop.classList.remove("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
-    deptTrigger.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+    if (window.PervanSheet) {
+      window.PervanSheet.close(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.remove("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("pv:sheet:close", function() {
+      if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+    });
   }
 
   if (deptTrigger) {
@@ -5233,14 +5243,6 @@
     drawerCloseBtn.addEventListener("click", function(e) {
       e.preventDefault();
       closeDeptDrawer();
-    });
-  }
-
-  if (deptDrawerBackdrop) {
-    deptDrawerBackdrop.addEventListener("click", function(e) {
-      if (e.target === deptDrawerBackdrop) {
-        closeDeptDrawer();
-      }
     });
   }
 

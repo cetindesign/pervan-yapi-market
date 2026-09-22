@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Design System // Bottom Sheet & Drawer Workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" />
+<style>
+  :root {
+    --bg-main: #0A0A0C;
+    --bg-surface: #121215;
+    --bg-card: #18181D;
+    --bg-card-hover: #202026;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(200, 70, 30, 0.35);
+    --text-main: #F4F4F5;
+    --text-muted: #A1A1AA;
+    --text-faint: #52525B;
+    --terracotta: #C8461E;
+    --terracotta-glow: rgba(200, 70, 30, 0.16);
+    --green-emerald: #10B981;
+    --green-soft: rgba(16, 185, 129, 0.12);
+    --blue-accent: #38BDF8;
+    --radius-l: 20px;
+    --radius-m: 12px;
+    --radius-s: 8px;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    padding: 0 0 100px;
+  }
+
+  /* Top Workbench Header */
+  .wb-header {
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 32px;
+  }
+  .wb-header-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .wb-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .wb-logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+  .wb-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--terracotta);
+    background: var(--terracotta-glow);
+    border: 1px solid rgba(200, 70, 30, 0.3);
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+  }
+  .wb-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .wb-nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .wb-nav-links a:hover {
+    color: #FFFFFF;
+  }
+
+  /* Container */
+  .wb-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 32px 0;
+  }
+
+  /* Section Styles */
+  .wb-section {
+    margin-bottom: 72px;
+  }
+  .wb-section-header {
+    margin-bottom: 28px;
+    border-left: 3px solid var(--terracotta);
+    padding-left: 16px;
+  }
+  .wb-section-tag {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .wb-section-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+  }
+  .wb-section-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-top: 6px;
+  }
+
+  /* Horizontal Evolution Carousel / Track */
+  .wb-evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* Version Card */
+  .wb-vcard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .wb-vcard:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  }
+  .wb-vcard.locked {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 1px var(--terracotta), 0 20px 48px rgba(200, 70, 30, 0.15);
+  }
+
+  /* Card Head */
+  .wb-vcard-head {
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wb-vcard-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .wb-vcard-ver {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .wb-vcard-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+  .wb-status-pill {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+  }
+  .wb-status-pill.legacy { background: rgba(239, 68, 68, 0.15); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+  .wb-status-pill.iter { background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .wb-status-pill.locked-tag { background: var(--terracotta); color: #FFFFFF; }
+
+  /* Frame Viewport Mockup Container */
+  .wb-vcard-preview {
+    background: #000000;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-subtle);
+    min-height: 440px;
+  }
+  .wb-vcard-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: block;
+  }
+
+  /* Card Meta & Diffs */
+  .wb-vcard-meta {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+    background: var(--bg-surface);
+  }
+
+  .wb-diff-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .wb-diff-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .wb-diff-label.add { color: var(--green-emerald); }
+  .wb-diff-label.del { color: #F87171; }
+  .wb-diff-label.guard { color: var(--blue-accent); }
+
+  .wb-diff-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .wb-diff-list li {
+    position: relative;
+    padding-left: 14px;
+    line-height: 1.4;
+  }
+  .wb-diff-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
+
+  .wb-guard-box {
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: var(--radius-m);
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #E0F2FE;
+    line-height: 1.4;
+  }
+  .wb-guard-box strong {
+    color: var(--blue-accent);
+    font-weight: 700;
+  }
+
+  /* Dual Domain Comparison Box */
+  .wb-dual-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-l);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 900px) {
+    .wb-dual-matrix { grid-template-columns: 1fr; }
+  }
+
+  /* Audit Grid */
+  .wb-audit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .wb-audit-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wb-audit-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-s);
+    border: 1px solid var(--border-subtle);
+  }
+  .wb-audit-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .wb-audit-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--terracotta);
+  }
+  .wb-audit-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="wb-header">
+  <div class="wb-header-inner">
+    <div class="wb-brand">
+      <span class="wb-logo">Pervan Yapı</span>
+      <span class="wb-badge">Bottom Sheet Design System Workbench</span>
+    </div>
+    <nav class="wb-nav-links">
+      <a href="#section-evolution">Product Quick-View Evolution (V0 &rarr; V7)</a>
+      <a href="#section-dept">Department Drawer Evolution</a>
+      <a href="#section-audit">6-Modal System Audit</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wb-container">
+
+  <!-- ==========================================================================
+     SECTION 1: PRODUCT SPEC SHEET EVOLUTION
+     ========================================================================== -->
+  <section class="wb-section" id="section-evolution">
+    <div class="wb-section-header">
+      <span class="wb-section-tag">Tipoloji 02 // Inspection &amp; Config Sheet</span>
+      <h2 class="wb-section-title">Ürün Quick-View Sheet (`#paintModalCard`) İterasyon Matrisi</h2>
+      <p class="wb-section-desc">
+        Legacy kod tabanından nihai kilitli üretim standardına kadar yapılan her tasarım hamlesi, eklenen/çıkarılan bileşenler ve tasarım sistemi gerekçeleri yan yana karşılaştırılmıştır.
+      </p>
+    </div>
+
+    <div class="wb-evolution-grid">
+      
+      <!-- CARD 0: LEGACY -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">V0 · LEGACY</span>
+            <h3 class="wb-vcard-title">Mevcut Kod Tabanı Durumu</h3>
+          </div>
+          <span class="wb-status-pill legacy">Deprecated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/real_capture_product_spec.png" alt="Legacy Product Spec Sheet" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label del">&minus; Tespit Edilen Kusurlar</span>
+            <ul class="wb-diff-list">
+              <li>220px görsel alanı dikey fold'u tıkıyor; ambalaj ve metraj fold altına düşüyor.</li>
+              <li>110px tutan çift satırlı dağınık alt bar (WhatsApp + Paylaş + Teslimat).</li>
+              <li>Scroll anında jest çakışması (rubber-band kapanma hatası).</li>
+              <li>Statik, etkileşimsiz gri RenXMatik bilgi kutusu.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box">
+            <strong>Sorun:</strong> Kullanıcı teknik veriyi ve ambalaj butonlarını görmek için sayfayı gereksizce aşağı kaydırmak zorunda kalıyor.
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2: V2 POLISH + SWATCHES -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">V2 · PROTOTYPE</span>
+            <h3 class="wb-vcard-title">Architectural Polish &amp; Renk Numuneleri</h3>
+          </div>
+          <span class="wb-status-pill iter">Iterated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_product_sheet_v2.png" alt="V2 Product Spec Sheet" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label add">&plus; Ne Eklendi / Değişti</span>
+            <ul class="wb-diff-list">
+              <li>Header'a <code style="color:#C8461E">TDS 2026</code> mono teknik versiyon rozeti.</li>
+              <li>Görsel altına gölge çizgisi ve 4 adet özellik hapı (<code style="color:#fff">Silikonlu</code>, <code style="color:#fff">Yıkanabilir</code> vb.).</li>
+              <li>Segmented size track içine anlık sarfiyat ipuçları (<code style="color:#fff">~113 m²</code>).</li>
+              <li>RenXMatik için interaktif renk numuneleri (<code style="color:#fff">Kozmik 25</code>, <code style="color:#fff">Kumtaşı</code>).</li>
+              <li>Sol buton: Doğrudan Arama, Sağ buton: WhatsApp Sipariş.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box">
+            <strong>Kritik:</strong> 4 renk numunesi koymak kullanıcıda "sadece 4 renk var" yanılsaması ve karar felci (decision paralysis) yarattı.
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3: V3 CLEAN DECISION -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">V3 · CLEAN DECISION</span>
+            <h3 class="wb-vcard-title">Renk Numuneleri Çıkarıldı</h3>
+          </div>
+          <span class="wb-status-pill iter">Iterated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_product_sheet_v3.png" alt="V3 Clean Decision" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label del">&minus; Ne Kaldırıldı &amp; Gerekçesi</span>
+            <ul class="wb-diff-list">
+              <li><strong>4 Renk Dairesi Kaldırıldı:</strong> 10.000+ NCS/RAL rengi bir sheet'e sığamaz; renk seçimi WhatsApp akışına delege edildi.</li>
+              <li>Yerine sıfır karar yüklü <code style="color:#fff">RenXMatik™ Canlı Laboratuvar</code> servis kartı yerleştirildi.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box">
+            <strong>Neyi İmkansız Kılar:</strong> Kullanıcının 3-4 kısıtlı renge sıkışmasını ve sheet içinde renk ararken sipariş akışından kopmasını engeller.
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 5: V5 UNBOXED BYLINE -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">V5 · REFORM CPH</span>
+            <h3 class="wb-vcard-title">Kutu Etiketler Kaldırıldı (Unboxed Byline)</h3>
+          </div>
+          <span class="wb-status-pill iter">Iterated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_product_sheet_v5_filli.png" alt="V5 Unboxed Byline" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label del">&minus; Ne Kaldırıldı &amp; Ne Geldi</span>
+            <ul class="wb-diff-list">
+              <li><strong>Çirkin Kutu Etiketler Kaldırıldı:</strong> Görsel altında yüzen ayrık pill butonlar silindi.</li>
+              <li><strong>Noktalı Editoryal Alt Başlık Geldi:</strong> <code style="color:#fff">Silikonlu Son Kat · Tam Silinebilir &amp; Yıkanabilir · İpeksi Mat®</code> tek satırda birleştirildi.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box">
+            <strong>Neyi İmkansız Kılar:</strong> Görsel altında e-ticaret sitelerindeki gibi dağınık, farklı genişliklerde etiket çöplüğü oluşmasını imkansız kılar.
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 6: V6 SINGLE CTA -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">V6 · SINGLE INTENT</span>
+            <h3 class="wb-vcard-title">Telefon Butonu Kaldırıldı (Tek CTA)</h3>
+          </div>
+          <span class="wb-status-pill iter">Iterated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_product_sheet_v6_single_cta.png" alt="V6 Single CTA Dock" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label del">&minus; Ne Kaldırıldı &amp; Gerekçesi</span>
+            <ul class="wb-diff-list">
+              <li><strong>Telefon Butonu Kaldırıldı:</strong> WhatsApp ile yan yana iki buton "arasam mı yazsam mı" sürtünmesi (Hick's Law) yaratıyordu.</li>
+              <li><strong>Tam Genişlik 48px WhatsApp CTA:</strong> Başparmak erişimi için tek hedefli geniş buton formatına geçildi.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box">
+            <strong>Neyi İmkansız Kılar:</strong> Seçilen ambalaj/ürün verisinin telefon görüşmesinde kaybolmasını engeller; tüm detayları tek dokunuşla WhatsApp mesajına aktarır.
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 7: V7 LOCKED -->
+      <article class="wb-vcard locked">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver" style="color:var(--terracotta);">V7 · FINAL LOCKED SPEC</span>
+            <h3 class="wb-vcard-title">Nihai Kilitli Üretim Standardı</h3>
+          </div>
+          <span class="wb-status-pill locked-tag">Locked</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_product_sheet_v7_locked.png" alt="V7 Final Locked Spec" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label add">&plus; Nihai Kural Seti</span>
+            <ul class="wb-diff-list">
+              <li><strong>CTA Metni:</strong> Net eylem: <code style="color:#fff">WhatsApp ile Sipariş Ver</code>.</li>
+              <li><strong>RenXMatik Alanı:</strong> Logosuz, tagsiz, sessiz editoryal servis kutusu (<code style="color:#fff">RenXMatik™ Renk Hazırlama</code>).</li>
+              <li><strong>Güven Rozeti:</strong> <code style="color:#10B981">● Balçova &amp; Urla Stokta Hazır</code> + <code style="color:#fff">Aynı Gün Teslimat</code>.</li>
+              <li><strong>Polimorfik Veri Yuvaları:</strong> 15 kataloğun tamamında (Boya, Weber, Tesisat, Hırdavat) 1:1 çalışan slot mimarisi.</li>
+            </ul>
+          </div>
+          <div class="wb-guard-box" style="background:rgba(200,70,30,0.1); border-color:rgba(200,70,30,0.3); color:#FED7AA;">
+            <strong>Kilit Kararı:</strong> 15 katalog sayfasının tamamında tek bir <code style="color:#fff">.pv-modal-card</code> token ve DOM standardı kilitlenmiştir.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SECTION 2: POLIMORFIK DUAL DOMAIN TESTI (BOYA VS YAPI KIMYASALLARI)
+     ========================================================================== -->
+  <section class="wb-section">
+    <div class="wb-section-header">
+      <span class="wb-section-tag">Mimari Doğrulama // Polymorphic TDS Matrix</span>
+      <h2 class="wb-section-title">Aynı Primitive'in Farklı Sektörel Gruplarda Ölçeklenmesi</h2>
+      <p class="wb-section-desc">
+        Tek bir CSS/DOM şablonunun Filli Boya (Hacim / m²) ve Saint-Gobain Weber (Set / kg / Priz) üzerinde token kırılmadan nasıl çalıştığı test edilmiştir.
+      </p>
+    </div>
+
+    <div class="wb-dual-matrix">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h4 style="font-size:16px; font-weight:700;">1. Boya Grubu (Filli Boya Momento Silan)</h4>
+          <span class="wb-badge">Hacim Bazlı</span>
+        </div>
+        <img style="width:100%; max-width:360px; margin:0 auto; border-radius:14px; border:1px solid var(--border-subtle);" src="assets/workbench/prototype_product_sheet_v5_filli.png" alt="Filli Boya TDS Sheet" />
+        <ul class="wb-diff-list" style="margin-top:8px;">
+          <li><strong>Ambalaj:</strong> <code style="color:#fff">2.5 L</code>, <code style="color:#fff">7.5 L</code>, <code style="color:#fff">15 L</code> (Ağırlık: ~20.5 KG)</li>
+          <li><strong>Slot A (Kantitatif):</strong> <code style="color:#C8461E">113 m²</code> (98–128 m² Çift Kat Uygulama)</li>
+          <li><strong>Slot B (Fiziksel):</strong> <code style="color:#fff">İpeksi Mat</code> (2–4 Saat Katlar Arası Kuruma)</li>
+          <li><strong>Yardımcı Kart:</strong> RenXMatik™ Canlı Renk Laboratuvarı</li>
+        </ul>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h4 style="font-size:16px; font-weight:700;">2. Yapı Kimyasalları Grubu (Weber Dry 706 Plus)</h4>
+          <span class="wb-badge">Ağırlık / Set Bazlı</span>
+        </div>
+        <img style="width:100%; max-width:360px; margin:0 auto; border-radius:14px; border:1px solid var(--border-subtle);" src="assets/workbench/prototype_product_sheet_v5_weber.png" alt="Weber TDS Sheet" />
+        <ul class="wb-diff-list" style="margin-top:8px;">
+          <li><strong>Ambalaj:</strong> <code style="color:#fff">16 KG</code>, <code style="color:#fff">32 KG SET</code>, <code style="color:#fff">PALET</code> (20kg Toz + 12kg Sıvı)</li>
+          <li><strong>Slot A (Kantitatif):</strong> <code style="color:#C8461E">3.0 kg/m²</code> (2 mm Film Kalınlığı)</li>
+          <li><strong>Slot B (Fiziksel):</strong> <code style="color:#fff">60 Dk</code> (Kap Ömrü &amp; Priz Süresi)</li>
+          <li><strong>Yardımcı Kart:</strong> Teknik Şantiye Desteği &amp; Donatı Filesi Föyü</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SECTION 3: DEPARTMENT SWITCHER EVOLUTION
+     ========================================================================== -->
+  <section class="wb-section" id="section-dept">
+    <div class="wb-section-header">
+      <span class="wb-section-tag">Tipoloji 01 // Selection Sheet</span>
+      <h2 class="wb-section-title">Departman Değiştirici (`#pvDeptDrawer`) Evrimi</h2>
+      <p class="wb-section-desc">
+        Mevcut kod tabanındaki düz buton listesi ile 2 katmanlı hiyerarşi ve mono sayaçlara sahip optimize edilmiş versiyonun karşılaştırması.
+      </p>
+    </div>
+
+    <div class="wb-evolution-grid" style="grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));">
+      
+      <!-- DEPT LEGACY -->
+      <article class="wb-vcard">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver">LEGACY V0</span>
+            <h3 class="wb-vcard-title">Mevcut Departman Listesi</h3>
+          </div>
+          <span class="wb-status-pill legacy">Deprecated</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/real_capture_dept_drawer.png" alt="Legacy Dept Drawer" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label del">&minus; Eksiklikler</span>
+            <ul class="wb-diff-list">
+              <li>Sadece kuru ana başlıklar yer alıyor; alt kapsam görünmüyor.</li>
+              <li>Departman içinde kaç ürün olduğu bilinmiyor.</li>
+              <li>Aktif durum sadece soluk bir kenarlıkla gösteriliyor.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- DEPT REFACTORED -->
+      <article class="wb-vcard locked">
+        <div class="wb-vcard-head">
+          <div class="wb-vcard-title-group">
+            <span class="wb-vcard-ver" style="color:var(--terracotta);">REFACTORED V1</span>
+            <h3 class="wb-vcard-title">Optimize Edilmiş Departman Listesi</h3>
+          </div>
+          <span class="wb-status-pill locked-tag">Locked</span>
+        </div>
+        <div class="wb-vcard-preview">
+          <img class="wb-vcard-img" src="assets/workbench/prototype_dept_drawer_render.png" alt="Refactored Dept Drawer" />
+        </div>
+        <div class="wb-vcard-meta">
+          <div class="wb-diff-block">
+            <span class="wb-diff-label add">&plus; Yapılan Geliştirmeler</span>
+            <ul class="wb-diff-list">
+              <li><strong>İki Katmanlı Hiyerarşi:</strong> Ana başlık altında alt kategori kapsamı (<code style="color:#fff">İç Cephe, Dış Cephe...</code>).</li>
+              <li><strong>Mono İndeks &amp; Sayaç:</strong> Sol tarafta <code style="color:#C8461E">01</code>, sağ tarafta <code style="color:#fff">42 Ürün</code> sayacı.</li>
+              <li><strong>64px Tap Target:</strong> Başparmak için optimize edilmiş dokunma alanı.</li>
+              <li><strong>Hızlı Geçiş Köprüsü:</strong> Alt barda doğrudan <code style="color:#C8461E">15 Bayiliği Gör &rarr;</code> bağlantısı.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SECTION 4: SYSTEM-WIDE 6 OVERLAYS AUDIT
+     ========================================================================== -->
+  <section class="wb-section" id="section-audit">
+    <div class="wb-section-header">
+      <span class="wb-section-tag">Kod Tabanı Denetimi // System Inventory</span>
+      <h2 class="wb-section-title">Pervan Yapı Market Genelindeki 6 Gerçek Modal/Drawer</h2>
+      <p class="wb-section-desc">
+        Sitedeki 39 HTML sayfası taranarak tespit edilen ve WebKit ile render edilen 6 gerçek overlay yapısı.
+      </p>
+    </div>
+
+    <div class="wb-audit-grid">
+      
+      <!-- 1. DEPT DRAWER -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_dept_drawer.png" alt="Dept Drawer" />
+        <div class="wb-audit-title">1. Departman Değiştirici</div>
+        <div class="wb-audit-code">#pvDeptDrawer (15 Katalog)</div>
+        <p class="wb-audit-desc">Katalog sayfaları arası dikey grup değiştirme sheet'i.</p>
+      </div>
+
+      <!-- 2. PRODUCT SPEC -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_product_spec.png" alt="Product Spec" />
+        <div class="wb-audit-title">2. Ürün TDS &amp; Quick-View</div>
+        <div class="wb-audit-code">#paintModalCard (15 Katalog)</div>
+        <p class="wb-audit-desc">TDS metraj verileri, ambalaj seçici ve WhatsApp sipariş kartı.</p>
+      </div>
+
+      <!-- 3. LOCATION SHEET -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_location_modal.png" alt="Location Sheet" />
+        <div class="wb-audit-title">3. Mağaza &amp; Depo Navigasyon</div>
+        <div class="wb-audit-code">#pvLocationModal (index.html)</div>
+        <p class="wb-audit-desc">Balçova Showroom ve Urla Depo GPS rota seçim sheet'i.</p>
+      </div>
+
+      <!-- 4. SPOTLIGHT -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_spotlight.png" alt="Spotlight Search" />
+        <div class="wb-audit-title">4. Spotlight Canlı Arama</div>
+        <div class="wb-audit-code">#pvSpotlightBackdrop (Tüm Sayfalar)</div>
+        <p class="wb-audit-desc">259+ ürün arasında canlı arama ve filtreleme paleti (⌘K).</p>
+      </div>
+
+      <!-- 5. CONSULTATION -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_consultation.png" alt="Consultation Form" />
+        <div class="wb-audit-title">5. Mimari Danışmanlık &amp; Keşif</div>
+        <div class="wb-audit-code">#consultationModal (8 Sayfa)</div>
+        <p class="wb-audit-desc">Villa tadilatı, banyo ve çatı izolasyonu teklif formu.</p>
+      </div>
+
+      <!-- 6. MOBILE MENU -->
+      <div class="wb-audit-card">
+        <img class="wb-audit-img" src="assets/workbench/real_capture_mobile_menu.png" alt="Mobile Menu" />
+        <div class="wb-audit-title">6. Global Mobil Menü Çekmecesi</div>
+        <div class="wb-audit-code">#mobile-menu (39 Sayfa)</div>
+        <p class="wb-audit-desc">Header hamburger menüsünden açılan 4 ana akordeon çekmecesi.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

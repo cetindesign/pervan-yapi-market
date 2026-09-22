@@ -1010,15 +1010,27 @@
 
    // 6. Drawer Open / Close Controls
    function openDrawer() {
-    deptDrawerBackdrop.classList.add("is-open");
+    if (window.PervanSheet) {
+      window.PervanSheet.open(deptDrawerBackdrop || "#deptDrawerBackdrop");
+    } else {
+      deptDrawerBackdrop.classList.add("is-open");
+    }
     deptTrigger.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
    }
 
    function closeDrawer() {
-    deptDrawerBackdrop.classList.remove("is-open");
+    if (window.PervanSheet) {
+      window.PervanSheet.close(deptDrawerBackdrop || "#deptDrawerBackdrop");
+    } else {
+      deptDrawerBackdrop.classList.remove("is-open");
+    }
     deptTrigger.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+   }
+
+   if (deptDrawerBackdrop) {
+     deptDrawerBackdrop.addEventListener("pv:sheet:close", function() {
+       deptTrigger.setAttribute("aria-expanded", "false");
+     });
    }
 
    deptTrigger.addEventListener("click", function(e) {
@@ -1028,12 +1040,6 @@
    });
 
    drawerCloseBtn.addEventListener("click", closeDrawer);
-
-   deptDrawerBackdrop.addEventListener("click", function(e) {
-    if (e.target === deptDrawerBackdrop) {
-     closeDrawer();
-    }
-   });
 
    // Init
    renderDrawer();

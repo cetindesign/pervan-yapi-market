@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Scalable Polymorphic TDS Sheet - Weber Yapı Kimyasalları</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/pervan.css" />
+<link rel="stylesheet" href="css/pervan-catalog.css" />
+<style>
+  :root {
+    --pv-sheet-bg: #FAF9F6;
+    --pv-surface-card: #FFFFFF;
+    --pv-surface-subtle: #F4F2ED;
+    --pv-border-quiet: rgba(24, 24, 27, 0.08);
+    --pv-text-primary: #121214;
+    --pv-text-secondary: #52525B;
+    --pv-text-tertiary: #8E8E93;
+    --pv-terracotta: #C8461E;
+    --pv-terracotta-soft: rgba(200, 70, 30, 0.08);
+    --pv-radius-sheet: 26px;
+    --pv-radius-card: 16px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0D0D0E;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .pv-ux-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .pv-ux-sheet {
+    width: 100%;
+    max-width: 480px;
+    max-height: 94dvh;
+    background: var(--pv-sheet-bg);
+    border-radius: var(--pv-radius-sheet) var(--pv-radius-sheet) 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pv-ux-handle-zone {
+    padding: 10px 0 2px;
+    display: flex;
+    justify-content: center;
+    cursor: grab;
+    flex-shrink: 0;
+  }
+  .pv-ux-handle {
+    width: 36px;
+    height: 4px;
+    background: rgba(24, 24, 27, 0.2);
+    border-radius: 999px;
+  }
+
+  .pv-ux-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 20px 12px;
+    border-bottom: 1px solid var(--pv-border-quiet);
+    flex-shrink: 0;
+  }
+  .pv-ux-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pv-ux-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pv-ux-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pv-terracotta);
+  }
+  .pv-ux-badge-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 1px 6px;
+    background: var(--pv-surface-subtle);
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: 4px;
+    color: var(--pv-text-secondary);
+  }
+  .pv-ux-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+  .pv-ux-close-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pv-text-secondary);
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .pv-ux-body {
+    padding: 14px 20px 24px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pv-ux-hero-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 16px 12px;
+    background: radial-gradient(ellipse at 50% 40%, rgba(64, 94, 102, 0.16) 0%, rgba(250, 249, 246, 0) 72%);
+    border-radius: var(--pv-radius-card);
+    border: 1px solid rgba(24, 24, 27, 0.04);
+  }
+  .pv-ux-bucket-img {
+    width: 145px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.16));
+  }
+  .pv-ux-pedestal-line {
+    width: 120px;
+    height: 3px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0) 80%);
+    margin-top: -2px;
+    margin-bottom: 10px;
+  }
+  /* Pure Editorial Typographic Byline */
+  .pv-ux-editorial-byline {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--pv-text-secondary);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 90%;
+  }
+  .pv-ux-editorial-byline strong {
+    font-weight: 700;
+    color: var(--pv-text-primary);
+  }
+  .pv-ux-byline-sep {
+    color: var(--pv-terracotta);
+    font-weight: 700;
+    margin: 0 4px;
+  }
+
+  .pv-ux-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .pv-ux-section-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pv-text-secondary);
+  }
+  .pv-ux-section-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-size-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    background: #EFECE6;
+    padding: 4px;
+    border-radius: 14px;
+    border: 1px solid var(--pv-border-quiet);
+  }
+  .pv-ux-size-btn {
+    border: none;
+    background: transparent;
+    padding: 9px 0 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.2, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .pv-ux-size-btn .size-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--pv-text-secondary);
+    letter-spacing: -0.02em;
+  }
+  .pv-ux-size-btn .size-sub {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-size-btn.active {
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+  .pv-ux-size-btn.active .size-num {
+    color: var(--pv-text-primary);
+  }
+  .pv-ux-size-btn.active .size-sub {
+    color: var(--pv-terracotta);
+  }
+
+  .pv-ux-gauges-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .pv-ux-gauge-card {
+    background: var(--pv-surface-card);
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: var(--pv-radius-card);
+    padding: 12px 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 84px;
+  }
+  .pv-ux-gauge-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pv-ux-gauge-kicker {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-gauge-val-row {
+    margin: 4px 0 2px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .pv-ux-gauge-val-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .pv-ux-gauge-unit {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--pv-terracotta);
+  }
+  .pv-ux-gauge-desc {
+    font-size: 11px;
+    color: var(--pv-text-secondary);
+    line-height: 1.35;
+  }
+
+  .pv-ux-domain-card {
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: var(--pv-radius-card);
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .pv-ux-domain-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .pv-ux-domain-icon-inner {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1E3A8A;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .pv-ux-domain-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .pv-ux-domain-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pv-ux-domain-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--pv-text-primary);
+  }
+  .pv-ux-domain-pill {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 1px 6px;
+    background: #EFF6FF;
+    border-radius: 4px;
+    color: #1D4ED8;
+  }
+  .pv-ux-domain-text {
+    font-size: 11.5px;
+    color: var(--pv-text-secondary);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .pv-ux-dock {
+    border-top: 1px solid var(--pv-border-quiet);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .pv-ux-dock-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pv-ux-dock-live {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #065F46;
+  }
+  .pv-ux-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  }
+  .pv-ux-dock-sub {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pv-ux-phone-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pv-text-primary);
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .pv-ux-cta-main {
+    height: 44px;
+    background: var(--pv-terracotta);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0 18px;
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(200, 70, 30, 0.28);
+  }
+</style>
+</head>
+<body>
+
+<div class="pv-ux-backdrop">
+  <div class="pv-ux-sheet">
+    
+    <!-- Drag Handle -->
+    <div class="pv-ux-handle-zone">
+      <div class="pv-ux-handle"></div>
+    </div>
+
+    <!-- Header Bar -->
+    <div class="pv-ux-top-bar">
+      <div class="pv-ux-header-text">
+        <div class="pv-ux-eyebrow-row">
+          <span class="pv-ux-eyebrow">SAINT-GOBAIN WEBER &middot; YAPI KİMYASALLARI</span>
+          <span class="pv-ux-badge-mono">TS EN 14891</span>
+        </div>
+        <h2 class="pv-ux-title">Weber Dry 706 Plus Su Yalıtımı</h2>
+      </div>
+      <button type="button" class="pv-ux-close-btn" aria-label="Kapat">&times;</button>
+    </div>
+
+    <!-- Scrollable Body (Polymorphic Slots) -->
+    <div class="pv-ux-body">
+      
+      <!-- 1. Pure Architectural Hero Stage -->
+      <div class="pv-ux-hero-stage">
+        <img class="pv-ux-bucket-img" src="assets/weber-official/weber-dry-706-plus-32-kg.jpg" alt="Weber Dry 706 Plus" />
+        <div class="pv-ux-pedestal-line"></div>
+        <div class="pv-ux-editorial-byline">
+          <strong>2 Bileşenli Elastik</strong><span class="pv-ux-byline-sep">&middot;</span>Çimento + Emülsiyon Esaslı<span class="pv-ux-byline-sep">&middot;</span>UV Dayanımlı
+        </div>
+      </div>
+
+      <!-- Slot 2: Scalable Size / Packaging Segmented Track -->
+      <div>
+        <div class="pv-ux-section-head">
+          <span class="pv-ux-section-title">Ambalaj &amp; Set Seçimi</span>
+          <span class="pv-ux-section-meta">32 KG SET &middot; 20kg Toz + 12kg Sıvı</span>
+        </div>
+        <div class="pv-ux-size-track">
+          <button type="button" class="pv-ux-size-btn">
+            <span class="size-num">16 KG</span>
+            <span class="size-sub">~5.5 m²</span>
+          </button>
+          <button type="button" class="pv-ux-size-btn active">
+            <span class="size-num">32 KG</span>
+            <span class="size-sub">~11 m² Set</span>
+          </button>
+          <button type="button" class="pv-ux-size-btn">
+            <span class="size-num">PALET</span>
+            <span class="size-sub">24 Set</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Slot 3: Polymorphic Dual Gauges Matrix -->
+      <div class="pv-ux-gauges-grid">
+        <!-- Gauge A (Quantitative / Sarfiyat) -->
+        <div class="pv-ux-gauge-card">
+          <div class="pv-ux-gauge-head">
+            <span class="pv-ux-gauge-kicker">Teorik Sarfiyat</span>
+          </div>
+          <div class="pv-ux-gauge-val-row">
+            <span class="pv-ux-gauge-val-mono">3.0</span>
+            <span class="pv-ux-gauge-unit">kg/m²</span>
+          </div>
+          <div class="pv-ux-gauge-desc">2 mm Nihai Film Kalınlığı (2 Kat)</div>
+        </div>
+
+        <!-- Gauge B (Physical / Kap Ömrü & Kuruma) -->
+        <div class="pv-ux-gauge-card">
+          <div class="pv-ux-gauge-head">
+            <span class="pv-ux-gauge-kicker">Kap Ömrü &amp; Priz</span>
+          </div>
+          <div class="pv-ux-gauge-val-row">
+            <span class="pv-ux-gauge-val-mono">60</span>
+            <span class="pv-ux-gauge-unit" style="font-size: 13px; font-weight: 700; color: #52525B;">Dk</span>
+          </div>
+          <div class="pv-ux-gauge-desc">Katlar Arası 5 – 6 Saat Bekleme</div>
+        </div>
+      </div>
+
+      <!-- Slot 4: Polymorphic Auxiliary Cartridge (Teknik Şantiye & Uygulama Desteği) -->
+      <div class="pv-ux-domain-card">
+        <div class="pv-ux-domain-icon-wrap">
+          <div class="pv-ux-domain-icon-inner">W</div>
+        </div>
+        <div class="pv-ux-domain-info">
+          <div class="pv-ux-domain-head">
+            <span class="pv-ux-domain-title">Teknik Şantiye Desteği &amp; File</span>
+            <span class="pv-ux-domain-pill">Mühendislik</span>
+          </div>
+          <p class="pv-ux-domain-text">
+            Teras, banyo veya havuz projeniz için <strong>donatı filesi ve astar uyumu</strong> teknik föyünü WhatsApp üzerinden mimarımızdan talep edebilirsiniz.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slot 5: Universal Unified Sticky Dock -->
+    <div class="pv-ux-dock">
+      <div class="pv-ux-dock-info">
+        <div class="pv-ux-dock-live">
+          <div class="pv-ux-live-dot"></div>
+          <span>Urla Lojistik Depoda Hazır</span>
+        </div>
+        <div class="pv-ux-dock-sub">Vinçli Kamyon ile Şantiyeye Sevk</div>
+      </div>
+
+      <div class="pv-ux-cta-group">
+        <a href="tel:+902327545555" class="pv-ux-phone-btn" aria-label="Depoyu Ara">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <a href="https://wa.me/905323844497?text=Merhaba,%20Weber%20Dry%20706%20Plus%20(32kg)%20i%C3%A7in%20stok%20ve%20fiyat%20almak%20istiyorum." target="_blank" class="pv-ux-cta-main">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.181 0 5.767-2.587 5.768-5.767zm0 10.364c-.886 0-1.579-.247-2.427-.751l-.173-.103-1.803.473.481-1.758-.113-.181c-.563-.898-.86-1.583-.86-2.279 0-2.536 2.064-4.6 4.6-4.6 2.535 0 4.599 2.064 4.599 4.6 0 2.536-2.064 4.6-4.599 4.6z"/>
+          </svg>
+          <span>WhatsApp Sipariş</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Product Spec Sheet - V8 Architectural Tactile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" />
+<style>
+  :root {
+    --pv-sheet-bg: #FAF9F6;
+    --pv-surface-card: #FFFFFF;
+    --pv-surface-subtle: #F2EFE9;
+    --pv-border-quiet: rgba(24, 24, 27, 0.08);
+    --pv-border-hairline: rgba(24, 24, 27, 0.06);
+    --pv-text-primary: #121214;
+    --pv-text-secondary: #52525B;
+    --pv-text-tertiary: #8E8E93;
+    --pv-terracotta: #C8461E;
+    --pv-radius-sheet: 26px;
+    --pv-radius-card: 14px;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #09090B;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .pv-ux-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .pv-ux-sheet {
+    width: 100%;
+    max-width: 460px;
+    max-height: 94dvh;
+    background: var(--pv-sheet-bg);
+    border-radius: var(--pv-radius-sheet) var(--pv-radius-sheet) 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* 0. Handle Zone */
+  .pv-ux-handle-zone {
+    padding: 10px 0 2px;
+    display: flex;
+    justify-content: center;
+    cursor: grab;
+    flex-shrink: 0;
+  }
+  .pv-ux-handle {
+    width: 38px;
+    height: 4px;
+    background: rgba(24, 24, 27, 0.18);
+    border-radius: 999px;
+  }
+
+  /* 1. Header */
+  .pv-ux-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 20px 12px;
+    border-bottom: 1px solid var(--pv-border-quiet);
+    flex-shrink: 0;
+  }
+  .pv-ux-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pv-ux-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pv-ux-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pv-terracotta);
+  }
+  .pv-ux-badge-mono {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 1px 6px;
+    background: var(--pv-surface-subtle);
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: 4px;
+    color: var(--pv-text-secondary);
+  }
+  .pv-ux-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.025em;
+  }
+  .pv-ux-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pv-text-secondary);
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Body Content */
+  .pv-ux-body {
+    padding: 12px 18px 18px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* 2. Architectural Studio Pedestal */
+  .pv-hero-pedestal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 14px 12px;
+    background: radial-gradient(ellipse at 50% 32%, rgba(200, 70, 30, 0.08) 0%, rgba(250, 249, 246, 0) 70%), #FFFFFF;
+    border-radius: var(--pv-radius-card);
+    border: 1px solid var(--pv-border-quiet);
+  }
+  .pv-bucket-img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.14));
+  }
+  .pv-pedestal-hairline {
+    width: 130px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(24, 24, 27, 0.28), transparent);
+    margin-top: -1px;
+    margin-bottom: 10px;
+  }
+  .pv-editorial-byline {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pv-text-secondary);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .pv-editorial-byline strong {
+    font-weight: 700;
+    color: var(--pv-text-primary);
+  }
+  .pv-byline-dot {
+    color: var(--pv-terracotta);
+    font-weight: 800;
+    margin: 0 5px;
+  }
+
+  /* 3. Monochrome Tactile Size Selector */
+  .pv-size-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pv-size-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+  .pv-size-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pv-text-secondary);
+  }
+  .pv-size-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--pv-terracotta);
+  }
+  .pv-size-track-tactile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    background: #EAE7E0;
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--pv-border-hairline);
+  }
+  .pv-size-chip {
+    border: none;
+    background: transparent;
+    padding: 8px 0 7px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.2, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+  }
+  .pv-size-chip .chip-val {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--pv-text-secondary);
+    letter-spacing: -0.02em;
+  }
+  .pv-size-chip .chip-hint {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+  }
+  /* Tactile Charcoal Active State */
+  .pv-size-chip.active {
+    background: #18181B;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+  }
+  .pv-size-chip.active .chip-val {
+    color: #FFFFFF;
+  }
+  .pv-size-chip.active .chip-hint {
+    color: #FED7AA;
+  }
+
+  /* 4. Hairline Blueprint Dual Slot Grid */
+  .pv-blueprint-matrix {
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: var(--pv-radius-card);
+    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 14px;
+  }
+  .pv-bp-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pv-bp-tag {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-bp-val-row {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+  .pv-bp-val {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .pv-bp-val.text-type {
+    font-family: inherit;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .pv-bp-unit {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--pv-terracotta);
+  }
+  .pv-bp-desc {
+    font-size: 10.5px;
+    color: var(--pv-text-secondary);
+    line-height: 1.25;
+  }
+  .pv-bp-divider {
+    width: 1px;
+    height: 38px;
+    background: var(--pv-border-quiet);
+  }
+
+  /* 5. RenXMatik Spectrogram Signature */
+  .pv-renx-spec-card {
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: var(--pv-radius-card);
+    padding: 11px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .pv-renx-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pv-renx-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pv-spectrogram {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .pv-spec-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  .pv-spec-dot.c1 { background: #C8461E; }
+  .pv-spec-dot.c2 { background: #38BDF8; }
+  .pv-spec-dot.c3 { background: #F59E0B; }
+  .pv-renx-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.01em;
+  }
+  .pv-renx-lab-code {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+    letter-spacing: 0.05em;
+  }
+  .pv-renx-copy {
+    font-size: 11px;
+    color: var(--pv-text-secondary);
+    line-height: 1.4;
+  }
+  .pv-renx-copy strong {
+    color: var(--pv-text-primary);
+    font-weight: 600;
+  }
+
+  /* 6. Single-Intent Sticky Action Dock */
+  .pv-ux-dock {
+    border-top: 1px solid var(--pv-border-quiet);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 18px calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .pv-ux-dock-meta-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+  }
+  .pv-ux-dock-live {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    color: #065F46;
+  }
+  .pv-ux-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  }
+  .pv-ux-dock-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-cta-full {
+    width: 100%;
+    height: 48px;
+    background: var(--pv-terracotta);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(200, 70, 30, 0.25);
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+
+<div class="pv-ux-backdrop">
+  <div class="pv-ux-sheet">
+    
+    <!-- Drag Handle -->
+    <div class="pv-ux-handle-zone">
+      <div class="pv-ux-handle"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="pv-ux-top-bar">
+      <div class="pv-ux-header-text">
+        <div class="pv-ux-eyebrow-row">
+          <span class="pv-ux-eyebrow">FİLLİ BOYA &middot; İÇ CEPHE</span>
+          <span class="pv-ux-badge-mono">TS EN 13300</span>
+        </div>
+        <h2 class="pv-ux-title">Momento Silan İpeksi Mat</h2>
+      </div>
+      <button type="button" class="pv-ux-close-btn" aria-label="Kapat">&times;</button>
+    </div>
+
+    <!-- Scrollable Body -->
+    <div class="pv-ux-body">
+      
+      <!-- 1. Architectural Hero Stage with Studio Pedestal -->
+      <div class="pv-hero-pedestal">
+        <img class="pv-bucket-img" src="assets/filli-official/momento-silan.png" alt="Momento Silan" />
+        <div class="pv-pedestal-hairline"></div>
+        <div class="pv-editorial-byline">
+          <strong>Silikonlu Son Kat</strong><span class="pv-byline-dot">&middot;</span>Tam Silinebilir &amp; Yıkanabilir<span class="pv-byline-dot">&middot;</span>İpeksi Mat&reg;
+        </div>
+      </div>
+
+      <!-- 2. Monochrome Tactile Size Selector -->
+      <div class="pv-size-container">
+        <div class="pv-size-head">
+          <span class="pv-size-label">Ambalaj Seçimi</span>
+          <span class="pv-size-meta">15 L &middot; ~20.5 KG</span>
+        </div>
+        <div class="pv-size-track-tactile">
+          <button type="button" class="pv-size-chip">
+            <span class="chip-val">2.5 L</span>
+            <span class="chip-hint">~19 m²</span>
+          </button>
+          <button type="button" class="pv-size-chip">
+            <span class="chip-val">7.5 L</span>
+            <span class="chip-hint">~56 m²</span>
+          </button>
+          <button type="button" class="pv-size-chip active">
+            <span class="chip-val">15 L</span>
+            <span class="chip-hint">~113 m²</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Hairline Blueprint Dual Slot Grid -->
+      <div class="pv-blueprint-matrix">
+        <div class="pv-bp-col">
+          <span class="pv-bp-tag">SARFİYAT (ÇİFT KAT)</span>
+          <div class="pv-bp-val-row">
+            <span class="pv-bp-val">113</span>
+            <span class="pv-bp-unit">m²</span>
+          </div>
+          <span class="pv-bp-desc">98 &ndash; 128 m² Uygulama</span>
+        </div>
+
+        <div class="pv-bp-divider"></div>
+
+        <div class="pv-bp-col">
+          <span class="pv-bp-tag">DOKU &amp; KURUMA</span>
+          <div class="pv-bp-val-row">
+            <span class="pv-bp-val text-type">İpeksi Mat</span>
+          </div>
+          <span class="pv-bp-desc">2 &ndash; 4 Saat Katlar Arası</span>
+        </div>
+      </div>
+
+      <!-- 4. RenXMatik Spectrogram Signature -->
+      <div class="pv-renx-spec-card">
+        <div class="pv-renx-head">
+          <div class="pv-renx-brand-row">
+            <div class="pv-spectrogram">
+              <span class="pv-spec-dot c1"></span>
+              <span class="pv-spec-dot c2"></span>
+              <span class="pv-spec-dot c3"></span>
+            </div>
+            <span class="pv-renx-label">RenXMatik™ Renk Laboratuvarı</span>
+          </div>
+          <span class="pv-renx-lab-code">LAB // 10.000+ NCS &amp; RAL</span>
+        </div>
+        <p class="pv-renx-copy">
+          İstediğiniz <strong>Filli Boya, RAL veya NCS kartela kodunu</strong> iletin; Balçova &amp; Urla makinelerimizde anında hazırlayalım.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 5. Single-Intent Action Dock -->
+    <div class="pv-ux-dock">
+      <div class="pv-ux-dock-meta-strip">
+        <div class="pv-ux-dock-live">
+          <div class="pv-ux-live-dot"></div>
+          <span>Balçova &amp; Urla Stokta Hazır</span>
+        </div>
+        <span class="pv-ux-dock-sub">Aynı Gün Teslimat</span>
+      </div>
+
+      <a href="https://wa.me/905323844497?text=Merhaba,%20Momento%20Silan%20(15L)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="pv-ux-cta-full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.181 0 5.767-2.587 5.768-5.767 0-3.18-2.587-5.767-5.768-5.767zm0 10.364c-.886 0-1.579-.247-2.427-.751l-.173-.103-1.803.473.481-1.758-.113-.181c-.563-.898-.86-1.583-.86-2.279 0-2.536 2.064-4.6 4.6-4.6 2.535 0 4.599 2.064 4.599 4.6 0 2.536-2.064 4.6-4.599 4.6z"/>
+        </svg>
+        <span>WhatsApp ile Sipariş Ver</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

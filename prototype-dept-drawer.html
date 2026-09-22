@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Department Switcher Sheet Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" />
+<link rel="stylesheet" href="css/pervan.css" />
+<link rel="stylesheet" href="css/pervan-catalog.css" />
+<style>
+  :root {
+    --pv-sheet-bg: #FAF9F6;
+    --pv-surface-card: #FFFFFF;
+    --pv-surface-subtle: #F4F2ED;
+    --pv-border-quiet: rgba(24, 24, 27, 0.08);
+    --pv-text-primary: #121214;
+    --pv-text-secondary: #52525B;
+    --pv-text-tertiary: #8E8E93;
+    --pv-terracotta: #C8461E;
+    --pv-terracotta-soft: rgba(200, 70, 30, 0.08);
+    --pv-radius-sheet: 26px;
+    --pv-radius-item: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0D0D0E;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .pv-ux-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .pv-ux-sheet {
+    width: 100%;
+    max-width: 480px;
+    max-height: 90dvh;
+    background: var(--pv-sheet-bg);
+    border-radius: var(--pv-radius-sheet) var(--pv-radius-sheet) 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Handle Zone */
+  .pv-ux-handle-zone {
+    padding: 10px 0 2px;
+    display: flex;
+    justify-content: center;
+    cursor: grab;
+    flex-shrink: 0;
+  }
+  .pv-ux-handle {
+    width: 36px;
+    height: 4px;
+    background: rgba(24, 24, 27, 0.2);
+    border-radius: 999px;
+  }
+
+  /* Header */
+  .pv-ux-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 20px 14px;
+    border-bottom: 1px solid var(--pv-border-quiet);
+    flex-shrink: 0;
+  }
+  .pv-ux-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pv-ux-header-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pv-terracotta);
+  }
+  .pv-ux-header-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+  .pv-ux-close-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--pv-border-quiet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pv-text-secondary);
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  /* Department Items List */
+  .pv-ux-dept-list {
+    padding: 14px 20px 20px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pv-ux-dept-item {
+    background: var(--pv-surface-card);
+    border: 1px solid var(--pv-border-quiet);
+    border-radius: var(--pv-radius-item);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.2, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+
+  .pv-ux-dept-item:active {
+    transform: scale(0.985);
+    background: #F4F2ED;
+  }
+
+  .pv-ux-dept-item.is-selected {
+    background: #FFFFFF;
+    border-color: rgba(200, 70, 30, 0.35);
+    box-shadow: 0 4px 14px rgba(200, 70, 30, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .pv-ux-dept-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pv-ux-dept-idx {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pv-text-tertiary);
+    width: 20px;
+  }
+  .pv-ux-dept-item.is-selected .pv-ux-dept-idx {
+    color: var(--pv-terracotta);
+  }
+
+  .pv-ux-dept-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pv-ux-dept-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.015em;
+  }
+  .pv-ux-dept-item.is-selected .pv-ux-dept-name {
+    color: var(--pv-terracotta);
+  }
+
+  .pv-ux-dept-sub {
+    font-size: 11.5px;
+    color: var(--pv-text-secondary);
+  }
+
+  .pv-ux-dept-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .pv-ux-dept-count-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    background: var(--pv-surface-subtle);
+    border-radius: 6px;
+    color: var(--pv-text-secondary);
+  }
+
+  .pv-ux-dept-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--pv-terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+
+  /* Drawer Footer */
+  .pv-ux-drawer-footer {
+    border-top: 1px solid var(--pv-border-quiet);
+    background: rgba(255, 255, 255, 0.94);
+    padding: 12px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .pv-ux-footer-text {
+    color: var(--pv-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pv-ux-footer-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10B981;
+  }
+  .pv-ux-all-cats-link {
+    font-weight: 700;
+    color: var(--pv-terracotta);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="pv-ux-backdrop">
+  <div class="pv-ux-sheet">
+    
+    <!-- Drag Handle -->
+    <div class="pv-ux-handle-zone">
+      <div class="pv-ux-handle"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="pv-ux-header">
+      <div class="pv-ux-header-text">
+        <span class="pv-ux-header-eyebrow">KATALOG REHBERİ // 5 GRUP</span>
+        <h2 class="pv-ux-header-title">Departman Seçin</h2>
+      </div>
+      <button type="button" class="pv-ux-close-btn" aria-label="Kapat">&times;</button>
+    </div>
+
+    <!-- Department List -->
+    <div class="pv-ux-dept-list">
+      
+      <!-- 01. Boya Menüsü (Aktif) -->
+      <div class="pv-ux-dept-item is-selected">
+        <div class="pv-ux-dept-left">
+          <span class="pv-ux-dept-idx">01</span>
+          <div class="pv-ux-dept-content">
+            <span class="pv-ux-dept-name">Boya Menüsü</span>
+            <span class="pv-ux-dept-sub">İç Cephe, Dış Cephe, Tavan &amp; Ahşap</span>
+          </div>
+        </div>
+        <div class="pv-ux-dept-right">
+          <span class="pv-ux-dept-count-badge">42 Ürün</span>
+          <div class="pv-ux-dept-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02. Boya Malzemeleri -->
+      <div class="pv-ux-dept-item">
+        <div class="pv-ux-dept-left">
+          <span class="pv-ux-dept-idx">02</span>
+          <div class="pv-ux-dept-content">
+            <span class="pv-ux-dept-name">Boya Malzemeleri</span>
+            <span class="pv-ux-dept-sub">Fırça, Rulo, Koruma Örtüsü &amp; Bantlar</span>
+          </div>
+        </div>
+        <div class="pv-ux-dept-right">
+          <span class="pv-ux-dept-count-badge">28 Ürün</span>
+        </div>
+      </div>
+
+      <!-- 03. Profesyonel Seri -->
+      <div class="pv-ux-dept-item">
+        <div class="pv-ux-dept-left">
+          <span class="pv-ux-dept-idx">03</span>
+          <div class="pv-ux-dept-content">
+            <span class="pv-ux-dept-name">Profesyonel Seri &amp; Epoksi</span>
+            <span class="pv-ux-dept-sub">Zemin Epoksisi, Yol Çizgi &amp; Sanayi Boyaları</span>
+          </div>
+        </div>
+        <div class="pv-ux-dept-right">
+          <span class="pv-ux-dept-count-badge">18 Ürün</span>
+        </div>
+      </div>
+
+      <!-- 04. Dönüşüm (Reno) -->
+      <div class="pv-ux-dept-item">
+        <div class="pv-ux-dept-left">
+          <span class="pv-ux-dept-idx">04</span>
+          <div class="pv-ux-dept-content">
+            <span class="pv-ux-dept-name">Dönüşüm &amp; Kendin Yap (Reno)</span>
+            <span class="pv-ux-dept-sub">Fayans, Mutfak Tezgahı &amp; Panel Dönüşümü</span>
+          </div>
+        </div>
+        <div class="pv-ux-dept-right">
+          <span class="pv-ux-dept-count-badge">14 Ürün</span>
+        </div>
+      </div>
+
+      <!-- 05. Capatect Yalıtım -->
+      <div class="pv-ux-dept-item">
+        <div class="pv-ux-dept-left">
+          <span class="pv-ux-dept-idx">05</span>
+          <div class="pv-ux-dept-content">
+            <span class="pv-ux-dept-name">Capatect Dalmaçyalı Yalıtım</span>
+            <span class="pv-ux-dept-sub">EPS Isı Yalıtım Levhaları, Yapıştırıcı &amp; Sıva</span>
+          </div>
+        </div>
+        <div class="pv-ux-dept-right">
+          <span class="pv-ux-dept-count-badge">22 Ürün</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="pv-ux-drawer-footer">
+      <div class="pv-ux-footer-text">
+        <div class="pv-ux-footer-dot"></div>
+        <span>Balçova Showroom &middot; Urla Depo</span>
+      </div>
+      <a href="yetkili-bayilikler.html" class="pv-ux-all-cats-link">15 Bayiliği Gör &rarr;</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

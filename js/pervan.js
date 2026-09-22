@@ -249,52 +249,309 @@
       });
     });
 
-    // 3.1. Location Navigation Modal / Bottom Sheet Logic
-    var locationModal = document.getElementById("pvLocationModal");
-    var closeLocationBtn = document.getElementById("pvLocationCloseBtn");
+  /* ==========================================================================
+     PERVAN BOTTOM SHEET / DRAWER CORE PRIMITIVE CONTROLLER
+     Native-Quality Touch Gestures, Momentum Dismiss, Safe-Area & A11y Lock
+     ========================================================================== */
+  var PervanSheet = (function() {
+    var activeBackdrop = null;
+    var lastFocusedElement = null;
+    var savedScrollY = 0;
 
+    function lockScroll() {
+      if (document.body.classList.contains("pv-sheet-locked")) return;
+      savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      document.documentElement.classList.add("pv-sheet-locked");
+      document.body.classList.add("pv-sheet-locked");
+    }
+
+    function unlockScroll() {
+      document.documentElement.classList.remove("pv-sheet-locked");
+      document.body.classList.remove("pv-sheet-locked");
+    }
+
+    function resolveElements(target) {
+      if (!target) return null;
+      var backdrop = typeof target === "string" ? document.querySelector(target) : target;
+      if (!backdrop) return null;
+
+      var dialog = backdrop.querySelector(".pv-sheet-dialog, .pv-drawer-sheet, .pv-location-sheet, [role='dialog']");
+      var handleZone = backdrop.querySelector(".pv-sheet-handle-zone, .pv-drawer-handle-zone, .pv-drawer-handle-bar, .pv-location-handle-zone");
+      var contentArea = backdrop.querySelector(".pv-sheet-content, .pv-drawer-list, .pv-location-grid");
+
+      return {
+        backdrop: backdrop,
+        dialog: dialog || backdrop.firstElementChild,
+        handleZone: handleZone,
+        contentArea: contentArea
+      };
+    }
+
+    function open(target, options) {
+      var elements = resolveElements(target);
+      if (!elements || !elements.backdrop) return;
+
+      var backdrop = elements.backdrop;
+      var dialog = elements.dialog;
+
+      // Close any previously open sheet
+      if (activeBackdrop && activeBackdrop !== backdrop) {
+        close(activeBackdrop);
+      }
+
+      lastFocusedElement = document.activeElement;
+      activeBackdrop = backdrop;
+
+      lockScroll();
+
+      backdrop.classList.add("is-open");
+      backdrop.setAttribute("aria-hidden", "false");
+
+      if (dialog) {
+        dialog.style.transform = "";
+        bindGestures(backdrop, dialog, elements.handleZone, elements.contentArea);
+        // Focus close button or container
+        var closeBtn = backdrop.querySelector(".pv-sheet-close, .pv-drawer-close, .pv-drawer-close-btn, .pv-location-close, [data-sheet-close]");
+        if (closeBtn) {
+          setTimeout(function() {
+            try { closeBtn.focus(); } catch (e) {}
+          }, 50);
+        }
+      }
+
+      if (options && typeof options.onOpen === "function") {
+        options.onOpen(backdrop);
+      }
+
+      var event = new CustomEvent("pv:sheet:open", { bubbles: true, detail: { backdrop: backdrop, dialog: dialog } });
+      backdrop.dispatchEvent(event);
+    }
+
+    function close(target, options) {
+      var elements = resolveElements(target || activeBackdrop);
+      if (!elements || !elements.backdrop) return;
+
+      var backdrop = elements.backdrop;
+      var dialog = elements.dialog;
+
+      backdrop.classList.remove("is-open");
+      backdrop.setAttribute("aria-hidden", "true");
+
+      if (dialog) {
+        dialog.style.transform = "";
+        dialog.classList.remove("is-dragging");
+      }
+
+      // Check if any other sheet is open
+      var remainingOpen = document.querySelectorAll(".pv-sheet-backdrop.is-open, .pv-drawer-backdrop.is-open, .pv-location-backdrop.is-open");
+      if (!remainingOpen.length) {
+        unlockScroll();
+        activeBackdrop = null;
+      } else {
+        activeBackdrop = remainingOpen[remainingOpen.length - 1];
+      }
+
+      if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        try { lastFocusedElement.focus(); } catch (e) {}
+      }
+
+      if (options && typeof options.onClose === "function") {
+        options.onClose(backdrop);
+      }
+
+      var event = new CustomEvent("pv:sheet:close", { bubbles: true, detail: { backdrop: backdrop, dialog: dialog } });
+      backdrop.dispatchEvent(event);
+    }
+
+    function toggle(target, options) {
+      var elements = resolveElements(target);
+      if (!elements || !elements.backdrop) return;
+      if (elements.backdrop.classList.contains("is-open")) {
+        close(elements.backdrop, options);
+      } else {
+        open(elements.backdrop, options);
+      }
+    }
+
+    function bindGestures(backdrop, dialog, handleZone, contentArea) {
+      if (!dialog || dialog._pvGestureBound) return;
+      dialog._pvGestureBound = true;
+
+      var startY = 0;
+      var currentY = 0;
+      var startTime = 0;
+      var isDragging = false;
+      var isHandleTouch = false;
+      var sheetHeight = 0;
+
+      function onTouchStart(e) {
+        var touch = e.touches ? e.touches[0] : e;
+        var target = e.target;
+
+        isHandleTouch = handleZone && (handleZone === target || handleZone.contains(target));
+        var isAtTop = !contentArea || contentArea.scrollTop <= 0;
+
+        // Start dragging only if touching handle or if at top of scrollable content
+        if (!isHandleTouch && !isAtTop) return;
+
+        startY = touch.clientY;
+        currentY = startY;
+        startTime = Date.now();
+        sheetHeight = dialog.offsetHeight || window.innerHeight * 0.8;
+        isDragging = true;
+      }
+
+      function onTouchMove(e) {
+        if (!isDragging) return;
+        var touch = e.touches ? e.touches[0] : e;
+        currentY = touch.clientY;
+        var deltaY = currentY - startY;
+
+        // If user is trying to scroll up content when not touching handle, let native scroll happen
+        if (deltaY < 0 && !isHandleTouch) {
+          return;
+        }
+
+        if (deltaY > 0) {
+          // Dragging down: 1:1 hardware translation
+          if (e.cancelable) e.preventDefault();
+          dialog.classList.add("is-dragging");
+          dialog.style.transform = "translateY(" + deltaY + "px)";
+          var progress = Math.max(0.2, 1 - (deltaY / (sheetHeight * 1.2)));
+          backdrop.style.opacity = progress;
+        } else if (deltaY < 0 && isHandleTouch) {
+          // Pulling up on handle bar: rubber band dampening
+          if (e.cancelable) e.preventDefault();
+          dialog.classList.add("is-dragging");
+          dialog.style.transform = "translateY(" + (deltaY * 0.15) + "px)";
+        }
+      }
+
+      function onTouchEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        dialog.classList.remove("is-dragging");
+        dialog.style.transform = "";
+        backdrop.style.opacity = "";
+
+        var deltaY = currentY - startY;
+        var elapsed = Math.max(1, Date.now() - startTime);
+        var velocity = deltaY / elapsed;
+
+        // Dismiss threshold: dragged > 90px OR quick downward flick (> 0.35px/ms)
+        if (deltaY > 90 || (deltaY > 30 && velocity > 0.35)) {
+          close(backdrop);
+        }
+      }
+
+      // Touch events
+      dialog.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: false });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
+      window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+      // Pointer / Mouse drag support for handle bar
+      if (handleZone) {
+        handleZone.addEventListener("pointerdown", function(e) {
+          onTouchStart(e);
+          function onPointerMove(pe) {
+            onTouchMove(pe);
+          }
+          function onPointerUp(pe) {
+            onTouchEnd(pe);
+            window.removeEventListener("pointermove", onPointerMove);
+            window.removeEventListener("pointerup", onPointerUp);
+          }
+          window.addEventListener("pointermove", onPointerMove, { passive: false });
+          window.addEventListener("pointerup", onPointerUp, { passive: true });
+        });
+      }
+    }
+
+    function init(context) {
+      var root = context || document;
+
+      // 1. Data-sheet-target triggers
+      root.querySelectorAll("[data-sheet-target]").forEach(function(trigger) {
+        if (trigger._pvSheetBound) return;
+        trigger._pvSheetBound = true;
+        trigger.addEventListener("click", function(e) {
+          e.preventDefault();
+          var targetSel = trigger.getAttribute("data-sheet-target");
+          if (targetSel) open(targetSel);
+        });
+      });
+
+      // 2. Close buttons & Backdrop clicks
+      root.querySelectorAll(".pv-sheet-backdrop, .pv-drawer-backdrop, .pv-location-backdrop").forEach(function(backdrop) {
+        if (backdrop._pvSheetInit) return;
+        backdrop._pvSheetInit = true;
+
+        // Backdrop click to close
+        backdrop.addEventListener("click", function(e) {
+          if (e.target === backdrop) {
+            close(backdrop);
+          }
+        });
+
+        // Close button click
+        backdrop.querySelectorAll(".pv-sheet-close, .pv-drawer-close, .pv-drawer-close-btn, .pv-location-close, [data-sheet-close]").forEach(function(closeBtn) {
+          closeBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            close(backdrop);
+          });
+        });
+
+        // Pre-bind gestures
+        var dialog = backdrop.querySelector(".pv-sheet-dialog, .pv-drawer-sheet, .pv-location-sheet, [role='dialog']");
+        var handleZone = backdrop.querySelector(".pv-sheet-handle-zone, .pv-drawer-handle-zone, .pv-drawer-handle-bar, .pv-location-handle-zone");
+        var contentArea = backdrop.querySelector(".pv-sheet-content, .pv-drawer-list, .pv-location-grid");
+        if (dialog) {
+          bindGestures(backdrop, dialog, handleZone, contentArea);
+        }
+      });
+    }
+
+    // Global Escape Key Listener
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" || e.keyCode === 27) {
+        if (activeBackdrop) {
+          close(activeBackdrop);
+        }
+      }
+    });
+
+    return {
+      open: open,
+      close: close,
+      toggle: toggle,
+      init: init,
+      bindGestures: bindGestures
+    };
+  })();
+
+  // Export to global window
+  window.PervanSheet = PervanSheet;
+
+  PervanSheet.init();
+
+  // 3.1. Location Navigation Modal / Bottom Sheet Logic
     window.openLocationSheet = function() {
       if (typeof closeMobileMenu === "function") {
         closeMobileMenu();
       }
-      if (!locationModal) return;
-      locationModal.classList.add("is-open");
-      locationModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+      PervanSheet.open("#pvLocationModal");
     };
 
     window.closeLocationSheet = function() {
-      if (!locationModal) return;
-      locationModal.classList.remove("is-open");
-      locationModal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
+      PervanSheet.close("#pvLocationModal");
     };
-
-    if (closeLocationBtn) {
-      closeLocationBtn.addEventListener("click", window.closeLocationSheet);
-    }
-
-    if (locationModal) {
-      locationModal.addEventListener("click", function(e) {
-        if (e.target === locationModal) {
-          window.closeLocationSheet();
-        }
-      });
-    }
 
     document.querySelectorAll(".pv-location-trigger, #openLocationSheetBtn").forEach(function(btn) {
       btn.addEventListener("click", function(e) {
         e.preventDefault();
         window.openLocationSheet();
       });
-    });
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape" || e.keyCode === 27) {
-        if (locationModal && locationModal.classList.contains("is-open")) {
-          window.closeLocationSheet();
-        }
-      }
     });
 
     // 4. Form Submission -> WhatsApp

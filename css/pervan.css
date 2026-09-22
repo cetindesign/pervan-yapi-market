@@ -71,6 +71,27 @@
   --header-height: 74px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-reform: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Pervan Design System Bottom Sheet & Drawer Tokens */
+  --pv-sheet-bg: #FFFFFF;
+  --pv-sheet-bg-subtle: #FAF9F6;
+  --pv-sheet-backdrop-bg: rgba(0, 0, 0, 0.44);
+  --pv-sheet-backdrop-blur: 12px;
+  --pv-sheet-border: 1px solid rgba(24, 24, 27, 0.08);
+  --pv-sheet-radius: 24px 24px 0 0;
+  --pv-sheet-radius-desktop: 20px;
+  --pv-sheet-shadow: 0 -16px 48px rgba(0, 0, 0, 0.16);
+  --pv-sheet-shadow-desktop: 0 24px 60px rgba(0, 0, 0, 0.22);
+  --pv-sheet-handle-bg: rgba(60, 60, 67, 0.22);
+  --pv-sheet-handle-active-bg: rgba(60, 60, 67, 0.45);
+  --pv-sheet-handle-w: 36px;
+  --pv-sheet-handle-h: 5px;
+  --pv-sheet-handle-radius: 999px;
+  --pv-sheet-max-h: 88dvh;
+  --pv-sheet-max-w: 580px;
+  --pv-sheet-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --pv-sheet-duration: 0.32s;
+  --pv-sheet-safe-bottom: env(safe-area-inset-bottom, 16px);
 }
 
 *, *::before, *::after {
@@ -4774,3 +4795,331 @@ svg.brand-logo {
 .pv-location-card:hover .pv-location-card-cta svg {
   transform: translateX(3px);
 }
+
+/* ==========================================================================
+   PERVAN GLOBAL REFORM FOOTER (GLOBAL STANDARD)
+   ========================================================================== */
+footer.reform-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 56px 40px 40px;
+  font-family: var(--font-editorial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  footer.reform-footer {
+    padding: 36px 20px 32px;
+  }
+}
+
+.footer-markets {
+  display: flex;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.market-item {
+  font-size: 14px;
+  color: #777777;
+  cursor: pointer;
+  transition: color 0.15s linear;
+  text-decoration: none;
+}
+
+.market-item:hover {
+  color: #000000;
+}
+
+.market-item.is-selected {
+  color: #000000;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.footer-brand h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+  color: #000000;
+}
+
+.footer-brand p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+}
+
+.footer-col-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+.footer-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  list-style: none !important;
+}
+
+.footer-col ul li a {
+  font-size: 13.5px;
+  color: #666666;
+  text-decoration: none;
+  transition: color 0.15s linear;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #888888;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   PERVAN BOTTOM SHEET / DRAWER CORE PRIMITIVE
+   Danish Editorial Minimalism & iOS Dynamic Gestures Standard
+   ========================================================================== */
+
+/* 1. Global Scroll-Lock helper for Sheet Open State */
+html.pv-sheet-locked,
+body.pv-sheet-locked {
+  overflow: hidden !important;
+  touch-action: none;
+  -webkit-overflow-scrolling: auto;
+}
+
+/* 2. Sheet Backdrop Overlay */
+.pv-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--pv-sheet-backdrop-bg, rgba(0, 0, 0, 0.44));
+  backdrop-filter: blur(var(--pv-sheet-backdrop-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--pv-sheet-backdrop-blur, 12px));
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--pv-sheet-duration, 0.32s) var(--pv-sheet-ease, cubic-bezier(0.32, 0.72, 0, 1)),
+              visibility var(--pv-sheet-duration, 0.32s) var(--pv-sheet-ease, cubic-bezier(0.32, 0.72, 0, 1));
+  padding: 0;
+  margin: 0;
+}
+
+.pv-sheet-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 3. Sheet Container & Elevation */
+.pv-sheet-dialog {
+  background: var(--pv-sheet-bg, #FFFFFF);
+  width: 100%;
+  max-width: var(--pv-sheet-max-w, 580px);
+  border-radius: var(--pv-sheet-radius, 24px 24px 0 0);
+  border-top: var(--pv-sheet-border, 1px solid rgba(24, 24, 27, 0.08));
+  border-left: var(--pv-sheet-border, 1px solid rgba(24, 24, 27, 0.08));
+  border-right: var(--pv-sheet-border, 1px solid rgba(24, 24, 27, 0.08));
+  border-bottom: none;
+  box-shadow: var(--pv-sheet-shadow, 0 -16px 48px rgba(0, 0, 0, 0.16));
+  max-height: 88vh;
+  max-height: var(--pv-sheet-max-h, 88dvh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  transform: translateY(105%);
+  transition: transform var(--pv-sheet-duration, 0.32s) var(--pv-sheet-ease, cubic-bezier(0.32, 0.72, 0, 1));
+  will-change: transform;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.pv-sheet-backdrop.is-open .pv-sheet-dialog {
+  transform: translateY(0);
+}
+
+/* Active Dragging Override (1:1 instant tracking) */
+.pv-sheet-dialog.is-dragging,
+.pv-location-sheet.is-dragging {
+  transition: none !important;
+}
+
+/* 4. Danish Editorial Handle Zone */
+.pv-sheet-handle-zone {
+  padding: 10px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  touch-action: none;
+  flex-shrink: 0;
+  width: 100%;
+  user-select: none;
+}
+
+.pv-sheet-handle-zone:active {
+  cursor: grabbing;
+}
+
+.pv-sheet-handle {
+  width: var(--pv-sheet-handle-w, 36px);
+  height: var(--pv-sheet-handle-h, 5px);
+  border-radius: var(--pv-sheet-handle-radius, 999px);
+  background: var(--pv-sheet-handle-bg, rgba(60, 60, 67, 0.22));
+  transition: background 0.15s ease, width 0.15s ease;
+}
+
+.pv-sheet-handle-zone:active .pv-sheet-handle {
+  background: var(--pv-sheet-handle-active-bg, rgba(60, 60, 67, 0.45));
+}
+
+/* 5. Sheet Header & Close Action */
+.pv-sheet-header {
+  padding: 8px 20px 14px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.pv-sheet-header-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.pv-sheet-title {
+  font-family: var(--font-editorial, 'Calibre', -apple-system, sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: #18181B;
+  line-height: 1.3;
+}
+
+.pv-sheet-subtitle {
+  font-family: var(--font-editorial, 'Calibre', -apple-system, sans-serif);
+  font-size: 12px;
+  color: #71717A;
+  margin-top: 2px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.pv-sheet-close {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background: rgba(118, 118, 128, 0.12);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1D1D1F;
+  font-size: 18px;
+  line-height: 1;
+  transition: background 0.15s ease, transform 0.15s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.pv-sheet-close:hover {
+  background: rgba(118, 118, 128, 0.20);
+}
+
+.pv-sheet-close:active {
+  background: rgba(118, 118, 128, 0.32);
+  transform: scale(0.92);
+}
+
+/* 6. Scrollable Content Stream */
+.pv-sheet-content {
+  padding: 14px 20px calc(24px + var(--pv-sheet-safe-bottom, 16px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;
+  overscroll-behavior-y: contain;
+}
+
+/* 7. Desktop Responsive Center Dialog Variant (Optional) */
+@media (min-width: 769px) {
+  .pv-sheet-backdrop[data-sheet-variant="center"] {
+    align-items: center;
+    padding: 24px;
+  }
+  .pv-sheet-backdrop[data-sheet-variant="center"] .pv-sheet-dialog {
+    border-radius: var(--pv-sheet-radius-desktop, 20px);
+    border: var(--pv-sheet-border, 1px solid rgba(24, 24, 27, 0.08));
+    box-shadow: var(--pv-sheet-shadow-desktop, 0 24px 60px rgba(0, 0, 0, 0.22));
+    transform: scale(0.96) translateY(12px);
+    max-height: calc(100vh - 48px);
+  }
+  .pv-sheet-backdrop[data-sheet-variant="center"].is-open .pv-sheet-dialog {
+    transform: scale(1) translateY(0);
+  }
+  .pv-sheet-backdrop[data-sheet-variant="center"] .pv-sheet-handle-zone {
+    display: none;
+  }
+}
+
+

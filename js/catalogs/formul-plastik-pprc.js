@@ -2935,26 +2935,33 @@ var FORMUL_PRODUCTS_DATA = [
   var deptList = document.getElementById("pvDeptList");
 
   function openDeptDrawer() {
-    if (!deptDrawerBackdrop) return;
-    deptDrawerBackdrop.classList.add("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    if (window.PervanSheet) {
+      window.PervanSheet.open(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.add("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "true");
   }
 
   function closeDeptDrawer() {
-    if (!deptDrawerBackdrop) return;
-    deptDrawerBackdrop.classList.remove("is-open");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    if (window.PervanSheet) {
+      window.PervanSheet.close(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.remove("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("pv:sheet:close", function() {
+      if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+    });
   }
 
   if (deptTrigger) deptTrigger.addEventListener("click", openDeptDrawer);
   if (deptDrawerCloseBtn) deptDrawerCloseBtn.addEventListener("click", closeDeptDrawer);
-  if (deptDrawerBackdrop) {
-    deptDrawerBackdrop.addEventListener("click", function(e) {
-      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
-    });
-  }
 
   function renderDeptDrawer(activeId) {
     if (!deptList) return;

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Yapı // Boya Grubu Sheet Karşılaştırması (V0, V7, V8)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" />
+<style>
+  :root {
+    --bg-main: #0A0A0C;
+    --bg-surface: #121215;
+    --bg-card: #18181D;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(200, 70, 30, 0.35);
+    --text-main: #F4F4F5;
+    --text-muted: #A1A1AA;
+    --text-faint: #52525B;
+    --terracotta: #C8461E;
+    --terracotta-glow: rgba(200, 70, 30, 0.16);
+    --green-emerald: #10B981;
+    --blue-accent: #38BDF8;
+    --radius-l: 20px;
+    --radius-m: 12px;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    padding: 0 0 80px;
+  }
+
+  .header {
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 32px;
+  }
+  .header-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--terracotta);
+    background: var(--terracotta-glow);
+    border: 1px solid rgba(200, 70, 30, 0.3);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 32px 0;
+  }
+
+  .intro {
+    margin-bottom: 36px;
+    border-left: 3px solid var(--terracotta);
+    padding-left: 16px;
+  }
+  .intro-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .intro-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+  .intro-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 900px;
+    margin-top: 6px;
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 1200px) {
+    .compare-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  }
+  .card.locked {
+    border-color: rgba(200, 70, 30, 0.4);
+    box-shadow: 0 16px 36px rgba(200, 70, 30, 0.08);
+  }
+  .card.v8-master {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 1px var(--terracotta), 0 24px 54px rgba(200, 70, 30, 0.2);
+  }
+
+  .card-head {
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-ver {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .pill {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .pill.legacy { background: rgba(239, 68, 68, 0.15); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+  .pill.locked-tag { background: rgba(200, 70, 30, 0.2); color: #FB923C; border: 1px solid rgba(200, 70, 30, 0.4); }
+  .pill.master-tag { background: var(--terracotta); color: #FFFFFF; }
+
+  .card-preview {
+    background: #000000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-subtle);
+    min-height: 460px;
+  }
+  .card-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: block;
+  }
+
+  .card-meta {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+  }
+
+  .diff-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .diff-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .diff-label.del { color: #F87171; }
+  .diff-label.add { color: var(--green-emerald); }
+  .diff-label.levelup { color: var(--blue-accent); }
+
+  .diff-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .diff-list li {
+    position: relative;
+    padding-left: 14px;
+    line-height: 1.4;
+  }
+  .diff-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
+
+  .guard-box {
+    border-radius: var(--radius-m);
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .guard-box.warning {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #FECACA;
+  }
+  .guard-box.locked-box {
+    background: rgba(200, 70, 30, 0.08);
+    border: 1px solid rgba(200, 70, 30, 0.25);
+    color: #FED7AA;
+  }
+  .guard-box.master-box {
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: #E0F2FE;
+  }
+  .guard-box strong {
+    font-weight: 700;
+  }
+  .guard-box.warning strong { color: #F87171; }
+  .guard-box.locked-box strong { color: var(--terracotta); }
+  .guard-box.master-box strong { color: var(--blue-accent); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="logo">Pervan Yapı</span>
+      <span class="badge">Boya Grubu // Evrim Matrisi (V0 &rarr; V7 &rarr; V8)</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="intro">
+    <span class="intro-tag">Mimari Karşılaştırma Matrisi</span>
+    <h1 class="intro-title">Mevcut Kod Tabanı vs. V7 Kilitli vs. V8 Architectural Tactile</h1>
+    <p class="intro-desc">
+      Legacy durumdaki fold tıkanıklığı, V7'deki fonksiyonel temizlik ve V8'deki Danimarka mimari editoryal kalitesi (Reform CPH standardı) yan yana karşılaştırılmıştır.
+    </p>
+  </div>
+
+  <div class="compare-grid">
+
+    <!-- 1. MEVCUT KOD TABANI DURUMU -->
+    <article class="card">
+      <div class="card-head">
+        <div>
+          <div class="card-ver">V0 · MEVCUT KOD TABANI</div>
+          <h2 class="card-title">Mevcut Kod Tabanı Durumu</h2>
+        </div>
+        <span class="pill legacy">Legacy</span>
+      </div>
+      <div class="card-preview">
+        <img class="card-img" src="assets/workbench/real_capture_product_spec.png" alt="Mevcut Kod Tabanı Durumu" />
+      </div>
+      <div class="card-meta">
+        <div class="diff-block">
+          <span class="diff-label del">&minus; Tespit Edilen Kusurlar &amp; Kısıtlar</span>
+          <ul class="diff-list">
+            <li><strong>220px Görsel Alanı:</strong> Dikey fold'u tıkıyor, ambalaj ve metraj ilk ekranda görünmüyor.</li>
+            <li><strong>110px Çift Satırlı Alt Bar:</strong> WhatsApp + Paylaş + Teslimat dağınık buton çöplüğü.</li>
+            <li><strong>Rubber-Band Çakışması:</strong> İçerik kaydırılırken sheet istemsizce kapanıyor.</li>
+            <li><strong>Etkileşimsiz Bilgi Kutusu:</strong> Statik gri RenXMatik alanı değer üretmiyor.</li>
+          </ul>
+        </div>
+        <div class="guard-box warning">
+          <strong>Sorun:</strong> Kullanıcı ürünü incelemek ve ambalaj seçmek için sayfayı aşağı kaydırmak zorunda kalıyor.
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. NİHAİ KİLİTLİ ÜRETİM STANDARDI (V7) -->
+    <article class="card locked">
+      <div class="card-head">
+        <div>
+          <div class="card-ver" style="color:var(--terracotta);">V7 · KİLİTLİ TEMEL BİLEŞEN</div>
+          <h2 class="card-title">V7 Kilitli Üretim Standardı</h2>
+        </div>
+        <span class="pill locked-tag">V7 Locked</span>
+      </div>
+      <div class="card-preview">
+        <img class="card-img" src="assets/workbench/prototype_product_sheet_v7_locked.png" alt="Nihai Kilitli Üretim Standardı" />
+      </div>
+      <div class="card-meta">
+        <div class="diff-block">
+          <span class="diff-label add">&plus; Kilitli Kural Seti</span>
+          <ul class="diff-list">
+            <li><strong>Tek Hedefli 48px CTA:</strong> <code style="color:#fff">WhatsApp ile Sipariş Ver</code> (Telefon butonu kaldırıldı).</li>
+            <li><strong>Sessiz Editoryal RenXMatik:</strong> Logolar ve tagler kaldırıldı; sade servis alanı.</li>
+            <li><strong>Noktalı Alt Başlık:</strong> Kutu etiketler yerine tek satır editoryal byline.</li>
+            <li><strong>Canlı Güven Şeridi:</strong> <code style="color:#10B981">● Balçova &amp; Urla Stokta Hazır</code> + <code style="color:#fff">Aynı Gün Teslimat</code>.</li>
+            <li><strong>140px Optimize Görsel:</strong> Dikey fold serbest bırakıldı, 0-scroll deneyim sağlandı.</li>
+          </ul>
+        </div>
+        <div class="guard-box locked-box">
+          <strong>Kilit Kararı:</strong> Karar felci (renk swatches) ve seçim sürtünmesi (telefon butonu) elendi.
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. V8 ARCHITECTURAL TACTILE MASTER (LEVEL UP) -->
+    <article class="card v8-master">
+      <div class="card-head">
+        <div>
+          <div class="card-ver" style="color:var(--terracotta);">V8 · ARCHITECTURAL TACTILE</div>
+          <h2 class="card-title">V8 Reform CPH Masterpiece</h2>
+        </div>
+        <span class="pill master-tag">V8 Level Up</span>
+      </div>
+      <div class="card-preview">
+        <img class="card-img" src="assets/workbench/prototype_product_sheet_v8_master.png" alt="V8 Architectural Tactile" />
+      </div>
+      <div class="card-meta">
+        <div class="diff-block">
+          <span class="diff-label levelup">&plus; Seviye Atlatan Mimari Detaylar</span>
+          <ul class="diff-list">
+            <li><strong>Mimari Kaide (Studio Pedestal):</strong> %8 sıcak amber radial stüdyo ışıması ve 1px hairline zemin hattı.</li>
+            <li><strong>Monokrom Tactile Ambalaj Seçici:</strong> Aktif buton derin mat kömür (<code style="color:#fff">#18181B</code>); boya rengiyle asla karışmaz.</li>
+            <li><strong>Hairline Blueprint Matrisi:</strong> 2 ayrı kutu yerine tek parça dikey hairline bölenli mimari teknik slotlar.</li>
+            <li><strong>RenXMatik Spektrogram İmzası:</strong> Sol kenarda 3 mikro spektrum noktası (<code style="color:#C8461E">●</code><code style="color:#38BDF8">●</code><code style="color:#F59E0B">●</code>) ve resmi laboratuvar kodu.</li>
+            <li><strong>Mikro Tipografi:</strong> JetBrains Mono 9.5px teknik etiketler ve yüksek kontrastlı hiyerarşi.</li>
+          </ul>
+        </div>
+        <div class="guard-box master-box">
+          <strong>Neyi İmkansız Kılar:</strong> Seçili ambalajın boya rengi sanılmasını ve bileşenin sıradan bir web popup'ı gibi durmasını imkansız kılar; saf bir mimari ürün pasaportuna dönüştürür.
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+</body>
+</html>

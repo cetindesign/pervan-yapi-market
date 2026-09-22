@@ -853,14 +853,70 @@
 
   // Event Listeners Initialization
   function initListeners() {
-    // Intro Hero CTA Button
-    if (startQuizBtn) {
-      startQuizBtn.addEventListener("click", function() {
-        if (quizContainer) {
-          quizContainer.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+    // Intro Hero CTA Buttons
+    var scrollToResultsBtn = document.getElementById("scroll-to-results-btn");
+    function showQuizView() {
+      var landingSections = document.querySelectorAll("#quiz-intro, .coat-value-strip, .coat-section-wrap");
+      landingSections.forEach(function(el) { el.style.display = "none"; });
+      if (quizContainer) {
+        quizContainer.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function showLandingView() {
+      var landingSections = document.querySelectorAll("#quiz-intro, .coat-value-strip, .coat-section-wrap");
+      landingSections.forEach(function(el) { el.style.display = ""; });
+      if (quizContainer) {
+        quizContainer.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    if (scrollToResultsBtn) {
+      scrollToResultsBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        showQuizView();
       });
     }
+
+    if (startQuizBtn) {
+      startQuizBtn.addEventListener("click", function() {
+        showQuizView();
+      });
+    }
+
+    // Curated Cards Navigation to Quiz
+    document.querySelectorAll(".coat-curated-card").forEach(function(card) {
+      card.addEventListener("click", function(e) {
+        e.preventDefault();
+        var curatedType = card.getAttribute("data-curated");
+        if (curatedType === "greens" || curatedType === "neutrals") {
+          selectedSpace = "living-room";
+        } else if (curatedType === "plaster") {
+          selectedSpace = "bedroom";
+        } else {
+          selectedSpace = "living-room";
+        }
+        syncSpaceCardsHighlight();
+        showQuizView();
+      });
+    });
+
+    // Sample Add Buttons
+    document.querySelectorAll(".coat-add-sample-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var originalText = btn.innerHTML;
+        btn.innerHTML = "<span>Numune Eklendi ✓</span>";
+        btn.style.backgroundColor = "#252525";
+        btn.style.color = "#FFFFFF";
+        setTimeout(function() {
+          btn.innerHTML = originalText;
+          btn.style.backgroundColor = "";
+          btn.style.color = "";
+        }, 1600);
+      });
+    });
 
     // Step 1: Coat Paints Photo Options
     var quizOptions = document.querySelectorAll(".quiz-option[data-space]");
@@ -882,18 +938,14 @@
     // Quiz Close / Top Button
     if (quizCloseBtn) {
       quizCloseBtn.addEventListener("click", function() {
-        if (quizIntro) {
-          quizIntro.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        showLandingView();
       });
     }
 
     // Quiz Back Button
     if (quizBackBtn) {
       quizBackBtn.addEventListener("click", function() {
-        if (quizIntro) {
-          quizIntro.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        showLandingView();
       });
     }
 
