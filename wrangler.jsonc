@@ -2,6 +2,17 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pervan-yapi-market",
   "compatibility_date": "2024-09-23",
+  "main": "worker.js",
+  "routes": [
+    {
+      "pattern": "pervanyapi.com/*",
+      "zone_name": "pervanyapi.com"
+    },
+    {
+      "pattern": "www.pervanyapi.com/*",
+      "zone_name": "pervanyapi.com"
+    }
+  ],
   "assets": {
     "directory": ".",
     "exclude": [
