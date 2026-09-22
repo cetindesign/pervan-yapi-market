@@ -4658,7 +4658,7 @@
   if (modalShareBtn) {
     modalShareBtn.addEventListener("click", function() {
       if (!currentProduct) return;
-      var shareUrl = window.location.origin + window.location.pathname + "?item=" + currentProduct.id + "#pvProductCatalog";
+      var shareUrl = window.location.origin + "/urun/" + currentProduct.id + ".html";
       var shareData = {
         title: "Filli Boya " + currentProduct.name + " | Pervan Yapı Market",
         text: currentProduct.name + " - " + currentProduct.sub,

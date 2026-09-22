@@ -1,5 +1,6 @@
 const fs = require("fs");
 const vm = require("vm");
+const path = require("path");
 
 const catalogFiles = [
   { file: "js/catalogs/filli-boya-renxmatik.js", page: "/filli-boya-renxmatik.html", brand: "Filli Boya", type: "obj", varName: "products" },
@@ -66,5 +67,61 @@ catalogFiles.forEach(({ file, page, brand, type, varName }) => {
   }
 });
 
+// 1. Write products-og.json
 fs.writeFileSync("products-og.json", JSON.stringify(registry, null, 2), "utf8");
-console.log("Updated products-og.json with " + Object.keys(registry).length + " indexed products.");
+
+// 2. Write functions/_products.js
+if (!fs.existsSync("functions")) fs.mkdirSync("functions", { recursive: true });
+fs.writeFileSync("functions/_products.js", "export default " + JSON.stringify(registry, null, 2) + ";\n", "utf8");
+
+// 3. Generate static HTML stubs in /urun/
+if (!fs.existsSync("urun")) fs.mkdirSync("urun", { recursive: true });
+let stubCount = 0;
+Object.keys(registry).forEach(pid => {
+  const data = registry[pid];
+  const targetUrl = `${data.page}?item=${pid}#pvProductCatalog`;
+  const html = `<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(data.title)}</title>
+<meta name="description" content="${escapeHtml(data.description)}" />
+<link rel="canonical" href="https://pervanyapi.com${data.page}?item=${pid}" />
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="product" />
+<meta property="og:site_name" content="Pervan Yapı Market" />
+<meta property="og:title" content="${escapeHtml(data.title)}" />
+<meta property="og:description" content="${escapeHtml(data.description)}" />
+<meta property="og:image" content="${data.image}" />
+<meta property="og:url" content="https://pervanyapi.com/urun/${pid}.html" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${escapeHtml(data.title)}" />
+<meta name="twitter:description" content="${escapeHtml(data.description)}" />
+<meta name="twitter:image" content="${data.image}" />
+
+<meta http-equiv="refresh" content="0; url=${targetUrl}" />
+<script>
+window.location.replace("${targetUrl}");
+</script>
+</head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fafafa;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;padding:20px;box-sizing:border-box;text-align:center;">
+<div>
+  <p style="font-size:16px;color:#333;margin-bottom:12px;">${escapeHtml(data.title)} sayfasına yönlendiriliyorsunuz...</p>
+  <a href="${targetUrl}" style="color:#0066cc;font-size:14px;text-decoration:underline;">Otomatik yönlendirme çalışmazsa buraya tıklayın &rarr;</a>
+</div>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join("urun", pid + ".html"), html, "utf8");
+  stubCount++;
+});
+
+function escapeHtml(str) {
+  return String(str || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+console.log("Updated products-og.json, functions/_products.js, and generated " + stubCount + " static stubs in /urun/.");

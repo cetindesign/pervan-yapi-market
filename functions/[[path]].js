@@ -1,4 +1,4 @@
-import products from "../products-og.json";
+import products from "./_products.js";
 
 export async function onRequest(context) {
   const { request, next } = context;

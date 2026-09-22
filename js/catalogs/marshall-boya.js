@@ -2650,7 +2650,7 @@
   if (modalShareBtn) {
     modalShareBtn.addEventListener("click", function() {
       if (!currentProduct) return;
-      var shareUrl = window.location.origin + window.location.pathname + "?product=" + currentProduct.id;
+      var shareUrl = window.location.origin + "/urun/" + currentProduct.id + ".html";
       var shareData = {
         title: "Marshall " + currentProduct.name + " | Pervan Yapı Market",
         text: currentProduct.name + " - " + (currentProduct.desc || ""),
