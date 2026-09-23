@@ -2622,6 +2622,10 @@
       document.body.style.overflow = "hidden";
       resetSheetStyles();
     }
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({ modal: true, id: productId }, "", "/urun/" + productId + ".html");
+    }
   }
 
   function closeModal() {
@@ -2634,6 +2638,10 @@
     }
     document.body.style.overflow = "";
     resetSheetStyles();
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, "", "/marshall-boya.html");
+    }
   }
 
   function updateWhatsAppUrl() {
@@ -2643,6 +2651,7 @@
       text += " (" + selectedSize + ")";
     }
     text += " hakkında güncel şantiye liste fiyatı ve stok bilgisi almak istiyorum.";
+    text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
     modalWhatsAppBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
@@ -3023,20 +3032,26 @@
     }
   });
 
-  // Deep linking via URL hash: #urun-<built-in function id>
-  window.addEventListener("load", function() {
-    var hash = window.location.hash;
-    if (hash && hash.indexOf("#urun-") === 0) {
-      var targetId = hash.replace("#urun-", "");
+  // Deep linking via URL query or hash
+  function checkDeepLink() {
+    var params = new URLSearchParams(window.location.search);
+    var targetId = params.get("item") || params.get("product") || params.get("id");
+    if (!targetId && window.location.hash && window.location.hash.indexOf("#urun-") === 0) {
+      targetId = window.location.hash.replace("#urun-", "");
+    }
+    if (targetId) {
       var p = MARSHALL_PRODUCTS_DATA.find(function(it) { return it.id === targetId; });
       if (p) {
-        if (p.deptId && p.deptId !== currentActiveTab) {
+        if (p.deptId && typeof switchTab === "function" && p.deptId !== currentActiveTab) {
           switchTab(p.deptId);
         }
         openModal(targetId);
       }
     }
-  });
+  }
+
+  checkDeepLink();
+  window.addEventListener("popstate", checkDeepLink);
 
   // INITIAL SETUP
   renderDeptDrawer("marshallInteriorPanel");

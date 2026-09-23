@@ -1435,7 +1435,7 @@
     document.body.style.overflow = "hidden";
 
     try {
-      history.replaceState(null, "", "#urun-" + p.id);
+      history.replaceState({ modal: true, id: p.id }, "", "/urun/" + p.id + ".html");
     } catch(e) {}
   }
 
@@ -1450,6 +1450,40 @@
     }
   }
 
+  
+  // Canonical Share Button Listener
+  var modalShareBtn = document.getElementById("modalShareBtn");
+  var modalShareText = document.getElementById("modalShareText");
+  if (modalShareBtn) {
+    modalShareBtn.addEventListener("click", function() {
+      var prod = (typeof currentProduct !== "undefined" && currentProduct) ? currentProduct : ((typeof currentModalProduct !== "undefined" && currentModalProduct) ? currentModalProduct : null);
+      if (!prod || !prod.id) return;
+      var shareUrl = window.location.origin + "/urun/" + prod.id + ".html";
+      var shareData = {
+        title: (prod.name || "") + " | Pervan",
+        text: (prod.name || "") + " - " + (prod.desc || prod.sub || ""),
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          var shareIcon = modalShareBtn.querySelector(".pv-share-icon");
+          var checkIcon = modalShareBtn.querySelector(".pv-check-icon");
+          if (shareIcon) shareIcon.style.display = "none";
+          if (checkIcon) checkIcon.style.display = "inline-block";
+          if (modalShareText) modalShareText.textContent = "✓ Bağlantı Kopyalandı";
+          setTimeout(function() {
+            if (shareIcon) shareIcon.style.display = "inline-block";
+            if (checkIcon) checkIcon.style.display = "none";
+            if (modalShareText) modalShareText.textContent = "Paylaş";
+          }, 2500);
+        }).catch(function() {});
+      }
+    });
+  }
+
   function closeModal() {
     modalBackdrop.classList.remove("open");
     modalBackdrop.classList.remove("is-open");
@@ -1458,7 +1492,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState(null, "", window.location.pathname + window.location.search);
+      history.replaceState({}, "", "/bianca-stella-boya.html");
     } catch(e) {}
   }
 
@@ -1469,6 +1503,7 @@
       text += " (" + selectedSize + ")";
     }
     text += " için Balçova Yapı Market / Urla depo stok ve güncel fiyat bilgisi almak istiyorum.";
+    text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
@@ -1776,9 +1811,12 @@
   }
 
   function checkDeepLink() {
-    var hash = window.location.hash;
-    if (hash && hash.indexOf("#urun-") === 0) {
-      var pid = hash.replace("#urun-", "");
+    var params = new URLSearchParams(window.location.search);
+    var pid = params.get("item") || params.get("product") || params.get("id");
+    if (!pid && window.location.hash && window.location.hash.indexOf("#urun-") === 0) {
+      pid = window.location.hash.replace("#urun-", "");
+    }
+    if (pid) {
       var p = BIANCA_PRODUCTS_DATA.find(function(item) { return item.id === pid; });
       if (p) {
         if (p.deptId && p.deptId !== currentActiveTab) {

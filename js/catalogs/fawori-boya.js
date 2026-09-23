@@ -1529,6 +1529,7 @@
       text += " (" + selectedSize + (est ? " · " + est.summaryLabel : "") + ")";
     }
     text += " için Balçova Yapı Market / Urla Ana Depo şantiye teslimat ve fiyat bilgisi almak istiyorum.";
+    text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
     modalWABtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
   }
 
@@ -1720,9 +1721,7 @@
 
     // URL sync
     if (window.history && window.history.replaceState) {
-      var url = new URL(window.location.href);
-      url.searchParams.set("item", productId);
-      window.history.replaceState(null, "", url.toString());
+      window.history.replaceState({ modal: true, id: productId }, "", "/urun/" + productId + ".html");
     }
   }
 
@@ -1748,9 +1747,7 @@
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      var url = new URL(window.location.href);
-      url.searchParams.delete("item");
-      window.history.replaceState(null, "", url.toString());
+      window.history.replaceState({}, "", "/fawori-boya.html");
     }
   }
 

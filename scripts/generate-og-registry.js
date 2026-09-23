@@ -70,7 +70,8 @@ catalogFiles.forEach(({ file, page, brand, type, varName }) => {
 // 1. Write products-og.json
 fs.writeFileSync("products-og.json", JSON.stringify(registry, null, 2), "utf8");
 
-// 2. Write functions/_products.js
+// 2. Write products.js (for root worker.js) and functions/_products.js
+fs.writeFileSync("products.js", "export default " + JSON.stringify(registry, null, 2) + ";\n", "utf8");
 if (!fs.existsSync("functions")) fs.mkdirSync("functions", { recursive: true });
 fs.writeFileSync("functions/_products.js", "export default " + JSON.stringify(registry, null, 2) + ";\n", "utf8");
 

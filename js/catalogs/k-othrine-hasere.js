@@ -967,6 +967,10 @@
       modalBackdrop.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({ modal: true, id: productId }, "", "/urun/" + productId + ".html");
+    }
   }
 
   function updateModalWaHref() {
@@ -976,7 +980,42 @@
       msg += " (" + selectedPackagingSize + ")";
     }
     msg += " için stok durumu ve Balçova mağaza / Urla depo teslim fiyatı almak istiyorum.";
+    msg += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentModalProduct.id + ".html";
     modalWaBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
+  }
+
+  
+  // Canonical Share Button Listener
+  var modalShareBtn = document.getElementById("modalShareBtn");
+  var modalShareText = document.getElementById("modalShareText");
+  if (modalShareBtn) {
+    modalShareBtn.addEventListener("click", function() {
+      var prod = (typeof currentProduct !== "undefined" && currentProduct) ? currentProduct : ((typeof currentModalProduct !== "undefined" && currentModalProduct) ? currentModalProduct : null);
+      if (!prod || !prod.id) return;
+      var shareUrl = window.location.origin + "/urun/" + prod.id + ".html";
+      var shareData = {
+        title: (prod.name || "") + " | Pervan",
+        text: (prod.name || "") + " - " + (prod.desc || prod.sub || ""),
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(shareUrl).then(function() {
+          var shareIcon = modalShareBtn.querySelector(".pv-share-icon");
+          var checkIcon = modalShareBtn.querySelector(".pv-check-icon");
+          if (shareIcon) shareIcon.style.display = "none";
+          if (checkIcon) checkIcon.style.display = "inline-block";
+          if (modalShareText) modalShareText.textContent = "✓ Bağlantı Kopyalandı";
+          setTimeout(function() {
+            if (shareIcon) shareIcon.style.display = "inline-block";
+            if (checkIcon) checkIcon.style.display = "none";
+            if (modalShareText) modalShareText.textContent = "Paylaş";
+          }, 2500);
+        }).catch(function() {});
+      }
+    });
   }
 
   function closeModal() {
@@ -984,6 +1023,10 @@
     modalBackdrop.classList.remove("is-open", "open");
     modalBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, "", "/k-othrine-hasere.html");
+    }
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
@@ -1230,6 +1273,27 @@
       }
     }
   });
+
+  // Deep linking via URL query or hash
+  function checkDeepLink() {
+    var params = new URLSearchParams(window.location.search);
+    var targetId = params.get("item") || params.get("product") || params.get("id");
+    if (!targetId && window.location.hash && window.location.hash.indexOf("#urun-") === 0) {
+      targetId = window.location.hash.replace("#urun-", "");
+    }
+    if (targetId) {
+      var p = HASERE_PRODUCTS_DATA.find(function(it) { return it.id === targetId; });
+      if (p) {
+        if (p.deptId && typeof switchTab === "function" && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(targetId);
+      }
+    }
+  }
+
+  checkDeepLink();
+  window.addEventListener("popstate", checkDeepLink);
 
   // INITIAL SETUP
   renderDeptDrawer("kothrineKonsantrePanel");
