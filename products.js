@@ -3147,283 +3147,283 @@ export default {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Cam Elyaf Takviyeli Kompozit Boru (PN20 / SDR 7.4) | Pervan",
     "description": "Orta katmanındaki özel cam elyaf takviyeli PPRC kompozit yapısı sayesinde standart borulara göre %75 daha az termal genleşme gösterir. Sıcak su ve kalorifer hatlarında sarkma yapmaz, tıraşlama gerektirmeden direkt füzyon kaynağı yapılır.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cam-elyaf-pn20.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cam-elyaf-pn20.png"
   },
   "formul-pprc-cam-elyaf-pn25": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Cam Elyaf Takviyeli Kompozit Boru (PN25 / SDR 6) | Pervan",
     "description": "Ağır hizmet ve yüksek katlı binaların ana kolon ve kazan dairesi hatları için geliştirilmiş kalın etli (SDR 6) PN25 kompozit boru. Hidrofor darbelerine ve yüksek sıcaklık dalgalanmalarına maksimum direnç gösterir.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cam-elyaf-pn25.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cam-elyaf-pn25.png"
   },
   "formul-pprc-standart-duz-pn20": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Standart Düz PPRC Tesisat Borusu (PN20 / SDR 6) | Pervan",
     "description": "Klasik sıcak ve soğuk sıhhi tesisat hatları için saf Tip-3 PPRC hammaddeden üretilmiş, yüksek et kalınlığına sahip PN20 tesisat borusu. Sıva altı banyo ve mutfak dağıtımlarında 50 yıl korozyonsuz kullanım sağlar.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-standart-duz-pn20.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-standart-duz-pn20.png"
   },
   "formul-pprc-standart-duz-pn16": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Soğuk Su PPRC Tesisat Borusu (PN16 / SDR 7.4) | Pervan",
     "description": "Bina içi soğuk su dağıtım hatları, bahçe sulama ve kuyu suyu tesisatları için optimize edilmiş, hafif ve ekonomik PN16 PPRC boru.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-standart-duz-pn16.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-standart-duz-pn16.png"
   },
   "formul-pprc-folyolu-deliksiz-pn25": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Alüminyum Folyolu Düz Tesisat Borusu (PN25) | Pervan",
     "description": "Isıtma sistemlerinde oksijen difüzyonunu sıfıra indiren ve radyatör peteklerinin korozyonunu önleyen, alüminyum folyo kaplamalı yüksek sıcaklık PN25 borusu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-folyolu-deliksiz-pn25.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-folyolu-deliksiz-pn25.png"
   },
   "formul-pprc-folyolu-delikli-pn25": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Alüminyum Folyolu Delikli (Perfore) Boru (PN25) | Pervan",
     "description": "Mikro delikli (perfore) alüminyum folyo katmanı sayesinde katmanlar arasında gaz sıkışması ve kabarmayı önleyen, yüksek mukavemetli kalorifer ve sıcak su borusu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-folyolu-delikli-pn25.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-folyolu-delikli-pn25.png"
   },
   "formul-pprc-dirsek-90": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC 90° Füzyon Dirsek | Pervan",
     "description": "Tesisat dönüşlerinde sürtünme kaybını en aza indiren hidrolik iç kavise sahip, yüksek et kalınlıklı 90° soket kaynak dirseği.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-dirsek-90.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-dirsek-90.png"
   },
   "formul-pprc-dirsek-45": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC 45° Füzyon Dirsek | Pervan",
     "description": "Tesisat şaftlarında ve tavan geçişlerinde yumuşak hat dönüşleri sağlayarak su koçu darbesini engelleyen 45° açılı füzyon dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-dirsek-45.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-dirsek-45.png"
   },
   "formul-pprc-esit-te": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Eşit Te | Pervan",
     "description": "Ana boru hattından aynı çapta hat ayrımı yapmak için kullanılan, yüksek basınca dayanıklı monolitik üç kollu eşit te parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-esit-te.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-esit-te.png"
   },
   "formul-pprc-inegal-te": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC İnegal (Redüksiyonlu) Te | Pervan",
     "description": "Ana kolon hattından daha küçük çaptaki kat veya daire branşmanlarını redüksiyon parçası kullanmadan tek gövdede ayıran inegal te parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-inegal-te.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-inegal-te.png"
   },
   "formul-pprc-manson": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Düz Manşon | Pervan",
     "description": "İki PPRC boruyu düz hat doğrultusunda eksenel olarak birleştiren, iç dayama faturalı füzyon manşonu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-manson.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-manson.png"
   },
   "formul-pprc-reduksiyon": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Redüksiyon | Pervan",
     "description": "Farklı çaptaki iki PPRC borunun birbirine geçişini sağlayan iç/dış konik füzyon redüksiyon parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-reduksiyon.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-reduksiyon.png"
   },
   "formul-pprc-kavis": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Kavisli Boru / Geçme Parçası | Pervan",
     "description": "Tesisat montajında kolon ve kiriş çıkıntılarını aşmak için kullanılan hazır kavisli PPRC boru parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kavis.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kavis.png"
   },
   "formul-pprc-kopru": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Köprü Geçiş Parçası (Manşonlu / Düz) | Pervan",
     "description": "Sıcak ve soğuk su borularının aynı düzlemde birbiri üzerinden çakışmadan geçmesini sağlayan entegre kavisli köprü geçiş elemanı.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kopru.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kopru.png"
   },
   "formul-pprc-kapama-basligi": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Füzyon Kapama Başlığı (Kör Tapa) | Pervan",
     "description": "Tesisat hatlarının sonlandırılması veya test aşamasında hatların kapatılması için kullanılan monolitik füzyon kaynak kör tapası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kapama-basligi.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kapama-basligi.png"
   },
   "formul-pprc-flans-adaptoru": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Flanş Adaptörü (Yaka) | Pervan",
     "description": "Büyük çaplı PPRC boruların döküm veya çelik flanşlı vanalara, sayaçlara ve hidrofor kolektörlerine bağlanmasını sağlayan faturalı flanş adaptörü.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-flans-adaptoru.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-flans-adaptoru.png"
   },
   "formul-metal-ic-disli-rakor": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC İç Dişli Rakor (Pirinç) | Pervan",
     "description": "PPRC boruyu dişli çelik borulara, vanalara veya metal armatürlere bağlayan, yüksek tork dirençli MS 58 pirinç gövdeli iç dişli geçiş rakoru.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-rakor.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-rakor.png"
   },
   "formul-metal-dis-disli-rakor": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Dış Dişli Rakor (Pirinç) | Pervan",
     "description": "Metal armatürler, sayaçlar ve pirinç vanaların doğrudan bağlantısı için kullanılan, altıgen anahtar ağızlı dış dişli pirinç geçiş rakoru.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-rakor.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-rakor.png"
   },
   "formul-metal-ic-disli-dirsek": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC İç Dişli Dirsek (Pirinç) | Pervan",
     "description": "Musluk, lavabo bataryası ve duş ara musluklarının sıva altı köşe bağlantısında kullanılan 90° iç dişli pirinç dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-dirsek.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-dirsek.png"
   },
   "formul-metal-dis-disli-dirsek": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Dış Dişli Dirsek (Pirinç) | Pervan",
     "description": "Kombi altı bağlantıları, radyatör girişleri ve vanaların 90° açılı dış dişli montajı için üretilmiş pirinç dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-dirsek.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-dirsek.png"
   },
   "formul-metal-ic-disli-te": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC İç Dişli Te (Pirinç) | Pervan",
     "description": "PPRC hat üzerinden basınç göstergesi (manometre), sensör, tahliye musluğu veya ara bağlantı almak için kullanılan pirinç dişli te parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-te.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ic-disli-te.png"
   },
   "formul-metal-dis-disli-te": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Dış Dişli Te (Pirinç) | Pervan",
     "description": "PPRC boru hattından dış dişli metal vana veya esnek fleks bağlantısı almak için tasarlanmış pirinç dişli te parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-te.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-dis-disli-te.png"
   },
   "formul-metal-oynar-basli-rakor-ic": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Oynar Başlıklı İç Dişli Rakor (Pirinç) | Pervan",
     "description": "Pompa, su sayacı ve boyler bağlantılarında boruyu döndürmeden kolay sökülüp takılmayı sağlayan contalı oynar başlı iç dişli rakor.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-oynar-basli-rakor-ic.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-oynar-basli-rakor-ic.png"
   },
   "formul-metal-oynar-basli-rakor-dis": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Oynar Başlıklı Dış Dişli Rakor (Pirinç) | Pervan",
     "description": "Kolektör girişleri ve hidrofor çıkışlarında boruyu çevirmeden pratik montaj sağlayan dış dişli oynar başlı pirinç rakor.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-oynar-basli-rakor-dis.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-oynar-basli-rakor-dis.png"
   },
   "formul-metal-ciftli-batarya-baglantisi": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Çiftli Batarya Bağlantı Şablonu (150 mm) | Pervan",
     "description": "Banyo ve duş bataryalarının duvara montajında 150 mm standart aks mesafesini ve terazi eksenini milimetrik sabitleyen galvaniz sac gövdeli çiftli batarya şablonu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ciftli-batarya-baglantisi.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-ciftli-batarya-baglantisi.png"
   },
   "formul-metal-tekli-batarya-baglantisi": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Tekli Taharet & Batarya Bağlantısı (Kulaklı) | Pervan",
     "description": "Tekli musluk, taharet musluğu ve çamaşır makinesi musluk çıkışlarının duvara sağlam vidalanmasını sağlayan montaj kulaklı PPRC pirinç dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-tekli-batarya-baglantisi.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-metal-tekli-batarya-baglantisi.png"
   },
   "formul-pprc-kuresel-vana": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Tam Geçişli Küresel Vana | Pervan",
     "description": "Sıcak ve soğuk su hatlarında tam akış kesme sağlayan, teflon (PTFE) yataklı pirinç küreli, korozyon yapmayan PPRC gövdeli küresel vana.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kuresel-vana.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kuresel-vana.png"
   },
   "formul-pprc-krom-gizli-ankastre-vana": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Gizli Krom Ankastre Banyo Vanası | Pervan",
     "description": "Banyo ve ıslak hacimlerde sıva altına gömülen, estetik krom kaplama metal açma-kapama volanı ve rozetine sahip şık ankastre vana.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-krom-gizli-ankastre-vana.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-krom-gizli-ankastre-vana.png"
   },
   "formul-pprc-kelebek-sapli-kuresel-vana": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Kelebek Kollu Küresel Vana | Pervan",
     "description": "Kollektör dolapları, lavabo altları ve dar montaj alanlarında açma-kapama kolaylığı sağlayan ergonomik kelebek kollu küresel vana.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kelebek-sapli-kuresel-vana.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-kelebek-sapli-kuresel-vana.png"
   },
   "formul-pprc-radyator-vanasi-kose": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Köşe Radyatör Vanası | Pervan",
     "description": "Radyatör peteklerinin alt/üst köşe bağlantısı için PPRC boruya doğrudan füzyon kaynağı yapılan, 1/2\" rakorlu pirinç mekanizmalı köşe vana.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-radyator-vanasi-kose.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-radyator-vanasi-kose.png"
   },
   "formul-pprc-radyator-vanasi-duz": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Düz Radyatör Vanası | Pervan",
     "description": "Zeminden veya süpürgelikten gelen kalorifer borularının radyatöre düz doğrultuda bağlanması için üretilmiş düz tip PPRC radyatör vanası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-radyator-vanasi-duz.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-radyator-vanasi-duz.png"
   },
   "formul-pprc-cekvalf": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Yaylı Çekvalf | Pervan",
     "description": "Suyun sadece tek bir yönde akmasına izin veren, hidrofor geri basmalarını ve su sayacı geri dönüşlerini önleyen paslanmaz yaylı PPRC çekvalf.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cekvalf.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-cekvalf.png"
   },
   "formul-pprc-pislik-tutucu": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PPRC Filtre & Pislik Tutucu (Y Tipi) | Pervan",
     "description": "Şebekeden gelen kum, pas ve tortuları tutarak sayaç, batarya ve kombi eşanjörünü koruyan, temizlenebilir paslanmaz çelik filtreli Y tipi PPRC pislik tutucu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-pislik-tutucu.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pprc-pislik-tutucu.png"
   },
   "formul-pvc-atik-su-borusu-tip2": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Contalı PVC Atık Su Borusu (Tip 2 / Ağır Seri 3.2 mm) | Pervan",
     "description": "Bina içi ana düşey atık su kolonları ve zemin altı yatay hatlar için üretilmiş, 3.2 mm et kalınlığında, contalı sessiz ve mukavim PVC atık su borusu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-atik-su-borusu-tip2.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-atik-su-borusu-tip2.png"
   },
   "formul-pvc-atik-su-borusu-tip1": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Contalı PVC Atık Su Borusu (Tip 1 / Hafif Seri) | Pervan",
     "description": "Kat içi lavabo, süzgeç ve banyo yatay bağlantılarında kullanılan hafif ve ekonomik contalı PVC atık su borusu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-atik-su-borusu-tip1.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-atik-su-borusu-tip1.png"
   },
   "formul-pvc-tek-catal-45": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC 45° Tek Çatal | Pervan",
     "description": "Düşey veya yatay atık su hattına 45 derecelik açıyla yan branşman bağlamak için kullanılan sızdırmaz contalı PVC tek çatal.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-tek-catal-45.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-tek-catal-45.png"
   },
   "formul-pvc-cift-catal-45": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC 45° Çift Çatal | Pervan",
     "description": "Ana atık su kolonuna sağdan ve soldan iki ayrı daire veya banyo giderinin aynı seviyede bağlanmasını sağlayan 45° çift çatal.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-cift-catal-45.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-cift-catal-45.png"
   },
   "formul-pvc-dirsek-87": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC 87.5° Kapalı Dirsek | Pervan",
     "description": "Klozet, tuvalet taşı ve dikey kolon inişlerinde 90 dereceye yakın dik açılı dönüş sağlayan sızdırmaz contalı PVC kapalı dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-dirsek-87.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-dirsek-87.png"
   },
   "formul-pvc-dirsek-45": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC 45° Açık Dirsek | Pervan",
     "description": "Ana kolon şaftlarında kolon kaçıklıklarını geçmek ve yatay hatlarda akıcı dönüşler oluşturmak için kullanılan 45° contalı PVC dirsek.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-dirsek-45.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-dirsek-45.png"
   },
   "formul-pvc-reduksiyon": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC Atık Su Redüksiyonu (Eksantrik) | Pervan",
     "description": "Büyük çaplı PVC boru veya çatal ağzına daha küçük çaplı borunun bağlanmasını sağlayan, alt tabanı düz eksantrik tip PVC redüksiyon.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-reduksiyon.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-reduksiyon.png"
   },
   "formul-pvc-temizleme-parcasi": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PVC Vidalı Temizleme (Revizyon) Parçası | Pervan",
     "description": "Atık su kolonlarının tabanında veya yatay ana hatlarda tıkanıklık anında tesisatı sökmeden kanal açma sustası sokulmasını sağlayan contalı vidalı temizleme parçası.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-temizleme-parcasi.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pvc-temizleme-parcasi.png"
   },
   "formul-pe-rt-oksijen-bariyerli-boru": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül 5 Katmanlı EVOH Oksijen Bariyerli PE-RT Boru (16×2.0 mm) | Pervan",
     "description": "Zeminden ısıtma sistemlerinde oksijen difüzyonunu sıfırlayan 5 katmanlı EVOH zırhlı, son derece esnek, çatlama ve kırılma yapmayan 16×2.0 mm PE-RT boru.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-oksijen-bariyerli-boru.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-oksijen-bariyerli-boru.png"
   },
   "formul-pe-rt-oksijen-bariyersiz-boru": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Standart PE-RT Yerden Isıtma Borusu (16×2.0 mm) | Pervan",
     "description": "Zemin ısıtma ve radyatör mobil dağıtım hatlarında yüksek esneklik ve ekonomik maliyet sunan saf PE-RT Type II tesisat borusu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-oksijen-bariyersiz-boru.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-oksijen-bariyersiz-boru.png"
   },
   "formul-pirinc-debili-kollektor": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Pirinç Gövdeli Debi Ayarlı Kollektör (1\" - 2-12 Ağızlı) | Pervan",
     "description": "Yerden ısıtma sistemlerinde her odanın devresine giden su miktarını üzerindeki göstergeli debimetrelerle hassas olarak dengeleyen masif pirinç debili kollektör seti.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pirinc-debili-kollektor.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pirinc-debili-kollektor.png"
   },
   "formul-kollektor-dolabi-ankastre": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Gömme Ankastre Kollektör Dolabı (Sac Elektrostatik) | Pervan",
     "description": "Yerden ısıtma ve kalorifer kollektörlerini duvar içerisine gizleyen, derinlik ve yükseklik ayarlı, beyaz elektrostatik toz boyalı saç kollektör dolabı.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-kollektor-dolabi-ankastre.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-kollektor-dolabi-ankastre.png"
   },
   "formul-yerden-isitma-straforu": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül Mantar Başlıklı Yerden Isıtma İzolasyon Modülü (EPS 30 Dansite) | Pervan",
     "description": "Alt kata ısı kaçışını engelleyen ve 16 mm PE-RT boruların 5 ve 10 cm katlarında kilitli döşenmesini sağlayan, film kaplamalı yüksek dansiteli EPS zemin straforu.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-yerden-isitma-straforu.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-yerden-isitma-straforu.png"
   },
   "formul-pe-rt-baglanti-rakoru": {
     "page": "/formul-plastik-pprc.html",
     "title": "Formül Plastik Formül PE-RT Boru Bağlantı & Eurokonus Rakoru (16×2.0 mm - 3/4\") | Pervan",
     "description": "16×2.0 mm PE-RT boruyu debili pirinç kollektör ağızlarına sızdırmaz şekilde kilitleyen pirinç yüksüklü Eurokonus bağlantı rakoru.",
-    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-baglanti-rakoru.svg"
+    "image": "https://pervanyapi.com/assets/formul-official/formul-pe-rt-baglanti-rakoru.png"
   },
   "k-othrine-sc50-50ml": {
     "page": "/k-othrine-hasere.html",

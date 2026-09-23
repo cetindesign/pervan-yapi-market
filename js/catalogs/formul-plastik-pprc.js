@@ -396,7 +396,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "cam-elyaf",
     "deptId": "formulPprcPipePanel",
     "desc": "Orta katmanındaki özel cam elyaf takviyeli PPRC kompozit yapısı sayesinde standart borulara göre %75 daha az termal genleşme gösterir. Sıcak su ve kalorifer hatlarında sarkma yapmaz, tıraşlama gerektirmeden direkt füzyon kaynağı yapılır.",
-    "thumb": "assets/formul-official/formul-pprc-cam-elyaf-pn20.svg",
+    "thumb": "assets/formul-official/formul-pprc-cam-elyaf-pn20.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -449,7 +449,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "cam-elyaf",
     "deptId": "formulPprcPipePanel",
     "desc": "Ağır hizmet ve yüksek katlı binaların ana kolon ve kazan dairesi hatları için geliştirilmiş kalın etli (SDR 6) PN25 kompozit boru. Hidrofor darbelerine ve yüksek sıcaklık dalgalanmalarına maksimum direnç gösterir.",
-    "thumb": "assets/formul-official/formul-pprc-cam-elyaf-pn25.svg",
+    "thumb": "assets/formul-official/formul-pprc-cam-elyaf-pn25.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -502,7 +502,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "duz-pprc",
     "deptId": "formulPprcPipePanel",
     "desc": "Klasik sıcak ve soğuk sıhhi tesisat hatları için saf Tip-3 PPRC hammaddeden üretilmiş, yüksek et kalınlığına sahip PN20 tesisat borusu. Sıva altı banyo ve mutfak dağıtımlarında 50 yıl korozyonsuz kullanım sağlar.",
-    "thumb": "assets/formul-official/formul-pprc-standart-duz-pn20.svg",
+    "thumb": "assets/formul-official/formul-pprc-standart-duz-pn20.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -555,7 +555,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "duz-pprc",
     "deptId": "formulPprcPipePanel",
     "desc": "Bina içi soğuk su dağıtım hatları, bahçe sulama ve kuyu suyu tesisatları için optimize edilmiş, hafif ve ekonomik PN16 PPRC boru.",
-    "thumb": "assets/formul-official/formul-pprc-standart-duz-pn16.svg",
+    "thumb": "assets/formul-official/formul-pprc-standart-duz-pn16.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -605,7 +605,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "folyolu",
     "deptId": "formulPprcPipePanel",
     "desc": "Isıtma sistemlerinde oksijen difüzyonunu sıfıra indiren ve radyatör peteklerinin korozyonunu önleyen, alüminyum folyo kaplamalı yüksek sıcaklık PN25 borusu.",
-    "thumb": "assets/formul-official/formul-pprc-folyolu-deliksiz-pn25.svg",
+    "thumb": "assets/formul-official/formul-pprc-folyolu-deliksiz-pn25.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -655,7 +655,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "folyolu",
     "deptId": "formulPprcPipePanel",
     "desc": "Mikro delikli (perfore) alüminyum folyo katmanı sayesinde katmanlar arasında gaz sıkışması ve kabarmayı önleyen, yüksek mukavemetli kalorifer ve sıcak su borusu.",
-    "thumb": "assets/formul-official/formul-pprc-folyolu-delikli-pn25.svg",
+    "thumb": "assets/formul-official/formul-pprc-folyolu-delikli-pn25.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -705,7 +705,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "dirsek",
     "deptId": "formulFittingsPanel",
     "desc": "Tesisat dönüşlerinde sürtünme kaybını en aza indiren hidrolik iç kavise sahip, yüksek et kalınlıklı 90° soket kaynak dirseği.",
-    "thumb": "assets/formul-official/formul-pprc-dirsek-90.svg",
+    "thumb": "assets/formul-official/formul-pprc-dirsek-90.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -758,7 +758,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "dirsek",
     "deptId": "formulFittingsPanel",
     "desc": "Tesisat şaftlarında ve tavan geçişlerinde yumuşak hat dönüşleri sağlayarak su koçu darbesini engelleyen 45° açılı füzyon dirsek.",
-    "thumb": "assets/formul-official/formul-pprc-dirsek-45.svg",
+    "thumb": "assets/formul-official/formul-pprc-dirsek-45.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -809,7 +809,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "te",
     "deptId": "formulFittingsPanel",
     "desc": "Ana boru hattından aynı çapta hat ayrımı yapmak için kullanılan, yüksek basınca dayanıklı monolitik üç kollu eşit te parçası.",
-    "thumb": "assets/formul-official/formul-pprc-esit-te.svg",
+    "thumb": "assets/formul-official/formul-pprc-esit-te.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -862,7 +862,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "te",
     "deptId": "formulFittingsPanel",
     "desc": "Ana kolon hattından daha küçük çaptaki kat veya daire branşmanlarını redüksiyon parçası kullanmadan tek gövdede ayıran inegal te parçası.",
-    "thumb": "assets/formul-official/formul-pprc-inegal-te.svg",
+    "thumb": "assets/formul-official/formul-pprc-inegal-te.png",
     "sizes": [
       "Ø25×20×25 mm",
       "Ø32×20×32 mm",
@@ -913,7 +913,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "manson-reduksiyon",
     "deptId": "formulFittingsPanel",
     "desc": "İki PPRC boruyu düz hat doğrultusunda eksenel olarak birleştiren, iç dayama faturalı füzyon manşonu.",
-    "thumb": "assets/formul-official/formul-pprc-manson.svg",
+    "thumb": "assets/formul-official/formul-pprc-manson.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -966,7 +966,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "manson-reduksiyon",
     "deptId": "formulFittingsPanel",
     "desc": "Farklı çaptaki iki PPRC borunun birbirine geçişini sağlayan iç/dış konik füzyon redüksiyon parçası.",
-    "thumb": "assets/formul-official/formul-pprc-reduksiyon.svg",
+    "thumb": "assets/formul-official/formul-pprc-reduksiyon.png",
     "sizes": [
       "Ø25/20 mm",
       "Ø32/20 mm",
@@ -1020,7 +1020,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kavis-kopru",
     "deptId": "formulFittingsPanel",
     "desc": "Tesisat montajında kolon ve kiriş çıkıntılarını aşmak için kullanılan hazır kavisli PPRC boru parçası.",
-    "thumb": "assets/formul-official/formul-pprc-kavis.svg",
+    "thumb": "assets/formul-official/formul-pprc-kavis.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -1067,7 +1067,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kavis-kopru",
     "deptId": "formulFittingsPanel",
     "desc": "Sıcak ve soğuk su borularının aynı düzlemde birbiri üzerinden çakışmadan geçmesini sağlayan entegre kavisli köprü geçiş elemanı.",
-    "thumb": "assets/formul-official/formul-pprc-kopru.svg",
+    "thumb": "assets/formul-official/formul-pprc-kopru.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -1114,7 +1114,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "manson-reduksiyon",
     "deptId": "formulFittingsPanel",
     "desc": "Tesisat hatlarının sonlandırılması veya test aşamasında hatların kapatılması için kullanılan monolitik füzyon kaynak kör tapası.",
-    "thumb": "assets/formul-official/formul-pprc-kapama-basligi.svg",
+    "thumb": "assets/formul-official/formul-pprc-kapama-basligi.png",
     "sizes": [
       "Ø20 mm",
       "Ø25 mm",
@@ -1166,7 +1166,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "manson-reduksiyon",
     "deptId": "formulFittingsPanel",
     "desc": "Büyük çaplı PPRC boruların döküm veya çelik flanşlı vanalara, sayaçlara ve hidrofor kolektörlerine bağlanmasını sağlayan faturalı flanş adaptörü.",
-    "thumb": "assets/formul-official/formul-pprc-flans-adaptoru.svg",
+    "thumb": "assets/formul-official/formul-pprc-flans-adaptoru.png",
     "sizes": [
       "Ø40 mm (DN32)",
       "Ø50 mm (DN40)",
@@ -1216,7 +1216,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "ic-dis",
     "deptId": "formulBrassPanel",
     "desc": "PPRC boruyu dişli çelik borulara, vanalara veya metal armatürlere bağlayan, yüksek tork dirençli MS 58 pirinç gövdeli iç dişli geçiş rakoru.",
-    "thumb": "assets/formul-official/formul-metal-ic-disli-rakor.svg",
+    "thumb": "assets/formul-official/formul-metal-ic-disli-rakor.png",
     "sizes": [
       "Ø20×1/2\" İç Diş",
       "Ø20×3/4\" İç Diş",
@@ -1268,7 +1268,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "dis-dis",
     "deptId": "formulBrassPanel",
     "desc": "Metal armatürler, sayaçlar ve pirinç vanaların doğrudan bağlantısı için kullanılan, altıgen anahtar ağızlı dış dişli pirinç geçiş rakoru.",
-    "thumb": "assets/formul-official/formul-metal-dis-disli-rakor.svg",
+    "thumb": "assets/formul-official/formul-metal-dis-disli-rakor.png",
     "sizes": [
       "Ø20×1/2\" Dış Diş",
       "Ø20×3/4\" Dış Diş",
@@ -1320,7 +1320,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "ic-dis",
     "deptId": "formulBrassPanel",
     "desc": "Musluk, lavabo bataryası ve duş ara musluklarının sıva altı köşe bağlantısında kullanılan 90° iç dişli pirinç dirsek.",
-    "thumb": "assets/formul-official/formul-metal-ic-disli-dirsek.svg",
+    "thumb": "assets/formul-official/formul-metal-ic-disli-dirsek.png",
     "sizes": [
       "Ø20×1/2\" İç Diş",
       "Ø25×1/2\" İç Diş",
@@ -1368,7 +1368,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "dis-dis",
     "deptId": "formulBrassPanel",
     "desc": "Kombi altı bağlantıları, radyatör girişleri ve vanaların 90° açılı dış dişli montajı için üretilmiş pirinç dirsek.",
-    "thumb": "assets/formul-official/formul-metal-dis-disli-dirsek.svg",
+    "thumb": "assets/formul-official/formul-metal-dis-disli-dirsek.png",
     "sizes": [
       "Ø20×1/2\" Dış Diş",
       "Ø25×3/4\" Dış Diş",
@@ -1415,7 +1415,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "ic-dis",
     "deptId": "formulBrassPanel",
     "desc": "PPRC hat üzerinden basınç göstergesi (manometre), sensör, tahliye musluğu veya ara bağlantı almak için kullanılan pirinç dişli te parçası.",
-    "thumb": "assets/formul-official/formul-metal-ic-disli-te.svg",
+    "thumb": "assets/formul-official/formul-metal-ic-disli-te.png",
     "sizes": [
       "Ø20×1/2\"×20 mm",
       "Ø25×1/2\"×25 mm",
@@ -1463,7 +1463,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "dis-dis",
     "deptId": "formulBrassPanel",
     "desc": "PPRC boru hattından dış dişli metal vana veya esnek fleks bağlantısı almak için tasarlanmış pirinç dişli te parçası.",
-    "thumb": "assets/formul-official/formul-metal-dis-disli-te.svg",
+    "thumb": "assets/formul-official/formul-metal-dis-disli-te.png",
     "sizes": [
       "Ø20×1/2\"×20 mm",
       "Ø25×3/4\"×25 mm"
@@ -1509,7 +1509,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "oynar-basli",
     "deptId": "formulBrassPanel",
     "desc": "Pompa, su sayacı ve boyler bağlantılarında boruyu döndürmeden kolay sökülüp takılmayı sağlayan contalı oynar başlı iç dişli rakor.",
-    "thumb": "assets/formul-official/formul-metal-oynar-basli-rakor-ic.svg",
+    "thumb": "assets/formul-official/formul-metal-oynar-basli-rakor-ic.png",
     "sizes": [
       "Ø20×1/2\"",
       "Ø25×3/4\"",
@@ -1559,7 +1559,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "oynar-basli",
     "deptId": "formulBrassPanel",
     "desc": "Kolektör girişleri ve hidrofor çıkışlarında boruyu çevirmeden pratik montaj sağlayan dış dişli oynar başlı pirinç rakor.",
-    "thumb": "assets/formul-official/formul-metal-oynar-basli-rakor-dis.svg",
+    "thumb": "assets/formul-official/formul-metal-oynar-basli-rakor-dis.png",
     "sizes": [
       "Ø20×1/2\"",
       "Ø25×3/4\"",
@@ -1608,7 +1608,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "batarya-sablon",
     "deptId": "formulBrassPanel",
     "desc": "Banyo ve duş bataryalarının duvara montajında 150 mm standart aks mesafesini ve terazi eksenini milimetrik sabitleyen galvaniz sac gövdeli çiftli batarya şablonu.",
-    "thumb": "assets/formul-official/formul-metal-ciftli-batarya-baglantisi.svg",
+    "thumb": "assets/formul-official/formul-metal-ciftli-batarya-baglantisi.png",
     "sizes": [
       "Ø20×1/2\" - 150 mm Aks Aralığı",
       "Ø25×1/2\" - 150 mm Aks Aralığı"
@@ -1654,7 +1654,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "batarya-sablon",
     "deptId": "formulBrassPanel",
     "desc": "Tekli musluk, taharet musluğu ve çamaşır makinesi musluk çıkışlarının duvara sağlam vidalanmasını sağlayan montaj kulaklı PPRC pirinç dirsek.",
-    "thumb": "assets/formul-official/formul-metal-tekli-batarya-baglantisi.svg",
+    "thumb": "assets/formul-official/formul-metal-tekli-batarya-baglantisi.png",
     "sizes": [
       "Ø20×1/2\" İç Diş (Kulaklı)",
       "Ø25×1/2\" İç Diş (Kulaklı)"
@@ -1700,7 +1700,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kuresel-vana",
     "deptId": "formulValvesPanel",
     "desc": "Sıcak ve soğuk su hatlarında tam akış kesme sağlayan, teflon (PTFE) yataklı pirinç küreli, korozyon yapmayan PPRC gövdeli küresel vana.",
-    "thumb": "assets/formul-official/formul-pprc-kuresel-vana.svg",
+    "thumb": "assets/formul-official/formul-pprc-kuresel-vana.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -1751,7 +1751,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "ankastre-vana",
     "deptId": "formulValvesPanel",
     "desc": "Banyo ve ıslak hacimlerde sıva altına gömülen, estetik krom kaplama metal açma-kapama volanı ve rozetine sahip şık ankastre vana.",
-    "thumb": "assets/formul-official/formul-pprc-krom-gizli-ankastre-vana.svg",
+    "thumb": "assets/formul-official/formul-pprc-krom-gizli-ankastre-vana.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -1798,7 +1798,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kuresel-vana",
     "deptId": "formulValvesPanel",
     "desc": "Kollektör dolapları, lavabo altları ve dar montaj alanlarında açma-kapama kolaylığı sağlayan ergonomik kelebek kollu küresel vana.",
-    "thumb": "assets/formul-official/formul-pprc-kelebek-sapli-kuresel-vana.svg",
+    "thumb": "assets/formul-official/formul-pprc-kelebek-sapli-kuresel-vana.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -1845,7 +1845,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "radyator-vana",
     "deptId": "formulValvesPanel",
     "desc": "Radyatör peteklerinin alt/üst köşe bağlantısı için PPRC boruya doğrudan füzyon kaynağı yapılan, 1/2\" rakorlu pirinç mekanizmalı köşe vana.",
-    "thumb": "assets/formul-official/formul-pprc-radyator-vanasi-kose.svg",
+    "thumb": "assets/formul-official/formul-pprc-radyator-vanasi-kose.png",
     "sizes": [
       "Ø20×1/2\" Köşe",
       "Ø25×1/2\" Köşe"
@@ -1891,7 +1891,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "radyator-vana",
     "deptId": "formulValvesPanel",
     "desc": "Zeminden veya süpürgelikten gelen kalorifer borularının radyatöre düz doğrultuda bağlanması için üretilmiş düz tip PPRC radyatör vanası.",
-    "thumb": "assets/formul-official/formul-pprc-radyator-vanasi-duz.svg",
+    "thumb": "assets/formul-official/formul-pprc-radyator-vanasi-duz.png",
     "sizes": [
       "Ø20×1/2\" Düz",
       "Ø25×1/2\" Düz"
@@ -1937,7 +1937,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "cekvalf",
     "deptId": "formulValvesPanel",
     "desc": "Suyun sadece tek bir yönde akmasına izin veren, hidrofor geri basmalarını ve su sayacı geri dönüşlerini önleyen paslanmaz yaylı PPRC çekvalf.",
-    "thumb": "assets/formul-official/formul-pprc-cekvalf.svg",
+    "thumb": "assets/formul-official/formul-pprc-cekvalf.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -1987,7 +1987,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "cekvalf",
     "deptId": "formulValvesPanel",
     "desc": "Şebekeden gelen kum, pas ve tortuları tutarak sayaç, batarya ve kombi eşanjörünü koruyan, temizlenebilir paslanmaz çelik filtreli Y tipi PPRC pislik tutucu.",
-    "thumb": "assets/formul-official/formul-pprc-pislik-tutucu.svg",
+    "thumb": "assets/formul-official/formul-pprc-pislik-tutucu.png",
     "sizes": [
       "Ø20 mm (1/2\")",
       "Ø25 mm (3/4\")",
@@ -2036,7 +2036,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "pvc-boru",
     "deptId": "formulPvcDrainPanel",
     "desc": "Bina içi ana düşey atık su kolonları ve zemin altı yatay hatlar için üretilmiş, 3.2 mm et kalınlığında, contalı sessiz ve mukavim PVC atık su borusu.",
-    "thumb": "assets/formul-official/formul-pvc-atik-su-borusu-tip2.svg",
+    "thumb": "assets/formul-official/formul-pvc-atik-su-borusu-tip2.png",
     "sizes": [
       "Ø50 mm (150-3000 mm)",
       "Ø75 mm (150-3000 mm)",
@@ -2086,7 +2086,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "pvc-boru",
     "deptId": "formulPvcDrainPanel",
     "desc": "Kat içi lavabo, süzgeç ve banyo yatay bağlantılarında kullanılan hafif ve ekonomik contalı PVC atık su borusu.",
-    "thumb": "assets/formul-official/formul-pvc-atik-su-borusu-tip1.svg",
+    "thumb": "assets/formul-official/formul-pvc-atik-su-borusu-tip1.png",
     "sizes": [
       "Ø50 mm (150-3000 mm)",
       "Ø75 mm (150-3000 mm)",
@@ -2133,7 +2133,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "catal-dirsek",
     "deptId": "formulPvcDrainPanel",
     "desc": "Düşey veya yatay atık su hattına 45 derecelik açıyla yan branşman bağlamak için kullanılan sızdırmaz contalı PVC tek çatal.",
-    "thumb": "assets/formul-official/formul-pvc-tek-catal-45.svg",
+    "thumb": "assets/formul-official/formul-pvc-tek-catal-45.png",
     "sizes": [
       "Ø50/50 mm 45°",
       "Ø75/50 mm 45°",
@@ -2185,7 +2185,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "catal-dirsek",
     "deptId": "formulPvcDrainPanel",
     "desc": "Ana atık su kolonuna sağdan ve soldan iki ayrı daire veya banyo giderinin aynı seviyede bağlanmasını sağlayan 45° çift çatal.",
-    "thumb": "assets/formul-official/formul-pvc-cift-catal-45.svg",
+    "thumb": "assets/formul-official/formul-pvc-cift-catal-45.png",
     "sizes": [
       "Ø110/50/50 mm 45°",
       "Ø110/75/75 mm 45°",
@@ -2232,7 +2232,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "catal-dirsek",
     "deptId": "formulPvcDrainPanel",
     "desc": "Klozet, tuvalet taşı ve dikey kolon inişlerinde 90 dereceye yakın dik açılı dönüş sağlayan sızdırmaz contalı PVC kapalı dirsek.",
-    "thumb": "assets/formul-official/formul-pvc-dirsek-87.svg",
+    "thumb": "assets/formul-official/formul-pvc-dirsek-87.png",
     "sizes": [
       "Ø50 mm 87.5°",
       "Ø75 mm 87.5°",
@@ -2281,7 +2281,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "catal-dirsek",
     "deptId": "formulPvcDrainPanel",
     "desc": "Ana kolon şaftlarında kolon kaçıklıklarını geçmek ve yatay hatlarda akıcı dönüşler oluşturmak için kullanılan 45° contalı PVC dirsek.",
-    "thumb": "assets/formul-official/formul-pvc-dirsek-45.svg",
+    "thumb": "assets/formul-official/formul-pvc-dirsek-45.png",
     "sizes": [
       "Ø50 mm 45°",
       "Ø75 mm 45°",
@@ -2331,7 +2331,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "temizleme-sifon",
     "deptId": "formulPvcDrainPanel",
     "desc": "Büyük çaplı PVC boru veya çatal ağzına daha küçük çaplı borunun bağlanmasını sağlayan, alt tabanı düz eksantrik tip PVC redüksiyon.",
-    "thumb": "assets/formul-official/formul-pvc-reduksiyon.svg",
+    "thumb": "assets/formul-official/formul-pvc-reduksiyon.png",
     "sizes": [
       "Ø75/50 mm",
       "Ø110/50 mm",
@@ -2381,7 +2381,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "temizleme-sifon",
     "deptId": "formulPvcDrainPanel",
     "desc": "Atık su kolonlarının tabanında veya yatay ana hatlarda tıkanıklık anında tesisatı sökmeden kanal açma sustası sokulmasını sağlayan contalı vidalı temizleme parçası.",
-    "thumb": "assets/formul-official/formul-pvc-temizleme-parcasi.svg",
+    "thumb": "assets/formul-official/formul-pvc-temizleme-parcasi.png",
     "sizes": [
       "Ø50 mm",
       "Ø75 mm",
@@ -2430,7 +2430,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "pe-rt-boru",
     "deptId": "formulUnderfloorPanel",
     "desc": "Zeminden ısıtma sistemlerinde oksijen difüzyonunu sıfırlayan 5 katmanlı EVOH zırhlı, son derece esnek, çatlama ve kırılma yapmayan 16×2.0 mm PE-RT boru.",
-    "thumb": "assets/formul-official/formul-pe-rt-oksijen-bariyerli-boru.svg",
+    "thumb": "assets/formul-official/formul-pe-rt-oksijen-bariyerli-boru.png",
     "sizes": [
       "16×2.0 mm (160 Metre Kangal)",
       "16×2.0 mm (240 Metre Kangal)",
@@ -2478,7 +2478,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "pe-rt-boru",
     "deptId": "formulUnderfloorPanel",
     "desc": "Zemin ısıtma ve radyatör mobil dağıtım hatlarında yüksek esneklik ve ekonomik maliyet sunan saf PE-RT Type II tesisat borusu.",
-    "thumb": "assets/formul-official/formul-pe-rt-oksijen-bariyersiz-boru.svg",
+    "thumb": "assets/formul-official/formul-pe-rt-oksijen-bariyersiz-boru.png",
     "sizes": [
       "16×2.0 mm (160 Metre Kangal)",
       "16×2.0 mm (240 Metre Kangal)"
@@ -2524,7 +2524,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kollektor",
     "deptId": "formulUnderfloorPanel",
     "desc": "Yerden ısıtma sistemlerinde her odanın devresine giden su miktarını üzerindeki göstergeli debimetrelerle hassas olarak dengeleyen masif pirinç debili kollektör seti.",
-    "thumb": "assets/formul-official/formul-pirinc-debili-kollektor.svg",
+    "thumb": "assets/formul-official/formul-pirinc-debili-kollektor.png",
     "sizes": [
       "2 Ağızlı Set",
       "3 Ağızlı Set",
@@ -2579,7 +2579,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kollektor-dolabi",
     "deptId": "formulUnderfloorPanel",
     "desc": "Yerden ısıtma ve kalorifer kollektörlerini duvar içerisine gizleyen, derinlik ve yükseklik ayarlı, beyaz elektrostatik toz boyalı saç kollektör dolabı.",
-    "thumb": "assets/formul-official/formul-kollektor-dolabi-ankastre.svg",
+    "thumb": "assets/formul-official/formul-kollektor-dolabi-ankastre.png",
     "sizes": [
       "40 cm (2-3 Ağız)",
       "60 cm (4-6 Ağız)",
@@ -2627,7 +2627,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "izolasyon-strafor",
     "deptId": "formulUnderfloorPanel",
     "desc": "Alt kata ısı kaçışını engelleyen ve 16 mm PE-RT boruların 5 ve 10 cm katlarında kilitli döşenmesini sağlayan, film kaplamalı yüksek dansiteli EPS zemin straforu.",
-    "thumb": "assets/formul-official/formul-yerden-isitma-straforu.svg",
+    "thumb": "assets/formul-official/formul-yerden-isitma-straforu.png",
     "sizes": [
       "72×120 cm Plaka (0.864 m² / Plaka - EPS 30 Dansite)"
     ],
@@ -2672,7 +2672,7 @@ var FORMUL_PRODUCTS_DATA = [
     "category": "kollektor",
     "deptId": "formulUnderfloorPanel",
     "desc": "16×2.0 mm PE-RT boruyu debili pirinç kollektör ağızlarına sızdırmaz şekilde kilitleyen pirinç yüksüklü Eurokonus bağlantı rakoru.",
-    "thumb": "assets/formul-official/formul-pe-rt-baglanti-rakoru.svg",
+    "thumb": "assets/formul-official/formul-pe-rt-baglanti-rakoru.png",
     "sizes": [
       "16×2.0 mm - 3/4\" Eurokonus"
     ],
