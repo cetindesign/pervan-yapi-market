@@ -15,13 +15,7 @@
   ],
   "assets": {
     "directory": ".",
-    "run_worker_first": true,
-    "exclude": [
-      ".git/**",
-      "scratch/**",
-      ".gitignore",
-      "wrangler.jsonc",
-      ".assetsignore"
-    ]
+    "binding": "ASSETS",
+    "run_worker_first": true
   }
 }
