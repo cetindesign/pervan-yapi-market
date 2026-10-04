@@ -1069,14 +1069,6 @@
     "sub": "Şap, sıva ve duvar harcı torba hesaplayıcı",
     "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>",
     "pillsId": "simMenuPills"
-  },
-  {
-    "id": "kabaLogisticsPanel",
-    "short": "Şantiye Lojistiği",
-    "full": "İzmir – Çeşme Şantiye Lojistiği",
-    "sub": "Urla Depo damperli & vinçli filo ring seferi",
-    "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>",
-    "pillsId": "logisticsMenuPills"
   }
 ];
 
