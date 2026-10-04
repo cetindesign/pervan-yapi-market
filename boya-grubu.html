@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Pervan Yapı // Boya Grubu Sheet Karşılaştırması (V0, V7, V8)</title>
+<title>Pervan Yapı // Boya Grubu Sheet Evrim Matrisi (V0 &rarr; V10 &rarr; V11)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" />
@@ -132,13 +132,12 @@
     flex-direction: column;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
   }
-  .card.locked {
-    border-color: rgba(200, 70, 30, 0.4);
-    box-shadow: 0 16px 36px rgba(200, 70, 30, 0.08);
+  .card.boxed-iter {
+    border-color: rgba(255, 255, 255, 0.12);
   }
-  .card.v8-master {
+  .card.v11-master {
     border-color: var(--terracotta);
-    box-shadow: 0 0 0 1px var(--terracotta), 0 24px 54px rgba(200, 70, 30, 0.2);
+    box-shadow: 0 0 0 1px var(--terracotta), 0 24px 54px rgba(200, 70, 30, 0.25);
   }
 
   .card-head {
@@ -170,7 +169,7 @@
     border-radius: 999px;
   }
   .pill.legacy { background: rgba(239, 68, 68, 0.15); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.3); }
-  .pill.locked-tag { background: rgba(200, 70, 30, 0.2); color: #FB923C; border: 1px solid rgba(200, 70, 30, 0.4); }
+  .pill.boxed-tag { background: rgba(245, 158, 11, 0.15); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3); }
   .pill.master-tag { background: var(--terracotta); color: #FFFFFF; }
 
   .card-preview {
@@ -213,8 +212,8 @@
     letter-spacing: 0.06em;
   }
   .diff-label.del { color: #F87171; }
-  .diff-label.add { color: var(--green-emerald); }
-  .diff-label.levelup { color: var(--blue-accent); }
+  .diff-label.add { color: #FBBF24; }
+  .diff-label.levelup { color: var(--green-emerald); }
 
   .diff-list {
     list-style: none;
@@ -247,22 +246,22 @@
     border: 1px solid rgba(239, 68, 68, 0.25);
     color: #FECACA;
   }
-  .guard-box.locked-box {
-    background: rgba(200, 70, 30, 0.08);
-    border: 1px solid rgba(200, 70, 30, 0.25);
-    color: #FED7AA;
+  .guard-box.boxed-box {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    color: #FEF08A;
   }
   .guard-box.master-box {
-    background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    color: #E0F2FE;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #D1FAE5;
   }
   .guard-box strong {
     font-weight: 700;
   }
   .guard-box.warning strong { color: #F87171; }
-  .guard-box.locked-box strong { color: var(--terracotta); }
-  .guard-box.master-box strong { color: var(--blue-accent); }
+  .guard-box.boxed-box strong { color: #FBBF24; }
+  .guard-box.master-box strong { color: var(--green-emerald); }
 </style>
 </head>
 <body>
@@ -271,17 +270,17 @@
   <div class="header-inner">
     <div class="brand">
       <span class="logo">Pervan Yapı</span>
-      <span class="badge">Boya Grubu // Evrim Matrisi (V0 &rarr; V7 &rarr; V8)</span>
+      <span class="badge">Boya Grubu // Mimari Form Faktörü Karşılaştırması</span>
     </div>
   </div>
 </header>
 
 <main class="container">
   <div class="intro">
-    <span class="intro-tag">Mimari Karşılaştırma Matrisi</span>
-    <h1 class="intro-title">Mevcut Kod Tabanı vs. V7 Kilitli vs. V8 Architectural Tactile</h1>
+    <span class="intro-tag">Mimari Paradigma Değişimi</span>
+    <h1 class="intro-title">Mevcut PDP Mantığı vs. 580px Kule vs. V11 Compact Half-Sheet (340px)</h1>
     <p class="intro-desc">
-      Legacy durumdaki fold tıkanıklığı, V7'deki fonksiyonel temizlik ve V8'deki Danimarka mimari editoryal kalitesi (Reform CPH standardı) yan yana karşılaştırılmıştır.
+      Sheet'in bir ürün tanıtım sayfası (PDP) değil, 2 saniyede ambalaj seçtirip WhatsApp'a bağlayan kompakt bir hızlı sipariş köprüsü (Fast Checkout Bridge) olarak yeniden tanımlanması.
     </p>
   </div>
 
@@ -301,74 +300,72 @@
       </div>
       <div class="card-meta">
         <div class="diff-block">
-          <span class="diff-label del">&minus; Tespit Edilen Kusurlar &amp; Kısıtlar</span>
+          <span class="diff-label del">&minus; Yapısal Kusurlar</span>
           <ul class="diff-list">
-            <li><strong>220px Görsel Alanı:</strong> Dikey fold'u tıkıyor, ambalaj ve metraj ilk ekranda görünmüyor.</li>
-            <li><strong>110px Çift Satırlı Alt Bar:</strong> WhatsApp + Paylaş + Teslimat dağınık buton çöplüğü.</li>
-            <li><strong>Rubber-Band Çakışması:</strong> İçerik kaydırılırken sheet istemsizce kapanıyor.</li>
-            <li><strong>Etkileşimsiz Bilgi Kutusu:</strong> Statik gri RenXMatik alanı değer üretmiyor.</li>
+            <li>220px görsel dikey fold'u tamamen kilitliyor.</li>
+            <li>110px çift satırlı dağınık alt bar.</li>
+            <li>Scroll anında rubber-band kapanma hatası.</li>
+            <li>Statik, etkileşimsiz gri RenXMatik kutusu.</li>
           </ul>
         </div>
         <div class="guard-box warning">
-          <strong>Sorun:</strong> Kullanıcı ürünü incelemek ve ambalaj seçmek için sayfayı aşağı kaydırmak zorunda kalıyor.
+          <strong>Kusur:</strong> Ambalaj ve metraj ilk ekrana sığmıyor, zorunlu scroll gerekiyor.
         </div>
       </div>
     </article>
 
-    <!-- 2. NİHAİ KİLİTLİ ÜRETİM STANDARDI (V7) -->
-    <article class="card locked">
+    <!-- 2. V10 TAM BOY KULE (580px) -->
+    <article class="card boxed-iter">
       <div class="card-head">
         <div>
-          <div class="card-ver" style="color:var(--terracotta);">V7 · KİLİTLİ TEMEL BİLEŞEN</div>
-          <h2 class="card-title">V7 Kilitli Üretim Standardı</h2>
+          <div class="card-ver" style="color:#FBBF24;">V10 · TAM BOY KULE (580px)</div>
+          <h2 class="card-title">PDP Tanıtım Sayfası Yaklaşımı</h2>
         </div>
-        <span class="pill locked-tag">V7 Locked</span>
+        <span class="pill boxed-tag">Overloaded PDP</span>
       </div>
       <div class="card-preview">
-        <img class="card-img" src="assets/workbench/prototype_product_sheet_v7_locked.png" alt="Nihai Kilitli Üretim Standardı" />
+        <img class="card-img" src="assets/workbench/prototype_product_sheet_v10_opencanvas.png" alt="Tam Boy Model" />
       </div>
       <div class="card-meta">
         <div class="diff-block">
-          <span class="diff-label add">&plus; Kilitli Kural Seti</span>
+          <span class="diff-label add">&bull; Neden Yoğun ve Kalabalıktı?</span>
           <ul class="diff-list">
-            <li><strong>Tek Hedefli 48px CTA:</strong> <code style="color:#fff">WhatsApp ile Sipariş Ver</code> (Telefon butonu kaldırıldı).</li>
-            <li><strong>Sessiz Editoryal RenXMatik:</strong> Logolar ve tagler kaldırıldı; sade servis alanı.</li>
-            <li><strong>Noktalı Alt Başlık:</strong> Kutu etiketler yerine tek satır editoryal byline.</li>
-            <li><strong>Canlı Güven Şeridi:</strong> <code style="color:#10B981">● Balçova &amp; Urla Stokta Hazır</code> + <code style="color:#fff">Aynı Gün Teslimat</code>.</li>
-            <li><strong>140px Optimize Görsel:</strong> Dikey fold serbest bırakıldı, 0-scroll deneyim sağlandı.</li>
+            <li><strong>PDP Gibi Davrandı:</strong> Katalog kartında zaten görülen büyük kova görseli, başlık ve 3 byline tekrarlandı.</li>
+            <li>13 ayrı bilgi modülü 580px'lik kuleye sıkıştırıldı.</li>
+            <li>Arkadaki katalog bağlamı tamamen kayboldu.</li>
           </ul>
         </div>
-        <div class="guard-box locked-box">
-          <strong>Kilit Kararı:</strong> Karar felci (renk swatches) ve seçim sürtünmesi (telefon butonu) elendi.
+        <div class="guard-box boxed-box">
+          <strong>Teşhis:</strong> Bir bottom sheet ürün tanıtım sayfası değildir; sipariş konfigürasyon köprüsüdür.
         </div>
       </div>
     </article>
 
-    <!-- 3. V8 ARCHITECTURAL TACTILE MASTER (LEVEL UP) -->
-    <article class="card v8-master">
+    <!-- 3. V11 COMPACT HALF-SHEET (340px) -->
+    <article class="card v11-master">
       <div class="card-head">
         <div>
-          <div class="card-ver" style="color:var(--terracotta);">V8 · ARCHITECTURAL TACTILE</div>
-          <h2 class="card-title">V8 Reform CPH Masterpiece</h2>
+          <div class="card-ver" style="color:var(--terracotta);">V11 · COMPACT HALF-SHEET</div>
+          <h2 class="card-title">V11 Hızlı Sipariş Köprüsü (340px)</h2>
         </div>
-        <span class="pill master-tag">V8 Level Up</span>
+        <span class="pill master-tag">V11 Master</span>
       </div>
       <div class="card-preview">
-        <img class="card-img" src="assets/workbench/prototype_product_sheet_v8_master.png" alt="V8 Architectural Tactile" />
+        <img class="card-img" src="assets/workbench/prototype_product_sheet_v11_halfsheet.png" alt="V11 Compact Half-Sheet" />
       </div>
       <div class="card-meta">
         <div class="diff-block">
-          <span class="diff-label levelup">&plus; Seviye Atlatan Mimari Detaylar</span>
+          <span class="diff-label levelup">&plus; Radikal Mimari Kazanımlar</span>
           <ul class="diff-list">
-            <li><strong>Mimari Kaide (Studio Pedestal):</strong> %8 sıcak amber radial stüdyo ışıması ve 1px hairline zemin hattı.</li>
-            <li><strong>Monokrom Tactile Ambalaj Seçici:</strong> Aktif buton derin mat kömür (<code style="color:#fff">#18181B</code>); boya rengiyle asla karışmaz.</li>
-            <li><strong>Hairline Blueprint Matrisi:</strong> 2 ayrı kutu yerine tek parça dikey hairline bölenli mimari teknik slotlar.</li>
-            <li><strong>RenXMatik Spektrogram İmzası:</strong> Sol kenarda 3 mikro spektrum noktası (<code style="color:#C8461E">●</code><code style="color:#38BDF8">●</code><code style="color:#F59E0B">●</code>) ve resmi laboratuvar kodu.</li>
-            <li><strong>Mikro Tipografi:</strong> JetBrains Mono 9.5px teknik etiketler ve yüksek kontrastlı hiyerarşi.</li>
+            <li><strong>60px Yatay Kompakt Başlık:</strong> Sol: 60px kova thumbnail'i; Sağ: Ürün adı, stok rozeti ve teslimat tek satırda.</li>
+            <li><strong>340px Gerçek Yarım Boyut (Half-Sheet):</strong> Arkadaki katalog görünmeye devam eder; bağlam asla kopmaz.</li>
+            <li><strong>Birleşik Segmented Çip:</strong> Litre + Metraj tek dokunma alanında birleşti (<code style="color:#fff">15 L &middot; ~113 m²</code>).</li>
+            <li><strong>Dinamik Akıllı CTA:</strong> Seçilen ambalaj doğrudan butona yansır: <code style="color:#fff">WhatsApp ile Sipariş Ver (15 L) &rarr;</code>.</li>
+            <li><strong>Sıfır Gürültü (Zero Noise):</strong> Metin kalabalığı %70 elendi, 2 saniyede karar ve sipariş tamamlanır.</li>
           </ul>
         </div>
         <div class="guard-box master-box">
-          <strong>Neyi İmkansız Kılar:</strong> Seçili ambalajın boya rengi sanılmasını ve bileşenin sıradan bir web popup'ı gibi durmasını imkansız kılar; saf bir mimari ürün pasaportuna dönüştürür.
+          <strong>Neyi İmkansız Kılar:</strong> Kullanıcının katalog akışından kopmasını, dikeyde kaybolmasını ve karar felcine uğramasını imkansız kılar.
         </div>
       </div>
     </article>
