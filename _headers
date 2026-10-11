@@ -12,6 +12,12 @@
 /
   Cache-Control: public, max-age=0, must-revalidate
 
+/kalekim-yapi-kimyasallari
+  Cache-Control: public, max-age=0, must-revalidate
+
+/cimentas-cimento
+  Cache-Control: public, max-age=0, must-revalidate
+
 # 3. Static Assets & Fonts (Immutable Long-term Cache)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
