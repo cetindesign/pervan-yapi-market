@@ -30,6 +30,101 @@
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.1" />
 
+<style>
+/* Specimen Hero Badges */
+.pv-specimen-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.pv-specimen-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #18181B;
+  background: #F4F4F5;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  line-height: 1.2;
+}
+.pv-specimen-badge-sub {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717A;
+  background: transparent;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  line-height: 1.2;
+}
+
+/* Modal Packaging Size Chips */
+.pv-config-hint {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717A;
+  letter-spacing: -0.01em;
+}
+.pv-size-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.pv-size-chip {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1.5px solid rgba(28, 25, 23, 0.18);
+  background: #FFFFFF;
+  border-radius: 9999px;
+  min-height: 40px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  color: #1C1917;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: manipulation;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  line-height: 1.25;
+  text-align: center;
+}
+.pv-size-chip:hover:not(.active) {
+  border-color: #111215;
+  background: #FAF9F5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+.pv-size-chip:active {
+  transform: scale(0.96);
+}
+.pv-size-chip.active {
+  background: #1C1917;
+  color: #FFFFFF;
+  border-color: #1C1917;
+  box-shadow: 0 4px 14px rgba(28, 25, 23, 0.22);
+}
+</style>
+
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
 {
