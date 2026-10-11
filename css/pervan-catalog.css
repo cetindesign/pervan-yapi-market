@@ -1929,10 +1929,8 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 6px;
   display: block;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
-  -webkit-filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+  mix-blend-mode: multiply;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2372,7 +2370,10 @@ html, body {
   margin: 6px auto 10px;
 }
 
-.pv-specimen-glow,
+.pv-specimen-glow {
+  display: none !important;
+}
+
 .pv-atelier-glow {
   position: absolute;
   width: 200px;
@@ -2390,8 +2391,9 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.16));
-  -webkit-filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.16));
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: multiply;
   transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: transform;
 }
