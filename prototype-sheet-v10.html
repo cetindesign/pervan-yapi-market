@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan Product Spec Sheet - V10 Open Canvas (De-Boxed)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" />
+<style>
+  :root {
+    /* Pure Architectural Canvas */
+    --pv-bg-sheet: #FAF9F6;
+    --pv-border-hairline: rgba(18, 18, 20, 0.08);
+    
+    /* Strict 3-Tone Monochrome Hierarchy */
+    --pv-text-primary: #121214;
+    --pv-text-secondary: #52525B;
+    --pv-text-tertiary: #8E8E93;
+    
+    /* Single Brand Accent - Reserved solely for CTA & Live Dot */
+    --pv-terracotta: #C8461E;
+    --pv-green-live: #10B981;
+    
+    --pv-radius-sheet: 26px;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #09090B;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-feature-settings: "tnum" 1, "cv02" 1;
+  }
+
+  .pv-ux-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .pv-ux-sheet {
+    width: 100%;
+    max-width: 440px;
+    max-height: 94dvh;
+    background: var(--pv-bg-sheet);
+    border-radius: var(--pv-radius-sheet) var(--pv-radius-sheet) 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* 0. Drag Handle */
+  .pv-ux-handle-zone {
+    padding: 10px 0 2px;
+    display: flex;
+    justify-content: center;
+    cursor: grab;
+    flex-shrink: 0;
+  }
+  .pv-ux-handle {
+    width: 36px;
+    height: 3.5px;
+    background: rgba(18, 18, 20, 0.15);
+    border-radius: 999px;
+  }
+
+  /* 1. Header (Border-free / Seamless) */
+  .pv-ux-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 20px 8px;
+    flex-shrink: 0;
+  }
+  .pv-ux-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-ux-close-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(18, 18, 20, 0.05);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pv-text-secondary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .pv-ux-close-btn:hover {
+    background: rgba(18, 18, 20, 0.1);
+  }
+
+  /* Body Content (Zero Inner Boxes / Pure Whitespace Flow) */
+  .pv-ux-body {
+    padding: 4px 20px 16px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* 2. De-Boxed Hero Stage */
+  .pv-hero-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6px 0 4px;
+  }
+  .pv-bucket-wrap {
+    position: relative;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pv-bucket-img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.14));
+  }
+  .pv-pedestal-shadow {
+    width: 110px;
+    height: 6px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(18, 18, 20, 0.22) 0%, transparent 75%);
+    margin-top: -3px;
+  }
+  .pv-product-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: 4px;
+  }
+  .pv-product-byline {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--pv-text-secondary);
+    max-width: 92%;
+  }
+  .pv-byline-dot {
+    color: var(--pv-text-tertiary);
+    margin: 0 5px;
+  }
+
+  /* 3. Hairline Separator */
+  .pv-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--pv-border-hairline);
+  }
+
+  /* 4. Open Size & Metric Section */
+  .pv-size-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pv-size-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .pv-size-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-size-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    color: var(--pv-text-secondary);
+  }
+
+  /* Tactile Seamless Chips */
+  .pv-size-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background: #EAE8E2;
+    padding: 4px;
+    border-radius: 12px;
+  }
+  .pv-size-chip {
+    border: none;
+    background: transparent;
+    padding: 9px 0 8px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .pv-size-chip .chip-vol {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--pv-text-secondary);
+  }
+  .pv-size-chip .chip-sub {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 500;
+    color: var(--pv-text-tertiary);
+  }
+  .pv-size-chip.active {
+    background: #121214;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  }
+  .pv-size-chip.active .chip-vol {
+    color: #FFFFFF;
+  }
+  .pv-size-chip.active .chip-sub {
+    color: #D4D4D8;
+  }
+
+  /* Seamless Technical Data Line (No Box) */
+  .pv-technical-data-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 4px 0;
+    font-size: 12.5px;
+    line-height: 17px;
+    color: var(--pv-text-secondary);
+  }
+  .pv-tech-item {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .pv-tech-num {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--pv-text-primary);
+  }
+  .pv-tech-desc {
+    font-size: 12px;
+    color: var(--pv-text-tertiary);
+  }
+
+  /* 5. Quiet Editorial RenXMatik Note (No Container Card) */
+  .pv-renx-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 4px 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--pv-text-secondary);
+  }
+  .pv-renx-tag {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--pv-text-primary);
+    background: rgba(18, 18, 20, 0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* 6. Action Dock */
+  .pv-ux-dock {
+    border-top: 1px solid var(--pv-border-hairline);
+    background: rgba(250, 249, 246, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 12px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .pv-dock-trust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .pv-trust-live {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    color: #065F46;
+  }
+  .pv-live-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--pv-green-live);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  }
+  .pv-trust-delivery {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--pv-text-tertiary);
+    letter-spacing: 0.04em;
+  }
+  .pv-cta-btn {
+    width: 100%;
+    height: 48px;
+    background: var(--pv-terracotta);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0 20px;
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(200, 70, 30, 0.25);
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+
+<div class="pv-ux-backdrop">
+  <div class="pv-ux-sheet">
+    
+    <!-- Drag Handle -->
+    <div class="pv-ux-handle-zone">
+      <div class="pv-ux-handle"></div>
+    </div>
+
+    <!-- 1. Top Bar (Border-free) -->
+    <div class="pv-ux-top-bar">
+      <span class="pv-ux-eyebrow">FİLLİ BOYA // TS EN 13300</span>
+      <button type="button" class="pv-ux-close-btn" aria-label="Kapat">&times;</button>
+    </div>
+
+    <!-- 2. Scrollable Open Body -->
+    <div class="pv-ux-body">
+      
+      <!-- Open Hero Stage (No Box Container) -->
+      <div class="pv-hero-stage">
+        <div class="pv-bucket-wrap">
+          <img class="pv-bucket-img" src="assets/filli-official/momento-silan.png" alt="Momento Silan" />
+          <div class="pv-pedestal-shadow"></div>
+        </div>
+        <h1 class="pv-product-title">Momento Silan İpeksi Mat</h1>
+        <div class="pv-product-byline">
+          Silikonlu Son Kat<span class="pv-byline-dot">&middot;</span>Tam Silinebilir<span class="pv-byline-dot">&middot;</span>İpeksi Mat&reg;
+        </div>
+      </div>
+
+      <div class="pv-divider"></div>
+
+      <!-- Open Ambalaj & Technical Section -->
+      <div class="pv-size-section">
+        <div class="pv-size-head">
+          <span class="pv-size-label">AMBALAJ SEÇİMİ</span>
+          <span class="pv-size-meta">15 L // ~20.5 KG</span>
+        </div>
+
+        <div class="pv-size-track">
+          <button type="button" class="pv-size-chip">
+            <span class="chip-vol">2.5 L</span>
+            <span class="chip-sub">~19 m²</span>
+          </button>
+          <button type="button" class="pv-size-chip">
+            <span class="chip-vol">7.5 L</span>
+            <span class="chip-sub">~56 m²</span>
+          </button>
+          <button type="button" class="pv-size-chip active">
+            <span class="chip-vol">15 L</span>
+            <span class="chip-sub">~113 m²</span>
+          </button>
+        </div>
+
+        <!-- Seamless Technical Data -->
+        <div class="pv-technical-data-strip">
+          <div class="pv-tech-item">
+            <span class="pv-tech-num">113 m²</span>
+            <span class="pv-tech-desc">Çift Kat</span>
+          </div>
+          <span style="color:var(--pv-text-tertiary);">&middot;</span>
+          <div class="pv-tech-item">
+            <span class="pv-tech-num" style="font-family:inherit; font-size:13.5px;">2–4 Saat</span>
+            <span class="pv-tech-desc">Kuruma</span>
+          </div>
+          <span style="color:var(--pv-text-tertiary);">&middot;</span>
+          <div class="pv-tech-item">
+            <span class="pv-tech-num" style="font-family:inherit; font-size:13.5px;">İpeksi Mat</span>
+            <span class="pv-tech-desc">Bitiş</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pv-divider"></div>
+
+      <!-- Quiet Editorial RenXMatik Note -->
+      <div class="pv-renx-line">
+        <span class="pv-renx-tag">RenXMatik™</span>
+        <span>10.000+ RAL &amp; NCS kartela rengi WhatsApp siparişinizle anında hazırlanır.</span>
+      </div>
+
+    </div>
+
+    <!-- 3. Focused CTA Action Dock -->
+    <div class="pv-ux-dock">
+      <div class="pv-dock-trust">
+        <div class="pv-trust-live">
+          <div class="pv-live-dot"></div>
+          <span>Balçova &amp; Urla Stokta Hazır</span>
+        </div>
+        <span class="pv-trust-delivery">AYNI GÜN TESLİMAT</span>
+      </div>
+
+      <a href="https://wa.me/905323844497?text=Merhaba,%20Momento%20Silan%20(15L)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="pv-cta-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.181 0 5.767-2.587 5.768-5.767 0-3.18-2.587-5.767-5.768-5.767zm0 10.364c-.886 0-1.579-.247-2.427-.751l-.173-.103-1.803.473.481-1.758-.113-.181c-.563-.898-.86-1.583-.86-2.279 0-2.536 2.064-4.6 4.6-4.6 2.535 0 4.599 2.064 4.599 4.6 0 2.536-2.064 4.6-4.599 4.6z"/>
+        </svg>
+        <span>WhatsApp ile Sipariş Ver</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
