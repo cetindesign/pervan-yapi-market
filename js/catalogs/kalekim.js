@@ -1511,453 +1511,964 @@
 ];
 
   var DEPARTMENTS_DATA = [
-    {
-      id: "kalekimProductCatalog",
-      name: "Seramik & Derz",
-      title: "Kalekim Seramik & Granit Harçları",
-      badge: "Departman 01 · Seramik & Granit",
-      pills: [
-        { filter: "seramik-harclar", label: "Porselen & Granit Harçları" },
-        { filter: "derz-dolgular", label: "Ultrafuga & Esnek Derz" }
-      ]
+    { 
+      id: "kalekimProductCatalog", 
+      short: "Seramik & Derz", 
+      full: "Seramik & Granit Harçları, Ultrafuga Derz", 
+      sub: "Porselen, granit harçları ve Ultrafuga derzler",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
+      pillsId: "kalekimProductCatalogPills" 
     },
-    {
-      id: "kalekimWaterproofSection",
-      name: "Su Yalıtımı",
-      title: "Kalekim Su Yalıtım Sistemleri",
-      badge: "Departman 02 · Su Yalıtımı",
-      pills: [
-        { filter: "cift-bilesenli", label: "Çift Bileşenli Harçlar" },
-        { filter: "likit-elastik", label: "Likit Membran & Tıkaç" }
-      ]
+    { 
+      id: "kalekimWaterproofSection", 
+      short: "Su Yalıtımı", 
+      full: "Su Yalıtım Sistemleri & Membranlar", 
+      sub: "İzolatex 2K harçlar, elastik likit membran ve tıkaç",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
+      pillsId: "kalekimWaterproofSectionPills" 
     },
-    {
-      id: "kalekimThermalSection",
-      name: "Isı Yalıtımı",
-      title: "Kalekim Isı Yalıtımı & Sıvalar",
-      badge: "Departman 03 · Dış Cephe Isı Yalıtımı",
-      pills: [
-        { filter: "levha-harclari", label: "Levha Yapıştırıcı & Sıva" },
-        { filter: "mineral-kaplama", label: "Dekoratif Mineral Sıva" }
-      ]
+    { 
+      id: "kalekimThermalSection", 
+      short: "Isı Yalıtımı", 
+      full: "Dış Cephe Isı Yalıtım Sistemleri & Sıvalar", 
+      sub: "EPS/taşyünü yapıştırıcı, file sıvası ve dekoratif kaplama",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      pillsId: "kalekimThermalSectionPills" 
     },
-    {
-      id: "kalekimRepairSection",
-      name: "Tamir & Grout",
-      title: "Kalekim TamirArt Yapısal Onarım",
-      badge: "Departman 04 · Teknik Harçlar",
-      pills: [
-        { filter: "yapisal-tamir", label: "Yapısal Onarım & Grout" },
-        { filter: "tamir-astar", label: "Yüzey Düzeltme & Astar" }
-      ]
+    { 
+      id: "kalekimRepairSection", 
+      short: "Tamir & Grout", 
+      full: "TamirArt Yapısal Onarım & Grout Harçları", 
+      sub: "R4 yapısal tamir, akıcı grout ve epoksi ankraj",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 16 3-3"/><path d="M9 12l8-8 4 4-8 8"/><path d="m14 7 3 3"/></svg>',
+      pillsId: "kalekimRepairSectionPills" 
     },
-    {
-      id: "kalekimFloorSection",
-      name: "Zemin Şapları",
-      title: "Kalekim Zemin Sistemleri & Şap",
-      badge: "Departman 05 · Zemin Sistemleri",
-      pills: [
-        { filter: "tesviye-sap", label: "Kendiliğinden Yayılan Şap" },
-        { filter: "yuzey-sertlestirici", label: "Yüzey Sertleştirici & Epoksi" }
-      ]
+    { 
+      id: "kalekimFloorSection", 
+      short: "Zemin Şapları", 
+      full: "Zemin Sistemleri, Tesviye & Şaplar", 
+      sub: "Kendiliğinden yayılan şap ve yüzey sertleştiriciler",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 17h16"/><path d="M7 13h10"/><path d="M10 9h4"/><path d="M12 3v3"/></svg>',
+      pillsId: "kalekimFloorSectionPills" 
     },
-    {
-      id: "kalekimPaintSection",
-      name: "Boya & Astar",
-      title: "Kalekim Bi'Boya & Özel Astarlar",
-      badge: "Departman 06 · Bi'Boya",
-      pills: [
-        { filter: "dis-cephe", label: "Dış Cephe Boyaları" },
-        { filter: "ic-cephe", label: "İç Cephe & Astarlar" }
-      ]
+    { 
+      id: "kalekimPaintSection", 
+      short: "Boya & Astar", 
+      full: "Bi\'Boya Dış & İç Cephe Boyaları ve Astarlar", 
+      sub: "Silikonlu dış cephe, grenli kaplama ve astarlar",
+      icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10"/><path d="m9 16 5 5 8-8-5-5Z"/></svg>',
+      pillsId: "kalekimPaintSectionPills" 
     }
   ];
 
-  var activeDeptIndex = 0;
-  var subnavLinks = document.querySelectorAll(".pv-subnav-link");
-  var deptPanels = document.querySelectorAll(".pv-dept-panel");
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.getElementById("pvHeader") || document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
   var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
-  var filterRail = document.getElementById("pvFilterRail");
   var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
   var deptDrawer = document.getElementById("pvDeptDrawer");
-  var deptTrigger = document.getElementById("pvDeptTrigger");
-  var deptDrawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
+  var drawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
   var deptList = document.getElementById("pvDeptList");
+  var filterRail = document.getElementById("pvFilterRail");
 
-  function switchDepartment(index) {
-    if (index < 0 || index >= DEPARTMENTS_DATA.length) return;
-    activeDeptIndex = index;
-    var dept = DEPARTMENTS_DATA[index];
-
-    subnavLinks.forEach(function(link, idx) {
-      var isActive = idx === index;
-      link.classList.toggle("active", isActive);
-      link.setAttribute("aria-selected", isActive ? "true" : "false");
-    });
-
-    deptPanels.forEach(function(panel) {
-      var isActive = panel.id === dept.id;
-      panel.classList.toggle("active", isActive);
-    });
-
-    if (deptTriggerLabel) {
-      deptTriggerLabel.textContent = dept.name;
-    }
-
-    renderMobileFilterRail(dept);
-
-    // Scroll smoothly to department if desktop navigation clicked
-    var targetSec = document.getElementById(dept.id);
-    if (targetSec) {
-      var offset = targetSec.getBoundingClientRect().top + window.pageYOffset - 110;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }
-  }
-
-  function renderMobileFilterRail(dept) {
-    if (!filterRail) return;
-    filterRail.innerHTML = "";
-    dept.pills.forEach(function(pill, idx) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "pv-rail-pill" + (idx === 0 ? " active" : "");
-      btn.textContent = pill.label;
-      btn.setAttribute("data-filter", pill.filter);
-      btn.addEventListener("click", function() {
-        filterRail.querySelectorAll(".pv-rail-pill").forEach(function(p) { p.classList.remove("active"); });
-        btn.classList.add("active");
-        applyCategoryFilter(dept.id, pill.filter);
-      });
-      filterRail.appendChild(btn);
-    });
-  }
-
-  function applyCategoryFilter(deptId, category) {
-    var panel = document.getElementById(deptId);
-    if (!panel) return;
-
-    var pills = panel.querySelectorAll(".pv-menu-pill");
-    pills.forEach(function(pill) {
-      var isActive = pill.getAttribute("data-filter") === category;
-      pill.classList.toggle("active", isActive);
-      pill.setAttribute("aria-selected", isActive ? "true" : "false");
-    });
-
-    var rows = panel.querySelectorAll(".pv-menu-row");
-    rows.forEach(function(row) {
-      var match = row.getAttribute("data-category") === category;
-      row.style.display = match ? "flex" : "none";
-    });
-  }
-
-  // Hook desktop subnav links
-  subnavLinks.forEach(function(link, index) {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      switchDepartment(index);
-    });
-  });
-
-  // Hook in-page category pills
-  deptPanels.forEach(function(panel) {
-    var pills = panel.querySelectorAll(".pv-menu-pill");
-    pills.forEach(function(pill) {
-      pill.addEventListener("click", function() {
-        var cat = pill.getAttribute("data-filter");
-        applyCategoryFilter(panel.id, cat);
-        // Sync mobile rail
-        if (filterRail) {
-          filterRail.querySelectorAll(".pv-rail-pill").forEach(function(r) {
-            r.classList.toggle("active", r.getAttribute("data-filter") === cat);
-          });
-        }
-      });
-    });
-  });
-
-  // Mobile Drawer sheet interactions
-  function openDeptDrawer() {
-    if (!deptDrawerBackdrop || !deptDrawer) return;
-    deptDrawerBackdrop.classList.add("active");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "false");
-    deptDrawer.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeDeptDrawer() {
-    if (!deptDrawerBackdrop || !deptDrawer) return;
-    deptDrawerBackdrop.classList.remove("active");
-    deptDrawerBackdrop.setAttribute("aria-hidden", "true");
-    deptDrawer.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-  if (deptTrigger) {
-    deptTrigger.addEventListener("click", openDeptDrawer);
-  }
-  if (deptDrawerCloseBtn) {
-    deptDrawerCloseBtn.addEventListener("click", closeDeptDrawer);
-  }
-  if (deptDrawerBackdrop) {
-    deptDrawerBackdrop.addEventListener("click", function(e) {
-      if (e.target === deptDrawerBackdrop) closeDeptDrawer();
-    });
-  }
-
-  // Populate drawer list
-  if (deptList) {
-    deptList.innerHTML = "";
-    DEPARTMENTS_DATA.forEach(function(dept, idx) {
-      var item = document.createElement("div");
-      item.className = "pv-drawer-item" + (idx === 0 ? " active" : "");
-      item.innerHTML = '<div class="pv-drawer-item-title">' + dept.name + '</div><div class="pv-drawer-item-desc">' + dept.title + '</div>';
-      item.addEventListener("click", function() {
-        deptList.querySelectorAll(".pv-drawer-item").forEach(function(it) { it.classList.remove("active"); });
-        item.classList.add("active");
-        closeDeptDrawer();
-        switchDepartment(idx);
-      });
-      deptList.appendChild(item);
-    });
-  }
-
-  // Initial mobile filter rail render
-  renderMobileFilterRail(DEPARTMENTS_DATA[0]);
-
-  /* 3. PRODUCT DETAIL BOTTOM SHEET MODAL CONTROLLER */
-  var modalBackdrop = document.getElementById("pvModalBackdrop");
-  var modalCard = document.getElementById("pvModalCard");
-  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
-  var modalProductTitle = document.getElementById("modalProductTitle");
-  var modalProductBadge = document.getElementById("modalProductBadge");
-  var modalProductImg = document.getElementById("modalProductImg");
-  var modalProductDesc = document.getElementById("modalProductDesc");
-  var modalSizeChips = document.getElementById("modalSizeChips");
-  var modalSpecStandard = document.getElementById("modalSpecStandard");
-  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
-  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
-  var modalSpecMixing = document.getElementById("modalSpecMixing");
-  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
-  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
-  var modalAccordions = document.getElementById("modalAccordions");
-  var modalWaBtn = document.getElementById("modalWaBtn");
-  var modalShareBtn = document.getElementById("modalShareBtn");
-  var modalShareText = document.getElementById("modalShareText");
-
+  var currentActiveTab = "kalekimProductCatalog";
   var currentProduct = null;
   var selectedSize = "";
 
-  function openProductModal(productId) {
-    var prod = KALEKIM_PRODUCTS_DATA.find(function(p) { return p.id === productId; });
-    if (!prod) return;
-    currentProduct = prod;
+  var panels = {
+    "kalekimProductCatalog": document.getElementById("kalekimProductCatalog"),
+    "kalekimWaterproofSection": document.getElementById("kalekimWaterproofSection"),
+    "kalekimThermalSection": document.getElementById("kalekimThermalSection"),
+    "kalekimRepairSection": document.getElementById("kalekimRepairSection"),
+    "kalekimFloorSection": document.getElementById("kalekimFloorSection"),
+    "kalekimPaintSection": document.getElementById("kalekimPaintSection")
+  };
 
-    if (modalProductTitle) modalProductTitle.textContent = prod.name;
-    if (modalProductBadge) modalProductBadge.textContent = prod.badge;
-    if (modalProductImg) {
-      modalProductImg.src = prod.thumb;
-      modalProductImg.alt = prod.name;
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
     }
-    if (modalProductDesc) modalProductDesc.textContent = prod.desc;
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
 
-    // Spec gauges
-    if (modalSpecStandard) modalSpecStandard.textContent = prod.specs.standard;
-    if (modalSpecConsumption) modalSpecConsumption.textContent = prod.specs.consumption;
-    if (modalSpecPackaging) modalSpecPackaging.textContent = prod.specs.packaging;
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
 
-    // Specs table
-    if (modalSpecMixing) modalSpecMixing.textContent = prod.specs.mixingRatio;
-    if (modalSpecPotLife) modalSpecPotLife.textContent = prod.specs.potLife;
-    if (modalSpecLogistics) modalSpecLogistics.textContent = prod.specs.logistics;
-
-    // Size chips
-    if (modalSizeChips) {
-      modalSizeChips.innerHTML = "";
-      selectedSize = prod.sizes[0] || "25 kg Kraft Torba";
-      prod.sizes.forEach(function(sz, idx) {
-        var chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
-        chip.textContent = sz;
-        chip.addEventListener("click", function() {
-          modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) { c.classList.remove("active"); });
-          chip.classList.add("active");
-          selectedSize = sz;
-          updateWhatsAppLink();
-        });
-        modalSizeChips.appendChild(chip);
-      });
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
     }
 
-    // Accordions
-    if (modalAccordions) {
-      modalAccordions.innerHTML = "";
-      if (prod.accordions && prod.accordions.length > 0) {
-        prod.accordions.forEach(function(acc) {
-          var details = document.createElement("details");
-          details.className = "pv-modal-acc-item";
-          details.innerHTML = '<summary class="pv-modal-acc-summary"><span>' + acc.title + '</span><svg class="pv-acc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></summary><div class="pv-modal-acc-content"><p>' + acc.body + '</p></div>';
-          modalAccordions.appendChild(details);
-        });
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
       }
-      // Add official TDS link accordion
-      if (prod.tds) {
-        var tdsAcc = document.createElement("div");
-        tdsAcc.className = "pv-tds-action-wrap";
-        tdsAcc.style.marginTop = "14px";
-        tdsAcc.innerHTML = '<a href="' + prod.tds + '" target="_blank" rel="noopener" class="pv-btn-tds-full"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span>Resmi Kalekim Teknik Bilgi Föyü (TDS) Görüntüle</span></a>';
-        modalAccordions.appendChild(tdsAcc);
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
       }
     }
-
-    updateWhatsAppLink();
-
-    if (modalBackdrop && modalCard) {
-      modalBackdrop.classList.add("active");
-      modalBackdrop.setAttribute("aria-hidden", "false");
-      modalCard.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
   }
 
-  function updateWhatsAppLink() {
-    if (!modalWaBtn || !currentProduct) return;
-    var msg = "Merhaba, Kalekim yetkili bayinizden " + currentProduct.name + " (" + selectedSize + ") için güncel palet/şantiye fiyatı ve stok durumu öğrenmek istiyorum.";
-    modalWaBtn.href = "https://wa.me/905323844497?text=" + encodeURIComponent(msg);
-  }
-
-  function closeProductModal() {
-    if (!modalBackdrop || !modalCard) return;
-    modalBackdrop.classList.remove("active");
-    modalBackdrop.setAttribute("aria-hidden", "true");
-    modalCard.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeProductModal);
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener("click", function(e) {
-      if (e.target === modalBackdrop) closeProductModal();
+  if (header && window.MutationObserver) {
+    var headerObserver = new MutationObserver(function() {
+      syncSubnavPin();
     });
+    headerObserver.observe(header, { attributes: true, attributeFilter: ["class"] });
   }
 
-  // Hook all .pv-menu-row click & Enter key
-  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
-    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
-    row.addEventListener("click", function() { openProductModal(pid); });
-    row.addEventListener("keydown", function(e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openProductModal(pid);
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  }, { passive: true });
+
+  window.addEventListener("load", function() {
+    initialSubnavTop = getSubnavOrigin();
+    syncSubnavPin();
+  });
+
+  function switchTab(tabId) {
+    if (!panels[tabId]) return;
+    currentActiveTab = tabId;
+
+    subnavLinks.forEach(function(link) {
+      var match = (link.getAttribute("data-target") === tabId);
+      link.classList.toggle("active", match);
+      link.setAttribute("aria-selected", match ? "true" : "false");
+    });
+
+    Object.keys(panels).forEach(function(k) {
+      if (panels[k]) {
+        if (k === tabId) {
+          panels[k].style.display = "";
+          panels[k].classList.add("active");
+        } else {
+          panels[k].style.display = "none";
+          panels[k].classList.remove("active");
+        }
+      }
+    });
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === tabId; });
+    if (dept && deptTriggerLabel) {
+      deptTriggerLabel.textContent = dept.short;
+    }
+
+    renderDeptDrawer(tabId);
+    syncMobileFilterRail(tabId);
+  }
+
+  subnavLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      var target = link.getAttribute("data-target");
+      switchTab(target);
+      var origin = getSubnavOrigin();
+      if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+        window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
       }
     });
   });
 
-  // Share button copy handler
+  function renderDeptDrawer(activeId) {
+    if (!deptList) return;
+    deptList.innerHTML = "";
+    DEPARTMENTS_DATA.forEach(function(d) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      var isSelected = (d.id === activeId);
+      btn.className = "pv-drawer-item" + (isSelected ? " is-selected" : "");
+      btn.innerHTML = 
+        '<div class="pv-drawer-item-left">' +
+          '<div class="pv-drawer-icon-box" aria-hidden="true">' + d.icon + '</div>' +
+          '<div class="pv-drawer-text-stack">' +
+            '<span class="pv-drawer-item-title">' + d.short + '</span>' +
+            '<span class="pv-drawer-item-sub">' + d.sub + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pv-drawer-item-right" aria-hidden="true">' +
+          '<svg class="pv-drawer-item-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+        '</div>';
+
+      btn.addEventListener("click", function() {
+        switchTab(d.id);
+        closeDeptDrawer();
+        var origin = getSubnavOrigin();
+        if ((window.pageYOffset || document.documentElement.scrollTop) > origin) {
+          window.scrollTo({ top: origin - getHeaderHeight(), behavior: "smooth" });
+        }
+      });
+      deptList.appendChild(btn);
+    });
+  }
+
+  function syncMobileFilterRail(activeId) {
+    if (!filterRail) return;
+    filterRail.innerHTML = "";
+
+    var dept = DEPARTMENTS_DATA.find(function(d) { return d.id === activeId; }) || DEPARTMENTS_DATA[0];
+    var origContainer = document.getElementById(dept.pillsId);
+    if (!origContainer) return;
+
+    var origPills = origContainer.querySelectorAll(".pv-menu-pill");
+    origPills.forEach(function(origBtn) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.role = "tab";
+      var isActive = origBtn.classList.contains("active");
+      chip.className = "pv-filter-chip" + (isActive ? " active" : "");
+      chip.setAttribute("aria-selected", isActive ? "true" : "false");
+      chip.innerHTML = origBtn.innerHTML;
+
+      chip.addEventListener("click", function(e) {
+        e.preventDefault();
+        origBtn.click();
+        filterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+        chip.classList.add("active");
+        chip.setAttribute("aria-selected", "true");
+        if (typeof chip.scrollIntoView === "function") {
+          chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        }
+      });
+
+      filterRail.appendChild(chip);
+    });
+  }
+
+  function openDeptDrawer() {
+    if (window.PervanSheet) {
+      window.PervanSheet.open(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.add("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "false");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "true");
+  }
+
+  function closeDeptDrawer() {
+    if (window.PervanSheet) {
+      window.PervanSheet.close(deptDrawerBackdrop || "#pvDeptDrawerBackdrop");
+    } else if (deptDrawerBackdrop) {
+      deptDrawerBackdrop.classList.remove("is-open");
+      deptDrawerBackdrop.setAttribute("aria-hidden", "true");
+    }
+    if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  if (deptDrawerBackdrop) {
+    deptDrawerBackdrop.addEventListener("pv:sheet:close", function() {
+      if (deptTrigger) deptTrigger.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  if (deptTrigger) {
+    deptTrigger.addEventListener("click", function(e) {
+      e.stopPropagation();
+      openDeptDrawer();
+    });
+  }
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener("click", closeDeptDrawer);
+  }
+
+  function setupCategoryFiltering(pillsContainerId, listContainerId) {
+    var container = document.getElementById(pillsContainerId);
+    var list = document.getElementById(listContainerId);
+    if (!container || !list) return;
+
+    var pills = container.querySelectorAll(".pv-menu-pill");
+    var rows = list.querySelectorAll(".pv-menu-row");
+
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        var filter = pill.getAttribute("data-filter");
+        pills.forEach(function(p) {
+          p.classList.remove("active");
+          p.setAttribute("aria-selected", "false");
+        });
+        pill.classList.add("active");
+        pill.setAttribute("aria-selected", "true");
+
+        rows.forEach(function(row) {
+          var cat = row.getAttribute("data-category");
+          if (filter === "all" || cat === filter) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      });
+    });
+
+    var activePill = container.querySelector(".pv-menu-pill.active") || pills[0];
+    if (activePill) {
+      var initialFilter = activePill.getAttribute("data-filter");
+      rows.forEach(function(row) {
+        if (initialFilter !== "all" && row.getAttribute("data-category") !== initialFilter) {
+          row.style.display = "none";
+        } else {
+          row.style.display = "";
+        }
+      });
+    }
+  }
+
+  setupCategoryFiltering("kalekimProductCatalogPills", "list_kalekimProductCatalog");
+  setupCategoryFiltering("kalekimWaterproofSectionPills", "list_kalekimWaterproofSection");
+  setupCategoryFiltering("kalekimThermalSectionPills", "list_kalekimThermalSection");
+  setupCategoryFiltering("kalekimRepairSectionPills", "list_kalekimRepairSection");
+  setupCategoryFiltering("kalekimFloorSectionPills", "list_kalekimFloorSection");
+  setupCategoryFiltering("kalekimPaintSectionPills", "list_kalekimPaintSection");
+
+  // ==========================================================================
+  // ARCHITECTURAL PRODUCT DETAIL MODAL
+  // ==========================================================================
+  var modalBackdrop = document.getElementById("pvModalBackdrop");
+  var modalCard = document.getElementById("pvModalCard");
+  var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+
+  var modalProductImg = document.getElementById("modalProductImg");
+  var modalProductBadges = document.getElementById("modalProductBadges");
+  var modalProductBadge = document.getElementById("modalProductBadge");
+  var modalProductTag = document.getElementById("modalProductTag");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
+  var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductDesc = document.getElementById("modalProductDesc");
+
+  var modalPackagingSection = document.getElementById("modalPackagingSection");
+  var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
+  var modalSizeChips = document.getElementById("modalSizeChips");
+  var modalSizeTrack = document.getElementById("modalSizeTrack");
+
+  var modalSpecStandard = document.getElementById("modalSpecStandard");
+  var modalSpecPackaging = document.getElementById("modalSpecPackaging");
+  var modalSpecConsumption = document.getElementById("modalSpecConsumption");
+  var modalSpecMixing = document.getElementById("modalSpecMixing");
+  var modalSpecPotLife = document.getElementById("modalSpecPotLife");
+  var modalSpecLogistics = document.getElementById("modalSpecLogistics");
+  var modalSpecsTable = document.getElementById("modalSpecsTable");
+
+  var modalWABtn = document.getElementById("modalWABtn") || document.getElementById("modalWaBtn");
+  var modalWaBtn = document.getElementById("modalWaBtn") || document.getElementById("modalWABtn");
+  var modalAccordions = document.getElementById("modalAccordions") || document.getElementById("modalAccordionsWrap");
+  var modalAccordionsWrap = document.getElementById("modalAccordionsWrap") || document.getElementById("modalAccordions");
+
+  var isSheetDragging = false;
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var canDragFromScroll = false;
+
+  function openModal(productId) {
+    var p = KALEKIM_PRODUCTS_DATA.find(function(item) { return item.id === productId; });
+    if (!p) return;
+    currentProduct = p;
+    selectedSize = (p.sizes && p.sizes.length > 0) ? p.sizes[0] : "";
+
+    if (modalProductImg) {
+      modalProductImg.src = p.thumb;
+      modalProductImg.alt = p.name;
+    }
+    if (modalProductEyebrow) {
+      modalProductEyebrow.textContent = "KALEKİM · YAPI KİMYASALLARI";
+    }
+    if (modalProductTitle) {
+      modalProductTitle.textContent = p.name;
+    }
+    if (modalProductDesc) {
+      modalProductDesc.textContent = p.desc;
+    }
+
+    // Dynamic Badges
+    if (modalProductBadges) {
+      modalProductBadges.innerHTML = "";
+      if (p.badge) {
+        var b = document.createElement("span");
+        b.className = "pv-specimen-badge";
+        b.textContent = p.badge;
+        modalProductBadges.appendChild(b);
+      }
+      if (p.meta && p.meta.length) {
+        p.meta.forEach(function(m) {
+          var mb = document.createElement("span");
+          mb.className = "pv-specimen-badge-sub";
+          mb.textContent = m;
+          modalProductBadges.appendChild(mb);
+        });
+      }
+    } else if (modalProductBadge) {
+      modalProductBadge.textContent = p.badge || "";
+    }
+
+    // Gauge Fallbacks
+    if (modalSpecStandard) modalSpecStandard.textContent = (p.specs && p.specs.standard) ? p.specs.standard : (p.badge || "-");
+    if (modalSpecPackaging) modalSpecPackaging.textContent = (p.specs && p.specs.packaging) ? p.specs.packaging : ((p.sizes && p.sizes[0]) ? p.sizes[0] : "-");
+    if (modalSpecConsumption) modalSpecConsumption.textContent = (p.specs && p.specs.consumption) ? p.specs.consumption : "-";
+    if (modalSpecMixing) modalSpecMixing.textContent = (p.specs && p.specs.mixingRatio) ? p.specs.mixingRatio : "-";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = (p.specs && p.specs.potLife) ? p.specs.potLife : "-";
+    if (modalSpecLogistics) modalSpecLogistics.textContent = (p.specs && p.specs.logistics) ? p.specs.logistics : "Balçova Showroom & Urla Depo";
+
+    // Dynamic Specs Table
+    if (modalSpecsTable) {
+      modalSpecsTable.innerHTML = "";
+      var specLabels = {
+        standard: "Kalite & Standardı",
+        packaging: "Ambalaj & Satış Birimi",
+        consumption: "Sarfiyat Miktarı",
+        mixingRatio: "Karışım Oranı",
+        potLife: "Kap Ömrü & Priz",
+        logistics: "Lojistik & Sevk"
+      };
+      if (p.specs) {
+        for (var key in p.specs) {
+          if (p.specs.hasOwnProperty(key)) {
+            var rowEl = document.createElement("div");
+            rowEl.className = "pv-spec-row";
+            var kEl = document.createElement("span");
+            kEl.className = "pv-spec-k";
+            kEl.textContent = (specLabels[key] || key) + ":";
+            var vEl = document.createElement("span");
+            vEl.className = "pv-spec-v";
+            vEl.textContent = p.specs[key];
+            rowEl.appendChild(kEl);
+            rowEl.appendChild(vEl);
+            modalSpecsTable.appendChild(rowEl);
+          }
+        }
+      }
+    }
+
+    // Size / Packaging chips
+    if (modalSizeChips) {
+      modalSizeChips.innerHTML = "";
+      if (p.sizes && p.sizes.length > 0) {
+        if (modalPackagingSection) modalPackagingSection.style.display = "";
+        p.sizes.forEach(function(size, idx) {
+          var chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
+          chip.textContent = size;
+          chip.setAttribute("role", "radio");
+          chip.setAttribute("aria-checked", idx === 0 ? "true" : "false");
+          chip.addEventListener("click", function() {
+            modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) {
+              c.classList.remove("active");
+              c.setAttribute("aria-checked", "false");
+            });
+            chip.classList.add("active");
+            chip.setAttribute("aria-checked", "true");
+            selectedSize = size;
+            updateWhatsAppUrl();
+            if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = size;
+          });
+          modalSizeChips.appendChild(chip);
+        });
+        if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = p.sizes[0];
+      } else {
+        if (modalPackagingSection) modalPackagingSection.style.display = "none";
+      }
+    }
+
+    // Fallback Segmented Track
+    if (modalSizeTrack) {
+      modalSizeTrack.innerHTML = "";
+      if (p.sizes && p.sizes.length > 0) {
+        p.sizes.forEach(function(size, idx) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pv-segmented-btn" + (idx === 0 ? " active" : "");
+          btn.textContent = size;
+          btn.addEventListener("click", function() {
+            modalSizeTrack.querySelectorAll(".pv-segmented-btn").forEach(function(b) { b.classList.remove("active"); });
+            btn.classList.add("active");
+            selectedSize = size;
+            updateWhatsAppUrl();
+          });
+          modalSizeTrack.appendChild(btn);
+        });
+      }
+    }
+
+    // Dynamic Accordions
+    var accTarget = modalAccordions || modalAccordionsWrap;
+    if (accTarget) {
+      accTarget.innerHTML = "";
+      if (p.accordions && p.accordions.length > 0) {
+        p.accordions.forEach(function(acc, idx) {
+          var item = document.createElement("div");
+          item.className = "pv-acc-item" + (idx === 0 ? " active" : "");
+          item.innerHTML = 
+            '<button type="button" class="pv-acc-header">' +
+            '  <span>' + acc.title + '</span>' +
+            '  <span class="pv-acc-icon">+</span>' +
+            '</button>' +
+            '<div class="pv-acc-body">' + acc.body + '</div>';
+
+          item.querySelector(".pv-acc-header").addEventListener("click", function() {
+            item.classList.toggle("active");
+          });
+          accTarget.appendChild(item);
+        });
+      }
+      if (p.tds) {
+        var tdsEl = document.createElement("div");
+        tdsEl.className = "pv-tds-action-wrap";
+        tdsEl.style.marginTop = "14px";
+        tdsEl.innerHTML = '<a href="' + p.tds + '" target="_blank" rel="noopener" class="pv-btn-tds-full"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span>Resmi Kalekim Teknik Bilgi Föyü (TDS) Görüntüle</span></a>';
+        accTarget.appendChild(tdsEl);
+      }
+    }
+
+    updateWhatsAppUrl();
+
+    if (modalBackdrop) {
+      modalBackdrop.classList.add("open");
+      modalBackdrop.classList.add("is-open");
+      modalBackdrop.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    try {
+      history.replaceState({ modal: true, id: p.id }, "", "/urun/" + p.id + ".html");
+    } catch(e) {}
+  }
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
+  }
+
+  // Canonical Share Button Listener
+  var modalShareBtn = document.getElementById("modalShareBtn");
+  var modalShareText = document.getElementById("modalShareText");
   if (modalShareBtn) {
     modalShareBtn.addEventListener("click", function() {
-      if (!currentProduct) return;
-      var shareUrl = window.location.origin + window.location.pathname + "#" + currentProduct.id;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      var prod = (typeof currentProduct !== "undefined" && currentProduct) ? currentProduct : null;
+      if (!prod || !prod.id) return;
+      var shareUrl = window.location.origin + "/urun/" + prod.id + ".html";
+      var shareData = {
+        title: (prod.name || "") + " | Pervan",
+        text: (prod.name || "") + " - " + (prod.desc || prod.sub || ""),
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(shareUrl).then(function() {
-          if (modalShareText) modalShareText.textContent = "Kopyalandı!";
+          var shareIcon = modalShareBtn.querySelector(".pv-share-icon");
+          var checkIcon = modalShareBtn.querySelector(".pv-check-icon");
+          if (shareIcon) shareIcon.style.display = "none";
+          if (checkIcon) checkIcon.style.display = "inline-block";
+          if (modalShareText) modalShareText.textContent = "✓ Bağlantı Kopyalandı";
           setTimeout(function() {
+            if (shareIcon) shareIcon.style.display = "inline-block";
+            if (checkIcon) checkIcon.style.display = "none";
             if (modalShareText) modalShareText.textContent = "Paylaş";
-          }, 2000);
-        });
+          }, 2500);
+        }).catch(function() {});
       }
     });
   }
 
-  /* 4. SPOTLIGHT SEARCH (⌘K / Keyboard Shortcuts) */
-  var spotlightModal = document.getElementById("pvSpotlightModal");
+  function closeModal() {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove("open");
+    modalBackdrop.classList.remove("is-open");
+    modalBackdrop.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    currentProduct = null;
+    resetSheetStyles();
+    try {
+      history.replaceState({}, "", "/kalekim-yapi-kimyasallari.html");
+    } catch(e) {}
+  }
+
+  function updateWhatsAppUrl() {
+    if (!currentProduct) return;
+    var text = "Merhaba, Kalekim " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    text += " için Urla / Balçova depo şantiye teslimat ve güncel palet fiyat bilgisi almak istiyorum.";
+    text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
+    var waHref = "https://wa.me/905323844497?text=" + encodeURIComponent(text);
+    if (modalWABtn) modalWABtn.href = waHref;
+    if (modalWaBtn) modalWaBtn.href = waHref;
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      if (e.target === modalBackdrop) closeModal();
+    });
+  }
+
+  // Touch gesture physics for mobile bottom sheet dismissal
+  function onDragStart(e) {
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open"))) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragStartY = touch.clientY;
+    dragCurrentY = touch.clientY;
+    dragStartTime = Date.now();
+    isSheetDragging = false;
+    canDragFromScroll = (modalScrollArea && modalScrollArea.scrollTop <= 0);
+  }
+
+  function onDragMove(e) {
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open")) || !dragStartY) return;
+    var touch = e.touches ? e.touches[0] : e;
+    var deltaY = touch.clientY - dragStartY;
+    dragCurrentY = touch.clientY;
+
+    if (deltaY > 6) {
+      var isFromHeader = e.target.closest("#modalTopBar, #modalHandleZone");
+      var isFromTopScroll = canDragFromScroll && modalScrollArea && modalScrollArea.scrollTop <= 0;
+
+      if (isFromHeader || isFromTopScroll) {
+        isSheetDragging = true;
+        if (e.cancelable) e.preventDefault();
+        modalCard.style.transition = "none";
+        modalCard.style.transform = "translateY(" + deltaY + "px)";
+        var progress = Math.min(1, deltaY / 360);
+        modalBackdrop.style.opacity = (1 - progress * 0.6).toFixed(2);
+      }
+    }
+  }
+
+  function onDragEnd(e) {
+    if (!isSheetDragging) {
+      dragStartY = 0;
+      return;
+    }
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Math.max(1, Date.now() - dragStartTime);
+    var velocity = deltaY / elapsed;
+    dragStartY = 0;
+
+    if (deltaY > 110 || (deltaY > 40 && velocity > 0.45)) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      modalBackdrop.style.transition = "opacity 0.24s ease";
+      modalBackdrop.style.opacity = "0";
+      setTimeout(function() {
+        closeModal();
+      }, 240);
+    } else {
+      modalCard.style.transition = "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "translateY(0)";
+      modalBackdrop.style.transition = "opacity 0.25s ease";
+      modalBackdrop.style.opacity = "1";
+      setTimeout(resetSheetStyles, 300);
+    }
+  }
+
+  [modalHandleZone, modalTopBar, modalScrollArea].filter(Boolean).forEach(function(target) {
+    target.addEventListener("touchstart", onDragStart, { passive: true });
+    target.addEventListener("touchmove", onDragMove, { passive: false });
+    target.addEventListener("touchend", onDragEnd, { passive: true });
+    target.addEventListener("touchcancel", onDragEnd, { passive: true });
+  });
+
+  document.querySelectorAll(".pv-menu-row").forEach(function(row) {
+    var pid = row.getAttribute("data-product-id") || row.getAttribute("data-id");
+    row.addEventListener("click", function(e) {
+      if (e.target.closest("a")) return;
+      if (pid) openModal(pid);
+    });
+    row.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (pid) openModal(pid);
+      }
+    });
+  });
+
+  // ==========================================================================
+  // SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 36 Kalekim Ürünü)
+  // ==========================================================================
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop");
+  var spotlightTrigger = document.getElementById("pvSubnavSearchBtn");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn");
   var spotlightInput = document.getElementById("pvSpotlightInput");
-  var spotlightClose = document.getElementById("pvSpotlightClose");
   var spotlightResults = document.getElementById("pvSpotlightResults");
-  var subnavSearchBtn = document.getElementById("pvSubnavSearchBtn");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
+  var spotlightSelectedIdx = -1;
+
+  function normalizeTr(str) {
+    if (!str) return "";
+    return str
+      .toString()
+      .toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/i̇/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/[^a-z0-9]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getProductDomain(deptId) {
+    var d = DEPARTMENTS_DATA.find(function(item) { return item.id === deptId; });
+    return d ? d.short : "Kalekim";
+  }
 
   function openSpotlight() {
-    if (!spotlightModal || !spotlightInput) return;
-    spotlightModal.classList.add("active");
-    spotlightModal.setAttribute("aria-hidden", "false");
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    spotlightInput.value = "";
-    renderSpotlightResults("");
-    setTimeout(function() { spotlightInput.focus(); }, 50);
+    if (spotlightInput) {
+      spotlightInput.value = "";
+      renderSpotlightInitial();
+      setTimeout(function() { spotlightInput.focus(); }, 60);
+    }
   }
 
   function closeSpotlight() {
-    if (!spotlightModal) return;
-    spotlightModal.classList.remove("active");
-    spotlightModal.setAttribute("aria-hidden", "true");
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
-  function renderSpotlightResults(query) {
+  function renderSpotlightInitial() {
     if (!spotlightResults) return;
     spotlightResults.innerHTML = "";
-    var cleanQ = query.trim().toLowerCase();
+    spotlightSelectedIdx = -1;
 
-    var matches = KALEKIM_PRODUCTS_DATA.filter(function(p) {
-      if (!cleanQ) return true;
-      return p.name.toLowerCase().includes(cleanQ) ||
-             p.desc.toLowerCase().includes(cleanQ) ||
-             p.specs.standard.toLowerCase().includes(cleanQ) ||
-             p.id.toLowerCase().includes(cleanQ);
+    var featured = KALEKIM_PRODUCTS_DATA.slice(0, 8);
+    var heading = document.createElement("div");
+    heading.className = "pv-spotlight-group-title";
+    heading.textContent = "Öne Çıkan Kalekim Harç, Derz & İzolasyon Ürünleri";
+    spotlightResults.appendChild(heading);
+
+    featured.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
     });
 
-    if (matches.length === 0) {
-      spotlightResults.innerHTML = '<div class="pv-spotlight-empty">Aramanıza uygun Kalekim ürünü bulunamadı.</div>';
+    if (spotlightCount) {
+      spotlightCount.textContent = KALEKIM_PRODUCTS_DATA.length + " Ürün Kataloğu";
+    }
+    attachSpotlightItemEvents();
+  }
+
+  function createSpotlightItemEl(item) {
+    var div = document.createElement("div");
+    div.className = "pv-spotlight-item";
+    div.setAttribute("data-product-id", item.id);
+    div.innerHTML = [
+      '<div class="pv-spotlight-item-main">',
+      '  <div class="pv-spotlight-item-badge">' + (item.badge || "Kalekim Standart") + '</div>',
+      '  <div class="pv-spotlight-item-title">' + item.name + '</div>',
+      '  <div class="pv-spotlight-item-desc">' + item.desc + '</div>',
+      '</div>',
+      '<div class="pv-spotlight-item-meta">',
+      '  <span class="pv-spotlight-tag">' + getProductDomain(item.deptId) + '</span>',
+      '  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+      '</div>'
+    ].join("");
+    return div;
+  }
+
+  function performSpotlightSearch(query) {
+    if (!spotlightResults) return;
+    var normQ = normalizeTr(query);
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    if (!normQ) {
+      renderSpotlightInitial();
       return;
     }
 
-    matches.slice(0, 10).forEach(function(prod) {
-      var item = document.createElement("div");
-      item.className = "pv-spotlight-item";
-      item.innerHTML = '<img src="' + prod.thumb + '" alt="' + prod.name + '" class="pv-spotlight-thumb" /><div class="pv-spotlight-info"><div class="pv-spotlight-name">' + prod.name + '</div><div class="pv-spotlight-desc">' + prod.desc + '</div></div><span class="pv-spotlight-badge">' + prod.badge + '</span>';
-      item.addEventListener("click", function() {
-        closeSpotlight();
-        openProductModal(prod.id);
+    var tokens = normQ.split(" ").filter(Boolean);
+    var matches = KALEKIM_PRODUCTS_DATA.filter(function(item) {
+      var target = normalizeTr(item.name + " " + item.desc + " " + item.badge + " " + item.tag + " " + (item.meta ? item.meta.join(" ") : ""));
+      return tokens.every(function(t) { return target.indexOf(t) !== -1; });
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Sonuç Bulundu";
+    }
+
+    if (!matches.length) {
+      var empty = document.createElement("div");
+      empty.className = "pv-spotlight-empty";
+      empty.innerHTML = [
+        '<div class="pv-spotlight-empty-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>',
+        '<p class="pv-spotlight-empty-title">"' + query + '" için eşleşen Kalekim ürünü bulunamadı</p>',
+        '<p class="pv-spotlight-empty-sub">Farklı bir arama terimi deneyin veya WhatsApp hattımızdan direkt sorun.</p>'
+      ].join("");
+      spotlightResults.appendChild(empty);
+      return;
+    }
+
+    matches.forEach(function(item) {
+      spotlightResults.appendChild(createSpotlightItemEl(item));
+    });
+    attachSpotlightItemEvents();
+  }
+
+  function highlightSpotlightItem(items, idx) {
+    items.forEach(function(it) { it.classList.remove("selected"); });
+    if (idx >= 0 && idx < items.length) {
+      items[idx].classList.add("selected");
+      items[idx].scrollIntoView({ block: "nearest" });
+      spotlightSelectedIdx = idx;
+    } else {
+      spotlightSelectedIdx = -1;
+    }
+  }
+
+  function attachSpotlightItemEvents() {
+    if (!spotlightResults) return;
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
       });
-      spotlightResults.appendChild(item);
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-product-id");
+        closeSpotlight();
+        var p = KALEKIM_PRODUCTS_DATA.find(function(it) { return it.id === pid; });
+        if (p && p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      });
     });
   }
 
-  if (subnavSearchBtn) subnavSearchBtn.addEventListener("click", openSpotlight);
-  if (spotlightClose) spotlightClose.addEventListener("click", closeSpotlight);
-  if (spotlightModal) {
-    spotlightModal.addEventListener("click", function(e) {
-      if (e.target === spotlightModal) closeSpotlight();
+  if (spotlightTrigger) spotlightTrigger.addEventListener("click", openSpotlight);
+  if (spotlightCloseBtn) spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
     });
   }
+
   if (spotlightInput) {
+    var spotlightDebounce;
     spotlightInput.addEventListener("input", function() {
-      renderSpotlightResults(spotlightInput.value);
+      clearTimeout(spotlightDebounce);
+      spotlightDebounce = setTimeout(function() {
+        performSpotlightSearch(spotlightInput.value);
+      }, 90);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx + 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx - 1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (items.length && spotlightSelectedIdx >= 0 && items[spotlightSelectedIdx]) {
+          items[spotlightSelectedIdx].click();
+        }
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeSpotlight();
+      }
     });
   }
 
-  window.addEventListener("keydown", function(e) {
-    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+  // Global Keydown (Escape & ⌘K)
+  document.addEventListener("keydown", function(e) {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
       e.preventDefault();
-      if (spotlightModal && spotlightModal.classList.contains("active")) {
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
         closeSpotlight();
       } else {
         openSpotlight();
       }
     }
     if (e.key === "Escape") {
-      closeSpotlight();
-      closeProductModal();
-      closeDeptDrawer();
+      if (spotlightBackdrop && spotlightBackdrop.classList.contains("open")) {
+        closeSpotlight();
+      } else if (modalBackdrop && (modalBackdrop.classList.contains("is-open") || modalBackdrop.classList.contains("open"))) {
+        closeModal();
+      } else if (deptDrawerBackdrop && deptDrawerBackdrop.classList.contains("is-open")) {
+        closeDeptDrawer();
+      }
     }
   });
 
-  // Check URL hash for direct product opening
-  if (window.location.hash) {
-    var rawHash = window.location.hash.substring(1);
-    var targetProduct = KALEKIM_PRODUCTS_DATA.find(function(p) { return p.id === rawHash; });
-    if (targetProduct) {
-      setTimeout(function() { openProductModal(targetProduct.id); }, 300);
+  function checkDeepLink() {
+    var params = new URLSearchParams(window.location.search);
+    var pid = params.get("item") || params.get("product") || params.get("id");
+    if (!pid && window.location.hash && window.location.hash.indexOf("#urun-") === 0) {
+      pid = window.location.hash.replace("#urun-", "");
+    }
+    if (!pid && window.location.hash) {
+      var candidate = window.location.hash.replace("#", "");
+      if (KALEKIM_PRODUCTS_DATA.some(function(item) { return item.id === candidate; })) {
+        pid = candidate;
+      }
+    }
+    if (pid) {
+      var p = KALEKIM_PRODUCTS_DATA.find(function(item) { return item.id === pid; });
+      if (p) {
+        if (p.deptId && p.deptId !== currentActiveTab) {
+          switchTab(p.deptId);
+        }
+        openModal(pid);
+      }
     }
   }
+
+  switchTab("kalekimProductCatalog");
+  checkDeepLink();
+  window.addEventListener("popstate", checkDeepLink);
+
 })();

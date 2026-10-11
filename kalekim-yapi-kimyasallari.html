@@ -112,14 +112,30 @@
 
 <body class="pv-editorial-theme">
 
-<!-- GLOBAL PERVAN FIXED NAVIGATION BAR -->
-<header id="header" class="header">
- <nav class="navigation" id="navigation" aria-label="Ana Navigasyon">
-  <div class="navigation-inner">
+<!-- PERVAN NAVBAR -->
+<header id="pvHeader">
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
    <a class="navbar-logo" href="index.html">Pervan</a>
 
-   <div class="navigation-menu" id="navigation-menu">
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
     <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323844497?text=Merhaba,%20Kalekim%20ürünleri%20fiyat%20ve%20stok%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Fiyat &amp; Stok Sor</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+902322784340" class="navbar-item menu-item">
+       <span class="navbar-title">Bizi Arayın</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
+
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
      <div class="navbar-menu">
 
       <!-- 01: Yetkili Bayilikler -->
@@ -127,7 +143,7 @@
        <div class="navbar-title">Yetkili Bayilikler</div>
        <div class="arrow"></div>
        <div class="navbar-dropdown">
-        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
         <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
         <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
         <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
@@ -146,7 +162,7 @@
        <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
        <div class="arrow"></div>
        <div class="navbar-dropdown">
-        <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
         <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
         <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
         <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
@@ -348,7 +364,7 @@
  <div class="pv-container pv-subnav-inner">
   <div class="pv-subnav-brand">
    <img src="assets/kalekim-logo.svg" alt="Kalekim" class="pv-subnav-logo" width="110" height="24" loading="lazy" decoding="async" />
-   <span class="pv-subnav-tag">Yapı Kimyasalları</span>
+   <span class="pv-subnav-brand-title">Yapı Kimyasalları</span>
   </div>
   
   <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
@@ -836,7 +852,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">1057 Foamtech EPS & XPS Isı Yalıtım Levha Yapıştırıcısı</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Isı Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Isı Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Isı Yalıtım Levhaları İçin Çimento Esaslı Güçlü Yapıştırıcı</div>
      <div class="pv-menu-meta-chips">
@@ -866,7 +882,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">1169 Mantotech Taşyünü Isı Yalıtım Yapıştırıcısı</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Taşyünü Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Taşyünü Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Taşyünü ve Ağır Yalıtım Levhaları İçin Güçlendirilmiş Harç</div>
      <div class="pv-menu-meta-chips">
@@ -896,7 +912,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">4042 Technoplast Micro 7 Isı Yalıtım Sıvası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Elyaflı Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Elyaflı Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Elyaflı ve Çatlamaya Dirençli İnce Tane Isı Yalıtım Sıvası</div>
      <div class="pv-menu-meta-chips">
@@ -926,7 +942,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">4043 Technoplast Maxi Extra Isı Yalıtım Sıvası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Yüksek Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Yüksek Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Yüksek Mukavemetli Elyaflı Kalın Isı Yalıtım Sıvası</div>
      <div class="pv-menu-meta-chips">
@@ -956,7 +972,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">4081 Minart Silver 100 Tane Dokulu Mineral Sıva</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Dekoratif Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Dekoratif Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Dekoratif Dış Cephe Kaplaması Tane Dokulu 1.0 mm</div>
      <div class="pv-menu-meta-chips">
@@ -986,7 +1002,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">4084 Minart Dekor 300 Çizgi Dokulu Mineral Sıva</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-green">Dekoratif Kalekim</span>
+      <span class="pv-menu-tag tag-emerald">Dekoratif Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Dekoratif Çizgi Dokulu Cephe Kaplaması 3.0 mm</div>
      <div class="pv-menu-meta-chips">
@@ -1248,7 +1264,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 132 Kendiliğinden Yayılan Zemin Şapı (2-10 mm)</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Çimento Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Çimento Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Çimento Esaslı Pürüzsüz Kendiliğinden Yayılan Tesviye Şapı</div>
      <div class="pv-menu-meta-chips">
@@ -1278,7 +1294,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 142 Ağır Yük Kendiliğinden Yayılan Şap (3-20 mm)</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Yoğun Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Yoğun Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Yoğun Yaya ve Tekerlekli Araç Trafiğine Dayanıklı Tesviye Şapı</div>
      <div class="pv-menu-meta-chips">
@@ -1308,7 +1324,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 152 Hızlı Priz Alan Zemin Şapı</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Kısa Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Kısa Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Kısa Sürede Kaplamaya Açılan Hızlı Kürlenen Şap</div>
      <div class="pv-menu-meta-chips">
@@ -1338,7 +1354,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 22 CW Yüzey Sertleştirici (Korunt Agregalı)</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Ağır Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Ağır Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Ağır Sanayi ve Depo Zeminleri İçin Koruntlu Yüzey Sertleştirici</div>
      <div class="pv-menu-meta-chips">
@@ -1368,7 +1384,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 32 DS Yüzey Sertleştirici (Kuvars Agregalı)</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Otopark Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Otopark Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Otopark ve Ticari Alan Zeminleri İçin Kuvarslı Sertleştirici</div>
      <div class="pv-menu-meta-chips">
@@ -1398,7 +1414,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Tecnica 242 SL Solventsiz Epoksi Zemin Kaplaması</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-slate">Hijyenik Kalekim</span>
+      <span class="pv-menu-tag tag-blue">Hijyenik Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Hijyenik ve Kimyasal Dirençli Kendiliğinden Yayılan Epoksi</div>
      <div class="pv-menu-meta-chips">
@@ -1454,7 +1470,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Bi'Boya Silikonlu Düz Dış Cephe Boyası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Yüksek Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Yüksek Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Yüksek Su İtici ve Nefes Alan Silikonlu Dış Cephe Boyası</div>
      <div class="pv-menu-meta-chips">
@@ -1484,7 +1500,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Bi'Boya Elastik Comfort Çatlak Köprüleyen Boya</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Dış Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Dış Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Dış Cephe Kılcal Çatlaklarını Köprüleyen Elastik Kaplama</div>
      <div class="pv-menu-meta-chips">
@@ -1514,7 +1530,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Bi'Boya Saf Akrilik Comfort Dış Cephe Boyası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Zorlu Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Zorlu Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Zorlu Ege Sahil Şartlarına Dayanıklı Saf Akrilik Boya</div>
      <div class="pv-menu-meta-chips">
@@ -1544,7 +1560,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Bi'Boya İpek Mat Comfort İç Cephe Boyası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Leke Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Leke Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Leke Tutmayan Tam Silinebilir İpek Mat İç Mekan Duvar Boyası</div>
      <div class="pv-menu-meta-chips">
@@ -1574,7 +1590,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">Bi'Boya Mat Comfort Kokusuz İç Cephe Boyası</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Yüksek Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Yüksek Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Yüksek Örtücülüğe Sahip Mat Bitişli Kokusuz Duvar Boyası</div>
      <div class="pv-menu-meta-chips">
@@ -1604,7 +1620,7 @@
      <div class="pv-menu-title-row">
       <span class="pv-menu-name">4505 Kalekim Akrilik Emülsiyon Esaslı Astar</span>
       <span class="pv-menu-dots">........................................</span>
-      <span class="pv-menu-tag tag-teal">Gözenekli Kalekim</span>
+      <span class="pv-menu-tag tag-cyan">Gözenekli Kalekim</span>
      </div>
      <div class="pv-menu-desc-line">Gözenekli Yüzeylerde Emişi Dengeleyen Genel Amaçlı Astar</div>
      <div class="pv-menu-meta-chips">
@@ -1632,14 +1648,14 @@
 <!-- ==========================================================================
    PERVAN DISTRIBUTION & SHOWROOM HUBS
    ========================================================================== -->
-<section class="pv-hubs-showcase" id="pvHubsShowcase" aria-label="Pervan Dağıtım Merkezleri">
+<section class="pv-hubs-section" id="pvHubsSection" aria-label="Pervan Dağıtım Merkezleri">
  <div class="pv-container">
   <div class="pv-hubs-grid">
    
    <!-- Hub Card 1: Balçova Showroom -->
    <div class="pv-hub-card">
     <div class="pv-hub-header">
-     <div class="pv-hub-badge">Balçova Showroom &amp; Perakende Satış</div>
+     <div class="pv-hub-tag">Balçova Showroom &amp; Perakende Satış</div>
      <h3 class="pv-hub-title">Pervan Balçova Merkez</h3>
      <p class="pv-hub-desc">Eğitim Mah. Dalya 1 Sk. No:5/A, Balçova / İzmir</p>
     </div>
@@ -1658,7 +1674,7 @@
    <!-- Hub Card 2: Urla Lojistik Depo -->
    <div class="pv-hub-card">
     <div class="pv-hub-header">
-     <div class="pv-hub-badge">Urla Ana Depo &amp; Paletli Şantiye Sevkiyatı</div>
+     <div class="pv-hub-tag">Urla Ana Depo &amp; Paletli Şantiye Sevkiyatı</div>
      <h3 class="pv-hub-title">Urla Bölge Lojistik Merkezi</h3>
      <p class="pv-hub-desc">Kalabak Mevkii, Urla / İzmir &bull; Çeşme, Urla ve Yarımada Şantiyelerine Vinçli Teslimat</p>
     </div>
@@ -1817,98 +1833,103 @@
 </div>
 
 <!-- ==========================================================================
-   SPOTLIGHT SEARCH MODAL (⌘K / Keyboard Shortcuts)
+   GLOBAL SPOTLIGHT COMMAND PALETTE (⌘K / 36 Kalekim Ürünü)
    ========================================================================== -->
-<div class="pv-spotlight-backdrop" id="pvSpotlightModal" aria-hidden="true">
- <div class="pv-spotlight-card" role="dialog" aria-modal="true" aria-label="Kalekim Ürün Arama">
-  <div class="pv-spotlight-search-bar">
-   <svg class="pv-spotlight-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-   </svg>
-   <input type="search" id="pvSpotlightInput" class="pv-spotlight-input" placeholder="Ürün adı, kod veya kullanım alanı arayın (Örn: 1051, İzolatex, Ultrafuga, TamirArt)..." autocomplete="off" spellcheck="false" />
-   <button type="button" class="pv-spotlight-close" id="pvSpotlightClose" aria-label="Kapat">ESC</button>
+<div class="pv-spotlight-backdrop" id="pvSpotlightBackdrop" aria-hidden="true">
+ <div class="pv-spotlight-dialog" role="dialog" aria-modal="true" aria-label="Kalekim Ürün Arama">
+  <div class="pv-spotlight-header">
+   <svg class="pv-spotlight-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+   <input type="search" id="pvSpotlightInput" class="pv-spotlight-input" placeholder="36 ürün arasında ara (1051, İzolatex, Technoflex, Ultrafuga, TamirArt...)" autocomplete="off" spellcheck="false" aria-label="Kalekim Ürün Ara" />
+   <span class="pv-spotlight-esc-chip">ESC</span>
+   <button type="button" class="pv-spotlight-close-btn" id="pvSpotlightCloseBtn" aria-label="Aramayı Kapat">✕</button>
   </div>
-  <div class="pv-spotlight-results" id="pvSpotlightResults" role="listbox">
-   <!-- Injected dynamically via JS -->
+  <div class="pv-spotlight-results" id="pvSpotlightResults">
+   <div class="pv-spotlight-hint">
+    <span>1051 Kalekim, İzolatex su yalıtımı, Technoflex esnek yapıştırıcı veya Bi'Boya ürünlerini arayabilirsiniz.</span>
+   </div>
+  </div>
+  <div class="pv-spotlight-footer">
+   <span class="pv-spotlight-footer-stat" id="pvSpotlightCount">36 Ürün Yayında</span>
+   <div class="pv-spotlight-footer-keys">
+    <span><kbd>↑</kbd><kbd>↓</kbd> Gezin</span>
+    <span><kbd>↵</kbd> İncele</span>
+    <span><kbd>ESC</kbd> Çık</span>
+   </div>
   </div>
  </div>
 </div>
 
-<!-- ==========================================================================
-   CANONICAL GLOBAL 4-COLUMN FOOTER
-   ========================================================================== -->
-<footer class="footer-sizer" id="footerSizer">
- <div class="pv-container footer-content-wrap">
-  <div class="footer-grid">
-   
-   <div class="footer-col">
+<!-- PERVAN FOOTER (NEWSLETTER + REGIONS + 4-COLUMN NAV) -->
+<footer class="footer">
+ <div class="footer-container">
+  <div class="footer-sizer">
+   <div>
     <a class="footer-logo" title="PERVAN" href="index.html">Pervan</a>
-    <p class="footer-brand-desc">1998'den bu yana İzmir ve Yarımada genelinde yetkili yapı kimyasalları, boya, altyapı tesisat tedariği ve anahtar teslim mimari taahhüt çözümleri.</p>
-    <div class="footer-meta-badges">
-     <span class="footer-meta-pill">Yetkili Kalekim Bayisi</span>
-     <span class="footer-meta-pill">Urla Paletli Dağıtım</span>
-    </div>
+    <div class="copyright">© 1998 – 2026 Pervan Yapı Market &amp; Taahhüt. Balçova / İzmir</div>
    </div>
+   
+   <div class="menu-container">
+    <nav class="navbar" role="navigation">
+     
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yetkili Bayilikler</span>
+      <div class="navbar-dropdown">
+       <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
+       <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
+       <a href="tek-boya.html" class="navbar-item">TEK Boya Yetkili Bayi</a>
+       <a href="marshall-boya.html" class="navbar-item">Marshall Boya</a>
+       <a href="weber-yapi-kimyasallari.html" class="navbar-item">Saint-Gobain Weber</a>
+       <a href="kalekim-yapi-kimyasallari.html" class="navbar-item active">Kalekim Yapı Kimyasalları</a>
+       <a href="cimentas-cimento.html" class="navbar-item">Çimentaş &amp; Çimbeton</a>
+       <a href="bianca-stella-boya.html" class="navbar-item">Bianca Stella Dönüşüm</a>
+       <a href="isonem-yalitim.html" class="navbar-item">İsonem Su Yalıtımı</a>
+       <a href="formul-plastik-pprc.html" class="navbar-item">Formül Plastik PPRC</a>
+      </div>
+     </div>
 
-   <div class="footer-col">
-    <h4 class="footer-col-title">Yetkili Bayilikler</h4>
-    <ul class="footer-links-list">
-     <li><a href="filli-boya-renxmatik.html">Filli Boya &amp; RenXMatik</a></li>
-     <li><a href="fawori-boya.html">Fawori Boya &amp; Yalıtım</a></li>
-     <li><a href="tek-boya.html">TEK Boya</a></li>
-     <li><a href="marshall-boya.html">Marshall Boya</a></li>
-     <li><a href="weber-yapi-kimyasallari.html">Saint-Gobain Weber</a></li>
-     <li><a href="kalekim-yapi-kimyasallari.html">Kalekim Yapı Kimyasalları</a></li>
-     <li><a href="cimentas-cimento.html">Çimentaş &amp; Çimbeton</a></li>
-     <li><a href="bianca-stella-boya.html">Bianca Stella Dönüşüm</a></li>
-     <li><a href="isonem-yalitim.html">İsonem Su Yalıtımı</a></li>
-     <li><a href="formul-plastik-pprc.html">Formül Plastik PPRC</a></li>
-    </ul>
-   </div>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Yapı Market &amp; Hırdavat</span>
+      <div class="navbar-dropdown">
+       <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
+       <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat</a>
+       <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
+       <a href="kilit-kapi-hirdavat.html" class="navbar-item">Anahtar Çekimi &amp; Kilit</a>
+       <a href="baglanti-elemanlari.html" class="navbar-item">Vida &amp; Bağlantı</a>
+       <a href="el-aletleri.html" class="navbar-item">El Aletleri</a>
+       <a href="k-othrine-hasere.html" class="navbar-item">Haşere &amp; Çevre Sağlığı</a>
+      </div>
+     </div>
 
-   <div class="footer-col">
-    <h4 class="footer-col-title">Yapı Market &amp; Taahhüt</h4>
-    <ul class="footer-links-list">
-     <li><a href="kaba-yapi-cimento.html">Kaba Yapı &amp; Çimento</a></li>
-     <li><a href="tesisat-altyapi.html">Sıhhi Tesisat &amp; Altyapı</a></li>
-     <li><a href="elektrik-aydinlatma.html">Elektrik &amp; Aydınlatma</a></li>
-     <li><a href="kilit-kapi-hirdavat.html">Kilit &amp; Kapı Donanımı</a></li>
-     <li><a href="baglanti-elemanlari.html">Vida &amp; Bağlantı Elemanları</a></li>
-     <li><a href="el-aletleri.html">El Aletleri &amp; Mastikler</a></li>
-     <li><a href="taahhut.html">Anahtar Teslim İnşaat &amp; Villa</a></li>
-    </ul>
-   </div>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Mimari Taahhüt</span>
+      <div class="navbar-dropdown">
+       <a href="anahtar-teslim-insaat.html" class="navbar-item">Sıfırdan Villa &amp; Konut</a>
+       <a href="komple-villa-tadilat.html" class="navbar-item">Komple Villa &amp; Konut Tadilatı</a>
+       <a href="banyo-dusakabin.html" class="navbar-item">Banyo &amp; Duşakabin</a>
+       <a href="teras-cati-yalitim.html" class="navbar-item">Teras Su İzolasyonu</a>
+       <a href="nasil-calisiriz.html" class="navbar-item">4 Adımlı Süreç</a>
+       <a href="kesif-randevusu.html" class="navbar-item">Keşif Randevusu Al</a>
+      </div>
+     </div>
 
-   <div class="footer-col">
-    <h4 class="footer-col-title">Merkezlerimiz &amp; İletişim</h4>
-    <div class="footer-location-block">
-     <div class="footer-location-name">Balçova Showroom &amp; Mağaza</div>
-     <div class="footer-location-addr">Eğitim Mah. Dalya 1 Sk. No:5/A Balçova / İzmir</div>
-     <div class="footer-location-tel"><a href="tel:+902322784340">0232 278 43 40</a></div>
-    </div>
-    <div class="footer-location-block">
-     <div class="footer-location-name">Urla Bölge Lojistik Deposu</div>
-     <div class="footer-location-addr">Kalabak Mevkii, Urla / İzmir</div>
-     <div class="footer-location-tel"><a href="tel:+905323318763">0532 331 87 63</a></div>
-    </div>
-   </div>
+     <div class="navbar-item menu-item">
+      <span class="navbar-title">Merkezlerimiz</span>
+      <div class="navbar-dropdown">
+       <a href="balcova-showroom.html" class="navbar-item">Balçova Yapı Market</a>
+       <a href="urla-lojistik-depo.html" class="navbar-item">Urla Ana Depo</a>
+       <a href="hakkimizda.html" class="navbar-item">Hakkımızda</a>
+       <a href="tel:+902322784340" class="navbar-item">0 (232) 278 43 40</a>
+      </div>
+     </div>
 
-  </div>
-
-  <div class="footer-bottom-bar">
-   <div class="footer-copy">&copy; 2026 Pervan Yapı Market &amp; Mimari Taahhüt. Tüm hakları saklıdır.</div>
-   <div class="footer-legal-links">
-    <a href="hakkimizda.html">Kurumsal</a>
-    <a href="nasil-calisiriz.html">Çalışma Prensipleri</a>
-    <a href="kesif-randevusu.html">Keşif Talebi</a>
+    </nav>
    </div>
   </div>
  </div>
 </footer>
 
-<script src="js/pervan.js?v=33.0.0"></script>
-<script src="js/catalogs/kalekim.js"></script>
+<script src="js/pervan.js?v=33.0.0" defer></script>
+<script src="js/catalogs/kalekim.js" defer></script>
 
 </body>
 </html>
