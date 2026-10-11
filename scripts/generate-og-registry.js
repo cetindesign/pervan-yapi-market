@@ -17,12 +17,14 @@ const catalogFiles = [
   { file: "js/catalogs/el-aletleri.js", page: "/el-aletleri.html", brand: "Pervan El Aletleri", type: "arr", varName: "TOOLS_PRODUCTS_DATA" },
   { file: "js/catalogs/elektrik-aydinlatma.js", page: "/elektrik-aydinlatma.html", brand: "Pervan Elektrik", type: "arr", varName: "ELEKTRIK_PRODUCTS_DATA" },
   { file: "js/catalogs/baglanti-elemanlari.js", page: "/baglanti-elemanlari.html", brand: "Pervan Bağlantı", type: "arr", varName: "FASTENERS_PRODUCTS_DATA" },
-  { file: "js/catalogs/tesisat-altyapi.js", page: "/tesisat-altyapi.html", brand: "Pervan Tesisat", type: "arr", varName: "TESISAT_PRODUCTS_DATA" }
+  { file: "js/catalogs/tesisat-altyapi.js", page: "/tesisat-altyapi.html", brand: "Pervan Tesisat", type: "arr", varName: "TESISAT_PRODUCTS_DATA" },
+  { file: "js/catalogs/kalekim.js", page: "/kalekim-yapi-kimyasallari.html", brand: "Kalekim", type: "arr", varName: "KALEKIM_PRODUCTS_DATA", anchor: "#kalekimProductCatalog" },
+  { file: "js/catalogs/cimentas.js", page: "/cimentas-cimento.html", brand: "Çimentaş", type: "arr", varName: "CIMENTAS_PRODUCTS_DATA", anchor: "#cimentasTorbaSection" }
 ];
 
 const registry = {};
 
-catalogFiles.forEach(({ file, page, brand, type, varName }) => {
+catalogFiles.forEach(({ file, page, brand, type, varName, anchor }) => {
   if (!fs.existsSync(file)) return;
   const content = fs.readFileSync(file, "utf8");
 
@@ -43,6 +45,7 @@ catalogFiles.forEach(({ file, page, brand, type, varName }) => {
         const img = item.img || item.thumb || "";
         registry[id] = {
           page,
+          anchor: anchor || "#pvProductCatalog",
           title: (name.startsWith(brand) ? name : (brand + " " + name)) + " | Pervan",
           description: desc,
           image: img.startsWith("http") ? img : ("https://pervanyapi.com/" + img.replace(/^\.?\//, ""))
@@ -56,6 +59,7 @@ catalogFiles.forEach(({ file, page, brand, type, varName }) => {
         const img = item.thumb || item.img || "";
         registry[item.id] = {
           page,
+          anchor: anchor || "#pvProductCatalog",
           title: (name.startsWith(brand) ? name : (brand + " " + name)) + " | Pervan",
           description: desc,
           image: img.startsWith("http") ? img : ("https://pervanyapi.com/" + img.replace(/^\.?\//, ""))
@@ -80,7 +84,7 @@ if (!fs.existsSync("urun")) fs.mkdirSync("urun", { recursive: true });
 let stubCount = 0;
 Object.keys(registry).forEach(pid => {
   const data = registry[pid];
-  const targetUrl = `${data.page}?item=${pid}#pvProductCatalog`;
+  const targetUrl = `${data.page}?item=${pid}${data.anchor || "#pvProductCatalog"}`;
   const html = `<!DOCTYPE html>
 <html lang="tr">
 <head>
