@@ -7,7 +7,7 @@
 /* 1. HERO STAGE SLIDER & HEADER OBSERVER */
 (function() {
   var stage = document.getElementById("pvStageHero");
-  var header = document.getElementById("header") || document.querySelector("header");
+  var header = document.getElementById("pvHeader") || document.getElementById("header") || document.querySelector("header");
 
   if (header) {
     function checkHeaderSolid() {
@@ -740,31 +740,120 @@
   ];
 
   var activeDeptIndex = 0;
-  var subnavLinks = document.querySelectorAll(".pv-subnav-link");
+  var subnav = document.getElementById("pvSubnav");
+  var spacer = document.getElementById("pvSubnavSpacer");
+  var header = document.getElementById("pvHeader") || document.getElementById("header") || document.querySelector("header");
+  var subnavLinks = document.querySelectorAll("#pvSubnavLinks .pv-subnav-link");
   var deptPanels = document.querySelectorAll(".pv-dept-panel");
+  var deptTrigger = document.getElementById("pvDeptTrigger");
   var deptTriggerLabel = document.getElementById("pvDeptTriggerLabel");
   var filterRail = document.getElementById("pvFilterRail");
   var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
   var deptDrawer = document.getElementById("pvDeptDrawer");
-  var deptTrigger = document.getElementById("pvDeptTrigger");
   var deptDrawerCloseBtn = document.getElementById("pvDrawerCloseBtn");
   var deptList = document.getElementById("pvDeptList");
 
-  function switchDepartment(index) {
-    if (index < 0 || index >= DEPARTMENTS_DATA.length) return;
-    activeDeptIndex = index;
-    var dept = DEPARTMENTS_DATA[index];
+  var currentActiveTab = "cimentasTorbaSection";
+  var currentProduct = null;
+  var selectedSize = "";
 
-    subnavLinks.forEach(function(link, idx) {
-      var isActive = idx === index;
+  var panels = {
+    "cimentasTorbaSection": document.getElementById("cimentasTorbaSection"),
+    "cimentasDokmeSection": document.getElementById("cimentasDokmeSection"),
+    "cimentasHazirBetonSection": document.getElementById("cimentasHazirBetonSection")
+  };
+
+  // Sticky subnav header clearance sync
+  var initialSubnavTop = 0;
+  function getSubnavOrigin() {
+    if (spacer && spacer.classList.contains("is-active")) {
+      return spacer.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    }
+    return subnav ? (subnav.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)) : 0;
+  }
+
+  function getHeaderHeight() {
+    if (!header) return 60;
+    return header.offsetHeight || 60;
+  }
+
+  function syncSubnavPin() {
+    if (!subnav) return;
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    if (!initialSubnavTop || initialSubnavTop < 100) {
+      initialSubnavTop = getSubnavOrigin();
+    }
+
+    var headerVisible = header && !header.classList.contains("header--hidden");
+    var hHeight = getHeaderHeight();
+    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
+
+    if (scrollPos >= pinThreshold) {
+      if (!subnav.classList.contains("is-pinned")) {
+        subnav.classList.add("is-pinned");
+        if (spacer) {
+          spacer.style.height = (subnav.offsetHeight || 46) + "px";
+          spacer.classList.add("is-active");
+        }
+      }
+
+      if (!headerVisible) {
+        subnav.classList.add("header-hidden");
+        subnav.style.top = "0px";
+      } else {
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = hHeight + "px";
+        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
+      }
+    } else {
+      if (subnav.classList.contains("is-pinned")) {
+        subnav.classList.remove("is-pinned");
+        subnav.classList.remove("header-hidden");
+        subnav.style.top = "";
+        if (spacer) spacer.classList.remove("is-active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", syncSubnavPin, { passive: true });
+  window.addEventListener("resize", function() {
+    initialSubnavTop = 0;
+    syncSubnavPin();
+  }, { passive: true });
+  setTimeout(syncSubnavPin, 100);
+
+  if (header && window.MutationObserver) {
+    var obs = new MutationObserver(function() {
+      syncSubnavPin();
+    });
+    obs.observe(header, { attributes: true, attributeFilter: ["class", "style"] });
+  }
+
+  function switchDepartment(target, shouldScroll) {
+    var deptId = target;
+    if (typeof target === "number") {
+      var foundDept = DEPARTMENTS_DATA[target];
+      if (foundDept) deptId = foundDept.id;
+    }
+    if (!deptId || !panels[deptId]) return;
+    currentActiveTab = deptId;
+
+    var deptIndex = DEPARTMENTS_DATA.findIndex(function(d) { return d.id === deptId; });
+    if (deptIndex !== -1) activeDeptIndex = deptIndex;
+    var dept = DEPARTMENTS_DATA[activeDeptIndex] || DEPARTMENTS_DATA[0];
+
+    subnavLinks.forEach(function(link) {
+      var isActive = link.getAttribute("data-target") === deptId;
       link.classList.toggle("active", isActive);
       link.setAttribute("aria-selected", isActive ? "true" : "false");
     });
 
-    deptPanels.forEach(function(panel) {
-      var isActive = panel.id === dept.id;
-      panel.classList.toggle("active", isActive);
-    });
+    for (var key in panels) {
+      if (panels.hasOwnProperty(key) && panels[key]) {
+        var isTarget = key === deptId;
+        panels[key].classList.toggle("active", isTarget);
+      }
+    }
 
     if (deptTriggerLabel) {
       deptTriggerLabel.textContent = dept.name;
@@ -772,73 +861,112 @@
 
     renderMobileFilterRail(dept);
 
-    var targetSec = document.getElementById(dept.id);
-    if (targetSec) {
-      var offset = targetSec.getBoundingClientRect().top + window.pageYOffset - 110;
-      window.scrollTo({ top: offset, behavior: "smooth" });
+    if (deptList) {
+      deptList.querySelectorAll(".pv-drawer-item").forEach(function(item) {
+        item.classList.toggle("active", item.getAttribute("data-target") === deptId);
+      });
+    }
+
+    if (shouldScroll !== false) {
+      var targetPanel = panels[deptId];
+      if (targetPanel) {
+        var hHeight = getHeaderHeight();
+        var sHeight = subnav ? subnav.offsetHeight : 46;
+        var totalOffset = hHeight + sHeight + 10;
+        var panelTop = targetPanel.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+        window.scrollTo({
+          top: Math.max(0, panelTop - totalOffset),
+          behavior: "smooth"
+        });
+      }
     }
   }
 
   function renderMobileFilterRail(dept) {
     if (!filterRail) return;
     filterRail.innerHTML = "";
-    dept.pills.forEach(function(pill, idx) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "pv-rail-pill" + (idx === 0 ? " active" : "");
-      btn.textContent = pill.label;
-      btn.setAttribute("data-filter", pill.filter);
-      btn.addEventListener("click", function() {
-        filterRail.querySelectorAll(".pv-rail-pill").forEach(function(p) { p.classList.remove("active"); });
-        btn.classList.add("active");
-        applyCategoryFilter(dept.id, pill.filter);
+    if (!dept.pills || dept.pills.length === 0) return;
+
+    var panel = panels[dept.id];
+    var activeFilter = dept.pills[0].filter;
+    if (panel) {
+      var activeDesktopPill = panel.querySelector(".pv-menu-pill.active");
+      if (activeDesktopPill) {
+        activeFilter = activeDesktopPill.getAttribute("data-filter");
+      }
+    }
+
+    dept.pills.forEach(function(p) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "pv-filter-chip" + (p.filter === activeFilter ? " active" : "");
+      chip.setAttribute("data-filter", p.filter);
+      chip.textContent = p.label;
+      chip.addEventListener("click", function() {
+        applyCategoryFilter(dept.id, p.filter);
       });
-      filterRail.appendChild(btn);
+      filterRail.appendChild(chip);
     });
   }
 
-  function applyCategoryFilter(deptId, category) {
-    var panel = document.getElementById(deptId);
+  function applyCategoryFilter(deptId, filter) {
+    var panel = panels[deptId];
     if (!panel) return;
 
-    var pills = panel.querySelectorAll(".pv-menu-pill");
-    pills.forEach(function(pill) {
-      var isActive = pill.getAttribute("data-filter") === category;
-      pill.classList.toggle("active", isActive);
-      pill.setAttribute("aria-selected", isActive ? "true" : "false");
+    panel.querySelectorAll(".pv-menu-pill").forEach(function(pill) {
+      var isAct = pill.getAttribute("data-filter") === filter;
+      pill.classList.toggle("active", isAct);
+      pill.setAttribute("aria-selected", isAct ? "true" : "false");
     });
+
+    if (filterRail) {
+      filterRail.querySelectorAll(".pv-filter-chip").forEach(function(chip) {
+        chip.classList.toggle("active", chip.getAttribute("data-filter") === filter);
+      });
+    }
 
     var rows = panel.querySelectorAll(".pv-menu-row");
     rows.forEach(function(row) {
-      var match = row.getAttribute("data-category") === category;
-      row.style.display = match ? "flex" : "none";
+      var rowCat = row.getAttribute("data-category");
+      if (filter === "all" || !filter || rowCat === filter) {
+        row.style.display = "flex";
+      } else {
+        row.style.display = "none";
+      }
     });
   }
 
-  subnavLinks.forEach(function(link, index) {
-    link.addEventListener("click", function(e) {
+  subnavLinks.forEach(function(btn) {
+    btn.addEventListener("click", function(e) {
       e.preventDefault();
-      switchDepartment(index);
+      var targetId = btn.getAttribute("data-target");
+      switchDepartment(targetId, true);
     });
   });
 
-  deptPanels.forEach(function(panel) {
-    var pills = panel.querySelectorAll(".pv-menu-pill");
+  function setupCategoryFiltering(pillsId, listId) {
+    var pillsContainer = document.getElementById(pillsId);
+    var list = document.getElementById(listId);
+    if (!pillsContainer || !list) return;
+
+    var pills = pillsContainer.querySelectorAll(".pv-menu-pill");
     pills.forEach(function(pill) {
       pill.addEventListener("click", function() {
-        var cat = pill.getAttribute("data-filter");
-        applyCategoryFilter(panel.id, cat);
-        if (filterRail) {
-          filterRail.querySelectorAll(".pv-rail-pill").forEach(function(r) {
-            r.classList.toggle("active", r.getAttribute("data-filter") === cat);
-          });
-        }
+        var filter = pill.getAttribute("data-filter");
+        var deptId = pill.closest(".pv-dept-panel") ? pill.closest(".pv-dept-panel").id : currentActiveTab;
+        applyCategoryFilter(deptId, filter);
       });
     });
-  });
+  }
+
+  setupCategoryFiltering("cimentasTorbaSectionPills", "list_cimentasTorbaSection");
+  setupCategoryFiltering("cimentasDokmeSectionPills", "list_cimentasDokmeSection");
+  setupCategoryFiltering("cimentasHazirBetonSectionPills", "list_cimentasHazirBetonSection");
 
   function openDeptDrawer() {
     if (!deptDrawerBackdrop || !deptDrawer) return;
+    deptDrawerBackdrop.classList.add("open");
+    deptDrawerBackdrop.classList.add("is-open");
     deptDrawerBackdrop.classList.add("active");
     deptDrawerBackdrop.setAttribute("aria-hidden", "false");
     deptDrawer.classList.add("active");
@@ -847,6 +975,8 @@
 
   function closeDeptDrawer() {
     if (!deptDrawerBackdrop || !deptDrawer) return;
+    deptDrawerBackdrop.classList.remove("open");
+    deptDrawerBackdrop.classList.remove("is-open");
     deptDrawerBackdrop.classList.remove("active");
     deptDrawerBackdrop.setAttribute("aria-hidden", "true");
     deptDrawer.classList.remove("active");
@@ -863,15 +993,14 @@
 
   if (deptList) {
     deptList.innerHTML = "";
-    DEPARTMENTS_DATA.forEach(function(dept, idx) {
+    DEPARTMENTS_DATA.forEach(function(d) {
       var item = document.createElement("div");
-      item.className = "pv-drawer-item" + (idx === 0 ? " active" : "");
-      item.innerHTML = '<div class="pv-drawer-item-title">' + dept.name + '</div><div class="pv-drawer-item-desc">' + dept.title + '</div>';
+      item.className = "pv-drawer-item" + (d.id === currentActiveTab ? " active" : "");
+      item.setAttribute("data-target", d.id);
+      item.innerHTML = '<div class="pv-drawer-item-title">' + d.name + '</div><div class="pv-drawer-item-desc">' + d.title + '</div>';
       item.addEventListener("click", function() {
-        deptList.querySelectorAll(".pv-drawer-item").forEach(function(it) { it.classList.remove("active"); });
-        item.classList.add("active");
         closeDeptDrawer();
-        switchDepartment(idx);
+        switchDepartment(d.id, true);
       });
       deptList.appendChild(item);
     });
@@ -883,65 +1012,154 @@
   var modalBackdrop = document.getElementById("pvModalBackdrop");
   var modalCard = document.getElementById("pvModalCard");
   var modalCloseBtn = document.getElementById("pvModalCloseBtn");
+  var modalTopBar = document.getElementById("modalTopBar");
+  var modalHandleZone = document.getElementById("modalHandleZone");
+  var modalScrollArea = document.getElementById("modalScrollArea");
+
   var modalProductTitle = document.getElementById("modalProductTitle");
+  var modalProductBadges = document.getElementById("modalProductBadges");
   var modalProductBadge = document.getElementById("modalProductBadge");
+  var modalProductEyebrow = document.getElementById("modalProductEyebrow");
   var modalProductImg = document.getElementById("modalProductImg");
   var modalProductDesc = document.getElementById("modalProductDesc");
+  var modalPackagingSection = document.getElementById("modalPackagingSection");
+  var modalSelectedSizeHint = document.getElementById("modalSelectedSizeHint");
   var modalSizeChips = document.getElementById("modalSizeChips");
+
   var modalSpecStandard = document.getElementById("modalSpecStandard");
   var modalSpecConsumption = document.getElementById("modalSpecConsumption");
   var modalSpecPackaging = document.getElementById("modalSpecPackaging");
   var modalSpecMixing = document.getElementById("modalSpecMixing");
   var modalSpecPotLife = document.getElementById("modalSpecPotLife");
   var modalSpecLogistics = document.getElementById("modalSpecLogistics");
+  var modalSpecsTable = document.getElementById("modalSpecsTable");
+
   var modalAccordions = document.getElementById("modalAccordions");
-  var modalWaBtn = document.getElementById("modalWaBtn");
+  var modalWABtn = document.getElementById("modalWABtn") || document.getElementById("modalWaBtn");
+  var modalWaBtn = document.getElementById("modalWaBtn") || document.getElementById("modalWABtn");
   var modalShareBtn = document.getElementById("modalShareBtn");
   var modalShareText = document.getElementById("modalShareText");
 
-  var currentProduct = null;
-  var selectedSize = "";
+  var isSheetDragging = false;
+  var dragStartY = 0;
+  var dragCurrentY = 0;
+  var dragStartTime = 0;
+  var canDragFromScroll = false;
 
   function openProductModal(productId) {
     var prod = CIMENTAS_PRODUCTS_DATA.find(function(p) { return p.id === productId; });
     if (!prod) return;
     currentProduct = prod;
+    selectedSize = (prod.sizes && prod.sizes.length > 0) ? prod.sizes[0] : (prod.specs ? prod.specs.packaging : "");
 
     if (modalProductTitle) modalProductTitle.textContent = prod.name;
-    if (modalProductBadge) modalProductBadge.textContent = prod.badge;
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "ÇİMENTAŞ & ÇİMBETON · YETKİLİ SATIŞ";
     if (modalProductImg) {
       modalProductImg.src = prod.thumb;
       modalProductImg.alt = prod.name;
     }
     if (modalProductDesc) modalProductDesc.textContent = prod.desc;
 
-    // Spec gauges
-    if (modalSpecConsumption) modalSpecConsumption.textContent = prod.specs.day28;
-    if (modalSpecPackaging) modalSpecPackaging.textContent = prod.specs.packaging;
-    if (modalSpecPotLife) modalSpecPotLife.textContent = prod.specs.initialSetting;
+    // Badges
+    if (modalProductBadges) {
+      modalProductBadges.innerHTML = "";
+      if (prod.badge) {
+        var b = document.createElement("span");
+        b.className = "pv-specimen-badge";
+        b.textContent = prod.badge;
+        modalProductBadges.appendChild(b);
+      }
+      if (prod.tag) {
+        var t = document.createElement("span");
+        t.className = "pv-specimen-badge-sub";
+        t.textContent = prod.tag;
+        modalProductBadges.appendChild(t);
+      }
+    } else if (modalProductBadge) {
+      modalProductBadge.textContent = prod.badge || "Çimentaş";
+    }
 
-    // Specs table
-    if (modalSpecStandard) modalSpecStandard.textContent = prod.specs.day2;
-    if (modalSpecMixing) modalSpecMixing.textContent = prod.specs.standard;
-    if (modalSpecLogistics) modalSpecLogistics.textContent = prod.specs.logistics;
+    var isConcrete = prod.deptId === "cimentasHazirBetonSection" || prod.id.indexOf("cimbeton") !== -1;
 
-    // Size chips
+    // Spec Gauges
+    var gauge1Eyebrow = document.querySelector("#modalGaugeStandardCard .pv-gauge-eyebrow");
+    var gauge1Caption = document.getElementById("modalSpecPackaging");
+    var gauge2Eyebrow = document.querySelector("#modalGaugeConsumptionCard .pv-gauge-eyebrow");
+    var gauge2Caption = document.getElementById("modalGaugeStandardCaption");
+
+    if (gauge1Eyebrow) gauge1Eyebrow.textContent = isConcrete ? "28G KÜP MUKAVEMETİ" : "28 GÜNLÜK MUKAVEMET";
+    if (gauge1Caption) gauge1Caption.textContent = prod.specs ? prod.specs.standard : "TS EN 197-1 / TS EN 206";
+    if (modalSpecConsumption) modalSpecConsumption.textContent = (prod.specs && prod.specs.day28) ? prod.specs.day28 : (prod.coverage || "-");
+
+    if (gauge2Eyebrow) gauge2Eyebrow.textContent = isConcrete ? "KIVAM & POMPA" : "PRİZ / KIVAM SÜRESİ";
+    if (gauge2Caption) gauge2Caption.textContent = isConcrete ? "Pompalı / Mikser" : "Başlangıç Prizi";
+    if (modalSpecPotLife) modalSpecPotLife.textContent = (prod.specs && prod.specs.initialSetting) ? prod.specs.initialSetting : "-";
+
+    // Dynamic Specs Table
+    if (modalSpecsTable && prod.specs) {
+      modalSpecsTable.innerHTML = "";
+      var specLabels = isConcrete ? {
+        standard: "Beton Standardı & CE",
+        packaging: "Sevkiyat & Döküm Şekli",
+        day2: "Karakteristik Silindir Dayanımı",
+        day28: "Karakteristik Küp Dayanımı",
+        initialSetting: "Kıvam & Pompa Sınıfı",
+        logistics: "Santral Sevk & Lojistik"
+      } : {
+        standard: "Kalite & Standardı",
+        packaging: "Ambalaj & Sevkiyat Tipi",
+        day2: "2 Günlük Erken Mukavemet",
+        day28: "28 Günlük Standart Dayanım",
+        initialSetting: "Başlangıç Priz Süresi",
+        logistics: "Lojistik & Şantiye Teslim"
+      };
+
+      for (var key in prod.specs) {
+        if (prod.specs.hasOwnProperty(key)) {
+          var rowEl = document.createElement("div");
+          rowEl.className = "pv-spec-row";
+          var kEl = document.createElement("span");
+          kEl.className = "pv-spec-k";
+          kEl.textContent = (specLabels[key] || key) + ":";
+          var vEl = document.createElement("span");
+          vEl.className = "pv-spec-v";
+          vEl.textContent = prod.specs[key];
+          rowEl.appendChild(kEl);
+          rowEl.appendChild(vEl);
+          modalSpecsTable.appendChild(rowEl);
+        }
+      }
+    }
+
+    // Size / Packaging Chips
     if (modalSizeChips) {
       modalSizeChips.innerHTML = "";
-      selectedSize = prod.sizes[0] || prod.specs.packaging;
-      prod.sizes.forEach(function(sz, idx) {
-        var chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
-        chip.textContent = sz;
-        chip.addEventListener("click", function() {
-          modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) { c.classList.remove("active"); });
-          chip.classList.add("active");
-          selectedSize = sz;
-          updateWhatsAppLink();
+      if (prod.sizes && prod.sizes.length > 0) {
+        if (modalPackagingSection) modalPackagingSection.style.display = "";
+        prod.sizes.forEach(function(sz, idx) {
+          var chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "pv-size-chip" + (idx === 0 ? " active" : "");
+          chip.textContent = sz;
+          chip.setAttribute("role", "radio");
+          chip.setAttribute("aria-checked", idx === 0 ? "true" : "false");
+          chip.addEventListener("click", function() {
+            modalSizeChips.querySelectorAll(".pv-size-chip").forEach(function(c) {
+              c.classList.remove("active");
+              c.setAttribute("aria-checked", "false");
+            });
+            chip.classList.add("active");
+            chip.setAttribute("aria-checked", "true");
+            selectedSize = sz;
+            updateWhatsAppLink();
+            if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = sz;
+          });
+          modalSizeChips.appendChild(chip);
         });
-        modalSizeChips.appendChild(chip);
-      });
+        if (modalSelectedSizeHint) modalSelectedSizeHint.textContent = prod.sizes[0];
+      } else {
+        if (modalPackagingSection) modalPackagingSection.style.display = "none";
+      }
     }
 
     // Accordions
@@ -968,24 +1186,60 @@
 
     if (modalBackdrop && modalCard) {
       modalBackdrop.classList.add("active");
+      modalBackdrop.classList.add("open");
+      modalBackdrop.classList.add("is-open");
       modalBackdrop.setAttribute("aria-hidden", "false");
       modalCard.classList.add("active");
       document.body.style.overflow = "hidden";
     }
+
+    try {
+      history.replaceState({ modal: true, id: prod.id }, "", "/urun/" + prod.id + ".html");
+    } catch(e) {}
+  }
+
+  function resetSheetStyles() {
+    if (modalCard) {
+      modalCard.style.transform = "";
+      modalCard.style.transition = "";
+    }
+    if (modalBackdrop) {
+      modalBackdrop.style.opacity = "";
+      modalBackdrop.style.transition = "";
+    }
   }
 
   function updateWhatsAppLink() {
-    if (!modalWaBtn || !currentProduct) return;
-    var msg = "Merhaba, Çimentaş toptan dağıtım merkezinizden " + currentProduct.name + " (" + selectedSize + ") için şantiye teslim fiyatı ve sevkiyat programı öğrenmek istiyorum.";
-    modalWaBtn.href = "https://wa.me/905323318763?text=" + encodeURIComponent(msg);
+    if (!currentProduct) return;
+    var isConcrete = currentProduct.deptId === "cimentasHazirBetonSection" || currentProduct.id.indexOf("cimbeton") !== -1;
+    var text = "Merhaba, Çimentaş Yetkili Satış Merkezinizden " + currentProduct.name;
+    if (selectedSize) {
+      text += " (" + selectedSize + ")";
+    }
+    if (isConcrete) {
+      text += " için şantiye döküm programı, mobil pompa ve güncel m³ hazır beton fiyatı öğrenmek istiyorum.";
+    } else {
+      text += " için İzmir / Urla ana deponuzdan şantiye teslimi paletli / dökme kamyon fiyatı öğrenmek istiyorum.";
+    }
+    text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
+    var waHref = "https://wa.me/905323318763?text=" + encodeURIComponent(text);
+    if (modalWABtn) modalWABtn.href = waHref;
+    if (modalWaBtn) modalWaBtn.href = waHref;
   }
 
   function closeProductModal() {
     if (!modalBackdrop || !modalCard) return;
     modalBackdrop.classList.remove("active");
+    modalBackdrop.classList.remove("open");
+    modalBackdrop.classList.remove("is-open");
     modalBackdrop.setAttribute("aria-hidden", "true");
     modalCard.classList.remove("active");
     document.body.style.overflow = "";
+    currentProduct = null;
+    resetSheetStyles();
+    try {
+      history.replaceState({}, "", "/cimentas-cimento.html");
+    } catch(e) {}
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeProductModal);
@@ -1009,16 +1263,104 @@
   if (modalShareBtn) {
     modalShareBtn.addEventListener("click", function() {
       if (!currentProduct) return;
-      var shareUrl = window.location.origin + window.location.pathname + "#" + currentProduct.id;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      var shareUrl = window.location.origin + "/urun/" + currentProduct.id + ".html";
+      var shareData = {
+        title: currentProduct.name + " | Pervan",
+        text: currentProduct.name + " - " + currentProduct.desc,
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(function() {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(shareUrl).then(function() {
-          if (modalShareText) modalShareText.textContent = "Kopyalandı!";
+          var shareIcon = modalShareBtn.querySelector(".pv-share-icon");
+          var checkIcon = modalShareBtn.querySelector(".pv-check-icon");
+          if (shareIcon) shareIcon.style.display = "none";
+          if (checkIcon) checkIcon.style.display = "inline-block";
+          if (modalShareText) modalShareText.textContent = "✓ Bağlantı Kopyalandı";
           setTimeout(function() {
+            if (shareIcon) shareIcon.style.display = "inline-block";
+            if (checkIcon) checkIcon.style.display = "none";
             if (modalShareText) modalShareText.textContent = "Paylaş";
-          }, 2000);
-        });
+          }, 2500);
+        }).catch(function() {});
       }
     });
+  }
+
+  // Touch gesture physics for mobile bottom sheet dismissal
+  function onDragStart(e) {
+    if (!modalBackdrop || (!modalBackdrop.classList.contains("is-open") && !modalBackdrop.classList.contains("open") && !modalBackdrop.classList.contains("active"))) return;
+    if (window.innerWidth > 960) return;
+
+    var touch = e.touches ? e.touches[0] : e;
+    var target = e.target;
+    var isHandle = target.closest("#modalHandleZone") || target.closest("#modalTopBar");
+    var isScrollArea = target.closest("#modalScrollArea");
+
+    if (isScrollArea && modalScrollArea && modalScrollArea.scrollTop > 0) {
+      canDragFromScroll = false;
+      return;
+    }
+
+    if (isHandle || (isScrollArea && modalScrollArea && modalScrollArea.scrollTop <= 0)) {
+      isSheetDragging = true;
+      canDragFromScroll = true;
+      dragStartY = touch.clientY;
+      dragCurrentY = touch.clientY;
+      dragStartTime = Date.now();
+      if (modalCard) modalCard.style.transition = "none";
+    }
+  }
+
+  function onDragMove(e) {
+    if (!isSheetDragging || !modalCard) return;
+    var touch = e.touches ? e.touches[0] : e;
+    dragCurrentY = touch.clientY;
+    var deltaY = dragCurrentY - dragStartY;
+
+    if (deltaY < 0) {
+      var damped = -Math.pow(-deltaY, 0.7);
+      modalCard.style.transform = "translateY(" + damped + "px)";
+    } else {
+      modalCard.style.transform = "translateY(" + deltaY + "px)";
+      if (modalBackdrop) {
+        var progress = Math.max(0, 1 - (deltaY / 400));
+        modalBackdrop.style.opacity = progress.toString();
+      }
+    }
+  }
+
+  function onDragEnd() {
+    if (!isSheetDragging || !modalCard) return;
+    isSheetDragging = false;
+    var deltaY = dragCurrentY - dragStartY;
+    var elapsed = Date.now() - dragStartTime;
+    var velocity = deltaY / Math.max(elapsed, 1);
+
+    if (deltaY > 100 || velocity > 0.5) {
+      modalCard.style.transition = "transform 0.24s cubic-bezier(0.32, 1, 0.23, 1)";
+      modalCard.style.transform = "translateY(100%)";
+      if (modalBackdrop) {
+        modalBackdrop.style.transition = "opacity 0.24s ease";
+        modalBackdrop.style.opacity = "0";
+      }
+      setTimeout(closeProductModal, 240);
+    } else {
+      modalCard.style.transition = "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)";
+      modalCard.style.transform = "";
+      if (modalBackdrop) {
+        modalBackdrop.style.transition = "opacity 0.28s ease";
+        modalBackdrop.style.opacity = "";
+      }
+    }
+  }
+
+  if (modalCard) {
+    modalCard.addEventListener("touchstart", onDragStart, { passive: true });
+    modalCard.addEventListener("touchmove", onDragMove, { passive: true });
+    modalCard.addEventListener("touchend", onDragEnd, { passive: true });
   }
 
   /* 4. SPOTLIGHT SEARCH (⌘K / Keyboard Shortcuts) */
@@ -1027,6 +1369,17 @@
   var spotlightClose = document.getElementById("pvSpotlightClose");
   var spotlightResults = document.getElementById("pvSpotlightResults");
   var subnavSearchBtn = document.getElementById("pvSubnavSearchBtn");
+
+  function normTr(str) {
+    if (!str) return "";
+    return str.toLowerCase()
+      .replace(/ı/g, "i")
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c");
+  }
 
   function openSpotlight() {
     if (!spotlightModal || !spotlightInput) return;
@@ -1048,14 +1401,22 @@
   function renderSpotlightResults(query) {
     if (!spotlightResults) return;
     spotlightResults.innerHTML = "";
-    var cleanQ = query.trim().toLowerCase();
+    var cleanQ = normTr(query.trim());
 
     var matches = CIMENTAS_PRODUCTS_DATA.filter(function(p) {
       if (!cleanQ) return true;
-      return p.name.toLowerCase().includes(cleanQ) ||
-             p.desc.toLowerCase().includes(cleanQ) ||
-             p.specs.day28.toLowerCase().includes(cleanQ) ||
-             p.id.toLowerCase().includes(cleanQ);
+      var searchable = normTr([
+        p.id,
+        p.name,
+        p.badge,
+        p.desc,
+        p.category,
+        p.deptId,
+        (p.meta || []).join(" "),
+        (p.sizes || []).join(" "),
+        p.specs ? Object.values(p.specs).join(" ") : ""
+      ].join(" "));
+      return searchable.indexOf(cleanQ) !== -1;
     });
 
     if (matches.length === 0) {
@@ -1069,7 +1430,10 @@
       item.innerHTML = '<img src="' + prod.thumb + '" alt="' + prod.name + '" class="pv-spotlight-thumb" /><div class="pv-spotlight-info"><div class="pv-spotlight-name">' + prod.name + '</div><div class="pv-spotlight-desc">' + prod.desc + '</div></div><span class="pv-spotlight-badge">' + prod.badge + '</span>';
       item.addEventListener("click", function() {
         closeSpotlight();
-        openProductModal(prod.id);
+        switchDepartment(prod.deptId, true);
+        setTimeout(function() {
+          openProductModal(prod.id);
+        }, 150);
       });
       spotlightResults.appendChild(item);
     });
@@ -1104,11 +1468,14 @@
     }
   });
 
-  if (window.location.hash) {
-    var rawHash = window.location.hash.substring(1);
-    var targetProduct = CIMENTAS_PRODUCTS_DATA.find(function(p) { return p.id === rawHash; });
+  // Deep linking: URL parameter ?item= or hash
+  var urlParams = new URLSearchParams(window.location.search);
+  var requestedItem = urlParams.get("item") || (window.location.hash ? window.location.hash.replace("#", "") : null);
+  if (requestedItem) {
+    var targetProduct = CIMENTAS_PRODUCTS_DATA.find(function(p) { return p.id === requestedItem; });
     if (targetProduct) {
-      setTimeout(function() { openProductModal(targetProduct.id); }, 300);
+      switchDepartment(targetProduct.deptId, true);
+      setTimeout(function() { openProductModal(targetProduct.id); }, 250);
     }
   }
 })();

@@ -28,7 +28,65 @@
 
 <link rel="preload" as="image" href="assets/rf-hero-villa-insaat.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
-<link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.0" />
+<link rel="stylesheet" href="css/pervan-catalog.css?v=35.0.2" />
+
+<style>
+/* Pervan Design System — Packaging Size Chips Canonical Fix */
+.pv-size-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.pv-size-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  background: #F3F4F6;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  min-height: 40px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.pv-size-chip:hover {
+  background: #E5E7EB;
+  color: #111827;
+}
+.pv-size-chip.active {
+  background: #1C1917;
+  color: #FFFFFF;
+  border-color: #1C1917;
+  box-shadow: 0 4px 14px rgba(28, 25, 23, 0.22);
+}
+
+/* Zero Box Floating Silhouette Specimen Stage & Thumbs */
+.pv-specimen-glow {
+  display: none !important;
+}
+.pv-specimen-can-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: multiply;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.pv-menu-thumb img {
+  mix-blend-mode: multiply;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+</style>
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -112,14 +170,30 @@
 
 <body class="pv-editorial-theme">
 
-<!-- GLOBAL PERVAN FIXED NAVIGATION BAR -->
-<header id="header" class="header">
- <nav class="navigation" id="navigation" aria-label="Ana Navigasyon">
-  <div class="navigation-inner">
+<!-- PERVAN NAVBAR -->
+<header id="pvHeader">
+ <nav class="navbar">
+  <div class="navbar-top">
+   <!-- LOGO -->
    <a class="navbar-logo" href="index.html">Pervan</a>
 
-   <div class="navigation-menu" id="navigation-menu">
+   <!-- CONTENTS (DESKTOP MENU & MOBILE OVERLAY) -->
+   <div class="navbar-contents">
     <div class="navbar-contents-overflow">
+     
+     <!-- MOBILE TOP SPLIT ACTION BAR (ONLY VISIBLE INSIDE MOBILE DRAWER) -->
+     <div class="navbar-sticky-mobile">
+      <a href="https://wa.me/905323318763?text=Merhaba,%20Çimentaş%20toptan%20çimento%20fiyatı%20öğrenmek%20istiyorum." target="_blank" rel="noopener" class="navbar-item menu-item">
+       <span class="navbar-title">Şantiye Fiyatı Al</span>
+       <div class="arrow"></div>
+      </a>
+      <a href="tel:+905323318763" class="navbar-item menu-item">
+       <span class="navbar-title">Urla Depo Ara</span>
+       <div class="arrow"></div>
+      </a>
+     </div>
+
+     <!-- DESKTOP CENTERED MENU / MOBILE ACCORDION -->
      <div class="navbar-menu">
 
       <!-- 01: Yetkili Bayilikler -->
@@ -127,7 +201,7 @@
        <div class="navbar-title">Yetkili Bayilikler</div>
        <div class="arrow"></div>
        <div class="navbar-dropdown">
-        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tümünü gör</a>
+        <a href="yetkili-bayilikler.html" class="navbar-item mobile-only">Tüm Bayilikleri Gör &rarr;</a>
         <a href="filli-boya-renxmatik.html" class="navbar-item">Filli Boya &amp; RenXMatik</a>
         <a href="fawori-boya.html" class="navbar-item">Fawori Boya &amp; Yalıtım</a>
         <a href="tek-boya.html" class="navbar-item">TEK Boya</a>
@@ -146,7 +220,7 @@
        <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
        <div class="arrow"></div>
        <div class="navbar-dropdown">
-        <a href="malzemeler.html" class="navbar-item mobile-only">Tümünü gör</a>
+        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
         <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
         <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
         <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
