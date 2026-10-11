@@ -3379,6 +3379,19 @@ header.header--menu-open {
   display: none;
 }
 
+.navbar-menu .menu-item .navbar-dropdown a[href*="yetkili-bayilikler"].navbar-item {
+  display: block !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.navbar-menu .menu-item .navbar-dropdown a[href*="yetkili-bayilikler"].navbar-item:hover {
+  color: #666666 !important;
+}
+
 /* DESKTOP RIGHT STICKY ACTION BUTTONS */
 .navbar-sticky {
   display: flex;
@@ -3733,6 +3746,12 @@ header.header--menu-open {
     display: block !important;
     font-weight: 500 !important;
     color: #000000 !important;
+  }
+
+  .navbar-menu .menu-item .navbar-dropdown a[href*="yetkili-bayilikler"].navbar-item {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
