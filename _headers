@@ -5,11 +5,26 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
-# 2. HTML Documents (Immediate Deployment Reflection)
+# 2. HTML Documents & Clean URLs (Immediate Deployment Reflection)
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
 /
+  Cache-Control: public, max-age=0, must-revalidate
+
+/baglanti-elemanlari
+  Cache-Control: public, max-age=0, must-revalidate
+
+/el-aletleri
+  Cache-Control: public, max-age=0, must-revalidate
+
+/k-othrine-hasere
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kaba-yapi-cimento
   Cache-Control: public, max-age=0, must-revalidate
 
 /kalekim-yapi-kimyasallari
@@ -19,6 +34,45 @@
   Cache-Control: public, max-age=0, must-revalidate
 
 /yetkili-bayilikler
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kilit-kapi-hirdavat
+  Cache-Control: public, max-age=0, must-revalidate
+
+/elektrik-aydinlatma
+  Cache-Control: public, max-age=0, must-revalidate
+
+/tesisat-altyapi
+  Cache-Control: public, max-age=0, must-revalidate
+
+/formul-plastik-pprc
+  Cache-Control: public, max-age=0, must-revalidate
+
+/filli-boya-renxmatik
+  Cache-Control: public, max-age=0, must-revalidate
+
+/fawori-boya
+  Cache-Control: public, max-age=0, must-revalidate
+
+/tek-boya
+  Cache-Control: public, max-age=0, must-revalidate
+
+/marshall-boya
+  Cache-Control: public, max-age=0, must-revalidate
+
+/weber-yapi-kimyasallari
+  Cache-Control: public, max-age=0, must-revalidate
+
+/bianca-stella-boya
+  Cache-Control: public, max-age=0, must-revalidate
+
+/isonem-yalitim
+  Cache-Control: public, max-age=0, must-revalidate
+
+/balcova-showroom
+  Cache-Control: public, max-age=0, must-revalidate
+
+/urla-lojistik-depo
   Cache-Control: public, max-age=0, must-revalidate
 
 # 3. Static Assets & Fonts (Immutable Long-term Cache)
