@@ -1094,41 +1094,13 @@
   }
 
   function syncSubnavPin() {
+    // Pure CSS sticky stacking is active via pervan-catalog.css & pervan.js
     if (!subnav) return;
-    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    if (!initialSubnavTop || initialSubnavTop < 100) {
-      initialSubnavTop = getSubnavOrigin();
+    if (spacer) {
+      spacer.classList.remove("is-active");
+      spacer.style.height = "0px";
     }
-
-    var headerVisible = header && !header.classList.contains("header--hidden");
-    var hHeight = getHeaderHeight();
-    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
-
-    if (scrollPos >= pinThreshold) {
-      if (!subnav.classList.contains("is-pinned")) {
-        subnav.classList.add("is-pinned");
-        if (spacer) {
-          spacer.style.height = (subnav.offsetHeight || 46) + "px";
-          spacer.classList.add("is-active");
-        }
-      }
-
-      if (!headerVisible) {
-        subnav.classList.add("header-hidden");
-        subnav.style.top = "0px";
-      } else {
-        subnav.classList.remove("header-hidden");
-        subnav.style.top = hHeight + "px";
-        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
-      }
-    } else {
-      if (subnav.classList.contains("is-pinned")) {
-        subnav.classList.remove("is-pinned");
-        subnav.classList.remove("header-hidden");
-        subnav.style.top = "";
-        if (spacer) spacer.classList.remove("is-active");
-      }
-    }
+    subnav.style.top = "";
   }
 
   if (header && window.MutationObserver) {

@@ -290,11 +290,15 @@
  <!-- ==========================================================================
     2. CANONICAL SUBNAV
     ========================================================================== -->
- <nav class="pv-catalog-subnav" id="pvCatalogSubnav" aria-label="Haşere ve Çevre Sağlığı Departmanları">
-  <div class="pv-container pv-subnav-container">
+ <nav class="pv-subnav-hub" id="pvSubnav" aria-label="Haşere ve Çevre Sağlığı Departmanları">
+  <div class="pv-container pv-subnav-inner">
+   <div class="pv-subnav-brand">
+    <span class="pv-subnav-logo-badge">K-Othrine</span>
+    <span class="pv-subnav-brand-title">Haşere &amp; Çevre Sağlığı</span>
+   </div>
    
    <!-- Desktop Track -->
-   <div class="pv-subnav-track" role="tablist">
+   <div class="pv-subnav-links" id="pvSubnavLinks" role="tablist">
     <button type="button" class="pv-subnav-link active" data-target="kothrineKonsantrePanel" role="tab" aria-selected="true">
      <span>K-Othrine® Konsantre</span>
     </button>
@@ -317,24 +321,20 @@
       <polyline points="6 9 12 15 18 9"></polyline>
      </svg>
     </button>
-    <div class="pv-filter-rail" id="pvFilterRail">
+    <div class="pv-filter-rail" id="pvFilterRail" role="tablist">
      <!-- Dynamically injected -->
     </div>
    </div>
 
    <div class="pv-subnav-actions">
-    <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara">
-     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <button type="button" class="pv-subnav-search-btn" id="pvSubnavSearchBtn" aria-label="Ürün Ara (⌘K)">
+     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
      </svg>
-     <span>Ara</span>
-     <kbd class="pv-subnav-search-kbd">⌘K</kbd>
+     <span class="pv-search-label">Ara</span>
+     <kbd class="pv-kbd-shortcut">⌘K</kbd>
     </button>
-    <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20haşere%20ilaçları%20ve%20ekipmanları%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-subnav-cta-btn" id="pvSubnavCtaBtn">
-     <span>Fiyat Al</span>
-     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-    </a>
    </div>
   </div>
  </nav>
@@ -387,127 +387,151 @@
     <div class="pv-menu-list">
      <!-- Product 1 -->
      <div class="pv-menu-row" data-category="sc50" data-id="k-othrine-sc50-50ml" data-product-id="k-othrine-sc50-50ml" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/k-othrine-sc50-50ml.jpg" alt="Bayer K-Othrine SC 50 Haşere İlacı 50 ml" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/k-othrine-sc50-50ml.jpg" alt="Bayer K-Othrine SC 50 Haşere İlacı 50 ml" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Deltamethrin 50 g/L</div>
-       <h3 class="pv-menu-title">Bayer K-Othrine SC 50 Haşere İlacı (50 ml Şişe)</h3>
-       <p class="pv-menu-desc">Daire, ofis ve kapalı yaşam alanları için Sağlık Bakanlığı ruhsatlı, kokusuz, leke bırakmayan orijinal Bayer süspansiyon konsantre haşere ilacı. 5 litre su ile seyreltilir.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Daire İçi / 5 L Su</span>
-        <span class="pv-menu-tag-sub">50 ml Orijinal Şişe</span>
-        <span class="pv-menu-tag-sub">90 Gün Kalıcı</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer K-Othrine SC 50 Haşere İlacı (50 ml Şişe)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Deltamethrin 50 g/L</span>
        </div>
+       <div class="pv-menu-desc-line">Daire, ofis ve kapalı yaşam alanları için Sağlık Bakanlığı ruhsatlı, kokusuz, leke bırakmayan orijinal Bayer süspansiyon konsantre haşere ilacı. 5 litre su ile seyreltilir.</div>
+       <div class="pv-menu-meta-chips"><span>Daire İçi / 5 L Su</span><span>&bull;</span><span>50 ml Orijinal Şişe</span><span>&bull;</span><span>90 Gün Kalıcı</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="k-othrine-sc50-50ml">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20SC%2050%20(50%20ml)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 2 -->
      <div class="pv-menu-row" data-category="sc50" data-id="k-othrine-sc50-500ml" data-product-id="k-othrine-sc50-500ml" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/k-othrine-sc50-500ml.jpg" alt="Bayer K-Othrine SC 50 Haşere İlacı 500 ml" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/k-othrine-sc50-500ml.jpg" alt="Bayer K-Othrine SC 50 Haşere İlacı 500 ml" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Entegre Dozaj Ölçekli</div>
-       <h3 class="pv-menu-title">Bayer K-Othrine SC 50 Haşere İlacı (500 ml Dozajlı Şişe)</h3>
-       <p class="pv-menu-desc">Apartman ortak alanları, site çevreleri, villa bahçeleri ve bodrum katları için kendinden ölçek hazneli 500 ml profesyonel boy süspansiyon konsantre.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Site &amp; Bahçe / 50 L Su</span>
-        <span class="pv-menu-tag-sub">500 ml Kendinden Ölçekli</span>
-        <span class="pv-menu-tag-sub">Leke &amp; Koku Yapmaz</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer K-Othrine SC 50 Haşere İlacı (500 ml Dozajlı Şişe)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Entegre Dozaj Ölçekli</span>
        </div>
+       <div class="pv-menu-desc-line">Apartman ortak alanları, site çevreleri, villa bahçeleri ve bodrum katları için kendinden ölçek hazneli 500 ml profesyonel boy süspansiyon konsantre.</div>
+       <div class="pv-menu-meta-chips"><span>Site &amp; Bahçe / 50 L Su</span><span>&bull;</span><span>500 ml Kendinden Ölçekli</span><span>&bull;</span><span>Leke &amp; Koku Yapmaz</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="k-othrine-sc50-500ml">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20SC%2050%20(500%20ml)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 3 -->
      <div class="pv-menu-row" data-category="sc50" data-id="k-othrine-sc50-1000ml" data-product-id="k-othrine-sc50-1000ml" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/k-othrine-sc50-1000ml.jpg" alt="Bayer K-Othrine SC 50 Profesyonel 1000 ml" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/k-othrine-sc50-1000ml.jpg" alt="Bayer K-Othrine SC 50 Profesyonel 1000 ml" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">1 Litre Toptan Boy</div>
-       <h3 class="pv-menu-title">Bayer K-Othrine SC 50 Profesyonel Haşere İlacı (1000 ml Şişe)</h3>
-       <p class="pv-menu-desc">Şantiye, otel, fabrika, depo ve profesyonel ilaçlama firmaları için ekonomik 1 litrelik orijinal Bayer K-Othrine SC 50 ambalajı.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Profesyonel / 100 L Su</span>
-        <span class="pv-menu-tag-sub">1000 ml Sanayi Boy</span>
-        <span class="pv-menu-tag-sub">Toplu Şantiye &amp; Tesis</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer K-Othrine SC 50 Profesyonel Haşere İlacı (1000 ml Şişe)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">1 Litre Toptan Boy</span>
        </div>
+       <div class="pv-menu-desc-line">Şantiye, otel, fabrika, depo ve profesyonel ilaçlama firmaları için ekonomik 1 litrelik orijinal Bayer K-Othrine SC 50 ambalajı.</div>
+       <div class="pv-menu-meta-chips"><span>Profesyonel / 100 L Su</span><span>&bull;</span><span>1000 ml Sanayi Boy</span><span>&bull;</span><span>Toplu Şantiye &amp; Tesis</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="k-othrine-sc50-1000ml">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20SC%2050%20(1000%20ml)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 4 -->
      <div class="pv-menu-row" data-category="wg250" data-id="k-othrine-wg250-40g" data-product-id="k-othrine-wg250-40g" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/k-othrine-wg250-40g.jpg" alt="Bayer K-Othrine WG 250 Suda Eriyen Granül" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/k-othrine-wg250-40g.jpg" alt="Bayer K-Othrine WG 250 Suda Eriyen Granül" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Suda Tam Çözünür</div>
-       <h3 class="pv-menu-title">Bayer K-Othrine WG 250 Suda Eriyen Granül (40 g Poşet)</h3>
-       <p class="pv-menu-desc">Tozuma yapmayan mikro granül yapısıyla suda saniyeler içinde çözünen, gözenekli beton ve tuğla yüzeylerde emilmeden yüzeyde kalarak üstün öldürücülük sağlayan formül.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">%25 Deltamethrin Granül</span>
-        <span class="pv-menu-tag-sub">40 g Dozaj Poşet</span>
-        <span class="pv-menu-tag-sub">Gözenekli Yüzey Uzmanı</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer K-Othrine WG 250 Suda Eriyen Granül (40 g Poşet)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Suda Tam Çözünür</span>
        </div>
+       <div class="pv-menu-desc-line">Tozuma yapmayan mikro granül yapısıyla suda saniyeler içinde çözünen, gözenekli beton ve tuğla yüzeylerde emilmeden yüzeyde kalarak üstün öldürücülük sağlayan formül.</div>
+       <div class="pv-menu-meta-chips"><span>%25 Deltamethrin Granül</span><span>&bull;</span><span>40 g Dozaj Poşet</span><span>&bull;</span><span>Gözenekli Yüzey Uzmanı</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="k-othrine-wg250-40g">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20WG%20250%20(40%20g)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 5 -->
      <div class="pv-menu-row" data-category="partix" data-id="k-othrine-partix-500ml" data-product-id="k-othrine-partix-500ml" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/k-othrine-partix-500ml.jpg" alt="Bayer K-Othrine Partix Polimerik Süspansiyon" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/k-othrine-partix-500ml.jpg" alt="Bayer K-Othrine Partix Polimerik Süspansiyon" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Ahşap &amp; Beton Uyumlu</div>
-       <h3 class="pv-menu-title">Bayer K-Othrine Partix Polimerik Süspansiyon (500 ml)</h3>
-       <p class="pv-menu-desc">Bayer'in patentli polimer partikül teknolojisi sayesinde pürüzlü, ahşap ve emici yüzeylerde ilacın gözeneklere kaçmasını önleyen, yüzeyde asılı kalan yeni nesil haşere ilacı.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Polimer Teknolojisi</span>
-        <span class="pv-menu-tag-sub">500 ml Şişe</span>
-        <span class="pv-menu-tag-sub">Partix® Taşıyıcı</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer K-Othrine Partix Polimerik Süspansiyon (500 ml)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Ahşap &amp; Beton Uyumlu</span>
        </div>
+       <div class="pv-menu-desc-line">Bayer'in patentli polimer partikül teknolojisi sayesinde pürüzlü, ahşap ve emici yüzeylerde ilacın gözeneklere kaçmasını önleyen, yüzeyde asılı kalan yeni nesil haşere ilacı.</div>
+       <div class="pv-menu-meta-chips"><span>Polimer Teknolojisi</span><span>&bull;</span><span>500 ml Şişe</span><span>&bull;</span><span>Partix® Taşıyıcı</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="k-othrine-partix-500ml">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20K-Othrine%20Partix%20(500%20ml)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 6 -->
      <div class="pv-menu-row" data-category="ec-aqua" data-id="aqua-k-othrine-ew-1l" data-product-id="aqua-k-othrine-ew-1l" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/aqua-k-othrine-ew-1l.jpg" alt="Bayer Aqua K-Othrine EW Su Bazlı Sivrisinek İlacı" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/aqua-k-othrine-ew-1l.jpg" alt="Bayer Aqua K-Othrine EW Su Bazlı Sivrisinek İlacı" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Kokusuz Sisleme</div>
-       <h3 class="pv-menu-title">Bayer Aqua K-Othrine EW Su Bazlı Sivrisinek İlacı (1 Litre)</h3>
-       <p class="pv-menu-desc">Mazot yerine su ile seyreltilerek ULV soğuk sisleme ve termal sisleme makineleriyle uygulanan, çevreye ve bitkilere zarar vermeyen sivrisinek ve karasinek mücadele ilacı.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">FFAST Su Bazlı ULV</span>
-        <span class="pv-menu-tag-sub">1000 ml Orijinal Şişe</span>
-        <span class="pv-menu-tag-sub">Su ile Seyreltilir</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Aqua K-Othrine EW Su Bazlı Sivrisinek İlacı (1 Litre)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Kokusuz Sisleme</span>
        </div>
+       <div class="pv-menu-desc-line">Mazot yerine su ile seyreltilerek ULV soğuk sisleme ve termal sisleme makineleriyle uygulanan, çevreye ve bitkilere zarar vermeyen sivrisinek ve karasinek mücadele ilacı.</div>
+       <div class="pv-menu-meta-chips"><span>FFAST Su Bazlı ULV</span><span>&bull;</span><span>1000 ml Orijinal Şişe</span><span>&bull;</span><span>Su ile Seyreltilir</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="aqua-k-othrine-ew-1l">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Aqua%20K-Othrine%20EW%20(1%20L)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
     </div>
@@ -534,106 +558,126 @@
     <div class="pv-menu-list">
      <!-- Product 7 -->
      <div class="pv-menu-row" data-category="roach-gel" data-id="bayer-maxforce-platin-30g" data-product-id="bayer-maxforce-platin-30g" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/bayer-maxforce-platin-30g.jpg" alt="Bayer Maxforce Platin Hamamböceği Jeli" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/bayer-maxforce-platin-30g.jpg" alt="Bayer Maxforce Platin Hamamböceği Jeli" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Yem Çekingenliğine Son</div>
-       <h3 class="pv-menu-title">Bayer Maxforce Platin Hamamböceği Jeli (30 g Şırınga)</h3>
-       <p class="pv-menu-desc">BlueBead lezzet teknolojisiyle en dirençli ve yem çekingenliği gösteren Alman ve Amerikan hamamböceklerini bile hızla cezbeden, 30 gramlık profesyonel şırınga jel.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Clothianidin + BlueBead</span>
-        <span class="pv-menu-tag-sub">30 g Kartuş Şırınga</span>
-        <span class="pv-menu-tag-sub">Domino Koloni Kırıcı</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Maxforce Platin Hamamböceği Jeli (30 g Şırınga)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Clothianidin + BlueBead</span>
        </div>
+       <div class="pv-menu-desc-line">BlueBead lezzet teknolojisiyle en dirençli ve yem çekingenliği gösteren Alman ve Amerikan hamamböceklerini bile hızla cezbeden, 30 gramlık profesyonel şırınga jel.</div>
+       <div class="pv-menu-meta-chips"><span>Clothianidin + BlueBead</span><span>&bull;</span><span>30 g Kartuş Şırınga</span><span>&bull;</span><span>Domino Koloni Kırıcı</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="bayer-maxforce-platin-30g">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Maxforce%20Platin%20jel%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 8 -->
      <div class="pv-menu-row" data-category="roach-gel" data-id="bayer-maxforce-ic-30g" data-product-id="bayer-maxforce-ic-30g" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/bayer-maxforce-ic-30g.jpg" alt="Bayer Maxforce IC Hamamböceği Jeli" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/bayer-maxforce-ic-30g.jpg" alt="Bayer Maxforce IC Hamamböceği Jeli" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Klasik Güçlü Formül</div>
-       <h3 class="pv-menu-title">Bayer Maxforce IC Hamamböceği Jeli (30 g Şırınga)</h3>
-       <p class="pv-menu-desc">Ev, restoran, pastane ve otellerde kalorifer böceği ve hamamböceği yuvalarını yok eden, koku yaymayan ve leke bırakmayan orijinal Bayer klasiği jel yem.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Imidacloprid %2.15</span>
-        <span class="pv-menu-tag-sub">30 g Şırınga</span>
-        <span class="pv-menu-tag-sub">Yuva Kurutucu Etki</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Maxforce IC Hamamböceği Jeli (30 g Şırınga)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Klasik Güçlü Formül</span>
        </div>
+       <div class="pv-menu-desc-line">Ev, restoran, pastane ve otellerde kalorifer böceği ve hamamböceği yuvalarını yok eden, koku yaymayan ve leke bırakmayan orijinal Bayer klasiği jel yem.</div>
+       <div class="pv-menu-meta-chips"><span>Imidacloprid %2.15</span><span>&bull;</span><span>30 g Şırınga</span><span>&bull;</span><span>Yuva Kurutucu Etki</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="bayer-maxforce-ic-30g">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Maxforce%20IC%20jel%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 9 -->
      <div class="pv-menu-row" data-category="ant-gel" data-id="bayer-maxforce-quantum-30g" data-product-id="bayer-maxforce-quantum-30g" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/bayer-maxforce-quantum-30g.jpg" alt="Bayer Maxforce Quantum Karınca Jeli" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/bayer-maxforce-quantum-30g.jpg" alt="Bayer Maxforce Quantum Karınca Jeli" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Kraliçeyi Yok Eder</div>
-       <h3 class="pv-menu-title">Bayer Maxforce Quantum Karınca Jeli (30 g Damlalıklı)</h3>
-       <p class="pv-menu-desc">İşçi karıncaların sıvıyı kraliçeye ve lavralara taşımasıyla tüm koloniyi kökten yok eden, şekerli ve proteinli karınca türlerinin tamamına karşı etkili sıvı jel.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Sıvı Matriks Karınca Yemi</span>
-        <span class="pv-menu-tag-sub">30 g Damlalıklı Şişe</span>
-        <span class="pv-menu-tag-sub">Tüm Koloniye Taşınır</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Maxforce Quantum Karınca Jeli (30 g Damlalıklı)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Kraliçeyi Yok Eder</span>
        </div>
+       <div class="pv-menu-desc-line">İşçi karıncaların sıvıyı kraliçeye ve lavralara taşımasıyla tüm koloniyi kökten yok eden, şekerli ve proteinli karınca türlerinin tamamına karşı etkili sıvı jel.</div>
+       <div class="pv-menu-meta-chips"><span>Sıvı Matriks Karınca Yemi</span><span>&bull;</span><span>30 g Damlalıklı Şişe</span><span>&bull;</span><span>Tüm Koloniye Taşınır</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="bayer-maxforce-quantum-30g">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Maxforce%20Quantum%20karınca%20jeli%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 10 -->
      <div class="pv-menu-row" data-category="applicator" data-id="maxforce-jel-tabancasi-itici" data-product-id="maxforce-jel-tabancasi-itici" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/maxforce-jel-tabancasi-itici.jpg" alt="Maxforce Hassas Dozajlı Jel Tabancası" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/maxforce-jel-tabancasi-itici.jpg" alt="Maxforce Hassas Dozajlı Jel Tabancası" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Ekonomik Sarfiyat</div>
-       <h3 class="pv-menu-title">Maxforce Hassas Dozajlı Jel Tabancası &amp; Metal İtici</h3>
-       <p class="pv-menu-desc">30 gramlık Maxforce ve tüm standart haşere jeli kartuşlarıyla uyumlu, her tetikte tam 0.1 gram dozajlayarak ürün israfını sıfıra indiren ergonomik metal-plastik tabanca.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">0.1 g Hassas Dozaj</span>
-        <span class="pv-menu-tag-sub">Metal İtici Mil</span>
-        <span class="pv-menu-tag-sub">30g Kartuş Uyumlu</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Maxforce Hassas Dozajlı Jel Tabancası &amp; Metal İtici</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Ekonomik Sarfiyat</span>
        </div>
+       <div class="pv-menu-desc-line">30 gramlık Maxforce ve tüm standart haşere jeli kartuşlarıyla uyumlu, her tetikte tam 0.1 gram dozajlayarak ürün israfını sıfıra indiren ergonomik metal-plastik tabanca.</div>
+       <div class="pv-menu-meta-chips"><span>0.1 g Hassas Dozaj</span><span>&bull;</span><span>Metal İtici Mil</span><span>&bull;</span><span>30g Kartuş Uyumlu</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="maxforce-jel-tabancasi-itici">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Maxforce%20jel%20tabancası%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 11 -->
      <div class="pv-menu-row" data-category="applicator" data-id="maxforce-jel-yem-istasyonu-kutusu" data-product-id="maxforce-jel-yem-istasyonu-kutusu" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/maxforce-jel-yem-istasyonu-kutusu.jpg" alt="Emniyetli Jel Yem İstasyonu Kiti 10'lu" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/maxforce-jel-yem-istasyonu-kutusu.jpg" alt="Emniyetli Jel Yem İstasyonu Kiti 10'lu" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Kilitli Kapaklı</div>
-       <h3 class="pv-menu-title">Emniyetli Jel Yem İstasyonu Kiti (10'lu Paket)</h3>
-       <p class="pv-menu-desc">Gıda işletmeleri, restoran mutfakları ve evcil hayvan bulunan konutlarda jelin doğrudan yüzeye sürülmesini engelleyen, içine jel sıkılan kilitli siyah plastik istasyon kiti.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Çocuk &amp; Evcil Hayvan Korumalı</span>
-        <span class="pv-menu-tag-sub">10 Adet / Paket</span>
-        <span class="pv-menu-tag-sub">Çift Yönlü Giriş</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Emniyetli Jel Yem İstasyonu Kiti (10'lu Paket)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Kilitli Kapaklı</span>
        </div>
+       <div class="pv-menu-desc-line">Gıda işletmeleri, restoran mutfakları ve evcil hayvan bulunan konutlarda jelin doğrudan yüzeye sürülmesini engelleyen, içine jel sıkılan kilitli siyah plastik istasyon kiti.</div>
+       <div class="pv-menu-meta-chips"><span>Çocuk &amp; Evcil Hayvan Korumalı</span><span>&bull;</span><span>10 Adet / Paket</span><span>&bull;</span><span>Çift Yönlü Giriş</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="maxforce-jel-yem-istasyonu-kutusu">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20jel%20yem%20istasyon%20kutusu%2010'lu%20paket%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
     </div>
@@ -660,85 +704,101 @@
     <div class="pv-menu-list">
      <!-- Product 12 -->
      <div class="pv-menu-row" data-category="rodent-paste" data-id="bayer-racumin-pasta-yem" data-product-id="bayer-racumin-pasta-yem" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/bayer-racumin-pasta-yem.jpg" alt="Bayer Racumin Pasta Sıçan ve Fare Yemi" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/bayer-racumin-pasta-yem.jpg" alt="Bayer Racumin Pasta Sıçan ve Fare Yemi" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Mumlu Porsiyon Poşetli</div>
-       <h3 class="pv-menu-title">Bayer Racumin Pasta Sıçan &amp; Fare Yemi (Porsiyon Paket / 5 kg Kova)</h3>
-       <p class="pv-menu-desc">Neme ve suya dayanıklı gözenekli filtre kağıdı içinde hazırlanmış, farelerin kokusunu uzaktan alıp hızla tükettiği, hedef dışı hayvanların yememesi için Bitrex içeren pasta yem.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Coumatetralyl + Bitrex</span>
-        <span class="pv-menu-tag-sub">Porsiyon Poşetli Formül</span>
-        <span class="pv-menu-tag-sub">5 kg Kova</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Racumin Pasta Sıçan &amp; Fare Yemi (Porsiyon Paket / 5 kg Kova)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Coumatetralyl + Bitrex</span>
        </div>
+       <div class="pv-menu-desc-line">Neme ve suya dayanıklı gözenekli filtre kağıdı içinde hazırlanmış, farelerin kokusunu uzaktan alıp hızla tükettiği, hedef dışı hayvanların yememesi için Bitrex içeren pasta yem.</div>
+       <div class="pv-menu-meta-chips"><span>Coumatetralyl + Bitrex</span><span>&bull;</span><span>Porsiyon Poşetli Formül</span><span>&bull;</span><span>5 kg Kova</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="bayer-racumin-pasta-yem">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Racumin%20Pasta%20fare%20yemi%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 13 -->
      <div class="pv-menu-row" data-category="rodent-block" data-id="bayer-racumin-mum-blok" data-product-id="bayer-racumin-mum-blok" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/bayer-racumin-mum-blok.jpg" alt="Bayer Racumin Mum Blok 10 kg Kova" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/bayer-racumin-mum-blok.jpg" alt="Bayer Racumin Mum Blok 10 kg Kova" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Ortası Delikli Blok</div>
-       <h3 class="pv-menu-title">Bayer Racumin Mum Blok Neme Dayanıklı Fare Yemi (10 kg Kova)</h3>
-       <p class="pv-menu-desc">Rögar, kanalizasyon, bodrum, bahçe ve foseptik çevreleri gibi aşırı ıslak zeminlerde dağılmadan ve küflenmeden aylarca formunu koruyan parafinli mum blok kemirgen yemi.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Suya &amp; Yağmura Tam Direnç</span>
-        <span class="pv-menu-tag-sub">10 kg Kova</span>
-        <span class="pv-menu-tag-sub">İstasyon Teli Uyumlu</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Bayer Racumin Mum Blok Neme Dayanıklı Fare Yemi (10 kg Kova)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Ortası Delikli Blok</span>
        </div>
+       <div class="pv-menu-desc-line">Rögar, kanalizasyon, bodrum, bahçe ve foseptik çevreleri gibi aşırı ıslak zeminlerde dağılmadan ve küflenmeden aylarca formunu koruyan parafinli mum blok kemirgen yemi.</div>
+       <div class="pv-menu-meta-chips"><span>Suya &amp; Yağmura Tam Direnç</span><span>&bull;</span><span>10 kg Kova</span><span>&bull;</span><span>İstasyon Teli Uyumlu</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="bayer-racumin-mum-blok">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20Bayer%20Racumin%20Mum%20Blok%20(10%20kg)%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 14 -->
      <div class="pv-menu-row" data-category="rodent-station" data-id="kilitli-sican-fare-istasyonu" data-product-id="kilitli-sican-fare-istasyonu" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/kilitli-sican-fare-istasyonu.jpg" alt="Çift Girişli Kilitli Fare ve Sıçan İstasyonu" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/kilitli-sican-fare-istasyonu.jpg" alt="Çift Girişli Kilitli Fare ve Sıçan İstasyonu" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Şantiye &amp; Site Tipi</div>
-       <h3 class="pv-menu-title">Çift Girişli Kilitli Plastik Sıçan &amp; Fare Yem İstasyonu</h3>
-       <p class="pv-menu-desc">Çocukların, sokak hayvanlarının ve evcil canlıların zehirli yeme ulaşmasını imkansız kılan, çift girişli, metal blok sabitleme telli ve kilit anahtarlı ağır hizmet istasyonu.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Anahtarlı Emniyet Kilidi</span>
-        <span class="pv-menu-tag-sub">Metal Sabitleme Teli</span>
-        <span class="pv-menu-tag-sub">Su Tahliye Kanallı</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Çift Girişli Kilitli Plastik Sıçan &amp; Fare Yem İstasyonu</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Şantiye &amp; Site Tipi</span>
        </div>
+       <div class="pv-menu-desc-line">Çocukların, sokak hayvanlarının ve evcil canlıların zehirli yeme ulaşmasını imkansız kılan, çift girişli, metal blok sabitleme telli ve kilit anahtarlı ağır hizmet istasyonu.</div>
+       <div class="pv-menu-meta-chips"><span>Anahtarlı Emniyet Kilidi</span><span>&bull;</span><span>Metal Sabitleme Teli</span><span>&bull;</span><span>Su Tahliye Kanallı</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="kilitli-sican-fare-istasyonu">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20kilitli%20fare%20yem%20istasyonu%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 15 -->
      <div class="pv-menu-row" data-category="rodent-station" data-id="yapiskali-sican-fare-yakalama-plakasi" data-product-id="yapiskali-sican-fare-yakalama-plakasi" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/yapiskali-sican-fare-yakalama-plakasi.jpg" alt="Zehirsiz Yapışkanlı Fare Yakalama Plakası" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/yapiskali-sican-fare-yakalama-plakasi.jpg" alt="Zehirsiz Yapışkanlı Fare Yakalama Plakası" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Anında Mekanik Çözüm</div>
-       <h3 class="pv-menu-title">Zehirsiz Güçlü Yapışkanlı Fare &amp; Sıçan Yakalama Plakası</h3>
-       <p class="pv-menu-desc">Kimyasal zehir kullanılmasının yasak veya sakıncalı olduğu gıda depoları, kilerler ve fırınlar için yüksek yapışma kuvvetine sahip sert plastik/mukavva fare yakalama plakası.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Zehirsiz &amp; Kokusuz Yakalama</span>
-        <span class="pv-menu-tag-sub">Kurumayan Güçlü Tutkal</span>
-        <span class="pv-menu-tag-sub">Katlanabilir Tünel</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Zehirsiz Güçlü Yapışkanlı Fare &amp; Sıçan Yakalama Plakası</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Anında Mekanik Çözüm</span>
        </div>
+       <div class="pv-menu-desc-line">Kimyasal zehir kullanılmasının yasak veya sakıncalı olduğu gıda depoları, kilerler ve fırınlar için yüksek yapışma kuvvetine sahip sert plastik/mukavva fare yakalama plakası.</div>
+       <div class="pv-menu-meta-chips"><span>Zehirsiz &amp; Kokusuz Yakalama</span><span>&bull;</span><span>Kurumayan Güçlü Tutkal</span><span>&bull;</span><span>Katlanabilir Tünel</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="yapiskali-sican-fare-yakalama-plakasi">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20yapışkanlı%20fare%20yakalama%20plakası%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
     </div>
@@ -765,106 +825,126 @@
     <div class="pv-menu-list">
      <!-- Product 16 -->
      <div class="pv-menu-row" data-category="sprayers" data-id="basincli-ilaclama-pompasi-5l" data-product-id="basincli-ilaclama-pompasi-5l" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/basincli-ilaclama-pompasi-5l.jpg" alt="5 Litre Omuz Askılı Basınçlı İlaçlama Pompası" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/basincli-ilaclama-pompasi-5l.jpg" alt="5 Litre Omuz Askılı Basınçlı İlaçlama Pompası" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">5 Litre Omuz Tipi</div>
-       <h3 class="pv-menu-title">5 Litre Omuz Askılı Basınçlı İlaçlama Pompası (Pirinç Nozul)</h3>
-       <p class="pv-menu-desc">K-Othrine ve su karışımını mikron düzeyinde ince sisleme veya düz atışla süpürgelik diplerine basan, pirinç mızraklı, emniyet ventilli 5 litrelik profesyonel ilaçlama pompası.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Pirinç Tetik &amp; Mızrak</span>
-        <span class="pv-menu-tag-sub">5 Litre Net Tank</span>
-        <span class="pv-menu-tag-sub">Emniyet Ventilli</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">5 Litre Omuz Askılı Basınçlı İlaçlama Pompası (Pirinç Nozul)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Pirinç Tetik &amp; Mızrak</span>
        </div>
+       <div class="pv-menu-desc-line">K-Othrine ve su karışımını mikron düzeyinde ince sisleme veya düz atışla süpürgelik diplerine basan, pirinç mızraklı, emniyet ventilli 5 litrelik profesyonel ilaçlama pompası.</div>
+       <div class="pv-menu-meta-chips"><span>Pirinç Tetik &amp; Mızrak</span><span>&bull;</span><span>5 Litre Net Tank</span><span>&bull;</span><span>Emniyet Ventilli</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="basincli-ilaclama-pompasi-5l">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%205%20Litre%20basınçlı%20ilaçlama%20pompası%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 17 -->
      <div class="pv-menu-row" data-category="sprayers" data-id="tetikli-basincli-sprey-pompa-2l" data-product-id="tetikli-basincli-sprey-pompa-2l" role="button" tabindex="0">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/tetikli-basincli-sprey-pompa-2l.jpg" alt="2 Litre Manuel Basınçlı El Pompası" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/tetikli-basincli-sprey-pompa-2l.jpg" alt="2 Litre Manuel Basınçlı El Pompası" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">2 Litre El Tipi</div>
-       <h3 class="pv-menu-title">2 Litre Manuel Basınçlı El Pompası (Ayarlı Nozul)</h3>
-       <p class="pv-menu-desc">Daire içi süpürgelikler, balkon köşeleri ve petek arkaları için hafif, tek elle pompalanıp kilitli tetikle sürekli püskürtme yapan 2 litrelik basınçlı el pompası.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Kompakt Daire Tipi</span>
-        <span class="pv-menu-tag-sub">2 Litre Kapasite</span>
-        <span class="pv-menu-tag-sub">Tetik Kilitlemeli</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">2 Litre Manuel Basınçlı El Pompası (Ayarlı Nozul)</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">2 Litre El Tipi</span>
        </div>
+       <div class="pv-menu-desc-line">Daire içi süpürgelikler, balkon köşeleri ve petek arkaları için hafif, tek elle pompalanıp kilitli tetikle sürekli püskürtme yapan 2 litrelik basınçlı el pompası.</div>
+       <div class="pv-menu-meta-chips"><span>Kompakt Daire Tipi</span><span>&bull;</span><span>2 Litre Kapasite</span><span>&bull;</span><span>Tetik Kilitlemeli</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="tetikli-basincli-sprey-pompa-2l">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%202%20Litre%20el%20tipi%20ilaçlama%20pompası%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 18 -->
      <div class="pv-menu-row" data-category="ppe" data-id="ffp2-karbon-filtreli-ilaclama-maskesi" data-product-id="ffp2-karbon-filtreli-ilaclama-maskesi" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/ffp2-karbon-filtreli-ilaclama-maskesi.jpg" alt="FFP2 Aktif Karbon Filtreli İlaçlama Maskesi" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/ffp2-karbon-filtreli-ilaclama-maskesi.jpg" alt="FFP2 Aktif Karbon Filtreli İlaçlama Maskesi" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Aktif Karbon Katmanlı</div>
-       <h3 class="pv-menu-title">FFP2 Aktif Karbon Filtreli Ventilli Kimyasal Gaz &amp; Toz Maskesi</h3>
-       <p class="pv-menu-desc">Püskürtme esnasında havaya karışan mikronize ilaç damlacıklarını ve organik buharları absorbe eden nefes ventilli profesyonel aktif karbonlu ilaçlama maskesi.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">EN 149:2001+A1 FFP2 NR D</span>
-        <span class="pv-menu-tag-sub">Nefes Ventilli</span>
-        <span class="pv-menu-tag-sub">Aktif Karbon Koku Filtreli</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">FFP2 Aktif Karbon Filtreli Ventilli Kimyasal Gaz &amp; Toz Maskesi</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Aktif Karbon Katmanlı</span>
        </div>
+       <div class="pv-menu-desc-line">Püskürtme esnasında havaya karışan mikronize ilaç damlacıklarını ve organik buharları absorbe eden nefes ventilli profesyonel aktif karbonlu ilaçlama maskesi.</div>
+       <div class="pv-menu-meta-chips"><span>EN 149:2001+A1 FFP2 NR D</span><span>&bull;</span><span>Nefes Ventilli</span><span>&bull;</span><span>Aktif Karbon Koku Filtreli</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="ffp2-karbon-filtreli-ilaclama-maskesi">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20FFP2%20karbon%20filtreli%20ilaçlama%20maskesi%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 19 -->
      <div class="pv-menu-row" data-category="ppe" data-id="nitril-kimyasal-ilaclama-eldiveni" data-product-id="nitril-kimyasal-ilaclama-eldiveni" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/nitril-kimyasal-ilaclama-eldiveni.jpg" alt="Ağır Hizmet Kimyasal Nitril Eldiven" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/nitril-kimyasal-ilaclama-eldiveni.jpg" alt="Ağır Hizmet Kimyasal Nitril Eldiven" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Deltamethrin Geçirmez</div>
-       <h3 class="pv-menu-title">Ağır Hizmet Tipi Kimyasal Dayanımlı Yeşil Nitril Eldiven</h3>
-       <p class="pv-menu-desc">Konsantre ilaçların hazırlanması, seyreltilmesi ve spreyleme sırasında kimyasalın cilde temasını önleyen, içi pamuk astarlı uzun konçlu profesyonel yeşil nitril eldiven.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">EN ISO 374-1 Tip B</span>
-        <span class="pv-menu-tag-sub">Uzun Konç</span>
-        <span class="pv-menu-tag-sub">Elmas Desen Kaydırmaz</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">Ağır Hizmet Tipi Kimyasal Dayanımlı Yeşil Nitril Eldiven</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Deltamethrin Geçirmez</span>
        </div>
+       <div class="pv-menu-desc-line">Konsantre ilaçların hazırlanması, seyreltilmesi ve spreyleme sırasında kimyasalın cilde temasını önleyen, içi pamuk astarlı uzun konçlu profesyonel yeşil nitril eldiven.</div>
+       <div class="pv-menu-meta-chips"><span>EN ISO 374-1 Tip B</span><span>&bull;</span><span>Uzun Konç</span><span>&bull;</span><span>Elmas Desen Kaydırmaz</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="nitril-kimyasal-ilaclama-eldiveni">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20kimyasal%20ilaçlama%20eldiveni%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
 
      <!-- Product 20 -->
      <div class="pv-menu-row" data-category="measuring" data-id="hassas-dereceli-olcek-kabi-100ml" data-product-id="hassas-dereceli-olcek-kabi-100ml" role="button" tabindex="0" style="display: none;">
-      <div class="pv-menu-thumb-box">
-       <img src="assets/hasere/hassas-dereceli-olcek-kabi-100ml.jpg" alt="100 ml Dereceli Karışım ve Dozajlama Kabı" class="pv-menu-thumb" loading="lazy" decoding="async" />
+      <div class="pv-menu-thumb">
+       <img src="assets/hasere/hassas-dereceli-olcek-kabi-100ml.jpg" alt="100 ml Dereceli Karışım ve Dozajlama Kabı" loading="lazy" decoding="async" />
       </div>
-      <div class="pv-menu-info">
-       <div class="pv-menu-eyebrow">Kabartma Ölçek Çizgili</div>
-       <h3 class="pv-menu-title">100 ml Kabartmalı Dereceli Karışım &amp; Dozajlama Ölçek Kabı</h3>
-       <p class="pv-menu-desc">K-Othrine SC 50 ve diğer konsantre ilaçların su tankına doğru oranda eklenmesini sağlayan, kimyasallarla silinmeyen kabartma ölçekli polipropilen dereceli kap.</p>
-       <div class="pv-menu-tags">
-        <span class="pv-menu-tag">Mililitre Hassasiyetinde</span>
-        <span class="pv-menu-tag-sub">100 ml Hacim</span>
-        <span class="pv-menu-tag-sub">Şeffaf Polipropilen</span>
+      <div class="pv-menu-main">
+       <div class="pv-menu-title-row">
+        <span class="pv-menu-name">100 ml Kabartmalı Dereceli Karışım &amp; Dozajlama Ölçek Kabı</span>
+        <span class="pv-menu-dots">........................................</span>
+        <span class="pv-menu-tag tag-amber">Kabartma Ölçek Çizgili</span>
        </div>
+       <div class="pv-menu-desc-line">K-Othrine SC 50 ve diğer konsantre ilaçların su tankına doğru oranda eklenmesini sağlayan, kimyasallarla silinmeyen kabartma ölçekli polipropilen dereceli kap.</div>
+       <div class="pv-menu-meta-chips"><span>Mililitre Hassasiyetinde</span><span>&bull;</span><span>100 ml Hacim</span><span>&bull;</span><span>Şeffaf Polipropilen</span></div>
       </div>
-      <div class="pv-menu-actions">
-       <button type="button" class="pv-open-modal-btn" data-product-id="hassas-dereceli-olcek-kabi-100ml">Teknik Detay</button>
-       <a href="https://wa.me/905323844497?text=Merhaba,%20100%20ml%20dereceli%20ölçek%20kabı%20için%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-row-wa-direct" aria-label="WhatsApp Fiyat Al">Fiyat Al →</a>
+      <div class="pv-menu-aside">
+       <span class="pv-menu-action-label">Teknik Detay</span>
+       <div class="pv-menu-arrow" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+         <line x1="5" y1="12" x2="19" y2="12"></line>
+         <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+       </div>
       </div>
      </div>
     </div>

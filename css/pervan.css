@@ -109,7 +109,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
 }
@@ -125,7 +125,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
   position: relative;
@@ -3470,6 +3470,10 @@ header.header--menu-open {
    RESPONSIVE MOBILE STYLING (max-width: 1259px) — REFORM CPH EXACT 2-ROW
    ========================================================================== */
 @media screen and (max-width: 1259px) {
+  :root {
+    --header-height: 100px;
+  }
+
   .navbar-top {
     display: flex !important;
     flex-wrap: wrap !important;

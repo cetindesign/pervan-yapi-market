@@ -590,46 +590,18 @@
 
   // 3. TRANSPARENT HEADER OBSERVER & SUBNAV PINNING
   var header = document.getElementById("pvTransparentHeader") || document.querySelector("header");
-  var subnav = document.getElementById("pvCatalogSubnav");
+  var subnav = document.getElementById("pvSubnav") || document.getElementById("pvCatalogSubnav");
   var spacer = document.getElementById("pvSubnavSpacer");
   var initialSubnavTop = 0;
 
   function syncSubnavPin() {
-    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (header) {
-      if (scrollY > 120) {
-        header.classList.add("header--solid");
-      } else {
-        header.classList.remove("header--solid");
-      }
-    }
-
+    // Pure CSS sticky stacking is active via pervan-catalog.css & pervan.js
     if (!subnav) return;
-    if (!initialSubnavTop) {
-      var rect = subnav.getBoundingClientRect();
-      initialSubnavTop = rect.top + scrollY;
+    if (spacer) {
+      spacer.classList.remove("is-active");
+      spacer.style.height = "0px";
     }
-
-    var headerHeight = 0;
-    if (header && !header.classList.contains("header--hidden")) {
-      headerHeight = header.offsetHeight || 72;
-    }
-
-    if (scrollY + headerHeight >= initialSubnavTop) {
-      subnav.classList.add("is-pinned");
-      subnav.style.top = headerHeight + "px";
-      if (spacer) {
-        spacer.style.height = subnav.offsetHeight + "px";
-        spacer.classList.add("is-active");
-      }
-    } else {
-      subnav.classList.remove("is-pinned");
-      subnav.style.top = "";
-      if (spacer) {
-        spacer.style.height = "0px";
-        spacer.classList.remove("is-active");
-      }
-    }
+    subnav.style.top = "";
   }
 
   if (header && window.MutationObserver) {
@@ -693,7 +665,7 @@
       var target = link.getAttribute("data-target");
       if (target) {
         switchTab(target);
-        var subnavEl = document.getElementById("pvCatalogSubnav");
+        var subnavEl = document.getElementById("pvSubnav") || document.getElementById("pvCatalogSubnav");
         if (subnavEl) {
           var rect = subnavEl.getBoundingClientRect();
           var offset = window.pageYOffset + rect.top - 80;
@@ -762,7 +734,7 @@
       item.addEventListener("click", function() {
         switchTab(dept.id);
         closeDeptDrawer();
-        var subnavEl = document.getElementById("pvCatalogSubnav");
+        var subnavEl = document.getElementById("pvSubnav") || document.getElementById("pvCatalogSubnav");
         if (subnavEl) {
           var rect = subnavEl.getBoundingClientRect();
           window.scrollTo({ top: window.pageYOffset + rect.top - 70, behavior: "smooth" });
@@ -784,13 +756,13 @@
     originalPills.forEach(function(op) {
       var chip = document.createElement("button");
       chip.type = "button";
-      chip.className = "pv-rail-chip" + (op.classList.contains("active") ? " active" : "");
+      chip.className = "pv-filter-chip" + (op.classList.contains("active") ? " active" : "");
       chip.textContent = op.textContent;
       chip.setAttribute("data-filter", op.getAttribute("data-filter"));
 
       chip.addEventListener("click", function() {
         op.click();
-        mobileFilterRail.querySelectorAll(".pv-rail-chip").forEach(function(c) { c.classList.remove("active"); });
+        mobileFilterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) { c.classList.remove("active"); });
         chip.classList.add("active");
       });
 

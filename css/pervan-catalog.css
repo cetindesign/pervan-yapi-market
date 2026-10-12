@@ -45,9 +45,9 @@
   --pv-sheet-safe-bottom: env(safe-area-inset-bottom, 16px);
 }
 
-/* Global Root Viewport Lock (Eliminate 2D Panning & Mobile Drift) */
+/* Global Root Viewport Lock (Eliminate 2D Panning & Mobile Drift without breaking sticky context) */
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -3009,6 +3009,8 @@ html, body {
    STICKY ARCHITECTURAL SUB-NAV HUB (Pervan Standard)
    ========================================================================== */
 .pv-subnav-hub {
+  position: sticky !important;
+  top: var(--header-actual-height, var(--header-height, 74px)) !important;
   width: 100%;
   z-index: 980;
   background: rgba(255, 255, 255, 0.94);
@@ -3019,26 +3021,25 @@ html, body {
   transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
 }
 
-/* Fixed Pinning State */
-.pv-subnav-hub.is-pinned {
-  position: fixed;
-  top: var(--header-actual-height, 60px);
-  left: 0;
-  right: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.pv-subnav-hub.is-pinned.header-hidden {
+/* Header hidden -> pin flush at very top (0px) */
+body.header--hidden .pv-subnav-hub,
+body:has(header.header--hidden) .pv-subnav-hub,
+.pv-subnav-hub.header-hidden {
   top: 0px !important;
 }
 
+/* Pinned state enhanced shadow */
+.pv-subnav-hub.is-pinned {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
 .pv-subnav-spacer {
-  display: none;
-  height: 52px;
+  display: none !important;
+  height: 0 !important;
 }
 
 .pv-subnav-spacer.is-active {
-  display: block;
+  display: none !important;
 }
 
 .pv-subnav-inner {
@@ -3253,7 +3254,8 @@ html, body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   }
   .pv-subnav-spacer {
-    height: 46px !important;
+    display: none !important;
+    height: 0 !important;
   }
   .pv-subnav-inner {
     height: 46px;

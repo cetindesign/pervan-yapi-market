@@ -76,6 +76,28 @@
       var minUpThreshold = -2;    // Requires just 2px upward scroll to IMMEDIATELY reveal!
       var topSafeZone = 60;      // Always visible when within top 60px of page
 
+      function hideHeader() {
+        headerEl.classList.add("header--hidden");
+        document.body.classList.add("header--hidden");
+        document.documentElement.style.setProperty("--header-actual-height", "0px");
+      }
+
+      function showHeader() {
+        headerEl.classList.remove("header--hidden");
+        document.body.classList.remove("header--hidden");
+        var h = headerEl.offsetHeight || 74;
+        document.documentElement.style.setProperty("--header-actual-height", h + "px");
+      }
+
+      // Initial clearance measurement
+      showHeader();
+      window.addEventListener("resize", function() {
+        if (!headerEl.classList.contains("header--hidden")) {
+          var h = headerEl.offsetHeight || 74;
+          document.documentElement.style.setProperty("--header-actual-height", h + "px");
+        }
+      }, { passive: true });
+
       function onScrollUpdate() {
         var currentScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0;
         var maxScrollY = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
@@ -84,7 +106,7 @@
         // Never hide while mobile menu drawer is open
         var isDrawerOpened = navbarContents && navbarContents.classList.contains("opened");
         if (isDrawerOpened) {
-          headerEl.classList.remove("header--hidden");
+          showHeader();
           lastScrollY = currentScrollY;
           accumulatedDelta = 0;
           isTicking = false;
@@ -93,7 +115,7 @@
 
         // Always show near the very top of the page
         if (currentScrollY <= topSafeZone) {
-          headerEl.classList.remove("header--hidden");
+          showHeader();
           accumulatedDelta = 0;
         } else {
           if (delta > 0) {
@@ -107,7 +129,7 @@
               accumulatedDelta += delta;
 
               if (accumulatedDelta >= minDownThreshold) {
-                headerEl.classList.add("header--hidden");
+                hideHeader();
               }
             }
           } else if (delta < 0) {
@@ -118,7 +140,7 @@
             accumulatedDelta += delta;
 
             if (accumulatedDelta <= minUpThreshold) {
-              headerEl.classList.remove("header--hidden");
+              showHeader();
             }
           }
         }

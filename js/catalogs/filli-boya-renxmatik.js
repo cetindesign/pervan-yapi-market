@@ -5309,44 +5309,13 @@
   }
 
   function syncSubnavPin() {
-    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    if (!initialSubnavTop || initialSubnavTop < 100) {
-      initialSubnavTop = getSubnavOrigin();
+    // Pure CSS sticky stacking is active via pervan-catalog.css & pervan.js
+    if (!subnav) return;
+    if (spacer) {
+      spacer.classList.remove("is-active");
+      spacer.style.height = "0px";
     }
-
-    var headerVisible = header && !header.classList.contains("header--hidden");
-    var hHeight = getHeaderHeight();
-    var pinThreshold = initialSubnavTop - (headerVisible ? hHeight : 0);
-
-    // As long as we are scrolled to or past the subnav area (boya menüsü or other tabs):
-    if (scrollPos >= pinThreshold) {
-      if (!subnav.classList.contains("is-pinned")) {
-        subnav.classList.add("is-pinned");
-        if (spacer) {
-          spacer.style.height = (subnav.offsetHeight || 52) + "px";
-          spacer.classList.add("is-active");
-        }
-      }
-
-      if (!headerVisible) {
-        // Scrolling DOWN -> Header hidden -> Pin at very top of screen (0px)
-        subnav.classList.add("header-hidden");
-        subnav.style.top = "0px";
-      } else {
-        // Scrolling UP -> Header revealed -> Pin directly under header
-        subnav.classList.remove("header-hidden");
-        subnav.style.top = hHeight + "px";
-        document.documentElement.style.setProperty("--header-actual-height", hHeight + "px");
-      }
-    } else {
-      // Scrolled all the way back up into hero -> unpin and return to natural flow
-      if (subnav.classList.contains("is-pinned")) {
-        subnav.classList.remove("is-pinned");
-        subnav.classList.remove("header-hidden");
-        subnav.style.top = "";
-        if (spacer) spacer.classList.remove("is-active");
-      }
-    }
+    subnav.style.top = "";
   }
 
   // MutationObserver on header so class changes (header--hidden added/removed by pervan.js)

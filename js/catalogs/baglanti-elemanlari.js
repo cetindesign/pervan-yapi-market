@@ -1389,7 +1389,7 @@
     });
 
     var activeDept = DEPARTMENTS_DATA.find(function(d) { return d.id === targetId; });
-    var activeLabel = document.getElementById("pvDrawerActiveLabel");
+    var activeLabel = document.getElementById("pvDeptTriggerLabel") || document.getElementById("pvDrawerActiveLabel");
     if (activeLabel && activeDept) {
       activeLabel.textContent = activeDept.short;
     }
@@ -1403,7 +1403,7 @@
       var target = link.getAttribute("data-target");
       if (target) {
         switchTab(target);
-        var hub = document.getElementById("pvSubnavHub");
+        var hub = document.getElementById("pvSubnav") || document.getElementById("pvSubnavHub");
         if (hub) {
           var hubRect = hub.getBoundingClientRect();
           var offsetTop = window.pageYOffset + hubRect.top - 80;
@@ -1415,13 +1415,17 @@
 
   // 3. PILL FILTERING SYSTEM
   document.querySelectorAll(".pv-dept-panel").forEach(function(panel) {
-    var pills = panel.querySelectorAll(".pv-pill-btn");
+    var pills = panel.querySelectorAll(".pv-menu-pill, .pv-pill-btn");
     var rows = panel.querySelectorAll(".pv-menu-row");
 
     pills.forEach(function(pill) {
       pill.addEventListener("click", function() {
-        pills.forEach(function(p) { p.classList.remove("active"); });
+        pills.forEach(function(p) {
+          p.classList.remove("active");
+          p.setAttribute("aria-selected", "false");
+        });
         pill.classList.add("active");
+        pill.setAttribute("aria-selected", "true");
 
         var filter = pill.getAttribute("data-filter");
         rows.forEach(function(row) {
@@ -1437,11 +1441,11 @@
   });
 
   // 4. MOBILE DRAWER & HORIZONTAL RAIL
-  var deptDrawerTrigger = document.getElementById("pvMobileDrawerTrigger");
+  var deptDrawerTrigger = document.getElementById("pvDeptTrigger") || document.getElementById("pvMobileDrawerTrigger");
   var deptDrawerBackdrop = document.getElementById("pvDeptDrawerBackdrop");
-  var deptDrawerClose = document.getElementById("pvDeptDrawerClose");
-  var deptDrawerList = document.getElementById("pvDeptDrawerList");
-  var mobileFilterRail = document.getElementById("pvMobileFilterRail");
+  var deptDrawerClose = document.getElementById("pvDeptDrawerCloseBtn") || document.getElementById("pvDeptDrawerClose");
+  var deptDrawerList = document.getElementById("pvDeptList") || document.getElementById("pvDeptDrawerList");
+  var mobileFilterRail = document.getElementById("pvFilterRail") || document.getElementById("pvMobileFilterRail");
 
   function renderDeptDrawer(activeId) {
     if (!deptDrawerList) return;
@@ -1468,7 +1472,7 @@
       item.addEventListener("click", function() {
         switchTab(dept.id);
         closeDeptDrawer();
-        var hub = document.getElementById("pvSubnavHub");
+        var hub = document.getElementById("pvSubnav") || document.getElementById("pvSubnavHub");
         if (hub) {
           var hubRect = hub.getBoundingClientRect();
           window.scrollTo({ top: window.pageYOffset + hubRect.top - 70, behavior: "smooth" });
@@ -1486,17 +1490,17 @@
     var activePanel = document.getElementById(targetId);
     if (!activePanel) return;
 
-    var originalPills = activePanel.querySelectorAll(".pv-pill-btn");
+    var originalPills = activePanel.querySelectorAll(".pv-menu-pill, .pv-pill-btn");
     originalPills.forEach(function(op) {
       var chip = document.createElement("button");
       chip.type = "button";
-      chip.className = "pv-rail-chip" + (op.classList.contains("active") ? " active" : "");
+      chip.className = "pv-filter-chip" + (op.classList.contains("active") ? " active" : "");
       chip.textContent = op.textContent;
       chip.setAttribute("data-filter", op.getAttribute("data-filter"));
 
       chip.addEventListener("click", function() {
         op.click();
-        mobileFilterRail.querySelectorAll(".pv-rail-chip").forEach(function(c) { c.classList.remove("active"); });
+        mobileFilterRail.querySelectorAll(".pv-filter-chip").forEach(function(c) { c.classList.remove("active"); });
         chip.classList.add("active");
       });
 
