@@ -111,7 +111,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
-    "thumb": "assets/cimentas-official/cem-1-42-5-r.jpg",
+    "thumb": "assets/cimentas-official/cem-1-42-5-r.png?v=2026.10.12",
     "desc": "TS EN 197-1 standardında, yüksek erken dayanımlı genel yapı ve betonarme çimentosu.",
     "meta": [
       "50 kg Kraft Torba (Paletli: 30 Torba / 1.500 kg)",
@@ -151,7 +151,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
-    "thumb": "assets/cimentas-official/cem-2-b-m-32-5-n.jpg",
+    "thumb": "assets/cimentas-official/cem-2-b-m-32-5-n.png?v=2026.10.12",
     "desc": "Sıva, harç, şap ve tuğla duvar örme işleri için mükemmel işlenebilirlik sağlayan standart çimento.",
     "meta": [
       "50 kg Kraft Torba (Paletli: 30 Torba / 1.500 kg)",
@@ -191,7 +191,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
-    "thumb": "assets/cimentas-official/cem-1-52-5-r.jpg",
+    "thumb": "assets/cimentas-official/cem-1-52-5-r.png?v=2026.10.12",
     "desc": "Öngermeli elemanlar, tünel kalıp ve çok katlı projeler için ultra yüksek erken mukavemet.",
     "meta": [
       "50 kg Kraft Torba (Paletli: 30 Torba / 1.500 kg)",
@@ -231,7 +231,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
-    "thumb": "assets/cimentas-official/cem-4-sulfate-sr.jpg",
+    "thumb": "assets/cimentas-official/cem-4-sulfate-sr.png?v=2026.10.12",
     "desc": "Ege sahil şeridi, deniz yapıları, temel kazıkları ve tuz serpintisine maruz şantiyeler için sülfat kalkanı.",
     "meta": [
       "50 kg Kraft Torba (Paletli: 30 Torba / 1.500 kg)",
@@ -271,7 +271,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
-    "thumb": "assets/cimentas-official/idealcem-harc.jpg",
+    "thumb": "assets/cimentas-official/idealcem-harc.png?v=2026.10.12",
     "desc": "Katkılı özel formülü sayesinde çatlama yapmayan, yüksek yapışma güçlü sıva ve duvar harcı.",
     "meta": [
       "40 kg Kraft Torba (Paletli: 40 Torba / 1.600 kg)",
@@ -311,7 +311,7 @@
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
-    "thumb": "assets/cimentas-official/beyaz-portland-52-5.jpg",
+    "thumb": "assets/cimentas-official/beyaz-portland-52-5.png?v=2026.10.12",
     "desc": "Min. %85 beyazlık derecesine sahip, mimari brüt beton ve prekast elemanlar için beyaz çimento.",
     "meta": [
       "50 kg / 25 kg Torba (Paletli)",
