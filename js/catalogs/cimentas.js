@@ -107,7 +107,7 @@
   {
     "id": "cem-1-42-5-r",
     "name": "Çimentaş CEM I 42,5 R Portland Çimentosu (50 kg)",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
@@ -147,7 +147,7 @@
   {
     "id": "cem-2-b-m-32-5-n",
     "name": "Çimentaş CEM II/B-M 32,5 N Kompoze Çimento (50 kg)",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
@@ -187,7 +187,7 @@
   {
     "id": "cem-1-52-5-r",
     "name": "Çimentaş CEM I 52,5 R Süper Mukavemetli Çimento (50 kg)",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
@@ -227,7 +227,7 @@
   {
     "id": "cem-4-sulfate-sr",
     "name": "Çimentaş CEM IV/A (P) 42,5 R - SR Sülfata Dayanıklı Çimento",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
@@ -267,7 +267,7 @@
   {
     "id": "idealcem-harc",
     "name": "Çimentaş İDEALCEM Harç ve Sıva Çimentosu (40 kg)",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "kompoze-ozel",
@@ -307,7 +307,7 @@
   {
     "id": "beyaz-portland-52-5",
     "name": "Çimentaş Süper Beyaz Portland Çimentosu CEM I 52,5 R",
-    "badge": "Çimentaş & Çimbeton",
+    "badge": "Çimentaş Torbalı Çimento",
     "tag": "TS EN Standart Çimento",
     "deptId": "cimentasTorbaSection",
     "category": "portland-cem1",
@@ -642,7 +642,7 @@
     selectedSize = (prod.sizes && prod.sizes.length > 0) ? prod.sizes[0] : (prod.specs ? prod.specs.packaging : "");
 
     if (modalProductTitle) modalProductTitle.textContent = prod.name;
-    if (modalProductEyebrow) modalProductEyebrow.textContent = "ÇİMENTAŞ & ÇİMBETON · YETKİLİ SATIŞ";
+    if (modalProductEyebrow) modalProductEyebrow.textContent = "ÇİMENTAŞ · YETKİLİ SATIŞ";
     if (modalProductImg) {
       modalProductImg.src = prod.thumb;
       modalProductImg.alt = prod.name;
@@ -668,33 +668,24 @@
       modalProductBadge.textContent = prod.badge || "Çimentaş";
     }
 
-    var isConcrete = prod.deptId === "cimentasHazirBetonSection" || prod.id.indexOf("cimbeton") !== -1;
-
     // Spec Gauges
     var gauge1Eyebrow = document.querySelector("#modalGaugeStandardCard .pv-gauge-eyebrow");
     var gauge1Caption = document.getElementById("modalSpecPackaging");
     var gauge2Eyebrow = document.querySelector("#modalGaugeConsumptionCard .pv-gauge-eyebrow");
     var gauge2Caption = document.getElementById("modalGaugeStandardCaption");
 
-    if (gauge1Eyebrow) gauge1Eyebrow.textContent = isConcrete ? "28G KÜP MUKAVEMETİ" : "28 GÜNLÜK MUKAVEMET";
+    if (gauge1Eyebrow) gauge1Eyebrow.textContent = "28 GÜNLÜK MUKAVEMET";
     if (gauge1Caption) gauge1Caption.textContent = prod.specs ? prod.specs.standard : "TS EN 197-1 / TS EN 206";
     if (modalSpecConsumption) modalSpecConsumption.textContent = (prod.specs && prod.specs.day28) ? prod.specs.day28 : (prod.coverage || "-");
 
-    if (gauge2Eyebrow) gauge2Eyebrow.textContent = isConcrete ? "KIVAM & POMPA" : "PRİZ / KIVAM SÜRESİ";
-    if (gauge2Caption) gauge2Caption.textContent = isConcrete ? "Pompalı / Mikser" : "Başlangıç Prizi";
+    if (gauge2Eyebrow) gauge2Eyebrow.textContent = "PRİZ / KIVAM SÜRESİ";
+    if (gauge2Caption) gauge2Caption.textContent = "Başlangıç Prizi";
     if (modalSpecPotLife) modalSpecPotLife.textContent = (prod.specs && prod.specs.initialSetting) ? prod.specs.initialSetting : "-";
 
     // Dynamic Specs Table
     if (modalSpecsTable && prod.specs) {
       modalSpecsTable.innerHTML = "";
-      var specLabels = isConcrete ? {
-        standard: "Beton Standardı & CE",
-        packaging: "Sevkiyat & Döküm Şekli",
-        day2: "Karakteristik Silindir Dayanımı",
-        day28: "Karakteristik Küp Dayanımı",
-        initialSetting: "Kıvam & Pompa Sınıfı",
-        logistics: "Santral Sevk & Lojistik"
-      } : {
+      var specLabels = {
         standard: "Kalite & Standardı",
         packaging: "Ambalaj & Sevkiyat Tipi",
         day2: "2 Günlük Erken Mukavemet",
@@ -800,16 +791,11 @@
 
   function updateWhatsAppLink() {
     if (!currentProduct) return;
-    var isConcrete = currentProduct.deptId === "cimentasHazirBetonSection" || currentProduct.id.indexOf("cimbeton") !== -1;
     var text = "Merhaba, Çimentaş Yetkili Satış Merkezinizden " + currentProduct.name;
     if (selectedSize) {
       text += " (" + selectedSize + ")";
     }
-    if (isConcrete) {
-      text += " için şantiye döküm programı, mobil pompa ve güncel m³ hazır beton fiyatı öğrenmek istiyorum.";
-    } else {
-      text += " için İzmir / Urla ana deponuzdan şantiye teslimi paletli / dökme kamyon fiyatı öğrenmek istiyorum.";
-    }
+    text += " için İzmir / Urla ana deponuzdan şantiye teslimi paletli vinçli kamyon fiyatı öğrenmek istiyorum.";
     text += "\n\nÜrün Detayı: https://pervanyapi.com/urun/" + currentProduct.id + ".html";
     var waHref = "https://wa.me/905323318763?text=" + encodeURIComponent(text);
     if (modalWABtn) modalWABtn.href = waHref;
@@ -952,12 +938,14 @@
     modalCard.addEventListener("touchend", onDragEnd, { passive: true });
   }
 
-  /* 4. SPOTLIGHT SEARCH (⌘K / Keyboard Shortcuts) */
-  var spotlightModal = document.getElementById("pvSpotlightModal");
+  /* 4. GLOBAL SPOTLIGHT COMMAND PALETTE ENGINE (⌘K / 6 Çimentaş Ürünü) */
+  var spotlightBackdrop = document.getElementById("pvSpotlightBackdrop") || document.getElementById("pvSpotlightModal");
   var spotlightInput = document.getElementById("pvSpotlightInput");
-  var spotlightClose = document.getElementById("pvSpotlightClose");
+  var spotlightCloseBtn = document.getElementById("pvSpotlightCloseBtn") || document.getElementById("pvSpotlightClose");
   var spotlightResults = document.getElementById("pvSpotlightResults");
+  var spotlightCount = document.getElementById("pvSpotlightCount");
   var subnavSearchBtn = document.getElementById("pvSubnavSearchBtn");
+  var spotlightSelectedIdx = -1;
 
   function normTr(str) {
     if (!str) return "";
@@ -971,80 +959,169 @@
   }
 
   function openSpotlight() {
-    if (!spotlightModal || !spotlightInput) return;
-    spotlightModal.classList.add("active");
-    spotlightModal.setAttribute("aria-hidden", "false");
+    if (!spotlightBackdrop || !spotlightInput) return;
+    spotlightBackdrop.classList.add("open");
+    spotlightBackdrop.classList.add("active");
+    spotlightBackdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     spotlightInput.value = "";
-    renderSpotlightResults("");
-    setTimeout(function() { spotlightInput.focus(); }, 50);
+    renderSpotlightInitial();
+    setTimeout(function() { spotlightInput.focus(); }, 60);
   }
 
   function closeSpotlight() {
-    if (!spotlightModal) return;
-    spotlightModal.classList.remove("active");
-    spotlightModal.setAttribute("aria-hidden", "true");
+    if (!spotlightBackdrop) return;
+    spotlightBackdrop.classList.remove("open");
+    spotlightBackdrop.classList.remove("active");
+    spotlightBackdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    spotlightSelectedIdx = -1;
   }
 
-  function renderSpotlightResults(query) {
+  function createSpotlightItemEl(prod) {
+    var div = document.createElement("div");
+    div.className = "pv-spotlight-item";
+    div.setAttribute("data-product-id", prod.id);
+    div.innerHTML = [
+      '<div class="pv-spotlight-item-main">',
+      '  <div class="pv-spotlight-item-badge">' + (prod.badge || "Çimentaş") + '</div>',
+      '  <div class="pv-spotlight-item-title">' + prod.name + '</div>',
+      '  <div class="pv-spotlight-item-desc">' + prod.desc + '</div>',
+      '</div>',
+      '<div class="pv-spotlight-item-meta">',
+      '  <span class="pv-spotlight-tag">Torbalı Çimento</span>',
+      '  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+      '</div>'
+    ].join("");
+    return div;
+  }
+
+  function renderSpotlightInitial() {
     if (!spotlightResults) return;
     spotlightResults.innerHTML = "";
-    var cleanQ = normTr(query.trim());
+    spotlightSelectedIdx = -1;
 
-    var matches = CIMENTAS_PRODUCTS_DATA.filter(function(p) {
-      if (!cleanQ) return true;
-      var searchable = normTr([
-        p.id,
-        p.name,
-        p.badge,
-        p.desc,
-        p.category,
-        p.deptId,
-        (p.meta || []).join(" "),
-        (p.sizes || []).join(" "),
-        p.specs ? Object.values(p.specs).join(" ") : ""
-      ].join(" "));
-      return searchable.indexOf(cleanQ) !== -1;
+    var heading = document.createElement("div");
+    heading.className = "pv-spotlight-group-title";
+    heading.textContent = "Torbalı Çimento & Harç Ürünleri";
+    spotlightResults.appendChild(heading);
+
+    CIMENTAS_PRODUCTS_DATA.forEach(function(prod) {
+      spotlightResults.appendChild(createSpotlightItemEl(prod));
     });
 
-    if (matches.length === 0) {
-      spotlightResults.innerHTML = '<div class="pv-spotlight-empty">Aramanıza uygun Çimentaş çimento veya beton sınıfı bulunamadı.</div>';
+    if (spotlightCount) {
+      spotlightCount.textContent = CIMENTAS_PRODUCTS_DATA.length + " Ürün Yayında";
+    }
+    attachSpotlightItemEvents();
+  }
+
+  function performSpotlightSearch(query) {
+    if (!spotlightResults) return;
+    var normQ = normTr(query);
+    spotlightResults.innerHTML = "";
+    spotlightSelectedIdx = -1;
+
+    if (!normQ) {
+      renderSpotlightInitial();
+      return;
+    }
+
+    var tokens = normQ.split(" ").filter(Boolean);
+    var matches = CIMENTAS_PRODUCTS_DATA.filter(function(item) {
+      var target = normTr(item.name + " " + item.desc + " " + item.badge + " " + item.tag + " " + (item.meta ? item.meta.join(" ") : ""));
+      return tokens.every(function(t) { return target.indexOf(t) !== -1; });
+    });
+
+    if (spotlightCount) {
+      spotlightCount.textContent = matches.length + " Sonuç Bulundu";
+    }
+
+    if (!matches.length) {
+      var empty = document.createElement("div");
+      empty.className = "pv-spotlight-empty";
+      empty.innerHTML = [
+        '<div class="pv-spotlight-empty-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>',
+        '<p class="pv-spotlight-empty-title">"' + query + '" için eşleşen Çimentaş ürünü bulunamadı</p>',
+        '<p class="pv-spotlight-empty-sub">Farklı bir arama terimi deneyin veya Urla depomuzdan direkt fiyat alın.</p>'
+      ].join("");
+      spotlightResults.appendChild(empty);
       return;
     }
 
     matches.forEach(function(prod) {
-      var item = document.createElement("div");
-      item.className = "pv-spotlight-item";
-      item.innerHTML = '<img src="' + prod.thumb + '" alt="' + prod.name + '" class="pv-spotlight-thumb" /><div class="pv-spotlight-info"><div class="pv-spotlight-name">' + prod.name + '</div><div class="pv-spotlight-desc">' + prod.desc + '</div></div><span class="pv-spotlight-badge">' + prod.badge + '</span>';
-      item.addEventListener("click", function() {
-        closeSpotlight();
-        switchDepartment(prod.deptId, true);
-        setTimeout(function() {
-          openProductModal(prod.id);
-        }, 150);
+      spotlightResults.appendChild(createSpotlightItemEl(prod));
+    });
+    attachSpotlightItemEvents();
+  }
+
+  function highlightSpotlightItem(items, idx) {
+    items.forEach(function(it) { it.classList.remove("selected"); });
+    if (idx >= 0 && idx < items.length) {
+      items[idx].classList.add("selected");
+      items[idx].scrollIntoView({ block: "nearest" });
+      spotlightSelectedIdx = idx;
+    } else {
+      spotlightSelectedIdx = -1;
+    }
+  }
+
+  function attachSpotlightItemEvents() {
+    if (!spotlightResults) return;
+    var items = spotlightResults.querySelectorAll(".pv-spotlight-item");
+    items.forEach(function(item, idx) {
+      item.addEventListener("mouseenter", function() {
+        highlightSpotlightItem(items, idx);
       });
-      spotlightResults.appendChild(item);
+      item.addEventListener("click", function() {
+        var pid = item.getAttribute("data-product-id");
+        closeSpotlight();
+        openProductModal(pid);
+      });
     });
   }
 
   if (subnavSearchBtn) subnavSearchBtn.addEventListener("click", openSpotlight);
-  if (spotlightClose) spotlightClose.addEventListener("click", closeSpotlight);
-  if (spotlightModal) {
-    spotlightModal.addEventListener("click", function(e) {
-      if (e.target === spotlightModal) closeSpotlight();
+  if (spotlightCloseBtn) spotlightCloseBtn.addEventListener("click", closeSpotlight);
+  if (spotlightBackdrop) {
+    spotlightBackdrop.addEventListener("click", function(e) {
+      if (e.target === spotlightBackdrop) closeSpotlight();
     });
   }
+
   if (spotlightInput) {
+    var spotlightDebounce;
     spotlightInput.addEventListener("input", function() {
-      renderSpotlightResults(spotlightInput.value);
+      clearTimeout(spotlightDebounce);
+      spotlightDebounce = setTimeout(function() {
+        performSpotlightSearch(spotlightInput.value);
+      }, 80);
+    });
+
+    spotlightInput.addEventListener("keydown", function(e) {
+      var items = spotlightResults ? spotlightResults.querySelectorAll(".pv-spotlight-item") : [];
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx + 1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightSpotlightItem(items, spotlightSelectedIdx - 1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (items.length && spotlightSelectedIdx >= 0 && items[spotlightSelectedIdx]) {
+          items[spotlightSelectedIdx].click();
+        }
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeSpotlight();
+      }
     });
   }
 
   window.addEventListener("keydown", function(e) {
-    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
       e.preventDefault();
-      if (spotlightModal && spotlightModal.classList.contains("active")) {
+      if (spotlightBackdrop && (spotlightBackdrop.classList.contains("active") || spotlightBackdrop.classList.contains("open"))) {
         closeSpotlight();
       } else {
         openSpotlight();
@@ -1059,11 +1136,10 @@
 
   // Deep linking: URL parameter ?item= or hash
   var urlParams = new URLSearchParams(window.location.search);
-  var requestedItem = urlParams.get("item") || (window.location.hash ? window.location.hash.replace("#", "") : null);
+  var requestedItem = urlParams.get("item") || urlParams.get("product") || (window.location.hash ? window.location.hash.replace("#", "") : null);
   if (requestedItem) {
     var targetProduct = CIMENTAS_PRODUCTS_DATA.find(function(p) { return p.id === requestedItem; });
     if (targetProduct) {
-      switchDepartment(targetProduct.deptId, true);
       setTimeout(function() { openProductModal(targetProduct.id); }, 250);
     }
   }
