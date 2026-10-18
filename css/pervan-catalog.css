@@ -4683,6 +4683,330 @@ body:has(header.header--hidden) .pv-subnav-hub,
 }
 
 /* ==========================================================================
+   PERVAN LOCATIONS & HUBS (Architectural Monograph Standard)
+   Sharp hairline cards, fixed-height letterbox media, zero AI shadows
+   ========================================================================== */
+.pv-locations-section {
+  padding: 72px 0 80px;
+  background: #FBFBFA;
+  border-top: 1px solid var(--pv-border-subtle);
+}
+
+@media (max-width: 768px) {
+  .pv-locations-section {
+    padding: 44px 0 52px;
+  }
+}
+
+.pv-locations-header {
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+
+@media (max-width: 768px) {
+  .pv-locations-header {
+    margin-bottom: 24px;
+  }
+}
+
+.pv-locations-eyebrow {
+  font-family: var(--font-display, var(--pv-font));
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #71717A;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.pv-locations-title {
+  font-family: var(--font-display, var(--pv-font));
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.pv-locations-intro {
+  font-size: 15px;
+  color: #52525B;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.pv-locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 840px) {
+  .pv-locations-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.pv-location-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.pv-location-card:hover {
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+.pv-location-media {
+  height: 190px;
+  width: 100%;
+  background: #F4F4F2;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+@media (max-width: 768px) {
+  .pv-location-media {
+    height: 160px;
+  }
+}
+
+.pv-location-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pv-location-card:hover .pv-location-media img {
+  transform: scale(1.02);
+}
+
+.pv-location-body {
+  padding: 24px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .pv-location-body {
+    padding: 20px 18px 22px;
+  }
+}
+
+.pv-location-badge {
+  font-family: var(--font-display, var(--pv-font));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717A;
+  margin-bottom: 8px;
+}
+
+.pv-location-heading {
+  font-family: var(--font-display, var(--pv-font));
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #111111;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.pv-location-descriptor {
+  font-size: 13.5px;
+  color: #71717A;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.pv-location-meta {
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.pv-location-address {
+  color: #18181B;
+}
+
+.pv-location-hours {
+  color: #71717A;
+  font-size: 13px;
+}
+
+.pv-location-scope {
+  font-size: 12.5px;
+  color: #71717A;
+  padding-top: 2px;
+}
+
+.pv-location-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  flex-wrap: wrap;
+}
+
+.pv-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 18px;
+  font-family: var(--font-editorial, var(--pv-font));
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: background-color 0.15s var(--ease, ease), border-color 0.15s var(--ease, ease), color 0.15s var(--ease, ease);
+  white-space: nowrap;
+}
+
+.pv-action-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Primary: Navigation / Maps */
+.pv-action-btn--maps {
+  background: var(--bg-black, #111111);
+  color: var(--text-white, #FFFFFF);
+  border: 1px solid var(--bg-black, #111111);
+}
+
+.pv-action-btn--maps:hover {
+  background: var(--pv-black, #1C1917);
+  border-color: var(--pv-black, #1C1917);
+  color: var(--text-white, #FFFFFF);
+  opacity: 0.9;
+}
+
+/* Secondary: Direct Phone */
+.pv-action-btn--phone {
+  background: var(--pv-white, #FFFFFF);
+  color: var(--text-main, #111111);
+  border: 1px solid var(--pv-border, rgba(0, 0, 0, 0.14));
+}
+
+.pv-action-btn--phone:hover {
+  background: var(--bg-offwhite, #F8F8F7);
+  border-color: var(--text-main, #111111);
+  color: var(--text-main, #111111);
+}
+
+/* Secondary: WhatsApp */
+.pv-action-btn--wa {
+  background: var(--pv-white, #FFFFFF);
+  color: var(--text-main, #111111);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+}
+
+.pv-action-btn--wa svg {
+  fill: #25D366;
+}
+
+.pv-action-btn--wa:hover {
+  background: rgba(37, 211, 102, 0.08);
+  border-color: #25D366;
+  color: var(--text-main, #111111);
+}
+
+/* Legacy text link fallbacks */
+.pv-action-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 2px;
+}
+
+.pv-action-phone {
+  font-size: 13.5px;
+  color: #52525B;
+  text-decoration: none;
+}
+
+.pv-action-wa {
+  font-size: 13px;
+  color: #52525B;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pv-action-wa svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+@media (max-width: 640px) {
+  .pv-location-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-top: 14px;
+    width: 100%;
+  }
+
+  .pv-action-btn {
+    height: 48px;
+    padding: 0 12px;
+    font-size: 13.5px;
+    width: 100%;
+  }
+
+  .pv-action-btn--maps {
+    grid-column: 1 / -1;
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+
+  .pv-action-btn--phone {
+    grid-column: 1;
+    font-size: 12.5px;
+  }
+
+  .pv-action-btn--wa {
+    grid-column: 2;
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pv-location-heading {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================================================
    PERVAN HUBS & LOGISTICS (GPS Navigasyon & Merkez Kartları)
    ========================================================================== */
 .pv-hubs-section {
