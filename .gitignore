@@ -1,3 +1,9 @@
 .DS_Store
 scratch/
 .wrangler/
+scratch_*
+assets/scratch_*
+assets/workbench/
+assets/izmircimento/
+assets/*.pdf
+

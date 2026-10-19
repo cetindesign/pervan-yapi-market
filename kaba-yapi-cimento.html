@@ -25,9 +25,206 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
 
-<link rel="preload" as="image" href="assets/rf-card-cement.jpg" fetchpriority="high" />
+<!-- CALIBRE LOCAL FONT ENGINE (REFORM CPH EXACT) -->
+<link rel="preload" href="assets/fonts/CalibreWeb-Regular.woff2" as="font" type="font/woff2" crossorigin="" />
+<link rel="preload" href="assets/fonts/CalibreWeb-Medium.woff2" as="font" type="font/woff2" crossorigin="" />
+<link rel="preload" href="assets/fonts/CalibreWeb-Semibold.woff2" as="font" type="font/woff2" crossorigin="" />
+
 <link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
 <link rel="stylesheet" href="css/pervan-catalog.css?v=34.5.0" />
+
+<style>
+  @font-face {
+    font-family: 'Calibre';
+    src: url('assets/fonts/CalibreWeb-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
+    src: url('assets/fonts/CalibreWeb-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
+    src: url('assets/fonts/CalibreWeb-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
+    src: url('assets/fonts/CalibreWeb-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
+    src: url('assets/fonts/CalibreWeb-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ==========================================================================
+     REFORM CPH CANONICAL DEPARTMENT INTRO & WIDE MEDIA
+     ========================================================================== */
+  .pv-dept-reform-header {
+    background-color: #FFFFFF;
+    padding: 36px 0 28px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .pv-dept-reform-header .pv-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .pv-reform-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 48px;
+    margin-bottom: 24px;
+  }
+
+  .pv-reform-title-col {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .pv-cat-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Calibre', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    color: #888888;
+    margin-bottom: 10px;
+  }
+
+  .pv-cat-breadcrumb a {
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .pv-cat-breadcrumb a:hover {
+    color: #000000;
+  }
+
+  .pv-crumb-sep {
+    color: #CCCCCC;
+    font-size: 11px;
+    user-select: none;
+  }
+
+  .pv-crumb-current {
+    color: #111111;
+    font-weight: 500;
+  }
+
+  .pv-reform-h1 {
+    font-family: 'Calibre', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 34px !important;
+    line-height: 38px !important;
+    font-weight: 500 !important;
+    color: #000000 !important;
+    letter-spacing: -0.015em !important;
+    margin: 0 !important;
+    -webkit-font-smoothing: auto;
+  }
+
+  .pv-reform-desc-col {
+    flex: 1.2;
+    max-width: 620px;
+  }
+
+  .pv-reform-lead {
+    font-family: 'Calibre', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    color: #555555;
+    margin: 0;
+    -webkit-font-smoothing: auto;
+  }
+
+  .pv-reform-media-frame {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #F4F2EE;
+    position: relative;
+  }
+
+  .pv-reform-media-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pv-reform-media-frame:hover img {
+    transform: scale(1.02);
+  }
+
+  @media screen and (max-width: 999px) {
+    .pv-dept-reform-header {
+      padding: 26px 0 20px;
+    }
+    .pv-dept-reform-header .pv-container {
+      padding: 0 24px;
+    }
+    .pv-reform-header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .pv-reform-h1 {
+      font-size: 28px !important;
+      line-height: 32px !important;
+    }
+    .pv-reform-lead {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .pv-reform-media-frame {
+      height: 180px;
+    }
+  }
+
+  @media screen and (max-width: 759px) {
+    .pv-dept-reform-header {
+      padding: 18px 0 14px;
+    }
+    .pv-dept-reform-header .pv-container {
+      padding: 0 16px;
+    }
+    .pv-reform-h1 {
+      font-size: 24px !important;
+      line-height: 28px !important;
+    }
+    .pv-reform-lead {
+      font-size: 13px;
+      line-height: 18px;
+    }
+    .pv-reform-media-frame {
+      height: 130px;
+    }
+  }
+</style>
 
 <!-- Semantik Yapılandırılmış Veri (JSON-LD) -->
 <script type="application/ld+json">
@@ -134,7 +331,7 @@
        <div class="navbar-title">Yapı Market &amp; Hırdavat</div>
        <div class="arrow"></div>
        <div class="navbar-dropdown">
-        <a href="malzemeler.html" class="navbar-item mobile-only">Tüm Malzemeleri Gör &rarr;</a>
+        <a href="yapi-market-ve-hirdavat.html" class="navbar-item">Tüm Departmanları Gör &rarr;</a>
         <a href="kaba-yapi-cimento.html" class="navbar-item">Kaba Yapı &amp; Çimento</a>
         <a href="tesisat-altyapi.html" class="navbar-item">Sıhhi Tesisat &amp; Altyapı</a>
         <a href="elektrik-aydinlatma.html" class="navbar-item">Elektrik &amp; Aydınlatma</a>
@@ -201,107 +398,35 @@
 <main class="pv-scope pv-page-main">
 
  <!-- ==========================================================================
-    1. ENDÜSTRİYEL KABA YAPI & DAĞITIM STAGE HERO (100% CANONICAL WEBER ENGINE)
+    1. REFORM CPH CANONICAL DEPARTMENT INTRO & WIDE MEDIA
     ========================================================================== -->
- <section class="pv-stage-hero" id="pvStageHero" aria-label="Urla Ana Depo Kaba Yapı ve Çimento Dağıtımı">
-  
-  <div class="pv-stage-track" id="pvStageTrack">
-   <!-- Slide 0: Portland Çimento CEM I 42.5 R -->
-   <div class="pv-stage-slide active" data-index="0" data-color="Portland CEM I 42.5 R" data-code="#71717A">
-    <img src="assets/rf-card-cement.jpg" alt="Portland CEM I 42.5 R Torbalı Çimento Dağıtımı" class="pv-stage-img" fetchpriority="high" decoding="async" />
-    <div class="pv-stage-overlay"></div>
-    <div class="pv-container pv-stage-content-wrap">
-     <div class="pv-stage-info">
-      <div class="pv-stage-title-wrap">
-       <h1 class="pv-stage-title">İzmir Toptan Çimento &amp; Kaba Yapı</h1>
-      </div>
-      <div class="pv-stage-spec">
-       <span>Torba &amp; Palet Çimento (Batıçim / Çimentaş)</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>İnşaat Demiri &amp; Tuğla</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>Urla Depo Çıkışlı Şantiye Teslim</span>
-      </div>
-      <a href="https://wa.me/905323318763?text=Merhaba,%20Urla%20Depo%20çıkışlı%20CEM%20I%2042.5%20R%20Portland%20Çimento%20için%20palet/kamyon%20şantiye%20fiyatı%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-       <span>Şantiye Palet Teklifi Al</span>
-       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-       <div class="pv-stage-progress-bar"></div>
-      </div>
-     </div>
+ <section class="pv-dept-reform-header" aria-label="Kaba Yapı &amp; Çimento Departmanı">
+  <div class="pv-container">
+   <div class="pv-reform-header-row">
+    <div class="pv-reform-title-col">
+     <nav class="pv-cat-breadcrumb" aria-label="Sayfa Yolu">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="pv-crumb-sep">/</span>
+      <a href="yapi-market-ve-hirdavat.html">Yapı Market &amp; Hırdavat</a>
+      <span class="pv-crumb-sep">/</span>
+      <span class="pv-crumb-current">Kaba Yapı &amp; Çimento</span>
+     </nav>
+     <h1 class="pv-reform-h1">Kaba Yapı &amp; Çimento</h1>
+    </div>
+    <div class="pv-reform-desc-col">
+     <p class="pv-reform-lead">Batıçim ve Çimentaş torbalı çimento, nervürlü inşaat demiri, çelik hasır, şap kumu ve gazbeton. Urla Ana Depomuzdan Çeşme, Urla ve Yarımada şantiyelerine doğrudan vinçli kamyon ve kat indirme teslimatı.</p>
     </div>
    </div>
 
-   <!-- Slide 1: Urla Ana Depo & Sevkiyat Filosu -->
-   <div class="pv-stage-slide" data-index="1" data-color="Urla Depo Lojistiği" data-code="#C8461E">
-    <img src="assets/rf-urla-depot.jpg" alt="Urla Ana Depo Damperli ve Vinçli Kamyon Sevkiyatı" class="pv-stage-img" decoding="async" />
-    <div class="pv-stage-overlay"></div>
-    <div class="pv-container pv-stage-content-wrap">
-     <div class="pv-stage-info">
-      <div class="pv-stage-title-wrap">
-       <h2 class="pv-stage-title">Urla Ana Depo Sevkiyatı</h2>
-      </div>
-      <div class="pv-stage-spec">
-       <span>Damperli Kamyon</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>Hi-Ab Vinçli Kat İndirme</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>İzmir–Çeşme Hattı</span>
-      </div>
-      <a href="https://wa.me/905323318763?text=Merhaba,%20Çeşme/Urla%20şantiyemize%20kaba%20yapı%20malzemesi%20sevkiyat%20programı%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-       <span>Lojistik Programı Al</span>
-       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-       <div class="pv-stage-progress-bar"></div>
-      </div>
-     </div>
-    </div>
-   </div>
-
-   <!-- Slide 2: Şap Kumu, Alçı & Gazbeton -->
-   <div class="pv-stage-slide" data-index="2" data-color="Şap Kumu & Alçı" data-code="#D97706">
-    <img src="assets/rf-hero-materials.jpg" alt="Elenmiş Şap Kumu, Perlitli Sıva Alçısı ve Gazbeton Harçları" class="pv-stage-img" decoding="async" />
-    <div class="pv-stage-overlay"></div>
-    <div class="pv-container pv-stage-content-wrap">
-     <div class="pv-stage-info">
-      <div class="pv-stage-title-wrap">
-       <h2 class="pv-stage-title">Şap Kumu &amp; Alçı Grubu</h2>
-      </div>
-      <div class="pv-stage-spec">
-       <span>0-3 mm Yıkanmış Kum</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>Perlitli Sıva Alçısı</span>
-       <span class="pv-spec-sep">&bull;</span>
-       <span>Ytong Yapıştırıcı</span>
-      </div>
-      <a href="https://wa.me/905323318763?text=Merhaba,%20Urla%20Depo%20şap%20kumu%20ve%20alçı%20toptan%20fiyatı%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-stage-text-link">
-       <span>Fiyat &amp; Stok İncele</span>
-       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <div class="pv-stage-progress-line" role="progressbar" aria-label="Slider İlerleme Çizgisi">
-       <div class="pv-stage-progress-bar"></div>
-      </div>
-     </div>
-    </div>
+   <!-- Architectural Letterbox Frame (Refined Height, Museum-grade) -->
+   <div class="pv-reform-media-frame">
+    <picture>
+     <source media="(max-width: 759px)" srcset="assets/rf-dept-kaba-mobile.jpg" />
+     <source media="(min-width: 760px)" srcset="assets/rf-dept-kaba-desktop.jpg" />
+     <img src="assets/rf-dept-kaba-desktop.jpg" alt="Pervan Kaba Yapı &amp; Torbalı Çimento Dağıtımı — Urla Ana Depo" loading="eager" fetchpriority="high" />
+    </picture>
    </div>
   </div>
-
-  <!-- Stage Left / Right Floating Arrow Navigation -->
-  <button type="button" class="pv-stage-arrow prev" id="pvStagePrev" aria-label="Önceki Çözüm">
-   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button type="button" class="pv-stage-arrow next" id="pvStageNext" aria-label="Sonraki Çözüm">
-   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-
-  <!-- Stage Bottom Scroll Prompt -->
-  <a href="#kabaCementPanel" class="pv-stage-scroll-hint" id="pvStageScrollHint" aria-label="Kaba Yapı Kataloğuna Kaydır">
-   <span>Kaba Yapı Kataloğunu Keşfet</span>
-   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-  </a>
-
  </section>
 
  <!-- ==========================================================================

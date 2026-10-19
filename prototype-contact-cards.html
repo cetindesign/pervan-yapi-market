@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pervan — Merkezler &amp; Şantiye Tedarik Ağı (Global Reform/Vipp Benchmark)</title>
+
+<!-- Fonts: Calibre (Local Pervan) & Plus Jakarta Sans Fallback -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
+<link rel="stylesheet" href="css/pervan.css?v=33.0.0" />
+
+<style>
+  /* ==========================================================================
+     GLOBAL BENCHMARK: REFORM CPH / VIPP / DINESEN ARCHITECTURAL STANDARD
+     Zero UI boxes. Zero drop shadows. Zero key-value developer tables.
+     Pure typography, natural paragraph addresses, hairline divisions.
+     ========================================================================== */
+
+  :root {
+    --bg-page: #FFFFFF;
+    --text-black: #000000;
+    --text-body: #1C1917;
+    --text-muted: #71717A;
+    --text-faint: #A1A1AA;
+    --line-hairline: rgba(0, 0, 0, 0.12);
+    --font-editorial: 'Calibre', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    background: #F4F4F2;
+    color: var(--text-black);
+    font-family: var(--font-editorial);
+    padding: 32px 16px 100px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Workbench Viewport Switcher */
+  .bench-bar {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--line-hairline);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .bench-title {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .bench-source-note {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .bench-switch {
+    display: inline-flex;
+    gap: 4px;
+    background: #F4F4F2;
+    padding: 3px;
+    border-radius: 4px;
+  }
+
+  .bench-btn {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    color: var(--text-muted);
+  }
+
+  .bench-btn.active {
+    background: #FFFFFF;
+    color: #000000;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+
+  .canvas {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid var(--line-hairline);
+    transition: max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ==========================================================================
+     REFORM CPH SHOWROOM ARCHITECTURE (100% UNBOXED & HUMAN)
+     ========================================================================== */
+
+  .pv-locations-section {
+    padding: 72px 56px 88px;
+    background: #FFFFFF;
+  }
+
+  @media (max-width: 768px) {
+    .pv-locations-section {
+      padding: 40px 20px 56px;
+    }
+  }
+
+  /* Header — Clean, Unadorned Editorial Typography */
+  .pv-locations-header {
+    margin-bottom: 56px;
+    max-width: 680px;
+  }
+
+  @media (max-width: 768px) {
+    .pv-locations-header {
+      margin-bottom: 36px;
+    }
+  }
+
+  .pv-locations-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .pv-locations-title {
+    font-size: clamp(28px, 3.4vw, 44px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--text-black);
+    margin-bottom: 14px;
+  }
+
+  .pv-locations-intro {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  /* 2-Column Monograph Grid — Zero Nested Card Boxes */
+  .pv-locations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 56px;
+    row-gap: 40px;
+  }
+
+  @media (max-width: 840px) {
+    .pv-locations-grid {
+      grid-template-columns: 1fr;
+      row-gap: 48px;
+    }
+  }
+
+  /* Single Location Item */
+  .pv-location-entry {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Architectural Visual Frame */
+  .pv-location-media {
+    aspect-ratio: 16 / 10;
+    background: #F4F4F2;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .pv-location-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pv-location-entry:hover .pv-location-media img {
+    transform: scale(1.025);
+  }
+
+  /* City / Hub Designation */
+  .pv-location-heading {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    color: var(--text-black);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .pv-location-descriptor {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.45;
+  }
+
+  /* Natural Address & Schedule — No Key/Value Labels */
+  .pv-location-meta {
+    border-top: 1px solid var(--line-hairline);
+    padding-top: 18px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .pv-location-address {
+    color: var(--text-body);
+  }
+
+  .pv-location-hours {
+    color: var(--text-muted);
+    font-size: 13.5px;
+  }
+
+  .pv-location-scope {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-top: 4px;
+  }
+
+  /* Understated Editorial Direct Actions — Zero Neon Buttons */
+  .pv-location-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: auto;
+    padding-top: 6px;
+    flex-wrap: wrap;
+  }
+
+  .pv-action-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-black);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--text-black);
+    padding-bottom: 2px;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+  }
+
+  .pv-action-link:hover {
+    opacity: 0.65;
+  }
+
+  .pv-action-phone {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .pv-action-phone:hover {
+    color: var(--text-black);
+    text-decoration: underline;
+  }
+
+  .pv-action-wa {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s ease;
+  }
+
+  .pv-action-wa:hover {
+    color: #128C7E;
+  }
+
+  .pv-action-wa svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+
+  /* ==========================================================================
+     MOBILE REFINEMENT — ULTRA LEAN & FAST
+     On screens <= 480px, it turns into an effortless reading list.
+     ========================================================================== */
+  @media (max-width: 480px) {
+    .pv-location-media {
+      margin-bottom: 16px;
+    }
+    .pv-location-heading {
+      font-size: 21px;
+    }
+    .pv-location-actions {
+      gap: 18px;
+    }
+    .pv-action-link, .pv-action-phone, .pv-action-wa {
+      font-size: 13.5px;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+  <!-- BENCHMARK CONTROL BAR -->
+  <header class="bench-bar">
+    <div>
+      <div class="bench-title">Global Benchmark Uyarlaması: Reform CPH &amp; Vipp Standardı</div>
+      <div class="bench-source-note">Sıfır yapay zeka kutucuğu. Etiketsiz doğal adres ritmi. Gerçek mekan fotoğrafı.</div>
+    </div>
+    <div class="bench-switch">
+      <button type="button" class="bench-btn active" onclick="setScreen('1200px', this)">Masaüstü (1200px)</button>
+      <button type="button" class="bench-btn" onclick="setScreen('768px', this)">Tablet (768px)</button>
+      <button type="button" class="bench-btn" onclick="setScreen('390px', this)">Mobil (390px)</button>
+    </div>
+  </header>
+
+  <!-- CANONICAL TEST CONTAINER -->
+  <main class="canvas" id="testCanvas">
+
+    <section class="pv-locations-section" aria-label="Pervan Merkezleri ve Lojistik Depo">
+      
+      <!-- Monograph Header -->
+      <div class="pv-locations-header">
+        <div class="pv-locations-eyebrow">Merkezlerimiz &amp; Şantiye Lojistiği</div>
+        <h2 class="pv-locations-title">Balçova Mağaza ve Urla Lojistik Deposu</h2>
+        <p class="pv-locations-intro">
+          Bilgisayarlı renk üretimi ve perakende hırdavat için Balçova; torbalı çimento, yapı kimyasalları ve toptan şantiye teslimatı için Urla ana lojistik merkezimizle tüm İzmir ve Yarımada'ya hizmet veriyoruz.
+        </p>
+      </div>
+
+      <!-- 2 Pure Editorial Monograph Columns -->
+      <div class="pv-locations-grid">
+
+        <!-- ENTRY 01: BALÇOVA -->
+        <article class="pv-location-entry">
+          <div class="pv-location-badge">01 / MERKEZ MAĞAZA</div>
+          <h3 class="pv-location-heading">Balçova Yapı Market &amp; RenXMatik</h3>
+          <p class="pv-location-descriptor">Filli Boya renk laboratuvarı, Bianca Stella teşhiri ve perakende hırdavat.</p>
+
+          <div class="pv-location-meta">
+            <div class="pv-location-address">
+              Eğitim Mah. Dalya 1 Sk. No:5/A<br>
+              35330 Balçova / İzmir
+            </div>
+            
+            <div class="pv-location-hours">
+              Pazartesi – Pazar 08:30 – 19:30 (Pazar dahil her gün açık)
+            </div>
+
+            <div class="pv-location-scope">
+              Balçova, Narlıdere, Güzelbahçe ve Konak içi doğrudan hızlı sevkiyat.
+            </div>
+          </div>
+
+          <div class="pv-location-actions">
+            <a href="https://maps.app.goo.gl/kzQmwcW6uG4f1mGN6" target="_blank" rel="noopener" class="pv-action-link">
+              <span>Google Haritalar'da Yol Tarifi</span>
+              <span>↗</span>
+            </a>
+            <a href="tel:+902322784340" class="pv-action-phone">
+              0 (232) 278 43 40
+            </a>
+            <a href="https://wa.me/905323844497?text=Merhaba,%20Balçova%20mağazanızdan%20fiyat%20ve%20stok%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-action-wa">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ENTRY 02: URLA -->
+        <article class="pv-location-entry">
+          <div class="pv-location-badge">02 / LOJİSTİK SAHA</div>
+          <h3 class="pv-location-heading">Urla Ana Depo &amp; Şantiye Dağıtım Sahası</h3>
+          <p class="pv-location-descriptor">Çimentaş çimento, Weber yapı kimyasalları, demir ve toptan şantiye sevkiyatı.</p>
+
+          <div class="pv-location-meta">
+            <div class="pv-location-address">
+              Kalabak Mevkii, 3004 Sk. No:2<br>
+              35430 Urla / İzmir
+            </div>
+            
+            <div class="pv-location-hours">
+              Pazartesi – Cumartesi 07:30 – 18:30 (Pazar kapalı)
+            </div>
+
+            <div class="pv-location-scope">
+              Urla, Çeşme, Alaçatı, Seferihisar ve Karaburun şantiyelerine paletli teslimat.
+            </div>
+          </div>
+
+          <div class="pv-location-actions">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=38.3540547,26.8064487" target="_blank" rel="noopener" class="pv-action-link">
+              <span>Google Haritalar'da Yol Tarifi</span>
+              <span>↗</span>
+            </a>
+            <a href="tel:+905323318763" class="pv-action-phone">
+              0 (532) 331 87 63
+            </a>
+            <a href="https://wa.me/905323844497?text=Merhaba,%20Urla%20Deponuzdan%20şantiye%20malzeme%20sevkiyatı%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="pv-action-wa">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Şantiye WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    function setScreen(width, btn) {
+      document.getElementById('testCanvas').style.maxWidth = width;
+      document.querySelectorAll('.bench-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
