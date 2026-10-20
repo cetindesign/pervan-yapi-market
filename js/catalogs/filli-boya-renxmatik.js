@@ -675,7 +675,7 @@
     "category": "yalitim",
     "tag": "C2TE Tutunma",
     "sub": "Isı yalıtım levhalarını mineral cepheye kilitleyen polimer modifiyeli yapıştırıcı",
-    "img": "assets/filli-official/capatect-dalmacyali.png",
+    "img": "assets/filli-official/capatect-yapistirma.png",
     "sizes": [
       "25 kg Torba"
     ],
@@ -689,7 +689,7 @@
     "category": "yalitim",
     "tag": "Çatlama Direnci",
     "sub": "Isı yalıtım levhası üzerine uygulanan, mikro sentetik elyaf takviyeli sıva harcı",
-    "img": "assets/filli-official/capatect-dalmacyali.png",
+    "img": "assets/filli-official/capatect-donati-sivasi.png",
     "sizes": [
       "25 kg Torba"
     ],
@@ -703,7 +703,7 @@
     "category": "yalitim",
     "tag": "Alkali Dirençli",
     "sub": "Termal gerilmeleri emen, çatlakları önleyen yüksek mukavemetli cam elyaf file",
-    "img": "assets/filli-official/capatect-dalmacyali.png",
+    "img": "assets/filli-official/capatect-file.png",
     "sizes": [
       "1.1 m x 50 m (55 m²)"
     ],
@@ -717,7 +717,7 @@
     "category": "yalitim",
     "tag": "Rüzgar Kalkanı",
     "sub": "Ege ve Çeşme fırtına rüzgar emme kuvvetlerine karşı cepheyi kilitleyen dübel",
-    "img": "assets/filli-official/capatect-dalmacyali.png",
+    "img": "assets/filli-official/capatect-dubel.png",
     "sizes": [
       "10x95 mm",
       "10x115 mm",
@@ -4050,7 +4050,6 @@
 
   var pillBtns = document.querySelectorAll("#paintMenuPills .pv-menu-pill");
   var menuRows = document.querySelectorAll("#paintMenuList .pv-menu-row");
-  var capatectBridge = document.getElementById("capatectBridge");
   var renoBridge = document.getElementById("renoBridge");
 
   var backdrop = document.getElementById("paintModalBackdrop");
@@ -4257,9 +4256,6 @@
 
       var filter = btn.getAttribute("data-filter");
 
-      if (capatectBridge) {
-        capatectBridge.style.display = (filter === "yalitim") ? "flex" : "none";
-      }
       if (renoBridge) {
         renoBridge.style.display = (filter === "donusum") ? "flex" : "none";
       }
