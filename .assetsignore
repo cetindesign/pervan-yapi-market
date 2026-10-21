@@ -5,3 +5,5 @@ scratch/**
 .DS_Store
 wrangler.jsonc
 .gitignore
+prototypes
+prototypes/**

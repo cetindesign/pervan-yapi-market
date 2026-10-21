@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /prototype-*.html
-Disallow: /pervan-reform-preview.html
-Disallow: /*-legacy-backup.html
-Disallow: /*-first-transformation.html
+Disallow: /prototypes/
 Disallow: /scratch/
 
 # Sitemap
