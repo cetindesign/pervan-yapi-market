@@ -3,203 +3,203 @@
   <!-- 00. Ana Sayfa -->
   <url>
     <loc>https://pervanyapi.com/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- 01. Yetkili Bayilikler ve Marka Dunyalari -->
   <url>
-    <loc>https://pervanyapi.com/yetkili-bayilikler.html</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://pervanyapi.com/yetkili-bayilikler</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/boya-bulucu.html</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://pervanyapi.com/boya-bulucu</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/filli-boya-renxmatik.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/filli-boya-renxmatik</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/tek-boya.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/tek-boya</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/weber-yapi-kimyasallari.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/weber-yapi-kimyasallari</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/kalekim-yapi-kimyasallari.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <loc>https://pervanyapi.com/kalekim-yapi-kimyasallari</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/cimentas-cimento.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <loc>https://pervanyapi.com/cimentas-cimento</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/bianca-stella-boya.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/bianca-stella-boya</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/isonem-yalitim.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/isonem-yalitim</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/marshall-boya.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <loc>https://pervanyapi.com/marshall-boya</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/fawori-boya.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <loc>https://pervanyapi.com/fawori-boya</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/formul-plastik-pprc.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/formul-plastik-pprc</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- 02. Merkezlerimiz ve Subeler -->
   <url>
-    <loc>https://pervanyapi.com/balcova-showroom.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/balcova-showroom</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/urla-lojistik-depo.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/urla-lojistik-depo</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/showroom.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/showroom</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <!-- 03. Yapi Market ve Hirdavat Gruplari -->
   <url>
-    <loc>https://pervanyapi.com/yapi-market-ve-hirdavat.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://pervanyapi.com/yapi-market-ve-hirdavat</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/kaba-yapi-cimento.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/kaba-yapi-cimento</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/tesisat-altyapi.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/tesisat-altyapi</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/elektrik-aydinlatma.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/elektrik-aydinlatma</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/kilit-kapi-hirdavat.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/kilit-kapi-hirdavat</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/baglanti-elemanlari.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/baglanti-elemanlari</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/el-aletleri.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/el-aletleri</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/k-othrine-hasere.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/k-othrine-hasere</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <!-- 04. Mimari Taahhut ve Muhendislik -->
   <url>
-    <loc>https://pervanyapi.com/taahhut.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/taahhut</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/anahtar-teslim-insaat.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/anahtar-teslim-insaat</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/komple-villa-tadilat.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/komple-villa-tadilat</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/banyo-dusakabin.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/banyo-dusakabin</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/teras-cati-yalitim.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/teras-cati-yalitim</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/kesif-randevusu.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/kesif-randevusu</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://pervanyapi.com/nasil-calisiriz.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/nasil-calisiriz</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
 
   <!-- 05. Kurumsal -->
   <url>
-    <loc>https://pervanyapi.com/hakkimizda.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://pervanyapi.com/hakkimizda</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
