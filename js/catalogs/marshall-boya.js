@@ -2612,7 +2612,7 @@
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/marshall-boya.html");
+      window.history.replaceState({}, "", "/marshall-boya");
     }
   }
 

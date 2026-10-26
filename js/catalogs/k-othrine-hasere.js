@@ -997,7 +997,7 @@
     document.body.style.overflow = "";
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/k-othrine-hasere.html");
+      window.history.replaceState({}, "", "/k-othrine-hasere");
     }
   }
 

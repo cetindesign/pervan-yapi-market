@@ -1736,7 +1736,7 @@
     document.body.style.overflow = "";
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/baglanti-elemanlari.html");
+      window.history.replaceState({}, "", "/baglanti-elemanlari");
     }
   }
 

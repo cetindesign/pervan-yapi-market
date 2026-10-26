@@ -1640,7 +1640,7 @@
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/tesisat-altyapi.html");
+      window.history.replaceState({}, "", "/tesisat-altyapi");
     }
   }
 

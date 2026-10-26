@@ -765,7 +765,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState({}, "", "/isonem-yalitim.html");
+      history.replaceState({}, "", "/isonem-yalitim");
     } catch(e) {}
   }
 

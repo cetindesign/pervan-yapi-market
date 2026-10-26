@@ -1729,7 +1729,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState({}, "", "/weber-yapi-kimyasallari.html");
+      history.replaceState({}, "", "/weber-yapi-kimyasallari");
     } catch(e) {}
   }
 

@@ -2093,7 +2093,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState({}, "", "/kalekim-yapi-kimyasallari.html");
+      history.replaceState({}, "", "/kalekim-yapi-kimyasallari");
     } catch(e) {}
   }
 

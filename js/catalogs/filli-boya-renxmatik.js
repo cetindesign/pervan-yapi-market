@@ -4531,7 +4531,7 @@
 
     // URL sync (Pervan Catalog)
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/filli-boya-renxmatik.html");
+      window.history.replaceState({}, "", "/filli-boya-renxmatik");
     }
   }
 

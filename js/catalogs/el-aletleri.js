@@ -1699,7 +1699,7 @@
     document.body.style.overflow = "";
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/el-aletleri.html");
+      window.history.replaceState({}, "", "/el-aletleri");
     }
   }
 

@@ -3617,7 +3617,7 @@
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/tek-boya.html");
+      window.history.replaceState({}, "", "/tek-boya");
     }
   }
 

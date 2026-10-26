@@ -1675,7 +1675,7 @@
     document.body.style.overflow = "";
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/kilit-kapi-hirdavat.html");
+      window.history.replaceState({}, "", "/kilit-kapi-hirdavat");
     }
   }
 

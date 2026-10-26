@@ -813,7 +813,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState({}, "", "/cimentas-cimento.html");
+      history.replaceState({}, "", "/cimentas-cimento");
     } catch(e) {}
   }
 

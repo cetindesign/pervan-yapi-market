@@ -1747,7 +1747,7 @@
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/fawori-boya.html");
+      window.history.replaceState({}, "", "/fawori-boya");
     }
   }
 

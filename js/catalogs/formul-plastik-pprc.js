@@ -3120,7 +3120,7 @@ var FORMUL_PRODUCTS_DATA = [
     resetSheetStyles();
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/formul-plastik-pprc.html");
+      window.history.replaceState({}, "", "/formul-plastik-pprc");
     }
   }
 

@@ -1538,7 +1538,7 @@
     }
 
     if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", "/kaba-yapi-cimento.html");
+      window.history.replaceState({}, "", "/kaba-yapi-cimento");
     }
   }
 

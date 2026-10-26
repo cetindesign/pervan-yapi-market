@@ -3,23 +3,23 @@ const vm = require("vm");
 const path = require("path");
 
 const catalogFiles = [
-  { file: "js/catalogs/filli-boya-renxmatik.js", page: "/filli-boya-renxmatik.html", brand: "Filli Boya", type: "obj", varName: "products" },
-  { file: "js/catalogs/fawori-boya.js", page: "/fawori-boya.html", brand: "Fawori", type: "obj", varName: "products" },
-  { file: "js/catalogs/marshall-boya.js", page: "/marshall-boya.html", brand: "Marshall", type: "arr", varName: "MARSHALL_PRODUCTS_DATA" },
-  { file: "js/catalogs/tek-boya.js", page: "/tek-boya.html", brand: "TEK Boya", type: "arr", varName: "TEK_PRODUCTS_DATA" },
-  { file: "js/catalogs/weber-yapi-kimyasallari.js", page: "/weber-yapi-kimyasallari.html", brand: "Saint-Gobain Weber", type: "arr", varName: "WEBER_PRODUCTS_DATA" },
-  { file: "js/catalogs/bianca-stella-boya.js", page: "/bianca-stella-boya.html", brand: "Bianca Stella", type: "arr", varName: "BIANCA_PRODUCTS_DATA" },
-  { file: "js/catalogs/isonem-yalitim.js", page: "/isonem-yalitim.html", brand: "İsonem", type: "arr", varName: "ISONEM_PRODUCTS_DATA" },
-  { file: "js/catalogs/formul-plastik-pprc.js", page: "/formul-plastik-pprc.html", brand: "Formül Plastik", type: "arr", varName: "FORMUL_PRODUCTS_DATA" },
-  { file: "js/catalogs/k-othrine-hasere.js", page: "/k-othrine-hasere.html", brand: "Bayer K-Othrine", type: "arr", varName: "HASERE_PRODUCTS_DATA" },
-  { file: "js/catalogs/kaba-yapi-cimento.js", page: "/kaba-yapi-cimento.html", brand: "Pervan Kaba Yapı", type: "arr", varName: "KABA_PRODUCTS_DATA" },
-  { file: "js/catalogs/kilit-kapi-hirdavat.js", page: "/kilit-kapi-hirdavat.html", brand: "Kale Kilit", type: "arr", varName: "KILIT_PRODUCTS_DATA" },
-  { file: "js/catalogs/el-aletleri.js", page: "/el-aletleri.html", brand: "Pervan El Aletleri", type: "arr", varName: "TOOLS_PRODUCTS_DATA" },
-  { file: "js/catalogs/elektrik-aydinlatma.js", page: "/elektrik-aydinlatma.html", brand: "Pervan Elektrik", type: "arr", varName: "ELEKTRIK_PRODUCTS_DATA" },
-  { file: "js/catalogs/baglanti-elemanlari.js", page: "/baglanti-elemanlari.html", brand: "Pervan Bağlantı", type: "arr", varName: "FASTENERS_PRODUCTS_DATA" },
-  { file: "js/catalogs/tesisat-altyapi.js", page: "/tesisat-altyapi.html", brand: "Pervan Tesisat", type: "arr", varName: "TESISAT_PRODUCTS_DATA" },
-  { file: "js/catalogs/kalekim.js", page: "/kalekim-yapi-kimyasallari.html", brand: "Kalekim", type: "arr", varName: "KALEKIM_PRODUCTS_DATA", anchor: "#kalekimProductCatalog" },
-  { file: "js/catalogs/cimentas.js", page: "/cimentas-cimento.html", brand: "Çimentaş", type: "arr", varName: "CIMENTAS_PRODUCTS_DATA", anchor: "#cimentasTorbaSection" }
+  { file: "js/catalogs/filli-boya-renxmatik.js", page: "/filli-boya-renxmatik", brand: "Filli Boya", type: "obj", varName: "products" },
+  { file: "js/catalogs/fawori-boya.js", page: "/fawori-boya", brand: "Fawori", type: "obj", varName: "products" },
+  { file: "js/catalogs/marshall-boya.js", page: "/marshall-boya", brand: "Marshall", type: "arr", varName: "MARSHALL_PRODUCTS_DATA" },
+  { file: "js/catalogs/tek-boya.js", page: "/tek-boya", brand: "TEK Boya", type: "arr", varName: "TEK_PRODUCTS_DATA" },
+  { file: "js/catalogs/weber-yapi-kimyasallari.js", page: "/weber-yapi-kimyasallari", brand: "Saint-Gobain Weber", type: "arr", varName: "WEBER_PRODUCTS_DATA" },
+  { file: "js/catalogs/bianca-stella-boya.js", page: "/bianca-stella-boya", brand: "Bianca Stella", type: "arr", varName: "BIANCA_PRODUCTS_DATA" },
+  { file: "js/catalogs/isonem-yalitim.js", page: "/isonem-yalitim", brand: "İsonem", type: "arr", varName: "ISONEM_PRODUCTS_DATA" },
+  { file: "js/catalogs/formul-plastik-pprc.js", page: "/formul-plastik-pprc", brand: "Formül Plastik", type: "arr", varName: "FORMUL_PRODUCTS_DATA" },
+  { file: "js/catalogs/k-othrine-hasere.js", page: "/k-othrine-hasere", brand: "Bayer K-Othrine", type: "arr", varName: "HASERE_PRODUCTS_DATA" },
+  { file: "js/catalogs/kaba-yapi-cimento.js", page: "/kaba-yapi-cimento", brand: "Pervan Kaba Yapı", type: "arr", varName: "KABA_PRODUCTS_DATA" },
+  { file: "js/catalogs/kilit-kapi-hirdavat.js", page: "/kilit-kapi-hirdavat", brand: "Kale Kilit", type: "arr", varName: "KILIT_PRODUCTS_DATA" },
+  { file: "js/catalogs/el-aletleri.js", page: "/el-aletleri", brand: "Pervan El Aletleri", type: "arr", varName: "TOOLS_PRODUCTS_DATA" },
+  { file: "js/catalogs/elektrik-aydinlatma.js", page: "/elektrik-aydinlatma", brand: "Pervan Elektrik", type: "arr", varName: "ELEKTRIK_PRODUCTS_DATA" },
+  { file: "js/catalogs/baglanti-elemanlari.js", page: "/baglanti-elemanlari", brand: "Pervan Bağlantı", type: "arr", varName: "FASTENERS_PRODUCTS_DATA" },
+  { file: "js/catalogs/tesisat-altyapi.js", page: "/tesisat-altyapi", brand: "Pervan Tesisat", type: "arr", varName: "TESISAT_PRODUCTS_DATA" },
+  { file: "js/catalogs/kalekim.js", page: "/kalekim-yapi-kimyasallari", brand: "Kalekim", type: "arr", varName: "KALEKIM_PRODUCTS_DATA", anchor: "#kalekimProductCatalog" },
+  { file: "js/catalogs/cimentas.js", page: "/cimentas-cimento", brand: "Çimentaş", type: "arr", varName: "CIMENTAS_PRODUCTS_DATA", anchor: "#cimentasTorbaSection" }
 ];
 
 const registry = {};

@@ -1464,7 +1464,7 @@
     currentProduct = null;
     resetSheetStyles();
     try {
-      history.replaceState({}, "", "/bianca-stella-boya.html");
+      history.replaceState({}, "", "/bianca-stella-boya");
     } catch(e) {}
   }
 
